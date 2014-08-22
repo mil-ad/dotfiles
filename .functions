@@ -1,4 +1,4 @@
-#List all functions in a C source file
+# Lists all functions in a C source file
 function clist {
     ctags -x --sort=no $1 | awk '{print $1}'
 }
