@@ -1,0 +1,19 @@
+#List all functions in a C source file
+function clist {
+    ctags -x --sort=no $1 | awk '{print $1}'
+}
+
+# Search for files
+function f {
+    find . -iname *$1*
+}
+
+# Search for C source files
+function fc {
+    find . -iname "*$1*.c"
+}
+
+# Search for C header files
+function fh {
+    find . -iname "*$1*.h"
+}
