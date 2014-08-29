@@ -1,0 +1,7 @@
+alias ..="cd .."
+alias ...="cd ../.."
+alias ....="cd ../../.."
+alias .....="cd ../../../.."
+alias more="less"
+alias vi="vim"
+

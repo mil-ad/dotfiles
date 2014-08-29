@@ -29,8 +29,10 @@ complete -F _completemarks jump unmark
 # -------------8<---------------------------8<---------------------------
 
 
-## shell options (shopt)
-shopt -s cdspell			# This will correct minor spelling errors in a cd command
+#############################
+## Shell options (shopt)
+#############################
+shopt -s cdspell			# Ignore minor typos when using `cd`
 
 
 
@@ -58,5 +60,4 @@ alias more='less'
 export PATH=$PATH:/home/milad/Developer/klockwork/bin
 export PATH=$PATH:/home/milad/Developer/p4v-2013.4.760393/bin
 export PATH=$PATH:/home/milad/bin
-#export PATH=$PATH:$UCC_INST_ROOT/bin
 export PATH=$PATH:.
