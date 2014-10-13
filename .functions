@@ -20,7 +20,6 @@ function extract {
 	fi
 }
 
-
 # Lists all functions in a C source file
 function clist {
     ctags -x --sort=no $1 | awk '{print $1}'
@@ -45,13 +44,13 @@ function fh {
 # http://onethingwell.org/post/58703826506/marks
 # -------------8<---------------------------8<---------------------------
 export MARKPATH=$HOME/.marks
-function jump { 
+function jump {
     cd -P "$MARKPATH/$1" 2>/dev/null || echo "No such mark: $1"
 }
-function mark { 
+function mark {
     mkdir -p "$MARKPATH"; ln -s "$(pwd)" "$MARKPATH/$1"
 }
-function unmark { 
+function unmark {
     rm -i "$MARKPATH/$1"
 }
 function marks {
@@ -66,4 +65,3 @@ _completemarks() {
 }
 
 complete -F _completemarks jump unmark
-# -------------8<---------------------------8<---------------------------
