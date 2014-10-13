@@ -1,5 +1,7 @@
 # Path to your oh-my-zsh installation.
 export ZSH=$HOME/.oh-my-zsh
+export DOTFILES=$HOME/dotfiles
+
 
 # Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/
@@ -107,11 +109,9 @@ function _completemarks {
 compctl -K _completemarks jump
 compctl -K _completemarks unmark
 # -------------8<---------------------------8<---------------------------
-alias g='grep -r -i'
-alias e='~/Developer/eclipse/eclipse'
-alias s='/opt/sublime_text/sublime_text'
-alias ag='ack-grep --ignore-case -C 2 --color-match="bold red" --ignore-dir=docs'
-alias ll='ls -l'
+
+source $DOTFILES/.aliases
+
 export PATH=$PATH:/home/milad/bin
 export PATH=$PATH:.
 
