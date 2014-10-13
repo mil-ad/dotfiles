@@ -1,6 +1,5 @@
 # Path to your oh-my-zsh installation.
 export ZSH=$HOME/.oh-my-zsh
-export DOTFILES=$HOME/dotfiles
 
 
 # Set name of the theme to load.
@@ -83,56 +82,14 @@ export PATH="/home/milad/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/
 
 
 
-
-## Copied from .bashrc
-# "Marks" from onethingwell.org
-# http://onethingwell.org/post/58703826506/marks
-# -------------8<---------------------------8<---------------------------
-export MARKPATH=$HOME/.marks
-function jump {
-    cd -P "$MARKPATH/$1" 2>/dev/null || echo "No such mark: $1"
-}
-function mark {
-    mkdir -p "$MARKPATH"; ln -s "$(pwd)" "$MARKPATH/$1"
-}
-function unmark {
-    rm -i "$MARKPATH/$1"
-}
-function marks {
-    ls -l "$MARKPATH" | sed 's/  / /g' | cut -d' ' -f9- | sed 's/ -/\t-/g' && echo
-}
-
-function _completemarks {
-  reply=($(ls $MARKPATH))
-}
-
-compctl -K _completemarks jump
-compctl -K _completemarks unmark
-# -------------8<---------------------------8<---------------------------
-
+export DOTFILES=$HOME/dotfiles
 source $DOTFILES/.aliases
+source $DOTFILES/.functions
+
 
 export PATH=$PATH:/home/milad/bin
 export PATH=$PATH:.
 
-# List all functions in a C source file
-function clist {
-    ctags -x --sort=no $1 | awk '{print $1}'
-}
 
-# Search for files
-function f {
-    find . -iname "*$1*"
-}
-
-# Search for C source files
-function fc {
-    find . -iname "*$1*.c"
-}
-
-# Search for C header files
-function fh {
-    find . -iname "*$1*.h"
-}
 
 source .zshrc_img

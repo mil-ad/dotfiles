@@ -20,14 +20,14 @@ function extract {
 	fi
 }
 
-# Lists all functions in a C source file
+# List all functions in a C source file
 function clist {
     ctags -x --sort=no $1 | awk '{print $1}'
 }
 
 # Search for files
 function f {
-    find . -iname *$1*
+    find . -iname "*$1*"
 }
 
 # Search for C source files
@@ -42,7 +42,6 @@ function fh {
 
 # "Marks" from onethingwell.org
 # http://onethingwell.org/post/58703826506/marks
-# -------------8<---------------------------8<---------------------------
 export MARKPATH=$HOME/.marks
 function jump {
     cd -P "$MARKPATH/$1" 2>/dev/null || echo "No such mark: $1"
@@ -57,11 +56,10 @@ function marks {
     ls -l "$MARKPATH" | sed 's/  / /g' | cut -d' ' -f9- | sed 's/ -/\t-/g' && echo
 }
 
-_completemarks() {
-  local curw=${COMP_WORDS[COMP_CWORD]}
-  local wordlist=$(find $MARKPATH -type l -printf "%f\n")
-  COMPREPLY=($(compgen -W '${wordlist[@]}' -- "$curw"))
-  return 0
+function _completemarks {
+  reply=($(ls $MARKPATH))
 }
 
-complete -F _completemarks jump unmark
+compctl -K _completemarks jump
+compctl -K _completemarks unmark
+# -------------8<---------------------------8<---------------------------
