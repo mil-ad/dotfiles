@@ -1,0 +1,19 @@
+{
+	"installed_packages":
+	[
+		"Alignment",
+		"BracketHighlighter",
+		"Color Schemes by carlcalderon",
+		"Cscope",
+		"CTags",
+		"ExportHtml",
+		"Git",
+		"Perforce",
+		"SideBarEnhancements",
+		"SublimeCodeIntel",
+		"SublimeLinter",
+		"SublimeLinter-contrib-clang",
+		"SublimeLinter-cppcheck",
+		"SublimeLinter-pep8"
+	]
+}

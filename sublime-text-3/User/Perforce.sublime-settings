@@ -1,0 +1,3 @@
+{
+	"perforce_graphical_diff_command": "p4merge \"%depotfile_path\" \"%file_path\" -l \"%file_name in depot\" -e -1 4" // used only if Select Graphical Diff Application is not called
+}
