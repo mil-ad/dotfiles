@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+# Copied from: https://github.com/anishathalye/dotbot/blob/master/tools/git-submodule/install
+
 set -e
 
 CONFIG="install.conf.yaml"
