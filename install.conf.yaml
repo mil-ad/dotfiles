@@ -11,3 +11,12 @@
 # elif [[ `uname` == 'Linux' ]]; then
 #   link 
 # fi
+#
+
+- link:
+        ~/.zshrc:
+                force: true
+                path: zshrc
+        ~/.vim: vim/.vim/
+        ~/.vimrc: vim/.vimrc
+                
