@@ -17,6 +17,10 @@
         ~/.zshrc:
                 force: true
                 path: zshrc
-        ~/.vim: vim/.vim/
-        ~/.vimrc: vim/.vimrc
+        ~/.vim: 
+                force: true
+                path: vim/.vim/
+        ~/.vimrc: 
+                force: true
+                path: vim/.vimrc
                 
