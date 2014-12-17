@@ -26,4 +26,9 @@
                 force: true
                 path: vim/.vimrc
         ~/.dotfiles: ''
+        ~/.fonts: fonts
+
+
+- shell:
+        - [fc-cache -fv ~/.fonts, "Regenarting font infomation"]
 
