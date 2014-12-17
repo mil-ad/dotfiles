@@ -9,18 +9,21 @@
 # if [[ `uname` == 'Darwin' ]]; then
 #   link "./sublime/Packages/User/Preferences.sublime-settings" "$HOME/Library/Application Support/Sublime Text 3/Packages/User/Preferences.sublime-settings"
 # elif [[ `uname` == 'Linux' ]]; then
-#   link 
+#   link
 # fi
 #
+
+- clean: ['~']
 
 - link:
         ~/.zshrc:
                 force: true
                 path: zshrc
-        ~/.vim: 
+        ~/.vim:
                 force: true
                 path: vim/.vim/
-        ~/.vimrc: 
+        ~/.vimrc:
                 force: true
                 path: vim/.vimrc
-                
+        ~/.dotfiles: ''
+
