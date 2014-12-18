@@ -82,14 +82,10 @@ export PATH="/home/milad/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/
 
 
 
-export DOTFILES=$HOME/dotfiles
-source $DOTFILES/.aliases
-source $DOTFILES/.functions
-
+source ~/.dotfiles/.aliases
+source ~/.dotfiles/.functions
 
 export PATH=$PATH:/home/milad/bin
 export PATH=$PATH:.
-
-
 
 source .zshrc_img
