@@ -1,2 +1,3 @@
 - link:
-        ~/.blahblah: fonts
+        ~/.config/sublime-text-3/Packages/User: sublime-text-3/User
+        ~/.config/sublime-text-3/Installed Packages: sublime-text-3/Installed Packages
