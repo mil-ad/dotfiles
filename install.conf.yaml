@@ -15,5 +15,6 @@
 
 
 - shell:
-        - [fc-cache -fv ~/.fonts, "Regenarting font infomation"]
+        - [git submodule update --init --recursive, Installing/Updating submodules]
+        - [fc-cache -fv ~/.fonts, Regenarting font infomation]
 
