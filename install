@@ -5,13 +5,13 @@
 set -e
 
 # Cross-platform config
-CONFIG_COMMON="install.conf.yaml"
+CONFIG_COMMON="config_common.yaml"
 
 # Platform-specific config
 if [[ `uname` == 'Darwin' ]]; then
-    CONFIG_PLT="install_osx.conf.yaml"
+    CONFIG_PLT="config_osx.yaml"
 elif [[ `uname` == 'Linux' ]]; then
-    CONFIG_PLT="install_linux.conf.yaml"
+    CONFIG_PLT="config_linux.yaml"
 fi
 
 DOTBOT_DIR="dotbot"
