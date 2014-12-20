@@ -1,10 +1,10 @@
 #!/usr/bin/env bash
 
-# Copied from: https://github.com/anishathalye/dotbot/blob/master/tools/git-submodule/install
+# Template from: https://github.com/anishathalye/dotbot/
 
 set -e
 
-# Cross platform config
+# Cross-platform config
 CONFIG_COMMON="install.conf.yaml"
 
 # Platform-specific config
