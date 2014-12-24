@@ -2,6 +2,8 @@ alias ..="cd .."
 alias ...="cd ../.."
 alias ....="cd ../../.."
 alias .....="cd ../../../.."
+alias .....="cd ../../../../.."
+
 alias more="less"
 alias vi="vim"
 alias g='grep -r -i'
@@ -11,6 +13,13 @@ alias ll='ls -l'
 alias cal='cal -3'
 alias ag='ack-grep --ignore-case -C 2 --color-match="bold red" --ignore-dir=docs'
 
-alias e='~/Developer/eclipse/eclipse'
 alias s='/opt/sublime_text/sublime_text'
+
+# Git aliases
+alias gc='git commit'
+alias gs='git status'
+alias gb='git branch'
+
+# Copied from https://github.com/holman/dotfiles/blob/master/git/aliases.zsh:
+#alias glog="git log --graph --pretty=format:'%Cred%h%Creset %an: %s - %Creset %C(yellow)%d%Creset %Cgreen(%cr)%Creset' --abbrev-commit --date=relative"
 
