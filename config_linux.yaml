@@ -1,8 +1,10 @@
 - link:
         ~/.config/sublime-text-3/Packages/User:
                 create: true
-                path: sublime-text-3/User
+                path: sublime-text-3/User/
+                force: true
         ~/.config/sublime-text-3/Installed Packages:
                 create: true
-                path: sublime-text-3/Installed Packages
-        ~/.fonts: fonts
+                path: sublime-text-3/Installed Packages/
+                force: true
+        ~/.fonts: fonts/
