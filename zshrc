@@ -88,4 +88,4 @@ source ~/.dotfiles/.functions
 export PATH=$PATH:/home/milad/bin
 export PATH=$PATH:.
 
-source .zshrc_img
+source ~/.zshrc_img
