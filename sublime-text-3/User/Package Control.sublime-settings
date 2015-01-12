@@ -1,13 +1,24 @@
 {
+	"in_process_packages":
+	[
+	],
+	"installed_dependencies":
+	[
+		"0_package_control_loader",
+		"bz2",
+		"ssl-linux"
+	],
 	"installed_packages":
 	[
 		"Alignment",
+		"All Autocomplete",
 		"BracketHighlighter",
 		"Color Schemes by carlcalderon",
 		"Cscope",
 		"CTags",
 		"ExportHtml",
 		"Git",
+		"Package Control",
 		"Perforce",
 		"SideBarEnhancements",
 		"SublimeCodeIntel",
