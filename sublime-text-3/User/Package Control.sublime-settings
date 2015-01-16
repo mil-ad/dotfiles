@@ -25,6 +25,7 @@
 		"SublimeLinter",
 		"SublimeLinter-contrib-clang",
 		"SublimeLinter-cppcheck",
-		"SublimeLinter-pep8"
+		"SublimeLinter-pep8",
+		"Theme - Spacegray"
 	]
 }
