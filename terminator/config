@@ -1,0 +1,71 @@
+[global_config]
+  enabled_plugins = CustomCommandsMenu, TestPlugin, ActivityWatch, LaunchpadCodeURLHandler, APTURLHandler, Logger
+  suppress_multiple_term_dialog = True
+[keybindings]
+[profiles]
+  [[default]]
+    use_system_font = False
+    background_image = None
+    background_darkness = 0.92
+    background_type = transparent
+    active_encodings = ISO-8859-6, BIG5, WINDOWS-1256, UTF-8, ISO-8859-1
+    foreground_color = "#839496"
+    cursor_shape = ibeam
+    font = Meslo LG M 10
+    background_color = "#002b36"
+    scrollback_infinite = True
+  [[milad]]
+    scrollbar_position = hidden
+    use_system_font = False
+    background_darkness = 0.9
+    scrollback_lines = 1000
+    background_type = transparent
+    background_image = None
+    foreground_color = "#839496"
+    icon_bell = False
+    show_titlebar = False
+    font = Inconsolata Medium 12
+    background_color = "#002b36"
+[layouts]
+  [[default]]
+    [[[child0]]]
+      position = 1920:0
+      type = Window
+      order = 0
+      parent = ""
+      size = 1920, 1124
+    [[[child1]]]
+      position = 963
+      type = HPaned
+      order = 0
+      parent = child0
+    [[[child3]]]
+      position = 564
+      type = VPaned
+      order = 1
+      parent = child1
+    [[[terminal2]]]
+      profile = milad
+      type = Terminal
+      order = 0
+      parent = child1
+      command = ""
+    [[[terminal5]]]
+      profile = milad
+      type = Terminal
+      order = 1
+      parent = child3
+    [[[terminal4]]]
+      profile = milad
+      type = Terminal
+      order = 0
+      parent = child3
+  [[defaultOld]]
+    [[[child1]]]
+      type = Terminal
+      parent = window0
+      profile = default
+    [[[window0]]]
+      type = Window
+      parent = ""
+[plugins]
