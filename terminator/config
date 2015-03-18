@@ -11,12 +11,13 @@
     active_encodings = ISO-8859-6, BIG5, WINDOWS-1256, UTF-8, ISO-8859-1
     foreground_color = "#839496"
     cursor_shape = ibeam
-    font = Meslo LG M 10
+    font = Inconsolata Medium 12
     background_color = "#002b36"
     scrollback_infinite = True
   [[milad]]
     scrollbar_position = hidden
     use_system_font = False
+    copy_on_selection = True
     background_darkness = 0.9
     scrollback_lines = 1000
     background_type = transparent
@@ -29,11 +30,10 @@
 [layouts]
   [[default]]
     [[[child0]]]
-      position = 1920:0
+      position = 275:375
       type = Window
       order = 0
-      parent = ""
-      size = 1920, 1124
+      size = 1500, 700
     [[[child1]]]
       position = 963
       type = HPaned
