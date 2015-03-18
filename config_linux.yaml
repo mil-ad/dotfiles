@@ -6,3 +6,4 @@
                 create: true
                 path: sublime-text-3/Installed Packages
         ~/.fonts: fonts
+        ~/.themes: themes
