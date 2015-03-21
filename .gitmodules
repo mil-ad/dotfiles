@@ -7,3 +7,6 @@
 [submodule "vim/.vim/bundle/vim-sensible"]
 	path = vim/.vim/bundle/vim-sensible
 	url = git://github.com/tpope/vim-sensible.git
+[submodule "powerline_fonts"]
+	path = powerline_fonts
+	url = https://github.com/mi-lad/powerline_fonts.git
