@@ -11,7 +11,7 @@
     active_encodings = ISO-8859-6, BIG5, WINDOWS-1256, UTF-8, ISO-8859-1
     foreground_color = "#839496"
     cursor_shape = ibeam
-    font = Inconsolata Medium 12
+    font = Source Code Pro for Powerline Ultra-Light 12
     background_color = "#002b36"
     scrollback_infinite = True
   [[milad]]
@@ -27,7 +27,7 @@
     icon_bell = False
     show_titlebar = False
     cursor_shape = ibeam
-    font = Inconsolata Medium 12
+    font = Inconsolata for Powerline Medium 12
     background_color = "#002b36"
 [layouts]
   [[default]]
