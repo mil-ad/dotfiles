@@ -4,17 +4,6 @@
 [keybindings]
 [profiles]
   [[default]]
-    use_system_font = False
-    background_image = None
-    background_darkness = 0.92
-    background_type = transparent
-    active_encodings = ISO-8859-6, BIG5, WINDOWS-1256, UTF-8, ISO-8859-1
-    foreground_color = "#839496"
-    cursor_shape = ibeam
-    font = Source Code Pro for Powerline Ultra-Light 12
-    background_color = "#002b36"
-    scrollback_infinite = True
-  [[milad]]
     scrollbar_position = hidden
     use_system_font = False
     copy_on_selection = True
@@ -32,37 +21,35 @@
 [layouts]
   [[default]]
     [[[child0]]]
-      position = 275:375
+      position = 200:350
       type = Window
       order = 0
+      parent = ""
       size = 1500, 700
     [[[child1]]]
-      position = 963
       type = HPaned
       order = 0
       parent = child0
     [[[child3]]]
-      position = 564
       type = VPaned
       order = 1
       parent = child1
     [[[terminal2]]]
-      profile = milad
+      profile = miladProfile
       type = Terminal
       order = 0
       parent = child1
-      command = ""
     [[[terminal5]]]
-      profile = milad
+      profile = miladProfile
       type = Terminal
       order = 1
       parent = child3
     [[[terminal4]]]
-      profile = milad
+      profile = miladProfile
       type = Terminal
       order = 0
       parent = child3
-  [[defaultOld]]
+  [[OldDefault]]
     [[[child1]]]
       type = Terminal
       parent = window0
