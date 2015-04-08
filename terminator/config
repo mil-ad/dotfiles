@@ -18,6 +18,21 @@
     cursor_shape = ibeam
     font = Inconsolata for Powerline Medium 12
     background_color = "#002b36"
+  [[tiny]]
+    scrollbar_position = hidden
+    use_system_font = False
+    copy_on_selection = True
+    background_darkness = 0.9
+    scrollback_lines = 1000
+    background_type = transparent
+    background_image = None
+    cursor_color = "#f36363"
+    foreground_color = "#839496"
+    icon_bell = False
+    show_titlebar = False
+    cursor_shape = ibeam
+    font = Inconsolata for Powerline Medium 9
+    background_color = "#002b36"
 [layouts]
   [[default]]
     [[[child0]]]
