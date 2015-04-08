@@ -1,10 +1,19 @@
-- link:
-   ~/Library/Application Support/Sublime Text 3/Packages/User: sublime-text-3/User/
+- clean: ['~']
 
-- shell:
-    -
-        - ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
-        - "Installing Homebrew"
-    -
-        - brew install caskroom/cask/brew-cask
-        - "Installing homebrew-cask"
+- link:
+    ~/Library/Application Support/Sublime Text 3/Packages/User:
+        create: true
+        path: sublime-text-3/User/
+        force: true
+    ~/Library/Application Support/Sublime Text 3/Installed Packages:
+        create: true
+        path: sublime-text-3/Installed Packages/
+        force: true
+
+#- shell:
+#    -
+#        - ruby -e \"$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)\"
+#        - "Installing Homebrew"
+#    -
+#        - brew install caskroom/cask/brew-cask
+#        - "Installing homebrew-cask"
