@@ -18,3 +18,4 @@
 
 - shell:
         - [fc-cache -fv ~/.fonts, Regenarting font infomation]
+        - [./powerline_fonts/install.sh, Installing Powerline fonts]
