@@ -87,6 +87,6 @@ source ~/.dotfiles/.functions
 
 export PATH=$PATH:.
 
-if [ -e .zshrc_img ]; then
-    source .zshrc_img
+if [ -e .zshrc_private ]; then
+    source .zshrc_private
 fi
