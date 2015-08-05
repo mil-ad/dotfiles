@@ -1,23 +1,23 @@
 
 # http://dotfiles.org/~xabbott/.bashrc
 function extract {
-	if [ -f $1 ] ; then
-		case $1 in
-			*.tar.bz2)	tar xjf $1		;;
-			*.tar.gz)	tar xzf $1		;;
-			*.bz2)		bunzip2 $1		;;
-			*.rar)		rar x $1		;;
-			*.gz)		gunzip $1		;;
-			*.tar)		tar xf $1		;;
-			*.tbz2)		tar xjf $1		;;
-			*.tgz)		tar xzf $1		;;
-			*.zip)		unzip $1		;;
-			*.Z)		uncompress $1	;;
-			*)			echo "'$1' cannot be extracted via extract()" ;;
-		esac
-	else
-		echo "'$1' is not a valid file"
-	fi
+    if [ -f $1 ] ; then
+        case $1 in
+            *.tar.bz2)  tar xjf $1      ;;
+            *.tar.gz)   tar xzf $1      ;;
+            *.bz2)      bunzip2 $1      ;;
+            *.rar)      rar x $1        ;;
+            *.gz)       gunzip $1       ;;
+            *.tar)      tar xf $1       ;;
+            *.tbz2)     tar xjf $1      ;;
+            *.tgz)      tar xzf $1      ;;
+            *.zip)      unzip $1        ;;
+            *.Z)        uncompress $1   ;;
+            *)          echo "'$1' cannot be extracted via extract()" ;;
+        esac
+    else
+        echo "'$1' is not a valid file"
+    fi
 }
 
 # List all functions in a C source file
@@ -40,6 +40,8 @@ function fh {
     find . -iname "*$1*.h"
 }
 
+
+# -------------8<---------------------------8<---------------------------
 # "Marks" from onethingwell.org
 # http://onethingwell.org/post/58703826506/marks
 export MARKPATH=$HOME/.marks
@@ -63,3 +65,11 @@ function _completemarks {
 compctl -K _completemarks jump
 compctl -K _completemarks unmark
 # -------------8<---------------------------8<---------------------------
+
+function p4gc {
+    p4 info | grep 'Client name' | cut -d':' -f2
+}
+
+function p4pen {
+    p4 changes -c `p4gc` -s pending $1
+}
