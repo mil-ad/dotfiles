@@ -66,6 +66,7 @@ compctl -K _completemarks jump
 compctl -K _completemarks unmark
 # -------------8<---------------------------8<---------------------------
 
+# Get current P4 client
 function p4gc {
     p4 info | grep 'Client name' | cut -d':' -f2
 }
