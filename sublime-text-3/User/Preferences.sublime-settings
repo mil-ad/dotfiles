@@ -5,12 +5,13 @@
 	],
 	"auto_indent": true,
 	"color_scheme": "Packages/One Dark Color Scheme/One Dark.tmTheme",
+	"convert_tabspaces_on_save": true,
 	"detect_indentation": true,
 	"dictionary": "Packages/Language - English/en_GB.dic",
 	"draw_white_space": "selection",
 	"ensure_newline_at_eof_on_save": true,
 	"font_face": "Meslo LG S for Powerline",
-	"font_size": 11,
+	"font_size": 9,
 	"ignored_packages":
 	[
 		"Vintage"
@@ -23,6 +24,7 @@
 	"smart_indent": true,
 	"tab_completion": false,
 	"tab_size": 4,
+	"translate_tabs_to_spaces": true,
 	"trim_automatic_white_space": true,
 	"trim_trailing_white_space_on_save": true,
 	"use_tab_stops": true
