@@ -5,19 +5,31 @@
 [profiles]
   [[default]]
     scrollbar_position = hidden
-    use_system_font = False
+    #palette = "#073642:#dc322f:#859900:#b58900:#268bd2:#d33682:#2aa198:#eee8d5:#002b36:#cb4b16:#586e75:#657b83:#839496:#6c71c4:#93a1a1:#fdf6e3"
+    #background_color = "#002b36"
+    #cursor_color = "#f36363"
+    #foreground_color = "#839496"
+
+    #palette = "#2d2d2d:#f2777a:#99cc99:#ffcc66:#6699cc:#cc99cc:#66cccc:#d3d0c8:#747369:#f2777a:#99cc99:#ffcc66:#6699cc:#cc99cc:#66cccc:#f2f0ec"
+    #background_color = "#2d2d2d"
+    #cursor_color = "#d3d0c8"
+    #foreground_color = "#d3d0c8"
+
+    palette = "#1d1f21:#cc6666:#b5bd68:#f0c674:#81a2be:#b294bb:#8abeb7:#c5c8c6:#969896:#cc6666:#b5bd68:#f0c674:#81a2be:#b294bb:#8abeb7:#ffffff"
+    foreground_color = "#c5c8c6"
+    background_color = "#1d1f21"
+    cursor_color = "#c5c8c6"
+
     copy_on_selection = True
+    background_image = None
     background_darkness = 0.9
     scrollback_lines = 1000
     background_type = transparent
-    background_image = None
-    cursor_color = "#f36363"
-    foreground_color = "#839496"
+    use_system_font = False
     icon_bell = False
     show_titlebar = False
     cursor_shape = ibeam
     font = Inconsolata for Powerline Medium 12
-    background_color = "#002b36"
   [[tiny]]
     scrollbar_position = hidden
     use_system_font = False
