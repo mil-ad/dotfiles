@@ -1,0 +1,67 @@
+{
+	"history":
+	[
+		{
+			"data":
+			{
+				"args":
+				{
+					"step_size": "week",
+					"text": ""
+				},
+				"command": "text_pastry_date_range",
+				"text": "weeks"
+			},
+			"key": "ae60f11ab51860bdb22794a943335a34",
+			"label": "weeks"
+		},
+		{
+			"data":
+			{
+				"args":
+				{
+					"stop": "10"
+				},
+				"command": "text_pastry_range",
+				"text": "range 10"
+			},
+			"key": "051fa39f844ebd4976f984892e802808",
+			"label": "range 10"
+		},
+		{
+			"data":
+			{
+				"args":
+				{
+					"text": "5 2"
+				},
+				"command": "text_pastry_step",
+				"text": "5 2"
+			},
+			"key": "1c1cf9d1c8a0a48d30abb84163f87eaa",
+			"label": "5 2"
+		},
+		{
+			"data":
+			{
+				"args":
+				{
+					"text": "5 2 4"
+				},
+				"command": "text_pastry_step",
+				"text": "5 2 4"
+			},
+			"key": "90efdebaab6b349c42ee6cb8dfe0e7cb",
+			"label": "5 2 4"
+		}
+	],
+	"last_command":
+	{
+		"args":
+		{
+			"text": "5 2 4"
+		},
+		"command": "text_pastry_step",
+		"text": "5 2 4"
+	}
+}
