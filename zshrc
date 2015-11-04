@@ -48,13 +48,13 @@ ZSH_THEME="agnoster"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git sublime)
+plugins=(git sublime zsh-syntax-highlighting)
 
 source $ZSH/oh-my-zsh.sh
 
 # User configuration
 
-export PATH="/home/milad/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/home/milad/Developer/klockwork/bin:/home/milad/Developer/p4v-2014.1.888424/bin:/home/milad/bin:."
+export PATH="/home/milad/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/home/milad/bin:."
 # export MANPATH="/usr/local/man:$MANPATH"
 
 # You may need to manually set your language environment
@@ -87,7 +87,7 @@ export PATH="/home/milad/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/
 source ~/.dotfiles/.aliases
 source ~/.dotfiles/.functions
 
-export PATH=$PATH:.
+# export PATH=$PATH:.
 
 if [ -e .zshrc_private ]; then
     source .zshrc_private
