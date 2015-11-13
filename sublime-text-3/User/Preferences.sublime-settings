@@ -10,8 +10,8 @@
 	"dictionary": "Packages/Language - English/en_GB.dic",
 	"draw_white_space": "selection",
 	"ensure_newline_at_eof_on_save": true,
-	"font_face": "Meslo LG S for Powerline",
-	"font_size": 9,
+	"font_face": "Inconsolata for Powerline",
+	"font_size": 13,
 	"ignored_packages":
 	[
 		"Vintage"
