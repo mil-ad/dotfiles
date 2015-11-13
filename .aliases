@@ -25,7 +25,8 @@ alias gc='git commit'
 alias gs='git status'
 alias gb='git branch'
 alias gm='git merge'
+alias gl='git log -n 4 --stat --graph --decorate=full --date=relative'
 
 # Copied from https://github.com/holman/dotfiles/blob/master/git/aliases.zsh:
-#alias glog="git log --graph --pretty=format:'%Cred%h%Creset %an: %s - %Creset %C(yellow)%d%Creset %Cgreen(%cr)%Creset' --abbrev-commit --date=relative"
+alias glog="git log --graph --pretty=format:'%Cred%h%Creset %an: %s - %Creset %C(yellow)%d%Creset %Cgreen(%cr)%Creset' --abbrev-commit --date=relative"
 
