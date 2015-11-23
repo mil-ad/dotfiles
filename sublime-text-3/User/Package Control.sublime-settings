@@ -6,6 +6,7 @@
 	"installed_packages":
 	[
 		"Alignment",
+		"AlignTab",
 		"All Autocomplete",
 		"Base16 Color Schemes",
 		"BracketHighlighter",
