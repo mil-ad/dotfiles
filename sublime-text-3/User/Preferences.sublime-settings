@@ -10,8 +10,8 @@
 	"dictionary": "Packages/Language - English/en_GB.dic",
 	"draw_white_space": "selection",
 	"ensure_newline_at_eof_on_save": true,
-	"font_face": "Inconsolata for Powerline",
-	"font_size": 13,
+	"font_face": "Meslo LG S DZ for Powerline",
+	"font_size": 10,
 	"ignored_packages":
 	[
 		"Vintage"
@@ -27,5 +27,7 @@
 	"translate_tabs_to_spaces": true,
 	"trim_automatic_white_space": true,
 	"trim_trailing_white_space_on_save": true,
-	"use_tab_stops": true
+	"use_tab_stops": true,
+	"always_show_minimap_viewport": true,
+	"show_line_endings": true,
 }
