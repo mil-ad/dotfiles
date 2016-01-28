@@ -13,7 +13,9 @@
 	"draw_white_space": "selection",
 	"ensure_newline_at_eof_on_save": true,
 	"font_face": "Meslo LG S DZ for Powerline",
-	"font_size": 8,
+	"font_size": 14,
+	"highlight_line": true,
+	"highlight_modified_tabs": true,
 	"ignored_packages":
 	[
 		"Vintage"
@@ -30,7 +32,5 @@
 	"translate_tabs_to_spaces": true,
 	"trim_automatic_white_space": true,
 	"trim_trailing_white_space_on_save": true,
-	"use_tab_stops": true,
-	"highlight_line": true,
-	"highlight_modified_tabs": true
+	"use_tab_stops": true
 }
