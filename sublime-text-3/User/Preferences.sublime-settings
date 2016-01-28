@@ -3,7 +3,9 @@
 	[
 		"setup"
 	],
+	"always_show_minimap_viewport": true,
 	"auto_indent": true,
+	"bold_folder_labels": true,
 	"color_scheme": "Packages/One Dark Color Scheme/One Dark.tmTheme",
 	"convert_tabspaces_on_save": true,
 	"detect_indentation": true,
@@ -11,7 +13,7 @@
 	"draw_white_space": "selection",
 	"ensure_newline_at_eof_on_save": true,
 	"font_face": "Meslo LG S DZ for Powerline",
-	"font_size": 10,
+	"font_size": 8,
 	"ignored_packages":
 	[
 		"Vintage"
@@ -21,6 +23,7 @@
 		"draw_active"
 	],
 	"indent_to_bracket": true,
+	"show_line_endings": true,
 	"smart_indent": true,
 	"tab_completion": false,
 	"tab_size": 4,
@@ -28,6 +31,6 @@
 	"trim_automatic_white_space": true,
 	"trim_trailing_white_space_on_save": true,
 	"use_tab_stops": true,
-	"always_show_minimap_viewport": true,
-	"show_line_endings": true,
+	"highlight_line": true,
+	"highlight_modified_tabs": true
 }
