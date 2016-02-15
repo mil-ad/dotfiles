@@ -38,11 +38,11 @@
 [layouts]
   [[default]]
     [[[child0]]]
-      position = 200:350
+      position = 150:150
       type = Window
       order = 0
       parent = ""
-      size = 1500, 700
+      size = 1700, 900
     [[[child1]]]
       type = HPaned
       order = 0
