@@ -11,7 +11,6 @@ alias ag='ack-grep --ignore-case -C 2 --color-match="bold red" --ignore-dir=docs
 alias l="ls -laH"
 alias ll='ls -l'
 alias cal='cal -3'
-alias ag='ack-grep --ignore-case -C 2 --color-match="bold red" --ignore-dir=docs'
 
 alias df='df -h'
 alias du='du -h --max-depth 2'
@@ -29,4 +28,7 @@ alias gl='git log -n 4 --stat --graph --decorate=full --date=relative'
 
 # Copied from https://github.com/holman/dotfiles/blob/master/git/aliases.zsh:
 alias glog="git log --graph --pretty=format:'%Cred%h%Creset %an: %s - %Creset %C(yellow)%d%Creset %Cgreen(%cr)%Creset' --abbrev-commit --date=relative"
+
+# Copied from http://askubuntu.com/questions/2389/generating-list-of-manually-installed-packages-and-querying-individual-packages
+alias mypackages="comm -23 <(apt-mark showmanual | sort -u) <(gzip -dc /var/log/installer/initial-status.gz | sed -n 's/^Package: //p' | sort -u)"
 
