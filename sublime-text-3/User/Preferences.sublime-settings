@@ -1,7 +1,8 @@
 {
 	"added_words":
 	[
-		"setup"
+		"setup",
+		"srand"
 	],
 	"always_show_minimap_viewport": true,
 	"auto_indent": true,
@@ -13,7 +14,7 @@
 	"draw_white_space": "selection",
 	"ensure_newline_at_eof_on_save": true,
 	"font_face": "Meslo LG S DZ for Powerline",
-	"font_size": 14,
+	"font_size": 8,
 	"highlight_line": true,
 	"highlight_modified_tabs": true,
 	"ignored_packages":
@@ -25,6 +26,11 @@
 		"draw_active"
 	],
 	"indent_to_bracket": true,
+	"rulers":
+	[
+		80,
+		100
+	],
 	"show_line_endings": true,
 	"smart_indent": true,
 	"tab_completion": false,
