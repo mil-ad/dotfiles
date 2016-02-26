@@ -7,7 +7,8 @@ alias .....="cd ../../../../.."
 alias more="less"
 alias vi="vim"
 alias g='grep -r -i'
-alias ag='ack-grep --ignore-case -C 2 --color-match="bold red" --ignore-dir=docs'
+alias ack='ack-grep --ignore-case -C 2 --color-match="bold red" --ignore-dir=docs'
+alias ag='ag --ignore-case -C 2 --color-match="1;31" --ignore-dir=docs'
 alias l="ls -laH"
 alias ll='ls -l'
 alias cal='cal -3'
