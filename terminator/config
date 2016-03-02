@@ -68,17 +68,17 @@
       order = 1
       parent = child1
     [[[terminal2]]]
-      profile = miladProfile
+      profile = default
       type = Terminal
       order = 0
       parent = child1
     [[[terminal5]]]
-      profile = miladProfile
+      profile = default
       type = Terminal
       order = 1
       parent = child3
     [[[terminal4]]]
-      profile = miladProfile
+      profile = default
       type = Terminal
       order = 0
       parent = child3
