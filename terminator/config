@@ -68,17 +68,17 @@
       order = 1
       parent = child1
     [[[terminal2]]]
-      profile = default
+      profile = experiment
       type = Terminal
       order = 0
       parent = child1
     [[[terminal5]]]
-      profile = default
+      profile = experiment
       type = Terminal
       order = 1
       parent = child3
     [[[terminal4]]]
-      profile = default
+      profile = experiment
       type = Terminal
       order = 0
       parent = child3
