@@ -4,18 +4,6 @@
 [submodule "oh-my-zsh"]
 	path = oh-my-zsh
 	url = https://github.com/mi-lad/oh-my-zsh
-[submodule "vim/.vim/bundle/vim-sensible"]
-	path = vim/.vim/bundle/vim-sensible
-	url = git://github.com/tpope/vim-sensible.git
 [submodule "powerline_fonts"]
 	path = powerline_fonts
 	url = https://github.com/mi-lad/powerline_fonts.git
-[submodule "vim/.vim/bundle/ctrlp.vim"]
-	path = vim/.vim/bundle/ctrlp.vim
-	url = https://github.com/kien/ctrlp.vim.git
-[submodule "vim/.vim/bundle/vim-colors-solarized"]
-	path = vim/.vim/bundle/vim-colors-solarized
-	url = git://github.com/altercation/vim-colors-solarized.git
-[submodule "vim/.vim/bundle/vim-airline"]
-	path = vim/.vim/bundle/vim-airline
-	url = https://github.com/bling/vim-airline
