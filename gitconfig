@@ -3,3 +3,6 @@
 	email = milad2k+git@gmail.com
 [color]
 	ui = auto
+[core]
+	editor = vim
+	pager = less
