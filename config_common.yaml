@@ -13,6 +13,9 @@
         ~/.tmux.conf:
                 force: true
                 path: tmux.conf
+        ~/.gitconfig:
+                force: true
+                path: gitconfig
         ~/.dotfiles: ''
 
 
