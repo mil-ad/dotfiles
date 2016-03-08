@@ -10,6 +10,9 @@
         ~/.vimrc:
                 force: true
                 path: vim/.vimrc
+        ~/.tmux.conf:
+                force: true
+                path: tmux.conf
         ~/.dotfiles: ''
 
 
