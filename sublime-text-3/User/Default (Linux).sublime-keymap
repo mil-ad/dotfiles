@@ -1,9 +1,10 @@
 [
-	{ "keys": ["ctrl+d"], "command": "run_macro_file", "args": {"file": "res://Packages/Default/Delete Line.sublime-macro"} },
-	{ "keys": ["alt+up"], "command": "swap_line_up" },
-	{ "keys": ["alt+down"], "command": "swap_line_down" },
-	{ "keys": ["ctrl+b", "ctrl+p"], "command": "toggle_side_bar" },
-	{ "keys": ["ctrl+space"], "command": "move", "args": {"by": "characters", "forward": true} },
-	{ "keys": ["ctrl+keypad_minus"], "command": "jump_back" },
-    { "keys": ["f12"], "command": "goto_definition" }
+    { "keys": ["f12"], "command": "goto_definition" },
+    { "keys": ["ctrl+d"], "command": "run_macro_file", "args": {"file": "res://Packages/Default/Delete Line.sublime-macro"} },
+    { "keys": ["ctrl+b", "ctrl+p"], "command": "toggle_side_bar" },
+    { "keys": ["ctrl+space"], "command": "move", "args": {"by": "characters", "forward": true} },
+    { "keys": ["ctrl+keypad_minus"], "command": "jump_back" },
+    { "keys": ["alt+up"], "command": "swap_line_up" },
+    { "keys": ["alt+down"], "command": "swap_line_down" },
+    { "keys": ["alt+d"], "command": "plain_tasks_complete","context": [{ "key": "selector", "operator": "equal", "operand": "text.todo" }] },
 ]
