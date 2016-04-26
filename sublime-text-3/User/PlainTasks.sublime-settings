@@ -1,0 +1,13 @@
+{
+  "color_scheme": "Packages/PlainTasks/tasks-solarized-dark.hidden-tmTheme",
+    //   Packages/PlainTasks/tasks-dark.hidden-tmTheme
+    //   Packages/PlainTasks/tasks-eighties-colored.hidden-tmTheme
+    //   Packages/PlainTasks/tasks-eighties-dark.hidden-tmTheme
+    //   Packages/PlainTasks/tasks-gray.hidden-tmTheme
+    //   Packages/PlainTasks/tasks-monokai.hidden-tmTheme
+    //   Packages/PlainTasks/tasks-solarized-dark.hidden-tmTheme
+    //   Packages/PlainTasks/tasks-solarized-light.hidden-tmTheme
+  "open_tasks_bullet": "[ ]", // options: - | ❍ | ❑ | ■ | □ | ☐ | ▪ | ▫ | – | — | ≡ | → | › | [ ]
+  "done_tasks_bullet": "[x]", // options: + | ✓ | ✔ | √ | [x]
+  "cancelled_tasks_bullet": "[-]", // options: x | ✘ | [-]
+}
