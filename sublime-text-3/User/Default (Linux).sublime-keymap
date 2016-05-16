@@ -7,4 +7,10 @@
     { "keys": ["alt+up"], "command": "swap_line_up" },
     { "keys": ["alt+down"], "command": "swap_line_down" },
     { "keys": ["alt+d"], "command": "plain_tasks_complete","context": [{ "key": "selector", "operator": "equal", "operand": "text.todo" }] },
+
+
+    { "keys": ["ctrl+l"], "command": "expand_selection", "args": {"to": "line"} },
+    { "keys": ["alt+shift+s"], "command": "expand_selection", "args": {"to": "scope"} },
+    { "keys": ["alt+shift+t"], "command": "expand_selection", "args": {"to": "tag"} },
+    { "keys": ["alt+shift+b"], "command": "expand_selection", "args": {"to": "brackets"} },
 ]
