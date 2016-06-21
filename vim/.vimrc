@@ -58,3 +58,6 @@ filetype plugin indent on    " required
 
 set number
 syntax on
+
+set laststatus=2 " Make VimAirline plugin visible all the time
+
