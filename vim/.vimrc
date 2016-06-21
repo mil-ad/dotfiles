@@ -37,7 +37,7 @@ Plugin 'git://git.wincent.com/command-t.git'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 Plugin 'ctrlpvim/ctrlp.vim'
-
+Plugin 'chriskempson/base16-vim'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -58,3 +58,12 @@ filetype plugin indent on    " required
 
 set number
 syntax on
+
+let base16colorspace=256
+set background=dark
+
+colorscheme base16-default
+
+set laststatus=2 " Make VimAirline visible all the time
+let g:airline_powerline_fonts = 1
+let g:airline_theme='base16'
