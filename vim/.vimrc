@@ -38,6 +38,7 @@ Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'scrooloose/nerdtree'
+Plugin 'chriskempson/base16-vim'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -61,3 +62,11 @@ syntax on
 
 set laststatus=2 " Make VimAirline plugin visible all the time
 
+let base16colorspace=256
+set background=dark
+
+colorscheme base16-default
+
+set laststatus=2 " Make VimAirline visible all the time
+let g:airline_powerline_fonts = 1
+let g:airline_theme='base16'
