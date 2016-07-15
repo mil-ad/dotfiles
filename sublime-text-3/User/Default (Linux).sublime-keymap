@@ -7,6 +7,7 @@
     { "keys": ["alt+up"], "command": "swap_line_up" },
     { "keys": ["alt+down"], "command": "swap_line_down" },
     { "keys": ["alt+d"], "command": "plain_tasks_complete","context": [{ "key": "selector", "operator": "equal", "operand": "text.todo" }] },
+    { "keys": ["ctrl+b", "ctrl+m"], "command": "toggle_bookmark" },
 
 
     { "keys": ["ctrl+l"], "command": "expand_selection", "args": {"to": "line"} },
