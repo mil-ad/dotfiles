@@ -16,6 +16,9 @@
         ~/.gitconfig:
                 force: true
                 path: gitconfig
+        ~/.ctags:
+                force: true
+                path: ctags
         ~/.dotfiles: ''
 
 
