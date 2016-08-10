@@ -1,0 +1,9 @@
+base16-vim
+command-t
+tagbar
+ctrlp.vim
+vim-airline-themes
+vim-airline
+vim-fugitive
+vim-perforce
+nerdtree
