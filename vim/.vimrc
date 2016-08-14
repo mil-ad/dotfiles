@@ -34,7 +34,7 @@ Plugin 'git://git.wincent.com/command-t.git'
 " different version somewhere else.
 " Plugin 'ascenator/L9', {'name': 'newL9'}
 
-
+Plugin 'toppe/vim-sensible'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 Plugin 'ctrlpvim/ctrlp.vim'
