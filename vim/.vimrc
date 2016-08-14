@@ -14,8 +14,6 @@ Plugin 'VundleVim/Vundle.vim'
 " The following are examples of different formats supported.
 " Keep Plugin commands between vundle#begin/end.
 
-" plugin on GitHub repo
-Plugin 'tpope/vim-fugitive'
 
 " plugin from http://vim-scripts.org/vim/scripts.html
 " Plugin 'L9'
@@ -34,15 +32,16 @@ Plugin 'git://git.wincent.com/command-t.git'
 " different version somewhere else.
 " Plugin 'ascenator/L9', {'name': 'newL9'}
 
+" Plugins on GitHub repo
 Plugin 'toppe/vim-sensible'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
+Plugin 'chriskempson/base16-vim'
 Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'scrooloose/nerdtree'
-Plugin 'chriskempson/base16-vim'
 Plugin 'majutsushi/tagbar'
 Plugin 'nfvs/vim-perforce'
-
+Plugin 'tpope/vim-fugitive'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -58,7 +57,6 @@ filetype plugin indent on    " required
 "
 " see :h vundle for more details or wiki for FAQ
 " Put your non-Plugin stuff after this line
-
 " -----------------------8<-------------------------8<------------------------ "
 
 set number             " Show line numbers
@@ -99,7 +97,6 @@ let g:ctrlp_open_new_file = 't'
 "
   " Use ag in CtrlP for listing files. Lightning fast and respects .gitignore
 "  let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
-
   " ag is fast enough that CtrlP doesn't need to cache
 "  let g:ctrlp_use_caching = 0
 "endif
