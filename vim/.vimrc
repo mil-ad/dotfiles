@@ -60,10 +60,13 @@ filetype plugin indent on    " required
 " Put your non-Plugin stuff after this line
 " -----------------------8<-------------------------8<------------------------ "
 
-set number             " Show line numbers
-syntax on              " Enable syntax highlighting
-set mouse=a            " Enable mouse support in all modes
-set colorcolumn=80,120 " Show ruler at 80 and 120 columns
+set number             	" Show line numbers
+syntax on              	" Enable syntax highlighting
+set mouse=a            	" Enable mouse support in all modes
+set colorcolumn=80,120 	" Show ruler at 80 and 120 columns
+
+set ignorecase	       	" Ignore case when searching
+set smartcase	       	" Override ignorecase when search pattern includes upper case
 
 " The last semicolon is the key here. Keep going up the directory hierarchy when
 " looking for the tags file
