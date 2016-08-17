@@ -1,6 +1,7 @@
 *private*
 *cache*
 .DS_Store
+*.swp
 
 *.sublime-workspace
 sublime-text-3/Installed Packages/0_package_control_loader.sublime-package
