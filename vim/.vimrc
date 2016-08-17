@@ -68,6 +68,8 @@ set colorcolumn=80,120 	" Show ruler at 80 and 120 columns
 set ignorecase	       	" Ignore case when searching
 set smartcase	       	" Override ignorecase when search pattern includes upper case
 
+set incsearch		" Search as you type
+
 " The last semicolon is the key here. Keep going up the directory hierarchy when
 " looking for the tags file
 "set tags=./tags,./TAGS,tags,TAGS;
