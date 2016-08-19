@@ -14,7 +14,6 @@ Plugin 'VundleVim/Vundle.vim'
 " The following are examples of different formats supported.
 " Keep Plugin commands between vundle#begin/end.
 
-
 " plugin from http://vim-scripts.org/vim/scripts.html
 " Plugin 'L9'
 
@@ -34,6 +33,7 @@ Plugin 'git://git.wincent.com/command-t.git'
 
 " Plugins on GitHub repo
 Plugin 'toppe/vim-sensible'
+Plugin 'tpope/vim-fugitive'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 Plugin 'chriskempson/base16-vim'
@@ -41,7 +41,6 @@ Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'scrooloose/nerdtree'
 Plugin 'majutsushi/tagbar'
 Plugin 'nfvs/vim-perforce'
-Plugin 'tpope/vim-fugitive'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -68,6 +67,7 @@ set ignorecase	       	" Ignore case when searching
 set smartcase	       	" Override ignorecase when search pattern includes upper case
 
 set incsearch		" Search as you type
+"set hlsearch 		" Highlight all search matches, use :nohlsearch to hide them
 
 " The last semicolon is the key here. Keep going up the directory hierarchy when
 " looking for the tags file
@@ -105,3 +105,4 @@ let g:ctrlp_open_new_file = 't'
   " ag is fast enough that CtrlP doesn't need to cache
 "  let g:ctrlp_use_caching = 0
 "endif
+
