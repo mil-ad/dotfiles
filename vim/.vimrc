@@ -41,7 +41,7 @@ Plugin 'scrooloose/nerdtree'
 Plugin 'chriskempson/base16-vim'
 Plugin 'majutsushi/tagbar'
 Plugin 'nfvs/vim-perforce'
-
+Plugin 'w0ng/vim-hybrid'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -68,7 +68,7 @@ set ignorecase	       	" Ignore case when searching
 set smartcase	       	" Override ignorecase when search pattern includes upper case
 
 set incsearch		" Search as you type
-"set hlsearch 		" Highlight all search matches, use :nohlsearch to hide them
+set hlsearch 		" Highlight all search matches, use :nohlsearch to hide them
 
 " The last semicolon is the key here. Keep going up the directory hierarchy when
 " looking for the tags file
@@ -78,8 +78,8 @@ set tags=./tags;
 " Colours/themes settings
 set t_Co=256
 "let base16colorspace=256
-"set background=dark
-"colorscheme base16-default-dark
+set background=dark
+colorscheme hybrid 
 
 " VimAirline settings
 set laststatus=2 " Make it visible all the time
