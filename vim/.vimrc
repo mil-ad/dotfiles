@@ -2,7 +2,8 @@ set nocompatible              " be iMproved, required
 filetype off                  " required
 
 " -----------------------8<-------------------------8<------------------------ "
-" set the runtime path to include Vundle and initialize
+" set the runtime path to include Vundle and initialize.
+" Keep Plugin commands between vundle#begin/end.
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 " alternatively, pass a path where Vundle should install plugins
@@ -12,7 +13,6 @@ call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 
 " The following are examples of different formats supported.
-" Keep Plugin commands between vundle#begin/end.
 
 " plugin from http://vim-scripts.org/vim/scripts.html
 " Plugin 'L9'
@@ -31,7 +31,6 @@ Plugin 'git://git.wincent.com/command-t.git'
 " different version somewhere else.
 " Plugin 'ascenator/L9', {'name': 'newL9'}
 
-
 " plugins on GitHub repo
 Plugin 'tpope/vim-fugitive'
 Plugin 'vim-airline/vim-airline'
@@ -40,8 +39,11 @@ Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'scrooloose/nerdtree'
 Plugin 'chriskempson/base16-vim'
 Plugin 'majutsushi/tagbar'
+"Plugin 'craigemery/vim-autotag'
 Plugin 'nfvs/vim-perforce'
+Plugin 'junegunn/fzf.vim'
 Plugin 'w0ng/vim-hybrid'
+Plugin 'morhetz/gruvbox'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -49,21 +51,16 @@ filetype plugin indent on    " required
 " To ignore plugin indent changes, instead use:
 "filetype plugin on
 "
-" Brief help
-" :PluginList       - lists configured plugins
-" :PluginInstall    - installs plugins; append `!` to update or just :PluginUpdate
-" :PluginSearch foo - searches for foo; append `!` to refresh local cache
-" :PluginClean      - confirms removal of unused plugins; append `!` to auto-approve removal
-"
 " see :h vundle for more details or wiki for FAQ
 " Put your non-Plugin stuff after this line
 " -----------------------8<-------------------------8<------------------------ "
 
 set number             	" Show line numbers
+set nowrap		" Do not wrap lines
 syntax on              	" Enable syntax highlighting
 set mouse=a            	" Enable mouse support in all modes
 set colorcolumn=80,120 	" Show ruler at 80 and 120 columns
-
+"set wildmode=list:longest " When one than one match in tab-complete, list all matches and complete till longest common string
 set ignorecase	       	" Ignore case when searching
 set smartcase	       	" Override ignorecase when search pattern includes upper case
 
@@ -79,12 +76,12 @@ set tags=./tags;
 set t_Co=256
 "let base16colorspace=256
 set background=dark
-colorscheme hybrid 
+colorscheme gruvbox 
 
 " VimAirline settings
 set laststatus=2 " Make it visible all the time
 let g:airline_powerline_fonts = 1
-let g:airline_theme='base16_default'
+let g:airline_theme='gruvbox'
 let g:airline#extensions#tabline#enabled = 1 " Show list of buffers
 let g:airline#extensions#tabline#fnamemod = ':t' " Show just the filename
 
@@ -95,6 +92,9 @@ let g:ctrlp_extensions = ['tag', 'buffertag']
 let g:ctrlp_by_filename = 1
 let g:ctrlp_match_window = 'top,ttb'
 let g:ctrlp_open_new_file = 't'
+
+" Tagbar settings
+let g:tagbar_sort = 0	" Sort based on their order in the file
 
 " The Silver Searcher
 "if executable('ag')
@@ -108,3 +108,5 @@ let g:ctrlp_open_new_file = 't'
 "  let g:ctrlp_use_caching = 0
 "endif
 
+set rtp+=~/.fzf
+let $FZF_DEFAULT_COMMAND='ag -g ""'
