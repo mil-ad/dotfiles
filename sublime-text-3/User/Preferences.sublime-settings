@@ -6,19 +6,22 @@
 		"timeout",
 		"min",
 		"max",
-		"ok"
+		"ok",
+		"enum",
+		"inline"
 	],
 	"always_show_minimap_viewport": true,
 	"auto_indent": true,
 	"bold_folder_labels": true,
+	"caret_style": "phase",
 	"color_scheme": "Packages/One Dark Color Scheme/One Dark.tmTheme",
 	"convert_tabspaces_on_save": true,
 	"detect_indentation": true,
 	"dictionary": "Packages/Language - English/en_GB.dic",
 	"draw_white_space": "selection",
 	"ensure_newline_at_eof_on_save": true,
-	"font_face": " Inconsolata-g for Powerline",
-	"font_size": 8,
+	"font_face": "Fira Mono Medium for Powerline",
+	"font_size": 12,
 	"highlight_line": true,
 	"highlight_modified_tabs": true,
 	"ignored_packages":
@@ -42,5 +45,7 @@
 	"translate_tabs_to_spaces": true,
 	"trim_automatic_white_space": true,
 	"trim_trailing_white_space_on_save": true,
-	"use_tab_stops": true
+	"use_tab_stops": true,
+	"wide_caret": true,
+	"wrap_width": 120
 }
