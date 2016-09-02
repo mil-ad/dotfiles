@@ -85,6 +85,7 @@ export PATH="/home/milad/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/
 
 
 source ~/.dotfiles/.aliases
+source ~/.dotfiles/.exports
 source ~/.dotfiles/.functions
 
 # export PATH=$PATH:.
