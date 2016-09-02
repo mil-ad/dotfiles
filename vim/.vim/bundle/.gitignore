@@ -8,3 +8,4 @@ vim-fugitive
 vim-perforce
 nerdtree
 gruvbox
+fzf.vim
