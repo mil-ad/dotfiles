@@ -12,13 +12,26 @@ call vundle#begin()
 " let Vundle manage Vundle, required
 Plugin 'VundleVim/Vundle.vim'
 
+" plugins on GitHub 
+Plugin 'tpope/vim-fugitive'
+Plugin 'vim-airline/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
+Plugin 'ctrlpvim/ctrlp.vim'
+Plugin 'scrooloose/nerdtree'
+"Plugin 'chriskempson/base16-vim'
+Plugin 'majutsushi/tagbar'
+"Plugin 'craigemery/vim-autotag'
+Plugin 'nfvs/vim-perforce'
+Plugin 'junegunn/fzf.vim'
+Plugin 'morhetz/gruvbox'
+
 " The following are examples of different formats supported.
 
 " plugin from http://vim-scripts.org/vim/scripts.html
 " Plugin 'L9'
 
 " Git plugin not hosted on GitHub
-Plugin 'git://git.wincent.com/command-t.git'
+" Plugin 'git://git.wincent.com/command-t.git'
 
 " git repos on your local machine (i.e. when working on your own plugin)
 " Plugin 'file:///home/gmarik/path/to/plugin'
@@ -30,20 +43,6 @@ Plugin 'git://git.wincent.com/command-t.git'
 " Install L9 and avoid a Naming conflict if you've already installed a
 " different version somewhere else.
 " Plugin 'ascenator/L9', {'name': 'newL9'}
-
-" plugins on GitHub repo
-Plugin 'tpope/vim-fugitive'
-Plugin 'vim-airline/vim-airline'
-Plugin 'vim-airline/vim-airline-themes'
-Plugin 'ctrlpvim/ctrlp.vim'
-Plugin 'scrooloose/nerdtree'
-Plugin 'chriskempson/base16-vim'
-Plugin 'majutsushi/tagbar'
-"Plugin 'craigemery/vim-autotag'
-Plugin 'nfvs/vim-perforce'
-Plugin 'junegunn/fzf.vim'
-Plugin 'w0ng/vim-hybrid'
-Plugin 'morhetz/gruvbox'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -60,6 +59,7 @@ set nowrap		" Do not wrap lines
 syntax on              	" Enable syntax highlighting
 set mouse=a            	" Enable mouse support in all modes
 set colorcolumn=80,120 	" Show ruler at 80 and 120 columns
+set wildmenu		" Show possible options when doing tab-completion
 "set wildmode=list:longest " When one than one match in tab-complete, list all matches and complete till longest common string
 set ignorecase	       	" Ignore case when searching
 set smartcase	       	" Override ignorecase when search pattern includes upper case
@@ -102,10 +102,7 @@ let g:tagbar_sort = 0	" Sort based on their order in the file
 "  set grepprg=ag\ --nogroup\ --nocolor
 "
   " Use ag in CtrlP for listing files. Lightning fast and respects .gitignore
-"  let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
-
-  " ag is fast enough that CtrlP doesn't need to cache
-"  let g:ctrlp_use_caching = 0
+"  let g:ctrlp_user_command = 'ag -l -g "" %s'
 "endif
 
 set rtp+=~/.fzf
