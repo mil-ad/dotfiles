@@ -58,9 +58,16 @@ set number             	" Show line numbers
 set nowrap		" Do not wrap lines
 syntax on              	" Enable syntax highlighting
 set mouse=a            	" Enable mouse support in all modes
-set colorcolumn=80,120 	" Show ruler at 80 and 120 columns
+set colorcolumn=81,121 	" Show ruler at 80 and 120 columns
+set foldmethod=syntax   " Fold based on syntax
+set foldlevelstart=99   " Unfold everything when opening a buffer
+set cursorline		" Highlight current line
+
 set wildmenu		" Show possible options when doing tab-completion
-"set wildmode=list:longest " When one than one match in tab-complete, list all matches and complete till longest common string
+" When more than one match in tab-complete, list all matches and complete till
+" longest common string.
+set wildmode=longest:full,full 
+
 set ignorecase	       	" Ignore case when searching
 set smartcase	       	" Override ignorecase when search pattern includes upper case
 
