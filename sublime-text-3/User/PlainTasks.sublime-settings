@@ -10,4 +10,7 @@
   "open_tasks_bullet": "[ ]", // options: - | ❍ | ❑ | ■ | □ | ☐ | ▪ | ▫ | – | — | ≡ | → | › | [ ]
   "done_tasks_bullet": "[x]", // options: + | ✓ | ✔ | √ | [x]
   "cancelled_tasks_bullet": "[-]", // options: x | ✘ | [-]
+  "margin": 4,
+  "tab_size": 8,
+  "draw_indent_guides": false,
 }
