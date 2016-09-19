@@ -91,6 +91,7 @@ nnoremap <Leader><PageUp>   :bprevious<CR>
 nnoremap <Leader><PageDown> :bnext<CR>
 nnoremap <Leader>t	    :enew<CR>
 nnoremap <Leader>w	    :bdelete<CR>
+nnoremap <Leader>r	    :CtrlPBufTag<CR>
 
 " VimAirline settings
 set laststatus=2 " Make it visible all the time
@@ -110,7 +111,7 @@ let g:ctrlp_open_new_file = 't'
 " Tagbar settings
 let g:tagbar_sort = 0	" Sort based on their order in the file
 
-" The Silver Searcher
+" Use the Silver Searcher when possible
 " if executable('ag')
 " " Use ag over grep
 "  set grepprg=ag\ --nogroup\ --nocolor
