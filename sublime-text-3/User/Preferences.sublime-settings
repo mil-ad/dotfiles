@@ -35,8 +35,8 @@
 	"indent_to_bracket": true,
 	"rulers":
 	[
-		80,
-		120
+		81,
+		121
 	],
 	"show_line_endings": true,
 	"smart_indent": true,
