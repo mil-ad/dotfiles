@@ -19,6 +19,9 @@
         ~/.ctags:
                 force: true
                 path: ctags
+        ~/.colordiffrc:
+                force: true
+                path: colordiffrc
         ~/.dotfiles: ''
 
 
