@@ -4,7 +4,7 @@
     { "keys": ["ctrl+space"], "command": "move", "args": {"by": "characters", "forward": true} },
     // { "keys": ["ctrl+keypad_minus"], "command": "jump_back" },
     // { "keys": ["f12"], "command": "goto_definition" },
-    { "keys": ["ctrl+["], "command": "goto_definition" },
+    { "keys": ["ctrl+]"], "command": "goto_definition" },
     { "keys": ["ctrl+t"], "command": "jump_back" },
     { "keys": ["alt+up"], "command": "swap_line_up" },
     { "keys": ["alt+down"], "command": "swap_line_down" },
