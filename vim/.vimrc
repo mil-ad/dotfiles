@@ -18,7 +18,6 @@ Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'scrooloose/nerdtree'
-"Plugin 'chriskempson/base16-vim'
 Plugin 'majutsushi/tagbar'
 Plugin 'craigemery/vim-autotag'
 Plugin 'nfvs/vim-perforce'
@@ -92,7 +91,7 @@ nnoremap <Leader><PageDown> :bnext<CR>
 nnoremap <Leader>t	    :enew<CR>
 nnoremap <Leader>w	    :bdelete<CR>
 nnoremap <Leader>r	    :CtrlPBufTag<CR>
-
+nnoremap <Leader>/	    :set hlsearch!<CR> 
 " VimAirline settings
 set laststatus=2 " Make it visible all the time
 let g:airline_powerline_fonts = 1
