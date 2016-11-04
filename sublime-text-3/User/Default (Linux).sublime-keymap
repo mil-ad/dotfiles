@@ -2,18 +2,25 @@
     { "keys": ["ctrl+d"], "command": "run_macro_file", "args": {"file": "res://Packages/Default/Delete Line.sublime-macro"} },
     { "keys": ["ctrl+b", "ctrl+p"], "command": "toggle_side_bar" },
     { "keys": ["ctrl+space"], "command": "move", "args": {"by": "characters", "forward": true} },
-    // { "keys": ["ctrl+keypad_minus"], "command": "jump_back" },
-    // { "keys": ["f12"], "command": "goto_definition" },
     { "keys": ["ctrl+]"], "command": "goto_definition" },
     { "keys": ["ctrl+t"], "command": "jump_back" },
     { "keys": ["alt+up"], "command": "swap_line_up" },
     { "keys": ["alt+down"], "command": "swap_line_down" },
-    { "keys": ["alt+d"], "command": "plain_tasks_complete","context": [{ "key": "selector", "operator": "equal", "operand": "text.todo" }] },
     { "keys": ["ctrl+b", "ctrl+m"], "command": "toggle_bookmark" },
-
 
     { "keys": ["ctrl+l"], "command": "expand_selection", "args": {"to": "line"} },
     { "keys": ["alt+shift+s"], "command": "expand_selection", "args": {"to": "scope"} },
     { "keys": ["alt+shift+t"], "command": "expand_selection", "args": {"to": "tag"} },
     { "keys": ["alt+shift+b"], "command": "expand_selection", "args": {"to": "brackets"} },
+    { "keys": ["alt+shift+i"], "command": "expand_selection", "args": {"to": "indentation"} },
+
+    { "keys": ["alt+n"], "command": "find_under_expand" },
+    { "keys": ["alt+s"], "command": "find_under_expand_skip" },
+
+    // CscopeSublime
+    { "keys": ["alt+w", "alt+h", "alt+o"], "command": "cscope", "args": {"mode": 3 } },
+
+    // Plaintasks
+    { "keys": ["alt+d"], "command": "plain_tasks_complete","context": [{ "key": "selector", "operator": "equal", "operand": "text.todo" }] },
+
 ]
