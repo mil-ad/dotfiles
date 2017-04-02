@@ -10,6 +10,12 @@
         ~/.vimrc:
                 force: true
                 path: vim/.vimrc
+        ~/.config/nvim:
+                force: true
+                path: vim/.vim/
+        ~/.config/nvim/init.vim:
+                force: true
+                path: vim/.vimrc
         ~/.tmux.conf:
                 force: true
                 path: tmux.conf
@@ -19,6 +25,9 @@
         ~/.ctags:
                 force: true
                 path: ctags
+        ~/.colordiffrc:
+                force: true
+                path: colordiffrc
         ~/.dotfiles: ''
 
 

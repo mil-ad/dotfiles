@@ -8,20 +8,21 @@
 		"max",
 		"ok",
 		"enum",
-		"inline"
+		"inline",
+		"metadata"
 	],
 	"always_show_minimap_viewport": true,
 	"auto_indent": true,
 	"bold_folder_labels": true,
 	"caret_style": "phase",
-	"color_scheme": "Packages/One Dark Color Scheme/One Dark.tmTheme",
+	"color_scheme": "Packages/Colorsublime - Themes/Birds_of_Paradise.tmTheme",
 	"convert_tabspaces_on_save": true,
 	"detect_indentation": true,
 	"dictionary": "Packages/Language - English/en_GB.dic",
-	"draw_white_space": "selection",
+	"draw_white_space": "all",
 	"ensure_newline_at_eof_on_save": true,
 	"font_face": "Fira Mono Medium for Powerline",
-	"font_size": 12,
+	"font_size": 8,
 	"highlight_line": true,
 	"highlight_modified_tabs": true,
 	"ignored_packages":
@@ -30,22 +31,25 @@
 	],
 	"indent_guide_options":
 	[
+		"draw_normal",
 		"draw_active"
 	],
 	"indent_to_bracket": true,
+	"overlay_scroll_bars": "enabled",
 	"rulers":
 	[
-		80,
-		120
+		81,
+		121
 	],
 	"show_line_endings": true,
 	"smart_indent": true,
 	"tab_completion": false,
 	"tab_size": 4,
+	"theme": "Default.sublime-theme",
 	"translate_tabs_to_spaces": true,
 	"trim_automatic_white_space": true,
 	"trim_trailing_white_space_on_save": true,
 	"use_tab_stops": true,
 	"wide_caret": true,
-	"wrap_width": 120
+	"wrap_width": 80
 }

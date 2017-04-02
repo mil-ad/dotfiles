@@ -8,9 +8,10 @@ alias more="less"
 alias vi="vim"
 alias g='grep -r -i'
 alias ack='ack-grep --ignore-case -C 2 --color-match="bold red" --ignore-dir=docs'
-alias ag='ag --ignore-case -C 2 --color-match="1;31" --ignore-dir=docs --pager=less'
-alias l="ls -laH"
-alias ll='ls -l'
+alias ag='ag --ignore-case -C 2 --color-match="1;31" --ignore-dir=docs' 
+alias agp='ag --ignore-case -C 2 --color-match="1;31" --ignore-dir=docs --pager=less'
+alias l="ls -laHh"
+alias ll='ls -lh'
 alias cal='cal -3'
 
 alias df='df -h'

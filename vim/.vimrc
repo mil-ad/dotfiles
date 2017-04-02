@@ -18,9 +18,8 @@ Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'scrooloose/nerdtree'
-"Plugin 'chriskempson/base16-vim'
 Plugin 'majutsushi/tagbar'
-"Plugin 'craigemery/vim-autotag'
+Plugin 'craigemery/vim-autotag'
 Plugin 'nfvs/vim-perforce'
 Plugin 'junegunn/fzf.vim'
 Plugin 'morhetz/gruvbox'
@@ -58,7 +57,7 @@ set number             	" Show line numbers
 set nowrap		" Do not wrap lines
 syntax on              	" Enable syntax highlighting
 set mouse=a            	" Enable mouse support in all modes
-set colorcolumn=81,121 	" Show ruler at 80 and 120 columns
+set colorcolumn=81,121 	" Show ruler at 80(+1) and 120(+1) columns
 set foldmethod=syntax   " Fold based on syntax
 set foldlevelstart=99   " Unfold everything when opening a buffer
 set cursorline		" Highlight current line
@@ -85,6 +84,14 @@ set t_Co=256
 set background=dark
 colorscheme gruvbox 
 
+" Key mappings
+let mapleader=" " " Use spacekey as <Leader>
+nnoremap <Leader><PageUp>   :bprevious<CR>
+nnoremap <Leader><PageDown> :bnext<CR>
+nnoremap <Leader>t	    :enew<CR>
+nnoremap <Leader>w	    :bdelete<CR>
+nnoremap <Leader>r	    :CtrlPBufTag<CR>
+nnoremap <Leader>/	    :set hlsearch!<CR> 
 " VimAirline settings
 set laststatus=2 " Make it visible all the time
 let g:airline_powerline_fonts = 1
@@ -103,13 +110,13 @@ let g:ctrlp_open_new_file = 't'
 " Tagbar settings
 let g:tagbar_sort = 0	" Sort based on their order in the file
 
-" The Silver Searcher
-"if executable('ag')
+" Use the Silver Searcher when possible
+" if executable('ag')
 " " Use ag over grep
 "  set grepprg=ag\ --nogroup\ --nocolor
 "
   " Use ag in CtrlP for listing files. Lightning fast and respects .gitignore
-"  let g:ctrlp_user_command = 'ag -l -g "" %s'
+"  let g:ctrlp_user_command = 'ag %s -l -g ""'
 "endif
 
 set rtp+=~/.fzf

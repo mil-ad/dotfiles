@@ -8,11 +8,9 @@
 		"Alignment",
 		"AlignTab",
 		"All Autocomplete",
-		"Base16 Color Schemes",
+		"ARM Assembly",
 		"BracketHighlighter",
-		"Color Schemes by carlcalderon",
 		"Cscope",
-		"Dayle Rees Color Schemes",
 		"DocBlockr",
 		"Expand Tabs on Save",
 		"Git",
@@ -22,7 +20,6 @@
 		"PlainTasks",
 		"SideBarEnhancements",
 		"SublimeCodeIntel",
-		"Text Pastry",
-		"Theme - Spacegray"
+		"Text Pastry"
 	]
 }
