@@ -13,7 +13,7 @@ alias agp='ag --ignore-case -C 2 --color-match="1;31" --ignore-dir=docs --pager=
 alias l="ls -laHh"
 alias ll='ls -lh'
 alias cal='cal -3'
-
+alias tmux="tmux -2"
 alias df='df -h'
 alias du='du -h --max-depth 2'
 
