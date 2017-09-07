@@ -30,15 +30,15 @@ function f {
     find . -iname "*$1*"
 }
 
-# Search for C source files
-function fc {
-    find . -iname "*$1*.c"
-}
+# # Search for C source files
+# function fc {
+#     find . -iname "*$1*.c"
+# }
 
-# Search for C header files
-function fh {
-    find . -iname "*$1*.h"
-}
+# # Search for C header files
+# function fh {
+#     find . -iname "*$1*.h"
+# }
 
 
 # -------------8<---------------------------8<---------------------------
