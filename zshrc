@@ -48,7 +48,7 @@ ZSH_THEME="agnoster"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git sublime zsh-syntax-highlighting colored-man)
+plugins=(git sublime docker zsh-syntax-highlighting colored-man)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -82,13 +82,9 @@ export PATH="/home/milad/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-
-
 source ~/.dotfiles/.aliases
 source ~/.dotfiles/.exports
 source ~/.dotfiles/.functions
-
-# export PATH=$PATH:.
 
 if [ -e .zshrc_private ]; then
     source .zshrc_private
