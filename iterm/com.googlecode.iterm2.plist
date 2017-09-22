@@ -2666,6 +2666,8 @@
 	<string>D8E78C97-7749-4FD9-A035-7134FD03CFAB</string>
 	<key>DimInactiveSplitPanes</key>
 	<false/>
+	<key>DisableFullscreenTransparency</key>
+	<false/>
 	<key>GlobalKeyMap</key>
 	<dict>
 		<key>0x19-0x60000</key>
@@ -2781,6 +2783,10 @@
 			<string></string>
 		</dict>
 	</dict>
+	<key>HideScrollbar</key>
+	<true/>
+	<key>JobName</key>
+	<true/>
 	<key>LeftCommand</key>
 	<integer>7</integer>
 	<key>LoadPrefsFromCustomFolder</key>
@@ -2806,7 +2812,7 @@
 	gAKACoAN0xAJChEVGVdOUy5rZXlzoxITFIADgASABaMWFxiABoAHgAiACVpJZGVudGlm
 	aWVyVVdpZHRoVkhpZGRlblEwI0BowAAAAAAACNIhIiMkWiRjbGFzc25hbWVYJGNsYXNz
 	ZXNcTlNEaWN0aW9uYXJ5oiMlWE5TT2JqZWN00xAJCicrGaMSExSAA4AEgAWjLC0YgAuA
-	DIAIgAlRMSNAdCGdsi0OVtIhIjM0Xk5TTXV0YWJsZUFycmF5ozM1JVdOU0FycmF5XxAP
+	DIAIgAlRMSNAczGdsi0OVtIhIjM0Xk5TTXV0YWJsZUFycmF5ozM1JVdOU0FycmF5XxAP
 	TlNLZXllZEFyY2hpdmVy0Tg5VUFycmF5gAEACAARABoAIwAtADIANwBGAEwAUQBcAGMA
 	ZgBoAGoAbABzAHsAfwCBAIMAhQCJAIsAjQCPAJEAnACiAKkAqwC0ALUAugDFAM4A2wDe
 	AOcA7gDyAPQA9gD4APwA/gEAAQIBBAEGAQ8BFAEjAScBLwFBAUQBSgAAAAAAAAIBAAAA
@@ -2832,11 +2838,11 @@
 	<key>NSWindow Frame SessionsPreferences</key>
 	<string>269 139 606 456 0 0 1680 1028 </string>
 	<key>NSWindow Frame SharedPreferences</key>
-	<string>604 356 918 495 0 0 1680 1050 </string>
+	<string>1803 263 937 512 1680 -870 1200 1898 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>109 203 1210 707 0 0 1680 1028 </string>
+	<string>185 217 1110 699 0 0 1680 1028 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
-	<string>225 222 1210 707 0 0 1680 1028 </string>
+	<string>2164 -40 737 616 1680 -870 1200 1898 </string>
 	<key>New Bookmarks</key>
 	<array>
 		<dict>
@@ -4088,7 +4094,7 @@
 			<key>Non-ASCII Anti Aliased</key>
 			<true/>
 			<key>Normal Font</key>
-			<string>RobotoMonoForPowerline-Regular 14</string>
+			<string>SourceCodeProForPowerline-Regular 14</string>
 			<key>Open Toolbelt</key>
 			<false/>
 			<key>Option Key Sends</key>
@@ -4134,7 +4140,7 @@
 			<key>Shortcut</key>
 			<string></string>
 			<key>Silence Bell</key>
-			<false/>
+			<true/>
 			<key>Sync Title</key>
 			<false/>
 			<key>Tags</key>
@@ -4168,7 +4174,7 @@
 	<key>NoSyncInstallationId</key>
 	<string>F096B739-9000-4EA8-82B3-8A23E50594CC</string>
 	<key>NoSyncLastTipTime</key>
-	<real>526914902.58572203</real>
+	<real>527005043.83869803</real>
 	<key>NoSyncNeverRemindPrefsChangesLostForFile</key>
 	<true/>
 	<key>NoSyncNeverRemindPrefsChangesLostForFile_selection</key>
@@ -4193,6 +4199,7 @@
 		<string>0010</string>
 		<string>0011</string>
 		<string>0012</string>
+		<string>0013</string>
 	</array>
 	<key>PointerActions</key>
 	<dict>
@@ -4238,11 +4245,17 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2017-09-11T13:06:52Z</date>
+	<date>2017-09-13T19:46:21Z</date>
 	<key>SUSendProfileInfo</key>
 	<false/>
+	<key>ShowFullScreenTabBar</key>
+	<true/>
 	<key>ShowPaneTitles</key>
 	<false/>
+	<key>UseBorder</key>
+	<false/>
+	<key>WindowNumber</key>
+	<true/>
 	<key>WordCharacters</key>
 	<string>/-+\~_.</string>
 	<key>iTerm Version</key>
