@@ -9,4 +9,7 @@
 
     { "keys": ["super+shift+["], "command": "prev_view" },
     { "keys": ["super+shift+]"], "command": "next_view" },
+
+    // CscopeSublime
+    { "keys": ["option+w", "option+h", "option+o"], "command": "cscope", "args": {"mode": 3 } },
 ]
