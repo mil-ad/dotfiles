@@ -33,4 +33,8 @@ alias glog="git log --graph --pretty=format:'%Cred%h%Creset %an: %s - %Creset %C
 # Copied from http://askubuntu.com/questions/2389/generating-list-of-manually-installed-packages-and-querying-individual-packages
 alias mypackages="comm -23 <(apt-mark showmanual | sort -u) <(gzip -dc /var/log/installer/initial-status.gz | sed -n 's/^Package: //p' | sort -u)"
 
-alias weather='curl wttr.in/London'
+alias fast_sshfs='sshfs -o Ciphers=arcfour -o Compression=no'
+
+alias weather='curl wttr.in/Oxford'
+
+alias difffolders='diff -rq'
