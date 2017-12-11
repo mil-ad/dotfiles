@@ -22,6 +22,9 @@
         ~/.gitconfig:
                 force: true
                 path: gitconfig
+        ~/.gitignore_global:
+                force: true
+                path: gitignore_global
         ~/.ctags:
                 force: true
                 path: ctags
