@@ -38,3 +38,5 @@ alias fast_sshfs='sshfs -o Ciphers=arcfour -o Compression=no'
 alias weather='curl wttr.in/Oxford'
 
 alias difffolders='diff -rq'
+
+alias jn='jupyter notebook'
