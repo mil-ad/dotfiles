@@ -47,7 +47,7 @@ ZSH_THEME="agnoster"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git sublime docker colored-man wd)
+plugins=(git sublime docker colored-man wd aws)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -92,3 +92,4 @@ source ~/.dotfiles/.functions
 if [ -e .zshrc_private ]; then
     source .zshrc_private
 fi
+
