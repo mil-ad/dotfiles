@@ -8,6 +8,9 @@
     { "keys": ["super+shift+["], "command": "prev_view" },
     { "keys": ["super+shift+]"], "command": "next_view" },
 
+    { "keys": ["super+option+g"], "command": "find_under_expand" },
+
+
     // CscopeSublime
     { "keys": ["option+w", "option+h", "option+o"], "command": "cscope", "args": {"mode": 3 } },
 ]
