@@ -1,10 +1,16 @@
 [user]
 	name = Milad Alizadeh
 	email = milad2k+git@gmail.com
+	signingKey = 45845BB2AA928EB7
 [color]
 	ui = auto
 [core]
 	editor = vim
 	pager = less
+	excludesfile = ~/.dotfiles/gitignore_global
 [push]
 	default = simple
+[commit]
+	gpgSign = true
+[gpg]
+	program = /usr/local/bin/gpg2
