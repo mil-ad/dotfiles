@@ -11,8 +11,7 @@ antigen bundle command-not-found
 
 antigen bundle wd
 antigen bundle sublime
-antigen bundle colored-man
-antigen bundle sublime
+antigen bundle colored-man-pages
 antigen bundle docker
 antigen bundle aws
 
