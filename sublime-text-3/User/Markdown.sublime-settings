@@ -1,3 +1,8 @@
 {
-	"color_scheme": "Packages/Colorsublime - Themes/Birds_of_Paradise.tmTheme"
+	"color_scheme": "Packages/MarkdownEditing/MarkdownEditor-ArcDark.tmTheme",
+	"extensions":
+	[
+		"md",
+		"mdown"
+	]
 }

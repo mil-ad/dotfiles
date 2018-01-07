@@ -27,6 +27,8 @@
 		"Protobuf Syntax Hightlighting",
 		"SideBarEnhancements",
 		"SublimeCodeIntel",
+		"SublimeLinter",
+		"SublimeLinter-pycodestyle",
 		"Text Pastry",
 		"Wrap Plus"
 	]

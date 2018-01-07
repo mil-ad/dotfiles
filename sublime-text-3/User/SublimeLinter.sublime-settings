@@ -1,7 +1,6 @@
 {
 	"user":
 	{
-		"@disable": true,
 		"debug": false,
 		"delay": 0.25,
 		"error_color": "D02000",
@@ -9,7 +8,7 @@
 		"gutter_theme_excludes":
 		[
 		],
-		"lint_mode": "load/save",
+		"lint_mode": "background",
 		"linters":
 		{
 			"clang":
@@ -42,7 +41,20 @@
 			},
 			"pep8":
 			{
-				"@disable": true,
+				"@disable": false,
+				"args":
+				[
+				],
+				"excludes":
+				[
+				],
+				"ignore": "",
+				"max-line-length": null,
+				"select": ""
+			},
+			"pycodestyle":
+			{
+				"@disable": false,
 				"args":
 				[
 				],
@@ -93,6 +105,13 @@
 			"php": "html",
 			"python django": "python"
 		},
+		"tooltip_fontsize": "1rem",
+		"tooltip_theme": "Packages/SublimeLinter/tooltip-themes/Default/Default.tooltip-theme",
+		"tooltip_theme_excludes":
+		[
+		],
+		"tooltips": true,
+		"use_current_shell_path": false,
 		"warning_color": "DDB700",
 		"wrap_find": true
 	}

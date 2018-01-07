@@ -1,0 +1,4 @@
+{
+    // show a popup after comparison counting # of lines added/removed/total
+    "line_count_popup": false
+}
