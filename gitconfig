@@ -1,16 +1,22 @@
 [user]
-	name = Milad Alizadeh
-	email = milad2k+git@gmail.com
-	signingKey = 45845BB2AA928EB7
+    name = Milad Alizadeh
+    email = milad2k+git@gmail.com
+    signingKey = 45845BB2AA928EB7
 [color]
-	ui = auto
+    ui = auto
 [core]
-	editor = vim
-	pager = less
-	excludesfile = ~/.dotfiles/gitignore_global
+    editor = vim
+    pager = less
+    excludesfile = ~/.dotfiles/gitignore_global
 [push]
-	default = simple
+    default = simple
 [commit]
-	gpgSign = true
+    gpgSign = true
 [gpg]
-	program = /usr/local/bin/gpg2
+    program = /usr/local/bin/gpg2
+[diff]
+    tool = p4merge
+[difftool]
+    prompt = false
+[difftool "p4merge"]
+    cmd = /Applications/p4merge.app/Contents/Resources/launchp4merge "\"$LOCAL\"" "\"$REMOTE    \""
