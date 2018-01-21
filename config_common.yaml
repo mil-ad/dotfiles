@@ -33,4 +33,5 @@
 
 - shell:
         - [git submodule update --init --recursive, Installing/Updating submodules]
+        - [curl -L git.io/antigen > antigen.zsh, Installing Antigen]
 
