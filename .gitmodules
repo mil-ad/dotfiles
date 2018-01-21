@@ -1,9 +1,6 @@
 [submodule "dotbot"]
 	path = dotbot
 	url = https://github.com/anishathalye/dotbot
-[submodule "oh-my-zsh"]
-	path = oh-my-zsh
-	url = https://github.com/mi-lad/oh-my-zsh
 [submodule "powerline_fonts"]
 	path = powerline_fonts
 	url = https://github.com/mi-lad/powerline_fonts.git
