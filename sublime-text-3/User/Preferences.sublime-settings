@@ -1,63 +1,63 @@
 {
-	"added_words":
-	[
-		"setup",
-		"srand",
-		"timeout",
-		"min",
-		"max",
-		"ok",
-		"enum",
-		"inline",
-		"metadata",
-		"convolutional",
-		"Bayes",
-		"1x1",
-		"conv",
-		"backprop",
-		"binarised"
-	],
-	"always_show_minimap_viewport": true,
-	"auto_indent": true,
-	"bold_folder_labels": true,
-	"caret_style": "phase",
-	"color_scheme": "Packages/User/SublimeLinter/Dracula (SL).tmTheme",
-	"convert_tabspaces_on_save": true,
-	"detect_indentation": false,
-	"dictionary": "Packages/Language - English/en_US.dic",
-	"draw_white_space": "all",
-	"ensure_newline_at_eof_on_save": true,
-	"font_face": "IBM Plex Mono Medium",
-	"font_size": 14,
-	"highlight_line": true,
-	"highlight_modified_tabs": true,
-	"ignored_packages":
-	[
-		"Markdown",
-		"Vintage"
-	],
-	"indent_guide_options":
-	[
-		"draw_normal",
-		"draw_active"
-	],
-	"indent_to_bracket": true,
-	"overlay_scroll_bars": "enabled",
-	"rulers":
-	[
-		79,
-		119
-	],
-	"shift_tab_unindent": true,
-	"show_line_endings": true,
-	"smart_indent": true,
-	"tab_completion": false,
-	"tab_size": 4,
-	"theme": "Default.sublime-theme",
-	"translate_tabs_to_spaces": true,
-	"trim_automatic_white_space": true,
-	"trim_trailing_white_space_on_save": true,
-	"use_tab_stops": true,
-	"wide_caret": true,
-	"wrap_width": 79
+    "added_words":
+    [
+        "setup",
+        "srand",
+        "timeout",
+        "min",
+        "max",
+        "ok",
+        "enum",
+        "inline",
+        "metadata",
+        "convolutional",
+        "Bayes",
+        "1x1",
+        "conv",
+        "backprop",
+        "binarised"
+    ],
+    "always_show_minimap_viewport": true,
+    "auto_indent": true,
+    "bold_folder_labels": true,
+    "caret_style": "phase",
+    "color_scheme": "Packages/User/SublimeLinter/Dracula (SL).tmTheme",
+    "convert_tabspaces_on_save": true,
+    "detect_indentation": false,
+    "dictionary": "Packages/Language - English/en_US.dic",
+    "ensure_newline_at_eof_on_save": true,
+    "font_face": "IBM Plex Mono Medium",
+    "font_size": 14,
+    "highlight_line": true,
+    "highlight_modified_tabs": true,
+    "ignored_packages":
+    [
+        "Markdown",
+        "Vintage"
+    ],
+    "indent_guide_options":
+    [
+        "draw_normal",
+        "draw_active"
+    ],
+    "indent_to_bracket": true,
+    "overlay_scroll_bars": "enabled",
+    "rulers":
+    [
+        79,
+        119
+    ],
+    "shift_tab_unindent": true,
+    "show_line_endings": true,
+    "smart_indent": true,
+    "tab_completion": false,
+    "tab_size": 4,
+    "theme": "Default.sublime-theme",
+    "draw_white_space": "all",
+    "translate_tabs_to_spaces": true,
+    "trim_automatic_white_space": true,
+    "trim_trailing_white_space_on_save": true,
+    "use_tab_stops": true,
+    "wide_caret": true,
+    "wrap_width": 79
 }
