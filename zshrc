@@ -16,8 +16,7 @@ antigen bundle docker
 antigen bundle aws
 
 # Load the theme.
-# antigen theme refined
-antigen theme agnoster
+antigen theme refined
 
 # Tell Antigen that you're done.
 antigen apply
