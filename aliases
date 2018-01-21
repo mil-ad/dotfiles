@@ -39,3 +39,5 @@ alias weather='curl wttr.in/Oxford'
 alias difffolders='diff -rq'
 
 alias jn='jupyter notebook'
+
+alias ezshrc='st ~/.zshrc'
