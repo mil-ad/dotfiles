@@ -1,8 +1,8 @@
 {
-	"color_scheme": "Packages/MarkdownEditing/MarkdownEditor-ArcDark.tmTheme",
-	"extensions":
-	[
-		"md",
-		"mdown"
-	]
+    // "color_scheme": "Packages/MarkdownEditing/MarkdownEditor-ArcDark.tmTheme",
+    "extensions":
+    [
+        "md",
+        "mdown"
+    ]
 }
