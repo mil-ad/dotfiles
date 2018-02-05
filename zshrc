@@ -15,8 +15,9 @@ antigen bundle colored-man-pages
 antigen bundle docker
 antigen bundle aws
 
-# Load the theme.
-antigen theme refined
+# Pure prompt
+antigen bundle mafredri/zsh-async
+antigen bundle sindresorhus/pure
 
 # Tell Antigen that you're done.
 antigen apply
