@@ -1,1 +1,4 @@
 export EDITOR=vim
+
+# TODO: Maybe make this Mac only
+export LSCOLORS=Exfxcxdxbxegedabagacad
