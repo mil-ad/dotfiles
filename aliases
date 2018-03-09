@@ -29,7 +29,7 @@ alias g='grep -r -i'
 alias cal='cal -3'
 alias tmux="tmux -2"
 alias df='df -h'
-alias du='du -h --max-depth 2'
+alias du='du -h'
 
 # Copied from http://askubuntu.com/questions/2389/generating-list-of-manually-installed-packages-and-querying-individual-packages
 alias mypackages="comm -23 <(apt-mark showmanual | sort -u) <(gzip -dc /var/log/installer/initial-status.gz | sed -n 's/^Package: //p' | sort -u)"
