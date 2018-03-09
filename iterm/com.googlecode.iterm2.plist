@@ -2806,7 +2806,7 @@
 	<key>NSColorPickerPreferredRGBEntryMode</key>
 	<integer>2</integer>
 	<key>NSFontPanelAttributes</key>
-	<string>1, 9</string>
+	<string>1, 7</string>
 	<key>NSNavLastRootDirectory</key>
 	<string>~/Downloads</string>
 	<key>NSNavPanelExpandedSizeForOpenMode</key>
@@ -2853,9 +2853,9 @@
 		<integer>1</integer>
 	</dict>
 	<key>NSWindow Frame NSColorPanel</key>
-	<string>492 177 228 280 0 0 1680 1028 </string>
+	<string>492 141 228 280 0 0 1680 1028 </string>
 	<key>NSWindow Frame NSFontPanel</key>
-	<string>803 88 817 727 0 0 1680 1050 </string>
+	<string>690 161 817 325 0 0 1680 1028 </string>
 	<key>NSWindow Frame ProfilesPanel</key>
 	<string>101 531 735 382 0 0 1680 1028 </string>
 	<key>NSWindow Frame SUUpdateAlert</key>
@@ -2863,11 +2863,11 @@
 	<key>NSWindow Frame SessionsPreferences</key>
 	<string>269 139 606 456 0 0 1680 1028 </string>
 	<key>NSWindow Frame SharedPreferences</key>
-	<string>586 647 918 381 0 0 1680 1028 </string>
+	<string>675 322 918 381 0 0 1680 1028 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>271 67 1210 706 0 0 1680 1028 </string>
+	<string>84 93 1362 886 0 0 1680 1028 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
-	<string>591 878 1072 134 0 0 1680 1028 </string>
+	<string>114 51 1210 906 0 0 1680 1028 </string>
 	<key>NSWindow Frame iTerm Window 2</key>
 	<string>47 17 1210 684 0 0 1680 1028 </string>
 	<key>NSWindow Frame iTerm Window 3</key>
@@ -2973,12 +2973,16 @@
 			</dict>
 			<key>Ansi 4 Color</key>
 			<dict>
+				<key>Alpha Component</key>
+				<real>1</real>
 				<key>Blue Component</key>
-				<real>0.73333334922790527</real>
+				<real>0.78216177225112915</real>
+				<key>Color Space</key>
+				<string>sRGB</string>
 				<key>Green Component</key>
-				<real>0.0</real>
+				<real>0.14576995372772217</real>
 				<key>Red Component</key>
-				<real>0.0</real>
+				<real>0.0096152340993285179</real>
 			</dict>
 			<key>Ansi 5 Color</key>
 			<dict>
@@ -3470,6 +3474,8 @@
 		<dict>
 			<key>ASCII Anti Aliased</key>
 			<true/>
+			<key>ASCII Ligatures</key>
+			<false/>
 			<key>Ambiguous Double Width</key>
 			<false/>
 			<key>Ansi 0 Color</key>
@@ -3607,13 +3613,13 @@
 				<key>Alpha Component</key>
 				<real>1</real>
 				<key>Blue Component</key>
-				<real>0.99877303838729858</real>
+				<real>1</real>
 				<key>Color Space</key>
-				<string>Calibrated</string>
+				<string>sRGB</string>
 				<key>Green Component</key>
-				<real>0.72887319326400757</real>
+				<real>0.7803921568627451</real>
 				<key>Red Component</key>
-				<real>0.28794747591018677</real>
+				<real>0.3411764705882353</real>
 			</dict>
 			<key>Ansi 5 Color</key>
 			<dict>
@@ -4129,7 +4135,7 @@
 			<key>Non-ASCII Anti Aliased</key>
 			<false/>
 			<key>Normal Font</key>
-			<string>RobotoMonoForPowerline-Medium 14</string>
+			<string>IBMPlexMonoNerdFontCM-SemiBold 14</string>
 			<key>Open Toolbelt</key>
 			<false/>
 			<key>Option Key Sends</key>
@@ -4184,8 +4190,12 @@
 			<array/>
 			<key>Terminal Type</key>
 			<string>xterm-256color</string>
+			<key>Thin Strokes</key>
+			<integer>4</integer>
 			<key>Transparency</key>
 			<real>0.0</real>
+			<key>Unicode Version</key>
+			<integer>8</integer>
 			<key>Unlimited Scrollback</key>
 			<false/>
 			<key>Use Bold Font</key>
@@ -4212,12 +4222,14 @@
 			<string>/Users/milad</string>
 		</dict>
 	</array>
+	<key>NoSyncHaveWarnedAboutIncompatibleSoftware</key>
+	<true/>
 	<key>NoSyncHaveWarnedAboutPasteConfirmationChange</key>
 	<true/>
 	<key>NoSyncInstallationId</key>
 	<string>F096B739-9000-4EA8-82B3-8A23E50594CC</string>
 	<key>NoSyncLastTipTime</key>
-	<real>539443795.68344498</real>
+	<real>542071501.04252601</real>
 	<key>NoSyncNeverRemindPrefsChangesLostForFile</key>
 	<true/>
 	<key>NoSyncNeverRemindPrefsChangesLostForFile_selection</key>
@@ -4274,10 +4286,16 @@
 		<string>0042</string>
 		<string>0043</string>
 		<string>0044</string>
+		<string>0045</string>
+		<string>0046</string>
+		<string>0047</string>
+		<string>0047</string>
 	</array>
 	<key>OpenArrangementAtStartup</key>
 	<false/>
 	<key>OpenNoWindowsAtStartup</key>
+	<false/>
+	<key>PMPrintingExpandedStateForPrint2</key>
 	<false/>
 	<key>PointerActions</key>
 	<dict>
@@ -4314,6 +4332,8 @@
 	</dict>
 	<key>PrefsCustomFolder</key>
 	<string>/Users/milad/Developer/dotfiles/iterm</string>
+	<key>Print In Black And White</key>
+	<true/>
 	<key>SUEnableAutomaticChecks</key>
 	<true/>
 	<key>SUFeedAlternateAppNameKey</key>
@@ -4323,7 +4343,7 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2018-02-09T11:32:13Z</date>
+	<date>2018-03-06T11:17:28Z</date>
 	<key>SUSendProfileInfo</key>
 	<false/>
 	<key>ShowBookmarkName</key>
