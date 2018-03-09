@@ -27,6 +27,8 @@
 		"SideBarEnhancements",
 		"Smart Title Case",
 		"SublimeCodeIntel",
+		"SublimeLinter",
+		"SublimeLinter-pycodestyle",
 		"Text Pastry",
 		"WordCount",
 		"Wrap Plus"
