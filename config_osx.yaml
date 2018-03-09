@@ -10,10 +10,15 @@
         path: sublime-text-3/Installed Packages/
         force: true
 
-#- shell:
-#    -
-#        - ruby -e \"$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)\"
-#        - "Installing Homebrew"
-#    -
-#        - brew install caskroom/cask/brew-cask
-#        - "Installing homebrew-cask"
+# TODO: Checkout https://gist.github.com/garethrees/2470157
+# TODO: Remind me why you're not using a simple bash script?
+
+- shell:
+    # - [defaults write com.apple.Dock autohide-delay -float 0 && killall Dock, Remove the delay for Auto-Hide & Auto-Show of Dock]
+    # - [defaults write com.apple.dock autohide-time-modifier -int 0;killall Dock, Remove dock animation]
+    # - [defaults write NSGlobalDomain NSTableViewDefaultSizeMode -int 1, Set sidebar icon size to small"]
+    # - [defaults write -g ApplePressAndHoldEnabled -bool false, Enable key repeat]
+
+# install homebrew
+# autoenv
+# disable notifications in the lock screen
