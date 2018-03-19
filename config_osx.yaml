@@ -12,6 +12,7 @@
 
 # TODO: Checkout https://gist.github.com/garethrees/2470157
 # TODO: Remind me why you're not using a simple bash script?
+# TODO: Turn off dashboard: defaults write com.apple.dashboard mcx-disabled -boolean TRUE; killall Dock
 
 - shell:
     # - [defaults write com.apple.Dock autohide-delay -float 0 && killall Dock, Remove the delay for Auto-Hide & Auto-Show of Dock]
