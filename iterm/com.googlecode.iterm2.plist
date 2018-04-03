@@ -2806,7 +2806,7 @@
 	<key>NSColorPickerPreferredRGBEntryMode</key>
 	<integer>2</integer>
 	<key>NSFontPanelAttributes</key>
-	<string>1, 7</string>
+	<string>1, 0</string>
 	<key>NSNavLastRootDirectory</key>
 	<string>~/Downloads</string>
 	<key>NSNavPanelExpandedSizeForOpenMode</key>
@@ -2855,7 +2855,7 @@
 	<key>NSWindow Frame NSColorPanel</key>
 	<string>492 141 228 280 0 0 1680 1028 </string>
 	<key>NSWindow Frame NSFontPanel</key>
-	<string>690 161 817 325 0 0 1680 1028 </string>
+	<string>737 111 817 191 0 0 1680 1028 </string>
 	<key>NSWindow Frame ProfilesPanel</key>
 	<string>101 531 735 382 0 0 1680 1028 </string>
 	<key>NSWindow Frame SUUpdateAlert</key>
@@ -2863,9 +2863,9 @@
 	<key>NSWindow Frame SessionsPreferences</key>
 	<string>269 139 606 456 0 0 1680 1028 </string>
 	<key>NSWindow Frame SharedPreferences</key>
-	<string>675 322 918 381 0 0 1680 1028 </string>
+	<string>675 499 796 473 0 0 1680 1028 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>84 93 1362 886 0 0 1680 1028 </string>
+	<string>109 79 1210 786 0 0 1680 1028 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
 	<string>114 51 1210 906 0 0 1680 1028 </string>
 	<key>NSWindow Frame iTerm Window 2</key>
@@ -3453,7 +3453,7 @@
 			<key>Transparency</key>
 			<real>0.0</real>
 			<key>Unlimited Scrollback</key>
-			<false/>
+			<true/>
 			<key>Use Bold Font</key>
 			<true/>
 			<key>Use Bright Bold</key>
@@ -4194,6 +4194,8 @@
 			<integer>4</integer>
 			<key>Transparency</key>
 			<real>0.0</real>
+			<key>Unicode Normalization</key>
+			<integer>0</integer>
 			<key>Unicode Version</key>
 			<integer>8</integer>
 			<key>Unlimited Scrollback</key>
@@ -4229,7 +4231,7 @@
 	<key>NoSyncInstallationId</key>
 	<string>F096B739-9000-4EA8-82B3-8A23E50594CC</string>
 	<key>NoSyncLastTipTime</key>
-	<real>542071501.04252601</real>
+	<real>543343659.10507202</real>
 	<key>NoSyncNeverRemindPrefsChangesLostForFile</key>
 	<true/>
 	<key>NoSyncNeverRemindPrefsChangesLostForFile_selection</key>
@@ -4290,6 +4292,7 @@
 		<string>0046</string>
 		<string>0047</string>
 		<string>0047</string>
+		<string>0048</string>
 	</array>
 	<key>OpenArrangementAtStartup</key>
 	<false/>
@@ -4343,7 +4346,7 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2018-03-06T11:17:28Z</date>
+	<date>2018-03-27T00:45:30Z</date>
 	<key>SUSendProfileInfo</key>
 	<false/>
 	<key>ShowBookmarkName</key>

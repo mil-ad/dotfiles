@@ -5,16 +5,15 @@
 	],
 	"installed_packages":
 	[
-		"Alignment",
 		"AlignTab",
 		"All Autocomplete",
-		"ARM Assembly",
 		"BracketHighlighter",
-		"Caffe Prototxt Syntax",
+		"Clickable URLs",
 		"Colorsublime",
 		"Cscope",
 		"Dracula Color Scheme",
 		"Expand Tabs on Save",
+		"GitSavvy",
 		"LaTeXTools",
 		"Markdown Extended",
 		"Markdown Preview",
