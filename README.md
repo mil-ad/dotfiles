@@ -2,6 +2,8 @@
 
 dotfiles are how you personalize your system. These are mine (for Linux and macOS).
 
+ZSH (customised via [Antigen](http://antigen.sharats.me))
+
 Powered by [dotbot](https://github.com/anishathalye/dotbot/)
 
 ## Usage

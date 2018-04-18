@@ -25,6 +25,7 @@ antigen apply
 source ~/.dotfiles/aliases
 source ~/.dotfiles/exports
 source ~/.dotfiles/functions
+#source ~/.dotfiles/evals
 
 if [ -e .zshrc_private ]; then
     source .zshrc_private

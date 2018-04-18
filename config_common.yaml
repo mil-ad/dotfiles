@@ -1,36 +1,39 @@
 - clean: ['~']
 
 - link:
-        ~/.zshrc:
-                force: true
-                path: zshrc
-        ~/.vim:
-                force: true
-                path: vim/.vim/
-        ~/.vimrc:
-                force: true
-                path: vim/.vimrc
-        ~/.config/nvim:
-                force: true
-                path: vim/.vim/
-        ~/.config/nvim/init.vim:
-                force: true
-                path: vim/.vimrc
-        ~/.tmux.conf:
-                force: true
-                path: tmux.conf
-        ~/.gitconfig:
-                force: true
-                path: gitconfig
-        ~/.ctags:
-                force: true
-                path: ctags
-        ~/.colordiffrc:
-                force: true
-                path: colordiffrc
-        ~/.dotfiles: ''
+    ~/.zshrc:
+            force: true
+            path: zshrc
+    ~/.bashrc:
+            force: true
+            path: bashrc
+    ~/.vim:
+            force: true
+            path: vim/.vim/
+    ~/.vimrc:
+            force: true
+            path: vim/.vimrc
+    ~/.config/nvim:
+            force: true
+            path: vim/.vim/
+    ~/.config/nvim/init.vim:
+            force: true
+            path: vim/.vimrc
+    ~/.tmux.conf:
+            force: true
+            path: tmux.conf
+    ~/.gitconfig:
+            force: true
+            path: gitconfig
+    ~/.ctags:
+            force: true
+            path: ctags
+    ~/.colordiffrc:
+            force: true
+            path: colordiffrc
+    ~/.dotfiles: ''
 
 - shell:
-        - [git submodule update --init --recursive, Installing/Updating submodules]
-        - [curl -L git.io/antigen > antigen.zsh, Installing Antigen]
+    - [git submodule update --init --recursive, Installing/Updating submodules]
+    - [curl -L git.io/antigen > antigen.zsh, Installing Antigen]
 
