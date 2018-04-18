@@ -1,11 +1,16 @@
-# Milad's dotfiles
+# Milad's dotfiles 🐣
 
-Your dotfiles are how you personalize your system. These are mine.
+dotfiles are how you personalize your system. These are mine (for Linux and macOS).
 
-For Linux and Mac OS X.
+Powered by [dotbot](https://github.com/anishathalye/dotbot/)
 
-## What's Inside
-I use [dotbot](https://github.com/anishathalye/dotbot/) to bootstrap dotfiles on a new machine. 
+## Usage
+
+You can close this repo anywhere. It will create a symlink to itself in `~/.dotfiles`
 
 
-## Installation
+```bash
+git clone https://github.com/mi-lad/dotfiles
+cd dotfiles
+./install.sh
+```
