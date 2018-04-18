@@ -21,8 +21,6 @@ alias gl='git log -n 4 --stat --graph --decorate=full --date=relative'
 # Copied from https://github.com/holman/dotfiles/blob/master/git/aliases.zsh:
 alias glog="git log --graph --pretty=format:'%Cred%h%Creset %an: %s - %Creset %C(yellow)%d%Creset %Cgreen(%cr)%Creset' --abbrev-commit --date=relative"
 
-alias dk='docker'
-
 alias more="less"
 alias vi="vim"
 alias g='grep -r -i'
@@ -43,3 +41,5 @@ alias difffolders='diff -rq'
 alias jn='jupyter notebook'
 
 alias ezshrc='st ~/.zshrc'
+
+alias condarm='conda env remove --name'
