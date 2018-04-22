@@ -13,7 +13,7 @@ antigen bundle wd
 antigen bundle sublime
 antigen bundle colored-man-pages
 antigen bundle docker
-antigen bundle aws
+#antigen bundle aws
 
 # Pure prompt
 antigen bundle mafredri/zsh-async
@@ -25,7 +25,7 @@ antigen apply
 source ~/.dotfiles/aliases
 source ~/.dotfiles/exports
 source ~/.dotfiles/functions
-#source ~/.dotfiles/evals
+source ~/.dotfiles/evals
 
 if [ -e .zshrc_private ]; then
     source .zshrc_private
