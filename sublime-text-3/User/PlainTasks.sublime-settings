@@ -1,6 +1,5 @@
 {
-
-  // "color_scheme": "Packages/PlainTasks/tasks.hidden-tmTheme",
+    // "color_scheme": "Packages/PlainTasks/tasks.hidden-tmTheme",
     // other bundled schemes:
     // "color_scheme": "Packages/PlainTasks/tasks-dark.hidden-tmTheme",
     // "color_scheme": "Packages/PlainTasks/tasks-eighties-colored.hidden-tmTheme",
@@ -10,12 +9,11 @@
     //"color_scheme": "Packages/PlainTasks/tasks-solarized-dark.hidden-tmTheme",
     //"color_scheme": "Packages/PlainTasks/tasks-solarized-light.hidden-tmTheme",
 
-
   "open_tasks_bullet": "[ ]", // options: - | ❍ | ❑ | ■ | □ | ☐ | ▪ | ▫ | – | — | ≡ | → | › | [ ]
   "done_tasks_bullet": "[x]", // options: + | ✓ | ✔ | √ | [x]
   "cancelled_tasks_bullet": "[-]", // options: x | ✘ | [-]
-  "margin": 4,
-  "tab_size": 8,
+  "margin": 0,
+  "tab_size": 4,
   "draw_indent_guides": false,
   "taskpaper_compatible": true
 }
