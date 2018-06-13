@@ -82,6 +82,7 @@ set tags=./tags;
 set t_Co=256
 "let base16colorspace=256
 set background=dark
+let g:gruvbox_contrast_dark='hard'
 colorscheme gruvbox 
 
 " Key mappings
