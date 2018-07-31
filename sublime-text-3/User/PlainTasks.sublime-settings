@@ -5,9 +5,10 @@
     // "color_scheme": "Packages/PlainTasks/tasks-eighties-colored.hidden-tmTheme",
     // "color_scheme": "Packages/PlainTasks/tasks-eighties-dark.hidden-tmTheme",
     // "color_scheme": "Packages/PlainTasks/tasks-gray.hidden-tmTheme",
-    "color_scheme": "Packages/PlainTasks/tasks-monokai.hidden-tmTheme",
     //"color_scheme": "Packages/PlainTasks/tasks-solarized-dark.hidden-tmTheme",
     //"color_scheme": "Packages/PlainTasks/tasks-solarized-light.hidden-tmTheme",
+    // "color_scheme": "Packages/PlainTasks/tasks-monokai.hidden-tmTheme",
+    "color_scheme": "Packages/gruvbox/gruvbox (Dark) (Medium).tmTheme",
 
   "open_tasks_bullet": "[ ]", // options: - | ❍ | ❑ | ■ | □ | ☐ | ▪ | ▫ | – | — | ≡ | → | › | [ ]
   "done_tasks_bullet": "[x]", // options: + | ✓ | ✔ | √ | [x]
