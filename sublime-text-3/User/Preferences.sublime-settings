@@ -20,12 +20,15 @@
 		"placeholders",
 		"Dropout",
 		"placeholder",
-		"stdout"
+		"stdout",
+		"wearables"
 	],
 	"always_show_minimap_viewport": true,
 	"auto_indent": true,
 	"bold_folder_labels": true,
+	"caret_extra_width": 2,
 	"caret_style": "phase",
+	"close_windows_when_empty": true,
 	"color_scheme": "Packages/gruvbox/gruvbox (Dark) (Medium).tmTheme",
 	"convert_tabspaces_on_save": true,
 	"detect_indentation": false,
@@ -33,7 +36,7 @@
 	"draw_white_space": "all",
 	"ensure_newline_at_eof_on_save": true,
 	"font_face": "IBM Plex Mono Medium",
-	"font_size": 12,
+	"font_size": 18,
 	"highlight_line": true,
 	"highlight_modified_tabs": true,
 	"ignored_packages":
@@ -49,8 +52,8 @@
 	"overlay_scroll_bars": "enabled",
 	"rulers":
 	[
-		79,
-		119
+		80,
+		120
 	],
 	"shift_tab_unindent": true,
 	"show_line_endings": true,
@@ -63,5 +66,5 @@
 	"trim_trailing_white_space_on_save": true,
 	"use_tab_stops": true,
 	"wide_caret": true,
-	"wrap_width": 79
+	"wrap_width": 120
 }
