@@ -15,8 +15,10 @@
 [gpg]
     program = /usr/local/bin/gpg2
 [diff]
-    tool = p4merge
+    tool = icdiff
 [difftool]
     prompt = false
 [difftool "p4merge"]
     cmd = /Applications/p4merge.app/Contents/Resources/launchp4merge "\"$LOCAL\"" "\"$REMOTE    \""
+[difftool "icdiff"]
+      cmd = icdiff --line-numbers $LOCAL $REMOTE
