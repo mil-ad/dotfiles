@@ -434,7 +434,7 @@
     // "no_warnings" (only hide the panel if no warnings occur)
     // "no_badboxes" (only hide the panel if no badbox messages occur when badboxes are enabled) and
     // "never" (default, never hide the build panel)
-    "hide_build_panel": "no_badboxes",
+    "hide_build_panel": "no_errors",
 
     // OPTION: "display_bad_boxes"
     // controls whether or not to display any bad boxes in the build output
@@ -484,7 +484,7 @@
     //                  Windows
     //
     // "zathura"        uses Zathura to open the pdf
-    "viewer": "preview",
+    "viewer": "command",
 
     // OPTION: "viewer_settings"
     // Specify viewer-dependent settings and preferences
@@ -494,7 +494,7 @@
     "viewer_settings": {
         // Platform-specific settings:
         "osx" : {
-            // See README or third-party documentation
+            "view_command": "open -a PDFExpert"
         },
 
         "windows" : {
@@ -516,7 +516,7 @@
     // if set to true, this will stop LaTeXTools from attempting to steal focus
     // from the viewer. NOTE: This does not mean that the *viewer* won't steal
     // the focus, only that LaTeXTools won't try to steal the focus back.
-    "disable_focus_hack": false,
+    "disable_focus_hack": true,
 
 // ------------------------------------------------------------------
 // Opening files included into the tex source code
