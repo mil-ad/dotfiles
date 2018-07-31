@@ -21,5 +21,6 @@
     # - [defaults write -g ApplePressAndHoldEnabled -bool false, Enable key repeat]
 
 # install homebrew
-# autoenv
+# autoenv?
 # disable notifications in the lock screen
+# install MMD-QuickLook
