@@ -22,3 +22,25 @@
     cmd = /Applications/p4merge.app/Contents/Resources/launchp4merge "\"$LOCAL\"" "\"$REMOTE    \""
 [difftool "icdiff"]
       cmd = icdiff --line-numbers $LOCAL $REMOTE
+[filter "lfs"]
+    required = true
+    clean = git-lfs clean -- %f
+    smudge = git-lfs smudge -- %f
+    process = git-lfs filter-process
+[alias]
+    wdiff = diff --color-words
+[color "status"]
+    added = yellow
+    changed = green
+    untracked = magenta
+[color "diff"]
+    meta = yellow bold
+    frag = magenta bold
+    old = red reverse
+    new = green reverse
+    # old = red bold
+    # new = green bold
+[color "branch"]
+    current = yellow reverse
+    local = yellow
+    remote = green
