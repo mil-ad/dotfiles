@@ -10,11 +10,11 @@
     // "color_scheme": "Packages/PlainTasks/tasks-monokai.hidden-tmTheme",
     "color_scheme": "Packages/gruvbox/gruvbox (Dark) (Medium).tmTheme",
 
-  "open_tasks_bullet": "[ ]", // options: - | ❍ | ❑ | ■ | □ | ☐ | ▪ | ▫ | – | — | ≡ | → | › | [ ]
-  "done_tasks_bullet": "[x]", // options: + | ✓ | ✔ | √ | [x]
-  "cancelled_tasks_bullet": "[-]", // options: x | ✘ | [-]
-  "margin": 0,
-  "tab_size": 4,
-  "draw_indent_guides": false,
-  "taskpaper_compatible": true
+    "open_tasks_bullet": "[ ]", // options: - | ❍ | ❑ | ■ | □ | ☐ | ▪ | ▫ | – | — | ≡ | → | › | [ ]
+    "done_tasks_bullet": "[x]", // options: + | ✓ | ✔ | √ | [x]
+    "cancelled_tasks_bullet": "[-]", // options: x | ✘ | [-]
+    "margin": 0,
+    "tab_size": 4,
+    "draw_indent_guides": false,
+    "taskpaper_compatible": true
 }
