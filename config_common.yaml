@@ -15,7 +15,7 @@
             path: vim/.vim/
     ~/.vimrc:
             force: true
-            path: vim/.vimrc
+            path: vim/vimrc
     ~/.config/nvim:
             force: true
             path: vim/.vim/
