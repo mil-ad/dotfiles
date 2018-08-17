@@ -1,20 +1,13 @@
 {
-    // "color_scheme": "Packages/PlainTasks/tasks.hidden-tmTheme",
-    // other bundled schemes:
-    // "color_scheme": "Packages/PlainTasks/tasks-dark.hidden-tmTheme",
-    // "color_scheme": "Packages/PlainTasks/tasks-eighties-colored.hidden-tmTheme",
-    // "color_scheme": "Packages/PlainTasks/tasks-eighties-dark.hidden-tmTheme",
-    // "color_scheme": "Packages/PlainTasks/tasks-gray.hidden-tmTheme",
-    // "color_scheme": "Packages/PlainTasks/tasks-solarized-dark.hidden-tmTheme",
-    // "color_scheme": "Packages/PlainTasks/tasks-solarized-light.hidden-tmTheme",
-    // "color_scheme": "Packages/PlainTasks/tasks-monokai.hidden-tmTheme",
     "color_scheme": "Packages/gruvbox/gruvbox (Dark) (Medium).tmTheme",
-
     "open_tasks_bullet": "[ ]", // options: - | ❍ | ❑ | ■ | □ | ☐ | ▪ | ▫ | – | — | ≡ | → | › | [ ]
     "done_tasks_bullet": "[x]", // options: + | ✓ | ✔ | √ | [x]
     "cancelled_tasks_bullet": "[-]", // options: x | ✘ | [-]
     "margin": 0,
-    "tab_size": 4,
+    "tab_size": 2,
     "draw_indent_guides": false,
-    "taskpaper_compatible": true
+    // "taskpaper_compatible": true
+    "show_remain_due": false,
+    "draw_white_space": "selection",
+    "highlight_line": false,
 }
