@@ -12,7 +12,7 @@ module.exports = {
     fontSize: 20,
 
     // font family with optional fallbacks
-    fontFamily: '"IBM Plex Mono", "Meslo LG L DZ for Powerline", "Roboto Mono for Powerline", Menlo, "DejaVu Sans Mono", Consolas, "Lucida Console", monospace',
+    fontFamily: 'IBMPlexMono-SemiBold, Consolas, "Meslo LG L DZ for Powerline", "Roboto Mono for Powerline", Menlo, "DejaVu Sans Mono", "Lucida Console", monospace',
 
     // terminal cursor background color and opacity (hex, rgb, hsl, hsv, hwb or cmyk)
     cursorColor: 'rgba(248,28,229,0.8)',
@@ -112,6 +112,7 @@ module.exports = {
       style: 'dark', // or 'light'
       contrast: 'hard' // or 'normal', soft', 'hard'
     },
+
   },
 
   // a list of plugins to fetch and install from npm
@@ -120,7 +121,7 @@ module.exports = {
   //   `hyperpower`
   //   `@company/project`
   //   `project#1.0.1`
-  plugins: ['hyper-search', "hyperterm-gruvbox"],
+  plugins: ['hyper-search', "hyperterm-gruvbox", "hyper-tabs-enhanced"],
 
 
   // in development, you can create a directory under

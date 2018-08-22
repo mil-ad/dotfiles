@@ -122,3 +122,6 @@ let g:tagbar_sort = 0	" Sort based on their order in the file
 
 set rtp+=~/.fzf
 let $FZF_DEFAULT_COMMAND='ag -g ""'
+
+command! -bar -bang Q quit<bang>
+

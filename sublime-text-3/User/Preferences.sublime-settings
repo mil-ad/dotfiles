@@ -37,8 +37,8 @@
 	"dictionary": "Packages/Language - English/en_GB.dic",
 	"draw_white_space": "all",
 	"ensure_newline_at_eof_on_save": true,
-	"font_face": "IBM Plex Mono Medium",
-	"font_size": 18,
+	"font_face": "IBM Plex Mono Semibold",
+	"font_size": 13,
 	"highlight_line": true,
 	"highlight_modified_tabs": true,
 	"ignored_packages":
@@ -54,8 +54,8 @@
 	"overlay_scroll_bars": "enabled",
 	"rulers":
 	[
-		80,
-		120
+		81,
+		121
 	],
 	"shift_tab_unindent": true,
 	"show_line_endings": true,

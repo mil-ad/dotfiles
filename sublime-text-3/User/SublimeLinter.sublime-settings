@@ -1,0 +1,8 @@
+// SublimeLinter Settings - User
+{
+    "linters": {
+        "pycodestyle": {
+            "max-line-length": 120,
+        }
+    },
+}

@@ -13,11 +13,11 @@ antigen bundle wd
 antigen bundle sublime
 antigen bundle colored-man-pages
 antigen bundle docker
-#antigen bundle aws
 
 # Pure prompt
 antigen bundle mafredri/zsh-async
-antigen bundle sindresorhus/pure
+# antigen bundle sindresorhus/pure
+antigen bundle mi-lad/pure # My fork until the official repo fixes the conda prompt bug
 
 # Tell Antigen that you're done.
 antigen apply
