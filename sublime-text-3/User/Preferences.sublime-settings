@@ -23,7 +23,8 @@
 		"stdout",
 		"wearables",
 		"binarising",
-		"binarisation"
+		"binarisation",
+		"backpropagation"
 	],
 	"always_show_minimap_viewport": true,
 	"auto_indent": true,
@@ -38,7 +39,7 @@
 	"draw_white_space": "all",
 	"ensure_newline_at_eof_on_save": true,
 	"font_face": "IBM Plex Mono Semibold",
-	"font_size": 13,
+	"font_size": 15,
 	"highlight_line": true,
 	"highlight_modified_tabs": true,
 	"ignored_packages":

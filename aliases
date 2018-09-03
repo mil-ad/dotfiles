@@ -8,9 +8,16 @@ alias l='ls -lh'
 alias ll="ls -laHh"
 alias ldot='ls -ld .*'
 
-alias ack='ack-grep --ignore-case -C 2 --color-match="bold red" --ignore-dir=docs'
+alias g='grep -r -i'
 alias ag='ag --ignore-case -C 2 --color-match="1;31" --ignore-dir=docs'
 alias agp='ag --ignore-case -C 2 --color-match="1;31" --ignore-dir=docs --pager=less'
+
+alias more="less"
+alias vi="vim"
+alias cal='cal -3'
+alias tmux="tmux -2" # Force tmux to assume the terminal supports 256 colours
+alias df='df -h'
+alias du='du -h'
 
 alias ga='git add'
 alias gc='git commit'
@@ -20,14 +27,6 @@ alias gm='git merge'
 alias gl='git log -n 4 --stat --graph --decorate=full --date=relative'
 # Copied from https://github.com/holman/dotfiles/blob/master/git/aliases.zsh:
 alias glog="git log --graph --pretty=format:'%Cred%h%Creset %an: %s - %Creset %C(yellow)%d%Creset %Cgreen(%cr)%Creset' --abbrev-commit --date=relative"
-
-alias more="less"
-alias vi="vim"
-alias g='grep -r -i'
-alias cal='cal -3'
-alias tmux="tmux -2"
-alias df='df -h'
-alias du='du -h'
 
 # Copied from http://askubuntu.com/questions/2389/generating-list-of-manually-installed-packages-and-querying-individual-packages
 alias mypackages="comm -23 <(apt-mark showmanual | sort -u) <(gzip -dc /var/log/installer/initial-status.gz | sed -n 's/^Package: //p' | sort -u)"
