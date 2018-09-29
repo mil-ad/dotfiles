@@ -22,6 +22,7 @@ Plugin 'majutsushi/tagbar'
 Plugin 'nfvs/vim-perforce'
 Plugin 'junegunn/fzf.vim'
 Plugin 'morhetz/gruvbox'
+Plugin 'terryma/vim-multiple-cursors'
 
 " The following are examples of different formats supported.
 
