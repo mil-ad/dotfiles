@@ -58,7 +58,7 @@
 	"rulers":
 	[
 		81,
-		121
+		101
 	],
 	"shift_tab_unindent": true,
 	"show_line_endings": true,
@@ -71,5 +71,5 @@
 	"trim_trailing_white_space_on_save": true,
 	"use_tab_stops": true,
 	"wide_caret": true,
-	"wrap_width": 120
+	"wrap_width": 80
 }
