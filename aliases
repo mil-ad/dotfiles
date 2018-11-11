@@ -11,6 +11,7 @@ alias ldot='ls -ld .*'
 alias g='grep -r -i'
 alias ag='ag --ignore-case -C 2 --color-match="1;31" --ignore-dir=docs'
 alias agp='ag --ignore-case -C 2 --color-match="1;31" --ignore-dir=docs --pager=less'
+alias agf='ag -g'
 
 alias more="less"
 alias vi="vim"
