@@ -1,0 +1,16 @@
+{
+    "window.zoomLevel": 0,
+    "telemetry.enableTelemetry": false,
+    "editor.mouseWheelZoom": true,
+    "workbench.statusBar.feedback.visible": false,
+    "editor.fontFamily": "'IBMPlexMono-SemiBold', 'Courier New', Menlo, Monaco, monospace",
+    "editor.fontSize": 17,
+    "workbench.colorTheme": "Gruvbox Dark (Medium)",
+    
+    "[latex]": {
+        "editor.wordWrap": "on",
+    },
+    
+    "latex-workshop.view.pdf.viewer": "tab",
+    "latex-workshop.latex.outputDir": "./foo"
+}
