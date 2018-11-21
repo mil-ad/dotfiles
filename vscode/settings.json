@@ -8,9 +8,24 @@
     "workbench.colorTheme": "Gruvbox Dark (Medium)",
     
     "[latex]": {
-        "editor.wordWrap": "on",
+        "editor.wordWrap": "wordWrapColumn",
+        "editor.wordWrapColumn": 80,
+        "editor.rulers": []
     },
     
     "latex-workshop.view.pdf.viewer": "tab",
-    "latex-workshop.latex.outputDir": "./foo"
+    // "latex-workshop.latex.outputDir": "./_output",
+    "editor.multiCursorModifier": "ctrlCmd",
+    "editor.cursorBlinking": "phase",
+    "editor.rulers": [80, 120],
+    "editor.wordWrap": "wordWrapColumn",
+    "editor.wordWrapColumn": 80,
+
+    "gitlens.hovers.currentLine.over": "annotation",
+    "gitlens.currentLine.enabled": false,
+    "gitlens.hovers.annotations.enabled": false,
+    "gitlens.advanced.telemetry.enabled": false,
+
+    "cSpell.language": "en-GB",
+    "editor.wordBasedSuggestions": false,
 }
