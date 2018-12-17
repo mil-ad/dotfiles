@@ -34,6 +34,9 @@
     ~/.colordiffrc:
             force: true
             path: colordiffrc
+    ~/.tldrrc:
+            force: true
+            path: tldrrc
     ~/.dotfiles: ''
 
 - shell:
