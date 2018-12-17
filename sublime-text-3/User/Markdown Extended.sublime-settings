@@ -1,7 +1,8 @@
 {
-    "extensions":
-    [
-        "md",
-        "markdown"
-    ]
+	"extensions":
+	[
+		"md",
+		"markdown",
+		"rmd"
+	]
 }

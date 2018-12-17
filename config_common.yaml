@@ -37,6 +37,9 @@
     ~/.tldrrc:
             force: true
             path: tldrrc
+    ~/.pandoc:
+            force: true
+            path: pandorc
     ~/.dotfiles: ''
 
 - shell:
