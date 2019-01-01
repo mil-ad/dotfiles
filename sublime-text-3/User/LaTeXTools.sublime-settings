@@ -78,7 +78,7 @@
     // sublevel to show counts for
     // passed to texcount via the -sub= paramater
     // valid values: "none", "part", "chapter", "section"
-    "word_count_sub_level": "none",
+    "word_count_sub_level": "chapter",
 
 // ------------------------------------------------------------------
 // Preview settings

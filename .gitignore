@@ -8,9 +8,11 @@ sublime-text-3/Installed Packages/0_package_control_loader.sublime-package
 sublime-text-3/User/Package Control.last-run
 sublime-text-3/User/Package Control.merged-ca-bundle
 sublime-text-3/User/Package Control.user-ca-bundle
+
 sublime-text-3/User/Projects
+sublime-text-3/User/.SublimeREPLHistory
 sublime-text-3/User/TextPastryHistory.sublime-settings
 sublime-text-3/User/oscrypto-ca-bundle.crt
 
 .netrwhist
-/antigen.zsh
+antigen.zsh
