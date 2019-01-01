@@ -6,7 +6,7 @@
 
 - defaults:
     link:
-        force: true
+        relink: true
 
 - clean: ['~']
 
@@ -14,23 +14,22 @@
     ~/.zshrc: zshrc
     ~/.bashrc: bashrc
     ~/.hyper.js: hyper.js
-    ~/.vim: vim/.vim/
     ~/.vimrc: vim/vimrc
-    ~/.config/nvim:
-        create: true
-        path: vim/.vim/
     ~/.config/nvim/init.vim:
         create: true
-        path: vim/.vimrc
+        path: vim/vimrc
     ~/.tmux.conf: tmux.conf
     ~/.gitconfig: gitconfig
     ~/.ctags: ctags
     ~/.colordiffrc: colordiffrc
     ~/.tldrrc: tldrrc
-    ~/.pandoc: pandorc
+    ~/.pandoc:
+        create: true
+        path: pandoc
     ~/.dotfiles: ''
 
 - shell:
     - [git submodule update --init --recursive, Installing/Updating submodules]
     - [curl -L git.io/antigen > antigen.zsh, Installing Antigen]
+    - ["git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim", Cloning Vundle for vim]
 
