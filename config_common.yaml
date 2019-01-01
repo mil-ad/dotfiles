@@ -1,45 +1,33 @@
+# Options:
+# clean: Remove dead symbolic links that point to the dotfiles directory. Unless
+#        the force option is set to true.
+# relink: remove existing target but only if it's a symbolic link
+# force: remove existing target even if it's a file or directory
+
+- defaults:
+    link:
+        force: true
+
 - clean: ['~']
 
 - link:
-    ~/.zshrc:
-            force: true
-            path: zshrc
-    ~/.bashrc:
-            force: true
-            path: bashrc
-    ~/.hyper.js:
-            force: true
-            path: hyper.js
-    ~/.vim:
-            force: true
-            path: vim/.vim/
-    ~/.vimrc:
-            force: true
-            path: vim/vimrc
+    ~/.zshrc: zshrc
+    ~/.bashrc: bashrc
+    ~/.hyper.js: hyper.js
+    ~/.vim: vim/.vim/
+    ~/.vimrc: vim/vimrc
     ~/.config/nvim:
-            force: true
-            path: vim/.vim/
+        create: true
+        path: vim/.vim/
     ~/.config/nvim/init.vim:
-            force: true
-            path: vim/.vimrc
-    ~/.tmux.conf:
-            force: true
-            path: tmux.conf
-    ~/.gitconfig:
-            force: true
-            path: gitconfig
-    ~/.ctags:
-            force: true
-            path: ctags
-    ~/.colordiffrc:
-            force: true
-            path: colordiffrc
-    ~/.tldrrc:
-            force: true
-            path: tldrrc
-    ~/.pandoc:
-            force: true
-            path: pandorc
+        create: true
+        path: vim/.vimrc
+    ~/.tmux.conf: tmux.conf
+    ~/.gitconfig: gitconfig
+    ~/.ctags: ctags
+    ~/.colordiffrc: colordiffrc
+    ~/.tldrrc: tldrrc
+    ~/.pandoc: pandorc
     ~/.dotfiles: ''
 
 - shell:
