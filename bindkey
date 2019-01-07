@@ -1,0 +1,37 @@
+# [Home] - Go to beginning of line
+if [[ "${terminfo[khome]}" != "" ]]; then
+  bindkey "${terminfo[khome]}" beginning-of-line
+  bindkey -M vicmd "${terminfo[khome]}" beginning-of-line
+fi
+
+# [End] - Go to end of line
+if [[ "${terminfo[kend]}" != "" ]]; then
+  bindkey "${terminfo[kend]}"  end-of-line
+  bindkey -M vicmd "${terminfo[kend]}"  end-of-line
+fi
+
+# [Backspace] - delete backward
+bindkey -M vicmd '^?' backward-delete-char
+bindkey '^?' backward-delete-char
+
+# [Delete] - delete forward
+if [[ "${terminfo[kdch1]}" != "" ]]; then
+  bindkey "${terminfo[kdch1]}" delete-char
+  bindkey -M vicmd "${terminfo[kdch1]}" delete-char
+else
+  bindkey -M vicmd "^[[3~" delete-char
+  bindkey -M vicmd "^[3;5~" delete-char
+  bindkey -M vicmd "\e[3~" delete-char
+fi
+
+# [Insert] - Disabled
+bindkey -M vicmd '^[[2~' overwrite-mode
+bindkey '^[[2~' overwrite-mode
+
+# [F12] - Disabled
+bindkey -M vicmd '^[[24~' overwrite-mode
+bindkey '^[[24~' overwrite-mode
+
+# [Alt] + Arrow
+bindkey '^[b' backward-word
+bindkey '^[f' forward-word
