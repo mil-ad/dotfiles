@@ -1,0 +1,32 @@
+{
+    "python_interpreter": "~/Developer/anaconda3/envs/pytorch/bin/python",
+
+    "anaconda_linting": false,
+    "display_signatures": true,
+    "disable_anaconda_completion": false,
+
+    "enable_signatures_tooltip" : true,
+    // "enable_docstrings_tooltip": false,
+    // "merge_signatures_and_doc": true,
+    // "anaconda_tooltip_theme": "light",
+
+    // "anaconda_gutter_marks": false,
+    "anaconda_gutter_theme": "retina",
+    "anaconda_linter_mark_style": "squiggly_underline",
+    "anaconda_linter_phantoms": true,
+
+    "pep8_ignore":
+    [
+        "E309"
+    ],
+    "pep8_max_line_length": 30,
+
+
+    // Python's default completions
+    "suppress_word_completions": false,
+    "suppress_explicit_completions": false,
+
+    "complete_parameters": false, // auto-complete args
+    "complete_all_parameters": false,
+    "parameters_completion_on_keypress": true,
+}
