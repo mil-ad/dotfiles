@@ -3,9 +3,9 @@
     "telemetry.enableTelemetry": false,
     "editor.mouseWheelZoom": true,
     "workbench.statusBar.feedback.visible": false,
-    "editor.fontFamily": "'IBMPlexMono-SemiBold', 'Courier New', Menlo, Monaco, monospace",
+    "editor.fontFamily": "'IBMPlexMono-Bold', 'Courier New', Menlo, Monaco, monospace",
     "editor.fontSize": 17,
-    "workbench.colorTheme": "Gruvbox Dark (Hard)",
+    "workbench.colorTheme": "Gruvbox Dark (Medium)",
     
     "[latex]": {
         "editor.wordWrap": "wordWrapColumn",
@@ -28,9 +28,11 @@
 
     "cSpell.language": "en-GB",
     "editor.wordBasedSuggestions": false,
-    "workbench.iconTheme": "file-icons",
     "workbench.activityBar.visible": true,
     "editor.renderWhitespace": "all",
     "editor.renderControlCharacters": false,
     "workbench.statusBar.visible": true,
+    "editor.overviewRulerBorder": false,
+    "scm.diffDecorationsGutterWidth": 2,
+    "scm.diffDecorations": "gutter"
 }
