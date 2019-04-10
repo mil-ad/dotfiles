@@ -5,14 +5,14 @@
     "workbench.statusBar.feedback.visible": false,
     "editor.fontFamily": "'IBMPlexMono-Bold', 'Courier New', Menlo, Monaco, monospace",
     "editor.fontSize": 17,
-    "workbench.colorTheme": "Gruvbox Dark (Medium)",
-    
+    "workbench.colorTheme": "Shades of Purple",
+
     "[latex]": {
         "editor.wordWrap": "wordWrapColumn",
         "editor.wordWrapColumn": 80,
         "editor.rulers": []
     },
-    
+
     "latex-workshop.view.pdf.viewer": "tab",
     // "latex-workshop.latex.outputDir": "./_output",
     "editor.multiCursorModifier": "ctrlCmd",
@@ -34,5 +34,39 @@
     "workbench.statusBar.visible": true,
     "editor.overviewRulerBorder": false,
     "scm.diffDecorationsGutterWidth": 2,
-    "scm.diffDecorations": "gutter"
+    "scm.diffDecorations": "gutter",
+
+    // I don't like italics in comment blocks.
+    // https://stackoverflow.com/questions/43657779/is-there-a-way-to-italicize-comments-in-visual-studio-code/46278282#46278282
+    "editor.tokenColorCustomizations": {
+        "textMateRules": [
+          {
+            "name": "Comment",
+            "scope": [
+              "comment",
+              "comment.block",
+              "comment.block.documentation",
+              "comment.line",
+              "comment.line.double-slash",
+              "punctuation.definition.comment",
+            ],
+            "settings": {
+              "fontStyle": "",
+              // "fontStyle": "italic",
+              // "fontStyle": "italic underline",
+              // "fontStyle": "italic bold underline",
+            }
+          },
+        ]
+    },
+    "workbench.iconTheme": "ayu",
+    "diffEditor.ignoreTrimWhitespace": true,
+    "python.dataScience.sendSelectionToInteractiveWindow": true,
+
+    "git-graph.showStatusBarItem": false,
+    "files.trimTrailingWhitespace": true,
+    "explorer.decorations.colors": false,
+    "explorer.decorations.badges": false,
+    // "python.linting.pylintArgs": ["--generate-members"], # Seems to disable everything.
+
 }
