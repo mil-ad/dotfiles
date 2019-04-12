@@ -13,6 +13,7 @@
 		"ayu",
 		"BracketHighlighter",
 		"Clickable URLs",
+		"Compare Side-By-Side",
 		"Cscope",
 		"Dracula Color Scheme",
 		"Expand Tabs on Save",
@@ -38,6 +39,7 @@
 		"SublimeLinter",
 		"SublimeLinter-chktex",
 		"SublimeLinter-pycodestyle",
+		"SublimeLinter-pylint",
 		"Text Pastry",
 		"WordCount",
 		"Wrap Plus"
