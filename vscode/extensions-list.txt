@@ -1,0 +1,11 @@
+ahmadawais.shades-of-purple
+alefragnani.project-manager
+fabiospampinato.vscode-todo-plus
+James-Yu.latex-workshop
+mhutchie.git-graph
+ms-python.python
+PeterJausovec.vscode-docker
+sleistner.vscode-fileutils
+stkb.rewrap
+streetsidesoftware.code-spell-checker
+teabyii.ayu

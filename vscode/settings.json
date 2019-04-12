@@ -3,7 +3,7 @@
     "telemetry.enableTelemetry": false,
     "editor.mouseWheelZoom": true,
     "workbench.statusBar.feedback.visible": false,
-    "editor.fontFamily": "'IBMPlexMono-Bold', 'Courier New', Menlo, Monaco, monospace",
+    "editor.fontFamily": "'IBMPlexMono-Bold', 'Courier New', Menlo",
     "editor.fontSize": 17,
     "workbench.colorTheme": "Shades of Purple",
 
@@ -17,8 +17,10 @@
     // "latex-workshop.latex.outputDir": "./_output",
     "editor.multiCursorModifier": "ctrlCmd",
     "editor.cursorBlinking": "phase",
-    "editor.rulers": [80, 120],
-    "editor.wordWrap": "wordWrapColumn",
+    "editor.rulers": [
+      80,
+      120
+    ],
     "editor.wordWrapColumn": 80,
 
     "gitlens.hovers.currentLine.over": "annotation",
@@ -67,6 +69,12 @@
     "files.trimTrailingWhitespace": true,
     "explorer.decorations.colors": false,
     "explorer.decorations.badges": false,
+    "git.autofetch": true,
+    "python.linting.pydocstylePath": "ypydocstyle",
+    "todo.embedded.provider": "ag",
+    "todo.symbols.box": "[ ]",
+    "todo.symbols.cancelled": "-",
+    "todo.symbols.done": "x",
     // "python.linting.pylintArgs": ["--generate-members"], # Seems to disable everything.
 
 }

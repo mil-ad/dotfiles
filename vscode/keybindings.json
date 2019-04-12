@@ -81,5 +81,24 @@
         "key": "alt+q",
         "command": "-rewrap.rewrapComment",
         "when": "editorTextFocus"
-    }
+    },
+    {
+        "key": "ctrl+[",
+        "command": "editor.action.outdentLines",
+        "when": "editorTextFocus && !editorReadonly"
+    },
+    {
+        "key": "ctrl+]",
+        "command": "editor.action.indentLines",
+        "when": "editorTextFocus && !editorReadonly"
+    },
+    {
+        "key": "cmd+]",
+        "command": "-editor.action.indentLines",
+        "when": "editorTextFocus && !editorReadonly"
+    },
+    {
+        "key": "cmd+[",
+        "command": "workbench.action.navigateBack"
+    },
 ]
