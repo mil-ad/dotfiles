@@ -6,10 +6,10 @@ module.exports = {
   config: {
     // Choose either "stable" for receiving highly polished,
     // or "canary" for less polished but more frequent updates
-    updateChannel: 'stable',
+    updateChannel: 'canary',
 
     // default font size in pixels for all tabs
-    fontSize: 20,
+    fontSize: 16,
 
     // font family with optional fallbacks
     fontFamily: 'IBMPlexMono-Bold, Consolas, "Meslo LG L DZ for Powerline", "Roboto Mono for Powerline", Menlo, "DejaVu Sans Mono", "Lucida Console", monospace',

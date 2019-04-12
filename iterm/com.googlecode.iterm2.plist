@@ -4,6 +4,8 @@
 <dict>
 	<key>AdjustWindowForFontSizeChange</key>
 	<false/>
+	<key>AllowClipboardAccess</key>
+	<true/>
 	<key>AlternateMouseScroll</key>
 	<false/>
 	<key>AppleAntiAliasingThreshold</key>
@@ -3153,7 +3155,7 @@
 	<key>NSColorPickerPreferredRGBEntryMode</key>
 	<integer>2</integer>
 	<key>NSFontPanelAttributes</key>
-	<string>1, 0</string>
+	<string>1, 8</string>
 	<key>NSNavLastRootDirectory</key>
 	<string>~/Developer/dotfiles/iterm</string>
 	<key>NSNavPanelExpandedSizeForOpenMode</key>
@@ -3202,21 +3204,21 @@
 	<key>NSWindow Frame NSColorPanel</key>
 	<string>492 141 228 280 0 0 1680 1028 </string>
 	<key>NSWindow Frame NSFontPanel</key>
-	<string>989 77 770 316 0 0 1920 1058 </string>
+	<string>1264 191 882 416 0 0 3008 1669 </string>
 	<key>NSWindow Frame ProfilesPanel</key>
 	<string>101 531 735 382 0 0 1680 1028 </string>
 	<key>NSWindow Frame SUUpdateAlert</key>
-	<string>650 498 620 392 0 0 1920 1057 </string>
+	<string>1194 957 620 392 0 0 3008 1669 </string>
 	<key>NSWindow Frame SessionsPreferences</key>
 	<string>269 139 606 456 0 0 1680 1028 </string>
 	<key>NSWindow Frame SharedPreferences</key>
-	<string>905 483 796 486 0 0 3008 1669 </string>
+	<string>1134 636 918 423 0 0 3008 1669 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>995 428 1200 801 0 0 3008 1669 </string>
+	<string>22 1044 1020 602 0 0 3008 1669 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
-	<string>281 205 1200 777 0 0 1920 1058 </string>
+	<string>211 531 1200 777 0 0 3008 1669 </string>
 	<key>NSWindow Frame iTerm Window 2</key>
-	<string>278 208 1026 501 0 0 1680 1028 </string>
+	<string>379 0 1200 777 0 0 1920 1057 </string>
 	<key>NSWindow Frame iTerm Window 3</key>
 	<string>549 881 335 146 0 0 1680 1028 </string>
 	<key>NSWindow Frame iTerm Window 4</key>
@@ -3754,7 +3756,7 @@
 			<key>Non-ASCII Anti Aliased</key>
 			<true/>
 			<key>Normal Font</key>
-			<string>Monaco 12</string>
+			<string>IBMPlexMonoNerdFontCM-Bold 24</string>
 			<key>Option Key Sends</key>
 			<integer>0</integer>
 			<key>Prompt Before Closing 2</key>
@@ -4404,7 +4406,7 @@
 			<key>Non-ASCII Anti Aliased</key>
 			<false/>
 			<key>Normal Font</key>
-			<string>IBMPlexMonoNerdFontCM-SemiBold 22</string>
+			<string>UbuntuMonoDerivativePowerline-Regular 22</string>
 			<key>Only The Default BG Color Uses Transparency</key>
 			<false/>
 			<key>Open Toolbelt</key>
@@ -4496,7 +4498,7 @@
 	<key>NoSyncInstallationId</key>
 	<string>F096B739-9000-4EA8-82B3-8A23E50594CC</string>
 	<key>NoSyncLastTipTime</key>
-	<real>568040090.43852603</real>
+	<real>574272489.48952901</real>
 	<key>NoSyncNeverRemindPrefsChangesLostForFile</key>
 	<true/>
 	<key>NoSyncNeverRemindPrefsChangesLostForFile_selection</key>
@@ -4659,6 +4661,12 @@
 		<string>0063</string>
 		<string>0064</string>
 		<string>0065</string>
+		<string>0066</string>
+		<string>0067</string>
+		<string>0068</string>
+		<string>0069</string>
+		<string>0070</string>
+		<string>0071</string>
 	</array>
 	<key>OpenArrangementAtStartup</key>
 	<false/>
@@ -4702,7 +4710,7 @@
 		</dict>
 	</dict>
 	<key>PrefsCustomFolder</key>
-	<string>/Users/milad/Developer/dotfiles/iterm</string>
+	<string>/Users/milad/Developer/mi-lad/dotfiles/iterm</string>
 	<key>Print In Black And White</key>
 	<true/>
 	<key>SUEnableAutomaticChecks</key>
@@ -4714,7 +4722,7 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2019-01-01T01:09:08Z</date>
+	<date>2019-04-09T08:19:06Z</date>
 	<key>SUSendProfileInfo</key>
 	<false/>
 	<key>ShowBookmarkName</key>
@@ -4754,7 +4762,7 @@
 	<key>findMode_iTerm</key>
 	<integer>0</integer>
 	<key>iTerm Version</key>
-	<string>3.2.6</string>
+	<string>3.2.8</string>
 	<key>kCPKSelectionViewPreferredModeKey</key>
 	<integer>7</integer>
 	<key>kCPKSelectionViewShowHSBTextFieldsKey</key>
