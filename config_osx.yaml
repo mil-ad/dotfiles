@@ -21,7 +21,6 @@
     # - [defaults write NSGlobalDomain NSTableViewDefaultSizeMode -int 1, Set sidebar icon size to small"]
     # - [defaults write -g ApplePressAndHoldEnabled -bool false, Enable key repeat]
 
-
 # install homebrew
 # autoenv?
 # disable notifications in the lock screen
@@ -148,3 +147,4 @@
 # xz
 # youtube-dl
 # zsh
+# ctags Important for vscode to work properly
