@@ -1,11 +1,70 @@
 {
-    "window.zoomLevel": 0,
-    "telemetry.enableTelemetry": false,
-    "editor.mouseWheelZoom": true,
-    "workbench.statusBar.feedback.visible": false,
     "editor.fontFamily": "'IBMPlexMono-Bold', 'Courier New', Menlo",
     "editor.fontSize": 17,
+    "editor.tabSize": 4,
+    "editor.mouseWheelZoom": true,
+    "editor.multiCursorModifier": "ctrlCmd",
+    "editor.cursorBlinking": "phase",
+    "editor.rulers": [80, 120],
+    "editor.wordWrapColumn": 80,
+    "editor.renderWhitespace": "all",
+    "editor.renderControlCharacters": false,
+    "editor.wordBasedSuggestions": false,
+    "editor.overviewRulerBorder": false,
+
+    "workbench.statusBar.feedback.visible": false,
     "workbench.colorTheme": "Shades of Purple",
+    "workbench.activityBar.visible": true,
+    "workbench.statusBar.visible": true,
+    "workbench.iconTheme": "ayu",
+    "workbench.startupEditor": "newUntitledFile",
+
+    "files.trimTrailingWhitespace": true,
+    "files.trimFinalNewlines": true,
+
+    "explorer.decorations.colors": false,
+    "explorer.decorations.badges": false,
+
+    "scm.diffDecorationsGutterWidth": 2,
+    "scm.diffDecorations": "gutter",
+
+    "window.zoomLevel": 1,
+    "telemetry.enableTelemetry": false,
+    "breadcrumbs.enabled": false,
+    "diffEditor.ignoreTrimWhitespace": true,
+    "git.autofetch": true,
+
+    // Disable italics in comment blocks
+    // From https://stackoverflow.com/a/46278282/298209
+    "editor.tokenColorCustomizations": {
+    "textMateRules": [
+        {
+            "name": "Comment",
+            "scope": [
+                "comment",
+                "comment.block",
+                "comment.block.documentation",
+                "comment.line",
+                "comment.line.double-slash",
+                "punctuation.definition.comment",
+            ],
+            "settings": {
+                "fontStyle": "",
+                // "fontStyle": "italic",
+                // "fontStyle": "italic underline",
+                // "fontStyle": "italic bold underline",
+            }
+        },
+    ]
+    },
+
+    // =========================================================================
+    // Per file type settings
+    // =========================================================================
+
+    "[python]": {
+        "editor.tabSize": 2
+    },
 
     "[latex]": {
         "editor.wordWrap": "wordWrapColumn",
@@ -13,68 +72,44 @@
         "editor.rulers": []
     },
 
-    "latex-workshop.view.pdf.viewer": "tab",
-    // "latex-workshop.latex.outputDir": "./_output",
-    "editor.multiCursorModifier": "ctrlCmd",
-    "editor.cursorBlinking": "phase",
-    "editor.rulers": [
-      80,
-      120
-    ],
-    "editor.wordWrapColumn": 80,
-
-    "gitlens.hovers.currentLine.over": "annotation",
-    "gitlens.currentLine.enabled": false,
-    "gitlens.hovers.annotations.enabled": false,
-    "gitlens.advanced.telemetry.enabled": false,
-
-    "cSpell.language": "en-GB",
-    "editor.wordBasedSuggestions": false,
-    "workbench.activityBar.visible": true,
-    "editor.renderWhitespace": "all",
-    "editor.renderControlCharacters": false,
-    "workbench.statusBar.visible": true,
-    "editor.overviewRulerBorder": false,
-    "scm.diffDecorationsGutterWidth": 2,
-    "scm.diffDecorations": "gutter",
-
-    // I don't like italics in comment blocks.
-    // https://stackoverflow.com/questions/43657779/is-there-a-way-to-italicize-comments-in-visual-studio-code/46278282#46278282
-    "editor.tokenColorCustomizations": {
-        "textMateRules": [
-          {
-            "name": "Comment",
-            "scope": [
-              "comment",
-              "comment.block",
-              "comment.block.documentation",
-              "comment.line",
-              "comment.line.double-slash",
-              "punctuation.definition.comment",
-            ],
-            "settings": {
-              "fontStyle": "",
-              // "fontStyle": "italic",
-              // "fontStyle": "italic underline",
-              // "fontStyle": "italic bold underline",
-            }
-          },
-        ]
+    "[markdown]":{
+        "editor.wordWrap": "wordWrapColumn",
+        "editor.wordWrapColumn": 80,
     },
-    "workbench.iconTheme": "ayu",
-    "diffEditor.ignoreTrimWhitespace": true,
-    "python.dataScience.sendSelectionToInteractiveWindow": true,
+
+    // =========================================================================
+    // Extension settings
+    // =========================================================================
 
     "git-graph.showStatusBarItem": false,
-    "files.trimTrailingWhitespace": true,
-    "explorer.decorations.colors": false,
-    "explorer.decorations.badges": false,
-    "git.autofetch": true,
+
+    // "gitlens.hovers.currentLine.over": "annotation",
+    // "gitlens.currentLine.enabled": false,
+    // "gitlens.hovers.annotations.enabled": false,
+    // "gitlens.advanced.telemetry.enabled": false,
+
+    "python.dataScience.sendSelectionToInteractiveWindow": true,
     "python.linting.pydocstylePath": "ypydocstyle",
+    // "python.linting.pylintArgs": ["--generate-members"], # Seems to disable everything.
+
+    "rewrap.reformat": true,
+    "rewrap.autoWrap.enabled": true,
+
+    "latex-workshop.view.pdf.viewer": "tab",
+    // "latex-workshop.latex.outputDir": "./_output",
+
     "todo.embedded.provider": "ag",
     "todo.symbols.box": "[ ]",
     "todo.symbols.cancelled": "-",
     "todo.symbols.done": "x",
-    // "python.linting.pylintArgs": ["--generate-members"], # Seems to disable everything.
 
+    "spellright.language": ["en-GB"],
+    "spellright.groupDictionaries": false,
+    "spellright.configurationScope": "user",
+    "spellright.documentTypes": [
+        "markdown",
+        "latex",
+        "plaintext",
+        "python"
+    ],
 }
