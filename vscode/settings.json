@@ -2,7 +2,7 @@
     "editor.fontFamily": "'IBMPlexMono-Bold', 'Courier New', Menlo",
     "editor.fontSize": 17,
     "editor.tabSize": 4,
-    "editor.mouseWheelZoom": true,
+    "editor.mouseWheelZoom": false,
     "editor.multiCursorModifier": "ctrlCmd",
     "editor.cursorBlinking": "phase",
     "editor.rulers": [80, 120],
@@ -10,7 +10,8 @@
     "editor.renderWhitespace": "all",
     "editor.renderControlCharacters": false,
     "editor.wordBasedSuggestions": false,
-    "editor.overviewRulerBorder": false,
+    "editor.cursorStyle": "block",
+    "editor.formatOnPaste": true,
 
     "workbench.statusBar.feedback.visible": false,
     "workbench.colorTheme": "Shades of Purple",
@@ -24,15 +25,17 @@
 
     "explorer.decorations.colors": false,
     "explorer.decorations.badges": false,
+    "explorer.sortOrder": "type",
 
     "scm.diffDecorationsGutterWidth": 2,
     "scm.diffDecorations": "gutter",
 
     "window.zoomLevel": 1,
-    "telemetry.enableTelemetry": false,
-    "breadcrumbs.enabled": false,
+    "telemetry.enableTelemetry": true,
     "diffEditor.ignoreTrimWhitespace": true,
     "git.autofetch": true,
+
+    "terminal.integrated.macOptionClickForcesSelection": true,
 
     // Disable italics in comment blocks
     // From https://stackoverflow.com/a/46278282/298209
@@ -112,4 +115,6 @@
         "plaintext",
         "python"
     ],
+
+    "fileutils.delete.useTrash": true,
 }
