@@ -101,4 +101,12 @@
         "key": "cmd+[",
         "command": "workbench.action.navigateBack"
     },
+    {
+        "key": "shift+cmd+r",
+        "command": "workbench.action.showAllSymbols"
+    },
+    {
+        "key": "cmd+t",
+        "command": "-workbench.action.showAllSymbols"
+    },
 ]
