@@ -5,15 +5,4 @@
         create: true
         force: true
         path: sublime-text-3/User/
-    ~/.config/sublime-text-3/Installed Packages:
-        create: true
-        force: true
-        path: sublime-text-3/Installed Packages/
-    ~/.config/terminator/config:
-        create: true
-        path: terminator_config
-    ~/.fonts: fonts
 
-- shell:
-    - [fc-cache -fv ~/.fonts, Regenarting font infomation]
-    - [./powerline_fonts/install.sh, Installing Powerline fonts]
