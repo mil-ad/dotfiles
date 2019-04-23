@@ -13,7 +13,6 @@
         create: true
         path: terminator_config
     ~/.fonts: fonts
-    ~/.themes: themes
 
 - shell:
     - [fc-cache -fv ~/.fonts, Regenarting font infomation]
