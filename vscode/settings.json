@@ -11,7 +11,8 @@
     "editor.renderControlCharacters": false,
     "editor.wordBasedSuggestions": false,
     "editor.cursorStyle": "block",
-    "editor.formatOnPaste": true,
+    "editor.formatOnPaste": false,
+
 
     "workbench.statusBar.feedback.visible": false,
     "workbench.colorTheme": "Shades of Purple",
@@ -30,12 +31,14 @@
     "scm.diffDecorationsGutterWidth": 2,
     "scm.diffDecorations": "gutter",
 
-    "window.zoomLevel": 1,
+    "window.zoomLevel": 0,
     "telemetry.enableTelemetry": true,
     "diffEditor.ignoreTrimWhitespace": true,
     "git.autofetch": true,
 
     "terminal.integrated.macOptionClickForcesSelection": true,
+    "terminal.integrated.fontFamily": "Perplexed-Bold",
+    "terminal.integrated.fontSize": 13,
 
     // Disable italics in comment blocks
     // From https://stackoverflow.com/a/46278282/298209
@@ -93,20 +96,59 @@
 
     "python.dataScience.sendSelectionToInteractiveWindow": true,
     "python.linting.pydocstylePath": "ypydocstyle",
-    // "python.linting.pylintArgs": ["--generate-members"], # Seems to disable everything.
+    "python.formatting.provider": "yapf",
+    "python.formatting.yapfArgs": ["--style", "{indent_width: 2}"],
 
-    "rewrap.reformat": true,
     "rewrap.autoWrap.enabled": true,
 
     "latex-workshop.view.pdf.viewer": "tab",
     // "latex-workshop.latex.outputDir": "./_output",
+    "latex-workshop.latex.tools": [
+        {
+            "name": "xelatex",
+            "command": "xelatex",
+            "args": [
+                "-synctex=1",
+                "-interaction=nonstopmode",
+                "-file-line-error",
+                "-outdir=%OUTDIR%",
+                "%DOC%"
+            ],
+            "env": {}
+        }
+    ],
+    "latex-workshop.latex.recipes": [
+        {
+            "name": "latexmk 🔃",
+            "tools": [
+                "latexmk"
+            ]
+        },
+        {
+            "name": "pdflatex ➞ bibtex ➞ pdflatex × 2",
+            "tools": [
+                "pdflatex",
+                "bibtex",
+                "pdflatex",
+                "pdflatex"
+            ]
+        },
+        {
+            "name": "xelatex 🔃",
+            "tools": [
+                "xelatex"
+            ]
+        },
+    ],
 
     "todo.embedded.provider": "ag",
     "todo.symbols.box": "[ ]",
     "todo.symbols.cancelled": "-",
     "todo.symbols.done": "x",
 
-    "spellright.language": ["en-GB"],
+    "spellright.language": [
+        "en_GB"
+    ],
     "spellright.groupDictionaries": false,
     "spellright.configurationScope": "user",
     "spellright.documentTypes": [
@@ -115,6 +157,7 @@
         "plaintext",
         "python"
     ],
+    "spellright.statusBarIndicator": false,
 
     "fileutils.delete.useTrash": true,
 }
