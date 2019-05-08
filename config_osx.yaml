@@ -15,7 +15,7 @@
 # TODO: touch .hushlogin # to remove the "Last login" message in the terminal
 # See https://apple.stackexchange.com/questions/118984/why-doesnt-my-terminal-show-last-login-message
 
-- shell:
+# - shell:
     # - [defaults write com.apple.Dock autohide-delay -float 0 && killall Dock, Remove the delay for Auto-Hide & Auto-Show of Dock]
     # - [defaults write com.apple.dock autohide-time-modifier -int 0;killall Dock, Remove dock animation]
     # - [defaults write NSGlobalDomain NSTableViewDefaultSizeMode -int 1, Set sidebar icon size to small"]

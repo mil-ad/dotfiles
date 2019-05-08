@@ -29,10 +29,8 @@
     ~/.dotfiles: ''
 
 - shell:
-    - [git submodule update --init --recursive, Installing/Updating submodules]
     - [curl -L git.io/antigen > antigen.zsh, Installing Antigen]
     - ["git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim", Cloning Vundle for vim]
 
 # TODO:
 # - [ ] Link htoprc here
-
