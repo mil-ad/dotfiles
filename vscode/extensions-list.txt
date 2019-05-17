@@ -1,7 +1,10 @@
 ahmadawais.shades-of-purple
-alefragnani.project-manager
+ban.spellright
+emmanuelbeziat.vscode-great-icons
 fabiospampinato.vscode-todo-plus
+file-icons.file-icons
 James-Yu.latex-workshop
+liviuschera.noctis
 mhutchie.git-graph
 ms-python.python
 PeterJausovec.vscode-docker
@@ -9,3 +12,4 @@ sleistner.vscode-fileutils
 stkb.rewrap
 streetsidesoftware.code-spell-checker
 teabyii.ayu
+VisualStudioExptTeam.vscodeintellicode

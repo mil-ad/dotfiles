@@ -10,16 +10,16 @@
     "editor.renderWhitespace": "all",
     "editor.renderControlCharacters": false,
     "editor.wordBasedSuggestions": false,
-    "editor.cursorStyle": "block",
+    "editor.cursorStyle": "line",
+    // "editor.cursorSmoothCaretAnimation": true,
     "editor.formatOnPaste": false,
 
-
     "workbench.statusBar.feedback.visible": false,
-    "workbench.colorTheme": "Shades of Purple",
     "workbench.activityBar.visible": true,
     "workbench.statusBar.visible": true,
     "workbench.iconTheme": "ayu",
     "workbench.startupEditor": "newUntitledFile",
+    "workbench.tips.enabled": false,
 
     "files.trimTrailingWhitespace": true,
     "files.trimFinalNewlines": true,
@@ -31,7 +31,7 @@
     "scm.diffDecorationsGutterWidth": 2,
     "scm.diffDecorations": "gutter",
 
-    "window.zoomLevel": -1,
+    "window.zoomLevel": 0,
     "telemetry.enableTelemetry": true,
     "diffEditor.ignoreTrimWhitespace": true,
     "git.autofetch": true,
@@ -89,15 +89,16 @@
 
     "git-graph.showStatusBarItem": false,
 
-    // "gitlens.hovers.currentLine.over": "annotation",
-    // "gitlens.currentLine.enabled": false,
-    // "gitlens.hovers.annotations.enabled": false,
-    // "gitlens.advanced.telemetry.enabled": false,
-
     "python.dataScience.sendSelectionToInteractiveWindow": true,
-    "python.linting.pydocstylePath": "ypydocstyle",
     "python.formatting.provider": "yapf",
-    "python.formatting.yapfArgs": ["--style", "{indent_width: 2}"],
+    // "python.formatting.yapfArgs": ["--style", "{indent_width: 2}"],
+    // "{dedent_closing_brackets: True}"],
+    "python.formatting.yapfArgs": ["--style", "{indent_width: 2, continuation_indent_width: 2, dedent_closing_brackets: True}"],
+
+    // Providing pylintArgs disables sensinble defaults that VSCode applies. I
+    // have therefore copy-pasted them manually (see pylintUseMinimalCheckers).
+    // The real change I want to make here is extension-pkg-whitelist
+    "python.linting.pylintArgs": ["--disable=all","--enable=F,E,unreachable,duplicate-key,unnecessary-semicolon,global-variable-not-assigned,unused-variable,binary-op-exception,bad-format-string,anomalous-backslash-in-string,bad-open-mode","--extension-pkg-whitelist=torch,numpy"],
 
     "rewrap.autoWrap.enabled": true,
 
@@ -157,7 +158,14 @@
         "plaintext",
         "python"
     ],
+    "spellright.spellContext": "comments",
     "spellright.statusBarIndicator": false,
 
+
     "fileutils.delete.useTrash": true,
+    "editor.suggestSelection": "first",
+    "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
+    "python.jediEnabled": false,
+    "workbench.colorTheme": "Noctis Viola",
+    "diffEditor.renderSideBySide": true,
 }
