@@ -28,4 +28,3 @@ if [ -e .zshrc_private ]; then
     source .zshrc_private
 fi
 
-eval "$(rbenv init -)"
