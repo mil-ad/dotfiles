@@ -13,10 +13,3 @@ git clone https://github.com/mi-lad/dotfiles
 cd dotfiles
 ./install.sh
 ```
-
-## TODO List
-- [ ] Do I actually need dotbot?
-- [ ] Add a Brewfile
-- [ ] Find a way to initialise Vundle plugins See [this](https://github.com/VundleVim/Vundle.vim/wiki/Tips-and-Tricks)
-
-
