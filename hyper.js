@@ -6,13 +6,13 @@ module.exports = {
   config: {
     // Choose either "stable" for receiving highly polished,
     // or "canary" for less polished but more frequent updates
-    updateChannel: 'canary',
+    updateChannel: 'stable',
 
     // default font size in pixels for all tabs
     fontSize: 16,
 
     // font family with optional fallbacks
-    fontFamily: 'IBMPlexMono-Bold, Consolas, "Meslo LG L DZ for Powerline", "Roboto Mono for Powerline", Menlo, "DejaVu Sans Mono", "Lucida Console", monospace',
+    fontFamily: 'IBMPlexMono-Bold, "IBM Plex Mono SemiBold", Consolas, "Meslo LG L DZ for Powerline", "Roboto Mono for Powerline", Menlo, "DejaVu Sans Mono", "Lucida Console", monospace',
 
     // terminal cursor background color and opacity (hex, rgb, hsl, hsv, hwb or cmyk)
     cursorColor: 'rgba(248,28,229,0.8)',
