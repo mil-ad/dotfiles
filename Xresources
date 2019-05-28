@@ -107,7 +107,7 @@ URxvt.keysym.Control-Down:        \033[1;5B
 URxvt.keysym.Shift-Control-Down:  \033[1;6B
 
 ! Milad:
- Rxvt.perl-ext-common:            clipboard,resize-font
+ Rxvt.perl-ext-common:            clipboard,resize-font,default,matcher
 URxvt.keysym.M-C-c:               perl:clipboard:!copy
 URxvt.keysym.M-v:                 perl:clipboard:paste
 URxvt.keysym.M-C-v:               perl:clipboard:paste_escaped
@@ -223,7 +223,7 @@ URxvt*letterSpace:                -1
 ! URxvt*background.interval:        seconds
 ! URxvt*bell-command:               string
 ! URxvt*kuake.hotkey:               string
-! URxvt*matcher.button:             string
+ URxvt*matcher.button:              1
 ! URxvt*matcher.launcher:           string
 ! URxvt*matcher.launcher.*:         string
 ! URxvt*matcher.pattern.*:          string
@@ -239,7 +239,13 @@ URxvt*letterSpace:                -1
 ! URxvt*tab-fg:                     colour
 ! URxvt*tabbar-bg:                  colour
 ! URxvt*tabbar-fg:                  colour
-! URxvt*url-launcher:               string
+URxvt*url-launcher:               /usr/bin/xdg-open
+
+URxvt.keysym.C-minus:     resize-font:smaller
+URxvt.keysym.C-plus:      resize-font:bigger
+URxvt.keysym.C-equal:      resize-font:bigger
+URxvt.keysym.C-0:     resize-font:reset
+URxvt.keysym.C-question:  resize-font:show
 
 ! The Terminus font uses the following X-names:
 ! -xos4-terminus-medium-r-normal--12-120-72-72-c-60-iso10646-1
