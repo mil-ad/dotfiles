@@ -11,7 +11,6 @@
     "editor.renderControlCharacters": false,
     "editor.wordBasedSuggestions": false,
     "editor.cursorStyle": "line",
-    // "editor.cursorSmoothCaretAnimation": true,
     "editor.formatOnPaste": false,
 
     "workbench.statusBar.feedback.visible": false,
@@ -20,6 +19,7 @@
     "workbench.iconTheme": "ayu",
     "workbench.startupEditor": "newUntitledFile",
     "workbench.tips.enabled": false,
+    "workbench.colorTheme": "Noctis Uva",
 
     "files.trimTrailingWhitespace": true,
     "files.trimFinalNewlines": true,
@@ -33,7 +33,8 @@
 
     "window.zoomLevel": 0,
     "telemetry.enableTelemetry": true,
-    "diffEditor.ignoreTrimWhitespace": true,
+    "diffEditor.ignoreTrimWhitespace": false,
+    "diffEditor.renderSideBySide": true,
     "git.autofetch": true,
 
     "terminal.integrated.macOptionClickForcesSelection": true,
@@ -79,7 +80,7 @@
     },
 
     "[markdown]":{
-        "editor.wordWrap": "wordWrapColumn",
+        "editor.wordWrap": "bounded",
         "editor.wordWrapColumn": 80,
     },
 
@@ -89,18 +90,16 @@
 
     "git-graph.showStatusBarItem": false,
 
+    "python.jediEnabled": false,  // Use Microsoft Python Analysis instead
     "python.dataScience.sendSelectionToInteractiveWindow": true,
     "python.formatting.provider": "yapf",
-    // "python.formatting.yapfArgs": ["--style", "{indent_width: 2}"],
-    // "{dedent_closing_brackets: True}"],
     "python.formatting.yapfArgs": ["--style", "{indent_width: 2, continuation_indent_width: 2, dedent_closing_brackets: True}"],
 
-    // Providing pylintArgs disables sensinble defaults that VSCode applies. I
-    // have therefore copy-pasted them manually (see pylintUseMinimalCheckers).
-    // The real change I want to make here is extension-pkg-whitelist
+    // Providing pylintArgs disables all the sensible defaults that VSCode
+    // applies. I have therefore copy-pasted them manually (see
+    // pylintUseMinimalCheckers). The real change I want to make here is
+    // extension-pkg-whitelist
     "python.linting.pylintArgs": ["--disable=all","--enable=F,E,unreachable,duplicate-key,unnecessary-semicolon,global-variable-not-assigned,unused-variable,binary-op-exception,bad-format-string,anomalous-backslash-in-string,bad-open-mode","--extension-pkg-whitelist=torch,numpy"],
-
-    "rewrap.autoWrap.enabled": true,
 
     "latex-workshop.view.pdf.viewer": "tab",
     // "latex-workshop.latex.outputDir": "./_output",
@@ -147,9 +146,7 @@
     "todo.symbols.cancelled": "-",
     "todo.symbols.done": "x",
 
-    "spellright.language": [
-        "en_GB"
-    ],
+    "spellright.language": ["en_GB"],
     "spellright.groupDictionaries": false,
     "spellright.configurationScope": "user",
     "spellright.documentTypes": [
@@ -163,9 +160,7 @@
 
 
     "fileutils.delete.useTrash": true,
+
     "editor.suggestSelection": "first",
     "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
-    "python.jediEnabled": false,
-    "workbench.colorTheme": "Noctis Viola",
-    "diffEditor.renderSideBySide": true,
 }
