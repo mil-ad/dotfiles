@@ -26,6 +26,7 @@ if [ -e /usr/share/fzf/completion.zsh ]; then
     source /usr/share/fzf/completion.zsh
 fi
 
-if [ -e .zshrc_private ]; then
-    source .zshrc_private
+if [ -e .zshrc_local ]; then
+    source .zshrc_local
 fi
+
