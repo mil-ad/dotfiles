@@ -12,8 +12,6 @@
     default = simple
 [commit]
     gpgSign = true
-[gpg]
-    program = /usr/local/bin/gpg2
 [diff]
     tool = icdiff
 [difftool]
