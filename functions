@@ -43,30 +43,3 @@ function f {
 function activeinterface {
     route get 10.10.10.10 | grep interface | xargs echo
 }
-
-
-# -------------8<---------------------------8<---------------------------
-# "Marks" from onethingwell.org
-# http://onethingwell.org/post/58703826506/marks
-# export MARKPATH=$HOME/.marks
-# function jump {
-#     cd -P "$MARKPATH/$1" 2>/dev/null || echo "No such mark: $1"
-# }
-# function mark {
-#     mkdir -p "$MARKPATH"; ln -s "$(pwd)" "$MARKPATH/$1"
-# }
-# function unmark {
-#     rm -i "$MARKPATH/$1"
-# }
-# function marks {
-#     ls -l "$MARKPATH" | sed 's/  / /g' | cut -d' ' -f9- | sed 's/ -/\t-/g' && echo
-# }
-
-# function _completemarks {
-#   reply=($(ls $MARKPATH))
-# }
-
-# compctl -K _completemarks jump
-# compctl -K _completemarks unmark
-# -------------8<---------------------------8<---------------------------
-
