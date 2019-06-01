@@ -30,16 +30,6 @@ function f {
     find . -iname "*$1*"
 }
 
-# # Search for C source files
-# function fc {
-#     find . -iname "*$1*.c"
-# }
-
-# # Search for C header files
-# function fh {
-#     find . -iname "*$1*.h"
-# }
-
 function activeinterface {
     route get 10.10.10.10 | grep interface | xargs echo
 }
