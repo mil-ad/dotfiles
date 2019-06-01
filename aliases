@@ -3,6 +3,7 @@ alias ...="cd ../.."
 alias ....="cd ../../.."
 alias .....="cd ../../../.."
 alias .....="cd ../../../../.."
+alias ......="cd ../../../../../.."
 
 alias l='ls -lh'
 alias ll="ls -laHh"
@@ -16,7 +17,7 @@ alias agf='ag -g'
 alias more="less"
 alias vi="vim"
 alias cal='cal -3'
-alias tmux="tmux -2" # Force tmux to assume the terminal supports 256 colours
+alias tmux="tmux -2" # Force 256 colour support
 alias df='df -h'
 alias du='du -h'
 
@@ -29,17 +30,7 @@ alias gl='git log -n 4 --stat --graph --decorate=full --date=relative'
 # Copied from /holman/dotfiles:
 alias glog="git log --graph --pretty=format:'%Cred%h%Creset %an: %s - %Creset %C(yellow)%d%Creset %Cgreen(%cr)%Creset' --abbrev-commit --date=relative"
 
-# Copied from http://askubuntu.com/questions/2389/generating-list-of-manually-installed-packages-and-querying-individual-packages
-alias mypackages="comm -23 <(apt-mark showmanual | sort -u) <(gzip -dc /var/log/installer/initial-status.gz | sed -n 's/^Package: //p' | sort -u)"
-
 alias fast_sshfs='sshfs -o Ciphers=arcfour -o Compression=no'
-
 alias weather='curl wttr.in/Oxford'
-
 alias difffolders='diff -rq'
-
-alias jn='jupyter notebook'
-
-alias ezshrc='st ~/.zshrc'
-
 alias condarm='conda env remove --name'
