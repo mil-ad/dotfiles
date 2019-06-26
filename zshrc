@@ -3,7 +3,6 @@ source ~/.dotfiles/antigen.zsh
 antigen use oh-my-zsh
 
 antigen bundle wd
-antigen bundle sublime
 antigen bundle colored-man-pages
 antigen bundle pip
 antigen bundle docker
