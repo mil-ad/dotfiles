@@ -2,48 +2,83 @@
 [
     {
         "key": "cmd+=",
-        "command": "editor.action.fontZoomIn"
+        "command": "editor.action.fontZoomIn",
+        "when": "isMac"
     },
     {
         "key": "shift+cmd+=",
-        "command": "editor.action.fontZoomIn"
+        "command": "editor.action.fontZoomIn",
+        "when": "isMac"
     },
     {
         "key": "cmd+-",
-        "command": "editor.action.fontZoomOut"
+        "command": "editor.action.fontZoomOut",
+        "when": "isMac"
     },
     {
         "key": "cmd+0",
-        "command": "editor.action.fontZoomReset"
+        "command": "editor.action.fontZoomReset",
+        "when": "isMac"
     },
+
+    {
+        "key": "ctrl+=",
+        "command": "editor.action.fontZoomIn",
+        "when": "!isMac"
+    },
+    {
+        "key": "shift+ctrl+=",
+        "command": "editor.action.fontZoomIn",
+        "when": "!isMac"
+    },
+    {
+        "key": "ctrl+-",
+        "command": "editor.action.fontZoomOut",
+        "when": "!isMac"
+    },
+    {
+        "key": "ctrl+0",
+        "command": "editor.action.fontZoomReset",
+        "when": "!isMac"
+    },
+
+
     {
         "key": "cmd+d",
         "command": "editor.action.deleteLines",
-        "when": "textInputFocus && !editorReadonly"
+        "when": "textInputFocus && !editorReadonly",
+        "when": "isMac"
+
     },
+    {
+        "key": "ctrl+d",
+        "command": "editor.action.deleteLines",
+        "when": "textInputFocus && !editorReadonly",
+        "when": "!isMac"
+
+    },
+
     {
         "key": "shift+cmd+k",
         "command": "-editor.action.deleteLines",
         "when": "textInputFocus && !editorReadonly"
     },
     {
-        "key": "cmd+r",
-        "command": "workbench.action.gotoSymbol"
-    },
-    {
         "key": "shift+cmd+o",
         "command": "-workbench.action.gotoSymbol"
     },
+
     {
         "key": "cmd+j",
         "command": "editor.action.joinLines",
-        "when": "editorTextFocus && !editorReadonly"
+        "when": "isMac && editorTextFocus && !editorReadonly",
     },
     {
         "key": "ctrl+j",
-        "command": "-editor.action.joinLines",
-        "when": "editorTextFocus && !editorReadonly"
+        "command": "editor.action.joinLines",
+        "when": "!isMac & editorTextFocus && !editorReadonly",
     },
+
     {
         "key": "ctrl+cmd+g",
         "command": "editor.action.selectHighlights",
@@ -101,32 +136,26 @@
         "key": "cmd+[",
         "command": "workbench.action.navigateBack"
     },
+
+
     {
-        "key": "shift+cmd+r",
-        "command": "workbench.action.showAllSymbols"
+        "key": "cmd+r",
+        "command": "workbench.action.gotoSymbol",
+        "when": "isMac"
     },
     {
-        "key": "cmd+t",
-        "command": "-workbench.action.showAllSymbols"
+        "key": "ctrl+r",
+        "command": "workbench.action.gotoSymbol",
+        "when": "!isMac"
     },
     {
-        "key": "ctrl+f ctrl+s",
-        "command": "editor.action.formatSelection",
-        "when": "editorHasDocumentSelectionFormattingProvider && editorHasDocumentSelectionFormattingProvider && editorTextFocus && !editorReadonly"
+        "key": "cmd+shift+r",
+        "command": "workbench.action.showAllSymbols",
+        "when": "isMac"
     },
     {
-        "key": "cmd+k cmd+f",
-        "command": "-editor.action.formatSelection",
-        "when": "editorHasDocumentSelectionFormattingProvider && editorHasDocumentSelectionFormattingProvider && editorTextFocus && !editorReadonly"
-    },
-    {
-        "key": "ctrl+f ctrl+d",
-        "command": "editor.action.formatDocument",
-        "when": "editorHasDocumentFormattingProvider && editorHasDocumentFormattingProvider && editorTextFocus && !editorReadonly"
-    },
-    {
-        "key": "shift+alt+f",
-        "command": "-editor.action.formatDocument",
-        "when": "editorHasDocumentFormattingProvider && editorHasDocumentFormattingProvider && editorTextFocus && !editorReadonly"
+        "key": "ctrl+shift+r",
+        "command": "workbench.action.showAllSymbols",
+        "when": "!isMac"
     },
 ]
