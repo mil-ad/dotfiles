@@ -83,6 +83,12 @@
         "editor.wordWrapColumn": 80,
     },
 
+    "[todo]": {
+        "editor.quickSuggestions": false,
+        "editor.renderWhitespace": "none",
+        "editor.renderControlCharacters": false,
+    },
+
     // =========================================================================
     // Extension settings
     // =========================================================================
@@ -93,14 +99,14 @@
     "python.formatting.provider": "yapf",
     // "python.formatting.yapfArgs": ["--style", "{indent_width: 2}"],
     // "{dedent_closing_brackets: True}"],
-    "python.formatting.yapfArgs": ["--style", "{indent_width: 2, continuation_indent_width: 2, dedent_closing_brackets: True}"],
+    "python.formatting.yapfArgs": ["--style", "{indent_width: 2, continuation_indent_width: 2, dedent_closing_brackets: True, column_limit = 80}"],
 
     // Providing pylintArgs disables sensinble defaults that VSCode applies. I
     // have therefore copy-pasted them manually (see pylintUseMinimalCheckers).
     // The real change I want to make here is extension-pkg-whitelist
     "python.linting.pylintArgs": ["--disable=all","--enable=F,E,unreachable,duplicate-key,unnecessary-semicolon,global-variable-not-assigned,unused-variable,binary-op-exception,bad-format-string,anomalous-backslash-in-string,bad-open-mode","--extension-pkg-whitelist=torch,numpy"],
 
-    "rewrap.autoWrap.enabled": true,
+    "rewrap.autoWrap.enabled": false,
 
     "latex-workshop.view.pdf.viewer": "tab",
     // "latex-workshop.latex.outputDir": "./_output",
