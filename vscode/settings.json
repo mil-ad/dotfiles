@@ -11,8 +11,9 @@
     "editor.renderControlCharacters": false,
     "editor.wordBasedSuggestions": false,
     "editor.cursorStyle": "line",
-    // "editor.cursorSmoothCaretAnimation": true,
     "editor.formatOnPaste": false,
+    "editor.suggestSelection": "first",
+    // "editor.cursorSmoothCaretAnimation": true,
 
     "workbench.statusBar.feedback.visible": false,
     "workbench.activityBar.visible": true,
@@ -37,31 +38,31 @@
     "git.autofetch": true,
 
     "terminal.integrated.macOptionClickForcesSelection": true,
-    "terminal.integrated.fontFamily": "Perplexed-Bold",
+    "terminal.integrated.fontFamily": "'IBMPlexMono-Bold', 'IBM Plex Mono SemiBold', 'Courier New', Menlo",
     "terminal.integrated.fontSize": 13,
 
     // Disable italics in comment blocks
     // From https://stackoverflow.com/a/46278282/298209
     "editor.tokenColorCustomizations": {
-    "textMateRules": [
-        {
-            "name": "Comment",
-            "scope": [
-                "comment",
-                "comment.block",
-                "comment.block.documentation",
-                "comment.line",
-                "comment.line.double-slash",
-                "punctuation.definition.comment",
-            ],
-            "settings": {
-                "fontStyle": "",
-                // "fontStyle": "italic",
-                // "fontStyle": "italic underline",
-                // "fontStyle": "italic bold underline",
-            }
-        },
-    ]
+        "textMateRules": [
+            {
+                "name": "Comment",
+                "scope": [
+                    "comment",
+                    "comment.block",
+                    "comment.block.documentation",
+                    "comment.line",
+                    "comment.line.double-slash",
+                    "punctuation.definition.comment",
+                ],
+                "settings": {
+                    "fontStyle": "",
+                    // "fontStyle": "italic",
+                    // "fontStyle": "italic underline",
+                    // "fontStyle": "italic bold underline",
+                }
+            },
+        ]
     },
 
     // =========================================================================
@@ -95,13 +96,12 @@
 
     "git-graph.showStatusBarItem": false,
 
+    "python.jediEnabled": false,
     "python.dataScience.sendSelectionToInteractiveWindow": true,
     "python.formatting.provider": "yapf",
-    // "python.formatting.yapfArgs": ["--style", "{indent_width: 2}"],
-    // "{dedent_closing_brackets: True}"],
     "python.formatting.yapfArgs": ["--style", "{indent_width: 2, continuation_indent_width: 2, dedent_closing_brackets: True, column_limit = 80}"],
 
-    // Providing pylintArgs disables sensinble defaults that VSCode applies. I
+    // Providing pylintArgs disables sensible defaults that VSCode applies. I
     // have therefore copy-pasted them manually (see pylintUseMinimalCheckers).
     // The real change I want to make here is extension-pkg-whitelist
     "python.linting.pylintArgs": ["--disable=all","--enable=F,E,unreachable,duplicate-key,unnecessary-semicolon,global-variable-not-assigned,unused-variable,binary-op-exception,bad-format-string,anomalous-backslash-in-string,bad-open-mode","--extension-pkg-whitelist=torch,numpy"],
@@ -153,9 +153,7 @@
     "todo.symbols.cancelled": "-",
     "todo.symbols.done": "x",
 
-    "spellright.language": [
-        "en_GB"
-    ],
+    "spellright.language": ["en_GB"],
     "spellright.groupDictionaries": false,
     "spellright.configurationScope": "user",
     "spellright.documentTypes": [
@@ -167,11 +165,8 @@
     "spellright.spellContext": "comments",
     "spellright.statusBarIndicator": false,
 
-
     "fileutils.delete.useTrash": true,
-    "editor.suggestSelection": "first",
     "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
-    "python.jediEnabled": false,
-    "workbench.colorTheme": "Noctis Viola",
+    "workbench.colorTheme": "Shades of Purple",
     "diffEditor.renderSideBySide": true,
 }
