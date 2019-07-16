@@ -46,16 +46,12 @@
     {
         "key": "cmd+d",
         "command": "editor.action.deleteLines",
-        "when": "textInputFocus && !editorReadonly",
-        "when": "isMac"
-
+        "when": "isMac && textInputFocus && !editorReadonly",
     },
     {
         "key": "ctrl+d",
         "command": "editor.action.deleteLines",
-        "when": "textInputFocus && !editorReadonly",
-        "when": "!isMac"
-
+        "when": "!isMac && textInputFocus && !editorReadonly",
     },
 
     {
@@ -79,26 +75,35 @@
         "when": "!isMac & editorTextFocus && !editorReadonly",
     },
 
+
+
+
+
     {
-        "key": "ctrl+cmd+g",
+        "key": "ctrl+alt+g",
         "command": "editor.action.selectHighlights",
         "when": "editorFocus"
     },
-    {
-        "key": "shift+cmd+l",
-        "command": "-editor.action.selectHighlights",
-        "when": "editorFocus"
-    },
+    // {
+    //     "key": "shift+cmd+l",
+    //     "command": "-editor.action.selectHighlights",
+    //     "when": "isMac && editorFocus"
+    // },
     {
         "key": "alt+cmd+g",
         "command": "editor.action.addSelectionToNextFindMatch",
-        "when": "editorFocus"
+        "when": "isMac && editorFocus"
     },
     {
         "key": "cmd+d",
         "command": "-editor.action.addSelectionToNextFindMatch",
-        "when": "editorFocus"
+        "when": "isMac && editorFocus"
     },
+
+
+
+
+
     {
         "key": "cmd+b cmd+p",
         "command": "workbench.action.toggleSidebarVisibility"
@@ -117,16 +122,19 @@
         "command": "-rewrap.rewrapComment",
         "when": "editorTextFocus"
     },
-    {
-        "key": "ctrl+[",
-        "command": "editor.action.outdentLines",
-        "when": "editorTextFocus && !editorReadonly"
-    },
-    {
-        "key": "ctrl+]",
-        "command": "editor.action.indentLines",
-        "when": "editorTextFocus && !editorReadonly"
-    },
+
+
+
+    // {
+    //     "key": "ctrl+[",
+    //     "command": "editor.action.outdentLines",
+    //     "when": "!isMac && editorTextFocus && !editorReadonly"
+    // },
+    // {
+    //     "key": "ctrl+]",
+    //     "command": "editor.action.indentLines",
+    //     "when": "!isMac && editorTextFocus && !editorReadonly"
+    // },
     {
         "key": "cmd+]",
         "command": "-editor.action.indentLines",
@@ -134,8 +142,17 @@
     },
     {
         "key": "cmd+[",
-        "command": "workbench.action.navigateBack"
+        "command": "workbench.action.navigateBack",
+        "when": "isMac"
     },
+    {
+        "key": "ctrl+[",
+        "command": "workbench.action.navigateBack",
+        "when": "!isMac"
+    },
+
+
+
 
 
     {
