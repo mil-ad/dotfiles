@@ -3,7 +3,6 @@ source ~/.dotfiles/antigen.zsh
 antigen use oh-my-zsh
 
 antigen bundle wd
-antigen bundle sublime
 antigen bundle colored-man-pages
 antigen bundle pip
 antigen bundle docker
@@ -26,8 +25,8 @@ if [ -e /usr/share/fzf/completion.zsh ]; then
     source /usr/share/fzf/completion.zsh
 fi
 
-if [ -e .zshrc_private ]; then
-    source .zshrc_private
+if [ -e .zshrc_local ]; then
+    source .zshrc_local
 fi
 
 export FZF_DEFAULT_COMMAND='ag --hidden --ignore .git -g ""'

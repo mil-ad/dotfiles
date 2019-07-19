@@ -69,7 +69,7 @@ rofi.dpi:               200
 !URxvt.font:                xft:TerminessTTFNerdFontMono:size=18
 !URxvt.font:                xft:Perplexed-Normal:style=Bold:size=12
 !URxvt.font:                 xft:Deja Vu Sans Mono:size=12
-URxvt.font:                xft:Perplexed-Normal:style=Bold:size=12,xft:Deja Vu Sans Mono:size=12
+URxvt.font:                xft:Perplexed-Normal:style=Bold:size=12,xft:Deja Vu Sans Mono for Powerline:size=12,xft:Symbola:size=12
 
 
 

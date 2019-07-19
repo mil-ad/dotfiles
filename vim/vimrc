@@ -2,55 +2,24 @@ set nocompatible              " be iMproved, required
 filetype off                  " required
 
 " -----------------------8<-------------------------8<------------------------ "
-" set the runtime path to include Vundle and initialize.
-" Keep Plugin commands between vundle#begin/end.
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
-" alternatively, pass a path where Vundle should install plugins
-"call vundle#begin('~/some/path/here')
+" Specify a directory for plugins
+" - For Neovim: ~/.local/share/nvim/plugged
+" - Avoid using standard Vim directory names like 'plugin'
+call plug#begin('~/.vim/plugged')
 
-" let Vundle manage Vundle, required
-Plugin 'VundleVim/Vundle.vim'
+" Make sure you use single quotes
 
-" plugins on GitHub 
-Plugin 'tpope/vim-fugitive'
-Plugin 'vim-airline/vim-airline'
-Plugin 'vim-airline/vim-airline-themes'
-Plugin 'ctrlpvim/ctrlp.vim'
-Plugin 'scrooloose/nerdtree'
-Plugin 'majutsushi/tagbar'
-Plugin 'nfvs/vim-perforce'
-Plugin 'junegunn/fzf.vim'
-Plugin 'morhetz/gruvbox'
-Plugin 'terryma/vim-multiple-cursors'
+Plug 'tpope/vim-fugitive'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+Plug 'ctrlpvim/ctrlp.vim'
+Plug 'scrooloose/nerdtree'
+Plug 'majutsushi/tagbar'
+Plug 'junegunn/fzf.vim'
+Plug 'morhetz/gruvbox'
 
-" The following are examples of different formats supported.
-
-" plugin from http://vim-scripts.org/vim/scripts.html
-" Plugin 'L9'
-
-" Git plugin not hosted on GitHub
-" Plugin 'git://git.wincent.com/command-t.git'
-
-" git repos on your local machine (i.e. when working on your own plugin)
-" Plugin 'file:///home/gmarik/path/to/plugin'
-
-" The sparkup vim script is in a subdirectory of this repo called vim.
-" Pass the path to set the runtimepath properly.
-" Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
-
-" Install L9 and avoid a Naming conflict if you've already installed a
-" different version somewhere else.
-" Plugin 'ascenator/L9', {'name': 'newL9'}
-
-" All of your Plugins must be added before the following line
-call vundle#end()            " required
-filetype plugin indent on    " required
-" To ignore plugin indent changes, instead use:
-"filetype plugin on
-"
-" see :h vundle for more details or wiki for FAQ
-" Put your non-Plugin stuff after this line
+" Initialize plugin system
+call plug#end()
 " -----------------------8<-------------------------8<------------------------ "
 
 set number             	" Show line numbers
@@ -65,7 +34,7 @@ set cursorline		" Highlight current line
 set wildmenu		" Show possible options when doing tab-completion
 " When more than one match in tab-complete, list all matches and complete till
 " longest common string.
-set wildmode=longest:full,full 
+set wildmode=longest:full,full
 
 set ignorecase	       	" Ignore case when searching
 set smartcase	       	" Override ignorecase when search pattern includes upper case
@@ -83,7 +52,7 @@ set t_Co=256
 "let base16colorspace=256
 set background=dark
 let g:gruvbox_contrast_dark='hard'
-colorscheme gruvbox 
+colorscheme gruvbox
 
 " Key mappings
 let mapleader=" " " Use spacekey as <Leader>
@@ -92,7 +61,7 @@ nnoremap <Leader><PageDown> :bnext<CR>
 nnoremap <Leader>t	    :enew<CR>
 nnoremap <Leader>w	    :bdelete<CR>
 nnoremap <Leader>r	    :CtrlPBufTag<CR>
-nnoremap <Leader>/	    :set hlsearch!<CR> 
+nnoremap <Leader>/	    :set hlsearch!<CR>
 " VimAirline settings
 set laststatus=2 " Make it visible all the time
 let g:airline_powerline_fonts = 1
@@ -124,4 +93,3 @@ set rtp+=~/.fzf
 let $FZF_DEFAULT_COMMAND='ag -g ""'
 
 command! -bar -bang Q quit<bang>
-
