@@ -109,6 +109,13 @@
         "command": "workbench.action.toggleSidebarVisibility"
     },
     {
+        "key": "ctrl+b ctrl+p",
+        "command": "workbench.action.toggleSidebarVisibility",
+        "when": "!isMac"
+    },
+
+
+    {
         "key": "cmd+b",
         "command": "-workbench.action.toggleSidebarVisibility"
     },
