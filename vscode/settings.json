@@ -74,7 +74,7 @@
     },
 
     "[latex]": {
-        "editor.wordWrap": "wordWrapColumn",
+        "editor.wordWrap": "bounded",
         "editor.wordWrapColumn": 80,
         "editor.rulers": []
     },
@@ -105,6 +105,51 @@
     // "latex-workshop.latex.outputDir": "./_output",
     "latex-workshop.latex.tools": [
         {
+            "name": "latexmk",
+            "command": "latexmk",
+            "args": [
+              "-synctex=1",
+              "-interaction=nonstopmode",
+              "-file-line-error",
+              "-pdf",
+              "-outdir=%OUTDIR%",
+              "%DOC%"
+            ],
+            "env": {}
+        },
+        {
+            "name": "latexmk-with-xelatex",
+            "command": "latexmk",
+            "args": [
+              "-xelatex",
+              "-synctex=1",
+              "-interaction=nonstopmode",
+              "-file-line-error",
+              "-outdir=%OUTDIR%",
+              "%DOC%"
+            ],
+            "env": {}
+        },
+        {
+            "name": "pdflatex",
+            "command": "pdflatex",
+            "args": [
+              "-synctex=1",
+              "-interaction=nonstopmode",
+              "-file-line-error",
+              "%DOC%"
+            ],
+            "env": {}
+        },
+        {
+            "name": "bibtex",
+            "command": "bibtex",
+            "args": [
+              "%DOCFILE%"
+            ],
+            "env": {}
+        },
+        {
             "name": "xelatex",
             "command": "xelatex",
             "args": [
@@ -118,6 +163,18 @@
         }
     ],
     "latex-workshop.latex.recipes": [
+        {
+            "name": "xelatex 🔃",
+            "tools": [
+                "xelatex"
+            ]
+        },
+        {
+            "name": "latexmk with xelatex 🔃",
+            "tools": [
+                "latexmk-with-xelatex",
+            ]
+        },
         {
             "name": "latexmk 🔃",
             "tools": [
@@ -133,13 +190,10 @@
                 "pdflatex"
             ]
         },
-        {
-            "name": "xelatex 🔃",
-            "tools": [
-                "xelatex"
-            ]
-        },
     ],
+    "latex-workshop.latex.autoBuild.run": "never",
+    // "latex-workshop.latex.outDir": "_output/",
+    "latex-workshop.latex.recipe.default": "lastUsed",
 
     "todo.embedded.provider": "ag",
     "todo.symbols.box": "[ ]",
