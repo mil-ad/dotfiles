@@ -30,6 +30,10 @@
     "explorer.decorations.badges": false,
     "explorer.sortOrder": "type",
 
+    "terminal.integrated.macOptionClickForcesSelection": true,
+    "terminal.integrated.fontFamily": "'IBMPlexMono-Bold', 'IBM Plex Mono SemiBold', 'Courier New', Menlo",
+    "terminal.integrated.fontSize": 13,
+
     "scm.diffDecorationsGutterWidth": 2,
     "scm.diffDecorations": "gutter",
 
@@ -39,9 +43,6 @@
     "diffEditor.renderSideBySide": true,
     "git.autofetch": true,
 
-    "terminal.integrated.macOptionClickForcesSelection": true,
-    "terminal.integrated.fontFamily": "'IBMPlexMono-Bold', 'IBM Plex Mono SemiBold', 'Courier New', Menlo",
-    "terminal.integrated.fontSize": 13,
 
     // Disable italics in comment blocks
     // From https://stackoverflow.com/a/46278282/298209
@@ -98,32 +99,26 @@
 
     "git-graph.showStatusBarItem": false,
 
-<<<<<<< HEAD
-    "python.jediEnabled": false,
-    "python.dataScience.sendSelectionToInteractiveWindow": true,
-    "python.formatting.provider": "yapf",
-    "python.formatting.yapfArgs": ["--style", "{indent_width: 2, continuation_indent_width: 2, dedent_closing_brackets: True, column_limit = 80}"],
-
-    // Providing pylintArgs disables sensible defaults that VSCode applies. I
-    // have therefore copy-pasted them manually (see pylintUseMinimalCheckers).
-    // The real change I want to make here is extension-pkg-whitelist
-=======
     "python.jediEnabled": false,  // Use Microsoft Python Analysis instead
     "python.dataScience.sendSelectionToInteractiveWindow": true,
     "python.formatting.provider": "yapf",
-    "python.formatting.yapfArgs": ["--style", "{indent_width: 2, continuation_indent_width: 2, dedent_closing_brackets: True, column_limit:80}"],
+    "python.formatting.yapfArgs": [
+        "--style", "{indent_width: 2, continuation_indent_width: 2, dedent_closing_brackets: True, column_limit:80}"
+    ],
 
     // Providing pylintArgs disables all the sensible defaults that VSCode
     // applies. I have therefore copy-pasted them manually (see
     // pylintUseMinimalCheckers). The real change I want to make here is
     // extension-pkg-whitelist
->>>>>>> 0d9df8599bb307d25bea440f41fd773635845f9f
-    "python.linting.pylintArgs": ["--disable=all","--enable=F,E,unreachable,duplicate-key,unnecessary-semicolon,global-variable-not-assigned,unused-variable,binary-op-exception,bad-format-string,anomalous-backslash-in-string,bad-open-mode","--extension-pkg-whitelist=torch,numpy"],
+    "python.linting.pylintArgs": [
+        "--disable=all","--enable=F,E,unreachable,duplicate-key,unnecessary-semicolon,global-variable-not-assigned,unused-variable,binary-op-exception,bad-format-string,anomalous-backslash-in-string,bad-open-mode","--extension-pkg-whitelist=torch,numpy"],
 
     "rewrap.autoWrap.enabled": false,
 
     "latex-workshop.view.pdf.viewer": "tab",
-    // "latex-workshop.latex.outputDir": "./_output",
+    "latex-workshop.latex.outputDir": "./_output",
+    "latex-workshop.latex.autoBuild.run": "never",
+    "latex-workshop.latex.recipe.default": "lastUsed",
     "latex-workshop.latex.tools": [
         {
             "name": "latexmk",
@@ -212,9 +207,6 @@
             ]
         },
     ],
-    "latex-workshop.latex.autoBuild.run": "never",
-    // "latex-workshop.latex.outDir": "_output/",
-    "latex-workshop.latex.recipe.default": "lastUsed",
 
     "todo.embedded.provider": "ag",
     "todo.symbols.box": "[ ]",
