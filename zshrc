@@ -29,3 +29,4 @@ if [ -e .zshrc_local ]; then
     source .zshrc_local
 fi
 
+export FZF_DEFAULT_COMMAND='ag --hidden --ignore .git -g ""'

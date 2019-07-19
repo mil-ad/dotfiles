@@ -11,8 +11,9 @@
     "editor.renderControlCharacters": false,
     "editor.wordBasedSuggestions": false,
     "editor.cursorStyle": "line",
-    // "editor.cursorSmoothCaretAnimation": true,
     "editor.formatOnPaste": false,
+    "editor.suggestSelection": "first",
+    // "editor.cursorSmoothCaretAnimation": true,
 
     "workbench.statusBar.feedback.visible": false,
     "workbench.activityBar.visible": true,
@@ -20,6 +21,7 @@
     "workbench.iconTheme": "ayu",
     "workbench.startupEditor": "newUntitledFile",
     "workbench.tips.enabled": false,
+    "workbench.colorTheme": "Noctis Uva",
 
     "files.trimTrailingWhitespace": true,
     "files.trimFinalNewlines": true,
@@ -28,40 +30,42 @@
     "explorer.decorations.badges": false,
     "explorer.sortOrder": "type",
 
+    "terminal.integrated.macOptionClickForcesSelection": true,
+    "terminal.integrated.fontFamily": "'IBMPlexMono-Bold', 'IBM Plex Mono SemiBold', 'Courier New', Menlo",
+    "terminal.integrated.fontSize": 13,
+
     "scm.diffDecorationsGutterWidth": 2,
     "scm.diffDecorations": "gutter",
 
     "window.zoomLevel": 0,
     "telemetry.enableTelemetry": true,
-    "diffEditor.ignoreTrimWhitespace": true,
+    "diffEditor.ignoreTrimWhitespace": false,
+    "diffEditor.renderSideBySide": true,
     "git.autofetch": true,
 
-    "terminal.integrated.macOptionClickForcesSelection": true,
-    "terminal.integrated.fontFamily": "Perplexed-Bold",
-    "terminal.integrated.fontSize": 13,
 
     // Disable italics in comment blocks
     // From https://stackoverflow.com/a/46278282/298209
     "editor.tokenColorCustomizations": {
-    "textMateRules": [
-        {
-            "name": "Comment",
-            "scope": [
-                "comment",
-                "comment.block",
-                "comment.block.documentation",
-                "comment.line",
-                "comment.line.double-slash",
-                "punctuation.definition.comment",
-            ],
-            "settings": {
-                "fontStyle": "",
-                // "fontStyle": "italic",
-                // "fontStyle": "italic underline",
-                // "fontStyle": "italic bold underline",
-            }
-        },
-    ]
+        "textMateRules": [
+            {
+                "name": "Comment",
+                "scope": [
+                    "comment",
+                    "comment.block",
+                    "comment.block.documentation",
+                    "comment.line",
+                    "comment.line.double-slash",
+                    "punctuation.definition.comment",
+                ],
+                "settings": {
+                    "fontStyle": "",
+                    // "fontStyle": "italic",
+                    // "fontStyle": "italic underline",
+                    // "fontStyle": "italic bold underline",
+                }
+            },
+        ]
     },
 
     // =========================================================================
@@ -73,14 +77,20 @@
     },
 
     "[latex]": {
-        "editor.wordWrap": "wordWrapColumn",
+        "editor.wordWrap": "bounded",
         "editor.wordWrapColumn": 80,
         "editor.rulers": []
     },
 
     "[markdown]":{
-        "editor.wordWrap": "wordWrapColumn",
+        "editor.wordWrap": "bounded",
         "editor.wordWrapColumn": 80,
+    },
+
+    "[todo]": {
+        "editor.quickSuggestions": false,
+        "editor.renderWhitespace": "none",
+        "editor.renderControlCharacters": false,
     },
 
     // =========================================================================
@@ -89,22 +99,72 @@
 
     "git-graph.showStatusBarItem": false,
 
+    "python.jediEnabled": false,  // Use Microsoft Python Analysis instead
     "python.dataScience.sendSelectionToInteractiveWindow": true,
     "python.formatting.provider": "yapf",
-    // "python.formatting.yapfArgs": ["--style", "{indent_width: 2}"],
-    // "{dedent_closing_brackets: True}"],
-    "python.formatting.yapfArgs": ["--style", "{indent_width: 2, continuation_indent_width: 2, dedent_closing_brackets: True}"],
+    "python.formatting.yapfArgs": [
+        "--style", "{indent_width: 2, continuation_indent_width: 2, dedent_closing_brackets: True, column_limit:80}"
+    ],
 
-    // Providing pylintArgs disables sensinble defaults that VSCode applies. I
-    // have therefore copy-pasted them manually (see pylintUseMinimalCheckers).
-    // The real change I want to make here is extension-pkg-whitelist
-    "python.linting.pylintArgs": ["--disable=all","--enable=F,E,unreachable,duplicate-key,unnecessary-semicolon,global-variable-not-assigned,unused-variable,binary-op-exception,bad-format-string,anomalous-backslash-in-string,bad-open-mode","--extension-pkg-whitelist=torch,numpy"],
+    // Providing pylintArgs disables all the sensible defaults that VSCode
+    // applies. I have therefore copy-pasted them manually (see
+    // pylintUseMinimalCheckers). The real change I want to make here is
+    // extension-pkg-whitelist
+    "python.linting.pylintArgs": [
+        "--disable=all","--enable=F,E,unreachable,duplicate-key,unnecessary-semicolon,global-variable-not-assigned,unused-variable,binary-op-exception,bad-format-string,anomalous-backslash-in-string,bad-open-mode","--extension-pkg-whitelist=torch,numpy"],
 
-    "rewrap.autoWrap.enabled": true,
+    "rewrap.autoWrap.enabled": false,
 
     "latex-workshop.view.pdf.viewer": "tab",
-    // "latex-workshop.latex.outputDir": "./_output",
+    "latex-workshop.latex.outputDir": "./_output",
+    "latex-workshop.latex.autoBuild.run": "never",
+    "latex-workshop.latex.recipe.default": "lastUsed",
     "latex-workshop.latex.tools": [
+        {
+            "name": "latexmk",
+            "command": "latexmk",
+            "args": [
+              "-synctex=1",
+              "-interaction=nonstopmode",
+              "-file-line-error",
+              "-pdf",
+              "-outdir=%OUTDIR%",
+              "%DOC%"
+            ],
+            "env": {}
+        },
+        {
+            "name": "latexmk-with-xelatex",
+            "command": "latexmk",
+            "args": [
+              "-xelatex",
+              "-synctex=1",
+              "-interaction=nonstopmode",
+              "-file-line-error",
+              "-outdir=%OUTDIR%",
+              "%DOC%"
+            ],
+            "env": {}
+        },
+        {
+            "name": "pdflatex",
+            "command": "pdflatex",
+            "args": [
+              "-synctex=1",
+              "-interaction=nonstopmode",
+              "-file-line-error",
+              "%DOC%"
+            ],
+            "env": {}
+        },
+        {
+            "name": "bibtex",
+            "command": "bibtex",
+            "args": [
+              "%DOCFILE%"
+            ],
+            "env": {}
+        },
         {
             "name": "xelatex",
             "command": "xelatex",
@@ -120,6 +180,18 @@
     ],
     "latex-workshop.latex.recipes": [
         {
+            "name": "xelatex 🔃",
+            "tools": [
+                "xelatex"
+            ]
+        },
+        {
+            "name": "latexmk with xelatex 🔃",
+            "tools": [
+                "latexmk-with-xelatex",
+            ]
+        },
+        {
             "name": "latexmk 🔃",
             "tools": [
                 "latexmk"
@@ -134,12 +206,6 @@
                 "pdflatex"
             ]
         },
-        {
-            "name": "xelatex 🔃",
-            "tools": [
-                "xelatex"
-            ]
-        },
     ],
 
     "todo.embedded.provider": "ag",
@@ -147,9 +213,7 @@
     "todo.symbols.cancelled": "-",
     "todo.symbols.done": "x",
 
-    "spellright.language": [
-        "en_GB"
-    ],
+    "spellright.language": ["en_GB"],
     "spellright.groupDictionaries": false,
     "spellright.configurationScope": "user",
     "spellright.documentTypes": [
@@ -161,11 +225,7 @@
     "spellright.spellContext": "comments",
     "spellright.statusBarIndicator": false,
 
-
     "fileutils.delete.useTrash": true,
-    "editor.suggestSelection": "first",
+
     "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
-    "python.jediEnabled": false,
-    "workbench.colorTheme": "Noctis Viola",
-    "diffEditor.renderSideBySide": true,
 }
