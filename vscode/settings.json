@@ -21,6 +21,7 @@
     "workbench.iconTheme": "ayu",
     "workbench.startupEditor": "newUntitledFile",
     "workbench.tips.enabled": false,
+    "workbench.colorTheme": "Noctis Uva",
 
     "files.trimTrailingWhitespace": true,
     "files.trimFinalNewlines": true,
@@ -34,7 +35,8 @@
 
     "window.zoomLevel": 0,
     "telemetry.enableTelemetry": true,
-    "diffEditor.ignoreTrimWhitespace": true,
+    "diffEditor.ignoreTrimWhitespace": false,
+    "diffEditor.renderSideBySide": true,
     "git.autofetch": true,
 
     "terminal.integrated.macOptionClickForcesSelection": true,
@@ -74,13 +76,13 @@
     },
 
     "[latex]": {
-        "editor.wordWrap": "wordWrapColumn",
+        "editor.wordWrap": "bounded",
         "editor.wordWrapColumn": 80,
         "editor.rulers": []
     },
 
     "[markdown]":{
-        "editor.wordWrap": "wordWrapColumn",
+        "editor.wordWrap": "bounded",
         "editor.wordWrapColumn": 80,
     },
 
@@ -96,6 +98,7 @@
 
     "git-graph.showStatusBarItem": false,
 
+<<<<<<< HEAD
     "python.jediEnabled": false,
     "python.dataScience.sendSelectionToInteractiveWindow": true,
     "python.formatting.provider": "yapf",
@@ -104,6 +107,17 @@
     // Providing pylintArgs disables sensible defaults that VSCode applies. I
     // have therefore copy-pasted them manually (see pylintUseMinimalCheckers).
     // The real change I want to make here is extension-pkg-whitelist
+=======
+    "python.jediEnabled": false,  // Use Microsoft Python Analysis instead
+    "python.dataScience.sendSelectionToInteractiveWindow": true,
+    "python.formatting.provider": "yapf",
+    "python.formatting.yapfArgs": ["--style", "{indent_width: 2, continuation_indent_width: 2, dedent_closing_brackets: True, column_limit:80}"],
+
+    // Providing pylintArgs disables all the sensible defaults that VSCode
+    // applies. I have therefore copy-pasted them manually (see
+    // pylintUseMinimalCheckers). The real change I want to make here is
+    // extension-pkg-whitelist
+>>>>>>> 0d9df8599bb307d25bea440f41fd773635845f9f
     "python.linting.pylintArgs": ["--disable=all","--enable=F,E,unreachable,duplicate-key,unnecessary-semicolon,global-variable-not-assigned,unused-variable,binary-op-exception,bad-format-string,anomalous-backslash-in-string,bad-open-mode","--extension-pkg-whitelist=torch,numpy"],
 
     "rewrap.autoWrap.enabled": false,
@@ -111,6 +125,51 @@
     "latex-workshop.view.pdf.viewer": "tab",
     // "latex-workshop.latex.outputDir": "./_output",
     "latex-workshop.latex.tools": [
+        {
+            "name": "latexmk",
+            "command": "latexmk",
+            "args": [
+              "-synctex=1",
+              "-interaction=nonstopmode",
+              "-file-line-error",
+              "-pdf",
+              "-outdir=%OUTDIR%",
+              "%DOC%"
+            ],
+            "env": {}
+        },
+        {
+            "name": "latexmk-with-xelatex",
+            "command": "latexmk",
+            "args": [
+              "-xelatex",
+              "-synctex=1",
+              "-interaction=nonstopmode",
+              "-file-line-error",
+              "-outdir=%OUTDIR%",
+              "%DOC%"
+            ],
+            "env": {}
+        },
+        {
+            "name": "pdflatex",
+            "command": "pdflatex",
+            "args": [
+              "-synctex=1",
+              "-interaction=nonstopmode",
+              "-file-line-error",
+              "%DOC%"
+            ],
+            "env": {}
+        },
+        {
+            "name": "bibtex",
+            "command": "bibtex",
+            "args": [
+              "%DOCFILE%"
+            ],
+            "env": {}
+        },
         {
             "name": "xelatex",
             "command": "xelatex",
@@ -126,6 +185,18 @@
     ],
     "latex-workshop.latex.recipes": [
         {
+            "name": "xelatex 🔃",
+            "tools": [
+                "xelatex"
+            ]
+        },
+        {
+            "name": "latexmk with xelatex 🔃",
+            "tools": [
+                "latexmk-with-xelatex",
+            ]
+        },
+        {
             "name": "latexmk 🔃",
             "tools": [
                 "latexmk"
@@ -140,13 +211,10 @@
                 "pdflatex"
             ]
         },
-        {
-            "name": "xelatex 🔃",
-            "tools": [
-                "xelatex"
-            ]
-        },
     ],
+    "latex-workshop.latex.autoBuild.run": "never",
+    // "latex-workshop.latex.outDir": "_output/",
+    "latex-workshop.latex.recipe.default": "lastUsed",
 
     "todo.embedded.provider": "ag",
     "todo.symbols.box": "[ ]",
@@ -166,7 +234,6 @@
     "spellright.statusBarIndicator": false,
 
     "fileutils.delete.useTrash": true,
+
     "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
-    "workbench.colorTheme": "Shades of Purple",
-    "diffEditor.renderSideBySide": true,
 }
