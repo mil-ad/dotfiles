@@ -10,5 +10,5 @@
     ~/.i3/config:
         create: true
         path: i3/config  
-
-
+    ~/.Xresources: Xresources
+    ~/.Xresources.d: Xresources.d

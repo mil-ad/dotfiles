@@ -1,0 +1,6 @@
+rofi.combi-modi:        window,run,drun,ssh
+rofi.sidebar-mode:      true
+rofi.theme:             gruvbox-dark
+rofi.modi:              window,run,drun,ssh
+rofi.font:              IBM Plex Mono Semibold 12
+rofi.dpi:               200
