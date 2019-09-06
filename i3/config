@@ -290,7 +290,9 @@ exec --no-startup-id start_conky_maia
 exec --no-startup-id xautolock -detectsleep -time 10 -locker blurlock
 exec --no-startup-id caffeine
 exec_always --no-startup-id ff-theme-util
-exec_always --no-startup-id fix_xcursor
+
+# Milad: This breaks "#include"s in .Xresources. Disabling until fixed.
+#exec_always --no-startup-id fix_xcursor
 
 
 # Color palette used for the terminal ( ~/.Xresources file )
