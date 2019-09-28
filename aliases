@@ -10,8 +10,8 @@ alias ll="ls -laHh"
 alias ldot='ls -ld .*'
 
 alias g='grep -r -i'
-alias ag='ag --ignore-case -C 2 --color-match="1;31" --ignore-dir=docs --silent'
-alias agp='ag --ignore-case -C 2 --color-match="1;31" --ignore-dir=docs --silent --pager=less'
+alias ag='ag --ignore-case --color-match="1;31" --silent'
+alias agc='ag --ignore-case --color-match="1;31" --silent -C 2'
 alias agf='ag -g'
 
 alias more="less"
