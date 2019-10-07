@@ -17,8 +17,14 @@ source ~/.dotfiles/exports
 source ~/.dotfiles/functions
 source ~/.dotfiles/evals
 
+
+# fzf keybinding and completion on Linux
 [ -e /usr/share/fzf/key-bindings.zsh ] && source /usr/share/fzf/key-bindings.zsh
 [ -e /usr/share/fzf/completion.zsh ] && source /usr/share/fzf/completion.zsh
+
+# fzf keybinding and completion on macOS
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
 export FZF_DEFAULT_COMMAND='ag --hidden --ignore .git -g ""'
 
 [ -e .zshrc_local ] && source .zshrc_local
