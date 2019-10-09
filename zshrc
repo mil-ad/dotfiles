@@ -17,16 +17,8 @@ source ~/.dotfiles/exports
 source ~/.dotfiles/functions
 source ~/.dotfiles/evals
 
-if [ -e /usr/share/fzf/key-bindings.zsh ]; then
-    source /usr/share/fzf/key-bindings.zsh
-fi
-
-if [ -e /usr/share/fzf/completion.zsh ]; then
-    source /usr/share/fzf/completion.zsh
-fi
-
-if [ -e .zshrc_local ]; then
-    source .zshrc_local
-fi
-
+[ -e /usr/share/fzf/key-bindings.zsh ] && source /usr/share/fzf/key-bindings.zsh
+[ -e /usr/share/fzf/completion.zsh ] && source /usr/share/fzf/completion.zsh
 export FZF_DEFAULT_COMMAND='ag --hidden --ignore .git -g ""'
+
+[ -e .zshrc_local ] && source .zshrc_local
