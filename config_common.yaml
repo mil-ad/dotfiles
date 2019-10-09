@@ -28,6 +28,9 @@
         path: pandoc
     ~/.condarc: condarc
     ~/.dotfiles: ''
+    ~/.jupyter/jupyter_notebook_config.py:
+        create: true
+        path: jupyter_notebook_config.py
 
 - shell:
     - [curl -L git.io/antigen > antigen.zsh, Installing Antigen]
