@@ -2,7 +2,7 @@
 # clean: Remove dead symbolic links that point to the dotfiles directory. Unless
 #        the force option is set to true.
 # relink: remove existing target but only if it's a symbolic link
-# force: remove existing target even if it's a file or directory
+# force: remove existing target even if it's an actual file or directory
 
 - defaults:
     link:
@@ -26,6 +26,7 @@
     ~/.pandoc:
         create: true
         path: pandoc
+    ~/.condarc: condarc
     ~/.dotfiles: ''
 
 - shell:
