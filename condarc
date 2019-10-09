@@ -3,3 +3,4 @@ channels:
 ssl_verify: true
 
 changeps1: False
+auto_activate_base: False
