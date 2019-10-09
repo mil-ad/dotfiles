@@ -13,6 +13,10 @@
         create: true
         force: true
         path: vscode/keybindings.json
+    ~/.config/Code/User/spellright.dict:
+        create: true
+        force: true
+        path: vscode/spellright.dict
     ~/.i3/config:
         create: true
         path: i3/config
