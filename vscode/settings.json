@@ -231,4 +231,5 @@
     // "latex-workshop.latex.outDir": "./_output",
     "latex-workshop.message.error.show": false,
     "latex-workshop.message.warning.show": false,
+    "latex-workshop.latex.outDir": "./_output",
 }
