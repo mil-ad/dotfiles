@@ -2,5 +2,5 @@ channels:
   - defaults
 ssl_verify: true
 
-changeps1: False
-auto_activate_base: False
+changeps1: false
+auto_activate_base: false
