@@ -21,7 +21,7 @@
     "workbench.iconTheme": "ayu",
     "workbench.startupEditor": "newUntitledFile",
     "workbench.tips.enabled": false,
-    "workbench.colorTheme": "Ayu Mirage",
+    "workbench.colorTheme": "Gruvbox Dark Medium",
 
     "files.trimTrailingWhitespace": true,
     "files.trimFinalNewlines": true,
@@ -228,8 +228,8 @@
     "fileutils.delete.useTrash": true,
 
     "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
-    // "latex-workshop.latex.outDir": "./_output",
     "latex-workshop.message.error.show": false,
     "latex-workshop.message.warning.show": false,
     "latex-workshop.latex.outDir": "./_output",
+    "terminal.integrated.inheritEnv": false,
 }
