@@ -13,14 +13,15 @@
     "editor.cursorStyle": "line",
     "editor.formatOnPaste": false,
     "editor.suggestSelection": "first",
+    // "explorer.openEditors.visible": 0,
     // "editor.cursorSmoothCaretAnimation": true,
 
     "workbench.statusBar.feedback.visible": false,
+    "workbench.tips.enabled": false,
     "workbench.activityBar.visible": true,
     "workbench.statusBar.visible": true,
     "workbench.iconTheme": "ayu",
     "workbench.startupEditor": "newUntitledFile",
-    "workbench.tips.enabled": false,
     "workbench.colorTheme": "Gruvbox Dark Medium",
 
     "files.trimTrailingWhitespace": true,
@@ -33,12 +34,13 @@
     "terminal.integrated.macOptionClickForcesSelection": true,
     "terminal.integrated.fontFamily": "'IBMPlexMono-Bold', 'IBM Plex Mono SemiBold', 'Courier New', Menlo",
     "terminal.integrated.fontSize": 13,
+    // "terminal.integrated.inheritEnv": false,
 
     "scm.diffDecorationsGutterWidth": 2,
     "scm.diffDecorations": "gutter",
 
     "window.zoomLevel": 0,
-    "telemetry.enableTelemetry": true,
+    "telemetry.enableTelemetry": false,
     "diffEditor.ignoreTrimWhitespace": false,
     "diffEditor.renderSideBySide": true,
     "git.autofetch": true,
@@ -113,12 +115,18 @@
     "python.linting.pylintArgs": [
         "--disable=all","--enable=F,E,unreachable,duplicate-key,unnecessary-semicolon,global-variable-not-assigned,unused-variable,binary-op-exception,bad-format-string,anomalous-backslash-in-string,bad-open-mode","--extension-pkg-whitelist=torch,numpy"],
 
+    "python.testing.pytestEnabled": true,
+    "python.testing.unittestEnabled": false,
+    "python.testing.nosetestsEnabled": false,
+
     "rewrap.autoWrap.enabled": false,
 
     "latex-workshop.view.pdf.viewer": "tab",
-    "latex-workshop.latex.outputDir": "./_output",
     "latex-workshop.latex.autoBuild.run": "never",
     "latex-workshop.latex.recipe.default": "lastUsed",
+    "latex-workshop.message.error.show": false,
+    "latex-workshop.message.warning.show": false,
+    "latex-workshop.latex.outDir": "./_output",
     "latex-workshop.latex.tools": [
         {
             "name": "latexmk",
@@ -228,8 +236,5 @@
     "fileutils.delete.useTrash": true,
 
     "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
-    "latex-workshop.message.error.show": false,
-    "latex-workshop.message.warning.show": false,
-    "latex-workshop.latex.outDir": "./_output",
-    "terminal.integrated.inheritEnv": false,
+    "workbench.editor.enablePreview": false,
 }
