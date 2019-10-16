@@ -16,10 +16,10 @@
     // "explorer.openEditors.visible": 0,
     // "editor.cursorSmoothCaretAnimation": true,
 
+    "workbench.statusBar.visible": true,
     "workbench.statusBar.feedback.visible": false,
     "workbench.tips.enabled": false,
     "workbench.activityBar.visible": true,
-    "workbench.statusBar.visible": true,
     "workbench.iconTheme": "ayu",
     "workbench.startupEditor": "newUntitledFile",
     "workbench.colorTheme": "Gruvbox Dark Medium",
@@ -99,8 +99,6 @@
     // Extension settings
     // =========================================================================
 
-    "git-graph.showStatusBarItem": false,
-
     "python.jediEnabled": false,  // Use Microsoft Python Analysis instead
     "python.dataScience.sendSelectionToInteractiveWindow": true,
     "python.formatting.provider": "yapf",
@@ -119,14 +117,11 @@
     "python.testing.unittestEnabled": false,
     "python.testing.nosetestsEnabled": false,
 
-    "rewrap.autoWrap.enabled": false,
-
     "latex-workshop.view.pdf.viewer": "tab",
     "latex-workshop.latex.autoBuild.run": "never",
     "latex-workshop.latex.recipe.default": "lastUsed",
     "latex-workshop.message.error.show": false,
     "latex-workshop.message.warning.show": false,
-    "latex-workshop.latex.outDir": "./_output",
     "latex-workshop.latex.tools": [
         {
             "name": "latexmk",
@@ -237,4 +232,6 @@
 
     "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
     "workbench.editor.enablePreview": false,
+    "git-graph.showStatusBarItem": false,
+    "rewrap.autoWrap.enabled": false,
 }
