@@ -425,3 +425,8 @@ mode "$mode_gaps_outer" {
         bindsym Return mode "default"
         bindsym Escape mode "default"
 }
+
+#############################
+### My custom scripts:    ###
+#############################
+bindsym $mod+Ctrl+s exec ~/.scripts/google_scholar_dmenu
