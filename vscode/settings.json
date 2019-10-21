@@ -34,7 +34,7 @@
     "terminal.integrated.macOptionClickForcesSelection": true,
     "terminal.integrated.fontFamily": "'IBMPlexMono-Bold', 'IBM Plex Mono SemiBold', 'Courier New', Menlo",
     "terminal.integrated.fontSize": 13,
-    // "terminal.integrated.inheritEnv": false,
+    "terminal.integrated.inheritEnv": false,
 
     "scm.diffDecorationsGutterWidth": 2,
     "scm.diffDecorations": "gutter",
