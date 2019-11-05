@@ -1,3 +1,5 @@
 Conv
 Numpy
 logits
+quantization
+quantizable
