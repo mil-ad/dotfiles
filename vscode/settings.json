@@ -1,53 +1,22 @@
 {
-    "editor.fontFamily": "'IBMPlexMono-Bold', 'IBM Plex Mono SemiBold', 'Courier New', Menlo",
+    "editor.fontFamily": "'JetBrainsMono-Medium', 'IBMPlexMono-Bold', 'IBM Plex Mono SemiBold', 'Courier New', Menlo",
     "editor.fontSize": 17,
     "editor.tabSize": 4,
     "editor.mouseWheelZoom": false,
     "editor.multiCursorModifier": "ctrlCmd",
     "editor.cursorBlinking": "phase",
-    "editor.rulers": [80, 120],
+    "editor.cursorStyle": "line",
+    "editor.rulers": [
+        80,
+        120
+    ],
     "editor.wordWrapColumn": 80,
     "editor.renderWhitespace": "all",
     "editor.renderControlCharacters": false,
     "editor.wordBasedSuggestions": false,
-    "editor.cursorStyle": "line",
     "editor.formatOnPaste": false,
     "editor.suggestSelection": "first",
-    // "explorer.openEditors.visible": 0,
     // "editor.cursorSmoothCaretAnimation": true,
-
-    "workbench.statusBar.visible": true,
-    "workbench.statusBar.feedback.visible": false,
-    "workbench.tips.enabled": false,
-    "workbench.activityBar.visible": true,
-    "workbench.iconTheme": "ayu",
-    "workbench.startupEditor": "newUntitledFile",
-    "workbench.colorTheme": "Gruvbox Dark Medium",
-    "workbench.editor.enablePreview": false,
-
-    "update.mode": "manual",
-
-    "files.trimTrailingWhitespace": true,
-    "files.trimFinalNewlines": true,
-
-    "explorer.decorations.colors": false,
-    "explorer.decorations.badges": false,
-    "explorer.sortOrder": "type",
-
-    "terminal.integrated.macOptionClickForcesSelection": true,
-    "terminal.integrated.fontFamily": "'IBMPlexMono-Bold', 'IBM Plex Mono SemiBold', 'Courier New', Menlo",
-    "terminal.integrated.fontSize": 13,
-    "terminal.integrated.inheritEnv": false,
-
-    "scm.diffDecorationsGutterWidth": 2,
-    "scm.diffDecorations": "gutter",
-
-    "window.zoomLevel": -1,
-    "telemetry.enableTelemetry": false,
-    "diffEditor.ignoreTrimWhitespace": false,
-    "diffEditor.renderSideBySide": true,
-    "git.autofetch": true,
-
 
     // Disable italics in comment blocks
     // From https://stackoverflow.com/a/46278282/298209
@@ -73,49 +42,87 @@
         ]
     },
 
+    "workbench.statusBar.visible": true,
+    "workbench.statusBar.feedback.visible": false,
+    "workbench.tips.enabled": false,
+    "workbench.activityBar.visible": true,
+    "workbench.iconTheme": "ayu",
+    "workbench.colorTheme": "Popping and Locking",
+    "workbench.startupEditor": "newUntitledFile",
+    "workbench.editor.enablePreview": false,
+    "window.zoomLevel": -1,
+    "update.mode": "manual",
+    "files.trimTrailingWhitespace": true,
+    "files.trimFinalNewlines": true,
+    "explorer.decorations.colors": false,
+    "explorer.decorations.badges": false,
+    "explorer.sortOrder": "type",
+    // "explorer.openEditors.visible": 0,
+    "terminal.integrated.macOptionClickForcesSelection": true,
+    "terminal.integrated.fontFamily": "'IBMPlexMono-Bold', 'IBM Plex Mono SemiBold', 'Courier New', Menlo",
+    "terminal.integrated.fontSize": 13,
+    "terminal.integrated.inheritEnv": false,
+    "terminal.integrated.rendererType": "experimentalWebgl", // Experimental!
+    "scm.diffDecorationsGutterWidth": 2,
+    "scm.diffDecorations": "gutter",
+    "telemetry.enableTelemetry": false,
+    "diffEditor.ignoreTrimWhitespace": false,
+    "diffEditor.renderSideBySide": true,
+    "git.autofetch": true,
+    "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
+
+
     // =========================================================================
     // Per file type settings
     // =========================================================================
-
     "[python]": {
         "editor.tabSize": 4,
-        "editor.rulers": [88],
+        "editor.rulers": [
+            88
+        ],
+        "editor.formatOnSave": true,
     },
-
     "[latex]": {
         "editor.wordWrap": "bounded",
         "editor.wordWrapColumn": 80,
         "editor.rulers": []
     },
-
-    "[markdown]":{
+    "[markdown]": {
         "editor.wordWrap": "bounded",
         "editor.wordWrapColumn": 80,
     },
-
     "[todo]": {
         "editor.quickSuggestions": false,
         "editor.renderWhitespace": "none",
         "editor.renderControlCharacters": false,
+        // "highlight-dodgy-characters.whitelist": "☐✔✘",
+        "editor.wordWrap": "bounded",
+        "editor.wordWrapColumn": 120,
     },
+
+
+
 
     // =========================================================================
     // Extension settings
     // =========================================================================
-
-    "python.jediEnabled": false,  // Use Microsoft Python Analysis instead
+    "python.jediEnabled": false, // Use Microsoft Python Analysis instead
     "python.dataScience.sendSelectionToInteractiveWindow": true,
     "python.dataScience.askForKernelRestart": false,
     "python.formatting.provider": "black",
+
     "python.formatting.yapfArgs": [
-        "--style", "{indent_width: 2, continuation_indent_width: 2, dedent_closing_brackets: True, column_limit:80}"
+        // "--style", "{indent_width: 2, continuation_indent_width: 2, dedent_closing_brackets: True, column_limit:80}"
+        // "--style", "{indent_width: 4, continuation_indent_width: 4, dedent_closing_brackets: True, column_limit:88}"
     ],
     // Providing pylintArgs disables all the sensible defaults that VSCode
     // applies. I have therefore copy-pasted them manually (see
     // pylintUseMinimalCheckers). The real change I want to make here is
     // extension-pkg-whitelist
     "python.linting.pylintArgs": [
-        "--disable=all","--enable=F,E,unreachable,duplicate-key,unnecessary-semicolon,global-variable-not-assigned,unused-variable,binary-op-exception,bad-format-string,anomalous-backslash-in-string,bad-open-mode","--extension-pkg-whitelist=torch,numpy"
+        "--disable=all",
+        "--enable=F,E,unreachable,duplicate-key,unnecessary-semicolon,global-variable-not-assigned,unused-variable,binary-op-exception,bad-format-string,anomalous-backslash-in-string,bad-open-mode",
+        "--extension-pkg-whitelist=torch,numpy"
     ],
     "python.testing.pytestEnabled": true,
     "python.testing.unittestEnabled": false,
@@ -126,17 +133,18 @@
     "latex-workshop.latex.recipe.default": "lastUsed",
     "latex-workshop.message.error.show": false,
     "latex-workshop.message.warning.show": false,
+    "latex-workshop.latex.outDir": "_output",
     "latex-workshop.latex.tools": [
         {
             "name": "latexmk",
             "command": "latexmk",
             "args": [
-              "-synctex=1",
-              "-interaction=nonstopmode",
-              "-file-line-error",
-              "-pdf",
-              "-outdir=%OUTDIR%",
-              "%DOC%"
+                "-synctex=1",
+                "-interaction=nonstopmode",
+                "-file-line-error",
+                "-pdf",
+                "-output-directory=%OUTDIR%",
+                "%DOC%"
             ],
             "env": {}
         },
@@ -144,12 +152,12 @@
             "name": "latexmk-with-xelatex",
             "command": "latexmk",
             "args": [
-              "-xelatex",
-              "-synctex=1",
-              "-interaction=nonstopmode",
-              "-file-line-error",
-              "-outdir=%OUTDIR%",
-              "%DOC%"
+                "-xelatex",
+                "-synctex=1",
+                "-interaction=nonstopmode",
+                "-file-line-error",
+                "-output-directory=%OUTDIR%",
+                "%DOC%"
             ],
             "env": {}
         },
@@ -157,10 +165,10 @@
             "name": "pdflatex",
             "command": "pdflatex",
             "args": [
-              "-synctex=1",
-              "-interaction=nonstopmode",
-              "-file-line-error",
-              "%DOC%"
+                "-synctex=1",
+                "-interaction=nonstopmode",
+                "-file-line-error",
+                "%DOC%"
             ],
             "env": {}
         },
@@ -168,7 +176,7 @@
             "name": "bibtex",
             "command": "bibtex",
             "args": [
-              "%DOCFILE%"
+                "%DOCFILE%"
             ],
             "env": {}
         },
@@ -216,11 +224,16 @@
     ],
 
     "todo.embedded.provider": "ag",
-    "todo.symbols.box": "[ ]",
+    // "todo.symbols.box": "[ ]",
+    // "todo.symbols.cancelled": "[-]",
+    // "todo.symbols.done": "[x]",
+    "todo.symbols.box": "-",
     "todo.symbols.cancelled": "-",
-    "todo.symbols.done": "x",
+    "todo.symbols.done": "-",
 
-    "spellright.language": ["en_GB"],
+    "spellright.language": [
+        "en_GB"
+    ],
     "spellright.groupDictionaries": false,
     "spellright.configurationScope": "user",
     "spellright.documentTypes": [
@@ -231,10 +244,7 @@
     ],
     "spellright.spellContext": "comments",
     "spellright.statusBarIndicator": false,
-
     "fileutils.delete.useTrash": true,
-
-    "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
     "git-graph.showStatusBarItem": false,
     "rewrap.autoWrap.enabled": false,
 }
