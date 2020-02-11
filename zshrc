@@ -6,6 +6,7 @@ antigen bundle wd
 antigen bundle colored-man-pages
 antigen bundle pip
 antigen bundle docker
+antigen bundle ssh-agent
 antigen bundle zsh-users/zsh-completions
 antigen bundle mafredri/zsh-async
 antigen bundle sindresorhus/pure
@@ -16,7 +17,6 @@ source ~/.dotfiles/aliases
 source ~/.dotfiles/exports
 source ~/.dotfiles/functions
 source ~/.dotfiles/evals
-
 
 # fzf keybinding and completion on Linux
 [ -e /usr/share/fzf/key-bindings.zsh ] && source /usr/share/fzf/key-bindings.zsh
