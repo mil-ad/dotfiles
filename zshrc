@@ -15,7 +15,6 @@ antigen apply
 
 source ~/.dotfiles/aliases
 source ~/.dotfiles/exports
-source ~/.dotfiles/functions
 source ~/.dotfiles/evals
 
 # fzf keybinding and completion on Linux
