@@ -34,7 +34,7 @@ bindsym $mod+Shift+q kill
 
 # start program launcher
 #bindsym $mod+d exec --no-startup-id dmenu_recency
-bindsym $mod+d exec --no-startup-id rofi -show drun -display-drun Applications
+bindsym $mod+d exec --no-startup-id rofi -show drun -display-drun Applications -show-icons
 
 # launch categorized menu
 bindsym $mod+z exec --no-startup-id morc_menu
@@ -325,6 +325,16 @@ set_from_resource $term_color13    color13
 set_from_resource $term_color14    color14
 set_from_resource $term_color15    color15
 
+set $bg #282828
+set $red #cc241d
+set $green #98971a
+set $yellow #d79921
+set $blue #458588
+set $purple #b16286
+set $aqua #689d68
+set $gray #a89984
+set $darkgray #1d2021
+
 # Start i3bar to display a workspace bar (plus the system information i3status if available)
 bar {
 	i3bar_command i3bar
@@ -341,18 +351,32 @@ bar {
 #   font xft:URWGothic-Book 11
 	strip_workspace_numbers yes
 
-    colors {
-        background #222D31
-        statusline #F9FAF9
-        separator  #454947
+#    colors {
+#        background #222D31
+#        statusline #F9FAF9
+#        separator  #454947
 
-#                      border  backgr. text
-        focused_workspace  #F9FAF9 #16a085 #292F34
-        active_workspace   #595B5B #353836 #FDF6E3
-        inactive_workspace #595B5B #222D31 #EEE8D5
-        binding_mode       #16a085 #2C2C2C #F9FAF9
-        urgent_workspace   #16a085 #FDF6E3 #E5201D
+#                          # border   bg     text
+#        focused_workspace  #F9FAF9 #16a085 #292F34
+#        active_workspace   #595B5B #353836 #FDF6E3
+#        inactive_workspace #595B5B #222D31 #EEE8D5
+#        binding_mode       #16a085 #2C2C2C #F9FAF9
+#        urgent_workspace   #16a085 #FDF6E3 #E5201D
+#    }
+
+    colors {
+        background $darkgray
+        separator  $gray
+        statusline $gray
+
+                        #    border bg      text
+        focused_workspace    $aqua  $aqua   $darkgray
+        active_workspace     $bg    $bg     $gray
+        inactive_workspace   $bg    $bg     $gray
+        binding_mode         $red   $aqua   $red 
+        urgent_workspace     $red   $red    $bg
     }
+
 }
 
 # hide/unhide i3status bar
@@ -360,13 +384,18 @@ bindsym $mod+m bar mode toggle
 
 # Theme colors
 # class                   border  backgr. text    indic.   child_border
-  client.focused          #556064 #556064 #80FFF9 #FDF6E3
-  client.focused_inactive #2F3D44 #2F3D44 #1ABC9C #454948
-  client.unfocused        #2F3D44 #2F3D44 #1ABC9C #454948
-  client.urgent           #CB4B16 #FDF6E3 #1ABC9C #268BD2
+#   client.focused          #556064 #556064 #80FFF9 #FDF6E3
+#   client.focused_inactive #2F3D44 #2F3D44 #1ABC9C #454948
+#   client.unfocused        #2F3D44 #2F3D44 #1ABC9C #454948
+#   client.urgent           #CB4B16 #FDF6E3 #1ABC9C #268BD2
   client.placeholder      #000000 #0c0c0c #ffffff #000000
 
   client.background       #2B2C2B
+
+client.focused          $blue $blue $darkgray $purple $darkgray
+client.focused_inactive $darkgray $darkgray $yellow $purple $darkgray
+client.unfocused        $darkgray $darkgray $yellow $purple $darkgray
+client.urgent           $red $red $white $red $red
 
 #############################
 ### settings for i3-gaps: ###
