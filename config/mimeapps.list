@@ -17,6 +17,8 @@ x-scheme-handler/mailto=userapp-Thunderbird.desktop
 message/rfc822=userapp-Thunderbird.desktop
 application/x-bittorrent=deluge.desktop
 application/pdf=zathura.desktop;
+inode/directory=thunar.desktop;
+
 
 [Added Associations]
 x-scheme-handler/http=google-chrome.desktop;
