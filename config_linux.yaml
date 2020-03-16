@@ -23,5 +23,8 @@
     ~/.config/i3status/config:
         create: true
         path: i3status/i3status.conf
+    ~/.config/zathura/zathurarc:
+        create: true
+        path: zathurarc
     ~/.Xresources: Xresources
     ~/.Xresources.d: Xresources.d
