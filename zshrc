@@ -15,7 +15,6 @@ antigen apply
 
 source ~/.dotfiles/aliases
 source ~/.dotfiles/exports
-source ~/.dotfiles/evals
 
 # fzf keybinding and completion on Linux
 [ -e /usr/share/fzf/key-bindings.zsh ] && source /usr/share/fzf/key-bindings.zsh

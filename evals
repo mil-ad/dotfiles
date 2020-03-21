@@ -1,3 +1,0 @@
-# eval "$(direnv hook zsh)"
-# eval "$(register-python-argcomplete conda)"
-
