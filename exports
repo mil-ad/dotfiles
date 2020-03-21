@@ -1,6 +1,6 @@
 export EDITOR=vim
-
-# TODO: Maybe make this Mac only
-export LSCOLORS=Exfxcxdxbxegedabagacad
-
 export KEYTIMEOUT=5
+
+# TODO: Is this still needed?
+[ "$(uname)" == "Darwin" ] && export LSCOLORS=Exfxcxdxbxegedabagacad
+

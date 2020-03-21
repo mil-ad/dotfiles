@@ -9,7 +9,6 @@ alias l='ls -lh'
 alias ll="ls -laHh"
 alias ldot='ls -ld .*'
 
-alias g='grep -r -i'
 alias ag='ag --ignore-case --color-match="1;31" --silent'
 alias agc='ag --ignore-case --color-match="1;31" --silent -C 2'
 alias agf='ag -g'
@@ -26,11 +25,7 @@ alias gc='git commit'
 alias gs='git status'
 alias gb='git branch'
 alias gm='git merge'
-alias gl='git log -n 4 --stat --graph --decorate=full --date=relative'
-# Copied from /holman/dotfiles:
-alias glog="git log --graph --pretty=format:'%Cred%h%Creset %an: %s - %Creset %C(yellow)%d%Creset %Cgreen(%cr)%Creset' --abbrev-commit --date=relative"
 
-alias fast_sshfs='sshfs -o Ciphers=arcfour -o Compression=no'
 alias weather='curl wttr.in/Oxford'
 alias difffolders='diff -rq'
 alias condarm='conda env remove --name'
