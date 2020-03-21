@@ -2,5 +2,5 @@ export EDITOR=vim
 export KEYTIMEOUT=5
 
 # TODO: Is this still needed?
-[ "$(uname)" == "Darwin" ] && export LSCOLORS=Exfxcxdxbxegedabagacad
+[ "$(uname)" = "Darwin" ] && export LSCOLORS=Exfxcxdxbxegedabagacad
 
