@@ -51,8 +51,12 @@ set hlsearch 		" Highlight all search matches, use :nohlsearch to hide them
 set tags=./tags;
 
 " Colours/themes settings
+set termguicolors
+let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
+let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
 set t_Co=256
 "let base16colorspace=256
+
 set background=dark
 let g:gruvbox_contrast_dark='hard'
 colorscheme gruvbox
