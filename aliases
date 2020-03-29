@@ -29,3 +29,5 @@ alias gm='git merge'
 alias weather='curl wttr.in/Oxford'
 alias difffolders='diff -rq'
 alias condarm='conda env remove --name'
+
+alias dmenu="dmenu -i -c -bw 5"
