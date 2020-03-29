@@ -1,5 +1,5 @@
 {
-    "editor.fontFamily": "'JetBrainsMono-Medium', 'IBMPlexMono-Bold', 'IBM Plex Mono SemiBold', 'Courier New', Menlo",
+    "editor.fontFamily": "'JetBrains Mono Medium', 'JetBrainsMono-Medium', 'IBMPlexMono-Bold', 'IBM Plex Mono SemiBold', 'Courier New', Menlo",
     "editor.fontSize": 17,
     "editor.tabSize": 4,
     "editor.mouseWheelZoom": false,
