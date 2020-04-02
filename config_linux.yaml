@@ -17,7 +17,7 @@
         create: true
         force: true
         path: vscode/spellright.dict
-    ~/.i3/config:
+    ~/config/i3/config:
         create: true
         path: i3/config
     ~/.config/i3status/config:
