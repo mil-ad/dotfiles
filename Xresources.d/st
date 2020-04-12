@@ -1,4 +1,6 @@
-st.font: DejaVu Sans Mono for Powerline:style=SemiBold:size=12
-!st.font: IBM Plex Mono:style=Bold:size=16
+st.font: DejaVu Sans Mono for Powerline:style=SemiBold:size=8
+!st.font: JetBrains Mono:style:Medium:size=10
+!st.font: Menlo for Powerline:size=10
+!st.font: IBM Plex Mono:style=Bold:size=12
 !st.font: IBMPlexMono Nerd Font Mono:style:SemiBold:size=16
-st.alpha: 0.99
+st.alpha: 0.95
