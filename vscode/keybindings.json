@@ -17,10 +17,10 @@
     { "key": "cmd+d", "command": "-editor.action.addSelectionToNextFindMatch", "when": "isMac && editorFocus" },
     { "key": "alt+cmd+e", "command": "editor.action.insertCursorAtEndOfEachLineSelected", "when": "isMac && editorTextFocus" },
 
-    { "key": "alt+super+g", "command": "editor.action.selectHighlights", "when": "!isMac && editorFocus" },
-    { "key": "alt+super+i", "command": "editor.action.addSelectionToNextFindMatch", "when": "!isMac && editorFocus" },
-    { "key": "ctl+d", "command": "-editor.action.addSelectionToNextFindMatch", "when": "!isMac && editorFocus" },
-    { "key": "alt+super+e", "command": "editor.action.insertCursorAtEndOfEachLineSelected", "when": "!isMac && editorTextFocus" },
+    { "key": "alt+meta+g", "command": "editor.action.selectHighlights", "when": "!isMac && editorFocus" },
+    { "key": "alt+meta+i", "command": "editor.action.addSelectionToNextFindMatch", "when": "!isMac && editorFocus" },
+    { "key": "ctrl+d", "command": "-editor.action.addSelectionToNextFindMatch", "when": "!isMac && editorFocus" },
+    { "key": "alt+meta+e", "command": "editor.action.insertCursorAtEndOfEachLineSelected", "when": "!isMac && editorTextFocus" },
 
     // Symbols
     { "key": "shift+cmd+o", "command": "-workbench.action.gotoSymbol"},
