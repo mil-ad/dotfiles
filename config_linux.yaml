@@ -26,5 +26,8 @@
     ~/.config/zathura/zathurarc:
         create: true
         path: zathurarc
+    ~/.config/alacritty/alacritty.yml:
+        create: true
+        path: config/alacritty/alacritty.yml
     ~/.Xresources: Xresources
     ~/.Xresources.d: Xresources.d
