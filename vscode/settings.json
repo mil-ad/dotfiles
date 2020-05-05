@@ -61,7 +61,6 @@
     "terminal.integrated.macOptionClickForcesSelection": true,
     "terminal.integrated.fontFamily": "'IBMPlexMono-Bold', 'IBM Plex Mono SemiBold', 'Courier New', Menlo",
     "terminal.integrated.fontSize": 13,
-    "terminal.integrated.inheritEnv": false,
     "terminal.integrated.rendererType": "experimentalWebgl", // Experimental!
     "scm.diffDecorationsGutterWidth": 2,
     "scm.diffDecorations": "gutter",
@@ -246,5 +245,11 @@
     "spellright.statusBarIndicator": false,
     "fileutils.delete.useTrash": true,
     "git-graph.showStatusBarItem": false,
+
+
     "rewrap.autoWrap.enabled": false,
+    "terminal.integrated.shell.linux": "/bin/zsh",
+    "autoDocstring.generateDocstringOnEnter": false,
+    "terminal.integrated.inheritEnv": true,
+    "window.menuBarVisibility": "default",
 }
