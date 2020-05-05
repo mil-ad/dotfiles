@@ -1,15 +1,20 @@
 # Milad's dotfiles 🐣
 
-My dotfiles to set up macOS/Linux the way I like it.
-
-Powered by [dotbot](https://github.com/anishathalye/dotbot/) and [Antigen](http://antigen.sharats.me)
+My dotfiles configure Linux/macOS the way I like them.
 
 ## Usage
 
-You can close this repo anywhere. Running the `install.sh` will create a symlink to itself in `~/.dotfiles`
+Clone this repository into `~/.dotfiles` and create the symbolic links using [GNU Stow](https://www.gnu.org/software/stow/):
 
-```bash
-git clone https://github.com/mi-lad/dotfiles
-cd dotfiles
-./install.sh
+```shell
+$ git clone https://github.com/mi-lad/dotfiles ~/.dotfiles
+$ cd ~/.dotfiles
+$ stow common linux
 ```
+
+## TODO
+
+
+- [curl -L git.io/antigen > antigen.zsh, Installing Antigen]
+- ["curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim", Installing vim-plug]
+- ["curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim", Installing vim-plug for NeoVim]

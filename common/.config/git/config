@@ -7,11 +7,10 @@
 [core]
     editor = vim
     pager = less
-    excludesfile = ~/.dotfiles/gitignore_global
 [push]
     default = simple
 [commit]
-    gpgSign = true
+    gpgSign = false
 [gpg]
     program = "gpg2"
 [diff]
