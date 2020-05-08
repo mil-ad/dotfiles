@@ -198,6 +198,7 @@ assign [class="qutebrowser"] $ws3
 assign [class="Brave"] $ws3
 assign [class="Slack"] $ws4
 assign [class="Telegram"] $ws4
+assign [class="Signal"] $ws4
 assign [class="Evolution"] $ws4
 
 # Open specific applications in floating mode
