@@ -24,9 +24,10 @@ title_align center
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
-#font xft:URWGothic-Book 11
-font pango:JetBrains Mono Medium 8
+set $font_family JetBrains Mono Medium
 #font pango:IBM Plex Mono Bold 8
+#font xft:URWGothic-Book 11
+font pango:$font_family 6
 
 # Use Mouse+$mod to drag floating windows
 floating_modifier $mod
@@ -39,7 +40,7 @@ bindsym $mod+Shift+q kill
 
 # start program launcher
 #bindsym $mod+d exec --no-startup-id dmenu_recency
-bindsym $mod+d exec --no-startup-id dmenu_run -c -l 10 -bw 5 
+bindsym $mod+d exec --no-startup-id dmenu_run -c -l 10 -bw 5
 #bindsym $mod+d exec --no-startup-id rofi -show drun -display-drun Applications -show-icons
 
 # launch categorized menu
@@ -299,10 +300,15 @@ exec --no-startup-id clipit
 exec --no-startup-id xautolock -detectsleep -time 10 -locker blurlock
 exec --no-startup-id caffeine
 exec_always --no-startup-id ff-theme-util
-
+# exec --no-startup-id ~/.config/polybar/launch.sh
 # Milad: This breaks "#include"s in .Xresources. Disabling until fixed.
 #exec_always --no-startup-id fix_xcursor
 
+
+
+##########################################
+#		Colours
+##########################################
 
 # Color palette used for the terminal ( ~/.Xresources file )
 # Colors are gathered based on the documentation:
@@ -359,6 +365,8 @@ bar {
 	bindsym button4 nop
 	bindsym button5 nop
 #   font xft:URWGothic-Book 11
+        #font pango:JetBrains Mono Medium 8
+        font pango:$font_family 8
 	strip_workspace_numbers yes
 
 #    colors {
@@ -380,10 +388,10 @@ bar {
         statusline $gray
 
                         #    border bg      text
-        focused_workspace    $aqua  $aqua   $darkgray
+        focused_workspace    $yellow  $yellow   $darkgray
         active_workspace     $bg    $bg     $gray
         inactive_workspace   $bg    $bg     $gray
-        binding_mode         $red   $aqua   $red 
+        binding_mode         $red   $aqua   $red
         urgent_workspace     $red   $red    $bg
     }
 
@@ -402,9 +410,9 @@ bindsym $mod+m bar mode toggle
 
   client.background       #2B2C2B
 
-client.focused          $blue $blue $darkgray $purple $yellow
+client.focused          $yellow $yellow $darkgray $purple $yellow
 client.focused_inactive $darkgray $darkgray $yellow $purple $darkgray
-client.unfocused        $darkgray $darkgray $yellow $purple $darkgray
+client.unfocused        $yellow $darkgray $yellow $purple $darkgray
 client.urgent           $red $red $white $red $red
 
 #############################
