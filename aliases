@@ -32,4 +32,5 @@ alias condarm='conda env remove --name'
 
 alias dmenu="dmenu -i -c -bw 5"
 
+# TODO: Make this linux-only to avoid conflict with macOS's open
 function open() { (nohup xdg-open $1 </dev/null >/dev/null 2>&1 &) }
