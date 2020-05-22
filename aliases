@@ -31,3 +31,5 @@ alias difffolders='diff -rq'
 alias condarm='conda env remove --name'
 
 alias dmenu="dmenu -i -c -bw 5"
+
+function open() { (nohup xdg-open $1 </dev/null >/dev/null 2>&1 &) }
