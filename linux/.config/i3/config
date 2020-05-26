@@ -1,88 +1,29 @@
-# i3 config file (v4)
-# Please see http://i3wm.org/docs/userguide.html for a complete reference!
-
 # Set mod key (Mod1=<Alt>, Mod4=<Super>)
 set $mod Mod4
 
-# set default desktop layout (default is tiling)
-# workspace_layout tabbed <stacking|tabbed>
-
-# Configure border style <normal|1pixel|pixel xx|none|pixel>
-new_window pixel 1
-new_float normal
-
-# Hide borders
-hide_edge_borders none
-
-# change borders
-bindsym $mod+u border none
-bindsym $mod+y border pixel 1
-bindsym $mod+n border normal
-
-# configure window title
-title_align center
-
-# Font for window titles. Will also be used by the bar unless a different font
-# is used in the bar {} block below.
-set $font_family JetBrains Mono Medium
-#font pango:IBM Plex Mono Bold 8
-#font xft:URWGothic-Book 11
-font pango:$font_family 6
-
-# Use Mouse+$mod to drag floating windows
-floating_modifier $mod
-
-# start a terminal
+# terminal
 bindsym $mod+Return exec alacritty
+
+# program launcher
+bindsym $mod+d exec --no-startup-id dmenu_run -c -l 10 -bw 5
 
 # kill focused window
 bindsym $mod+Shift+q kill
 
-# start program launcher
-#bindsym $mod+d exec --no-startup-id dmenu_recency
-bindsym $mod+d exec --no-startup-id dmenu_run -c -l 10 -bw 5
-#bindsym $mod+d exec --no-startup-id rofi -show drun -display-drun Applications -show-icons
+# reload the configuration file
+bindsym $mod+Shift+c reload
 
-# launch categorized menu
-bindsym $mod+z exec --no-startup-id morc_menu
+# restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
+bindsym $mod+Shift+r restart
 
-################################################################################################
-## sound-section - DO NOT EDIT if you wish to automatically upgrade Alsa -> Pulseaudio later! ##
-################################################################################################
+# lock screen
+bindsym $mod+9 exec --no-startup-id blurlock
 
-exec --no-startup-id volumeicon
-bindsym $mod+Ctrl+m exec terminal -e 'alsamixer'
-#exec --no-startup-id pulseaudio
-#exec --no-startup-id pa-applet
-#bindsym $mod+Ctrl+m exec pavucontrol
+# set default desktop layout (default is tiling)
+# workspace_layout tabbed <stacking|tabbed>
 
-################################################################################################
-
-# Screen brightness controls
-# bindsym XF86MonBrightnessUp exec "xbacklight -inc 10; notify-send 'brightness up'"
-# bindsym XF86MonBrightnessDown exec "xbacklight -dec 10; notify-send 'brightness down'"
-
-# Start Applications
-bindsym $mod+Ctrl+b exec terminal -e 'bmenu'
-bindsym $mod+F2 exec google-chrome-stable
-bindsym $mod+F3 exec thunar
-# bindsym $mod+F3 exec ranger
-bindsym $mod+Shift+F3 exec gksu pcmanfm
-bindsym $mod+F5 exec terminal -e 'mocp'
-bindsym $mod+t exec --no-startup-id pkill picom
-bindsym $mod+Ctrl+t exec --no-startup-id picom -b
-bindsym $mod+Shift+d --release exec "killall dunst; exec notify-send 'restart dunst'"
-
-# Taking Screenshots
-#bindsym Print exec --no-startup-id i3-scrot
-#bindsym $mod+Print --release exec --no-startup-id i3-scrot -w
-#bindsym $mod+Shift+Print --release exec --no-startup-id i3-scrot -s
-bindsym $mod+z --release exec "scrot -s /tmp/screenshot-$(date +%F_%T).png -e 'xclip -selection c -t image/png < $f'"
-bindsym $mod+Shift+z exec --no-startup-id i3-scrot
-#bindsym Shift+Print exec "scrot /tmp/screenshot-$(date +%F_%T).png -e 'xclip -selection c -t image/png < $f'"
-
-bindsym $mod+Shift+h exec xdg-open /usr/share/doc/manjaro/i3_help.pdf
-bindsym $mod+Ctrl+x --release exec --no-startup-id xkill
+# Use Mouse+$mod to drag floating windows
+floating_modifier $mod
 
 # focus_follows_mouse no
 
@@ -155,10 +96,38 @@ bindsym $mod+minus scratchpad show
 bindsym $mod+Ctrl+Right workspace next
 bindsym $mod+Ctrl+Left workspace prev
 
+# Resize window (you can also use the mouse for that)
+bindsym $mod+r mode "resize"
+mode "resize" {
+        # These bindings trigger as soon as you enter the resize mode
+        # Pressing left will shrink the window's width.
+        # Pressing right will grow the window's width.
+        # Pressing up will shrink the window's height.
+        # Pressing down will grow the window's height.
+        bindsym j resize shrink width 5 px or 5 ppt
+        bindsym k resize grow height 5 px or 5 ppt
+        bindsym l resize shrink height 5 px or 5 ppt
+        bindsym semicolon resize grow width 5 px or 5 ppt
+
+        # same bindings, but for the arrow keys
+        bindsym Left resize shrink width 10 px or 10 ppt
+        bindsym Down resize grow height 10 px or 10 ppt
+        bindsym Up resize shrink height 10 px or 10 ppt
+        bindsym Right resize grow width 10 px or 10 ppt
+
+        # exit resize mode: Enter or Escape
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
+}
+
+##########################################
+#               Workspaces
+##########################################
+
 # Workspace names
-# to display names or symbols instead of plain workspace numbers you can use
-# something like: set $ws1 1:mail
-#                 set $ws2 2:
+# to display custom names or symbols you can do something like:
+#       set $ws1 1:terminal
+#       set $ws3 3:🌍
 set $ws1 1
 set $ws2 2
 set $ws3 3
@@ -198,122 +167,37 @@ bindsym $mod+Shift+6 move container to workspace $ws6; workspace $ws6
 bindsym $mod+Shift+7 move container to workspace $ws7; workspace $ws7
 bindsym $mod+Shift+8 move container to workspace $ws8; workspace $ws8
 
-# Open specific applications on specific workspaces
-assign [class="Code"] $ws2
-assign [class="Google-chrome"] $ws3
-assign [class="qutebrowser"] $ws3
-assign [class="Brave"] $ws3
-assign [class="Slack"] $ws4
-assign [class="Telegram"] $ws4
-assign [class="Signal"] $ws4
-assign [class="Evolution"] $ws4
+##########################################
+#                Borders
+##########################################
+# Configure border style <normal|1pixel|pixel xx|none|pixel>
+new_window pixel 1
+new_float normal
 
-# Open specific applications in floating mode
-for_window [title="alsamixer"] floating enable border pixel 1
-for_window [class="calamares"] floating enable border normal
-for_window [class="Clipgrab"] floating enable
-for_window [title="File Transfer*"] floating enable
-for_window [class="Galculator"] floating enable border pixel 1
-for_window [class="GParted"] floating enable border normal
-for_window [title="i3_help"] floating enable sticky enable border normal
-for_window [class="Lightdm-settings"] floating enable
-for_window [class="Lxappearance"] floating enable sticky enable border normal
-for_window [class="Manjaro-hello"] floating enable
-for_window [class="Manjaro Settings Manager"] floating enable border normal
-for_window [title="MuseScore: Play Panel"] floating enable
-for_window [class="Nitrogen"] floating enable sticky enable border normal
-for_window [class="Oblogout"] fullscreen enable
-for_window [class="octopi"] floating enable
-for_window [title="About Pale Moon"] floating enable
-for_window [class="Pamac-manager"] floating enable
-for_window [class="Pavucontrol"] floating enable
-for_window [class="qt5ct"] floating enable sticky enable border normal
-for_window [class="Qtconfig-qt4"] floating enable sticky enable border normal
-for_window [class="Simple-scan"] floating enable border normal
-for_window [class="(?i)System-config-printer.py"] floating enable border normal
-for_window [class="Skype"] floating enable border normal
-for_window [class="Cisco AnyConnect Secure Mobility Client"] floating enable border normal
-for_window [class="Timeset-gui"] floating enable border normal
-for_window [class="(?i)virtualbox"] floating enable border normal
-for_window [class="Xfburn"] floating enable
+# Hide borders
+hide_edge_borders none
 
-# switch to workspace with urgent window automatically
-for_window [urgent=latest] focus
+# change borders dynamically
+bindsym $mod+u border none
+bindsym $mod+y border pixel 1
+bindsym $mod+n border normal
 
-# reload the configuration file
-bindsym $mod+Shift+c reload
+# configure window title
+title_align center
 
-# restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
-bindsym $mod+Shift+r restart
-
-# exit i3 (logs you out of your X session)
-bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
-
-# Set shut down, restart and locking features
-bindsym $mod+0 mode "$mode_system"
-set $mode_system (l)ock, (e)xit, switch_(u)ser, (s)uspend, (h)ibernate, (r)eboot, (Shift+s)hutdown
-mode "$mode_system" {
-    bindsym l exec --no-startup-id i3exit lock, mode "default"
-    bindsym s exec --no-startup-id i3exit suspend, mode "default"
-    bindsym u exec --no-startup-id i3exit switch_user, mode "default"
-    bindsym e exec --no-startup-id i3exit logout, mode "default"
-    bindsym h exec --no-startup-id i3exit hibernate, mode "default"
-    bindsym r exec --no-startup-id i3exit reboot, mode "default"
-    bindsym Shift+s exec --no-startup-id i3exit shutdown, mode "default"
-
-    # exit system mode: "Enter" or "Escape"
-    bindsym Return mode "default"
-    bindsym Escape mode "default"
-}
-
-# Resize window (you can also use the mouse for that)
-bindsym $mod+r mode "resize"
-mode "resize" {
-        # These bindings trigger as soon as you enter the resize mode
-        # Pressing left will shrink the window's width.
-        # Pressing right will grow the window's width.
-        # Pressing up will shrink the window's height.
-        # Pressing down will grow the window's height.
-        bindsym j resize shrink width 5 px or 5 ppt
-        bindsym k resize grow height 5 px or 5 ppt
-        bindsym l resize shrink height 5 px or 5 ppt
-        bindsym semicolon resize grow width 5 px or 5 ppt
-
-        # same bindings, but for the arrow keys
-        bindsym Left resize shrink width 10 px or 10 ppt
-        bindsym Down resize grow height 10 px or 10 ppt
-        bindsym Up resize shrink height 10 px or 10 ppt
-        bindsym Right resize grow width 10 px or 10 ppt
-
-        # exit resize mode: Enter or Escape
-        bindsym Return mode "default"
-        bindsym Escape mode "default"
-}
-
-# Lock screen
-bindsym $mod+9 exec --no-startup-id blurlock
-
-# Autostart applications
-exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
-exec --no-startup-id nitrogen --restore; sleep 1; picom -b
-exec --no-startup-id nm-applet
-exec --no-startup-id xfce4-power-manager
-exec --no-startup-id pamac-tray
-exec --no-startup-id clipit
-# exec --no-startup-id blueman-applet
-# exec_always --no-startup-id sbxkb
-# exec --no-startup-id start_conky_maia
-exec --no-startup-id xautolock -detectsleep -time 10 -locker blurlock
-exec --no-startup-id caffeine
-exec_always --no-startup-id ff-theme-util
-# exec --no-startup-id ~/.config/polybar/launch.sh
-# Milad: This breaks "#include"s in .Xresources. Disabling until fixed.
-#exec_always --no-startup-id fix_xcursor
-
+##########################################
+#                Fonts
+##########################################
+# Font for window titles. Will also be used by the bar unless a different font
+# is used in the bar {} block below.
+set $font_family JetBrains Mono Medium
+font pango:$font_family 6
+#font pango:IBM Plex Mono Bold 8
+#font xft:URWGothic-Book 11
 
 
 ##########################################
-#		Colours
+#                Colours
 ##########################################
 
 # Color palette used for the terminal ( ~/.Xresources file )
@@ -357,29 +241,26 @@ set $aqua #689d68
 set $gray #a89984
 set $darkgray #1d2021
 
-# Start i3bar to display a workspace bar (plus the system information i3status if available)
+##########################################
+#                  Bar
+##########################################
+
 bar {
-	i3bar_command i3bar
-	status_command i3status
-	#status_command i3blocks
-	position bottom
-
-## please set your primary output first. Example: 'xrandr --output eDP1 --primary'
-	tray_output primary
-#	tray_output eDP1
-
-	bindsym button4 nop
-	bindsym button5 nop
-#   font xft:URWGothic-Book 11
-        #font pango:JetBrains Mono Medium 8
+        i3bar_command i3bar
+        status_command i3status
+        position bottom
+        strip_workspace_numbers yes
         font pango:$font_family 8
-	strip_workspace_numbers yes
+        bindsym button4 nop
+        bindsym button5 nop
+
+# Do set your primary output first. Example: 'xrandr --output eDP1 --primary'
+        tray_output primary
 
 #    colors {
 #        background #222D31
 #        statusline #F9FAF9
 #        separator  #454947
-
 #                          # border   bg     text
 #        focused_workspace  #F9FAF9 #16a085 #292F34
 #        active_workspace   #595B5B #353836 #FDF6E3
@@ -392,15 +273,13 @@ bar {
         background $darkgray
         separator  $gray
         statusline $gray
-
-                        #    border bg      text
-        focused_workspace    $yellow  $yellow   $darkgray
-        active_workspace     $bg    $bg     $gray
-        inactive_workspace   $bg    $bg     $gray
-        binding_mode         $red   $aqua   $red
-        urgent_workspace     $red   $red    $bg
+                            # border      bg           text
+        focused_workspace    $yellow      $yellow      $darkgray
+        active_workspace     $bg          $bg          $gray
+        inactive_workspace   $bg          $bg          $gray
+        binding_mode         $red         $aqua        $red
+        urgent_workspace     $red         $red         $bg
     }
-
 }
 
 # hide/unhide i3status bar
@@ -421,9 +300,9 @@ client.focused_inactive $darkgray $darkgray $yellow $purple $darkgray
 client.unfocused        $yellow $darkgray $yellow $purple $darkgray
 client.urgent           $red $red $white $red $red
 
-#############################
-### settings for i3-gaps: ###
-#############################
+##########################################
+#                i3-gaps
+##########################################
 
 # Set inner/outer gaps
 gaps inner 10
@@ -478,10 +357,128 @@ mode "$mode_gaps_outer" {
         bindsym Escape mode "default"
 }
 
-#############################
-### My custom scripts:    ###
-#############################
+
+################################################################################################
+# Sound - DO NOT EDIT if you wish to automatically upgrade Alsa -> Pulseaudio later!
+################################################################################################
+exec --no-startup-id volumeicon
+bindsym $mod+Ctrl+m exec terminal -e 'alsamixer'
+#exec --no-startup-id pulseaudio
+#bindsym $mod+Ctrl+m exec pavucontrol
+
+# TODO: pa-applet instead of volumeicon?
+exec --no-startup-id pa-applet
+################################################################################################
+
+
+##########################################
+#          External Keybindings
+##########################################
+bindsym $mod+F2 exec brave
+bindsym $mod+F3 exec thunar
+bindsym $mod+F5 exec terminal -e 'mocp'
+bindsym $mod+Ctrl+b exec terminal -e 'bmenu'
+bindsym $mod+Ctrl+v exec clipmenu -i -c -bw 5
+bindsym $mod+Shift+F3 exec gksu thunar
+
+bindsym $mod+t exec --no-startup-id pkill picom
+bindsym $mod+Ctrl+t exec --no-startup-id picom -b
+bindsym $mod+Shift+d --release exec "killall dunst; exec notify-send 'restart dunst'"
+
+# Taking Screenshots
+bindsym $mod+z --release exec "scrot -s /tmp/screenshot-$(date +%F_%T).png -e 'xclip -selection c -t image/png < $f'"
+bindsym $mod+Shift+z exec --no-startup-id i3-scrot
+#bindsym Print exec --no-startup-id i3-scrot
+#bindsym $mod+Print --release exec --no-startup-id i3-scrot -w
+#bindsym $mod+Shift+Print --release exec --no-startup-id i3-scrot -s
+#bindsym Shift+Print exec "scrot /tmp/screenshot-$(date +%F_%T).png -e 'xclip -selection c -t image/png < $f'"
+
+bindsym $mod+Shift+h exec xdg-open /usr/share/doc/manjaro/i3_help.pdf
+bindsym $mod+Ctrl+x --release exec --no-startup-id xkill
+
 bindsym $mod+Ctrl+s exec ~/.scripts/google_scholar_dmenu
 bindsym $mod+Ctrl+r exec ~/.scripts/github_repos_dmenu
 bindsym $mod+Ctrl+o exec ~/.scripts/open_paper
 bindsym $mod+Ctrl+e exec ~/.scripts/copy_emoji
+
+##########################################
+#         Application-specific
+##########################################
+
+# Open specific applications on specific workspaces
+assign [class="Code"] $ws2
+assign [class="Google-chrome"] $ws3
+assign [class="qutebrowser"] $ws3
+assign [class="Brave"] $ws3
+assign [class="Slack"] $ws4
+assign [class="Telegram"] $ws4
+assign [class="Signal"] $ws4
+assign [class="Evolution"] $ws4
+
+# Open specific applications in floating mode
+for_window [title="alsamixer"] floating enable border pixel 1
+for_window [class="calamares"] floating enable border normal
+for_window [class="Clipgrab"] floating enable
+for_window [title="File Transfer*"] floating enable
+for_window [class="Galculator"] floating enable border pixel 1
+for_window [class="GParted"] floating enable border normal
+for_window [title="i3_help"] floating enable sticky enable border normal
+for_window [class="Lightdm-settings"] floating enable
+for_window [class="Lxappearance"] floating enable sticky enable border normal
+for_window [class="Manjaro-hello"] floating enable
+for_window [class="Manjaro Settings Manager"] floating enable border normal
+for_window [title="MuseScore: Play Panel"] floating enable
+for_window [class="Nitrogen"] floating enable sticky enable border normal
+for_window [class="Oblogout"] fullscreen enable
+for_window [class="octopi"] floating enable
+for_window [title="About Pale Moon"] floating enable
+for_window [class="Pamac-manager"] floating enable
+for_window [class="Pavucontrol"] floating enable
+for_window [class="qt5ct"] floating enable sticky enable border normal
+for_window [class="Qtconfig-qt4"] floating enable sticky enable border normal
+for_window [class="Simple-scan"] floating enable border normal
+for_window [class="(?i)System-config-printer.py"] floating enable border normal
+for_window [class="Skype"] floating enable border normal
+for_window [class="Cisco AnyConnect Secure Mobility Client"] floating enable border normal
+for_window [class="Timeset-gui"] floating enable border normal
+for_window [class="(?i)virtualbox"] floating enable border normal
+for_window [class="Xfburn"] floating enable
+
+# switch to workspace with urgent window automatically
+for_window [urgent=latest] focus
+
+# exit i3 (logs you out of your X session)
+bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
+
+# Set shut down, restart and locking features
+bindsym $mod+0 mode "$mode_system"
+set $mode_system (l)ock, (e)xit, switch_(u)ser, (s)uspend, (h)ibernate, (r)eboot, (Shift+s)hutdown
+mode "$mode_system" {
+    bindsym l exec --no-startup-id i3exit lock, mode "default"
+    bindsym s exec --no-startup-id i3exit suspend, mode "default"
+    bindsym u exec --no-startup-id i3exit switch_user, mode "default"
+    bindsym e exec --no-startup-id i3exit logout, mode "default"
+    bindsym h exec --no-startup-id i3exit hibernate, mode "default"
+    bindsym r exec --no-startup-id i3exit reboot, mode "default"
+    bindsym Shift+s exec --no-startup-id i3exit shutdown, mode "default"
+
+    # exit system mode: "Enter" or "Escape"
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+}
+
+##########################################
+#         Start-up Applications
+##########################################
+exec --no-startup-id nm-applet
+exec --no-startup-id seafile-applet
+exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
+exec --no-startup-id nitrogen --restore; sleep 1; picom -b
+exec --no-startup-id caffeine
+exec --no-startup-id xfce4-power-manager
+exec --no-startup-id blueman-applet
+exec --no-startup-id xautolock -detectsleep -time 15 -locker blurlock
+# exec --no-startup-id ~/.config/polybar/launch.sh
+
+# Milad: This breaks "#include"s in .Xresources. Disabling until fixed.
+#exec_always --no-startup-id fix_xcursor
