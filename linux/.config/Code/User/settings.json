@@ -5,7 +5,6 @@
     "editor.mouseWheelZoom": false,
     "editor.multiCursorModifier": "ctrlCmd",
     "editor.cursorBlinking": "phase",
-    "editor.cursorStyle": "line",
     "editor.rulers": [
         80,
         120
@@ -16,6 +15,8 @@
     "editor.wordBasedSuggestions": false,
     "editor.formatOnPaste": false,
     "editor.suggestSelection": "first",
+    "editor.accessibilitySupport": "off",
+
     // "editor.cursorSmoothCaretAnimation": true,
 
     // Disable italics in comment blocks
@@ -47,10 +48,10 @@
     "workbench.tips.enabled": false,
     "workbench.activityBar.visible": true,
     "workbench.iconTheme": "ayu",
-    "workbench.colorTheme": "Popping and Locking",
     "workbench.startupEditor": "newUntitledFile",
     "workbench.editor.enablePreview": false,
-    "window.zoomLevel": -1,
+    "window.zoomLevel": -2,
+    "window.menuBarVisibility": "default",
     "update.mode": "manual",
     "files.trimTrailingWhitespace": true,
     "files.trimFinalNewlines": true,
@@ -61,11 +62,12 @@
     "terminal.integrated.macOptionClickForcesSelection": true,
     "terminal.integrated.fontFamily": "'IBMPlexMono-Bold', 'IBM Plex Mono SemiBold', 'Courier New', Menlo",
     "terminal.integrated.fontSize": 13,
-    "terminal.integrated.rendererType": "experimentalWebgl", // Experimental!
+    // "terminal.integrated.rendererType": "experimentalWebgl", // Experimental!
+    "terminal.integrated.rendererType": "dom",
     "scm.diffDecorationsGutterWidth": 2,
     "scm.diffDecorations": "gutter",
     "telemetry.enableTelemetry": false,
-    "diffEditor.ignoreTrimWhitespace": false,
+    "diffEditor.ignoreTrimWhitespace": true,
     "diffEditor.renderSideBySide": true,
     "git.autofetch": true,
     "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
@@ -84,7 +86,7 @@
     "[latex]": {
         "editor.wordWrap": "bounded",
         "editor.wordWrapColumn": 80,
-        "editor.rulers": []
+        "editor.rulers": [],
     },
     "[markdown]": {
         "editor.wordWrap": "bounded",
@@ -194,9 +196,9 @@
     ],
     "latex-workshop.latex.recipes": [
         {
-            "name": "xelatex 🔃",
+            "name": "latexmk 🔃",
             "tools": [
-                "xelatex"
+                "latexmk"
             ]
         },
         {
@@ -206,9 +208,9 @@
             ]
         },
         {
-            "name": "latexmk 🔃",
+            "name": "xelatex 🔃",
             "tools": [
-                "latexmk"
+                "xelatex"
             ]
         },
         {
@@ -222,34 +224,44 @@
         },
     ],
 
+
     "todo.embedded.provider": "ag",
-    // "todo.symbols.box": "[ ]",
-    // "todo.symbols.cancelled": "[-]",
-    // "todo.symbols.done": "[x]",
-    "todo.symbols.box": "-",
-    "todo.symbols.cancelled": "-",
-    "todo.symbols.done": "-",
+    "todo.symbols.box": "[ ]",
+    "todo.symbols.cancelled": "[-]",
+    "todo.symbols.done": "[x]",
+    // "todo.symbols.box": "-",
+    // "todo.symbols.cancelled": "-",
+    // "todo.symbols.done": "-",
+
 
     "spellright.language": [
-        "en_GB"
+        "English (American)"
     ],
     "spellright.groupDictionaries": false,
     "spellright.configurationScope": "user",
     "spellright.documentTypes": [
         "markdown",
-        "latex",
         "plaintext",
-        "python"
+        "python",
+        "latex"
     ],
-    "spellright.spellContext": "comments",
+    "spellright.spellContextByClass": {
+        "latex": "body",
+        "markdown": "comments",
+        "python": "body strings",
+    },
     "spellright.statusBarIndicator": false,
+
+
+
     "fileutils.delete.useTrash": true,
     "git-graph.showStatusBarItem": false,
 
 
     "rewrap.autoWrap.enabled": false,
-    "terminal.integrated.shell.linux": "/bin/zsh",
     "autoDocstring.generateDocstringOnEnter": false,
+
+    "terminal.integrated.shell.linux": "/bin/zsh",
     "terminal.integrated.inheritEnv": true,
-    "window.menuBarVisibility": "default",
+    "workbench.colorTheme": "Popping and Locking",
 }
