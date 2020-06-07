@@ -357,7 +357,6 @@ mode "$mode_gaps_outer" {
         bindsym Escape mode "default"
 }
 
-
 ################################################################################################
 # Sound - DO NOT EDIT if you wish to automatically upgrade Alsa -> Pulseaudio later!
 ################################################################################################
@@ -367,7 +366,7 @@ bindsym $mod+Ctrl+m exec terminal -e 'alsamixer'
 #bindsym $mod+Ctrl+m exec pavucontrol
 
 # TODO: pa-applet instead of volumeicon?
-exec --no-startup-id pa-applet
+#exec --no-startup-id pa-applet
 ################################################################################################
 
 
