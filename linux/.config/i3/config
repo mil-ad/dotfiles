@@ -397,7 +397,8 @@ bindsym $mod+Ctrl+x --release exec --no-startup-id xkill
 
 bindsym $mod+Ctrl+s exec ~/.scripts/google_scholar_dmenu
 bindsym $mod+Ctrl+r exec ~/.scripts/github_repos_dmenu
-bindsym $mod+Ctrl+o exec ~/.scripts/open_paper
+bindsym $mod+Ctrl+p exec ~/.scripts/open_paper
+bindsym $mod+Ctrl+o exec ~/.scripts/open_file
 bindsym $mod+Ctrl+e exec ~/.scripts/copy_emoji
 
 ##########################################
