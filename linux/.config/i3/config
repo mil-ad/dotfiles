@@ -360,13 +360,13 @@ mode "$mode_gaps_outer" {
 ################################################################################################
 # Sound - DO NOT EDIT if you wish to automatically upgrade Alsa -> Pulseaudio later!
 ################################################################################################
-exec --no-startup-id volumeicon
+#exec --no-startup-id volumeicon
 bindsym $mod+Ctrl+m exec terminal -e 'alsamixer'
 #exec --no-startup-id pulseaudio
 #bindsym $mod+Ctrl+m exec pavucontrol
 
-# TODO: pa-applet instead of volumeicon?
-#exec --no-startup-id pa-applet
+exec --no-startup-id pa-applet
+#exec --no-startup-id pasystray
 ################################################################################################
 
 
