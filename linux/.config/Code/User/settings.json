@@ -70,7 +70,7 @@
     "scm.diffDecorationsGutterWidth": 2,
     "scm.diffDecorations": "gutter",
     "telemetry.enableTelemetry": false,
-    "diffEditor.ignoreTrimWhitespace": true,
+    "diffEditor.ignoreTrimWhitespace": false,
     "diffEditor.renderSideBySide": true,
     "git.autofetch": true,
     "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
@@ -272,4 +272,6 @@
 
     "terminal.integrated.shell.linux": "/bin/zsh",
     "terminal.integrated.inheritEnv": true,
+    // "workbench.colorTheme": "Popping and Locking",
+    "python.languageServer": "Pylance",
 }
