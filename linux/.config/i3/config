@@ -184,6 +184,7 @@ bindsym $mod+n border normal
 
 # configure window title
 title_align center
+# for_window [class=".*"] title_format "%title"
 
 ##########################################
 #                Fonts
