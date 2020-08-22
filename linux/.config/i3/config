@@ -444,6 +444,7 @@ for_window [class="Cisco AnyConnect Secure Mobility Client"] floating enable bor
 for_window [class="Timeset-gui"] floating enable border normal
 for_window [class="(?i)virtualbox"] floating enable border normal
 for_window [class="Xfburn"] floating enable
+for_window [class="Thunar"] floating enable resize set 50 ppt 50 ppt, move absolute position center
 
 # switch to workspace with urgent window automatically
 for_window [urgent=latest] focus
