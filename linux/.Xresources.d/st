@@ -1,4 +1,5 @@
-st.font: DejaVu Sans Mono for Powerline:style=SemiBold:size=8
+!st.font: DejaVu Sans Mono for Powerline:style=SemiBold:size=8
+st.font: Cascadia Code PL:size=9
 !st.font: JetBrains Mono:style:Medium:size=10
 !st.font: Menlo for Powerline:size=10
 !st.font: IBM Plex Mono:style=Bold:size=12
