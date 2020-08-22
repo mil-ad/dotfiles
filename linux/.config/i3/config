@@ -377,7 +377,7 @@ bindsym $mod+F2 exec brave
 bindsym $mod+F3 exec thunar
 bindsym $mod+F5 exec terminal -e 'mocp'
 bindsym $mod+Ctrl+b exec terminal -e 'bmenu'
-bindsym $mod+Ctrl+v exec clipmenu -i -c -bw 5
+bindsym $mod+Ctrl+v exec CM_OUTPUT_CLIP=1 clipmenu -i -c -bw 5
 bindsym $mod+Shift+F3 exec gksu thunar
 
 bindsym $mod+t exec --no-startup-id pkill picom
