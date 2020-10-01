@@ -414,7 +414,14 @@ assign [class="Brave"] $ws3
 assign [class="Slack"] $ws4
 assign [class="Telegram"] $ws4
 assign [class="Signal"] $ws4
-assign [class="Evolution"] $ws4
+assign [class="Notion"] $ws5
+
+# Open specific applications in specific layouts
+for_window [title="Telegram"] layout tabbed 
+for_window [title="Signal"] layout tabbed 
+for_window [title="Slack"] layout tabbed 
+for_window [title="Brave"] layout tabbed 
+for_window [title="Code"] layout stacking 
 
 # Open specific applications in floating mode
 for_window [title="alsamixer"] floating enable border pixel 1
