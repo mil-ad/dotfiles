@@ -7,7 +7,7 @@ My configuration files for Linux and macOS.
 Clone this repository into `~/.dotfiles` and create the symbolic links using [GNU Stow](https://www.gnu.org/software/stow/):
 
 ```shell
-$ git clone https://github.com/mi-lad/dotfiles ~/.dotfiles
+$ git clone https://github.com/mil-ad/dotfiles ~/.dotfiles
 $ cd ~/.dotfiles
 $ stow common linux
 ```
