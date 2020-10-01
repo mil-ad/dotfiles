@@ -1,0 +1,2 @@
+# Fix del key for interactive python when using zsh+st
+set enable-keypad on
