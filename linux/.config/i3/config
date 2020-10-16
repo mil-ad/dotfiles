@@ -59,6 +59,8 @@ bindsym $mod+Shift+b move container to workspace back_and_forth; workspace back_
 # Milad: Move workspace between monitors
 bindsym $mod+Shift+Ctrl+Right move workspace to output right
 bindsym $mod+Shift+Ctrl+Left move workspace to output left
+bindsym $mod+Shift+Ctrl+Up move workspace to output up
+bindsym $mod+Shift+Ctrl+Down move workspace to output down
 
 # split orientation
 bindsym $mod+h split h;exec notify-send 'tile horizontally'
