@@ -140,7 +140,7 @@
 
     "latex-workshop.view.pdf.viewer": "tab",
     "latex-workshop.latex.autoBuild.run": "never",
-    "latex-workshop.latex.recipe.default": "latexmk with xelatex",
+    "latex-workshop.latex.recipe.default": "latexmk with xelatex 🔃",
     "latex-workshop.message.error.show": false,
     "latex-workshop.message.warning.show": false,
     "latex-workshop.latex.outDir": "_output",
