@@ -1,6 +1,7 @@
 {
-    "editor.fontFamily": "'Cascadia Code', 'JetBrains Mono Medium', 'JetBrainsMono-Medium', 'IBMPlexMono-Bold', 'IBM Plex Mono SemiBold'",
-    "editor.fontSize": 17,
+    "editor.fontFamily": "'Cascadia Code', 'Iosevka Nerd Font Mono', 'JetBrains Mono Medium', 'JetBrainsMono-Medium', 'IBMPlexMono-Bold', 'IBM Plex Mono SemiBold'",
+    "editor.fontSize": 18,
+    // "editor.fontWeight": "bold",
     "editor.tabSize": 4,
     "editor.mouseWheelZoom": false,
     "editor.multiCursorModifier": "ctrlCmd",
@@ -49,7 +50,7 @@
     "workbench.statusBar.feedback.visible": false,
     "workbench.tips.enabled": false,
     "workbench.activityBar.visible": true,
-    "workbench.colorTheme": "Gruvbox Dark Soft",
+    "workbench.colorTheme": "Gruvbox Dark Hard",
     "workbench.iconTheme": "ayu",
     "workbench.startupEditor": "newUntitledFile",
     "workbench.editor.enablePreview": false,
