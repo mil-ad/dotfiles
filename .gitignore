@@ -16,5 +16,7 @@ sublime-text-3/User/GitSavvy/*.hidden-tmTheme
 sublime-text-3/User/SBSCompareScheme.hidden-color-scheme
 sublime-text-3/User/SBSCompareTheme.hidden-tmTheme
 
+linux/.fonts/**/.uuid
+
 .netrwhist
 antigen.zsh
