@@ -3,12 +3,12 @@
 #   https://github.com/caarlos0/dotfiles/blob/master/macos/set-defaults.sh
 
 # Stop "Last login" messages from appearing in the terminal
-touch ~/.hushlogin
+[[ ! -e ~/.hushlogin ]] && touch ~/.hushlogin
 
-# Remove the delay for Auto-Hide & Auto-Show of Dock
+# Disable the delay for Auto-Hide & Auto-Show of Dock
 defaults write com.apple.Dock autohide-delay -float 0 && killall Dock
 
-# Remove dock animation
+# Disable dock animation
 defaults write com.apple.dock autohide-time-modifier -int 0;killall Dock
 
 # Set sidebar icon size to small
