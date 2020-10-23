@@ -389,13 +389,9 @@ bindsym $mod+Ctrl+t exec --no-startup-id picom -b
 bindsym $mod+Shift+d --release exec "killall dunst; exec notify-send 'restart dunst'"
 
 # Taking Screenshots
-bindsym $mod+z --release exec "scrot -s /tmp/screenshot-$(date +%F_%T).png -e 'xclip -selection c -t image/png < $f'"
-bindsym $mod+Shift+z --release exec --no-startup-id i3-scrot -s
-bindsym $mod+Ctrl+z exec --no-startup-id i3-scrot
-#bindsym Print exec --no-startup-id i3-scrot
-#bindsym $mod+Print --release exec --no-startup-id i3-scrot -w
-#bindsym $mod+Shift+Print --release exec --no-startup-id i3-scrot -s
-#bindsym Shift+Print exec "scrot /tmp/screenshot-$(date +%F_%T).png -e 'xclip -selection c -t image/png < $f'"
+bindsym $mod+z --release exec maim -s | xclip -selection clipboard -t image/png
+bindsym $mod+Shift+z exec --no-startup-id file="/tmp/screenshot-$(date +%F_%T).png" && maim $file && xclip -selection clipboard -t image/png $file
+bindsym $mod+Ctrl+z exec --no-startup-id file="$HOME/Pictures/screenshot-$(date +%F_%T).png" && maim $file && notify-send "Screenshot saved: $file"
 
 bindsym $mod+Shift+h exec xdg-open /usr/share/doc/manjaro/i3_help.pdf
 bindsym $mod+Ctrl+x --release exec --no-startup-id xkill
