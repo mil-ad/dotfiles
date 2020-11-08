@@ -20,3 +20,5 @@ linux/.fonts/**/.uuid
 
 .netrwhist
 antigen.zsh
+
+linux/.fonts/**/.uuid
