@@ -402,7 +402,7 @@ bindsym $mod+Ctrl+y exec ~/.scripts/search_youtube
 bindsym $mod+Ctrl+p exec ~/.scripts/open_paper
 bindsym $mod+o exec ~/.scripts/open_recent_file
 bindsym $mod+Ctrl+o exec ~/.scripts/open_file
-bindsym $mod+Ctrl+e exec ~/.scripts/copy_emoji
+bindsym $mod+Ctrl+e exec ~/.scripts/select_emoji
 
 ##########################################
 #         Application-specific
