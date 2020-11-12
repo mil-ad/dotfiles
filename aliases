@@ -8,6 +8,7 @@ alias ......="cd ../../../../../.."
 alias l='ls -lh'
 alias ll="ls -laHh"
 alias ldot='ls -ld .*'
+alias lsym='ls -l `find . -maxdepth 1 -type l -print`'
 
 alias ag='ag --ignore-case --color-match="1;31" --silent'
 alias agc='ag --ignore-case --color-match="1;31" --silent -C 2'
