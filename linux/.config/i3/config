@@ -204,18 +204,14 @@ font pango:$font_family 6
 #                Colours
 ##########################################
 
-# Color palette used for the terminal ( ~/.Xresources file )
+# Color palette used for the terminal (~/.Xresources file)
 # Colors are gathered based on the documentation:
 # https://i3wm.org/docs/userguide.html#xresources
-# Change the variable name at the place you want to match the color
-# of your terminal like this:
-# [example]
-# If you want your bar to have the same background color as your
-# terminal background change the line 362 from:
-# background #14191D
-# to:
-# background $term_background
-# Same logic applied to everything else.
+
+# Change the variable name at the place you want to match the color of your
+# terminal. For example if you want your bar to have the same background color
+# as your terminal background change `background #14191D` to `background
+# $term_background`. Same logic applied to everything else.
 set_from_resource $term_background background
 set_from_resource $term_foreground foreground
 set_from_resource $term_color0     color0
@@ -245,6 +241,15 @@ set $aqua #689d68
 set $gray #a89984
 set $darkgray #1d2021
 
+# Theme colors
+# class                 border     backgr     text       indic.    child_border
+client.focused          $yellow    $yellow    $darkgray  $purple   $yellow
+client.focused_inactive $darkgray  $darkgray  $yellow    $purple   $darkgray
+client.unfocused        $yellow    $darkgray  $yellow    $purple   $darkgray
+client.urgent           $red       $red       $white     $red      $red
+client.placeholder      #000000 #0c0c0c #ffffff #000000
+client.background       #2B2C2B
+
 ##########################################
 #                  Bar
 ##########################################
@@ -258,20 +263,9 @@ bar {
         bindsym button4 nop
         bindsym button5 nop
 
-# Do set your primary output first. Example: 'xrandr --output eDP1 --primary'
+        # Do set your primary output first.
+        # Example: 'xrandr --output eDP1 --primary'
         tray_output primary
-
-#    colors {
-#        background #222D31
-#        statusline #F9FAF9
-#        separator  #454947
-#                          # border   bg     text
-#        focused_workspace  #F9FAF9 #16a085 #292F34
-#        active_workspace   #595B5B #353836 #FDF6E3
-#        inactive_workspace #595B5B #222D31 #EEE8D5
-#        binding_mode       #16a085 #2C2C2C #F9FAF9
-#        urgent_workspace   #16a085 #FDF6E3 #E5201D
-#    }
 
     colors {
         background $darkgray
@@ -289,20 +283,6 @@ bar {
 # hide/unhide i3status bar
 bindsym $mod+m bar mode toggle
 
-# Theme colors
-# class                   border  backgr. text    indic.   child_border
-#   client.focused          #556064 #556064 #80FFF9 #FDF6E3
-#   client.focused_inactive #2F3D44 #2F3D44 #1ABC9C #454948
-#   client.unfocused        #2F3D44 #2F3D44 #1ABC9C #454948
-#   client.urgent           #CB4B16 #FDF6E3 #1ABC9C #268BD2
-  client.placeholder      #000000 #0c0c0c #ffffff #000000
-
-  client.background       #2B2C2B
-
-client.focused          $yellow $yellow $darkgray $purple $yellow
-client.focused_inactive $darkgray $darkgray $yellow $purple $darkgray
-client.unfocused        $yellow $darkgray $yellow $purple $darkgray
-client.urgent           $red $red $white $red $red
 
 ##########################################
 #                i3-gaps
