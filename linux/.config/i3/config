@@ -397,6 +397,8 @@ assign [class="Slack"] $ws4
 assign [class="Telegram"] $ws4
 assign [class="Signal"] $ws4
 assign [class="Notion"] $ws5
+assign [class="zoom"] $ws6
+assign [class="Zathura"] $ws7
 
 # Open specific applications in specific layouts
 for_window [title="Telegram"] layout tabbed
@@ -404,6 +406,9 @@ for_window [title="Signal"] layout tabbed
 for_window [title="Slack"] layout tabbed
 for_window [title="Brave"] layout tabbed
 for_window [title="Code"] layout stacking
+
+# Open specific applications in specific sizes
+for_window [class="zoom" title="Chat"] resize shrink width 20 px or 20 ppt
 
 # Open specific applications in floating mode
 for_window [title="alsamixer"] floating enable border pixel 1
@@ -434,6 +439,8 @@ for_window [class="Timeset-gui"] floating enable border normal
 for_window [class="(?i)virtualbox"] floating enable border normal
 for_window [class="Xfburn"] floating enable
 for_window [class="Thunar"] floating enable resize set 50 ppt 50 ppt, move absolute position center
+for_window [class="Zoom - Free Account"] floating enable
+for_window [class="zoom" title="Settings"] floating enable
 
 # switch to workspace with urgent window automatically
 for_window [urgent=latest] focus
