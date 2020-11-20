@@ -369,7 +369,7 @@ bindsym $mod+Ctrl+t exec --no-startup-id picom -b
 bindsym $mod+Shift+d --release exec "killall dunst; exec notify-send 'restart dunst'"
 
 # Taking Screenshots
-bindsym $mod+z --release exec maim -s | xclip -selection clipboard -t image/png
+bindsym $mod+z --release exec maim -s /dev/stdout | xclip -selection clipboard -t image/png
 bindsym $mod+Shift+z exec --no-startup-id file="/tmp/screenshot-$(date +%F_%T).png" && maim $file && xclip -selection clipboard -t image/png $file
 bindsym $mod+Ctrl+z exec --no-startup-id file="$HOME/Pictures/screenshot-$(date +%F_%T).png" && maim $file && notify-send "Screenshot saved: $file"
 
