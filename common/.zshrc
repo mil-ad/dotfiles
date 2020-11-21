@@ -23,6 +23,7 @@ source ~/.dotfiles/exports
 # fzf keybinding and completion on macOS
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
-export FZF_DEFAULT_COMMAND='ag --hidden --ignore .git -g ""'
+export FZF_DEFAULT_COMMAND='ag --hidden --ignore .git --ignore .cache -g ""'
+export FZF_CTRL_T_COMMAND=$FZF_DEFAULT_COMMAND
 
 [ -e .zshrc_local ] && source .zshrc_local
