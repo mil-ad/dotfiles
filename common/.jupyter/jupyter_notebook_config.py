@@ -1,3 +1,9 @@
+c.NotebookApp.ip = 'localhost'
+c.NotebookApp.token = ''
+c.NotebookApp.password = ''
+c.NotebookApp.port = 7777
+c.NotebookApp.open_browser = False
+
 # Configuration file for jupyter-notebook.
 
 #------------------------------------------------------------------------------
@@ -201,7 +207,7 @@
 #c.NotebookApp.iopub_msg_rate_limit = 1000
 
 ## The IP address the notebook server will listen on.
-c.NotebookApp.ip = '*'
+#c.NotebookApp.ip = '*'
 
 ## Supply extra arguments that will be passed to Jinja environment.
 #c.NotebookApp.jinja_environment_options = {}
@@ -264,7 +270,7 @@ c.NotebookApp.ip = '*'
 #  platform dependent and determined by the python standard library `webbrowser`
 #  module, unless it is overridden using the --browser (NotebookApp.browser)
 #  configuration option.
-c.NotebookApp.open_browser = False
+# c.NotebookApp.open_browser = False
 
 ## Hashed password to use for web authentication.
 #
@@ -284,7 +290,7 @@ c.NotebookApp.open_browser = False
 #c.NotebookApp.password_required = False
 
 ## The port the notebook server will listen on.
-c.NotebookApp.port = 7777
+#c.NotebookApp.port = 7777
 
 ## The number of additional ports to try if the specified port is not available.
 #c.NotebookApp.port_retries = 50
