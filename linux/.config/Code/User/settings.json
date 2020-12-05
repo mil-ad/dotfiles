@@ -1,5 +1,5 @@
 {
-    "editor.fontFamily": "'Cascadia Code', 'Iosevka Nerd Font Mono', 'JetBrains Mono Medium', 'JetBrainsMono-Medium', 'IBMPlexMono-Bold', 'IBM Plex Mono SemiBold'",
+    "editor.fontFamily": "'Cascadia Code', 'Noto Color Emoji','Iosevka Nerd Font Mono' , 'IBM Plex Mono Medium', 'JetBrains Mono Medium', 'JetBrainsMono-Medium', 'IBMPlexMono-Bold'",
     "editor.fontSize": 18,
     // "editor.fontWeight": "bold",
     "editor.tabSize": 4,
@@ -64,7 +64,7 @@
     "explorer.sortOrder": "type",
     // "explorer.openEditors.visible": 0,
     "terminal.integrated.macOptionClickForcesSelection": true,
-    "terminal.integrated.fontFamily": "'Cascadia Code', 'Iosevka Nerd Font Mono', 'JetBrains Mono Medium', 'JetBrainsMono-Medium','IBMPlexMono-Bold', 'IBM Plex Mono SemiBold', 'Courier New', Menlo",
+    "terminal.integrated.fontFamily": "'Cascadia Code', 'Noto Color Emoji', 'Iosevka Nerd Font Mono', 'JetBrains Mono Medium', 'JetBrainsMono-Medium','IBMPlexMono-Bold', 'IBM Plex Mono SemiBold', 'Courier New', Menlo",
     "terminal.integrated.fontSize": 13,
     // "terminal.integrated.rendererType": "experimentalWebgl", // Experimental!
     "terminal.integrated.rendererType": "dom",
