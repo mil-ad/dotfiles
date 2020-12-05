@@ -254,31 +254,31 @@ client.background       #2B2C2B
 #                  Bar
 ##########################################
 
-bar {
-        i3bar_command i3bar
-        status_command i3status
-        position bottom
-        strip_workspace_numbers yes
-        font pango:$font_family 8
-        bindsym button4 nop
-        bindsym button5 nop
+# bar {
+#         i3bar_command i3bar
+#         status_command i3status
+#         position bottom
+#         strip_workspace_numbers yes
+#         font pango:$font_family 8
+#         bindsym button4 nop
+#         bindsym button5 nop
 
-        # Do set your primary output first.
-        # Example: 'xrandr --output eDP1 --primary'
-        tray_output primary
+#         # Do set your primary output first.
+#         # Example: 'xrandr --output eDP1 --primary'
+#         tray_output primary
 
-    colors {
-        background $darkgray
-        separator  $gray
-        statusline $gray
-                            # border      bg           text
-        focused_workspace    $yellow      $yellow      $darkgray
-        active_workspace     $bg          $bg          $gray
-        inactive_workspace   $bg          $bg          $gray
-        binding_mode         $red         $aqua        $red
-        urgent_workspace     $red         $red         $bg
-    }
-}
+#     colors {
+#         background $darkgray
+#         separator  $gray
+#         statusline $gray
+#                             # border      bg           text
+#         focused_workspace    $yellow      $yellow      $darkgray
+#         active_workspace     $bg          $bg          $gray
+#         inactive_workspace   $bg          $bg          $gray
+#         binding_mode         $red         $aqua        $red
+#         urgent_workspace     $red         $red         $bg
+#     }
+# }
 
 # hide/unhide i3status bar
 bindsym $mod+m bar mode toggle
@@ -476,7 +476,7 @@ exec --no-startup-id caffeine
 exec --no-startup-id xfce4-power-manager
 exec --no-startup-id blueman-applet
 exec --no-startup-id xautolock -detectsleep -time 15 -locker blurlock
-# exec --no-startup-id ~/.config/polybar/launch.sh
+exec --no-startup-id ~/.config/polybar/launch.sh
 
 # Milad: This breaks "#include"s in .Xresources. Disabling until fixed.
 #exec_always --no-startup-id fix_xcursor
