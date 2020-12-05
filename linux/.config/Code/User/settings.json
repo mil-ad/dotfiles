@@ -113,8 +113,6 @@
     // =========================================================================
     "python.jediEnabled": false, // Use Microsoft Python Analysis instead
     "python.languageServer": "Microsoft",
-    "python.dataScience.sendSelectionToInteractiveWindow": true,
-    "python.dataScience.askForKernelRestart": false,
     "python.formatting.provider": "black",
     "python.showStartPage": false,
 
@@ -269,10 +267,14 @@
 
 
     "rewrap.autoWrap.enabled": false,
-    "autoDocstring.generateDocstringOnEnter": false,
+    "autoDocstring.generateDocstringOnEnter": true,
+    "autoDocstring.startOnNewLine": true,
+    "autoDocstring.docstringFormat": "google",
 
     "terminal.integrated.shell.linux": "/bin/zsh",
     "terminal.integrated.inheritEnv": true,
     // "workbench.colorTheme": "Popping and Locking",
     "python.languageServer": "Pylance",
+    "jupyter.sendSelectionToInteractiveWindow": true,
+    "jupyter.askForKernelRestart": false,
 }
