@@ -3,22 +3,22 @@ x-scheme-handler/http=brave.desktop
 x-scheme-handler/https=brave.desktop
 x-scheme-handler/ftp=brave.desktop
 x-scheme-handler/chrome=brave.desktop
-text/html=brave.desktop
+x-scheme-handler/msteams=teams.desktop
+x-scheme-handler/mailto=userapp-Thunderbird.desktop
 application/x-extension-htm=brave.desktop
 application/x-extension-html=brave.desktop
 application/x-extension-shtml=brave.desktop
-application/xhtml+xml=brave.desktop
 application/x-extension-xhtml=brave.desktop
 application/x-extension-xht=brave.desktop
-image/jpeg=viewnior.desktop;gpicview.desktop;
-image/png=viewnior.desktop;gpicview.desktop;
-text/plain=mousepad.desktop
-x-scheme-handler/mailto=userapp-Thunderbird.desktop
-message/rfc822=userapp-Thunderbird.desktop
+application/xhtml+xml=brave.desktop
 application/x-bittorrent=deluge.desktop
 application/pdf=zathura.desktop;
+text/html=brave.desktop
+text/plain=mousepad.desktop
+image/jpeg=viewnior.desktop;gpicview.desktop;
+image/png=viewnior.desktop;gpicview.desktop;
 inode/directory=thunar.desktop;
-
+message/rfc822=userapp-Thunderbird.desktop
 
 [Added Associations]
 x-scheme-handler/http=brave.desktop;
@@ -41,3 +41,6 @@ application/pdf=epdfview.desktop;
 application/x-bittorrent=deluge.desktop;
 image/gif=viewnior.desktop;
 application/pdf=zathura.desktop;
+image/bmp=sxiv-rifle.desktop;
+image/tiff=viewnior.desktop;
+audio/mp4=vlc.desktop;
