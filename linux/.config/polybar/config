@@ -56,12 +56,13 @@ module-margin-left = 0
 module-margin-right = 0
 
 
-; font-0 = Cascadia Code PL:style=Regular:size=14
-font-0 = scientifica:style=Medium:size=16
+font-0 = Cascadia Code PL:style=Regular:size=13
+; font-1 = scientifica:style=Medium:size=16
 ; There's a bug with Noto font size: https://github.com/polybar/polybar/issues/905
-font-1 = Noto Color Emoji:scale=12
-font-2 = Cascadia Code PL:style=Regular:size=14
-font-3 = Material Icons:style=Regular:size=14
+font-2 = Noto Color Emoji:scale=13
+; font-2 = Cascadia Code PL:style=Regular:size=14
+; font-3 = Material Icons:style=Regular:size=16
+font-1 = FontAwesome:size=13
 
 modules-left = i3
 modules-center = date
@@ -259,7 +260,7 @@ format-disconnected =
 type = internal/date
 interval = 5
 
-date = " %A %b %d"
+date = " %A %b %d"
 time = %H:%M
 label = %date%, %time%
 
