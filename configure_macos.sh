@@ -2,9 +2,6 @@
 #   https://gist.github.com/garethrees/2470157
 #   https://github.com/caarlos0/dotfiles/blob/master/macos/set-defaults.sh
 
-# Stop "Last login" messages from appearing in the terminal
-[[ ! -e ~/.hushlogin ]] && touch ~/.hushlogin
-
 # Disable the delay for Auto-Hide & Auto-Show of Dock
 defaults write com.apple.Dock autohide-delay -float 0 && killall Dock
 
