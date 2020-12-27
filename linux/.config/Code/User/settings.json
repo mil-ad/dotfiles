@@ -1,4 +1,7 @@
 {
+    "telemetry.enableTelemetry": false,
+    "update.mode": "manual",
+
     "editor.fontFamily": "'Cascadia Code', 'Noto Color Emoji','Iosevka Nerd Font Mono' , 'IBM Plex Mono Medium', 'JetBrains Mono Medium', 'JetBrainsMono-Medium', 'IBMPlexMono-Bold'",
     "editor.fontSize": 18,
     // "editor.fontWeight": "bold",
@@ -17,8 +20,6 @@
     "editor.formatOnPaste": false,
     "editor.suggestSelection": "first",
     "editor.accessibilitySupport": "off",
-    "files.insertFinalNewline": true,
-
     // "editor.cursorSmoothCaretAnimation": true,
 
     // Disable italics in comment blocks
@@ -54,23 +55,31 @@
     "workbench.iconTheme": "ayu",
     "workbench.startupEditor": "newUntitledFile",
     "workbench.editor.enablePreview": false,
+
     "window.zoomLevel": -2,
     "window.menuBarVisibility": "default",
-    "update.mode": "manual",
+
+
+
     "files.trimTrailingWhitespace": true,
     "files.trimFinalNewlines": true,
+    "files.insertFinalNewline": true,
+
     "explorer.decorations.colors": false,
     "explorer.decorations.badges": false,
     "explorer.sortOrder": "type",
     // "explorer.openEditors.visible": 0,
+
     "terminal.integrated.macOptionClickForcesSelection": true,
     "terminal.integrated.fontFamily": "'Cascadia Code', 'Noto Color Emoji', 'Iosevka Nerd Font Mono', 'JetBrains Mono Medium', 'JetBrainsMono-Medium','IBMPlexMono-Bold', 'IBM Plex Mono SemiBold', 'Courier New', Menlo",
     "terminal.integrated.fontSize": 13,
-    // "terminal.integrated.rendererType": "experimentalWebgl", // Experimental!
     "terminal.integrated.rendererType": "dom",
+    "terminal.integrated.shell.linux": "/bin/zsh",
+    "terminal.integrated.inheritEnv": true,
+    // "terminal.integrated.rendererType": "experimentalWebgl", // Experimental!
+
     "scm.diffDecorationsGutterWidth": 2,
     "scm.diffDecorations": "gutter",
-    "telemetry.enableTelemetry": false,
     "diffEditor.ignoreTrimWhitespace": false,
     "diffEditor.renderSideBySide": true,
     "git.autofetch": true,
@@ -105,21 +114,13 @@
         "editor.wordWrapColumn": 120,
     },
 
-
-
-
     // =========================================================================
     // Extension settings
     // =========================================================================
-    "python.jediEnabled": false, // Use Microsoft Python Analysis instead
-    "python.languageServer": "Microsoft",
-    "python.formatting.provider": "black",
     "python.showStartPage": false,
-
-    "python.formatting.yapfArgs": [
-        // "--style", "{indent_width: 2, continuation_indent_width: 2, dedent_closing_brackets: True, column_limit:80}"
-        // "--style", "{indent_width: 4, continuation_indent_width: 4, dedent_closing_brackets: True, column_limit:88}"
-    ],
+    "python.jediEnabled": false, // Use Microsoft Python Analysis instead
+    "python.languageServer": "Pylance",
+    "python.formatting.provider": "black",
     // Providing pylintArgs disables all the sensible defaults that VSCode
     // applies. I have therefore copy-pasted them manually (see
     // pylintUseMinimalCheckers). The real change I want to make here is
@@ -131,11 +132,12 @@
     ],
     "python.linting.enabled": true,
     "python.linting.flake8Enabled": true,
-
-
     "python.testing.pytestEnabled": true,
     "python.testing.unittestEnabled": false,
     "python.testing.nosetestsEnabled": false,
+
+    "jupyter.sendSelectionToInteractiveWindow": true,
+    "jupyter.askForKernelRestart": false,
 
     "latex-workshop.view.pdf.viewer": "tab",
     "latex-workshop.latex.autoBuild.run": "never",
@@ -232,7 +234,6 @@
         },
     ],
 
-
     "todo.embedded.provider": "ag",
     "todo.symbols.box": "[ ]",
     "todo.symbols.cancelled": "[-]",
@@ -240,7 +241,6 @@
     // "todo.symbols.box": "-",
     // "todo.symbols.cancelled": "-",
     // "todo.symbols.done": "-",
-
 
     "spellright.language": [
         "English (American)"
@@ -261,20 +261,12 @@
     "spellright.statusBarIndicator": false,
 
 
-
     "fileutils.delete.useTrash": true,
     "git-graph.showStatusBarItem": false,
 
-
     "rewrap.autoWrap.enabled": false,
+
     "autoDocstring.generateDocstringOnEnter": true,
     "autoDocstring.startOnNewLine": true,
     "autoDocstring.docstringFormat": "google",
-
-    "terminal.integrated.shell.linux": "/bin/zsh",
-    "terminal.integrated.inheritEnv": true,
-    // "workbench.colorTheme": "Popping and Locking",
-    "python.languageServer": "Pylance",
-    "jupyter.sendSelectionToInteractiveWindow": true,
-    "jupyter.askForKernelRestart": false,
 }
