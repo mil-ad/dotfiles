@@ -50,6 +50,8 @@ set hlsearch 		" Highlight all search matches, use :nohlsearch to hide them
 "set tags=./tags,./TAGS,tags,TAGS;
 set tags=./tags;
 
+set viminfo+=n~/.vim/viminfo
+
 " Colours/themes settings
 set termguicolors
 let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
