@@ -57,12 +57,13 @@ module-margin-right = 0
 
 
 font-0 = Cascadia Code PL:style=Regular:size=13
-; font-1 = scientifica:style=Medium:size=16
-; There's a bug with Noto font size: https://github.com/polybar/polybar/issues/905
+font-1 = Font Awesome 5 Free:size=13
+; There's a bug with Noto font size hence the use of "scale":
+;   https://github.com/polybar/polybar/issues/905
 font-2 = Noto Color Emoji:scale=13
+; font-1 = scientifica:style=Medium:size=16
 ; font-2 = Cascadia Code PL:style=Regular:size=14
 ; font-3 = Material Icons:style=Regular:size=16
-font-1 = FontAwesome:size=13
 
 modules-left = i3
 modules-center = date
