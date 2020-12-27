@@ -5,9 +5,13 @@ alias .....="cd ../../../.."
 alias .....="cd ../../../../.."
 alias ......="cd ../../../../../.."
 
-alias l='ls -lh'
-alias ll="ls -laHh"
-alias ldot='ls -ld .*'
+alias ga='git add'
+alias gc='git commit'
+alias gs='git status'
+alias gb='git branch'
+alias gm='git merge'
+alias goops='git rebase -i HEAD~2'
+
 alias lsym='ls -l `find . -maxdepth 1 -type l -print`'
 
 alias ag='ag --ignore-case --color-match="1;31" --silent'
@@ -21,12 +25,6 @@ alias cal='cal -3'
 #alias tmux="tmux -2" # Force 256 colour support
 alias df='df -h'
 alias du='du -h'
-
-alias ga='git add'
-alias gc='git commit'
-alias gs='git status'
-alias gb='git branch'
-alias gm='git merge'
 
 alias psmem='ps auxf | sort -nr -k 4 | head -10'
 alias pscpu='ps auxf | sort -nr -k 3 | head -10'
