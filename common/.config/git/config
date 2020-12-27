@@ -1,7 +1,7 @@
 [user]
     name = Milad Alizadeh
-    email = milad2k+git@gmail.com
-    signingKey = 45845BB2AA928EB7
+    email = hi@mil.ad
+    signingKey = 001819C28CB14E7F
 [color]
     ui = auto
 [core]
@@ -10,7 +10,7 @@
 [push]
     default = simple
 [commit]
-    gpgSign = false
+    gpgSign = true
 [gpg]
     program = "gpg2"
 [diff]
