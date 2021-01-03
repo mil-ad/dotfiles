@@ -1,10 +1,7 @@
 # Set mod key (Mod1=<Alt>, Mod4=<Super>)
 set $mod Mod4
 
-# terminal
-bindsym $mod+Return exec alacritty
-
-# program launcher
+bindsym $mod+Return exec kitty
 bindsym $mod+d exec --no-startup-id dmenu_run -c -l 10 -bw 5
 
 # kill focused window
@@ -19,13 +16,10 @@ bindsym $mod+Shift+r restart
 # lock screen
 bindsym $mod+9 exec --no-startup-id blurlock
 
-# set default desktop layout (default is tiling)
-# workspace_layout tabbed <stacking|tabbed>
-
 # Use Mouse+$mod to drag floating windows
 floating_modifier $mod
 
-# focus_follows_mouse no
+focus_follows_mouse yes
 
 # change focus
 bindsym $mod+Left focus left
