@@ -269,4 +269,5 @@
     "autoDocstring.generateDocstringOnEnter": true,
     "autoDocstring.startOnNewLine": true,
     "autoDocstring.docstringFormat": "google",
+    "explorer.incrementalNaming": "smart",
 }
