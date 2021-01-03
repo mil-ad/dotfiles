@@ -1,0 +1,72 @@
+format = """
+$username\
+$hostname\
+$shlvl\
+$conda\
+$directory\
+$git_branch\
+$git_commit\
+$git_state\
+$git_status\
+$docker_context\
+$package\
+$cmake\
+$dotnet\
+$elixir\
+$elm\
+$erlang\
+$golang\
+$helm\
+$java\
+$julia\
+$kotlin\
+$nim\
+$nodejs\
+$ocaml\
+$perl\
+$php\
+$purescript\
+$python\
+$ruby\
+$rust\
+$swift\
+$terraform\
+$zig\
+$nix_shell\
+$memory_usage\
+$aws\
+$gcloud\
+$openstack\
+$env_var\
+$crystal\
+$custom\
+$cmd_duration\
+$line_break\
+$lua\
+$jobs\
+$battery\
+$time\
+$status\
+$character"""
+
+
+add_newline = true
+
+[character]
+success_symbol = "[❯](bold purple)"
+
+[git_branch]
+format = "[$symbol$branch]($style) "
+symbol = ""
+
+[git_status]
+format = '([$all_status$ahead_behind]($style) )'
+style = "dimmed white"
+stashed = ""
+deleted = ""
+modified = "*"
+conflicted = "💥"
+
+[conda]
+format = '[\($symbol$environment\)](dimmed white) '
+symbol = "🐍"
