@@ -8,47 +8,11 @@ $git_branch\
 $git_commit\
 $git_state\
 $git_status\
-$docker_context\
-$package\
-$cmake\
-$dotnet\
-$elixir\
-$elm\
-$erlang\
-$golang\
-$helm\
-$java\
-$julia\
-$kotlin\
-$nim\
-$nodejs\
-$ocaml\
-$perl\
-$php\
-$purescript\
-$python\
-$ruby\
-$rust\
-$swift\
-$terraform\
-$zig\
-$nix_shell\
-$memory_usage\
-$aws\
-$gcloud\
-$openstack\
-$env_var\
-$crystal\
-$custom\
 $cmd_duration\
 $line_break\
-$lua\
 $jobs\
-$battery\
-$time\
 $status\
 $character"""
-
 
 add_newline = true
 
@@ -62,11 +26,20 @@ symbol = ""
 [git_status]
 format = '([$all_status$ahead_behind]($style) )'
 style = "dimmed white"
-stashed = ""
+stashed = ""
 deleted = ""
 modified = "*"
 conflicted = "💥"
 
 [conda]
-format = '[\($symbol$environment\)](dimmed white) '
-symbol = "🐍"
+
+format = '[{$symbol$environment}](dimmed white) '
+symbol = " "
+
+[jobs]
+symbol = "杖"
+
+[cmd_duration]
+format = "[ $duration]($style) "
+style = "dimmed white"
+min_time = 60_000
