@@ -33,7 +33,7 @@ conflicted = "💥"
 
 [conda]
 
-format = '[{$symbol$environment}](dimmed white) '
+format = '[\($environment\)](dimmed white) '
 symbol = " "
 
 [jobs]
