@@ -308,7 +308,8 @@ bindsym $mod+Ctrl+x --release exec --no-startup-id xkill
 bindsym $mod+Ctrl+s exec ~/.scripts/search_google_scholar
 bindsym $mod+Ctrl+r exec ~/.scripts/search_github
 bindsym $mod+Ctrl+y exec ~/.scripts/search_youtube
-bindsym $mod+Ctrl+p exec ~/.scripts/open_paper
+bindsym $mod+p exec ~/.scripts/open_paper
+bindsym $mod+Ctrl+p exec ~/.scripts/open_paper_no_annotations
 bindsym $mod+o exec ~/.scripts/open_recent_file
 bindsym $mod+Ctrl+o exec ~/.scripts/open_file
 bindsym $mod+Ctrl+e exec ~/.scripts/select_emoji
@@ -327,7 +328,9 @@ assign [class="Telegram"] $ws4
 assign [class="Signal"] $ws4
 assign [class="Notion"] $ws5
 assign [class="zoom"] $ws6
+
 assign [class="Zathura"] $ws7
+for_window [class="Zathura"] focus
 #for_window [class="Zathura" title=".*Papers.*"] move container to workspace $ws7
 
 # Open specific applications in specific layouts
