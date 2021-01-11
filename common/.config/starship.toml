@@ -26,13 +26,12 @@ symbol = ""
 [git_status]
 format = '([$all_status$ahead_behind]($style) )'
 style = "dimmed white"
-stashed = ""
+stashed = ""
 deleted = ""
 modified = "*"
 conflicted = "💥"
 
 [conda]
-
 format = '[\($environment\)](dimmed white) '
 symbol = " "
 
@@ -40,6 +39,6 @@ symbol = " "
 symbol = "杖"
 
 [cmd_duration]
-format = "[ $duration]($style) "
+format = "[祥$duration]($style) "
 style = "dimmed white"
 min_time = 60_000
