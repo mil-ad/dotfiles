@@ -17,6 +17,8 @@ alert = #bd2c40
 ; If no monitor is given, the primary monitor is used if it exists
 monitor =
 
+enable-ipc = true
+
 ; Tell the Window Manager not to configure the window.
 ; Use this to detach the bar if your WM is locking its size/position.
 ; Note: With this most WMs will no longer reserve space for
