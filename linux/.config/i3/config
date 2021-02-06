@@ -1,8 +1,8 @@
 # Set mod key (Mod1=<Alt>, Mod4=<Super>)
 set $mod Mod4
 
-bindsym $mod+Return exec kitty
-bindsym $mod+d exec --no-startup-id dmenu_run -c -l 10 -bw 5
+bindsym $mod+Return exec GDK_SCALE=2 GDK_DPI_SCALE=0.5 kitty
+bindsym $mod+d exec --no-startup-id GDK_SCALE=2 GDK_DPI_SCALE=0.5 dmenu_run 
 
 # kill focused window
 bindsym $mod+Shift+q kill
