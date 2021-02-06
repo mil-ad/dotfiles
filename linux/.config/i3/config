@@ -1,8 +1,9 @@
 # Set mod key (Mod1=<Alt>, Mod4=<Super>)
 set $mod Mod4
+set $hidpi_scale GDK_SCALE=2 GDK_DPI_SCALE=0.5
 
-bindsym $mod+Return exec GDK_SCALE=2 GDK_DPI_SCALE=0.5 kitty
-bindsym $mod+d exec --no-startup-id GDK_SCALE=2 GDK_DPI_SCALE=0.5 dmenu_run 
+bindsym $mod+Return exec $hidpi_scale kitty
+bindsym $mod+d exec --no-startup-id $hidpi_scale dmenu_run 
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -288,7 +289,7 @@ exec --no-startup-id pa-applet
 #          External Keybindings
 ##########################################
 bindsym $mod+F2 exec brave
-bindsym $mod+Shift+Return exec thunar
+bindsym $mod+Shift+Return exec $hidpi_scale thunar
 bindsym $mod+F5 exec terminal -e 'mocp'
 bindsym $mod+Ctrl+b exec terminal -e 'bmenu'
 bindsym $mod+Ctrl+v exec CM_OUTPUT_CLIP=1 clipmenu -i -c -bw 5
