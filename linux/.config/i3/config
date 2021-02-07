@@ -1,6 +1,6 @@
 # Set mod key (Mod1=<Alt>, Mod4=<Super>)
 set $mod Mod4
-set $hidpi_scale GDK_SCALE=2 GDK_DPI_SCALE=0.5
+set $hidpi_scale GDK_SCALE=2 GDK_DPI_SCALE=0.5 QT_AUTO_SCREEN_SCALE_FACTOR=1
 
 bindsym $mod+Return exec $hidpi_scale kitty
 bindsym $mod+d exec --no-startup-id $hidpi_scale dmenu_run 
