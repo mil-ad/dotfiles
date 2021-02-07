@@ -270,4 +270,10 @@
     "autoDocstring.startOnNewLine": true,
     "autoDocstring.docstringFormat": "google",
     "explorer.incrementalNaming": "smart",
+    // "files.associations": {
+    //     "*.txt": "shellscript"
+    // },
+    "editor.gotoLocation.multipleDeclarations": "gotoAndPeek",
+    "editor.gotoLocation.multipleDefinitions": "gotoAndPeek",
+    "editor.gotoLocation.multipleTypeDefinitions": "gotoAndPeek",
 }
