@@ -299,7 +299,7 @@ bindsym $mod+Ctrl+t exec --no-startup-id picom -b
 bindsym $mod+Shift+d --release exec "killall dunst; exec notify-send 'restart dunst'"
 
 # Taking Screenshots
-bindsym $mod+z --release exec maim -s /dev/stdout | xclip -selection clipboard -t image/png
+bindsym $mod+z --release exec --no-startup-id maim -s /dev/stdout | xclip -selection clipboard -t image/png
 bindsym $mod+Shift+z exec --no-startup-id maim -s "$HOME/Pictures/screenshot-$(date +%F_%T).png" && notify-send "Screenshot region saved to ${HOME}/Pictures"
 bindsym $mod+Ctrl+z exec --no-startup-id maim "$HOME/Pictures/screenshot-$(date +%F_%T).png" && notify-send "Screenshot saved to ${HOME}/Pictures"
 
@@ -314,6 +314,7 @@ bindsym $mod+Ctrl+p exec ~/.scripts/open_paper_no_annotations
 bindsym $mod+o exec ~/.scripts/open_recent_file
 bindsym $mod+Ctrl+o exec ~/.scripts/open_file
 bindsym $mod+Ctrl+e exec ~/.scripts/select_emoji
+# bindsym $mod+Ctrl+l exec ~/.scripts/enter_snippet
 
 ##########################################
 #         Application-specific
@@ -405,12 +406,12 @@ mode "$mode_system" {
 exec --no-startup-id nm-applet
 exec --no-startup-id seafile-applet
 exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
-exec --no-startup-id nitrogen --restore; sleep 1; picom -b
 exec --no-startup-id caffeine
 exec --no-startup-id xfce4-power-manager
 exec --no-startup-id blueman-applet
 exec --no-startup-id xautolock -detectsleep -time 15 -locker blurlock
 exec --no-startup-id ~/.config/polybar/launch.sh
+exec --no-startup-id nitrogen --restore; sleep 1; picom -b
 
 # Milad: This breaks "#include"s in .Xresources. Disabling until fixed.
 #exec_always --no-startup-id fix_xcursor
