@@ -16,8 +16,8 @@ alias goops='git rebase -i HEAD~2'
 
 alias lsym='ls -l `find . -maxdepth 1 -type l -print`'
 
-alias ag='ag --ignore-case --color-match="1;31" --silent'
-alias agc='ag --ignore-case --color-match="1;31" --silent -C 2'
+alias ag='ag --hidden --ignore-case --color-match="1;31" --silent'
+alias agc='ag --hidden --ignore-case --color-match="1;31" --silent -C 2'
 alias agf='ag --hidden --ignore .git --ignore .cache -g""'
 
 alias more="less"
