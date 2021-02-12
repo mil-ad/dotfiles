@@ -410,7 +410,7 @@ exec --no-startup-id caffeine
 exec --no-startup-id xfce4-power-manager
 exec --no-startup-id blueman-applet
 exec --no-startup-id xautolock -detectsleep -time 15 -locker blurlock
-exec --no-startup-id ~/.config/polybar/launch.sh
+exec_always --no-startup-id ~/.config/polybar/launch.sh
 exec --no-startup-id nitrogen --restore; sleep 1; picom -b
 
 # Milad: This breaks "#include"s in .Xresources. Disabling until fixed.
