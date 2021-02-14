@@ -331,8 +331,8 @@ assign [class="Signal"] $ws4
 assign [class="Notion"] $ws5
 assign [class="zoom"] $ws6
 
-assign [class="Zathura"] $ws7
-for_window [class="Zathura"] focus
+#assign [class="Zathura"] $ws7
+#for_window [class="Zathura"] focus
 #for_window [class="Zathura" title=".*Papers.*"] move container to workspace $ws7
 
 # Open specific applications in specific layouts
