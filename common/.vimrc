@@ -50,7 +50,11 @@ set hlsearch 		" Highlight all search matches, use :nohlsearch to hide them
 "set tags=./tags,./TAGS,tags,TAGS;
 set tags=./tags;
 
-set viminfo+=~/.vim/viminfo
+if !has('nvim')
+    set viminfo+=n~/.vim/viminfo
+else
+    set viminfo+=n~/.vim/nviminfo
+endif
 
 " Colours/themes settings
 set termguicolors
