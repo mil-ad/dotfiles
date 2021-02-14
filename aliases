@@ -14,6 +14,16 @@ alias gb='git branch'
 alias gm='git merge'
 alias goops='git rebase -i HEAD~2'
 
+if command -v exa &> /dev/null
+then
+    alias ls="exa"
+    alias l='exa -l --group-directories-first'
+    alias ll='exa -laH --group-directories-first'
+    alias ldot='exa -ld .*'
+else
+    alias l='ls -lh'
+    alias ll='exa -laHh'
+fi
 alias lsym='ls -l `find . -maxdepth 1 -type l -print`'
 
 alias ag='ag --hidden --ignore-case --color-match="1;31" --silent'
