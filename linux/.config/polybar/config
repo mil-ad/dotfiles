@@ -422,3 +422,29 @@ margin-top = 5
 margin-bottom = 5
 
 ; vim:ft=dosini
+
+; [module/caffeine]
+; type = custom/menu
+
+; label-open = 🍵
+; label-close =  🛑
+; label-open-padding = 0
+; label-close-padding = 1
+; label-separator = " "
+
+; menu-0-0 = start
+; menu-0-0-exec = caffeine -a
+; menu-0-1 = pause
+; menu-0-1-exec = caffeine -d
+; menu-0-2 = stop
+; menu-0-2-exec = caffeine kill
+
+
+[module/caffeine]
+type = custom/script
+exec = /home/milad/repos/mil-ad/scripts/caffeine_status
+click-left = /home/milad/repos/mil-ad/scripts/caffeine_toggle
+; exec-if = pgrep -f caffeine-ng
+interval = 1
+tail = 1
+format-padding = 2
