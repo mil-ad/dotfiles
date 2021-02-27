@@ -72,6 +72,14 @@
         "when": "!isMac"
     },
 
-    { "key": "ctrl+w", "command": "-workbench.action.switchWindow" }
-    { "key": "cmd+`", "command": "workbench.action.switchWindow" },
+    { "key": "ctrl+w", "command": "-workbench.action.switchWindow" },
+    {
+        "key": "cmd+`",
+        "command": "workbench.action.switchWindow"
+    },
+    {
+        "key": "ctrl+shift+v",
+        "command": "-markdown.showPreview",
+        "when": "!notebookEditorFocused && editorLangId == 'markdown'"
+    },
 ]
