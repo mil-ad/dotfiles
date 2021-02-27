@@ -54,23 +54,23 @@ border-color = #00000000
 padding-left = 0
 padding-right = 2
 
-module-margin-left = 0
-module-margin-right = 0
+module-margin-left = 1
+module-margin-right = 1
 
 
-font-0 = Cascadia Code PL:style=Regular:size=13
+; font-0 = Cascadia Code PL:style=Regular:size=13
+font-0 = CaskaydiaCove Nerd Font:style=Regular:size=13
 font-1 = Font Awesome 5 Free:size=13
 ; There's a bug with Noto font size hence the use of "scale":
 ;   https://github.com/polybar/polybar/issues/905
-font-2 = Noto Color Emoji:scale=13
+font-2 = Noto Color Emoji:scale=8
 ; font-1 = scientifica:style=Medium:size=16
 ; font-2 = Cascadia Code PL:style=Regular:size=14
-; font-3 = Material Icons:style=Regular:size=16
+font-3 = Material Icons:style=Regular:size=13
 
 modules-left = i3
 modules-center = date
-; modules-right = pulseaudio xkeyboard memory cpu wlan eth temperature date powermenu
-modules-right = xkeyboard
+modules-right = wireless-network wired-network pulseaudio xkeyboard
 
 tray-position = right
 tray-padding = 0
@@ -87,6 +87,9 @@ wm-restack = i3
 cursor-click = pointer
 cursor-scroll = ns-resize
 
+
+; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
 [module/xwindow]
 type = internal/xwindow
 label = %title:0:30:...%
@@ -95,15 +98,18 @@ label = %title:0:30:...%
 type = internal/xkeyboard
 blacklist-0 = num lock
 
-format-prefix = "🌍 "
+;format-prefix = "🌍 "
+; format-font = 3
 format-prefix-foreground = ${colors.foreground-alt}
 format-prefix-underline = ${colors.secondary}
 
-label-layout = %layout%
+label-layout = %icon%
 label-layout-underline = ${colors.secondary}
+layout-icon-0 = gb;🌍
+layout-icon-1 = ir;🏠
 
-label-indicator-padding = 2
-label-indicator-margin = 1
+label-indicator-padding = 1
+label-indicator-margin = 0
 label-indicator-background = ${colors.secondary}
 label-indicator-underline = ${colors.secondary}
 
@@ -221,14 +227,15 @@ format-prefix-foreground = ${colors.foreground-alt}
 format-underline = #4bffdc
 label = %percentage_used%%
 
-[module/wlan]
+[module/wireless-network]
 type = internal/network
 interface = wlp4s0
 interval = 3.0
 
-format-connected = <ramp-signal> <label-connected>
+; format-connected = <ramp-signal> <label-connected>
+; format-connected = <label-connected>
 format-connected-underline = #9f78e1
-label-connected = %essid%
+label-connected =  %essid%
 
 format-disconnected =
 ;format-disconnected = <label-disconnected>
@@ -243,15 +250,15 @@ ramp-signal-3 = 
 ramp-signal-4 = 
 ramp-signal-foreground = ${colors.foreground-alt}
 
-[module/eth]
+[module/wired-network]
 type = internal/network
 interface = enp5s0
 interval = 3.0
 
 format-connected-underline = #55aa55
-format-connected-prefix = " "
+; format-connected-prefix = " "
 format-connected-prefix-foreground = ${colors.foreground-alt}
-label-connected = %local_ip%
+label-connected =  %local_ip%
 
 format-disconnected =
 ;format-disconnected = <label-disconnected>
@@ -263,24 +270,27 @@ format-disconnected =
 type = internal/date
 interval = 5
 
-date = " %A %b %d"
+date = "  %A %b %d"
 time = %H:%M
 label = %date%, %time%
 
 format-prefix-foreground = ${colors.foreground-alt}
 
 [module/pulseaudio]
-type = internal/puleaudio
+type = internal/pulseaudio
 
 ; Sink to be used, if it exists (find using `pacmd list-sinks`, name field)
 ; If not, uses default sink
-; sink = alsa_output.pci-0000_12_00.3.analog-stereo
+; sink = alsa_output.pci-0000_09_00.1.hdmi-stereo
+
+click-right = GDK_SCALE=2 GDK_DPI_SCALE=0.5 pavucontrol
 
 format-volume = <label-volume> <bar-volume>
-label-volume = VOL %percentage%%
+label-volume =  %percentage%%
 label-volume-foreground = ${root.foreground}
 
-label-muted = 🔇 muted
+;   
+label-muted =  muted
 label-muted-foreground = #666
 
 bar-volume-width = 10
@@ -293,39 +303,11 @@ bar-volume-foreground-5 = #f5a70a
 bar-volume-foreground-6 = #ff5555
 bar-volume-gradient = false
 bar-volume-indicator = |
-bar-volume-indicator-font = 2
+bar-volume-indicator-font = 1
 bar-volume-fill = ─
-bar-volume-fill-font = 2
+bar-volume-fill-font = 1
 bar-volume-empty = ─
-bar-volume-empty-font = 2
-bar-volume-empty-foreground = ${colors.foreground-alt}
-
-[module/alsa]
-type = internal/alsa
-
-format-volume = <label-volume> <bar-volume>
-label-volume = VOL
-label-volume-foreground = ${root.foreground}
-
-format-muted-prefix = " "
-format-muted-foreground = ${colors.foreground-alt}
-label-muted = sound muted
-
-bar-volume-width = 10
-bar-volume-foreground-0 = #55aa55
-bar-volume-foreground-1 = #55aa55
-bar-volume-foreground-2 = #55aa55
-bar-volume-foreground-3 = #55aa55
-bar-volume-foreground-4 = #55aa55
-bar-volume-foreground-5 = #f5a70a
-bar-volume-foreground-6 = #ff5555
-bar-volume-gradient = false
-bar-volume-indicator = |
-bar-volume-indicator-font = 2
-bar-volume-fill = ─
-bar-volume-fill-font = 2
-bar-volume-empty = ─
-bar-volume-empty-font = 2
+bar-volume-empty-font = 1
 bar-volume-empty-foreground = ${colors.foreground-alt}
 
 [module/battery]
