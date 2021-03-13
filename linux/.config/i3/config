@@ -314,7 +314,7 @@ bindsym $mod+Ctrl+p exec ~/.scripts/open_paper_no_annotations
 bindsym $mod+o exec ~/.scripts/open_recent_file
 bindsym $mod+Ctrl+o exec ~/.scripts/open_file
 bindsym $mod+Ctrl+e exec ~/.scripts/select_emoji
-# bindsym $mod+Ctrl+l exec ~/.scripts/enter_snippet
+bindsym $mod+Ctrl+space exec ~/.scripts/enter_snippet
 
 ##########################################
 #         Application-specific
