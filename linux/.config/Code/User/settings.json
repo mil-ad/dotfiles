@@ -52,9 +52,7 @@
     "workbench.tips.enabled": false,
     "workbench.activityBar.visible": true,
     "workbench.colorTheme": "Popping and Locking",
-    "workbench.iconTheme": "ayu",
     "workbench.startupEditor": "newUntitledFile",
-    "workbench.editor.enablePreview": false,
 
     "window.zoomLevel": -2,
     "window.menuBarVisibility": "default",
@@ -66,17 +64,15 @@
     "files.insertFinalNewline": true,
 
     "explorer.decorations.colors": false,
-    "explorer.decorations.badges": false,
     "explorer.sortOrder": "type",
     // "explorer.openEditors.visible": 0,
 
     "terminal.integrated.macOptionClickForcesSelection": true,
     "terminal.integrated.fontFamily": "'Cascadia Code', 'Noto Color Emoji', 'Iosevka Nerd Font Mono', 'JetBrains Mono Medium', 'JetBrainsMono-Medium','IBMPlexMono-Bold', 'IBM Plex Mono SemiBold', 'Courier New', Menlo",
     "terminal.integrated.fontSize": 13,
-    "terminal.integrated.rendererType": "dom",
     "terminal.integrated.shell.linux": "/bin/zsh",
     "terminal.integrated.inheritEnv": true,
-    // "terminal.integrated.rendererType": "experimentalWebgl", // Experimental!
+    "terminal.integrated.rendererType": "dom",
 
     "scm.diffDecorationsGutterWidth": 2,
     "scm.diffDecorations": "gutter",
@@ -276,4 +272,18 @@
     "editor.gotoLocation.multipleDeclarations": "gotoAndPeek",
     "editor.gotoLocation.multipleDefinitions": "gotoAndPeek",
     "editor.gotoLocation.multipleTypeDefinitions": "gotoAndPeek",
+    "workbench.editorAssociations": [
+        {
+            "viewType": "jupyter.notebook.ipynb",
+            "filenamePattern": "*.ipynb"
+        }
+    ],
+    "workbench.iconTheme": "ayu",
+    "workbench.editor.enablePreview": false,
+    "workbench.editor.labelFormat": "short",
+    "workbench.editor.decorations.badges": false,
+    "workbench.editor.decorations.colors": false,
+    "explorer.decorations.badges": false,
+    "problems.decorations.enabled": false,
+    "githubPullRequests.telemetry.enabled": false,
 }

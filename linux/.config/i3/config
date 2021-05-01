@@ -289,7 +289,7 @@ bindsym $mod+Ctrl+m exec terminal -e 'alsamixer'
 #          External Keybindings
 ##########################################
 bindsym $mod+F2 exec brave
-bindsym $mod+Shift+Return exec $hidpi_scale thunar
+bindsym $mod+Shift+Return exec $hidpi_scale pcmanfm-qt
 bindsym $mod+F5 exec terminal -e 'mocp'
 bindsym $mod+Ctrl+b exec terminal -e 'bmenu'
 bindsym $mod+Ctrl+v exec CM_OUTPUT_CLIP=1 clipmenu -i -c -bw 5
@@ -329,7 +329,7 @@ assign [class="Slack"] $ws4
 assign [class="Telegram"] $ws4
 assign [class="Signal"] $ws4
 assign [class="Notion"] $ws5
-assign [class="zoom"] $ws6
+#assign [class="zoom"] $ws6
 
 #assign [class="Zathura"] $ws7
 #for_window [class="Zathura"] focus
@@ -376,6 +376,7 @@ for_window [class="Xfburn"] floating enable
 for_window [class="Thunar"] floating enable resize set 50 ppt 50 ppt, move absolute position center
 for_window [title="Zoom - Free Account"] floating enable
 for_window [class="zoom" title="Settings"] floating enable
+for_window [title="UXPLAY"] floating enable
 
 # switch to workspace with urgent window automatically
 for_window [urgent=latest] focus

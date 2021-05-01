@@ -19,6 +19,7 @@ Plug 'junegunn/fzf.vim'
 Plug 'morhetz/gruvbox'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'tpope/vim-surround'
+Plug 'artanikin/vim-synthwave84'
 
 
 " Initialize plugin system
@@ -63,9 +64,12 @@ let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
 set t_Co=256
 "let base16colorspace=256
 
-set background=dark
-let g:gruvbox_contrast_dark='hard'
-colorscheme gruvbox
+"set background=dark
+"let g:gruvbox_contrast_dark='hard'
+"colorscheme gruvbox
+colorscheme synthwave84
+
+
 
 " Key mappings
 let mapleader=" " " Use spacekey as <Leader>
@@ -78,7 +82,7 @@ nnoremap <Leader>/	    :set hlsearch!<CR>
 " VimAirline settings
 set laststatus=2 " Make it visible all the time
 let g:airline_powerline_fonts = 1
-let g:airline_theme='gruvbox'
+"let g:airline_theme='gruvbox'
 let g:airline#extensions#tabline#enabled = 1 " Show list of buffers
 let g:airline#extensions#tabline#fnamemod = ':t' " Show just the filename
 
