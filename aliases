@@ -31,8 +31,8 @@ alias agc='ag --hidden --ignore-case --color-match="1;31" --silent -C 2'
 alias agf='ag --hidden --ignore .git --ignore .cache -g""'
 
 alias more="less"
-alias vi="nvim"
-alias vim="nvim"
+alias vi="vim"
+#alias vim="nvim"
 alias cal='cal -3'
 #alias tmux="tmux -2" # Force 256 colour support
 alias df='df -h'
