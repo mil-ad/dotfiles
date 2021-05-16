@@ -7,6 +7,7 @@ map <C-[> jumplist backward
 map <C-]> jumplist forward
 map f toggle_fullscreen
 map [fullscreen] f toggle_fullscreen
+map <C-t> exec 'bash -c "touch $FILE && notify-send \"📆 Zathura: Updated timestamp to current time\""'
 
 set selection-clipboard clipboard
 set sandbox none
