@@ -17,7 +17,7 @@ text/html=brave.desktop
 text/plain=mousepad.desktop
 image/jpeg=viewnior.desktop;gpicview.desktop;
 image/png=viewnior.desktop;gpicview.desktop;
-inode/directory=thunar.desktop;
+inode/directory=pcmanfm.desktop;
 message/rfc822=userapp-Thunderbird.desktop
 
 [Added Associations]
