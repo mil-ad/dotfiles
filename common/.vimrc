@@ -63,10 +63,11 @@ let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
 set t_Co=256
 "let base16colorspace=256
 
-"set background=dark
-"let g:gruvbox_contrast_dark='hard'
-"colorscheme gruvbox
-colorscheme synthwave84
+set background=dark
+let g:gruvbox_contrast_dark='hard'
+colorscheme gruvbox
+hi Normal guibg=NONE ctermbg=NONE	" Make the backgroun transparent
+
 
 
 
