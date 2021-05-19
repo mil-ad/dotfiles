@@ -293,7 +293,7 @@ bindsym $mod+Ctrl+m exec terminal -e 'alsamixer'
 #          External Keybindings
 ##########################################
 bindsym $mod+F2 exec brave
-bindsym $mod+Shift+Return exec $hidpi_scale pcmanfm-qt
+bindsym $mod+Shift+Return exec $hidpi_scale pcmanfm
 bindsym $mod+F5 exec terminal -e 'mocp'
 bindsym $mod+Ctrl+b exec terminal -e 'bmenu'
 bindsym $mod+Ctrl+v exec CM_OUTPUT_CLIP=1 clipmenu -i -c -bw 5
