@@ -3,7 +3,7 @@ set $mod Mod4
 set $hidpi_scale GDK_SCALE=2 GDK_DPI_SCALE=0.5 QT_AUTO_SCREEN_SCALE_FACTOR=1
 
 bindsym $mod+Return exec $hidpi_scale kitty
-bindsym $mod+d exec --no-startup-id $hidpi_scale dmenu_run 
+bindsym $mod+d exec --no-startup-id $hidpi_scale dmenu_run
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -202,21 +202,25 @@ set_from_resource $term_color13    color13
 set_from_resource $term_color14    color14
 set_from_resource $term_color15    color15
 
-set $bg #282828
+# Colours from Gruvbox (Dark mode palette)
+# https://github.com/morhetz/gruvbox#dark-mode-1
 set $red #cc241d
 set $green #98971a
 set $yellow #d79921
 set $blue #458588
 set $purple #b16286
 set $aqua #689d68
-set $gray #a89984
+set $grey #928374
 set $darkgray #1d2021
+set $bg #282828
+set $bg0 #282828
+set $fg4 #a89984
 
 # Theme colors
 # class                 border     backgr     text       indic.    child_border
 client.focused          $yellow    $yellow    $darkgray  $purple   $yellow
-client.focused_inactive $darkgray  $darkgray  $yellow    $purple   $darkgray
-client.unfocused        $yellow    $darkgray  $yellow    $purple   $darkgray
+client.focused_inactive $darkgray  $darkgray  $yellow    $purple   $bg0
+client.unfocused        $yellow    $darkgray  $yellow    $purple   $bg0
 client.urgent           $red       $red       $white     $red      $red
 client.placeholder      #000000 #0c0c0c #ffffff #000000
 client.background       #2B2C2B
@@ -240,12 +244,12 @@ client.background       #2B2C2B
 
 #     colors {
 #         background $darkgray
-#         separator  $gray
-#         statusline $gray
+#         separator  $fg4
+#         statusline $fg4
 #                             # border      bg           text
 #         focused_workspace    $yellow      $yellow      $darkgray
-#         active_workspace     $bg          $bg          $gray
-#         inactive_workspace   $bg          $bg          $gray
+#         active_workspace     $bg          $bg          $fg4
+#         inactive_workspace   $bg          $bg          $fg4
 #         binding_mode         $red         $aqua        $red
 #         urgent_workspace     $red         $red         $bg
 #     }
