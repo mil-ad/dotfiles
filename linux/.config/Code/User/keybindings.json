@@ -82,4 +82,13 @@
         "command": "-markdown.showPreview",
         "when": "!notebookEditorFocused && editorLangId == 'markdown'"
     },
+    {
+        "key": "alt+meta+s",
+        "command": "git.stageSelectedRanges"
+    },
+    {
+        "key": "ctrl+k ctrl+alt+s",
+        "command": "-git.stageSelectedRanges",
+        "when": "isInDiffEditor"
+    }
 ]
