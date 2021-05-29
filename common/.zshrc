@@ -6,7 +6,6 @@ antigen bundle wd
 antigen bundle colored-man-pages
 antigen bundle pip
 antigen bundle docker
-antigen bundle ssh-agent
 antigen bundle zsh-users/zsh-completions
 
 antigen apply
