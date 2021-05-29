@@ -11,3 +11,5 @@ map <C-t> exec 'bash -c "touch \"$FILE\" && notify-send \"📆 Zathura: Updated 
 
 set selection-clipboard clipboard
 set sandbox none
+set adjust-open width
+set recolor-keephue true

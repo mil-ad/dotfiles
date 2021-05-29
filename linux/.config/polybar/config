@@ -37,7 +37,7 @@ fixed-center = true
 bottom = true
 
 width = 100%
-height = 50
+height = 60
 offset-x = 0
 offset-y = 0
 radius = 0.0
@@ -54,19 +54,17 @@ border-color = #00000000
 padding-left = 0
 padding-right = 2
 
-module-margin-left = 1
-module-margin-right = 1
+module-margin-left = 2
+module-margin-right = 2
 
 
-; font-0 = Cascadia Code PL:style=Regular:size=13
-font-0 = CaskaydiaCove Nerd Font:style=Regular:size=13
-font-1 = Font Awesome 5 Free:size=13
+font-0 = CaskaydiaCove Nerd Font:style=Regular:size=15
+; font-1 = scientifica:style=Medium:size=16
+font-1 = Font Awesome 5 Free:size=15
 ; There's a bug with Noto font size hence the use of "scale":
 ;   https://github.com/polybar/polybar/issues/905
 font-2 = Noto Color Emoji:scale=8
-; font-1 = scientifica:style=Medium:size=16
-; font-2 = Cascadia Code PL:style=Regular:size=14
-font-3 = Material Icons:style=Regular:size=13
+font-3 = Material Icons:style=Regular:size=15
 
 modules-left = i3
 modules-center = date
@@ -229,7 +227,7 @@ label = %percentage_used%%
 
 [module/wireless-network]
 type = internal/network
-interface = wlp4s0
+interface = wlan0
 interval = 3.0
 
 ; format-connected = <ramp-signal> <label-connected>
