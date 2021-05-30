@@ -164,11 +164,8 @@ title_align center
 ##########################################
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
-#set $font_family JetBrains Mono Medium
 set $font_family Cascadia Code PL
 font pango:$font_family 6
-#font pango:IBM Plex Mono Bold 8
-#font xft:URWGothic-Book 11
 
 
 ##########################################
@@ -226,50 +223,12 @@ client.placeholder      #000000 #0c0c0c #ffffff #000000
 client.background       #2B2C2B
 
 ##########################################
-#                  Bar
-##########################################
-
-# bar {
-#         i3bar_command i3bar
-#         status_command i3status
-#         position bottom
-#         strip_workspace_numbers yes
-#         font pango:$font_family 8
-#         bindsym button4 nop
-#         bindsym button5 nop
-
-#         # Do set your primary output first.
-#         # Example: 'xrandr --output eDP1 --primary'
-#         tray_output primary
-
-#     colors {
-#         background $darkgray
-#         separator  $fg4
-#         statusline $fg4
-#                             # border      bg           text
-#         focused_workspace    $yellow      $yellow      $darkgray
-#         active_workspace     $bg          $bg          $fg4
-#         inactive_workspace   $bg          $bg          $fg4
-#         binding_mode         $red         $aqua        $red
-#         urgent_workspace     $red         $red         $bg
-#     }
-# }
-
-# hide/unhide i3status bar
-# mod+m is now set to "move to scratchpad"
-#bindsym $mod+m bar mode toggle
-
-
-
-##########################################
 #                i3-gaps
 ##########################################
-
 gaps inner 14
 gaps outer -2
 # bottom gap could be useful when using floating polybar
 # gaps bottom 35
-
 
 bindsym $mod+Shift+plus gaps inner current plus 5; gaps outer current plus 5
 bindsym $mod+Shift+minus gaps inner current minus 5; gaps outer current minus 5
@@ -279,39 +238,22 @@ bindsym $mod+Shift+0 gaps inner current set 10; gaps outer current set -2
 smart_gaps on
 smart_borders on
 
-################################################################################################
-# Sound - DO NOT EDIT if you wish to automatically upgrade Alsa -> Pulseaudio later!
-################################################################################################
-#exec --no-startup-id volumeicon
-bindsym $mod+Ctrl+m exec terminal -e 'alsamixer'
-#exec --no-startup-id pulseaudio
-#bindsym $mod+Ctrl+m exec pavucontrol
-
-#exec --no-startup-id pa-applet
-#exec --no-startup-id pasystray
-################################################################################################
-
-
 ##########################################
 #          External Keybindings
 ##########################################
-bindsym $mod+F2 exec brave
 bindsym $mod+Shift+Return exec $hidpi_scale pcmanfm
-bindsym $mod+F5 exec terminal -e 'mocp'
-bindsym $mod+Ctrl+b exec terminal -e 'bmenu'
-bindsym $mod+Ctrl+v exec CM_OUTPUT_CLIP=1 clipmenu -i -c -bw 5
+bindsym $mod+Ctrl+v exec CM_OUTPUT_CLIP=1 clipmenu 
 
 bindsym $mod+t exec --no-startup-id pkill picom
 bindsym $mod+Ctrl+t exec --no-startup-id picom --experimental-backends -b
 bindsym $mod+Shift+d --release exec "killall dunst; exec notify-send 'restart dunst'"
+bindsym $mod+Ctrl+x --release exec --no-startup-id xkill
 
 # Taking Screenshots
 bindsym $mod+z --release exec --no-startup-id maim -s /dev/stdout | xclip -selection clipboard -t image/png
 bindsym $mod+Shift+z exec --no-startup-id maim -s "$HOME/Pictures/screenshot-$(date +%F_%T).png" && notify-send "Screenshot region saved to ${HOME}/Pictures"
 bindsym $mod+Ctrl+z exec --no-startup-id maim "$HOME/Pictures/screenshot-$(date +%F_%T).png" && notify-send "Screenshot saved to ${HOME}/Pictures"
 
-bindsym $mod+Shift+h exec xdg-open /usr/share/doc/manjaro/i3_help.pdf
-bindsym $mod+Ctrl+x --release exec --no-startup-id xkill
 
 bindsym $mod+Ctrl+s exec ~/.scripts/search_google_scholar
 bindsym $mod+Ctrl+r exec ~/.scripts/search_github
@@ -353,35 +295,15 @@ for_window [title="Slack"] layout tabbed
 for_window [class="zoom" title="Chat"] resize shrink width 20 px or 20 ppt
 
 # Open specific applications in floating mode
-for_window [title="alsamixer"] floating enable border pixel 1
-for_window [class="calamares"] floating enable border normal
-for_window [class="Clipgrab"] floating enable
-for_window [title="File Transfer*"] floating enable
-for_window [class="Galculator"] floating enable border pixel 1
-for_window [class="GParted"] floating enable border normal
-for_window [class="Lightdm-settings"] floating enable
 for_window [class="Lxappearance"] floating enable sticky enable border normal
-for_window [title="MuseScore: Play Panel"] floating enable
 for_window [class="Nitrogen"] floating enable sticky enable border normal
-for_window [class="Oblogout"] fullscreen enable
-for_window [class="octopi"] floating enable
-for_window [class="Pamac-manager"] floating enable
 for_window [class="Pavucontrol"] floating enable
 for_window [class="qt5ct"] floating enable sticky enable border normal
-for_window [class="Qtconfig-qt4"] floating enable sticky enable border normal
-for_window [class="Simple-scan"] floating enable border normal
-for_window [class="(?i)System-config-printer.py"] floating enable border normal
-for_window [class="Skype"] floating enable border normal
-for_window [class="Cisco AnyConnect Secure Mobility Client"] floating enable border normal
-for_window [class="Timeset-gui"] floating enable border normal
-for_window [class="(?i)virtualbox"] floating enable border normal
-for_window [class="Xfburn"] floating enable
 for_window [class="Thunar"] floating enable resize set 50 ppt 50 ppt, move absolute position center
 for_window [title="Zoom - Free Account"] floating enable
 for_window [class="zoom" title="Settings"] floating enable
 for_window [title="UXPLAY"] floating enable
 for_window [class="Matplotlib"] floating enable
-
 
 # switch to workspace with urgent window automatically
 for_window [urgent=latest] focus
