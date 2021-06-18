@@ -90,5 +90,18 @@
         "key": "ctrl+k ctrl+alt+s",
         "command": "-git.stageSelectedRanges",
         "when": "isInDiffEditor"
+    },
+    {
+        "key": "ctrl+]",
+        "command": "-editor.action.indentLines",
+        "when": "editorTextFocus && !editorReadonly"
+    },
+    {
+        "key": "ctrl+]",
+        "command": "workbench.action.navigateForward"
+    },
+    {
+        "key": "ctrl+shift+-",
+        "command": "-workbench.action.navigateForward"
     }
 ]
