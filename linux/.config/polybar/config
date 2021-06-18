@@ -68,7 +68,7 @@ font-3 = Material Icons:style=Regular:size=15
 
 modules-left = i3
 modules-center = date
-modules-right = wireless-network wired-network pulseaudio xkeyboard
+modules-right = bluetoothctl wireless-network wired-network pulseaudio xkeyboard
 
 tray-position = right
 tray-padding = 0
@@ -426,3 +426,10 @@ click-left = /home/milad/repos/mil-ad/scripts/caffeine_toggle
 interval = 1
 tail = 1
 format-padding = 2
+
+[module/bluetoothctl]
+type = custom/script
+exec = ~/.scripts/polybar-bluetoothctl.sh
+tail = true
+click-left = ~/.scripts/polybar-bluetoothctl.sh --toggle &
+
