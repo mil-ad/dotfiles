@@ -102,7 +102,7 @@ format-prefix-foreground = ${colors.foreground-alt}
 format-prefix-underline = ${colors.secondary}
 
 label-layout = %icon%
-label-layout-underline = ${colors.secondary}
+;label-layout-underline = ${colors.secondary}
 layout-icon-0 = gb;🌍
 layout-icon-1 = ir;🏠
 
