@@ -1,5 +1,6 @@
-# Set mod key (Mod1=<Alt>, Mod4=<Super>)
+# Set mod key to Super (Mod1=<Alt>, Mod4=<Super>)
 set $mod Mod4
+
 set $hidpi_scale GDK_SCALE=2 GDK_DPI_SCALE=0.5 QT_AUTO_SCREEN_SCALE_FACTOR=1
 
 bindsym $mod+Return exec $hidpi_scale kitty
@@ -167,11 +168,9 @@ title_align center
 set $font_family Cascadia Code PL
 font pango:$font_family 6
 
-
 ##########################################
 #                Colours
 ##########################################
-
 # Color palette used for the terminal (~/.Xresources file)
 # Colors are gathered based on the documentation:
 # https://i3wm.org/docs/userguide.html#xresources
@@ -214,11 +213,11 @@ set $bg0 #282828
 set $fg4 #a89984
 
 # Theme colors
-# class                 border     backgr     text       indic.    child_border
-client.focused          $yellow    $yellow    $darkgray  $purple   $yellow
-client.focused_inactive $darkgray  $darkgray  $yellow    $purple   $bg0
-client.unfocused        $yellow    $darkgray  $yellow    $purple   $bg0
-client.urgent           $red       $red       $white     $red      $red
+# class                 border     backgr     text       indic.      child_border
+client.focused          $yellow    $yellow    $darkgray  $aqua       $yellow
+client.focused_inactive $darkgray  $darkgray  $yellow    $darkgray   $bg0
+client.unfocused        $yellow    $darkgray  $yellow    $darkgray   $bg0
+client.urgent           $red       $red       $white     $red        $red
 client.placeholder      #000000 #0c0c0c #ffffff #000000
 client.background       #2B2C2B
 
@@ -242,19 +241,14 @@ smart_borders on
 #          External Keybindings
 ##########################################
 bindsym $mod+Shift+Return exec $hidpi_scale pcmanfm
-bindsym $mod+Ctrl+v exec CM_OUTPUT_CLIP=1 clipmenu 
-
-bindsym $mod+t exec --no-startup-id pkill picom
-bindsym $mod+Ctrl+t exec --no-startup-id picom --experimental-backends -b
-bindsym $mod+Shift+d --release exec "killall dunst; exec notify-send 'restart dunst'"
-bindsym $mod+Ctrl+x --release exec --no-startup-id xkill
+bindsym $mod+Ctrl+v exec CM_OUTPUT_CLIP=1 clipmenu
 
 # Taking Screenshots
 bindsym $mod+z --release exec --no-startup-id maim -s /dev/stdout | xclip -selection clipboard -t image/png
 bindsym $mod+Shift+z exec --no-startup-id maim -s "$HOME/Pictures/screenshot-$(date +%F_%T).png" && notify-send "Screenshot region saved to ${HOME}/Pictures"
 bindsym $mod+Ctrl+z exec --no-startup-id maim "$HOME/Pictures/screenshot-$(date +%F_%T).png" && notify-send "Screenshot saved to ${HOME}/Pictures"
 
-
+# Custom scripts
 bindsym $mod+Ctrl+s exec ~/.scripts/search_google_scholar
 bindsym $mod+Ctrl+r exec ~/.scripts/search_github
 bindsym $mod+Ctrl+y exec ~/.scripts/search_youtube
@@ -264,6 +258,12 @@ bindsym $mod+o exec ~/.scripts/open_recent_file
 bindsym $mod+Ctrl+o exec ~/.scripts/open_file
 bindsym $mod+Ctrl+e exec ~/.scripts/select_emoji
 bindsym $mod+Ctrl+space exec ~/.scripts/enter_snippet
+
+# Restarting ...
+bindsym $mod+t exec --no-startup-id pkill picom
+bindsym $mod+Ctrl+t exec --no-startup-id picom --experimental-backends -b
+bindsym $mod+Shift+d --release exec "killall dunst; exec notify-send 'restart dunst'"
+bindsym $mod+Ctrl+x --release exec --no-startup-id xkill
 
 ##########################################
 #         Application-specific
