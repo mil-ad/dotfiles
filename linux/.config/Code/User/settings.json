@@ -137,11 +137,15 @@
 
     "latex-workshop.view.pdf.viewer": "tab",
     "latex-workshop.latex.autoBuild.run": "never",
-    "latex-workshop.latex.recipe.default": "latexmk with xelatex 🔃",
+    "latex-workshop.latex.recipe.default": "first",
     "latex-workshop.message.error.show": false,
     "latex-workshop.message.warning.show": false,
     "latex-workshop.latex.outDir": "_output",
     "latex-workshop.latex.tools": [
+        {
+            "name": "make",
+            "command": "make",
+        },
         {
             "name": "latexmk",
             "command": "latexmk",
@@ -160,6 +164,19 @@
             "command": "latexmk",
             "args": [
                 "-xelatex",
+                "-synctex=1",
+                "-interaction=nonstopmode",
+                "-file-line-error",
+                "-output-directory=%OUTDIR%",
+                "%DOC%"
+            ],
+            "env": {}
+        },
+        {
+            "name": "latexmk-with-lualatex",
+            "command": "latexmk",
+            "args": [
+                "-lualatex",
                 "-synctex=1",
                 "-interaction=nonstopmode",
                 "-file-line-error",
@@ -202,19 +219,31 @@
     ],
     "latex-workshop.latex.recipes": [
         {
-            "name": "latexmk 🔃",
+            "name": "Makefile",
+            "tools": [
+                "make"
+            ]
+        },
+        {
+            "name": "latexmk",
             "tools": [
                 "latexmk"
             ]
         },
         {
-            "name": "latexmk with xelatex 🔃",
+            "name": "latexmk with xelatex",
             "tools": [
                 "latexmk-with-xelatex",
             ]
         },
         {
-            "name": "xelatex 🔃",
+            "name": "latexmk with LuaLatex",
+            "tools": [
+                "latexmk-with-xelatex",
+            ]
+        },
+        {
+            "name": "xelatex",
             "tools": [
                 "xelatex"
             ]
