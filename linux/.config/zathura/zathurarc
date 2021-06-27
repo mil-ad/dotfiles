@@ -13,3 +13,4 @@ set selection-clipboard clipboard
 set sandbox none
 set adjust-open width
 set recolor-keephue true
+set synctex true
