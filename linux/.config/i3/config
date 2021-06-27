@@ -3,8 +3,10 @@ set $mod Mod4
 
 set $hidpi_scale GDK_SCALE=2 GDK_DPI_SCALE=0.5 QT_AUTO_SCREEN_SCALE_FACTOR=1
 
-bindsym $mod+Return exec $hidpi_scale kitty
-bindsym $mod+d exec --no-startup-id $hidpi_scale dmenu_run
+# Use Mouse+$mod to drag floating windows
+floating_modifier $mod
+
+focus_follows_mouse yes
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -17,11 +19,6 @@ bindsym $mod+Shift+r restart
 
 # lock screen
 bindsym $mod+9 exec --no-startup-id i3exit lock
-
-# Use Mouse+$mod to drag floating windows
-floating_modifier $mod
-
-focus_follows_mouse yes
 
 # change focus
 bindsym $mod+Left focus left
@@ -94,14 +91,27 @@ mode "resize" {
     bindsym Escape mode "default"
 }
 
+# exit i3 (logs you out of your X session)
+bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
+
+# Set shut down, restart and locking features
+bindsym $mod+0 mode "$mode_system"
+set $mode_system (l)ock, log(o)ut, (s)uspend, (r)eboot, (Shift+s)hutdown
+mode "$mode_system" {
+    bindsym l exec --no-startup-id i3exit lock, mode "default"
+    bindsym s exec --no-startup-id i3exit suspend, mode "default"
+    bindsym o exec --no-startup-id i3exit logout, mode "default"
+    bindsym r exec --no-startup-id i3exit reboot, mode "default"
+    bindsym Shift+s exec --no-startup-id i3exit shutdown, mode "default"
+
+    # exit system mode: "Enter" or "Escape"
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+}
+
 ##########################################
 #               Workspaces
 ##########################################
-
-# Workspace names
-# to display custom names or symbols you can do something like:
-#       set $ws1 1:terminal
-#       set $ws3 3:🌍
 set $ws1 1
 set $ws2 2
 set $ws3 3
@@ -240,6 +250,8 @@ smart_borders on
 ##########################################
 #          External Keybindings
 ##########################################
+bindsym $mod+Return exec $hidpi_scale kitty
+bindsym $mod+d exec --no-startup-id $hidpi_scale dmenu_run
 bindsym $mod+Shift+Return exec $hidpi_scale pcmanfm
 bindsym $mod+Ctrl+v exec CM_OUTPUT_CLIP=1 clipmenu
 
@@ -307,24 +319,6 @@ for_window [class="Matplotlib"] floating enable
 
 # switch to workspace with urgent window automatically
 for_window [urgent=latest] focus
-
-# exit i3 (logs you out of your X session)
-bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
-
-# Set shut down, restart and locking features
-bindsym $mod+0 mode "$mode_system"
-set $mode_system (l)ock, log(o)ut, (s)uspend, (r)eboot, (Shift+s)hutdown
-mode "$mode_system" {
-    bindsym l exec --no-startup-id i3exit lock, mode "default"
-    bindsym s exec --no-startup-id i3exit suspend, mode "default"
-    bindsym o exec --no-startup-id i3exit logout, mode "default"
-    bindsym r exec --no-startup-id i3exit reboot, mode "default"
-    bindsym Shift+s exec --no-startup-id i3exit shutdown, mode "default"
-
-    # exit system mode: "Enter" or "Escape"
-    bindsym Return mode "default"
-    bindsym Escape mode "default"
-}
 
 ##########################################
 #         Start-up Applications
