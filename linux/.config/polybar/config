@@ -68,7 +68,7 @@ font-3 = Material Icons:style=Regular:size=15
 
 modules-left = i3
 modules-center = date
-modules-right = bluetoothctl wireless-network wired-network pulseaudio xkeyboard
+modules-right = bluetoothctl wireguard wireless-network wired-network pulseaudio xkeyboard
 
 tray-position = right
 tray-padding = 0
@@ -433,3 +433,9 @@ exec = ~/.scripts/polybar-bluetoothctl.sh
 tail = true
 click-left = ~/.scripts/polybar-bluetoothctl.sh --toggle &
 
+[module/wireguard]
+type = custom/script
+exec = ~/.scripts/wireguard_polybar
+tail = false
+interval = 1
+click-left = ~/.scripts/wireguard_polybar --toggle &
