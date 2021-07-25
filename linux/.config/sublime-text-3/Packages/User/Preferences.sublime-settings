@@ -42,7 +42,7 @@
 	"caret_extra_width": 2,
 	"caret_style": "phase",
 	"close_windows_when_empty": true,
-	"color_scheme": "Packages/ayu/ayu-mirage.sublime-color-scheme",
+	"color_scheme": "Packages/gruvbox/gruvbox (Dark) (Medium) NDC.sublime-color-scheme",
 	"convert_tabspaces_on_save": true,
 	"detect_indentation": false,
 	"dictionary": "Packages/Language - English/en_GB.dic",
@@ -55,12 +55,13 @@
 		"no_clig",
 		"no_calt"
 	],
-	"font_size": 15,
+	"font_size": 9,
 	"highlight_line": true,
 	"highlight_modified_tabs": true,
 	"ignored_packages":
 	[
-		"Vintage"
+		"One Dark Color Scheme",
+		"Vintage",
 	],
 	"indent_guide_options":
 	[
@@ -79,11 +80,11 @@
 	"smart_indent": true,
 	"tab_completion": false,
 	"tab_size": 4,
-	"theme": "ayu-mirage.sublime-theme",
+	"theme": "gruvbox.sublime-theme",
 	"translate_tabs_to_spaces": true,
 	"trim_automatic_white_space": true,
 	"trim_trailing_white_space_on_save": true,
 	"use_tab_stops": true,
 	"wide_caret": true,
-	"wrap_width": 80
+	"wrap_width": 80,
 }

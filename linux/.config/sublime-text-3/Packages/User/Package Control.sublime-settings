@@ -2,6 +2,7 @@
 	"bootstrapped": true,
 	"in_process_packages":
 	[
+		"One Dark Color Scheme",
 	],
 	"installed_packages":
 	[
@@ -43,5 +44,5 @@
 		"Text Pastry",
 		"WordCount",
 		"Wrap Plus"
-	]
+	],
 }
