@@ -16,4 +16,5 @@ source ~/.dotfiles/aliases
 source ~/.dotfiles/exports
 source ~/.dotfiles/fzf
 
-[ -e .zshrc_local ] && source .zshrc_local
+[ -e $HOME/.zshrc_local ] && source $HOME/.zshrc_local
+
