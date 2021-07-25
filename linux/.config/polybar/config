@@ -434,7 +434,8 @@ format-padding = 2
 [module/bluetoothctl]
 type = custom/script
 exec = ~/.scripts/polybar-bluetoothctl.sh
-tail = true
+tail = false
+interval = 1
 click-left = ~/.scripts/polybar-bluetoothctl.sh --toggle &
 
 [module/wireguard]
