@@ -1,127 +1,126 @@
-// Place your key bindings in this file to overwrite the defaults
 [
     // Font size
-    { "key": "cmd+=", "command": "editor.action.fontZoomIn", "when": "isMac" },
-    { "key": "shift+cmd+=", "command": "editor.action.fontZoomIn", "when": "isMac" },
-    { "key": "cmd+-", "command": "editor.action.fontZoomOut", "when": "isMac" },
-    { "key": "cmd+0", "command": "editor.action.fontZoomReset", "when": "isMac" },
+    { "key": "ctrl+=",              "command": "editor.action.fontZoomIn",
+                                       "when": "!isMac" },
+    { "key": "shift+ctrl+=",        "command": "editor.action.fontZoomIn",
+                                       "when": "!isMac" },
+    { "key": "ctrl+-",              "command": "editor.action.fontZoomOut",
+                                       "when": "!isMac" },
+    { "key": "ctrl+0",              "command": "editor.action.fontZoomReset",
+                                       "when": "!isMac" },
 
-    { "key": "ctrl+=", "command": "editor.action.fontZoomIn", "when": "!isMac" },
-    { "key": "shift+ctrl+=", "command": "editor.action.fontZoomIn", "when": "!isMac" },
-    { "key": "ctrl+-", "command": "editor.action.fontZoomOut", "when": "!isMac" },
-    { "key": "ctrl+0", "command": "editor.action.fontZoomReset", "when": "!isMac" },
+    { "key": "cmd+=",               "command": "editor.action.fontZoomIn",
+                                       "when": "isMac" },
+    { "key": "shift+cmd+=",         "command": "editor.action.fontZoomIn",
+                                       "when": "isMac" },
+    { "key": "cmd+-",               "command": "editor.action.fontZoomOut",
+                                       "when": "isMac" },
+    { "key": "cmd+0",               "command": "editor.action.fontZoomReset",
+                                       "when": "isMac" },
 
     // Multiple cursors
-    { "key": "alt+cmd+g", "command": "editor.action.selectHighlights", "when": "isMac && editorFocus" },
-    { "key": "alt+cmd+i", "command": "editor.action.addSelectionToNextFindMatch", "when": "isMac && editorFocus" },
-    { "key": "cmd+d", "command": "-editor.action.addSelectionToNextFindMatch", "when": "isMac && editorFocus" },
-    { "key": "alt+cmd+e", "command": "editor.action.insertCursorAtEndOfEachLineSelected", "when": "isMac && editorTextFocus" },
+    { "key": "alt+meta+g",          "command": "editor.action.selectHighlights",
+                                       "when": "!isMac && editorFocus" },
+    { "key": "alt+meta+i",          "command": "editor.action.addSelectionToNextFindMatch",
+                                       "when": "!isMac && editorFocus" },
+    { "key": "alt+meta+e",          "command": "editor.action.insertCursorAtEndOfEachLineSelected",
+                                       "when": "!isMac && editorTextFocus" },
+    { "key": "ctrl+d",              "command": "-editor.action.addSelectionToNextFindMatch",
+                                       "when": "!isMac && editorFocus" },
 
-    { "key": "alt+meta+g", "command": "editor.action.selectHighlights", "when": "!isMac && editorFocus" },
-    { "key": "alt+meta+i", "command": "editor.action.addSelectionToNextFindMatch", "when": "!isMac && editorFocus" },
-    { "key": "ctrl+d", "command": "-editor.action.addSelectionToNextFindMatch", "when": "!isMac && editorFocus" },
-    { "key": "alt+meta+e", "command": "editor.action.insertCursorAtEndOfEachLineSelected", "when": "!isMac && editorTextFocus" },
+    { "key": "alt+cmd+g",           "command": "editor.action.selectHighlights",
+                                       "when": "isMac && editorFocus" },
+    { "key": "alt+cmd+i",           "command": "editor.action.addSelectionToNextFindMatch",
+                                       "when": "isMac && editorFocus" },
+    { "key": "alt+cmd+e",           "command": "editor.action.insertCursorAtEndOfEachLineSelected",
+                                       "when": "isMac && editorTextFocus" },
+    { "key": "cmd+d",               "command": "-editor.action.addSelectionToNextFindMatch",
+                                       "when": "isMac && editorFocus" },
+
 
     // Symbols
-    { "key": "shift+cmd+o", "command": "-workbench.action.gotoSymbol"},
-    { "key": "cmd+r", "command": "workbench.action.gotoSymbol", "when": "isMac" },
-    { "key": "ctrl+r", "command": "workbench.action.gotoSymbol", "when": "!isMac" },
+    { "key": "shift+cmd+o",         "command": "-workbench.action.gotoSymbol"},
+    { "key": "cmd+r",               "command": "workbench.action.gotoSymbol",
+                                       "when": "isMac" },
+    { "key": "ctrl+r",              "command": "workbench.action.gotoSymbol",
+                                       "when": "!isMac" },
 
-    { "key": "cmd+shift+r", "command": "workbench.action.showAllSymbols", "when": "isMac" },
-    { "key": "ctrl+shift+r", "command": "workbench.action.showAllSymbols", "when": "!isMac" },
-
-
-
-
-
-
+    { "key": "cmd+shift+r",         "command": "workbench.action.showAllSymbols",
+                                       "when": "isMac" },
+    { "key": "ctrl+shift+r",        "command": "workbench.action.showAllSymbols",
+                                       "when": "!isMac" },
 
 
 
-
-
-
-
-
-
-    { "key": "cmd+d", "command": "editor.action.deleteLines", "when": "isMac && textInputFocus && !editorReadonly", },
-    { "key": "ctrl+d", "command": "editor.action.deleteLines", "when": "!isMac && textInputFocus && !editorReadonly", },
-    { "key": "shift+cmd+k", "command": "-editor.action.deleteLines", "when": "textInputFocus && !editorReadonly" },
-
-    { "key": "cmd+j", "command": "editor.action.joinLines", "when": "isMac && editorTextFocus && !editorReadonly", },
-    { "key": "ctrl+j", "command": "editor.action.joinLines", "when": "!isMac & editorTextFocus && !editorReadonly", },
-
-    { "key": "cmd+b", "command": "-workbench.action.toggleSidebarVisibility" },
-    { "key": "cmd+b cmd+p", "command": "workbench.action.toggleSidebarVisibility" },
-    { "key": "ctrl+b ctrl+p", "command": "workbench.action.toggleSidebarVisibility", "when": "!isMac" },
-
-    { "key": "alt+q", "command": "-rewrap.rewrapComment", "when": "editorTextFocus" },
-    { "key": "alt+cmd+q", "command": "rewrap.rewrapComment", "when": "editorTextFocus" },
-
-
-    // { "key": "cmd+v", "command": "pasteAndIndent.action", "when": "editorTextFocus && !editorReadonly" }
-    // { "key": "cmd+v", "command": "editor.action.clipboardPasteAction", "when": "!editorTextFocus" }
-    // { "key": "cmd+shift+v", "command": "editor.action.clipboardPasteAction", "when": "editorTextFocus && !editorReadonly" }
-    // { "key": "ctrl+[", "command": "editor.action.outdentLines", "when": "!isMac && editorTextFocus && !editorReadonly" }
-    // { "key": "ctrl+]", "command": "editor.action.indentLines", "when": "!isMac && editorTextFocus && !editorReadonly" }
-    { "key": "cmd+]", "command": "-editor.action.indentLines", "when": "editorTextFocus && !editorReadonly" },
-    { "key": "cmd+[", "command": "workbench.action.navigateBack", "when": "isMac" },
     {
-        "key": "ctrl+[",
-        "command": "workbench.action.navigateBack",
-        "when": "!isMac"
+        "key": "cmd+d",
+        "command": "editor.action.deleteLines",
+                                       "when": "isMac && textInputFocus && !editorReadonly", },
+    { "key": "ctrl+d",              "command": "editor.action.deleteLines",
+                                       "when": "!isMac && textInputFocus && !editorReadonly", },
+    { "key": "shift+cmd+k",         "command": "-editor.action.deleteLines",
+                                       "when": "textInputFocus && !editorReadonly" },
+
+    { "key": "cmd+j",               "command": "editor.action.joinLines",
+                                       "when": "isMac && editorTextFocus && !editorReadonly", },
+    { "key": "ctrl+j",              "command": "editor.action.joinLines",
+                                       "when": "!isMac & editorTextFocus && !editorReadonly", },
+
+    { "key": "cmd+b cmd+p",         "command": "workbench.action.toggleSidebarVisibility" },
+    { "key": "ctrl+b ctrl+p",       "command": "workbench.action.toggleSidebarVisibility",
+                                       "when": "!isMac" },
+    { "key": "cmd+b",               "command": "-workbench.action.toggleSidebarVisibility" },
+
+    { "key": "alt+q",               "command": "-rewrap.rewrapComment",
+                                       "when": "editorTextFocus" },
+    { "key": "alt+cmd+q",               "command": "rewrap.rewrapComment",
+                                       "when": "editorTextFocus" },
+
+
+    // { "key": "cmd+v",        "command": "pasteAndIndent.action",
+    //                             "when": "editorTextFocus && !editorReadonly" }
+    // { "key": "cmd+v",        "command": "editor.action.clipboardPasteAction",
+    //                             "when": "!editorTextFocus" }
+    // { "key": "cmd+shift+v",              "command": "editor.action.clipboardPasteAction",
+    //                             "when": "editorTextFocus && !editorReadonly" }
+    // { "key": "ctrl+[",               "command": "editor.action.outdentLines",
+    //                             "when": "!isMac && editorTextFocus && !editorReadonly" }
+    // { "key": "ctrl+]",               "command": "editor.action.indentLines",
+    //                             "when": "!isMac && editorTextFocus && !editorReadonly" }
+
+
+    { "key": "ctrl+]",              "command": "workbench.action.navigateForward" },
+    // {
+    //     "key": "ctrl+]",
+    //     "command": "-editor.action.indentLines",
+    //     "when": "editorTextFocus && !editorReadonly"
+    // },
+    { "key": "cmd+[",               "command": "workbench.action.navigateBack",
+                                       "when": "isMac" },
+    { "key": "ctrl+[",              "command": "workbench.action.navigateBack",
+                                       "when": "!isMac"
     },
 
-    { "key": "ctrl+w", "command": "-workbench.action.switchWindow" },
+    { "key": "ctrl+w",              "command": "-workbench.action.switchWindow" },
+    { "key": "cmd+`",               "command": "workbench.action.switchWindow" },
+    { "key": "ctrl+shift+v",        "command": "-markdown.showPreview",
+                                       "when": "!notebookEditorFocused && editorLangId == 'markdown'" },
+    { "key": "alt+meta+s",          "command": "git.stageSelectedRanges" },
+    { "key": "ctrl+k ctrl+alt+s",   "command": "-git.stageSelectedRanges",
+                                       "when": "isInDiffEditor" },
+
+    { "key": "ctrl+shift+-",        "command": "-workbench.action.navigateForward" },
+
+    { "key": "ctrl+l b",            "command": "latex-workshop.build",
+                                       "when": "config.latex-workshop.bind.altKeymap.enabled && editorLangId =~ /latex|rsweave|jlweave/" },
+    { "key": "ctrl+l alt+b",        "command": "-latex-workshop.build",
+                                       "when": "config.latex-workshop.bind.altKeymap.enabled && editorLangId =~ /latex|rsweave|jlweave/" },
+    { "key": "alt+meta+b",          "command": "latex-workshop.build",
+                                       "when": "!config.latex-workshop.bind.altKeymap.enabled && editorLangId =~ /latex|rsweave|jlweave/" },
+    { "key": "ctrl+alt+b",          "command": "-latex-workshop.build",
+                                    "when": "!config.latex-workshop.bind.altKeymap.enabled && editorLangId =~ /latex|rsweave|jlweave/"
+                                },
     {
-        "key": "cmd+`",
-        "command": "workbench.action.switchWindow"
+        "key": "alt+meta+o", "command": "workbench.action.openRecent"
     },
-    {
-        "key": "ctrl+shift+v",
-        "command": "-markdown.showPreview",
-        "when": "!notebookEditorFocused && editorLangId == 'markdown'"
-    },
-    {
-        "key": "alt+meta+s",
-        "command": "git.stageSelectedRanges"
-    },
-    {
-        "key": "ctrl+k ctrl+alt+s",
-        "command": "-git.stageSelectedRanges",
-        "when": "isInDiffEditor"
-    },
-    {
-        "key": "ctrl+]",
-        "command": "-editor.action.indentLines",
-        "when": "editorTextFocus && !editorReadonly"
-    },
-    {
-        "key": "ctrl+]",
-        "command": "workbench.action.navigateForward"
-    },
-    {
-        "key": "ctrl+shift+-",
-        "command": "-workbench.action.navigateForward"
-    },
-    {
-        "key": "ctrl+l b",
-        "command": "latex-workshop.build",
-        "when": "config.latex-workshop.bind.altKeymap.enabled && editorLangId =~ /latex|rsweave|jlweave/"
-    },
-    {
-        "key": "ctrl+l alt+b",
-        "command": "-latex-workshop.build",
-        "when": "config.latex-workshop.bind.altKeymap.enabled && editorLangId =~ /latex|rsweave|jlweave/"
-    },
-    {
-        "key": "alt+meta+b",
-        "command": "latex-workshop.build",
-        "when": "!config.latex-workshop.bind.altKeymap.enabled && editorLangId =~ /latex|rsweave|jlweave/"
-    },
-    {
-        "key": "ctrl+alt+b",
-        "command": "-latex-workshop.build",
-        "when": "!config.latex-workshop.bind.altKeymap.enabled && editorLangId =~ /latex|rsweave|jlweave/"
-    }
 ]
