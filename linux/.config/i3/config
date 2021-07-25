@@ -286,15 +286,15 @@ bindsym $mod+Ctrl+x --release exec --no-startup-id xkill
 #assign [class="Brave"] $ws3
 #assign [class="zoom"] $ws6
 #assign [class="Slack"] $ws4
-#assign [class="Telegram"] $ws4
-#assign [class="Signal"] $ws4
+assign [class="Telegram"] $ws4
+assign [class="Signal"] $ws4
 #assign [class="Zathura"] $ws7
 #for_window [class="Zathura"] focus
 #for_window [class="Zathura" title=".*Papers.*"] move container to workspace $ws7
 
 # Open specific applications in specific layouts
-#for_window [title="Telegram"] layout tabbed
-#for_window [title="Signal"] layout tabbed
+for_window [title="Telegram"] layout tabbed
+for_window [title="Signal"] layout tabbed
 #for_window [title="Slack"] layout tabbed
 #for_window [title="Brave"] layout tabbed
 #for_window [title="Code"] layout stacking
