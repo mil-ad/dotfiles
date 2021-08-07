@@ -11,7 +11,17 @@ fi
 eval $(/usr/bin/gnome-keyring-daemon --start --components=pkcs11,secrets,ssh)
 export SSH_AUTH_SOCK
 
-#xrandr --output DP-0 --mode 3840x2160 --pos 0x0 --primary --scale 1.3x1.3
+case $(hostnamectl --static) in
+
+	milad-matebook13)
+		xrandr --output eDP1 --mode 2160x1440 --pos 0x0 --primary --scale 1.3x1.3
+		xbindkeys -f $HOME/.config/xbindkeys/matebook13
+		;;
+
+	milad-ryzen)
+		xrandr --output DP-0 --mode 3840x2160 --pos 0x0 --primary --scale 1.3x1.3
+		;;
+esac
 
 #export GDK_SCALE=2
 #export GDK_DPI_SCALE=0.5
