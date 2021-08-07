@@ -3,9 +3,9 @@
 set -e
 
 if [[ `uname` == 'Darwin' ]]; then
-    stow --verbose common macOS
+    stow --verbose --no-folding common macOS
 elif [[ `uname` == 'Linux' ]]; then
-    stow --verbose common linux
+    stow --verbose --no-folding common linux
 fi
 
 [[ ! -e ~/.dotfiles/antigen.zsh ]] && curl -L git.io/antigen > ~/.dotfiles/antigen.zsh
