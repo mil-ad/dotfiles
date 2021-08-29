@@ -19,7 +19,7 @@ case $(hostnamectl --static) in
 		;;
 
 	milad-ryzen)
-		xrandr --output DP-0 --mode 3840x2160 --pos 0x0 --primary --scale 1.3x1.3
+		xrandr --output DP-0 --mode 3840x2160 --pos 0x0 --primary --scale 1x1
 		;;
 esac
 
