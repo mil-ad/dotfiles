@@ -100,4 +100,4 @@ settings:
     - utm_term
     - utm_content
   zoom.default:
-    global: 90%
+    global: 100%
