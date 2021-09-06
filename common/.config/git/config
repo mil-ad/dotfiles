@@ -10,7 +10,7 @@
 [push]
     default = simple
 [commit]
-    gpgSign = false
+    gpgSign = true
 [gpg]
     program = gpg
 [diff]
