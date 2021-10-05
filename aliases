@@ -47,3 +47,5 @@ alias condarm='conda env remove --name'
 
 # TODO: Make this linux-only to avoid conflict with macOS's open
 function open() { (nohup xdg-open $1 </dev/null >/dev/null 2>&1 &) }
+
+alias present_remotely='nohup pdfpc -Ssg -w presentation'
