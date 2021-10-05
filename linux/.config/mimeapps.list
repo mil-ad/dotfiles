@@ -17,6 +17,7 @@ text/html=brave.desktop
 text/plain=mousepad.desktop
 image/jpeg=viewnior.desktop;gpicview.desktop;
 image/png=viewnior.desktop;gpicview.desktop;
+image/HEIC=viewnior.desktop;gpicview.desktop;
 inode/directory=pcmanfm.desktop;
 message/rfc822=userapp-Thunderbird.desktop
 
@@ -34,6 +35,7 @@ application/x-extension-xhtml=brave.desktop;
 application/x-extension-xht=brave.desktop;
 image/jpeg=viewnior.desktop;gpicview.desktop;
 image/png=viewnior.desktop;gpicview.desktop;
+image/HEIC=viewnior.desktop;gpicview.desktop;
 text/plain=mousepad.desktop;
 x-scheme-handler/mailto=userapp-Thunderbird.desktop;
 message/rfc822=userapp-Thunderbird.desktop;
