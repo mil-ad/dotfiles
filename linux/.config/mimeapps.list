@@ -20,6 +20,8 @@ image/png=viewnior.desktop;gpicview.desktop;
 image/HEIC=viewnior.desktop;gpicview.desktop;
 inode/directory=pcmanfm.desktop;
 message/rfc822=userapp-Thunderbird.desktop
+image/svg+xml=viewnior.desktop
+image/heif=viewnior.desktop
 
 [Added Associations]
 x-scheme-handler/http=brave.desktop;
@@ -46,3 +48,5 @@ application/pdf=zathura.desktop;
 image/bmp=sxiv-rifle.desktop;
 image/tiff=viewnior.desktop;
 audio/mp4=vlc.desktop;
+image/svg+xml=viewnior.desktop;
+image/heif=viewnior.desktop;
