@@ -74,6 +74,18 @@ settings:
     global: 9pt
   fonts.downloads:
     global: default_size default_family
+  fonts.web.family.cursive:
+    global: default_family
+  fonts.web.family.fantasy:
+    global: default_family
+  fonts.web.family.fixed:
+    global: default_family
+  fonts.web.family.sans_serif:
+    global: default_family
+  fonts.web.family.serif:
+    global: default_family
+  fonts.web.family.standard:
+    global: default_family
   tabs.background:
     global: true
   tabs.padding:
@@ -90,7 +102,7 @@ settings:
     global:
       DEFAULT: https://www.google.com/search?q={}
   url.start_pages:
-    global: https://start.duckduckgo.com
+    global: https://search.brave.com/
   url.yank_ignored_parameters:
     global:
     - ref
