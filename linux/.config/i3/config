@@ -328,6 +328,7 @@ for_window [class="zoom"] floating enable
 for_window [title="UxPlay"] floating enable
 for_window [class="Matplotlib"] floating enable
 for_window [class="fzfmenu"] floating enable resize set 1500 px 750px, move absolute position center
+for_window [class="1Password"] floating enable
 
 # switch to workspace with urgent window automatically
 for_window [urgent=latest] focus
