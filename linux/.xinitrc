@@ -18,6 +18,10 @@ case $(hostnamectl --static) in
 		xbindkeys -f $HOME/.config/xbindkeys/matebook13
 		;;
 
+	milad-matebook14s)
+		xbindkeys -f $HOME/.config/xbindkeys/matebook14s
+		;;
+
 	milad-ryzen)
 		xrandr --output DP-0 --mode 3840x2160 --pos 0x0 --primary --scale 1x1 --output HDMI-0 --off
 		;;
