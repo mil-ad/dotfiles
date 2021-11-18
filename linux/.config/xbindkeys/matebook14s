@@ -1,0 +1,19 @@
+# Increase volume
+"pamixer --increase 5"
+   XF86AudioRaiseVolume
+
+# Decrease volume
+"pamixer --decrease 5"
+   XF86AudioLowerVolume
+
+# Mute volume
+"pamixer --toggle-mute"
+   XF86AudioMute
+
+# Increase backlight
+"light -A 5"
+   XF86MonBrightnessUp
+
+# Decrease backlight
+"light -U 5"
+   XF86MonBrightnessDown
