@@ -60,7 +60,7 @@ bindsym $mod+e layout toggle split
 bindsym $mod+Shift+space floating toggle
 
 # change focus between tiling / floating windows
-bindsym $mod+space focus mode_toggle
+#bindsym $mod+space focus mode_toggle
 
 # toggle sticky
 bindsym $mod+Shift+s sticky toggle
@@ -283,6 +283,7 @@ bindsym $mod+o exec ~/.scripts/open_recent_file
 bindsym $mod+Ctrl+o exec ~/.scripts/open_file
 bindsym $mod+Ctrl+e exec ~/.scripts/select_emoji
 bindsym $mod+Ctrl+space exec ~/.scripts/enter_snippet
+bindsym $mod+space exec ~/.scripts/winmenu
 # 0x2C is comma
 bindsym $mod+0x2C exec --no-startup-id ~/.scripts/rename_i3_container
 
