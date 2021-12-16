@@ -32,6 +32,6 @@ esac
 #export QT_AUTO_SCREEN_SCALE_FACTOR=1
 export QT_STYLE_OVERRIDE=adwaita-dark
 
-setxkbmap gb,ir -option 'grp:rctrl_rshift_toggle'
+#setxkbmap gb,ir -option 'grp:rctrl_rshift_toggle'
 
 exec i3
