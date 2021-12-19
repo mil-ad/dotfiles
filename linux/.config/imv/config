@@ -1,0 +1,12 @@
+[binds]
+
+# Found the names using xev
+
+<Next> = next
+<Prior> = prev
+<Home> = goto 1
+<End> = goto -1
+<equal> = zoom 1
+<minus> = zoom -1
+f = fullscreen ; center
+r = rotate by 90
