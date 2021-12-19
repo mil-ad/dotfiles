@@ -22,10 +22,11 @@ success_symbol = "[❯](bold purple)"
 [git_branch]
 format = "[$symbol$branch]($style) "
 symbol = ""
+style = "bright-black"
 
 [git_status]
 format = '([$all_status$ahead_behind]($style) )'
-style = "dimmed white"
+style = "bold blue"
 stashed = ""
 deleted = ""
 modified = "*"
@@ -40,5 +41,5 @@ symbol = "杖"
 
 [cmd_duration]
 format = "[祥$duration]($style) "
-style = "dimmed white"
+style = "yellow"
 min_time = 60_000
