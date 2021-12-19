@@ -17,6 +17,7 @@ Plug 'scrooloose/nerdtree'
 Plug 'junegunn/fzf.vim'
 Plug 'morhetz/gruvbox'
 Plug 'tpope/vim-surround'
+Plug 'airblade/vim-gitgutter'
 
 
 " Initialize plugin system
