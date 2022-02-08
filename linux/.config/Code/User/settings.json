@@ -295,5 +295,7 @@
     "autoDocstring.generateDocstringOnEnter": false,
     "markdown.marp.enableHtml": true,
     "markdown.marp.chromePath": "/usr/bin/brave",
-    "breadcrumbs.enabled": false
+    "breadcrumbs.enabled": false,
+    "editor.unicodeHighlight.nonBasicASCII": true,
+    "editor.unicodeHighlight.includeComments": true
 }
