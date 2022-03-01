@@ -20,6 +20,8 @@
     "editor.formatOnPaste": true,
     "editor.suggestSelection": "first",
     "editor.accessibilitySupport": "off",
+    "editor.unicodeHighlight.nonBasicASCII": true,
+    "editor.unicodeHighlight.includeComments": true,
     "editor.gotoLocation.multipleDeclarations": "gotoAndPeek",
     "editor.gotoLocation.multipleDefinitions": "gotoAndPeek",
     "editor.gotoLocation.multipleTypeDefinitions": "gotoAndPeek",
@@ -55,7 +57,7 @@
     "workbench.statusBar.feedback.visible": false,
     "workbench.tips.enabled": false,
     "workbench.activityBar.visible": true,
-    "workbench.colorTheme": "Popping and Locking",
+    "workbench.colorTheme": "Gruvbox Dark Hard",
     "workbench.startupEditor": "newUntitledFile",
     "workbench.editorAssociations": {
         "*.ipynb": "jupyter-notebook"
@@ -139,11 +141,18 @@
     "jupyter.sendSelectionToInteractiveWindow": true,
     "jupyter.askForKernelRestart": false,
     "latex-workshop.view.pdf.viewer": "tab",
-    "latex-workshop.latex.autoBuild.run": "never",
-    "latex-workshop.latex.recipe.default": "first",
     "latex-workshop.message.error.show": false,
     "latex-workshop.message.warning.show": false,
-    "latex-workshop.latex.outDir": "_output",
+    "latex-workshop.latexindent.path": "latexindent",
+    "latex-workshop.latexindent.args": [
+        "-c",
+        "%TMPDIR%/",
+        "%TMPFILE%",
+        "-y=defaultIndent: '%INDENT%'"
+    ],
+    "latex-workshop.latex.autoBuild.run": "never",
+    "latex-workshop.latex.recipe.default": "first",
+    "latex-workshop.latex.outDir": "build",
     "latex-workshop.latex.tools": [
         {
             "name": "make",
@@ -296,6 +305,5 @@
     "markdown.marp.enableHtml": true,
     "markdown.marp.chromePath": "/usr/bin/brave",
     "breadcrumbs.enabled": false,
-    "editor.unicodeHighlight.nonBasicASCII": true,
-    "editor.unicodeHighlight.includeComments": true
+    "git.confirmSync": false,
 }
