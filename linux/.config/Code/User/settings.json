@@ -76,6 +76,7 @@
     "terminal.integrated.fontFamily": "'Cascadia Code', 'Noto Color Emoji', 'Vazir WOL', 'Iosevka Nerd Font Mono', 'JetBrains Mono Medium', 'JetBrainsMono-Medium','IBMPlexMono-Bold', 'IBM Plex Mono SemiBold', 'Courier New', Menlo",
     "terminal.integrated.fontSize": 13,
     "terminal.integrated.inheritEnv": true,
+    "terminal.external.linuxExec": "kitty",
     // "terminal.integrated.rendererType": "dom",
     "terminal.integrated.gpuAcceleration": "on",
     "scm.diffDecorationsGutterWidth": 2,
