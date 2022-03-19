@@ -313,19 +313,28 @@ bar-volume-empty-foreground = ${colors.foreground-alt}
 
 [module/battery]
 type = internal/battery
-battery = BAT0
-adapter = ADP1
+battery = BAT1
+adapter = ACAD
 full-at = 98
 
-format-charging = <animation-charging> <label-charging>
+poll-interval = 10
+
+format-charging = <label-charging>
+format-charging-prefix = " "
 format-charging-underline = #ffb52a
 
-format-discharging = <animation-discharging> <label-discharging>
+format-discharging = <label-discharging>
+format-discharging-prefix = "  "
 format-discharging-underline = ${self.format-charging-underline}
 
-format-full-prefix = " "
-format-full-prefix-foreground = ${colors.foreground-alt}
-format-full-underline = ${self.format-charging-underline}
+format-full = <label-full>
+format-full-prefix = "  "
+format-full-prefix-foreground = ${colors.green}
+format-full-underline = ${colors.green}
+
+label-charging = %percentage%%
+label-discharging = %percentage%%
+label-full = Full
 
 ramp-capacity-0 = 
 ramp-capacity-1 = 
