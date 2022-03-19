@@ -133,7 +133,6 @@ bindsym $mod+7 workspace $ws7
 bindsym $mod+8 workspace $ws8
 bindsym $mod+9 workspace $ws9
 
-
 # Move focused container to workspace
 bindsym $mod+Ctrl+1 move container to workspace $ws1
 bindsym $mod+Ctrl+2 move container to workspace $ws2
@@ -346,7 +345,7 @@ floating_maximum_size 2560 x 1440
 exec --no-startup-id seafile-applet
 exec --no-startup-id caffeine
 exec --no-startup-id redshift -l 51.75:-1.2592
-exec --no-startup-id xss-lock -- blurlock
+exec --no-startup-id xss-lock --transfer-sleep-lock -- blurlock
 exec --no-startup-id nitrogen --restore
 exec --no-startup-id dunst -config ~/.config/dunst/dunstrc
 exec_always --no-startup-id ~/.scripts/kill_until_dead polybar && polybar milad
