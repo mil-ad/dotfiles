@@ -158,115 +158,12 @@
             "name": "make",
             "command": "make",
         },
-        {
-            "name": "latexmk",
-            "command": "latexmk",
-            "args": [
-                "-synctex=1",
-                "-interaction=nonstopmode",
-                "-file-line-error",
-                "-pdf",
-                "-output-directory=%OUTDIR%",
-                "%DOC%"
-            ],
-            "env": {}
-        },
-        {
-            "name": "latexmk-with-xelatex",
-            "command": "latexmk",
-            "args": [
-                "-xelatex",
-                "-synctex=1",
-                "-interaction=nonstopmode",
-                "-file-line-error",
-                "-output-directory=%OUTDIR%",
-                "%DOC%"
-            ],
-            "env": {}
-        },
-        {
-            "name": "latexmk-with-lualatex",
-            "command": "latexmk",
-            "args": [
-                "-lualatex",
-                "-synctex=1",
-                "-interaction=nonstopmode",
-                "-file-line-error",
-                "-output-directory=%OUTDIR%",
-                "%DOC%"
-            ],
-            "env": {}
-        },
-        {
-            "name": "pdflatex",
-            "command": "pdflatex",
-            "args": [
-                "-synctex=1",
-                "-interaction=nonstopmode",
-                "-file-line-error",
-                "%DOC%"
-            ],
-            "env": {}
-        },
-        {
-            "name": "bibtex",
-            "command": "bibtex",
-            "args": [
-                "%DOCFILE%"
-            ],
-            "env": {}
-        },
-        {
-            "name": "xelatex",
-            "command": "xelatex",
-            "args": [
-                "-synctex=1",
-                "-interaction=nonstopmode",
-                "-file-line-error",
-                "-outdir=%OUTDIR%",
-                "%DOC%"
-            ],
-            "env": {}
-        }
     ],
     "latex-workshop.latex.recipes": [
         {
             "name": "Makefile",
             "tools": [
                 "make"
-            ]
-        },
-        {
-            "name": "latexmk",
-            "tools": [
-                "latexmk"
-            ]
-        },
-        {
-            "name": "latexmk with xelatex",
-            "tools": [
-                "latexmk-with-xelatex",
-            ]
-        },
-        {
-            "name": "latexmk with LuaLatex",
-            "tools": [
-                "latexmk-with-xelatex",
-            ]
-        },
-        {
-            "name": "xelatex",
-            "tools": [
-                "xelatex"
-            ]
-        },
-        {
-            "name": "pdflatex ➞ bibtex ➞ pdflatex × 2",
-            "tools": [
-                "pdflatex",
-                "bibtex",
-                "pdflatex",
-                "pdflatex"
             ]
         },
     ],
