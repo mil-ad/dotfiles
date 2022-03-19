@@ -1,7 +1,7 @@
 {
     "telemetry.telemetryLevel": "off",
     "update.mode": "manual",
-    "editor.fontFamily": "'IBM Plex Mono Medium', 'Vazirmatn UI NL',  'Cascadia Code', 'JetBrains Mono Medium', 'Iosevka Nerd Font Mono', 'JetBrainsMono-Medium', 'Noto Color Emoji', 'Material Icons'",
+    "editor.fontFamily": " 'Cascadia Code', 'Vazirmatn UI NL', 'JetBrains Mono Medium', 'IBM Plex Mono Medium', 'Iosevka Nerd Font Mono', 'JetBrainsMono-Medium', 'Noto Color Emoji', 'Material Icons'",
     "editor.fontSize": 18,
     // "editor.fontWeight": "bold",
     "editor.tabSize": 4,
@@ -73,7 +73,7 @@
     "explorer.decorations.badges": false,
     // "explorer.openEditors.visible": 0,
     "terminal.integrated.macOptionClickForcesSelection": true,
-    "terminal.integrated.fontFamily": "'Cascadia Code', 'Noto Color Emoji', 'Iosevka Nerd Font Mono', 'JetBrains Mono Medium', 'JetBrainsMono-Medium','IBMPlexMono-Bold', 'IBM Plex Mono SemiBold', 'Courier New', Menlo",
+    "terminal.integrated.fontFamily": "'Cascadia Code', 'Noto Color Emoji', 'Vazir WOL', 'Iosevka Nerd Font Mono', 'JetBrains Mono Medium', 'JetBrainsMono-Medium','IBMPlexMono-Bold', 'IBM Plex Mono SemiBold', 'Courier New', Menlo",
     "terminal.integrated.fontSize": 13,
     "terminal.integrated.inheritEnv": true,
     "terminal.integrated.rendererType": "dom",
