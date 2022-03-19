@@ -1,6 +1,10 @@
 export EDITOR=vim
 export KEYTIMEOUT=5
 
+# Without this the SSH remote environment in VS Code has a hard time prompting
+# for passphrase when signing git commits
+export GPG_TTY=$(tty)
+
 # TODO: Is this still needed?
 [ "$(uname)" = "Darwin" ] && export LSCOLORS=Exfxcxdxbxegedabagacad
 
