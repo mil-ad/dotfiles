@@ -103,7 +103,10 @@
     "[latex]": {
         "editor.wordWrap": "bounded",
         "editor.wordWrapColumn": 80,
-        "editor.rulers": [],
+        "editor.rulers": [
+            80
+        ],
+        "editor.formatOnSave": false,
     },
     "[markdown]": {
         "editor.wordWrap": "bounded",
