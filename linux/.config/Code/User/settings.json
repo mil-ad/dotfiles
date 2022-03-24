@@ -1,7 +1,7 @@
 {
     "telemetry.telemetryLevel": "off",
     "update.mode": "manual",
-    "editor.fontFamily": "'Cascadia Code', 'IBM Plex Mono Medium', 'Vazirmatn UI NL', 'JetBrains Mono Medium', 'Iosevka Nerd Font Mono', 'JetBrainsMono-Medium', 'Noto Color Emoji', 'Material Icons'",
+    "editor.fontFamily": " 'Cascadia Code', 'Vazirmatn UI NL', 'JetBrains Mono Medium', 'IBM Plex Mono Medium', 'Iosevka Nerd Font Mono', 'JetBrainsMono-Medium', 'Noto Color Emoji', 'Material Icons'",
     "editor.fontSize": 18,
     // "editor.fontWeight": "bold",
     "editor.tabSize": 4,
@@ -73,11 +73,12 @@
     "explorer.decorations.badges": false,
     // "explorer.openEditors.visible": 0,
     "terminal.integrated.macOptionClickForcesSelection": true,
-    "terminal.integrated.fontFamily": "'Cascadia Code', 'Noto Color Emoji', 'Iosevka Nerd Font Mono', 'JetBrains Mono Medium', 'JetBrainsMono-Medium','IBMPlexMono-Bold', 'IBM Plex Mono SemiBold', 'Courier New', Menlo",
+    "terminal.integrated.fontFamily": "'Cascadia Code', 'Noto Color Emoji', 'Vazir WOL', 'Iosevka Nerd Font Mono', 'JetBrains Mono Medium', 'JetBrainsMono-Medium','IBMPlexMono-Bold', 'IBM Plex Mono SemiBold', 'Courier New', Menlo",
     "terminal.integrated.fontSize": 13,
     "terminal.integrated.inheritEnv": true,
-    "terminal.integrated.rendererType": "dom",
-    "terminal.integrated.gpuAcceleration": "off",
+    "terminal.external.linuxExec": "kitty",
+    // "terminal.integrated.rendererType": "dom",
+    "terminal.integrated.gpuAcceleration": "on",
     "scm.diffDecorationsGutterWidth": 2,
     "scm.diffDecorations": "gutter",
     "diffEditor.ignoreTrimWhitespace": false,
@@ -102,8 +103,10 @@
     "[latex]": {
         "editor.wordWrap": "bounded",
         "editor.wordWrapColumn": 80,
-        "editor.rulers": [80],
-        "editor.formatOnSave": true,
+        "editor.rulers": [
+            80
+        ],
+        "editor.formatOnSave": false,
     },
     "[markdown]": {
         "editor.wordWrap": "bounded",
@@ -135,6 +138,9 @@
     ],
     "python.linting.enabled": true,
     "python.linting.flake8Enabled": true,
+    "python.linting.flake8Args": [
+        "--ignore=E501",
+    ],
     "python.testing.pytestEnabled": false,
     "python.testing.unittestEnabled": false,
     "python.testing.autoTestDiscoverOnSaveEnabled": false,
@@ -158,115 +164,12 @@
             "name": "make",
             "command": "make",
         },
-        {
-            "name": "latexmk",
-            "command": "latexmk",
-            "args": [
-                "-synctex=1",
-                "-interaction=nonstopmode",
-                "-file-line-error",
-                "-pdf",
-                "-output-directory=%OUTDIR%",
-                "%DOC%"
-            ],
-            "env": {}
-        },
-        {
-            "name": "latexmk-with-xelatex",
-            "command": "latexmk",
-            "args": [
-                "-xelatex",
-                "-synctex=1",
-                "-interaction=nonstopmode",
-                "-file-line-error",
-                "-output-directory=%OUTDIR%",
-                "%DOC%"
-            ],
-            "env": {}
-        },
-        {
-            "name": "latexmk-with-lualatex",
-            "command": "latexmk",
-            "args": [
-                "-lualatex",
-                "-synctex=1",
-                "-interaction=nonstopmode",
-                "-file-line-error",
-                "-output-directory=%OUTDIR%",
-                "%DOC%"
-            ],
-            "env": {}
-        },
-        {
-            "name": "pdflatex",
-            "command": "pdflatex",
-            "args": [
-                "-synctex=1",
-                "-interaction=nonstopmode",
-                "-file-line-error",
-                "%DOC%"
-            ],
-            "env": {}
-        },
-        {
-            "name": "bibtex",
-            "command": "bibtex",
-            "args": [
-                "%DOCFILE%"
-            ],
-            "env": {}
-        },
-        {
-            "name": "xelatex",
-            "command": "xelatex",
-            "args": [
-                "-synctex=1",
-                "-interaction=nonstopmode",
-                "-file-line-error",
-                "-outdir=%OUTDIR%",
-                "%DOC%"
-            ],
-            "env": {}
-        }
     ],
     "latex-workshop.latex.recipes": [
         {
             "name": "Makefile",
             "tools": [
                 "make"
-            ]
-        },
-        {
-            "name": "latexmk",
-            "tools": [
-                "latexmk"
-            ]
-        },
-        {
-            "name": "latexmk with xelatex",
-            "tools": [
-                "latexmk-with-xelatex",
-            ]
-        },
-        {
-            "name": "latexmk with LuaLatex",
-            "tools": [
-                "latexmk-with-xelatex",
-            ]
-        },
-        {
-            "name": "xelatex",
-            "tools": [
-                "xelatex"
-            ]
-        },
-        {
-            "name": "pdflatex ➞ bibtex ➞ pdflatex × 2",
-            "tools": [
-                "pdflatex",
-                "bibtex",
-                "pdflatex",
-                "pdflatex"
             ]
         },
     ],
