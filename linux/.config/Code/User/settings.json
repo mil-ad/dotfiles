@@ -1,7 +1,7 @@
 {
     "telemetry.telemetryLevel": "off",
     "update.mode": "manual",
-    "editor.fontFamily": "'IBM Plex Mono Medium', 'Vazirmatn UI NL',  'Cascadia Code', 'JetBrains Mono Medium', 'Iosevka Nerd Font Mono', 'JetBrainsMono-Medium', 'Noto Color Emoji', 'Material Icons'",
+    "editor.fontFamily": "'Cascadia Code', 'IBM Plex Mono Medium', 'Vazirmatn UI NL', 'JetBrains Mono Medium', 'Iosevka Nerd Font Mono', 'JetBrainsMono-Medium', 'Noto Color Emoji', 'Material Icons'",
     "editor.fontSize": 18,
     // "editor.fontWeight": "bold",
     "editor.tabSize": 4,
@@ -102,7 +102,8 @@
     "[latex]": {
         "editor.wordWrap": "bounded",
         "editor.wordWrapColumn": 80,
-        "editor.rulers": [],
+        "editor.rulers": [80],
+        "editor.formatOnSave": true,
     },
     "[markdown]": {
         "editor.wordWrap": "bounded",
@@ -136,7 +137,6 @@
     "python.linting.flake8Enabled": true,
     "python.testing.pytestEnabled": false,
     "python.testing.unittestEnabled": false,
-    "python.testing.nosetestsEnabled": false,
     "python.testing.autoTestDiscoverOnSaveEnabled": false,
     "jupyter.sendSelectionToInteractiveWindow": true,
     "jupyter.askForKernelRestart": false,
