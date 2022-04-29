@@ -35,4 +35,7 @@ export QT_QPA_PLATFORMTHEME=qt5ct
 
 #setxkbmap gb,ir -option 'grp:rctrl_rshift_toggle'
 
+# e.g. clipmenud relies on this
+systemctl --user import-environment DISPLAY
+
 exec i3
