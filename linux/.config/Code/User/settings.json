@@ -111,6 +111,7 @@
     "[markdown]": {
         "editor.wordWrap": "bounded",
         "editor.wordWrapColumn": 80,
+        "files.trimTrailingWhitespace": false,
     },
     "[todo]": {
         "editor.quickSuggestions": false,
