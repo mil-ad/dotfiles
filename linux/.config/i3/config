@@ -332,7 +332,7 @@ for_window [class="1Password"] floating enable
 for_window [class="Anki"] floating enable
 for_window [class="transmission-gtk"] floating enable
 for_window [class="matplotlib"] floating enable
-
+for_window [class="Mathpix Snipping Tool"] floating enable
 
 # switch to workspace with urgent window automatically
 for_window [urgent=latest] focus
