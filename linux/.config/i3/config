@@ -352,4 +352,4 @@ exec --no-startup-id xss-lock --transfer-sleep-lock -- blurlock
 exec --no-startup-id nitrogen --restore
 exec --no-startup-id dunst -config ~/.config/dunst/dunstrc
 exec_always --no-startup-id ~/.scripts/kill_until_dead polybar && polybar milad
-exec_always --no-startup-id ~/.scripts/kill_until_dead picom && picom --experimental-backends
+#exec_always --no-startup-id ~/.scripts/kill_until_dead picom && picom --experimental-backends
