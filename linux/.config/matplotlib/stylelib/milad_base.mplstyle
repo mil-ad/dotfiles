@@ -2,37 +2,41 @@
 # import matplotlib.pyplot as plt
 # plt.style.use('milad')
 # Use `plt.style.available` to make sure style is available
+# You can combine styles e.g.
+# plt.style.use(["milad_base", "milad_dark"])
 
-figure.dpi: 600
+#figure.dpi: 600
+figure.figsize: 6.4, 4.8
 figure.constrained_layout.use: True
 # figure.constrained_layout.h_pad:  0.04167  # Padding around axes objects. Float representing
 # figure.constrained_layout.w_pad:  0.04167  # inches. Default is 3/72 inches (3 points)
 # figure.constrained_layout.hspace: 0.02     # Space between subplot groups. Float representing
 # figure.constrained_layout.wspace: 0.02     # a fraction of the subplot widths being separated.
 
+savefig.transparent: False
+savefig.edgecolor: white
+
 # Bang Wong's colourblind-friendly palette
-# I have modified the order from ['000000', 'E69F00', '56B4E9', '009E73', 'F0E442', '0072B2', 'D55E00', 'CC79A7']
-axes.prop_cycle: cycler('color', ['0072B2', 'D55E00', 'CC79A7', '009E73', 'E69F00', '56B4E9', '000000', 'F0E442', ])
-# axes.grid: true
+# I have modified thqe order from ['000000', 'E69F00', '56B4E9', '009E73', 'F0E442', '0072B2', 'D55E00', 'CC79A7']
+# axes.prop_cycle: cycler('color', ['0072B2', 'D55E00', 'CC79A7', '009E73', 'E69F00', '56B4E9', '000000', 'F0E442', ])
+axes.prop_cycle: cycler('color', ["458588", "d65d0e", "cc241d", "98971a", "d79921", "b16286", "689d6a",])
+axes.facecolor: fbf1c7
+axes.grid: true
 axes.spines.right: False
 axes.spines.top: False
 
 #grid.color:     b0b0b0  # grid color
-grid.linestyle: solid      # solid
+grid.linestyle: dotted      # solid
 grid.alpha:     0.2     # transparency, between 0.0 and 1.0
 #grid.linewidth: 0.8     # in points
 #grid.alpha:     1.0     # transparency, between 0.0 and 1.0
 
 legend.frameon: False
 
-savefig.transparent: False
-savefig.edgecolor: white
-
-font.family:  serif
-font.serif:      Computer Modern Roman, DejaVu Serif, Bitstream Vera Serif, New Century Schoolbook, Century Schoolbook L, Utopia, ITC Bookman, Bookman, Nimbus Roman No9 L, Times New Roman, Times, Palatino, Charter, serif
-font.sans-serif: Computer Modern Sans Serif,  DejaVu Sans, Bitstream Vera Sans, Lucida Grande, Verdana, Geneva, Lucid, Arial, Helvetica, Avant Garde, sans-serif
-
-text.usetex: True
+font.family: monospace
+font.serif: Computer Modern Roman
+font.sans-serif: TT Norms Pro
+font.monospace: Cascadia Code
 
 #### MATPLOTLIBRC FORMAT
 
