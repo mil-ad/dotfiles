@@ -1,0 +1,31 @@
+@font-face {
+  font-family: 'Bryan';
+  src: url('Bryan-Regular.woff2') format('woff2'), url('Bryan-Regular.woff') format('woff');
+}
+
+/* Example classes to enable font features - feel free to make your own */
+
+/* Common Ligatures */
+.clig {
+  font-variant-ligatures: common-ligatures;
+}
+
+/* Discretionary Ligatures */
+.dlig {
+  font-variant-ligatures: discretionary-ligatures;
+}
+
+/* Old style Figures */
+.osf {
+  font-variant-numeric: oldstyle-nums;
+}
+
+/* Old style Figures */
+.tnum {
+  font-variant-numeric: tabular-nums;
+}
+
+/* Stylistic Alternates */
+.salt {
+  font-feature-settings: 'ss01';
+}

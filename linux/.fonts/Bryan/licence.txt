@@ -1,0 +1,46 @@
+Bryan Font
+A Homage to John Bryan Hicks
+
+--"--
+
+John Bryan Hicks (1932–2021) was an architect, photographer, railway enthusiast and most importantly my Dad. Bryan is a free, single-weight open type font, a faithful digital recreation of his distinctive handwriting.
+
+If you use and enjoy this font, please consider donating to Parkinsons UK in his memory:
+
+https://www.parkinsons.org.uk/donate
+
+You can read more about dad and the creation of the font in the Hicks.design Journal:
+
+https://hicks.design/journal/bryan-font
+
+VERSIONS
+
+1.3 - Added a 'proper' uppercase Q, based a recently discovered example
+    - Added uppercase ẞ, and stylistic alternate for ß without the bar
+	- Moved the SS ligature to a discretionary ligature
+	- Added 'Br' and full 'Bryan' signature ligatures
+
+1.2 - Fixed discretionary ligatures (superscript 's)
+	- Added all numerals (precomposed fractions, fraction components, old style figures, superior & inferior numerals)
+	- Added Yen, generic currency, paragraph, section, dagger, double dagger, copyright, trademark and registered glyphs
+	- Added stylistic alternatives for lowercase T and Z
+	- Many tweaks to glyph's appearance spacing and weight, including a new version of ß
+
+1.1 - Added Western, Central and South European glyphs
+
+1.0 - Initial Release
+
+LICENCE
+
+--"--
+
+You may:
+- Use this font freely in commercial work without attribution or payment. Credit is always nice, but I know it's not always feasible
+- Embed the font in websites and applications. 
+- Let me know how you use it! Please, I'd love to see where this font travels.
+
+You may NOT redistribute, charge for or modify this font in any way.
+
+---
+
+© Hicks.design 2021
