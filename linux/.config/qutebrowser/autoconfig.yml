@@ -102,7 +102,7 @@ settings:
     global:
       DEFAULT: https://www.google.com/search?q={}
   url.start_pages:
-    global: https://search.brave.com/
+    global: google.com
   url.yank_ignored_parameters:
     global:
     - ref
