@@ -17,9 +17,6 @@ bindsym $mod+Shift+c reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
 bindsym $mod+Shift+r restart
 
-# lock screen
-bindsym $mod+l exec --no-startup-id i3exit lock
-
 # change focus
 bindsym $mod+Left focus left
 bindsym $mod+Down focus down
@@ -46,7 +43,6 @@ bindsym $mod+Shift+Ctrl+Down move workspace to output down
 # split orientation
 bindsym $mod+h split h;exec notify-send 'tile horizontally'
 bindsym $mod+v split v;exec notify-send 'tile vertically'
-bindsym $mod+q split toggle
 
 # toggle fullscreen mode for the focused container
 bindsym $mod+f fullscreen toggle
@@ -58,9 +54,6 @@ bindsym $mod+e layout toggle split
 
 # toggle tiling / floating
 bindsym $mod+Shift+space floating toggle
-
-# change focus between tiling / floating windows
-#bindsym $mod+space focus mode_toggle
 
 # toggle sticky
 bindsym $mod+Shift+s sticky toggle
@@ -91,18 +84,15 @@ mode "resize" {
     bindsym Escape mode "default"
 }
 
-# exit i3 (logs you out of your X session)
-bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
-
 # Set shut down, restart and locking features
 bindsym $mod+0 mode "$mode_system"
 set $mode_system (l)ock, log(o)ut, (s)uspend, (r)eboot, (Shift+s)hutdown
 mode "$mode_system" {
-    bindsym l exec --no-startup-id i3exit lock, mode "default"
-    bindsym s exec --no-startup-id i3exit suspend, mode "default"
-    bindsym o exec --no-startup-id i3exit logout, mode "default"
-    bindsym r exec --no-startup-id i3exit reboot, mode "default"
-    bindsym Shift+s exec --no-startup-id i3exit shutdown, mode "default"
+    bindsym l exec --no-startup-id blurlock, mode "default"
+    bindsym s exec --no-startup-id systemctl suspend, mode "default"
+    bindsym o exec --no-startup-id i3-msg exit, mode "default"
+    bindsym r exec --no-startup-id systemctl reboot, mode "default"
+    bindsym Shift+s exec --no-startup-id systemctl poweroff, mode "default"
 
     # exit system mode: "Enter" or "Escape"
     bindsym Return mode "default"
@@ -133,7 +123,7 @@ bindsym $mod+7 workspace $ws7
 bindsym $mod+8 workspace $ws8
 bindsym $mod+9 workspace $ws9
 
-# Move focused container to workspace
+# move focused container to workspace
 bindsym $mod+Ctrl+1 move container to workspace $ws1
 bindsym $mod+Ctrl+2 move container to workspace $ws2
 bindsym $mod+Ctrl+3 move container to workspace $ws3
@@ -144,7 +134,7 @@ bindsym $mod+Ctrl+7 move container to workspace $ws7
 bindsym $mod+Ctrl+8 move container to workspace $ws8
 bindsym $mod+Ctrl+9 move container to workspace $ws9
 
-# Move to workspace with focused container
+# move and follow focused container to workspace
 bindsym $mod+Shift+1 move container to workspace $ws1; workspace $ws1
 bindsym $mod+Shift+2 move container to workspace $ws2; workspace $ws2
 bindsym $mod+Shift+3 move container to workspace $ws3; workspace $ws3
@@ -164,11 +154,6 @@ new_float normal
 
 # Hide borders
 hide_edge_borders none
-
-# change borders dynamically
-bindsym $mod+u border none
-bindsym $mod+y border pixel 1
-bindsym $mod+n border normal
 
 # configure window title
 title_align center
@@ -273,22 +258,20 @@ bindsym $mod+Shift+z exec --no-startup-id maim -s "$HOME/Pictures/screenshot-$(d
 bindsym $mod+Ctrl+z exec --no-startup-id maim "$HOME/Pictures/screenshot-$(date +%F_%T).png" && notify-send "Screenshot saved to ${HOME}/Pictures"
 
 # Custom scripts
+bindsym $mod+space exec ~/.scripts/winmenu
+bindsym $mod+p exec ~/.scripts/open_paper
+bindsym $mod+o exec ~/.scripts/open_recent_file
 bindsym $mod+Ctrl+s exec ~/.scripts/search_google_scholar
 bindsym $mod+Ctrl+r exec ~/.scripts/search_github
 bindsym $mod+Ctrl+y exec ~/.scripts/search_youtube
-bindsym $mod+p exec ~/.scripts/open_paper
 bindsym $mod+Ctrl+p exec ~/.scripts/open_paper_no_annotations
-bindsym $mod+o exec ~/.scripts/open_recent_file
 bindsym $mod+Ctrl+o exec ~/.scripts/open_file
 bindsym $mod+Ctrl+e exec ~/.scripts/select_emoji
 bindsym $mod+Ctrl+space exec ~/.scripts/enter_snippet
-bindsym $mod+space exec ~/.scripts/winmenu
 # 0x2C is comma
 bindsym $mod+0x2C exec --no-startup-id ~/.scripts/rename_i3_container
 
 # Restarting ...
-#bindsym $mod+t exec --no-startup-id pkill picom
-#bindsym $mod+Ctrl+t exec --no-startup-id picom --experimental-backends -b
 bindsym $mod+Shift+d --release exec "killall dunst; exec notify-send 'restart dunst'"
 bindsym $mod+Ctrl+x --release exec --no-startup-id xkill
 
@@ -338,7 +321,7 @@ for_window [class="Mathpix Snipping Tool"] floating enable
 for_window [urgent=latest] focus
 
 ##########################################
-# 	  etc
+#                  etc
 ##########################################
 floating_maximum_size 2560 x 1440
 
