@@ -3,10 +3,97 @@ set $mod Mod4
 
 set $hidpi_scale GDK_SCALE=2 GDK_DPI_SCALE=0.5 QT_AUTO_SCREEN_SCALE_FACTOR=1
 
+set $ws1 1
+set $ws2 2
+set $ws3 3
+set $ws4 4
+set $ws5 5
+set $ws6 6
+set $ws7 7
+set $ws8 8
+set $ws9 9
+
 # Use Mouse+$mod to drag floating windows
 floating_modifier $mod
 
 focus_follows_mouse yes
+workspace_auto_back_and_forth yes
+floating_maximum_size 2560 x 1440
+
+# Configure border style <normal|1pixel|pixel xx|none|pixel>
+new_window pixel 2
+new_float normal
+
+# Hide borders
+hide_edge_borders none
+
+# configure window title
+title_align center
+# for_window [class=".*"] title_format "%title"
+
+# Font for window titles. Will also be used by the bar unless a different font
+# is used in the bar {} block below.
+set $font_family Cascadia Code PL
+font pango:$font_family 6
+
+# Colours from Gruvbox (Dark mode palette)
+# https://github.com/morhetz/gruvbox#dark-mode-1
+set $red #cc241d
+set $green #98971a
+set $yellow #d79921
+set $blue #458588
+set $purple #b16286
+set $aqua #689d68
+set $grey #928374
+set $darkgray #1d2021
+set $bg #282828
+set $bg0 #282828
+set $fg4 #a89984
+
+set $bright_red: #fb4934
+set $bright_green: #b8bb26
+set $bright_yellow: #fabd2f
+set $bright_blue: #83a598
+set $bright_purple: #d3869b
+set $bright_aqua: #8ec07c
+set $bright_orange: #fe8019
+
+##########################################
+#             Keybindings
+##########################################
+
+# switch to workspace
+bindsym $mod+1 workspace $ws1
+bindsym $mod+2 workspace $ws2
+bindsym $mod+3 workspace $ws3
+bindsym $mod+4 workspace $ws4
+bindsym $mod+5 workspace $ws5
+bindsym $mod+6 workspace $ws6
+bindsym $mod+7 workspace $ws7
+bindsym $mod+8 workspace $ws8
+bindsym $mod+9 workspace $ws9
+
+# move focused container to workspace
+bindsym $mod+Ctrl+1 move container to workspace $ws1
+bindsym $mod+Ctrl+2 move container to workspace $ws2
+bindsym $mod+Ctrl+3 move container to workspace $ws3
+bindsym $mod+Ctrl+4 move container to workspace $ws4
+bindsym $mod+Ctrl+5 move container to workspace $ws5
+bindsym $mod+Ctrl+6 move container to workspace $ws6
+bindsym $mod+Ctrl+7 move container to workspace $ws7
+bindsym $mod+Ctrl+8 move container to workspace $ws8
+bindsym $mod+Ctrl+9 move container to workspace $ws9
+
+# move and follow focused container to workspace
+bindsym $mod+Shift+1 move container to workspace $ws1; workspace $ws1
+bindsym $mod+Shift+2 move container to workspace $ws2; workspace $ws2
+bindsym $mod+Shift+3 move container to workspace $ws3; workspace $ws3
+bindsym $mod+Shift+4 move container to workspace $ws4; workspace $ws4
+bindsym $mod+Shift+5 move container to workspace $ws5; workspace $ws5
+bindsym $mod+Shift+6 move container to workspace $ws6; workspace $ws6
+bindsym $mod+Shift+7 move container to workspace $ws7; workspace $ws7
+bindsym $mod+Shift+8 move container to workspace $ws8; workspace $ws8
+bindsym $mod+Shift+9 move container to workspace $ws9; workspace $ws9
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -30,7 +117,6 @@ bindsym $mod+Shift+Up move up
 bindsym $mod+Shift+Right move right
 
 # workspace back and forth (with/without active container)
-workspace_auto_back_and_forth yes
 bindsym $mod+b workspace back_and_forth
 bindsym $mod+Shift+b move container to workspace back_and_forth; workspace back_and_forth
 
@@ -99,73 +185,34 @@ mode "$mode_system" {
     bindsym Escape mode "default"
 }
 
-##########################################
-#               Workspaces
-##########################################
-set $ws1 1
-set $ws2 2
-set $ws3 3
-set $ws4 4
-set $ws5 5
-set $ws6 6
-set $ws7 7
-set $ws8 8
-set $ws9 9
 
-# switch to workspace
-bindsym $mod+1 workspace $ws1
-bindsym $mod+2 workspace $ws2
-bindsym $mod+3 workspace $ws3
-bindsym $mod+4 workspace $ws4
-bindsym $mod+5 workspace $ws5
-bindsym $mod+6 workspace $ws6
-bindsym $mod+7 workspace $ws7
-bindsym $mod+8 workspace $ws8
-bindsym $mod+9 workspace $ws9
+# External Keybindings
 
-# move focused container to workspace
-bindsym $mod+Ctrl+1 move container to workspace $ws1
-bindsym $mod+Ctrl+2 move container to workspace $ws2
-bindsym $mod+Ctrl+3 move container to workspace $ws3
-bindsym $mod+Ctrl+4 move container to workspace $ws4
-bindsym $mod+Ctrl+5 move container to workspace $ws5
-bindsym $mod+Ctrl+6 move container to workspace $ws6
-bindsym $mod+Ctrl+7 move container to workspace $ws7
-bindsym $mod+Ctrl+8 move container to workspace $ws8
-bindsym $mod+Ctrl+9 move container to workspace $ws9
+bindsym $mod+Return exec $hidpi_scale kitty
+bindsym $mod+d exec --no-startup-id $hidpi_scale dmenu_run
+bindsym $mod+Shift+Return exec $hidpi_scale pcmanfm
+bindsym $mod+Ctrl+v exec CM_OUTPUT_CLIP=1 clipmenu
 
-# move and follow focused container to workspace
-bindsym $mod+Shift+1 move container to workspace $ws1; workspace $ws1
-bindsym $mod+Shift+2 move container to workspace $ws2; workspace $ws2
-bindsym $mod+Shift+3 move container to workspace $ws3; workspace $ws3
-bindsym $mod+Shift+4 move container to workspace $ws4; workspace $ws4
-bindsym $mod+Shift+5 move container to workspace $ws5; workspace $ws5
-bindsym $mod+Shift+6 move container to workspace $ws6; workspace $ws6
-bindsym $mod+Shift+7 move container to workspace $ws7; workspace $ws7
-bindsym $mod+Shift+8 move container to workspace $ws8; workspace $ws8
-bindsym $mod+Shift+9 move container to workspace $ws9; workspace $ws9
+bindsym $mod+z --release exec --no-startup-id maim -s /dev/stdout | xclip -selection clipboard -t image/png
+bindsym $mod+Shift+z exec --no-startup-id maim -s "$HOME/Pictures/screenshot-$(date +%F_%T).png" && notify-send "Screenshot region saved to ${HOME}/Pictures"
+bindsym $mod+Ctrl+z exec --no-startup-id maim "$HOME/Pictures/screenshot-$(date +%F_%T).png" && notify-send "Screenshot saved to ${HOME}/Pictures"
 
-##########################################
-#                Borders
-##########################################
-# Configure border style <normal|1pixel|pixel xx|none|pixel>
-new_window pixel 2
-new_float normal
+bindsym $mod+space exec ~/.scripts/winmenu
+bindsym $mod+p exec ~/.scripts/open_paper
+bindsym $mod+o exec ~/.scripts/open_recent_file
+bindsym $mod+Ctrl+s exec ~/.scripts/search_google_scholar
+bindsym $mod+Ctrl+r exec ~/.scripts/search_github
+bindsym $mod+Ctrl+y exec ~/.scripts/search_youtube
+bindsym $mod+Ctrl+p exec ~/.scripts/open_paper_no_annotations
+bindsym $mod+Ctrl+o exec ~/.scripts/open_file
+bindsym $mod+Ctrl+e exec ~/.scripts/select_emoji
+bindsym $mod+Ctrl+space exec ~/.scripts/enter_snippet
+# 0x2C is comma
+bindsym $mod+0x2C exec --no-startup-id ~/.scripts/rename_i3_container
 
-# Hide borders
-hide_edge_borders none
-
-# configure window title
-title_align center
-# for_window [class=".*"] title_format "%title"
-
-##########################################
-#                Fonts
-##########################################
-# Font for window titles. Will also be used by the bar unless a different font
-# is used in the bar {} block below.
-set $font_family Cascadia Code PL
-font pango:$font_family 6
+# Restarting ...
+bindsym $mod+Shift+d --release exec "killall dunst; exec notify-send 'restart dunst'"
+bindsym $mod+Ctrl+x --release exec --no-startup-id xkill
 
 ##########################################
 #                Colours
@@ -197,28 +244,6 @@ set_from_resource $term_color13    color13
 set_from_resource $term_color14    color14
 set_from_resource $term_color15    color15
 
-# Colours from Gruvbox (Dark mode palette)
-# https://github.com/morhetz/gruvbox#dark-mode-1
-set $red #cc241d
-set $green #98971a
-set $yellow #d79921
-set $blue #458588
-set $purple #b16286
-set $aqua #689d68
-set $grey #928374
-set $darkgray #1d2021
-set $bg #282828
-set $bg0 #282828
-set $fg4 #a89984
-
-set $bright_red: #fb4934
-set $bright_green: #b8bb26
-set $bright_yellow: #fabd2f
-set $bright_blue: #83a598
-set $bright_purple: #d3869b
-set $bright_aqua: #8ec07c
-set $bright_orange: #fe8019
-
 # Theme colors
 # class                 border     backgr     text       indic.      child_border
 client.focused          $yellow    $yellow    $darkgray  $aqua       $yellow
@@ -243,37 +268,6 @@ bindsym $mod+Shift+0 gaps inner current set 10; gaps outer current set -2
 # Disable gaps and borders when there's only one container
 smart_gaps on
 smart_borders on
-
-##########################################
-#          External Keybindings
-##########################################
-bindsym $mod+Return exec $hidpi_scale kitty
-bindsym $mod+d exec --no-startup-id $hidpi_scale dmenu_run
-bindsym $mod+Shift+Return exec $hidpi_scale pcmanfm
-bindsym $mod+Ctrl+v exec CM_OUTPUT_CLIP=1 clipmenu
-
-# Taking Screenshots
-bindsym $mod+z --release exec --no-startup-id maim -s /dev/stdout | xclip -selection clipboard -t image/png
-bindsym $mod+Shift+z exec --no-startup-id maim -s "$HOME/Pictures/screenshot-$(date +%F_%T).png" && notify-send "Screenshot region saved to ${HOME}/Pictures"
-bindsym $mod+Ctrl+z exec --no-startup-id maim "$HOME/Pictures/screenshot-$(date +%F_%T).png" && notify-send "Screenshot saved to ${HOME}/Pictures"
-
-# Custom scripts
-bindsym $mod+space exec ~/.scripts/winmenu
-bindsym $mod+p exec ~/.scripts/open_paper
-bindsym $mod+o exec ~/.scripts/open_recent_file
-bindsym $mod+Ctrl+s exec ~/.scripts/search_google_scholar
-bindsym $mod+Ctrl+r exec ~/.scripts/search_github
-bindsym $mod+Ctrl+y exec ~/.scripts/search_youtube
-bindsym $mod+Ctrl+p exec ~/.scripts/open_paper_no_annotations
-bindsym $mod+Ctrl+o exec ~/.scripts/open_file
-bindsym $mod+Ctrl+e exec ~/.scripts/select_emoji
-bindsym $mod+Ctrl+space exec ~/.scripts/enter_snippet
-# 0x2C is comma
-bindsym $mod+0x2C exec --no-startup-id ~/.scripts/rename_i3_container
-
-# Restarting ...
-bindsym $mod+Shift+d --release exec "killall dunst; exec notify-send 'restart dunst'"
-bindsym $mod+Ctrl+x --release exec --no-startup-id xkill
 
 ##########################################
 #         Application-specific
@@ -306,8 +300,8 @@ for_window [class="qt5ct"] floating enable sticky enable border normal
 for_window [class="Nitrogen"] floating enable sticky enable border normal
 for_window [class="Pavucontrol"] floating enable
 for_window [class="Thunar"] floating enable resize set 50 ppt 50 ppt, move absolute position center
-for_window [title="Zoom - Free Account"] floating enable
-for_window [class="zoom"] floating enable
+for_window [class="(?i)zoom"] floating enable
+for_window [class="join\?action=join"] floating enable
 for_window [title="UxPlay"] floating enable
 for_window [class="Matplotlib"] floating enable
 for_window [class="fzfmenu"] floating enable resize set 1500 px 750px, move position center
@@ -319,11 +313,6 @@ for_window [class="Mathpix Snipping Tool"] floating enable
 
 # switch to workspace with urgent window automatically
 for_window [urgent=latest] focus
-
-##########################################
-#                  etc
-##########################################
-floating_maximum_size 2560 x 1440
 
 ##########################################
 #         Start-up Applications
