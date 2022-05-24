@@ -244,6 +244,11 @@
         "when": "terminalFocus && terminalHasBeenCreated || terminalFocus && terminalProcessSupported"
     },
     {
+        "key": "shift+insert",
+        "command": "-workbench.action.terminal.pasteSelection",
+        "when": "terminalFocus && terminalHasBeenCreated || terminalFocus && terminalProcessSupported"
+    },
+    {
         "key": "ctrl+shift+v",
         "command": "-notebook.cell.pasteAbove",
         "when": "notebookEditorFocused && !inputFocus"

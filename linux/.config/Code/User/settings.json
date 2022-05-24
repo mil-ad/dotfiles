@@ -210,4 +210,5 @@
     "markdown.marp.chromePath": "/usr/bin/brave",
     "breadcrumbs.enabled": false,
     "git.confirmSync": false,
+    "terminal.integrated.enableMultiLinePasteWarning": false,
 }
