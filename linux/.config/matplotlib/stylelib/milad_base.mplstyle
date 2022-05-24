@@ -5,7 +5,7 @@
 # You can combine styles e.g.
 # plt.style.use(["milad_base", "milad_dark"])
 
-#figure.dpi: 600
+# figure.dpi: 600
 figure.figsize: 6.4, 4.8
 figure.constrained_layout.use: True
 # figure.constrained_layout.h_pad:  0.04167  # Padding around axes objects. Float representing
