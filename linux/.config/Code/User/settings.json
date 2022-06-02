@@ -1,7 +1,7 @@
 {
     "telemetry.telemetryLevel": "off",
     "update.mode": "manual",
-    "editor.fontFamily": " 'Cascadia Code', 'Vazirmatn UI NL', 'JetBrains Mono Medium', 'IBM Plex Mono Medium', 'Iosevka Nerd Font Mono', 'JetBrainsMono-Medium', 'Noto Color Emoji', 'Material Icons'",
+    "editor.fontFamily": " 'Cascadia Code', 'Noto Color Emoji', 'Vazirmatn UI NL', 'JetBrains Mono Medium', 'IBM Plex Mono Medium', 'Iosevka Nerd Font Mono', 'JetBrainsMono-Medium', 'Material Icons'",
     "editor.fontSize": 18,
     // "editor.fontWeight": "bold",
     "editor.tabSize": 4,
