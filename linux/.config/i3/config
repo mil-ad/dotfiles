@@ -174,7 +174,7 @@ mode "resize" {
 bindsym $mod+0 mode "$mode_system"
 set $mode_system (l)ock, log(o)ut, (s)uspend, (r)eboot, (Shift+s)hutdown
 mode "$mode_system" {
-    bindsym l exec --no-startup-id blurlock, mode "default"
+    bindsym l exec --no-startup-id miladlock, mode "default"
     bindsym s exec --no-startup-id systemctl suspend, mode "default"
     bindsym o exec --no-startup-id i3-msg exit, mode "default"
     bindsym r exec --no-startup-id systemctl reboot, mode "default"
@@ -320,7 +320,7 @@ for_window [urgent=latest] focus
 exec --no-startup-id seafile-applet
 exec --no-startup-id caffeine
 exec --no-startup-id redshift -l 51.75:-1.2592
-exec --no-startup-id xss-lock --transfer-sleep-lock -- blurlock
+exec --no-startup-id xss-lock --transfer-sleep-lock -- miladlock
 exec --no-startup-id nitrogen --restore
 exec --no-startup-id dunst -config ~/.config/dunst/dunstrc
 exec_always --no-startup-id ~/.scripts/kill_until_dead polybar && polybar milad
