@@ -45,20 +45,12 @@
     --faded_orange: #af3a03;
 }
 
-#urlbar:not([open]) #urlbar-input-container {
+tab[selected="true"]>.tab-stack>.tab-background {
+    background: var(--dark1) !important;
     border-color: var(--faded_yellow) !important;
-    /*     border:solid; */
-    /*     border-width: px !important;; */
 }
 
-tab[selected="true"] > .tab-stack > .tab-background {
-    background:  var(--dark1)!important;
-    border-color: var(--faded_yellow) !important;
-    /*     border: solid; */
-    /*     border-width: 2px; */
-}
-
-tab:not([selected="true"]) > .tab-stack > .tab-background {
+tab:not([selected="true"])>.tab-stack>.tab-background {
     background-color: var(--dark0_hard) !important;
     border-color: var(--dark1) !important;
     border: solid;
@@ -67,26 +59,35 @@ tab:not([selected="true"]) > .tab-stack > .tab-background {
 
 .tab-text {
     font-family: "Iosevka" !important;
-    font-size: 0.875rem; /* 14px */
+    font-size: 0.875rem;
+    /* 14px */
 }
-/* 
-.tab {
-    margin: 5px;
-} */
 
 #tabbrowser-tabs {
     background: var(--dark0_hard) !important;
 }
 
-/* #tracking-protection-icon .urlbar-icon, search{
-    color:var(--dark4) !important;;
-}
-
-#identity-icon {
-     color:var(--neutral_green) !important;;
-}
- */
-
-.verifiedDomain {
+/* TODO: gets applied to search icon of a verified domain too */
+/* .verifiedDomain {
     color: var(--faded_green) !important;
+} */
+
+#urlbar-background {
+    background-color: var(--dark0) !important;
+    border: solid !important;
+    border-width: 1px !important;
+    border-color: var(--faded_yellow) !important;
 }
+
+#urlbar:not([focused="true"]) #urlbar-background {}
+
+#urlbar[focused="true"] #urlbar-background {
+    border-width: 2px !important;
+    outline-color: var(--faded_yellow) !important;
+}
+
+/* @-moz-document url("about:home"), url("about:newtab"), url(about:privatebrowsing) {
+    .logo-and-wordmark {
+        display: none !important;
+    }
+} */
