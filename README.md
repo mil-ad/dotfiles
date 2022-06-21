@@ -1,4 +1,10 @@
-# Milad's dotfiles 🐣
+<p align="center">
+  <b>There's no place like ~/</b>
+</p>
+
+---
+
+## Milad's dotfiles 🐣
 
 My configuration files for Linux and macOS.
 
