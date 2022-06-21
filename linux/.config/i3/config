@@ -310,6 +310,7 @@ for_window [class="Anki"] floating enable
 for_window [class="transmission-gtk"] floating enable
 for_window [class="matplotlib"] floating enable
 for_window [class="Mathpix Snipping Tool"] floating enable
+for_window [title="Picture-in-Picture"] sticky enable border none
 
 # switch to workspace with urgent window automatically
 for_window [urgent=latest] focus
