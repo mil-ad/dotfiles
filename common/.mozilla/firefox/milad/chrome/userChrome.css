@@ -45,12 +45,14 @@
     --faded_orange: #af3a03;
 }
 
-tab[selected="true"]>.tab-stack>.tab-background {
+tab[selected="true"] > .tab-stack > .tab-background {
     background: var(--dark1) !important;
     border-color: var(--faded_yellow) !important;
+    border: solid;
+    border-width: 1px;
 }
 
-tab:not([selected="true"])>.tab-stack>.tab-background {
+tab:not([selected="true"]) > .tab-stack > .tab-background {
     background-color: var(--dark0_hard) !important;
     border-color: var(--dark1) !important;
     border: solid;
@@ -91,3 +93,10 @@ tab:not([selected="true"])>.tab-stack>.tab-background {
         display: none !important;
     }
 } */
+
+#nav-bar {
+    background-color: var(--dark0_hard) !important;
+}
+
+/* Remove Minimize, Maximize and Close buttons */
+.titlebar-buttonbox-container{ display:none }
