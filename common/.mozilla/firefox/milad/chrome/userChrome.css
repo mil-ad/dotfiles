@@ -100,3 +100,9 @@ tab:not([selected="true"]) > .tab-stack > .tab-background {
 
 /* Remove Minimize, Maximize and Close buttons */
 .titlebar-buttonbox-container{ display:none }
+
+.urlbarView-row[selected=""] > .urlbarView-row-inner {
+  background-color: var(--faded_yellow) !important;
+}
+
+#back-button, #forward-button { display:none!important; }
