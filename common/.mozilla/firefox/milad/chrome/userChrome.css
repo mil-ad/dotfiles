@@ -65,9 +65,11 @@ tab:not([selected="true"]) > .tab-stack > .tab-background {
     /* 14px */
 }
 
-#tabbrowser-tabs {
+#tabbrowser-tabs, #titlebar {
     background: var(--dark0_hard) !important;
 }
+
+/* #titlebar */
 
 /* TODO: gets applied to search icon of a verified domain too */
 /* .verifiedDomain {
