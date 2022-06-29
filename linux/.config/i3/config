@@ -174,7 +174,7 @@ mode "resize" {
 bindsym $mod+0 mode "$mode_system"
 set $mode_system (l)ock, log(o)ut, (s)uspend, (r)eboot, (Shift+s)hutdown
 mode "$mode_system" {
-    bindsym l exec --no-startup-id miladlock, mode "default"
+    bindsym l exec --no-startup-id ~/.local/bin/betterblurlock, mode "default"
     bindsym s exec --no-startup-id systemctl suspend, mode "default"
     bindsym o exec --no-startup-id i3-msg exit, mode "default"
     bindsym r exec --no-startup-id systemctl reboot, mode "default"
@@ -197,14 +197,14 @@ bindsym $mod+z --release exec --no-startup-id maim -s /dev/stdout | xclip -selec
 bindsym $mod+Shift+z exec --no-startup-id maim -s "$HOME/Pictures/screenshot-$(date +%F_%T).png" && notify-send "Screenshot region saved to ${HOME}/Pictures"
 bindsym $mod+Ctrl+z exec --no-startup-id maim "$HOME/Pictures/screenshot-$(date +%F_%T).png" && notify-send "Screenshot saved to ${HOME}/Pictures"
 
-bindsym $mod+space exec ~/.scripts/winmenu
+bindsym $mod+space exec $HOME/.local/bin/winmenu
 bindsym $mod+p exec ~/.scripts/open_paper
-bindsym $mod+o exec ~/.scripts/open_recent_file
+bindsym $mod+o exec $HOME/.local/bin/openrecentfile
 bindsym $mod+Ctrl+s exec ~/.scripts/search_google_scholar
 bindsym $mod+Ctrl+r exec ~/.scripts/search_github
 bindsym $mod+Ctrl+y exec ~/.scripts/search_youtube
 bindsym $mod+Ctrl+p exec ~/.scripts/open_paper_no_annotations
-bindsym $mod+Ctrl+o exec ~/.scripts/open_file
+bindsym $mod+Ctrl+o exec $HOME/.local/bin/openfile
 bindsym $mod+Ctrl+e exec ~/.scripts/select_emoji
 bindsym $mod+Ctrl+space exec ~/.scripts/enter_snippet
 # 0x2C is comma
@@ -321,7 +321,7 @@ for_window [urgent=latest] focus
 exec --no-startup-id seafile-applet
 exec --no-startup-id caffeine
 exec --no-startup-id redshift -l 51.75:-1.2592
-exec --no-startup-id xss-lock --transfer-sleep-lock -- miladlock
+exec --no-startup-id xss-lock --transfer-sleep-lock -- ~/.local/bin/betterblurlock
 exec --no-startup-id nitrogen --restore
 exec --no-startup-id dunst -config ~/.config/dunst/dunstrc
 exec_always --no-startup-id ~/.scripts/kill_until_dead polybar && polybar milad
