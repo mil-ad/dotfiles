@@ -5,7 +5,6 @@
 # You can combine styles e.g.
 # plt.style.use(["milad_base", "milad_dark"])
 
-# figure.dpi: 600
 figure.figsize: 6.4, 4.8
 figure.constrained_layout.use: True
 # figure.constrained_layout.h_pad:  0.04167  # Padding around axes objects. Float representing
@@ -15,15 +14,19 @@ figure.constrained_layout.use: True
 
 savefig.transparent: False
 savefig.edgecolor: white
+savefig.dpi: 600
 
 # Bang Wong's colourblind-friendly palette
 # I have modified thqe order from ['000000', 'E69F00', '56B4E9', '009E73', 'F0E442', '0072B2', 'D55E00', 'CC79A7']
 # axes.prop_cycle: cycler('color', ['0072B2', 'D55E00', 'CC79A7', '009E73', 'E69F00', '56B4E9', '000000', 'F0E442', ])
 axes.prop_cycle: cycler('color', ["458588", "d65d0e", "cc241d", "98971a", "d79921", "b16286", "689d6a",])
-axes.facecolor: fbf1c7
+axes.facecolor: f9f5d7
 axes.grid: true
 axes.spines.right: False
 axes.spines.top: False
+# axes.axisbelow: False
+# axes.edgecolor: black   # axes edge color
+# axes.labelcolor: 1d2021
 
 #grid.color:     b0b0b0  # grid color
 grid.linestyle: dotted      # solid
@@ -37,6 +40,15 @@ font.family: monospace
 font.serif: Computer Modern Roman
 font.sans-serif: TT Norms Pro
 font.monospace: Cascadia Code
+
+# xtick.color: .15
+# xtick.direction: out
+# xtick.labelsize: 10
+# xtick.major.pad: 7
+# xtick.major.size: 0
+# xtick.major.width: 1
+# xtick.minor.size: 0
+# xtick.minor.width: .5
 
 #### MATPLOTLIBRC FORMAT
 
