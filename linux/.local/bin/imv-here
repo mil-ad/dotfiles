@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+
+image="$1"
+
+shopt -s nullglob
+myarray=("$(dirname "$image")"/*)
+shopt -u nullglob
+
+imv "${myarray[@]}" -n "$image"

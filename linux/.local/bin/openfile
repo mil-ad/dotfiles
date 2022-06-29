@@ -1,0 +1,3 @@
+#/bin/bash
+
+xdg-open "$(fd --type f --no-ignore-vcs --follow --exclude miniconda3 | $HOME/.local/bin/fzfmenu)"

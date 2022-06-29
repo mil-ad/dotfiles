@@ -1,0 +1,10 @@
+#!/usr/bin/env sh
+
+# requires: shotgun, imagemagick
+
+# The reason I'm also using this in the call to convert instead of 1000% is that
+# sometimes the convert pipeline doesn't preserve resolution and the final
+# output has slightly different resolution compared to the input.
+width_height=$(xdpyinfo | awk '/dimensions/ {print $2}')
+
+shotgun - | convert - -scale 10% -blur 0x2.5 -resize "$width_height" RGB:- | i3lock --nofork --raw "$width_height":rgb --image /dev/stdin
