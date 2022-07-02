@@ -244,14 +244,14 @@ client.background           #2B2C2B
 ##########################################
 
 # Open specific applications on specific workspaces
-#assign [class="Code"] $ws2
-#assign [class="qutebrowser"] $ws3
-#assign [class="Brave"] $ws3
-#assign [class="zoom"] $ws6
-#assign [class="Slack"] $ws4
-assign [class="Telegram"] $ws4
-assign [class="Signal"] $ws4
-#assign [class="Zathura"] $ws7
+#assign [class="Code"] 2
+#assign [class="qutebrowser"] 3
+#assign [class="Brave"] 3
+#assign [class="zoom"] 6
+#assign [class="Slack"] 4
+assign [class="Telegram"] 4
+assign [class="Signal"] 4
+#assign [class="Zathura"] 7
 #for_window [class="Zathura"] focus
 #for_window [class="Zathura" title=".*Papers.*"] move container to workspace 7
 
