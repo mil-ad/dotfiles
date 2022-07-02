@@ -14,3 +14,4 @@ set sandbox none
 set adjust-open width
 set recolor-keephue true
 set synctex true
+set window-title-basename true
