@@ -23,7 +23,7 @@ case $(hostnamectl --static) in
 		;;
 
 	milad-ryzen)
-		xrandr --output DP-0 --mode 3840x2160 --pos 0x0 --primary --scale 1x1 --output HDMI-0 --off
+		xrandr --output DP-0 --mode 3840x2160 --pos 0x80 --primary --scale 1x1 --output HDMI-0 --mode 1920x1080 --pos 3840x0 --rotate left --scale 1.5x1.5
 		;;
 esac
 
