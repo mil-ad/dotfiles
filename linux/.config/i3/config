@@ -23,10 +23,21 @@ hide_edge_borders none
 title_align center
 # for_window [class=".*"] title_format "%title"
 
+# Disable gaps and borders when there's only one container
+smart_gaps on
+smart_borders on
+gaps inner 14
+gaps outer -2
+# bottom gap could be useful when using floating polybar
+# gaps bottom 35
+
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
 set $font_family Cascadia Code PL
 font pango:$font_family 6
+
+# switch to workspace with urgent window automatically
+for_window [urgent=latest] focus
 
 # Colours from Gruvbox (Dark mode palette)
 # https://github.com/morhetz/gruvbox#dark-mode-1
@@ -144,6 +155,11 @@ bindsym $mod+Tab scratchpad show
 bindsym $mod+Ctrl+Right workspace next
 bindsym $mod+Ctrl+Left workspace prev
 
+# i3 gaps
+bindsym $mod+Shift+plus gaps inner current plus 5; gaps outer current plus 5
+bindsym $mod+Shift+minus gaps inner current minus 5; gaps outer current minus 5
+bindsym $mod+Shift+0 gaps inner current set 10; gaps outer current set -2
+
 # Resize window (you can also use the mouse for that)
 bindsym $mod+r mode "resize"
 mode "resize" {
@@ -156,7 +172,10 @@ mode "resize" {
     bindsym Escape mode "default"
 }
 
-# External Keybindings
+##########################################
+#         External Keybindings
+##########################################
+
 bindsym $mod+Return exec $hidpi_scale kitty
 bindsym $mod+d exec --no-startup-id $hidpi_scale dmenu_run
 bindsym $mod+Shift+Return exec $hidpi_scale pcmanfm
@@ -167,26 +186,23 @@ bindsym $mod+Shift+z exec --no-startup-id maim -s "$HOME/Pictures/screenshot-$(d
 bindsym $mod+Ctrl+z exec --no-startup-id maim "$HOME/Pictures/screenshot-$(date +%F_%T).png" && notify-send "Screenshot saved to ${HOME}/Pictures"
 
 bindsym $mod+0 exec ~/.local/bin/sysact
-bindsym $mod+p exec ~/.scripts/open_paper
-bindsym $mod+o exec $HOME/.local/bin/openrecentfile
 bindsym $mod+space exec $HOME/.local/bin/winmenu
-bindsym $mod+Ctrl+s exec ~/.scripts/search_google_scholar
+bindsym $mod+o exec $HOME/.local/bin/openrecentfile
+bindsym $mod+Ctrl+o exec $HOME/.local/bin/openfile
+bindsym $mod+p exec ~/.scripts/open_paper
 bindsym $mod+Ctrl+r exec  ~/.local/bin/open_github_repo
+bindsym $mod+Ctrl+s exec ~/.scripts/search_google_scholar
 bindsym $mod+Ctrl+y exec ~/.scripts/search_youtube
 bindsym $mod+Ctrl+p exec ~/.scripts/open_paper_no_annotations
-bindsym $mod+Ctrl+o exec $HOME/.local/bin/openfile
 bindsym $mod+Ctrl+e exec ~/.scripts/enter_emoji
 bindsym $mod+Ctrl+space exec ~/.scripts/enter_snippet
 # 0x2C is comma
 bindsym $mod+0x2C exec --no-startup-id ~/.scripts/rename_i3_container
 
-# Restarting ...
-bindsym $mod+Shift+d --release exec "killall dunst; exec notify-send 'restart dunst'"
-bindsym $mod+Ctrl+x --release exec --no-startup-id xkill
-
 ##########################################
 #                Colours
 ##########################################
+
 # Color palette used for the terminal (~/.Xresources file)
 # Colors are gathered based on the documentation:
 # https://i3wm.org/docs/userguide.html#xresources
@@ -224,24 +240,9 @@ client.placeholder      #000000 #0c0c0c #ffffff #000000
 client.background       #2B2C2B
 
 ##########################################
-#                i3-gaps
-##########################################
-gaps inner 14
-gaps outer -2
-# bottom gap could be useful when using floating polybar
-# gaps bottom 35
-
-bindsym $mod+Shift+plus gaps inner current plus 5; gaps outer current plus 5
-bindsym $mod+Shift+minus gaps inner current minus 5; gaps outer current minus 5
-bindsym $mod+Shift+0 gaps inner current set 10; gaps outer current set -2
-
-# Disable gaps and borders when there's only one container
-smart_gaps on
-smart_borders on
-
-##########################################
 #         Application-specific
 ##########################################
+
 # Open specific applications on specific workspaces
 #assign [class="Code"] $ws2
 #assign [class="qutebrowser"] $ws3
@@ -281,9 +282,6 @@ for_window [class="transmission-gtk"] floating enable
 for_window [class="matplotlib"] floating enable
 for_window [class="Mathpix Snipping Tool"] floating enable
 for_window [title="Picture-in-Picture"] sticky enable border none
-
-# switch to workspace with urgent window automatically
-for_window [urgent=latest] focus
 
 ##########################################
 #         Start-up Applications

@@ -432,14 +432,14 @@ margin-bottom = 5
 ; menu-0-2-exec = caffeine kill
 
 
-[module/caffeine]
-type = custom/script
-exec = /home/milad/repos/mil-ad/scripts/caffeine_status
-click-left = /home/milad/repos/mil-ad/scripts/caffeine_toggle
-; exec-if = pgrep -f caffeine-ng
-interval = 1
-tail = 1
-format-padding = 2
+; [module/caffeine]
+; type = custom/script
+; exec = /home/milad/repos/mil-ad/scripts/caffeine_status
+; click-left = /home/milad/repos/mil-ad/scripts/caffeine_toggle
+; ; exec-if = pgrep -f caffeine-ng
+; interval = 1
+; tail = 1
+; format-padding = 2
 
 [module/bluetoothctl]
 type = custom/script
@@ -454,3 +454,13 @@ exec = ~/.scripts/wireguard_polybar
 tail = false
 interval = 1
 click-left = ~/.scripts/wireguard_polybar --toggle &
+
+[module/caffeine]
+type = custom/ipc
+hook-0 = echo off 
+hook-1 = echo on 
+click-left = /usr/local/bin/caffeine
+initial = 1
+format-foreground = ${color.background}
+format-background = ${color.magenta}
+label-foreground-font = 2
