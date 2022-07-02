@@ -1,6 +1,8 @@
 channels:
+  - conda-forge
   - defaults
 ssl_verify: true
 
 changeps1: false
 auto_activate_base: false
+channel_priority: strict
