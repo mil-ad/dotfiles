@@ -252,7 +252,7 @@ assign [class="Telegram"] $ws4
 assign [class="Signal"] $ws4
 #assign [class="Zathura"] $ws7
 #for_window [class="Zathura"] focus
-#for_window [class="Zathura" title=".*Papers.*"] move container to workspace $ws7
+#for_window [class="Zathura" title=".*Papers.*"] move container to workspace 7
 
 # Open specific applications in specific layouts
 for_window [title="Telegram"] layout tabbed
