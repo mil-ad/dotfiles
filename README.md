@@ -1,9 +1,3 @@
-<p align="center">
-  <b>There's no place like ~/</b>
-</p>
-
----
-
 ## Milad's dotfiles 🐣
 
 My configuration files for Linux and macOS.
@@ -18,4 +12,4 @@ $ cd ~/.dotfiles
 $ stow common linux
 ```
 
-On a fresh install you'd probably want to to run `install` instead of the `stow` step above as the script also sets up tools like `antigen`, `vimplug`, etc.
+On a fresh install you'd probably want to run `install` instead of the `stow` step above as the script also sets up tools like `antigen`, `vimplug`, etc.
