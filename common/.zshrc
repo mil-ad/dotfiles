@@ -4,8 +4,8 @@ antigen use oh-my-zsh
 
 antigen bundle wd
 antigen bundle colored-man-pages
-antigen bundle pip
-antigen bundle docker
+# antigen bundle pip
+#antigen bundle docker
 antigen bundle zsh-users/zsh-completions
 
 antigen apply
@@ -17,4 +17,3 @@ source ~/.dotfiles/exports
 source ~/.dotfiles/fzf
 
 [ -e $HOME/.zshrc_local ] && source $HOME/.zshrc_local
-
