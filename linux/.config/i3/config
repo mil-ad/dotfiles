@@ -170,24 +170,7 @@ mode "resize" {
     bindsym Escape mode "default"
 }
 
-# Set shut down, restart and locking features
-bindsym $mod+0 mode "$mode_system"
-set $mode_system (l)ock, log(o)ut, (s)uspend, (r)eboot, (Shift+s)hutdown
-mode "$mode_system" {
-    bindsym l exec --no-startup-id ~/.local/bin/betterblurlock, mode "default"
-    bindsym s exec --no-startup-id systemctl suspend, mode "default"
-    bindsym o exec --no-startup-id i3-msg exit, mode "default"
-    bindsym r exec --no-startup-id systemctl reboot, mode "default"
-    bindsym Shift+s exec --no-startup-id systemctl poweroff, mode "default"
-
-    # exit system mode: "Enter" or "Escape"
-    bindsym Return mode "default"
-    bindsym Escape mode "default"
-}
-
-
 # External Keybindings
-
 bindsym $mod+Return exec $hidpi_scale kitty
 bindsym $mod+d exec --no-startup-id $hidpi_scale dmenu_run
 bindsym $mod+Shift+Return exec $hidpi_scale pcmanfm
@@ -197,9 +180,10 @@ bindsym $mod+z --release exec --no-startup-id maim -s /dev/stdout | xclip -selec
 bindsym $mod+Shift+z exec --no-startup-id maim -s "$HOME/Pictures/screenshot-$(date +%F_%T).png" && notify-send "Screenshot region saved to ${HOME}/Pictures"
 bindsym $mod+Ctrl+z exec --no-startup-id maim "$HOME/Pictures/screenshot-$(date +%F_%T).png" && notify-send "Screenshot saved to ${HOME}/Pictures"
 
-bindsym $mod+space exec $HOME/.local/bin/winmenu
+bindsym $mod+0 exec ~/.local/bin/sysact
 bindsym $mod+p exec ~/.scripts/open_paper
 bindsym $mod+o exec $HOME/.local/bin/openrecentfile
+bindsym $mod+space exec $HOME/.local/bin/winmenu
 bindsym $mod+Ctrl+s exec ~/.scripts/search_google_scholar
 bindsym $mod+Ctrl+r exec ~/.scripts/search_github
 bindsym $mod+Ctrl+y exec ~/.scripts/search_youtube
