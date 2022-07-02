@@ -1,15 +1,15 @@
 ## Milad's dotfiles 🐣
 
-My configuration files for Linux and macOS.
+My configuration files for Linux (and macOS).
 
 ## Usage
 
-Clone this repository into `~/.dotfiles` and create the symbolic links using [GNU Stow](https://www.gnu.org/software/stow/):
+Clone this repository into `~/.dotfiles` and run `install` script which creates symbolic links using [Stow](https://www.gnu.org/software/stow/):
 
-```shell
-$ git clone https://github.com/mil-ad/dotfiles ~/.dotfiles
+```
+$ git clone git@github.com:mil-ad/dotfiles.git ~/.dotfiles
 $ cd ~/.dotfiles
-$ stow common linux
+$ ./install
 ```
 
-On a fresh install you'd probably want to run `install` instead of the `stow` step above as the script also sets up tools like `antigen`, `vimplug`, etc.
+On a fresh install installer also sets up tools like `antigen`, `vimplug`, etc.
