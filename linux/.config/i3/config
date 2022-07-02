@@ -188,6 +188,7 @@ bindsym $mod+Ctrl+z exec --no-startup-id maim "$HOME/Pictures/screenshot-$(date 
 bindsym $mod+0 exec ~/.local/bin/sysact
 bindsym $mod+space exec $HOME/.local/bin/winmenu
 bindsym $mod+o exec $HOME/.local/bin/openrecentfile
+bindsym $mod+i exec $HOME/.local/bin/search
 bindsym $mod+Ctrl+o exec $HOME/.local/bin/openfile
 bindsym $mod+p exec ~/.scripts/open_paper
 bindsym $mod+Ctrl+r exec  ~/.local/bin/open_github_repo
