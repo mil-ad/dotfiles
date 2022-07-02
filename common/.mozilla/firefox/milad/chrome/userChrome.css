@@ -107,4 +107,6 @@ tab:not([selected="true"]) > .tab-stack > .tab-background {
   background-color: var(--faded_yellow) !important;
 }
 
-#back-button, #forward-button { display:none!important; }
+/*  #back-button,
+ #forward-button */
+#home-button { display:none!important; }
