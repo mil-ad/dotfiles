@@ -1,0 +1,15 @@
+#!/bin/bash
+
+engine=$(printf 'YouTube\nGoogle Scholar\nLetterboxd\nAmazon\neBay' | dmenu)
+
+[[ $engine ]] && query=$(echo '' | dmenu -l 0 -p "🔍 $engine")
+
+case $engine in
+    "YouTube") URL="https://www.youtube.com/results?search_query=${query}" ;;
+    "Google Scholar") URL="https://scholar.google.com/scholar?q=${query}" ;;
+    "Letterboxd") URL="https://letterboxd.com/search/${query}" ;;
+    "Amazon") URL="https://www.amazon.co.uk/s?k=${query}" ;;
+    "eBay") URL="https://www.ebay.co.uk/sch/i.html?_nkw=${query}" ;;
+esac
+
+[[ $query ]] && xdg-open "${URL}" && i3-msg --quiet [urgent=latest] focus
