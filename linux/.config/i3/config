@@ -3,15 +3,7 @@ set $mod Mod4
 
 set $hidpi_scale GDK_SCALE=2 GDK_DPI_SCALE=0.5 QT_AUTO_SCREEN_SCALE_FACTOR=1
 
-set $ws1 1
-set $ws2 2
-set $ws3 3
-set $ws4 4
-set $ws5 5
-set $ws6 6
-set $ws7 7
-set $ws8 8
-set $ws9 9
+workspace 9 output HDMI-0
 
 # Use Mouse+$mod to drag floating windows
 floating_modifier $mod
