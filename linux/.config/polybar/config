@@ -72,7 +72,7 @@ font-3 = Material Icons:style=Regular:size=15
 
 modules-left = i3
 modules-center = date
-modules-right = bluetoothctl wireguard wireless-network wired-network pulseaudio xkeyboard
+modules-right = bluetoothctl wireguard caffeine wireless-network wired-network pulseaudio xkeyboard
 
 tray-position = right
 tray-padding = 0
@@ -457,10 +457,8 @@ click-left = ~/.scripts/wireguard_polybar --toggle &
 
 [module/caffeine]
 type = custom/ipc
-hook-0 = echo off 
-hook-1 = echo on 
-click-left = /usr/local/bin/caffeine
-initial = 1
-format-foreground = ${color.background}
-format-background = ${color.magenta}
-label-foreground-font = 2
+hook-0 = echo "%{F#928374}杖"
+hook-1 = echo "%{u#55aa55}%{F#fabd2f}盛"
+hook-2 = [[ $(xset q) =~ "DPMS is Disabled" ]] &&  polybar-msg action caffeine hook 0 ||  polybar-msg action caffeine hook 1
+click-left = ~/.scripts/toggle_caffeine
+initial = 3 ; 1-based index, 0 means no hooks runs at launch
