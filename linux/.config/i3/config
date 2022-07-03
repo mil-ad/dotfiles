@@ -288,7 +288,6 @@ for_window [title="Picture-in-Picture"] sticky enable border none
 #         Start-up Applications
 ##########################################
 exec --no-startup-id seafile-applet
-exec --no-startup-id caffeine
 exec --no-startup-id redshift -l 51.75:-1.2592
 exec --no-startup-id xss-lock --transfer-sleep-lock -- ~/.local/bin/betterblurlock
 exec --no-startup-id nitrogen --restore
