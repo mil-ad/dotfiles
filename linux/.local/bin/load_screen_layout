@@ -1,0 +1,12 @@
+#!/bin/env bash
+
+set -e
+
+# The idea here is to load layouts that have been exported via ARandR. These
+# usually live in ~/.screenlayout
+# ARandR's ability to save session files is super useful but unfortunately it
+# doesn't handle transformations like scaling. You'd have to manually add
+# --scale property to the file exported by arandr. NB the start-up layout is set
+# inside ~/.xinitrc
+
+~/.screenlayout/"$(ls ~/.screenlayout | cut -d "." -f1 | dmenu)".sh && sleep 5 && nitrogen --restore
