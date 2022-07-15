@@ -1,0 +1,10 @@
+#!/bin/env bash
+
+word=$(dmenu -l 0 -p "Synonyms")
+
+[[ -z $word ]] && exit 1
+	
+synonym=$(echo $word | xargs thesauromatic | dmenu)
+
+[[ -n $synonym ]] && xdotool type $synonym
+
