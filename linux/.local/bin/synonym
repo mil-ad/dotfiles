@@ -1,10 +1,15 @@
 #!/bin/env bash
 
-word=$(dmenu -l 0 -p "Synonyms")
+# requires:
+# - sdcv (https://dushistov.github.io/sdcv/)
+# - Collins Thesaurus for StarDict (http://download.huzheng.org/bigdict/)
+
+word=$(echo "" | dmenu -l 0 -p "Synonyms")
 
 [[ -z $word ]] && exit 1
-	
-synonym=$(echo $word | xargs thesauromatic | dmenu)
+
+export STARDICT_DATA_DIR="$HOME"/.local/share/sdcv_dicts
+
+synonym=$(echo $word | xargs sdcv -n -u "Collins Thesaurus (En-En)" | grep -P "^\d+\.\s" | sed -r 's/^[0-9]+. //g' | sed 's/, /\n/g' | dmenu | sed -r 's/\(.+\)//g')
 
 [[ -n $synonym ]] && xdotool type $synonym
-
