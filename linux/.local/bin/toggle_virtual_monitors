@@ -1,0 +1,12 @@
+#!/bin/env bash
+
+if [[ $(xrandr --listmonitors) =~ virt ]]
+then
+    xrandr --delmonitor DP-0-virtUp
+    xrandr --delmonitor DP-0-virtDown
+else
+    xrandr --setmonitor DP-0-virtDown 2560/470x1440/260+0+1440 DP-0
+    xrandr --setmonitor DP-0-virtUp 2560/470x1440/260+0+0 none
+fi
+
+polybar-msg cmd restart
