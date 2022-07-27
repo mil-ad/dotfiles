@@ -5,9 +5,12 @@
 # You can combine styles e.g.
 # plt.style.use(["milad_base", "milad_dark"])
 
-#figure.figsize: 6.4, 4.8 # 4:3
+# TODO: Choose THE figure szize
+# figure.figsize: 6.4, 4.8 # 4:3
 # figure.figsize: 6.4, 3.6 # 16:8
-figure.figsize: 6.4, 3.9555 # 1.618:1
+# figure.figsize: 6.4, 3.9555 # 1.618:1
+figure.figsize: 4.5, 3.46 # from LovelyPlot
+
 figure.constrained_layout.use: True
 # figure.constrained_layout.h_pad:  0.04167  # Padding around axes objects. Float representing
 # figure.constrained_layout.w_pad:  0.04167  # inches. Default is 3/72 inches (3 points)
@@ -22,7 +25,12 @@ savefig.dpi: 600
 # I have modified thqe order from ['000000', 'E69F00', '56B4E9', '009E73', 'F0E442', '0072B2', 'D55E00', 'CC79A7']
 # axes.prop_cycle: cycler('color', ['0072B2', 'D55E00', 'CC79A7', '009E73', 'E69F00', '56B4E9', '000000', 'F0E442', ])
 axes.prop_cycle: cycler('color', ["458588", "d65d0e", "cc241d", "98971a", "d79921", "b16286", "689d6a",])
-axes.facecolor: f9f5d7
+
+# Colors from LovelyPlots
+# axes.prop_cycle : cycler('color', ["001219","005f73","0a9396","94d2bd","e9d8a6","ee9b00","ca6702","bb3e03","ae2012","9b2226"])
+
+# TODO: decide if you want this or not
+# axes.facecolor: f9f5d7
 axes.grid: true
 axes.spines.right: False
 axes.spines.top: False
@@ -42,6 +50,10 @@ font.family: monospace
 font.serif: Computer Modern Roman
 font.sans-serif: TT Norms Pro
 font.monospace: Cascadia Code
+
+# TODO: I'm currently testing this with inkscape/latex. Haven't made up my mind yet
+svg.fonttype: none
+# axes.formatter.use_mathtext: True
 
 # xtick.color: .15
 # xtick.direction: out
