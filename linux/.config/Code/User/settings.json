@@ -1,13 +1,13 @@
 {
     "telemetry.telemetryLevel": "off",
     "update.mode": "manual",
-    "editor.fontFamily": " 'Cascadia Code', 'Noto Color Emoji', 'Vazirmatn UI NL', 'JetBrains Mono Medium', 'IBM Plex Mono Medium', 'Iosevka Nerd Font Mono', 'JetBrainsMono-Medium', 'Material Icons'",
+    "editor.fontFamily": "'Cascadia Code', 'Noto Color Emoji', 'Vazirmatn UI NL', 'JetBrains Mono Medium', 'IBM Plex Mono Medium', 'Iosevka Nerd Font Mono', 'JetBrainsMono-Medium', 'Material Icons'",
+    // "editor.fontWeight": "400",
     "editor.fontSize": 18,
-    // "editor.fontWeight": "bold",
     "editor.tabSize": 4,
     "editor.mouseWheelZoom": false,
     "editor.multiCursorModifier": "ctrlCmd",
-    "editor.cursorBlinking": "phase",
+    "editor.cursorBlinking": "smooth",
     // "editor.cursorSmoothCaretAnimation": true,
     "editor.rulers": [
         80,
@@ -84,6 +84,7 @@
     "git.autofetch": true,
     "git.confirmSync": false,
     "git.openDiffOnClick": false,
+    "git.mergeEditor": true,
     "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
     "problems.decorations.enabled": false,
     "breadcrumbs.enabled": false,
@@ -213,5 +214,8 @@
         // "highlight-dodgy-characters.whitelist": "☐✔✘",
         "editor.wordWrap": "bounded",
         "editor.wordWrapColumn": 120,
+    },
+    "files.associations": {
+        "*.mplstyle": "python"
     }
 }
