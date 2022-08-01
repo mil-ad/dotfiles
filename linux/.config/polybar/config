@@ -54,10 +54,10 @@ border-size = 0
 border-color = #00000000
 
 padding-left = 0
-padding-right = 2
+padding-right = 1.5
 
-module-margin-left = 2
-module-margin-right = 2
+module-margin-left = 13px
+module-margin-right = 13px
 
 
 font-0 = CaskaydiaCove Nerd Font:style=Regular:size=15
