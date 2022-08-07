@@ -7,6 +7,7 @@ Name: Milad Gruvbox + Pop-n-Lock
 215 153  33 #d79921
 177  98 134 #b16286
 104 157 106 #689d6a
+0  0  0  #000000 black
 29 32 33 #1d2021 gruvbox_dark0_hard
 40 40 40 #282828 gruvbox_dark0
 50 48 47 #32302f gruvbox_dark0_soft
@@ -15,6 +16,7 @@ Name: Milad Gruvbox + Pop-n-Lock
 102 92 84 #665c54 gruvbox_dark3
 124 111 100 #7c6f64 gruvbox_dark4
 124 111 100 #7c6f64 gruvbox_dark4_256
+255 255 255 #ffffff white
 249 245 215 #f9f5d7 gruvbox_light0_hard
 251 241 199 #fbf1c7 gruvbox_light0
 242 229 188 #f2e5bc gruvbox_light0_soft
