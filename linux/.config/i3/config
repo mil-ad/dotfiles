@@ -185,7 +185,7 @@ bindsym $mod+Ctrl+z exec --no-startup-id maim "$HOME/Pictures/screenshot-$(date 
 
 bindsym $mod+0 exec --no-startup-id ~/.local/bin/sysact
 bindsym $mod+space exec --no-startup-id $HOME/.local/bin/winmenu
-bindsym $mod+o exec --no-startup-id $HOME/.local/bin/openrecentfile
+bindsym $mod+o exec --no-startup-id $hidpi_scale $HOME/.local/bin/openrecentfile
 bindsym $mod+i exec --no-startup-id $HOME/.local/bin/search
 bindsym $mod+Ctrl+i exec --no-startup-id ~/.local/bin/synonym
 bindsym $mod+Ctrl+o exec --no-startup-id $HOME/.local/bin/openfile
