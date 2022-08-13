@@ -1,9 +1,7 @@
-#!/usr/bin/env bash
+#!/usr/bin/env zsh
 
 image="$1"
 
-shopt -s nullglob
-myarray=("$(dirname "$image")"/*)
-shopt -u nullglob
-
+# See https://zsh.sourceforge.io/Doc/Release/Expansion.html for understanding NOm
+myarray=("$(dirname "$image")"/*(.NOm))
 imv "${myarray[@]}" -n "$image"
