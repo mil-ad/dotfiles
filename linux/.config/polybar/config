@@ -337,3 +337,19 @@ hook-1 = echo "%{u#55aa55}%{F#fabd2f}盛"
 hook-2 = [[ $(xset q) =~ "DPMS is Disabled" ]] && polybar-msg action caffeine hook 1 ||  polybar-msg action caffeine hook 0
 click-left = ~/.scripts/toggle_caffeine
 initial = 3 ; 1-based index, 0 means no hooks runs at launch
+
+[module/polypomo]
+type = custom/script
+
+exec = ~/.scripts/polypomo
+tail = true
+
+label = %output%
+click-left = ~/.scripts/polypomo toggle
+click-right = ~/.scripts/polypomo end
+click-middle = ~/.scripts/polypomo lock
+scroll-up = ~/.scripts/polypomo time +60
+scroll-down = ~/.scripts/polypomo time -60
+
+font-0 = fixed:pixelsize=10;1
+font-1 = Noto Emoji:scale=15:antialias=false;0
