@@ -3,14 +3,14 @@ set $mod Mod4
 
 set $hidpi_scale GDK_SCALE=2 GDK_DPI_SCALE=0.5 QT_AUTO_SCREEN_SCALE_FACTOR=1
 
-workspace 1 output DP-0
-workspace 2 output DP-0
-workspace 3 output DP-0
-workspace 4 output DP-0
-workspace 5 output DP-0
-workspace 6 output DP-0
-workspace 7 output DP-0
-workspace 8 output DP-0
+workspace 1 output DP-0-virtDown DP-0
+workspace 2 output DP-0-virtDown DP-0
+workspace 3 output DP-0-virtDown DP-0
+workspace 4 output DP-0-virtDown DP-0
+workspace 5 output DP-0-virtDown DP-0
+workspace 6 output DP-0-virtDown DP-0
+workspace 7 output DP-0-virtDown DP-0
+workspace 8 output DP-0-virtDown DP-0
 workspace 9 output DP-0-virtUp HDMI-0 DP-0
 
 # Use Mouse+$mod to drag floating windows
