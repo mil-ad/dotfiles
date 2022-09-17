@@ -1,3 +1,11 @@
 #!/usr/bin/env bash
 
-sudo tailscale file cp $1 milads-iphone:
+if [ $1 == "ipad"  ]
+then
+	device="ipad-pro-11-inch"
+	shift
+else
+	device="iphone-14-pro"
+fi
+
+sudo tailscale file cp "$1" "$device":
