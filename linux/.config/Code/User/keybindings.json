@@ -188,10 +188,6 @@
         "command": "-workbench.action.switchWindow"
     },
     {
-        "key": "cmd+`",
-        "command": "workbench.action.switchWindow"
-    },
-    {
         "key": "ctrl+shift+v",
         "command": "-markdown.showPreview",
         "when": "!notebookEditorFocused && editorLangId == 'markdown'"
@@ -272,5 +268,15 @@
         "key": "ctrl+shift+c",
         "command": "-workbench.action.terminal.copySelection",
         "when": "terminalFocus && terminalHasBeenCreated && terminalTextSelected || terminalFocus && terminalProcessSupported && terminalTextSelected"
+    },
+    {
+        "key": "cmd+`",
+        "command": "workbench.action.terminal.toggleTerminal",
+        "when": "terminal.active"
+    },
+    {
+        "key": "ctrl+`",
+        "command": "-workbench.action.terminal.toggleTerminal",
+        "when": "terminal.active"
     },
 ]
