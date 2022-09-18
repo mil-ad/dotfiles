@@ -47,3 +47,7 @@ alias condarm='conda env remove --name'
 function open() { (nohup xdg-open $1 </dev/null >/dev/null 2>&1 &) }
 
 alias present_remotely='nohup pdfpc -Ssg -w presentation'
+
+if [[ $(uname) == 'Darwin' ]]; then
+    alias yay='brew upgrade && brew upgrade --cask'
+fi
