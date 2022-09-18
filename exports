@@ -5,6 +5,7 @@ export KEYTIMEOUT=5
 # for passphrase when signing git commits
 export GPG_TTY=$(tty)
 
-# TODO: Is this still needed?
-[ "$(uname)" = "Darwin" ] && export LSCOLORS=Exfxcxdxbxegedabagacad
-
+if [[ $(uname) == 'Darwin' ]]; then
+        export PATH="$HOME/.local/bin:$PATH"
+        export PATH="/opt/homebrew/opt/grep/libexec/gnubin:$PATH"
+fi
