@@ -1,0 +1,1 @@
+../../../../../../linux/.mozilla/firefox/minimal/user.js
