@@ -1,0 +1,5 @@
+if [ -f $1 ]; then
+  open <&0
+else
+  open -u $1
+fi
