@@ -52,3 +52,11 @@ cmd - left: skhd -k "alt - left"
 cmd - right: skhd -k "alt - right"
 cmd + shift - left: skhd -k "alt + shift - left"
 cmd + shift - right: skhd -k "alt + shift - right"
+
+ctrl - left [
+    "kitty": skhd -k "alt - left"
+]
+
+ctrl - right [
+    "kitty": skhd -k "alt - right"
+]
