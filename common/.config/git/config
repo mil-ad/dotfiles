@@ -44,6 +44,8 @@
 [credential]
     helper = cache --timeout=36000
 [pull]
-	rebase = true
+    rebase = true
 [init]
-	defaultBranch = main
+    defaultBranch = main
+[include]
+    path = ~/.gitconfig.local
