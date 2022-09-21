@@ -33,15 +33,15 @@ rshift + rcmd + rctrl + ralt + lshift - right : yabai -m window --swap east
 rshift + rcmd + rctrl + ralt + lshift - up : yabai -m window --swap north
 rshift + rcmd + rctrl + ralt + lshift - down : yabai -m window --swap souths
 
-hyper - 1 : yabai -m space --focus 1
-hyper - 2 : yabai -m space --focus 2
-hyper - 3 : yabai -m space --focus 3
-hyper - 4 : yabai -m space --focus 4
-hyper - 5 : yabai -m space --focus 5
-hyper - 6 : yabai -m space --focus 6
-hyper - 7 : yabai -m space --focus 7
-hyper - 8 : yabai -m space --focus 8
-hyper - 9 : yabai -m space --focus 9
+hyper - 1 : yabai -m space --focus 1 || yabai -m space --focus prev
+hyper - 2 : yabai -m space --focus 2 || yabai -m space --focus prev
+hyper - 3 : yabai -m space --focus 3 || yabai -m space --focus prev
+hyper - 4 : yabai -m space --focus 4 || yabai -m space --focus prev
+hyper - 5 : yabai -m space --focus 5 || yabai -m space --focus prev
+hyper - 6 : yabai -m space --focus 6 || yabai -m space --focus prev
+hyper - 7 : yabai -m space --focus 7 || yabai -m space --focus prev
+hyper - 8 : yabai -m space --focus 8 || yabai -m space --focus prev
+hyper - 9 : yabai -m space --focus 9 || yabai -m space --focus prev
 
 hyper - left : yabai -m window --focus west
 hyper - right : yabai -m window --focus east
