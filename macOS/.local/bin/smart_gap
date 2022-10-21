@@ -1,0 +1,23 @@
+#!/usr/bin/env bash
+
+# number_of_windows=$(yabai -m query --windows --space | jq 'length')
+number_of_windows=$(yabai -m query --windows --space | jq '.[] | select(."is-floating" == false)' | jq -s length)
+space_num=$(yabai -m query --windows --space | jq '.[0] | .space')
+
+if [ "$number_of_windows" -eq 1 ]; then
+    window_id=$(yabai -m query --windows --space | jq '.[] | select(."has-border" == true and ."is-floating" == false) | .id')
+    yabai -m window "$window_id" --toggle border
+
+    yabai -m config --space "$space_num" top_padding 0
+    yabai -m config --space "$space_num" bottom_padding 0
+    yabai -m config --space "$space_num" left_padding 0
+    yabai -m config --space "$space_num" right_padding 0
+elif [ "$number_of_windows" -eq 2 ]; then
+    window_id=$(yabai -m query --windows --space | jq '.[] | select(."has-border" == false) | .id')
+    yabai -m window "$window_id" --toggle border
+    yabai -m config --space "$space_num" top_padding 8
+    yabai -m config --space "$space_num" bottom_padding 8
+    yabai -m config --space "$space_num" left_padding 8
+    yabai -m config --space "$space_num" right_padding 8
+
+fi
