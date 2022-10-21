@@ -4,7 +4,8 @@ yabai -m signal --add event=dock_did_restart action="sudo yabai --load-sa"
 yabai -m config layout bsp
 
 yabai -m config window_border                on
-yabai -m config window_border_width          5
+yabai -m config window_border_width          2
+yabai -m config window_border_radius         0
 yabai -m config active_window_border_color   0xffd79921
 yabai -m config normal_window_border_color   0xff1d2021
 yabai -m config window_shadow                off
@@ -28,18 +29,10 @@ yabai -m rule --add app="^1Password$" manage=off
 yabai -m rule --add app="Karabiner" manage=off
 yabai -m rule --add app="choose" manage=off
 
-# # global settings
-# yabai -m config                                 \
-#     mouse_follows_focus          off            \
-#     window_origin_display        default        \
-#     window_placement             second_child   \
-#     window_topmost               off            \
-#     window_shadow                on             \
-#     window_opacity               off            \
-#     window_opacity_duration      0.0            \
-#     active_window_opacity        1.0            \
-#     normal_window_opacity        0.90           \
-#     insert_feedback_color        0xffd75f5f     \
-#     split_ratio                  0.50           \
-#     auto_balance                 off            \
-#     mouse_drop_action            swap
+yabai -m rule --add app="Code" space=2
+yabai -m rule --add app="Kitty" space=1
+yabai -m rule --add app="Roam Research" space=8
+yabai -m rule --add app="Firefox" space=3
+
+#yabai -m signal --add event=window_created action="~/.local/bin/smart_gap"
+#yabai -m signal --add event=window_destroyed action="~/.local/bin/smart_gap"
