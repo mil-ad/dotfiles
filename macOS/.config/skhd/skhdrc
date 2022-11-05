@@ -6,6 +6,7 @@
 # 1. we can't use hyper + another modifier directly. For example we have to manually expand hyper + lshift to manually e.g. rcmd + rshift + ralt + rctrl + lshift
 # 2. for some reason the order of defining them here matters e.g. hyper+shift+1 has to be above hyper+1
 
+rshift + rcmd + rctrl + ralt + lshift - return : open -n ~
 hyper - return : /Applications/kitty.app/Contents/MacOS/kitty --single-instance -d ~
 hyper - z : skhd -k "cmd + ctrl + shift - 4"
 hyper - q : skhd -k "cmd - w"
@@ -28,10 +29,10 @@ rshift + rcmd + rctrl + ralt + lshift - 7 : yabai -m window --space 7; yabai -m 
 rshift + rcmd + rctrl + ralt + lshift - 8 : yabai -m window --space 8; yabai -m space --focus 8
 rshift + rcmd + rctrl + ralt + lshift - 9 : yabai -m window --space 9; yabai -m space --focus 9
 
-rshift + rcmd + rctrl + ralt + lshift - left : yabai -m window --swap west
-rshift + rcmd + rctrl + ralt + lshift - right : yabai -m window --swap east
-rshift + rcmd + rctrl + ralt + lshift - up : yabai -m window --swap north
-rshift + rcmd + rctrl + ralt + lshift - down : yabai -m window --swap souths
+rshift + rcmd + rctrl + ralt + lshift - left : yabai -m window --swap west || yabai -m window --toggle split
+rshift + rcmd + rctrl + ralt + lshift - right : yabai -m window --swap east || yabai -m window --toggle split
+rshift + rcmd + rctrl + ralt + lshift - up : yabai -m window --swap north || yabai -m window --toggle split
+rshift + rcmd + rctrl + ralt + lshift - down : yabai -m window --swap south || yabai -m window --toggle split
 
 hyper - 1 : yabai -m space --focus 1 || yabai -m space --focus recent
 hyper - 2 : yabai -m space --focus 2 || yabai -m space --focus recent
