@@ -12,6 +12,7 @@ hyper - z : skhd -k "cmd + ctrl + shift - 4"
 hyper - q : skhd -k "cmd - w"
 hyper - s : if [ "$(yabai -m query --spaces --space | jq -r '.type')" = "stack" ]; then yabai -m space --layout bsp; else yabai -m space --layout stack; fi
 hyper - f : yabai -m window --toggle zoom-fullscreen
+hyper - p : $HOME/.scripts/open_paper
 
 # Some are defined for both control and and cmd so that they work in kitty too
 rshift + rcmd + rctrl + ralt + lshift - space : yabai -m window --toggle float
