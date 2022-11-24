@@ -28,6 +28,7 @@ yabai -m rule --add title='.*Info$' manage=off
 yabai -m rule --add app="^1Password$" manage=off
 yabai -m rule --add app="Karabiner" manage=off
 yabai -m rule --add app="choose" manage=off
+yabai -m rule --add app=".*Anki.*" manage=off
 
 yabai -m rule --add app="Code" space=2
 yabai -m rule --add app="Kitty" space=1
