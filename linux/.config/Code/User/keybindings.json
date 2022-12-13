@@ -6,11 +6,6 @@
         "when": "!isMac && editorFocus"
     },
     {
-        "key": "shift+ctrl+=",
-        "command": "editor.action.fontZoomIn",
-        "when": "!isMac && editorFocus"
-    },
-    {
         "key": "ctrl+-",
         "command": "editor.action.fontZoomOut",
         "when": "!isMac && editorFocus"
@@ -23,22 +18,27 @@
     {
         "key": "cmd+=",
         "command": "editor.action.fontZoomIn",
-        "when": "isMac"
-    },
-    {
-        "key": "shift+cmd+=",
-        "command": "editor.action.fontZoomIn",
-        "when": "isMac"
+        "when": "isMac && editorFocus"
     },
     {
         "key": "cmd+-",
         "command": "editor.action.fontZoomOut",
-        "when": "isMac"
+        "when": "isMac && editorFocus"
     },
     {
         "key": "cmd+0",
         "command": "editor.action.fontZoomReset",
-        "when": "isMac"
+        "when": "isMac && editorFocus"
+    },
+    {
+        "key": "cmd+=",
+        "command": "terminalFontSize.increase",
+        "when": "isMac && terminalFocus && terminalHasBeenCreated",
+    },
+    {
+        "key": "cmd+-",
+        "command": "terminalFontSize.decrease",
+        "when": "isMac && terminalFocus && terminalHasBeenCreated",
     },
     // Multiple cursors
     {
