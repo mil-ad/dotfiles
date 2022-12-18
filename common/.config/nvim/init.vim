@@ -9,12 +9,11 @@ call plug#begin('~/.vim/plugged')
 
 " Make sure you use single quotes
 
+Plug 'junegunn/fzf.vim'
 Plug 'tpope/vim-fugitive'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
-Plug 'ctrlpvim/ctrlp.vim'
 Plug 'scrooloose/nerdtree'
-Plug 'junegunn/fzf.vim'
 Plug 'morhetz/gruvbox'
 Plug 'tpope/vim-surround'
 
@@ -108,8 +107,5 @@ let g:tagbar_sort = 0	" Sort based on their order in the file
   " Use ag in CtrlP for listing files. Lightning fast and respects .gitignore
 "  let g:ctrlp_user_command = 'ag %s -l -g ""'
 "endif
-
-set rtp+=~/.fzf
-let $FZF_DEFAULT_COMMAND='ag -g ""'
 
 command! -bar -bang Q quit<bang>
