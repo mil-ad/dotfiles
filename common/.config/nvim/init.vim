@@ -74,13 +74,13 @@ hi Normal guibg=NONE ctermbg=NONE	" Make the backgroun transparent
 
 " Key mappings
 let mapleader=" " " Use spacekey as <Leader>
-nnoremap <Leader><PageUp>:bprevious<CR>
-nnoremap <Leader><PageDown>:bnext<CR>
-nnoremap <Leader>t:enew<CR>
-nnoremap <Leader>w:bdelete<CR>
-nnoremap <Leader>r:CtrlPBufTag<CR>
-nnoremap <Leader>/:set hlsearch!<CR>
-nnoremap <Leader>r:source $MYVIMRC<CR>
+nnoremap <Leader><PageUp> :bprevious<CR>
+nnoremap <Leader><PageDown> :bnext<CR>
+nnoremap <Leader>t :enew<CR>
+nnoremap <Leader>w :bdelete<CR>
+nnoremap <Leader>r :CtrlPBufTag<CR>
+nnoremap <Leader>/ :set hlsearch!<CR>
+nnoremap <Leader>r :source $MYVIMRC<CR>
 
 " VimAirline settings
 set laststatus=2 " Make it visible all the time
