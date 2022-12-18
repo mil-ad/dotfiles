@@ -13,9 +13,10 @@ Plug 'junegunn/fzf.vim'
 Plug 'tpope/vim-fugitive'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
-Plug 'scrooloose/nerdtree'
 Plug 'morhetz/gruvbox'
 Plug 'tpope/vim-surround'
+Plug 'scrooloose/nerdtree'
+Plug 'ryanoasis/vim-devicons'
 
 call plug#end()
 " -----------------------8<-------------------------8<------------------------ "
@@ -28,7 +29,8 @@ set colorcolumn=81,121  " Show ruler at 80(+1) and 120(+1) columns
 set foldmethod=syntax   " Fold based on syntax
 set foldlevelstart=99   " Unfold everything when opening a buffer
 set cursorline          " Highlight current line
-set showmatch           " show matching brackets.
+set showmatch           " show matching brackets
+set encoding=UTF-8
 
 set wildmenu            " Show possible options when doing tab-completion
 " When more than one match in tab-complete, list all matches and complete
@@ -80,6 +82,10 @@ nnoremap <Leader>w :bdelete<CR>
 nnoremap <Leader>r :CtrlPBufTag<CR>
 nnoremap <Leader>/ :set hlsearch!<CR>
 nnoremap <Leader>r :source $MYVIMRC<CR>
+nn <C-p> :Files<CR>
+nn <C-r> :BTags<CR>
+nn <C-/> :NERDTreeToggle<CR>
+map q <Nop>
 
 " VimAirline settings
 set laststatus=2 " Make it visible all the time
