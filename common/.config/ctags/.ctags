@@ -1,0 +1,3 @@
+–python-kinds=-i
+--recurse=yes
+--exclude=\*.pyc
