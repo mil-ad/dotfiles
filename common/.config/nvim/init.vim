@@ -9,39 +9,46 @@ call plug#begin('~/.vim/plugged')
 
 " Make sure you use single quotes
 
+Plug 'junegunn/fzf.vim'
 Plug 'tpope/vim-fugitive'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
-Plug 'ctrlpvim/ctrlp.vim'
-Plug 'scrooloose/nerdtree'
-Plug 'junegunn/fzf.vim'
 Plug 'morhetz/gruvbox'
 Plug 'tpope/vim-surround'
+Plug 'scrooloose/nerdtree'
+Plug 'ryanoasis/vim-devicons'
 
-
-" Initialize plugin system
 call plug#end()
 " -----------------------8<-------------------------8<------------------------ "
 
-set number             	" Show line numbers
-set nowrap		" Do not wrap lines
-syntax on              	" Enable syntax highlighting
-set mouse=a            	" Enable mouse support in all modes
-set colorcolumn=81,121 	" Show ruler at 80(+1) and 120(+1) columns
+set number              " Show line numbers
+set nowrap              " Do not wrap lines
+syntax on               " Enable syntax highlighting
+set mouse=a             " Enable mouse support in all modes
+set colorcolumn=81,121  " Show ruler at 80(+1) and 120(+1) columns
 set foldmethod=syntax   " Fold based on syntax
 set foldlevelstart=99   " Unfold everything when opening a buffer
-set cursorline		" Highlight current line
+set cursorline          " Highlight current line
+set showmatch           " show matching brackets
+set encoding=UTF-8
 
-set wildmenu		" Show possible options when doing tab-completion
-" When more than one match in tab-complete, list all matches and complete till
-" longest common string.
+set wildmenu            " Show possible options when doing tab-completion
+" When more than one match in tab-complete, list all matches and complete
+" until longest common string.
 set wildmode=longest:full,full
 
-set ignorecase	       	" Ignore case when searching
-set smartcase	       	" Override ignorecase when search pattern includes upper case
+set ignorecase          " Ignore case when searching
+set smartcase           " Override ignorecase when search pattern includes upper case
 
-set incsearch		" Search as you type
-set hlsearch 		" Highlight all search matches, use :nohlsearch to hide them
+set incsearch           " Search as you type
+set hlsearch            " Highlight all search matches, use :nohlsearch to hide them
+
+" Make sure whitespace character are displayed
+set list
+set listchars=space:·,tab:🡒\ ,nbsp:␣,extends:⟩,precedes:⟨
+
+set tabstop=4
+set shiftwidth=4
 
 " The last semicolon is the key here. Keep going up the directory hierarchy when
 " looking for the tags file
@@ -66,17 +73,20 @@ let g:gruvbox_contrast_dark='hard'
 colorscheme gruvbox
 hi Normal guibg=NONE ctermbg=NONE	" Make the backgroun transparent
 
-
-
-
 " Key mappings
 let mapleader=" " " Use spacekey as <Leader>
-nnoremap <Leader><PageUp>   :bprevious<CR>
+nnoremap <Leader><PageUp> :bprevious<CR>
 nnoremap <Leader><PageDown> :bnext<CR>
-nnoremap <Leader>t	    :enew<CR>
-nnoremap <Leader>w	    :bdelete<CR>
-nnoremap <Leader>r	    :CtrlPBufTag<CR>
-nnoremap <Leader>/	    :set hlsearch!<CR>
+nnoremap <Leader>t :enew<CR>
+nnoremap <Leader>w :bdelete<CR>
+nnoremap <Leader>r :CtrlPBufTag<CR>
+nnoremap <Leader>/ :set hlsearch!<CR>
+nnoremap <Leader>r :source $MYVIMRC<CR>
+nn <C-p> :Files<CR>
+nn <C-r> :BTags<CR>
+nn <C-/> :NERDTreeToggle<CR>
+map q <Nop>
+
 " VimAirline settings
 set laststatus=2 " Make it visible all the time
 let g:airline_powerline_fonts = 1
@@ -103,8 +113,5 @@ let g:tagbar_sort = 0	" Sort based on their order in the file
   " Use ag in CtrlP for listing files. Lightning fast and respects .gitignore
 "  let g:ctrlp_user_command = 'ag %s -l -g ""'
 "endif
-
-set rtp+=~/.fzf
-let $FZF_DEFAULT_COMMAND='ag -g ""'
 
 command! -bar -bang Q quit<bang>

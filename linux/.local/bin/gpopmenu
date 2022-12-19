@@ -1,0 +1,1 @@
+git stash list | fzf | cut -d ":" -f 1 | xargs git stash pop
