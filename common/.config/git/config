@@ -6,7 +6,7 @@
     ui = auto
 [core]
     editor = vim
-    pager = less
+    pager = delta
 [push]
     default = simple
 [commit]
@@ -15,6 +15,7 @@
     program = gpg
 [diff]
     tool = icdiff
+    colorMoved = default # detect moved blocks of code and style them differently
 [difftool]
     prompt = false
 [difftool "p4merge"]
@@ -48,4 +49,13 @@
 [init]
     defaultBranch = main
 [include]
-    path = ~/.gitconfig.local
+	path = ~/.gitconfig.local
+[interactive]
+    diffFilter = delta --color-only
+[delta]
+    navigate = true    # use n and N to move between diff sections
+    light = false      # set to true if you're in a terminal w/ a light background color (e.g. the default macOS terminal)
+    line-numbers = true
+    side-by-side = true
+[merge]
+    conflictstyle = diff3
