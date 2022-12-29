@@ -17,6 +17,7 @@ Plug 'morhetz/gruvbox'
 Plug 'tpope/vim-surround'
 Plug 'scrooloose/nerdtree'
 Plug 'ryanoasis/vim-devicons'
+Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 
 call plug#end()
 " -----------------------8<-------------------------8<------------------------ "
@@ -115,3 +116,5 @@ let g:tagbar_sort = 0	" Sort based on their order in the file
 "endif
 
 command! -bar -bang Q quit<bang>
+
+lua require'nvim-treesitter.configs'.setup{highlight={enable=true}}
