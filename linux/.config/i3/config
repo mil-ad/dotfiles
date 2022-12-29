@@ -34,7 +34,7 @@ title_align center
 # Disable gaps and borders when there's only one container
 smart_gaps on
 smart_borders on
-gaps inner 14
+gaps inner 10
 gaps outer -2
 # bottom gap could be useful when using floating polybar
 # gaps bottom 35
