@@ -13,6 +13,7 @@ Plug 'junegunn/fzf.vim'
 Plug 'tpope/vim-fugitive'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
+"Plug 'feline-nvim/feline.nvim'
 Plug 'morhetz/gruvbox'
 Plug 'tpope/vim-surround'
 Plug 'scrooloose/nerdtree'
@@ -103,9 +104,6 @@ let g:ctrlp_by_filename = 1
 let g:ctrlp_match_window = 'top,ttb'
 let g:ctrlp_open_new_file = 't'
 
-" Tagbar settings
-let g:tagbar_sort = 0	" Sort based on their order in the file
-
 " Use the Silver Searcher when possible
 " if executable('ag')
 " " Use ag over grep
@@ -117,4 +115,4 @@ let g:tagbar_sort = 0	" Sort based on their order in the file
 
 command! -bar -bang Q quit<bang>
 
-lua require'nvim-treesitter.configs'.setup{highlight={enable=true}}
+lua require('config')
