@@ -20,6 +20,9 @@ Plug 'scrooloose/nerdtree'
 Plug 'ryanoasis/vim-devicons'
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 
+Plug 'nvim-lua/plenary.nvim'
+Plug 'nvim-telescope/telescope.nvim', { 'tag': '0.1.0' }
+
 call plug#end()
 " -----------------------8<-------------------------8<------------------------ "
 
@@ -84,8 +87,8 @@ nnoremap <Leader>w :bdelete<CR>
 nnoremap <Leader>r :CtrlPBufTag<CR>
 nnoremap <Leader>/ :set hlsearch!<CR>
 nnoremap <Leader>r :source $MYVIMRC<CR>
-nn <C-p> :Files<CR>
-nn <C-r> :BTags<CR>
+"nn <C-p> :Files<CR>
+"nn <C-r> :BTags<CR>
 nn <C-/> :NERDTreeToggle<CR>
 map q <Nop>
 
@@ -96,10 +99,6 @@ let g:airline_powerline_fonts = 1
 let g:airline#extensions#tabline#enabled = 1 " Show list of buffers
 let g:airline#extensions#tabline#fnamemod = ':t' " Show just the filename
 
-" Ctrlp settings
-let g:ctrlp_use_caching = 1
-let g:ctrlp_clear_cache_on_exit = 0
-let g:ctrlp_extensions = ['tag', 'buffertag']
 let g:ctrlp_by_filename = 1
 let g:ctrlp_match_window = 'top,ttb'
 let g:ctrlp_open_new_file = 't'
