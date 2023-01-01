@@ -22,6 +22,7 @@ Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 
 Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim', { 'tag': '0.1.0' }
+Plug 'luisiacc/gruvbox-baby', {'branch': 'main'}
 
 call plug#end()
 " -----------------------8<-------------------------8<------------------------ "
@@ -60,12 +61,6 @@ set shiftwidth=4
 "set tags=./tags,./TAGS,tags,TAGS;
 set tags=./tags;
 
-if !has('nvim')
-    set viminfo+=n~/.vim/viminfo
-else
-    set viminfo+=n~/.vim/nviminfo
-endif
-
 " Colours/themes settings
 set termguicolors
 let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
@@ -76,7 +71,7 @@ set t_Co=256
 set background=dark
 let g:gruvbox_contrast_dark='hard'
 colorscheme gruvbox
-hi Normal guibg=NONE ctermbg=NONE	" Make the backgroun transparent
+hi Normal guibg=NONE ctermbg=NONE	" Make the background transparent
 
 " Key mappings
 let mapleader=" " " Use spacekey as <Leader>
