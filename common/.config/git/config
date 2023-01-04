@@ -1,7 +1,7 @@
 [user]
     name = Milad Alizadeh
     email = git@mil.ad
-    signingKey = 4244B66E289EF8C4!
+    signingkey = ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIMsOxH+4s+Z8zfvnvrJnp8p2mNWkbconct5j7yyZQCxa ssh@mil.ad
 [color]
     ui = auto
 [core]
@@ -13,6 +13,7 @@
     gpgSign = true
 [gpg]
     program = gpg
+    format = ssh
 [diff]
     tool = icdiff
     colorMoved = default # detect moved blocks of code and style them differently
