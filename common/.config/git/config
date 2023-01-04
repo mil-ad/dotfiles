@@ -22,12 +22,16 @@
 [difftool "p4merge"]
     cmd = /Applications/p4merge.app/Contents/Resources/launchp4merge "\"$LOCAL\"" "\"$REMOTE    \""
 [difftool "icdiff"]
-      cmd = icdiff --line-numbers $LOCAL $REMOTE
+    cmd = icdiff --line-numbers $LOCAL $REMOTE
+[interactive]
+    diffFilter = delta --color-only
 [filter "lfs"]
     required = true
     clean = git-lfs clean -- %f
     smudge = git-lfs smudge -- %f
     process = git-lfs filter-process
+[merge]
+    conflictstyle = diff3
 [alias]
     wdiff = diff --color-words
 [color "status"]
@@ -49,6 +53,9 @@
     rebase = true
 [init]
     defaultBranch = main
+[delta]
+    navigate = true    # use n and N to move between diff sections
+    light = false      # set to true if you're in a terminal w/ a light background color (e.g. the default macOS terminal)
 [include]
 	path = ~/.gitconfig.local
 [interactive]
