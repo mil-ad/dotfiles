@@ -98,7 +98,7 @@
         "editor.rulers": [
             88
         ],
-        "editor.formatOnSave": false,
+        "editor.formatOnSave": true,
     },
     "[latex]": {
         "editor.wordWrap": "bounded",
@@ -139,7 +139,8 @@
     "python.testing.autoTestDiscoverOnSaveEnabled": false,
     "jupyter.sendSelectionToInteractiveWindow": true,
     "jupyter.askForKernelRestart": false,
-    "latex-workshop.view.pdf.viewer": "tab",
+    "latex-workshop.view.pdf.viewer": "external",
+    "latex-workshop.view.pdf.external.viewer.command": "sioyek",
     "latex-workshop.message.error.show": false,
     "latex-workshop.message.warning.show": false,
     "latex-workshop.latexindent.path": "latexindent",
