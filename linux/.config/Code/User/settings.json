@@ -192,10 +192,11 @@
     ],
     "spellright.groupDictionaries": false,
     "spellright.configurationScope": "user",
+    // Currently trying out LTeX extension
     "spellright.documentTypes": [
-        "markdown",
-        "plaintext",
-        "latex"
+        // "markdown",
+        // "plaintext",
+        // "latex"
     ],
     "spellright.spellContextByClass": {
         "latex": "body",
