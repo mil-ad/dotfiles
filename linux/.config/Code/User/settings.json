@@ -212,7 +212,6 @@
         },
         "editor.renderWhitespace": "none",
         "editor.renderControlCharacters": false,
-        // "highlight-dodgy-characters.whitelist": "☐✔✘",
         "editor.wordWrap": "bounded",
         "editor.wordWrapColumn": 120,
     },
