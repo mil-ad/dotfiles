@@ -1,7 +1,7 @@
 [user]
     name = Milad Alizadeh
     email = git@mil.ad
-    signingkey = ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIMsOxH+4s+Z8zfvnvrJnp8p2mNWkbconct5j7yyZQCxa ssh@mil.ad
+    signingkey = ~/.ssh/id_rsa.pub
 [color]
     ui = auto
 [core]
