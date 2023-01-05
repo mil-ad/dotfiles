@@ -1,31 +1,37 @@
 [user]
     name = Milad Alizadeh
     email = git@mil.ad
-    signingKey = 4244B66E289EF8C4!
+    signingkey = ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIMsOxH+4s+Z8zfvnvrJnp8p2mNWkbconct5j7yyZQCxa ssh@mil.ad
 [color]
     ui = auto
 [core]
     editor = vim
-    pager = less
+    pager = delta
 [push]
     default = simple
 [commit]
     gpgSign = true
 [gpg]
     program = gpg
+    format = ssh
 [diff]
     tool = icdiff
+    colorMoved = default # detect moved blocks of code and style them differently
 [difftool]
     prompt = false
 [difftool "p4merge"]
     cmd = /Applications/p4merge.app/Contents/Resources/launchp4merge "\"$LOCAL\"" "\"$REMOTE    \""
 [difftool "icdiff"]
-      cmd = icdiff --line-numbers $LOCAL $REMOTE
+    cmd = icdiff --line-numbers $LOCAL $REMOTE
+[interactive]
+    diffFilter = delta --color-only
 [filter "lfs"]
     required = true
     clean = git-lfs clean -- %f
     smudge = git-lfs smudge -- %f
     process = git-lfs filter-process
+[merge]
+    conflictstyle = diff3
 [alias]
     wdiff = diff --color-words
 [color "status"]
@@ -47,5 +53,17 @@
     rebase = true
 [init]
     defaultBranch = main
+[delta]
+    navigate = true    # use n and N to move between diff sections
+    light = false      # set to true if you're in a terminal w/ a light background color (e.g. the default macOS terminal)
 [include]
-    path = ~/.gitconfig.local
+	path = ~/.gitconfig.local
+[interactive]
+    diffFilter = delta --color-only
+[delta]
+    navigate = true    # use n and N to move between diff sections
+    light = false      # set to true if you're in a terminal w/ a light background color (e.g. the default macOS terminal)
+    line-numbers = true
+    side-by-side = true
+[merge]
+    conflictstyle = diff3

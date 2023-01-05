@@ -13,10 +13,16 @@ Plug 'junegunn/fzf.vim'
 Plug 'tpope/vim-fugitive'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
+"Plug 'feline-nvim/feline.nvim'
 Plug 'morhetz/gruvbox'
 Plug 'tpope/vim-surround'
 Plug 'scrooloose/nerdtree'
 Plug 'ryanoasis/vim-devicons'
+Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+
+Plug 'nvim-lua/plenary.nvim'
+Plug 'nvim-telescope/telescope.nvim', { 'tag': '0.1.0' }
+Plug 'luisiacc/gruvbox-baby', {'branch': 'main'}
 
 call plug#end()
 " -----------------------8<-------------------------8<------------------------ "
@@ -55,12 +61,6 @@ set shiftwidth=4
 "set tags=./tags,./TAGS,tags,TAGS;
 set tags=./tags;
 
-if !has('nvim')
-    set viminfo+=n~/.vim/viminfo
-else
-    set viminfo+=n~/.vim/nviminfo
-endif
-
 " Colours/themes settings
 set termguicolors
 let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
@@ -71,7 +71,7 @@ set t_Co=256
 set background=dark
 let g:gruvbox_contrast_dark='hard'
 colorscheme gruvbox
-hi Normal guibg=NONE ctermbg=NONE	" Make the backgroun transparent
+hi Normal guibg=NONE ctermbg=NONE	" Make the background transparent
 
 " Key mappings
 let mapleader=" " " Use spacekey as <Leader>
@@ -82,8 +82,8 @@ nnoremap <Leader>w :bdelete<CR>
 nnoremap <Leader>r :CtrlPBufTag<CR>
 nnoremap <Leader>/ :set hlsearch!<CR>
 nnoremap <Leader>r :source $MYVIMRC<CR>
-nn <C-p> :Files<CR>
-nn <C-r> :BTags<CR>
+"nn <C-p> :Files<CR>
+"nn <C-r> :BTags<CR>
 nn <C-/> :NERDTreeToggle<CR>
 map q <Nop>
 
@@ -94,16 +94,9 @@ let g:airline_powerline_fonts = 1
 let g:airline#extensions#tabline#enabled = 1 " Show list of buffers
 let g:airline#extensions#tabline#fnamemod = ':t' " Show just the filename
 
-" Ctrlp settings
-let g:ctrlp_use_caching = 1
-let g:ctrlp_clear_cache_on_exit = 0
-let g:ctrlp_extensions = ['tag', 'buffertag']
 let g:ctrlp_by_filename = 1
 let g:ctrlp_match_window = 'top,ttb'
 let g:ctrlp_open_new_file = 't'
-
-" Tagbar settings
-let g:tagbar_sort = 0	" Sort based on their order in the file
 
 " Use the Silver Searcher when possible
 " if executable('ag')
@@ -115,3 +108,5 @@ let g:tagbar_sort = 0	" Sort based on their order in the file
 "endif
 
 command! -bar -bang Q quit<bang>
+
+lua require('config')
