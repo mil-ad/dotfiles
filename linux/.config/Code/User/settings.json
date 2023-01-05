@@ -49,6 +49,10 @@
             },
         ]
     },
+    "files.associations": {
+        "*.mplstyle": "python"
+    },
+    "window.zoomLevel": -1,
     "workbench.editor.enablePreview": false,
     "workbench.editor.labelFormat": "short",
     "workbench.editor.decorations.badges": false,
@@ -224,7 +228,4 @@
         "editor.wordWrap": "bounded",
         "editor.wordWrapColumn": 120,
     },
-    "files.associations": {
-        "*.mplstyle": "python"
-    }
 }
