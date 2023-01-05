@@ -89,16 +89,23 @@
     "problems.decorations.enabled": false,
     "breadcrumbs.enabled": false,
     "search.quickOpen.includeHistory": false,
-    "window.zoomLevel": -2,
+    "isort.args": [
+        "--profile",
+        "black"
+    ],
     // =========================================================================
     // Per file type settings
     // =========================================================================
     "[python]": {
         "editor.tabSize": 4,
         "editor.rulers": [
-            88
+            88,
+            120
         ],
         "editor.formatOnSave": true,
+        "editor.codeActionsOnSave": {
+            "source.organizeImports": true,
+        },
     },
     "[latex]": {
         "editor.wordWrap": "bounded",
