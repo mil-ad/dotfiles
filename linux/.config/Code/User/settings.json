@@ -25,6 +25,7 @@
     "editor.gotoLocation.multipleDeclarations": "gotoAndPeek",
     "editor.gotoLocation.multipleDefinitions": "gotoAndPeek",
     "editor.gotoLocation.multipleTypeDefinitions": "gotoAndPeek",
+    "editor.minimap.enabled": true,
     // Disable italics in comment blocks
     // From https://stackoverflow.com/a/46278282/298209
     "editor.tokenColorCustomizations": {
@@ -68,12 +69,12 @@
     "explorer.sortOrder": "type",
     "explorer.incrementalNaming": "smart",
     "explorer.decorations.badges": false,
-    // "explorer.openEditors.visible": 0,
-    "terminal.integrated.macOptionClickForcesSelection": true,
-    "terminal.integrated.fontFamily": "'Cascadia Code', 'Noto Color Emoji', 'Vazir WOL', 'Iosevka Nerd Font Mono', 'JetBrains Mono Medium', 'JetBrainsMono-Medium','IBMPlexMono-Bold', 'IBM Plex Mono SemiBold', 'Courier New', Menlo",
+    "terminal.integrated.fontFamily": "'Cascadia Code', 'Symbols Nerd Font Mono', 'Noto Color Emoji', 'Vazir WOL', 'Iosevka Nerd Font Mono', 'JetBrains Mono Medium', 'JetBrainsMono-Medium','IBMPlexMono-Bold', 'IBM Plex Mono SemiBold', 'Courier New', Menlo",
     "terminal.integrated.fontSize": 13,
     "terminal.integrated.inheritEnv": true,
     "terminal.external.linuxExec": "kitty",
+    "terminal.integrated.macOptionClickForcesSelection": true,
+    "terminal.integrated.macOptionIsMeta": true,
     "terminal.integrated.enableMultiLinePasteWarning": false,
     // "terminal.integrated.rendererType": "dom",
     "terminal.integrated.gpuAcceleration": "on",
