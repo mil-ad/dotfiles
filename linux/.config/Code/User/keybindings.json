@@ -308,6 +308,12 @@
         "key": "f5",
         "command": "workbench.action.files.revert"
     },
+    {
+        "key": "cmd+space",
+        "command": "editor.action.triggerSuggest",
+        "when": "isMac && editorTextFocus"
+    },
+    {
         "key": "ctrl+-",
         "command": "-workbench.action.zoomOut"
     },
