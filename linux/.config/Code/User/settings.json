@@ -71,12 +71,12 @@
     "explorer.sortOrder": "type",
     "explorer.incrementalNaming": "smart",
     "explorer.decorations.badges": false,
-    // "explorer.openEditors.visible": 0,
-    "terminal.integrated.macOptionClickForcesSelection": true,
-    "terminal.integrated.fontFamily": "'Cascadia Code', 'Noto Color Emoji', 'Vazir WOL', 'Iosevka Nerd Font Mono', 'JetBrains Mono Medium', 'JetBrainsMono-Medium','IBMPlexMono-Bold', 'IBM Plex Mono SemiBold', 'Courier New', Menlo",
+    "terminal.integrated.fontFamily": "'Cascadia Code', 'Symbols Nerd Font Mono', 'Noto Color Emoji', 'Vazir WOL', 'Iosevka Nerd Font Mono', 'JetBrains Mono Medium', 'JetBrainsMono-Medium','IBMPlexMono-Bold', 'IBM Plex Mono SemiBold', 'Courier New', Menlo",
     "terminal.integrated.fontSize": 13,
     "terminal.integrated.inheritEnv": true,
     "terminal.external.linuxExec": "kitty",
+    "terminal.integrated.macOptionClickForcesSelection": true,
+    "terminal.integrated.macOptionIsMeta": true,
     "terminal.integrated.enableMultiLinePasteWarning": false,
     // "terminal.integrated.rendererType": "dom",
     "terminal.integrated.gpuAcceleration": "on",
@@ -93,15 +93,23 @@
     "breadcrumbs.enabled": false,
     "search.quickOpen.includeHistory": false,
     "window.zoomLevel": -2,
+    "isort.args": [
+        "--profile",
+        "black"
+    ],
     // =========================================================================
     // Per file type settings
     // =========================================================================
     "[python]": {
         "editor.tabSize": 4,
         "editor.rulers": [
-            88
+            88,
+            120
         ],
         "editor.formatOnSave": true,
+        "editor.codeActionsOnSave": {
+            "source.organizeImports": true,
+        },
     },
     "[latex]": {
         "editor.wordWrap": "bounded",
