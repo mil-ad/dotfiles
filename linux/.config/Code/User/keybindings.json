@@ -290,6 +290,24 @@
         "when": "!editorIsOpen && !multipleEditorGroups"
     },
     {
+        "key": "f5",
+        "command": "-workbench.action.debug.continue",
+        "when": "debugState == 'stopped'"
+    },
+    {
+        "key": "f5",
+        "command": "-debug.openView",
+        "when": "!debuggersAvailable"
+    },
+    {
+        "key": "f5",
+        "command": "-workbench.action.debug.start",
+        "when": "debuggersAvailable && debugState == 'inactive'"
+    },
+    {
+        "key": "f5",
+        "command": "workbench.action.files.revert"
+    },
         "key": "ctrl+-",
         "command": "-workbench.action.zoomOut"
     },
