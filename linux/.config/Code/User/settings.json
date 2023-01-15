@@ -52,7 +52,6 @@
     "files.associations": {
         "*.mplstyle": "python"
     },
-    "window.zoomLevel": -1,
     "workbench.editor.enablePreview": false,
     "workbench.editor.labelFormat": "short",
     "workbench.editor.decorations.badges": false,
@@ -94,6 +93,7 @@
     "problems.decorations.enabled": false,
     "breadcrumbs.enabled": false,
     "search.quickOpen.includeHistory": false,
+    "window.zoomLevel": -2,
     "isort.args": [
         "--profile",
         "black"
