@@ -2,51 +2,57 @@
 # hyper is mapped to Caps Lock using Karabiner.
 # Karabiner also moves Caps Lock moved to where "meta" key is on Linux.
 # it is important that hyper uses right side modifiers. This allows hyper to
-# combined with another midifier on the left. However, there are two caveats:
-# 1. we can't use hyper + another modifier directly. For example we have to manually expand hyper + lshift to manually e.g. rcmd + rshift + ralt + rctrl + lshift
-# 2. for some reason the order of defining them here matters e.g. hyper+shift+1 has to be above hyper+1
+# combined with another midifier on the left.
 
-hyper - return : /Applications/kitty.app/Contents/MacOS/kitty --single-instance -d ~
-hyper - z : skhd -k "cmd + ctrl + shift - 4"
-hyper - q : skhd -k "cmd - w"
-hyper - s : if [ "$(yabai -m query --spaces --space | jq -r '.type')" = "stack" ]; then yabai -m space --layout bsp; else yabai -m space --layout stack; fi
-hyper - f : yabai -m window --toggle zoom-fullscreen
+rhyper + lshift - return : open -n ~
+rhyper + lshift - r : launchctl kickstart -k "gui/${UID}/homebrew.mxcl.yabai"
+rhyper - return : /Applications/kitty.app/Contents/MacOS/kitty --single-instance -d ~
+rhyper - z : skhd -k "cmd + ctrl + shift - 4"
+rhyper - q : skhd -k "cmd - w"
+rhyper - s : if [ "$(yabai -m query --spaces --space | jq -r '.type')" = "stack" ]; then yabai -m space --layout bsp; else yabai -m space --layout stack; fi
+rhyper - f : yabai -m window --toggle zoom-fullscreen
+rhyper - p : $HOME/.scripts/open_paper
 
 # Some are defined for both control and and cmd so that they work in kitty too
-rshift + rcmd + rctrl + ralt + lshift - space : yabai -m window --toggle float
-rshift + rcmd + rctrl + ralt + lcmd - e : skhd -k "cmd + ctrl - space"
-rshift + rcmd + rctrl + ralt + lctrl - r : /Users/miladalizadeh/.dotfiles/linux/.local/bin/open_github_repo
-rshift + rcmd + rctrl + ralt + lcmd - r : /Users/miladalizadeh/.dotfiles/linux/.local/bin/open_github_repo
+rhyper + lshift - space : yabai -m window --toggle float
+rhyper + lcmd - e : skhd -k "cmd + ctrl - space"
+rhyper + lctrl - r : /Users/miladalizadeh/.dotfiles/linux/.local/bin/open_github_repo
+rhyper + lcmd - r : /Users/miladalizadeh/.dotfiles/linux/.local/bin/open_github_repo
 
-rshift + rcmd + rctrl + ralt + lshift - 1 : yabai -m window --space 1; yabai -m space --focus 1
-rshift + rcmd + rctrl + ralt + lshift - 2 : yabai -m window --space 2; yabai -m space --focus 2
-rshift + rcmd + rctrl + ralt + lshift - 3 : yabai -m window --space 3; yabai -m space --focus 3
-rshift + rcmd + rctrl + ralt + lshift - 4 : yabai -m window --space 4; yabai -m space --focus 4
-rshift + rcmd + rctrl + ralt + lshift - 5 : yabai -m window --space 5; yabai -m space --focus 5
-rshift + rcmd + rctrl + ralt + lshift - 6 : yabai -m window --space 6; yabai -m space --focus 6
-rshift + rcmd + rctrl + ralt + lshift - 7 : yabai -m window --space 7; yabai -m space --focus 7
-rshift + rcmd + rctrl + ralt + lshift - 8 : yabai -m window --space 8; yabai -m space --focus 8
-rshift + rcmd + rctrl + ralt + lshift - 9 : yabai -m window --space 9; yabai -m space --focus 9
+# Move window to another space
+rhyper + lshift - 1 : yabai -m window --space 1; yabai -m space --focus 1
+rhyper + lshift - 2 : yabai -m window --space 2; yabai -m space --focus 2
+rhyper + lshift - 3 : yabai -m window --space 3; yabai -m space --focus 3
+rhyper + lshift - 4 : yabai -m window --space 4; yabai -m space --focus 4
+rhyper + lshift - 5 : yabai -m window --space 5; yabai -m space --focus 5
+rhyper + lshift - 6 : yabai -m window --space 6; yabai -m space --focus 6
+rhyper + lshift - 7 : yabai -m window --space 7; yabai -m space --focus 7
+rhyper + lshift - 8 : yabai -m window --space 8; yabai -m space --focus 8
+rhyper + lshift - 9 : yabai -m window --space 9; yabai -m space --focus 9
 
-rshift + rcmd + rctrl + ralt + lshift - left : yabai -m window --swap west
-rshift + rcmd + rctrl + ralt + lshift - right : yabai -m window --swap east
-rshift + rcmd + rctrl + ralt + lshift - up : yabai -m window --swap north
-rshift + rcmd + rctrl + ralt + lshift - down : yabai -m window --swap souths
+rhyper + lshift + lctrl - up : yabai -m space --display north && yabai -m display --focus north
+rhyper + lshift + lctrl - down : yabai -m space --display south && yabai -m display --focus south
 
-hyper - 1 : yabai -m space --focus 1 || yabai -m space --focus recent
-hyper - 2 : yabai -m space --focus 2 || yabai -m space --focus recent
-hyper - 3 : yabai -m space --focus 3 || yabai -m space --focus recent
-hyper - 4 : yabai -m space --focus 4 || yabai -m space --focus recent
-hyper - 5 : yabai -m space --focus 5 || yabai -m space --focus recent
-hyper - 6 : yabai -m space --focus 6 || yabai -m space --focus recent
-hyper - 7 : yabai -m space --focus 7 || yabai -m space --focus recent
-hyper - 8 : yabai -m space --focus 8 || yabai -m space --focus recent
-hyper - 9 : yabai -m space --focus 9 || yabai -m space --focus recent
+# Move window (within space -> then across displays)
+rhyper + lshift - left : yabai -m window --warp west || yabai -m window --display west || yabai -m window --toggle split
+rhyper + lshift - right : yabai -m window --warp east || yabai -m window --display east || yabai -m window --toggle split
+rhyper + lshift - up : yabai -m window --warp north || yabai -m window --display north || yabai -m window --toggle split
+rhyper + lshift - down : yabai -m window --warp south || yabai -m window --display south || yabai -m window --toggle split
 
-hyper - left : yabai -m window --focus west
-hyper - right : yabai -m window --focus east
-hyper - up : yabai -m window --focus stack.prev || yabai -m window --focus stack.last || yabai -m window --focus north
-hyper - down : yabai -m window --focus stack.next || yabai -m window --focus stack.first || yabai -m window --focus south
+rhyper - 1 : yabai -m space --focus 1 || yabai -m space --focus recent
+rhyper - 2 : yabai -m space --focus 2 || yabai -m space --focus recent
+rhyper - 3 : yabai -m space --focus 3 || yabai -m space --focus recent
+rhyper - 4 : yabai -m space --focus 4 || yabai -m space --focus recent
+rhyper - 5 : yabai -m space --focus 5 || yabai -m space --focus recent
+rhyper - 6 : yabai -m space --focus 6 || yabai -m space --focus recent
+rhyper - 7 : yabai -m space --focus 7 || yabai -m space --focus recent
+rhyper - 8 : yabai -m space --focus 8 || yabai -m space --focus recent
+rhyper - 9 : yabai -m space --focus 9 || yabai -m space --focus recent
+
+rhyper - left : yabai -m window --focus west
+rhyper - right : yabai -m window --focus east
+rhyper - up : yabai -m window --focus stack.prev || yabai -m window --focus stack.last || yabai -m window --focus north
+rhyper - down : yabai -m window --focus stack.next || yabai -m window --focus stack.first || yabai -m window --focus south
 
 cmd - left: skhd -k "alt - left"
 cmd - right: skhd -k "alt - right"
