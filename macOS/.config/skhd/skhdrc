@@ -17,6 +17,7 @@ rhyper - p : $HOME/.scripts/open_paper
 rhyper + lshift - space : yabai -m window --toggle float
 rhyper + lcmd - e : skhd -k "cmd + ctrl - space"
 rhyper + lctrl - r : /Users/miladalizadeh/.dotfiles/linux/.local/bin/open_github_repo
+# so that it works in kitty too:
 rhyper + lcmd - r : /Users/miladalizadeh/.dotfiles/linux/.local/bin/open_github_repo
 
 # Move window to another space
