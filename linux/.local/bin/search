@@ -6,7 +6,8 @@ Letterboxd
 Amazon
 eBay
 goodreads
-Wirecutter' | dmenu)
+Wirecutter
+CamelCamelCamel' | dmenu)
 
 [[ $engine ]] && query=$(echo '' | dmenu -l 0 -p "🔍 $engine")
 
@@ -18,6 +19,7 @@ case $engine in
     "eBay") URL="https://www.ebay.co.uk/sch/i.html?_nkw=${query}" ;;
     "goodreads") URL="https://www.goodreads.com/search?q=${query}" ;;
     "Wirecutter") URL="https://www.nytimes.com/wirecutter/search/?s=${query}" ;;
+    "CamelCamelCamel") URL="https://uk.camelcamelcamel.com/search?sq=${query}" ;;
 esac
 
 [[ $query ]] && xdg-open "${URL}" && i3-msg --quiet [urgent=latest] focus
