@@ -39,3 +39,4 @@ yabai -m rule --add app="Firefox" space=3
 
 #yabai -m signal --add event=window_created action="~/.local/bin/smart_gap"
 #yabai -m signal --add event=window_destroyed action="~/.local/bin/smart_gap"
+yabai -m signal --add event=display_added action="yabai -m space 9 --display next"
