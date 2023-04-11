@@ -276,7 +276,6 @@ for_window [class="Lxappearance"] floating enable sticky enable border normal
 for_window [class="qt5ct"] floating enable sticky enable border normal
 for_window [class="Nitrogen"] floating enable sticky enable border normal
 for_window [class="Pavucontrol"] floating enable
-for_window [class="Thunar"] floating enable resize set 50 ppt 50 ppt, move absolute position center
 for_window [class="(?i)zoom"] floating enable
 for_window [class="join\?action=join"] floating enable
 for_window [title="UxPlay"] floating enable

@@ -27,6 +27,7 @@ video/mp4=mpv.desktop;
 video/mpeg=mpv.desktop;
 video/quicktime=mpv.desktop;
 video/x-matroska=mpv.desktop;
+video/x-ms-wmv=mpv.desktop;
 
 [Added Associations]
 application/epub+zip=zathura.desktop;
