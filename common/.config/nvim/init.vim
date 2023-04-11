@@ -23,6 +23,7 @@ Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim', { 'tag': '0.1.0' }
 Plug 'luisiacc/gruvbox-baby', {'branch': 'main'}
+Plug 'akinsho/toggleterm.nvim', {'tag' : '*'}
 
 call plug#end()
 " -----------------------8<-------------------------8<------------------------ "
@@ -42,6 +43,9 @@ set wildmenu            " Show possible options when doing tab-completion
 " When more than one match in tab-complete, list all matches and complete
 " until longest common string.
 set wildmode=longest:full,full
+
+
+set clipboard+=unnamedplus " Use system clipboard?
 
 set ignorecase          " Ignore case when searching
 set smartcase           " Override ignorecase when search pattern includes upper case
