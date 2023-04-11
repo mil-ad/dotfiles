@@ -1,5 +1,5 @@
-if [ -f $1 ]; then
-  open $1
+if [ -f "$1" ]; then
+  open "$1"
 else
-  open -u $1
+  open -u "$1"
 fi
