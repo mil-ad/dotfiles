@@ -24,13 +24,13 @@ yabai -m config mouse_action2   resize
 
 yabai -m config focus_follows_mouse  off
 
-yabai -m rule --add app="^System Preferences$" manage=off
-yabai -m rule --add app='^System Information$' manage=off
-yabai -m rule --add title='.*Info$' manage=off
-yabai -m rule --add app="^1Password$" manage=off
-yabai -m rule --add app="Karabiner" manage=off
-yabai -m rule --add app="choose" manage=off
-yabai -m rule --add app=".*Anki.*" manage=off
+yabai -m rule --add app="^System Settings$" manage=off sticky=on
+yabai -m rule --add app='^System Information$' manage=off sticky=on
+yabai -m rule --add title='.*Info$' manage=off sticky=on
+yabai -m rule --add app="^1Password$" manage=off sticky=on
+yabai -m rule --add app="Karabiner" manage=off sticky=on
+yabai -m rule --add app="choose" manage=off sticky=on
+yabai -m rule --add app=".*Anki.*" manage=off sticky=on
 
 yabai -m rule --add app="Code" space=2
 yabai -m rule --add app="Kitty" space=1
@@ -40,3 +40,16 @@ yabai -m rule --add app="Firefox" space=3
 #yabai -m signal --add event=window_created action="~/.local/bin/smart_gap"
 #yabai -m signal --add event=window_destroyed action="~/.local/bin/smart_gap"
 yabai -m signal --add event=display_added action="yabai -m space 9 --display next"
+#yabai -m signal --add event=window_created action='yabai -m query --windows --window $YABAI_WINDOW_ID | jq -er ".\"can-resize\" or .\"is-floating\"" || yabai -m window $YABAI_WINDOW_ID --toggle float'
+
+yabai -m signal --add event=mission_control_exit action='echo "refresh" | nc -U /tmp/yabai-indicator.socket'
+yabai -m signal --add event=display_added action='echo "refresh" | nc -U /tmp/yabai-indicator.socket'
+yabai -m signal --add event=display_removed action='echo "refresh" | nc -U /tmp/yabai-indicator.socket'
+yabai -m signal --add event=window_created action='echo "refresh windows" | nc -U /tmp/yabai-indicator.socket'
+yabai -m signal --add event=window_destroyed action='echo "refresh windows" | nc -U /tmp/yabai-indicator.socket'
+yabai -m signal --add event=window_focused action='echo "refresh windows" | nc -U /tmp/yabai-indicator.socket'
+yabai -m signal --add event=window_moved action='echo "refresh windows" | nc -U /tmp/yabai-indicator.socket'
+yabai -m signal --add event=window_resized action='echo "refresh windows" | nc -U /tmp/yabai-indicator.socket'
+yabai -m signal --add event=window_minimized action='echo "refresh windows" | nc -U /tmp/yabai-indicator.socket'
+yabai -m signal --add event=window_deminimized action='echo "refresh windows" | nc -U /tmp/yabai-indicator.socket'
+
