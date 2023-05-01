@@ -347,4 +347,52 @@
         "key": "ctrl+numpad_subtract",
         "command": "-workbench.action.zoomOut"
     },
+    {
+        "key": "cmd+c",
+        "command": "workbench.action.terminal.sendSequence",
+        "args": {
+            "text": "\u0003"
+        },
+        "when": "isMac && terminalFocus"
+    },
+    {
+        "key": "cmd+d",
+        "command": "workbench.action.terminal.sendSequence",
+        "args": {
+            "text": "\u0004"
+        },
+        "when": "isMac && terminalFocus"
+    },
+    {
+        "key": "cmd+w",
+        "command": "workbench.action.terminal.sendSequence",
+        "args": {
+            "text": "\u0017"
+        },
+        "when": "isMac && terminalFocus"
+    },
+    {
+        "key": "cmd+l",
+        "command": "workbench.action.terminal.sendSequence",
+        "args": {
+            "text": "\u000c"
+        },
+        "when": "isMac && terminalFocus"
+    },
+    {
+        "key": "cmd+r",
+        "command": "workbench.action.terminal.sendSequence",
+        "args": {
+            "text": "\u0012"
+        },
+        "when": "isMac && terminalFocus"
+    },
+    {
+        "key": "cmd+z",
+        "command": "workbench.action.terminal.sendSequence",
+        "args": {
+            "text": "\u001a"
+        },
+        "when": "isMac && terminalFocus"
+    },
 ]
