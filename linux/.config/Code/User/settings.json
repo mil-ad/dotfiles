@@ -153,6 +153,17 @@
     "jupyter.askForKernelRestart": false,
     "latex-workshop.view.pdf.viewer": "external",
     "latex-workshop.view.pdf.external.viewer.command": "sioyek",
+    "latex-workshop.view.pdf.external.synctex.command": "sioyek",
+    "latex-workshop.view.pdf.external.synctex.args": [
+        "--inverse-search",
+        "code -r -g \"%1:%2\"",
+        "--reuse-window",
+        "--forward-search-file",
+        "%TEX%",
+        "--forward-search-line",
+        "%LINE%",
+        "%PDF%"
+    ],
     "latex-workshop.message.error.show": false,
     "latex-workshop.message.warning.show": false,
     "latex-workshop.latexindent.path": "latexindent",

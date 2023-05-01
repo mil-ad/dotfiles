@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+
+if [ -f "$1" ]; then
+	touch "$1" && notify-send "📆 Updated timestamp" "$1"
+fi
+

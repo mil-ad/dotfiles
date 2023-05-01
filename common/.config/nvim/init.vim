@@ -11,9 +11,11 @@ call plug#begin('~/.vim/plugged')
 
 Plug 'junegunn/fzf.vim'
 Plug 'tpope/vim-fugitive'
-Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
+"Plug 'vim-airline/vim-airline'
+"Plug 'vim-airline/vim-airline-themes'
 "Plug 'feline-nvim/feline.nvim'
+Plug 'nvim-lualine/lualine.nvim'
+Plug 'nvim-tree/nvim-web-devicons'
 Plug 'morhetz/gruvbox'
 Plug 'tpope/vim-surround'
 Plug 'scrooloose/nerdtree'
@@ -43,7 +45,6 @@ set wildmenu            " Show possible options when doing tab-completion
 " When more than one match in tab-complete, list all matches and complete
 " until longest common string.
 set wildmode=longest:full,full
-
 
 set clipboard+=unnamedplus " Use system clipboard?
 
