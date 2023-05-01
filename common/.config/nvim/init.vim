@@ -45,6 +45,8 @@ set wildmenu            " Show possible options when doing tab-completion
 " until longest common string.
 set wildmode=longest:full,full
 
+set clipboard+=unnamedplus " Use system clipboard?
+
 set ignorecase          " Ignore case when searching
 set smartcase           " Override ignorecase when search pattern includes upper case
 
