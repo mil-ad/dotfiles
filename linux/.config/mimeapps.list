@@ -1,5 +1,5 @@
 [Default Applications]
-application/epub+zip=zathura.desktop;
+application/epub+zip=sioyek.desktop;
 application/pdf=sioyek.desktop;zathura.desktop;
 application/x-bittorrent=deluge.desktop
 application/x-extension-htm=firefox.desktop

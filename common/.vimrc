@@ -24,8 +24,9 @@ Plug 'airblade/vim-gitgutter'
 call plug#end()
 " -----------------------8<-------------------------8<------------------------ "
 
-set number             	" Show line numbers
-set nowrap		" Do not wrap lines
+set number              " Show line numbers
+set nowrap              " Do not wrap lines
+set textwidth=80
 syntax on              	" Enable syntax highlighting
 set mouse=a            	" Enable mouse support in all modes
 set colorcolumn=81,121 	" Show ruler at 80(+1) and 120(+1) columns

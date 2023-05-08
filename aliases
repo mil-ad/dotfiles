@@ -10,6 +10,8 @@ alias ......="cd ../../../../../.."
 alias ssh="TERM=xterm-256color ssh"
 alias gcloud="TERM=xterm-256color gcloud"
 
+alias mm="micromamba"
+
 alias gs='git status'
 alias goops='git rebase -i HEAD~2'
 
