@@ -36,8 +36,8 @@ https://github.com/davatorium/rofi/blob/next/themes/gruvbox-dark.rasi
     normal-foreground:           @foreground;
     alternate-normal-background: @gruvbox-dark-bg0;
     alternate-normal-foreground: @foreground;
-    selected-normal-background:  @gruvbox-dark-bg2;
-    selected-normal-foreground:  @gruvbox-dark-fg0;
+    selected-normal-background:  @gruvbox-dark-yellow-dark;
+    selected-normal-foreground:  @gruvbox-dark-bg0;
 
     active-background:           @gruvbox-dark-yellow-dark;
     active-foreground:           @background;
