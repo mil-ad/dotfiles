@@ -7,7 +7,8 @@ Amazon
 eBay
 goodreads
 Wirecutter
-CamelCamelCamel' | dmenu)
+CamelCamelCamel 
+GitHub Repositories' | dmenu)
 
 [[ $engine ]] && query=$(echo '' | dmenu -l 0 -p "🔍 $engine")
 
@@ -20,6 +21,7 @@ case $engine in
     "goodreads") URL="https://www.goodreads.com/search?q=${query}" ;;
     "Wirecutter") URL="https://www.nytimes.com/wirecutter/search/?s=${query}" ;;
     "CamelCamelCamel") URL="https://uk.camelcamelcamel.com/search?sq=${query}" ;;
+	"GitHub Repositories") URL="https://github.com/search?q=${query}&type=repositories" ;;
 esac
 
 [[ $query ]] && xdg-open "${URL}" && i3-msg --quiet [urgent=latest] focus
