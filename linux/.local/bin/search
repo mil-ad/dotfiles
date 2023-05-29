@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 engine=$(printf 'YouTube
 Google Scholar
@@ -7,7 +7,7 @@ Amazon
 eBay
 goodreads
 Wirecutter
-CamelCamelCamel 
+CamelCamelCamel
 GitHub Repositories' | dmenu)
 
 [[ $engine ]] && query=$(echo '' | dmenu -l 0 -p "🔍 $engine")
