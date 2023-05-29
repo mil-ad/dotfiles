@@ -52,6 +52,4 @@ alias present_remotely='nohup pdfpc -Ssg -w presentation'
 
 if [[ $(uname) == 'Darwin' ]]; then
     alias yay='brew upgrade && brew upgrade --cask'
-else
-    function open() { (nohup xdg-open $1 </dev/null >/dev/null 2>&1 &) }
 fi
