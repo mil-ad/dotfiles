@@ -296,5 +296,5 @@ exec --no-startup-id redshift -l 51.50:0.127
 exec --no-startup-id xss-lock --transfer-sleep-lock -- ~/.local/bin/betterblurlock
 exec --no-startup-id nitrogen --restore
 exec --no-startup-id dunst -config ~/.config/dunst/dunstrc
-exec_always --no-startup-id ~/.scripts/kill_until_dead polybar && polybar milad
+exec_always --no-startup-id ~/.scripts/kill_until_dead polybar && ~/.scripts/start_polybar
 exec_always --no-startup-id ~/.scripts/kill_until_dead picom && picom

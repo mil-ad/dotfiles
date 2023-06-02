@@ -70,7 +70,7 @@ font-3 = Material Icons:style=Regular:size=15
 
 modules-left = i3
 modules-center = date
-modules-right = polypomo bluetoothctl wireguard caffeine wireless-network wired-network pulseaudio xkeyboard
+modules-right = ${env:MODULES_RIGHT}
 
 tray-position = right
 tray-padding = 0
