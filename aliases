@@ -11,6 +11,8 @@ alias ssh="TERM=xterm-256color ssh"
 alias gcloud="TERM=xterm-256color gcloud"
 
 alias mm="micromamba"
+alias mmrm='micromamba env remove --name'
+alias condarm='conda env remove --name'
 
 alias gs='git status'
 alias goops='git rebase -i HEAD~2'
@@ -19,8 +21,8 @@ alias icat='kitty +kitten icat'
 
 if command -v exa &> /dev/null
 then
-    alias ls="exa"
     alias l='exa -l --group-directories-first'
+    alias ls="exa"
     alias ll='exa -laH --group-directories-first'
     alias ldot='exa -ld .*'
 else
@@ -44,9 +46,8 @@ alias du='du -h'
 alias psmem='ps auxf | sort -nr -k 4 | head -10'
 alias pscpu='ps auxf | sort -nr -k 3 | head -10'
 
-alias weather='curl wttr.in/Oxford'
+alias weather='curl wttr.in/London'
 alias difffolders='diff -rq'
-alias condarm='conda env remove --name'
 
 alias present_remotely='nohup pdfpc -Ssg -w presentation'
 
