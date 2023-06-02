@@ -191,16 +191,16 @@ bindsym $mod+z --release exec --no-startup-id maim -s /dev/stdout | xclip -selec
 bindsym $mod+Shift+z exec --no-startup-id maim -s "$HOME/Pictures/screenshot-$(date +%F_%T).png" && notify-send "Screenshot region saved to ${HOME}/Pictures"
 bindsym $mod+Ctrl+z exec --no-startup-id maim "$HOME/Pictures/screenshot-$(date +%F_%T).png" && notify-send "Screenshot saved to ${HOME}/Pictures"
 
+bindsym $mod+e exec --no-startup-id ~/.scripts/enter_emoji
 bindsym $mod+0 exec --no-startup-id ~/.local/bin/sysact
-bindsym $mod+space exec --no-startup-id $HOME/.local/bin/winmenu
 bindsym $mod+o exec --no-startup-id $hidpi_scale $HOME/.local/bin/openrecentfile
+bindsym $mod+p exec --no-startup-id ~/.scripts/open_paper
 bindsym $mod+i exec --no-startup-id $HOME/.local/bin/search
+bindsym $mod+space exec --no-startup-id $HOME/.local/bin/winmenu
 bindsym $mod+Ctrl+i exec --no-startup-id ~/.local/bin/synonym
 bindsym $mod+Ctrl+o exec --no-startup-id $HOME/.local/bin/openfile
-bindsym $mod+p exec --no-startup-id ~/.scripts/open_paper
 bindsym $mod+Ctrl+p exec --no-startup-id ~/.scripts/open_paper_no_annotations
 bindsym $mod+Ctrl+r exec --no-startup-id  ~/.local/bin/open_github_repo
-bindsym $mod+Ctrl+e exec --no-startup-id ~/.scripts/enter_emoji
 bindsym $mod+Ctrl+space exec --no-startup-id ~/.scripts/enter_snippet
 # 0x2C is comma
 bindsym $mod+0x2C exec --no-startup-id ~/.scripts/rename_i3_container
