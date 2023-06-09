@@ -191,7 +191,7 @@ bindsym $mod+z --release exec --no-startup-id maim -s /dev/stdout | xclip -selec
 bindsym $mod+Shift+z exec --no-startup-id maim -s "$HOME/Pictures/screenshot-$(date +%F_%T).png" && notify-send "Screenshot region saved to ${HOME}/Pictures"
 bindsym $mod+Ctrl+z exec --no-startup-id maim "$HOME/Pictures/screenshot-$(date +%F_%T).png" && notify-send "Screenshot saved to ${HOME}/Pictures"
 
-bindsym $mod+e exec --no-startup-id ~/.scripts/enter_emoji
+bindsym $mod+e exec --no-startup-id ~/.local/bin/enter_emoji
 bindsym $mod+0 exec --no-startup-id ~/.local/bin/sysact
 bindsym $mod+o exec --no-startup-id $hidpi_scale $HOME/.local/bin/openrecentfile
 bindsym $mod+p exec --no-startup-id ~/.scripts/open_paper
