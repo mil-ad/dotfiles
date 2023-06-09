@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-chosen=$(cat ~/.local/share/emojis.txt | rofimenu | cut -d " " -f1)
+chosen=$(rofimenu < ~/.local/share/emojis.txt | cut -d " " -f1)
 
 [ "$chosen" != "" ] || exit
 
