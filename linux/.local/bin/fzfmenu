@@ -4,4 +4,4 @@ kitty \
   --override background_opacity=1 \
   --override background=#222222 \
   --class fzfmenu \
-  -- bash --noprofile --norc -c "fzf --reverse --prompt="" --no-info --color=bg+:-1 $* < /proc/$$/fd/0 > /proc/$$/fd/1" 
+  -- bash --noprofile --norc -c "fzf --reverse --prompt="" --no-info --color=bg+:-1,hl:#8ec07c,hl+:#8ec07c $* < /proc/$$/fd/0 > /proc/$$/fd/1" 
