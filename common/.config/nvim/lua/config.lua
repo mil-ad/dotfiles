@@ -40,6 +40,9 @@ vim.keymap.set('n', '<C-f>', builtin.live_grep, {})
 vim.keymap.set('n', '<C-r>', builtin.treesitter, {})
 vim.keymap.set('n', '<leader>h', builtin.help_tags, {})
 
+vim.keymap.set('n', '<A-j>', ':m .+1<CR>', {})
+vim.keymap.set('n', '<A-k>', ':m .-2<CR>', {})
+
 vim.g.gruvbox_baby_transparent_mode = true
 vim.g.gruvbox_baby_background_color = dark
 vim.g.gruvbox_baby_use_original_palette = false

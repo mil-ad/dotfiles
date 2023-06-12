@@ -25,7 +25,7 @@
     "editor.gotoLocation.multipleDeclarations": "gotoAndPeek",
     "editor.gotoLocation.multipleDefinitions": "gotoAndPeek",
     "editor.gotoLocation.multipleTypeDefinitions": "gotoAndPeek",
-    "editor.minimap.enabled": true,
+    "editor.minimap.enabled": false,
     // Disable italics in comment blocks
     // From https://stackoverflow.com/a/46278282/298209
     "editor.tokenColorCustomizations": {
@@ -59,7 +59,7 @@
     "workbench.statusBar.visible": true,
     "workbench.tips.enabled": false,
     "workbench.activityBar.visible": true,
-    "workbench.colorTheme": "Popping and Locking",
+    "workbench.colorTheme": "Popping and Locking Black Theme",
     "workbench.iconTheme": "material-icon-theme",
     "workbench.startupEditor": "newUntitledFile",
     "workbench.editorAssociations": {
@@ -72,28 +72,23 @@
     "explorer.sortOrder": "type",
     "explorer.incrementalNaming": "smart",
     "explorer.decorations.badges": false,
-    "terminal.integrated.fontFamily": "'Cascadia Code', 'Symbols Nerd Font Mono', 'Noto Color Emoji', 'Vazir WOL', 'Iosevka Nerd Font Mono', 'JetBrains Mono Medium', 'JetBrainsMono-Medium','IBMPlexMono-Bold', 'IBM Plex Mono SemiBold', 'Courier New', Menlo",
-    "terminal.integrated.fontSize": 13,
+    "terminal.integrated.fontFamily": "'IosevkaTerm Nerd Font Mono', 'Iosevka Nerd Font Mono', 'Cascadia Code', 'Noto Color Emoji', 'Vazir WOL', 'JetBrains Mono Medium', 'JetBrainsMono-Medium','IBMPlexMono-Bold', 'IBM Plex Mono SemiBold', 'Courier New', Menlo",
+    "terminal.integrated.fontSize": 12,
     "terminal.integrated.inheritEnv": true,
     "terminal.external.linuxExec": "kitty",
     "terminal.integrated.macOptionClickForcesSelection": true,
     "terminal.integrated.macOptionIsMeta": true,
     "terminal.integrated.enableMultiLinePasteWarning": false,
-    // "terminal.integrated.rendererType": "dom",
-    "terminal.integrated.gpuAcceleration": "on",
+    "terminal.integrated.gpuAcceleration": "auto",
     "scm.diffDecorationsGutterWidth": 2,
     "scm.diffDecorations": "gutter",
-    "diffEditor.ignoreTrimWhitespace": false,
-    "diffEditor.renderSideBySide": true,
     "git.autofetch": true,
     "git.confirmSync": false,
     "git.openDiffOnClick": false,
     "git.mergeEditor": true,
     "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
     "problems.decorations.enabled": false,
-    "breadcrumbs.enabled": false,
     "search.quickOpen.includeHistory": false,
-    "window.zoomLevel": -2,
     "isort.args": [
         "--profile",
         "black"
@@ -218,14 +213,14 @@
     "spellright.configurationScope": "user",
     // Currently trying out LTeX extension
     "spellright.documentTypes": [
-        // "markdown",
-        // "plaintext",
-        // "latex"
+        "markdown",
+        "latex",
+        "python"
     ],
     "spellright.spellContextByClass": {
         "latex": "body",
-        "markdown": "comments",
-        "python": "comments",
+        // "markdown": "comments",
+        "python": "comments strings",
     },
     "spellright.statusBarIndicator": false,
     "[todo]": {
@@ -239,4 +234,8 @@
         "editor.wordWrap": "bounded",
         "editor.wordWrapColumn": 120,
     },
+    "notebook.output.textLineLimit": 40,
+    "workbench.editor.enablePreview": false,
+    "diffEditor.ignoreTrimWhitespace": false,
+    "window.zoomLevel": -1,
 }

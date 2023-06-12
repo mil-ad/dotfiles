@@ -388,11 +388,39 @@
         "when": "isMac && terminalFocus"
     },
     {
+        "key": "cmd+t",
+        "command": "workbench.action.terminal.sendSequence",
+        "args": {
+            "text": "\u0014"
+        },
+        "when": "isMac && terminalFocus"
+    },
+    {
         "key": "cmd+z",
         "command": "workbench.action.terminal.sendSequence",
         "args": {
             "text": "\u001a"
         },
         "when": "isMac && terminalFocus"
+    },
+    {
+        "key": "alt+f3",
+        "command": "workbench.action.compareEditor.nextChange",
+        "when": "textCompareEditorVisible"
+    },
+    {
+        "key": "alt+f5",
+        "command": "-workbench.action.compareEditor.nextChange",
+        "when": "textCompareEditorVisible"
+    },
+    {
+        "key": "shift+alt+f3",
+        "command": "workbench.action.compareEditor.previousChange",
+        "when": "textCompareEditorVisible"
+    },
+    {
+        "key": "shift+alt+f5",
+        "command": "-workbench.action.compareEditor.previousChange",
+        "when": "textCompareEditorVisible"
     },
 ]

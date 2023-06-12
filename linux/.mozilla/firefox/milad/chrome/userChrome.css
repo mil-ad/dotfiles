@@ -43,6 +43,15 @@
     --faded_purple: #8f3f71;
     --faded_aqua: #427b58;
     --faded_orange: #af3a03;
+
+    --toolbarbutton-icon-fill: #ebdbb2 !important;
+}
+
+/* Only for macOS */
+#TabsToolbar {
+    margin-top: 6px;
+    margin-left: 8px;
+    margin-right: 8px;
 }
 
 tab[selected="true"] > .tab-stack > .tab-background {
@@ -60,8 +69,9 @@ tab:not([selected="true"]) > .tab-stack > .tab-background {
 }
 
 .tab-text {
-    font-family: "Iosevka" !important;
-    font-size: 0.875rem;
+    font-family: Iosevka, Vazirmatn !important;
+    /* font-size: 0.875rem; */
+    color: var(--light0);
     /* 14px */
 }
 
@@ -90,6 +100,13 @@ tab:not([selected="true"]) > .tab-stack > .tab-background {
     outline-color: var(--faded_yellow) !important;
 }
 
+#urlbar, #searchbar .searchbar-textbox {
+    color: var(--light1) !important;
+    
+    /* macOS only */
+    font-family: Iosevka, Vazirmatn !important;
+}
+
 /* @-moz-document url("about:home"), url("about:newtab"), url(about:privatebrowsing) {
     .logo-and-wordmark {
         display: none !important;
@@ -110,3 +127,11 @@ tab:not([selected="true"]) > .tab-stack > .tab-background {
 /*  #back-button,
  #forward-button */
 #home-button { display:none!important; }
+
+.titlebar-spacer[type="pre-tabs"] {
+    display: none !important;
+}
+
+.titlebar-spacer[type="post-tabs"] {
+    display: none !important;
+}

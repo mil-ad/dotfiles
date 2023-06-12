@@ -13,33 +13,32 @@ function get_repos_one_page {
 
 function get_repos_all_pages {
     # Use pagination if necessary
-    last_page=`curl -s -I --netrc ${rest_request} -H "${github_api_accept_header}" | grep -oP '(?<=page=)(\d+)(?=>; rel="last")'`
-    if [ -z "$last_page" ]; then
-        get_repos_one_page 1
-    else
-        source `which env_parallel.bash`
-        seq $last_page | env_parallel -k get_repos_one_page {}
-    fi
+    last_page=$(curl -s -I --netrc "${rest_request}" -H "${github_api_accept_header}" | grep -oP '(?<=page=)(\d+)(?=>; rel="last")')
+    for page in $(seq "$last_page"); do
+        get_repos_one_page "$page"
+    done
 }
 
 function generate_cache {
     cache=$(get_repos_all_pages)
-    echo $cache > $cache_file
+    echo "$cache" > "$cache_file"
 }
 
 function maybe_regenerate_cache {
-    if test `find $cache_file -mmin +2`
+    if test "$(find "$cache_file" -mmin +2)"
     then
         generate_cache
     fi
 }
 
-[ ! -e $cache_file ] && generate_cache
+[ ! -e "$cache_file" ] && generate_cache
+# generate_cache
 
-selected=$(cat $cache_file | jq .name | tr -d \" | dmenu)
+selected=$(jq .name "$cache_file" | tr -d \" | dmenu)
+
 if [ -n "$selected" ]; then
-  cat $cache_file | jq ". | select(.name == \"$selected\") | .url" | tr -d \" | xargs xdg-open
-  i3-msg --quiet [urgent=latest] focus
+  jq ". | select(.name == \"$selected\") | .url" "$cache_file" | tr -d \" | xargs xdg-open
+#   i3-msg --quiet [urgent=latest] focus
 fi
 
-maybe_regenerate_cache &
+maybe_regenerate_cache

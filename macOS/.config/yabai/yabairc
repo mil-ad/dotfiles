@@ -11,6 +11,7 @@ yabai -m config normal_window_border_color   0xff1d2021
 yabai -m config window_shadow                off
 yabai -m config window_origin_display cursor
 yabai -m config window_zoom_persist off
+#yabai -m config window_topmost on
 
 yabai -m config top_padding    8
 yabai -m config bottom_padding 8

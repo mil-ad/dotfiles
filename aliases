@@ -43,6 +43,8 @@ alias cal='cal -3'
 alias df='df -h'
 alias du='du -h'
 
+alias tmuxdump='capture-pane -pS -'
+
 alias psmem='ps auxf | sort -nr -k 4 | head -10'
 alias pscpu='ps auxf | sort -nr -k 3 | head -10'
 
