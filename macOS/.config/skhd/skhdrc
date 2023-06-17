@@ -11,6 +11,7 @@ rhyper - z : skhd -k "cmd + ctrl + shift - 4"
 rhyper - q : skhd -k "cmd - w"
 rhyper - s : if [ "$(yabai -m query --spaces --space | jq -r '.type')" = "stack" ]; then yabai -m space --layout bsp; else yabai -m space --layout stack; fi
 rhyper - f : yabai -m window --toggle zoom-fullscreen
+rhyper - b : $HOME/.scripts/open_bookmark
 rhyper - p : $HOME/.scripts/open_paper
 rhyper - e : $HOME/.scripts/enter_emoji
 rhyper - 0: $HOME/.local/bin/sysact
@@ -19,7 +20,6 @@ rhyper - 0: $HOME/.local/bin/sysact
 rhyper + lshift - space : yabai -m window --toggle float
 rhyper + lcmd - e : skhd -k "cmd + ctrl - space"
 rhyper + lctrl - r : /Users/miladalizadeh/.dotfiles/linux/.local/bin/open_github_repo
-# so that it works in kitty too:
 rhyper + lcmd - r : /Users/miladalizadeh/.dotfiles/linux/.local/bin/open_github_repo
 
 # Move window to another space
