@@ -11,7 +11,9 @@ alias ssh="TERM=xterm-256color ssh"
 alias gcloud="TERM=xterm-256color gcloud"
 
 alias mm="micromamba"
+alias mma="micromamba activate"
 alias mmd="micromamba deactivate"
+alias mmls='micromamba env list'
 alias mmrm='micromamba env remove --name'
 alias condarm='conda env remove --name'
 
