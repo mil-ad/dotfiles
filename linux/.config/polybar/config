@@ -169,6 +169,9 @@ format-underline = #4bffdc
 label = %percentage_used%%
 
 [module/wireless-network]
+
+; somehow this module uses Material Icons font?
+
 type = internal/network
 interface = wlan0
 interval = 5.0
@@ -177,10 +180,10 @@ interval = 5.0
 ; format-connected = <label-connected>
 format-connected-underline = ${colors.green}
 label-connected =  %essid%
+; label-disconnected = 
 
 format-disconnected = <label-disconnected>
 format-disconnected-underline = ${colors.alert}
-label-disconnected = %ifname% disconnected
 ;label-disconnected-foreground = ${colors.foreground-alt}
 
 ramp-signal-0 = 
