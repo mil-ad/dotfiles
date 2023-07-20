@@ -12,6 +12,7 @@ alert = #cc241d
 #green = #98971a
 green = #55aa55
 yellow = #d79921
+grey = #928374
 
 [bar/milad]
 ; Use either of the following command to list available outputs:
@@ -180,11 +181,12 @@ interval = 5.0
 ; format-connected = <label-connected>
 format-connected-underline = ${colors.green}
 label-connected =  %essid%
-; label-disconnected = 
+label-disconnected = 
 
 format-disconnected = <label-disconnected>
-format-disconnected-underline = ${colors.alert}
+;format-disconnected-underline = ${colors.alert}
 ;label-disconnected-foreground = ${colors.foreground-alt}
+label-disconnected-foreground = ${colors.grey}
 
 ramp-signal-0 = 
 ramp-signal-1 = 
