@@ -12,6 +12,7 @@ alias gcloud="TERM=xterm-256color gcloud"
 
 alias mm="micromamba"
 alias mma="micromamba activate"
+alias mmc="micromamba create --name"
 alias mmd="micromamba deactivate"
 alias mmls='micromamba env list'
 alias mmrm='micromamba env remove --name'
