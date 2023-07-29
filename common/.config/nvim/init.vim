@@ -91,6 +91,11 @@ nnoremap <Leader>r :source $MYVIMRC<CR>
 nn <C-/> :NERDTreeToggle<CR>
 map q <Nop>
 
+" custom text-objects for /
+onoremap <silent> i/ :<C-U>normal! T/vt/<CR>
+onoremap <silent> a/ :<C-U>normal! F/vf/<CR> " around /
+
+
 " VimAirline settings
 set laststatus=2 " Make it visible all the time
 let g:airline_powerline_fonts = 1
