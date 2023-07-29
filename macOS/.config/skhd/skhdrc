@@ -11,9 +11,11 @@ rhyper - z : skhd -k "cmd + ctrl + shift - 4"
 rhyper - q : skhd -k "cmd - w"
 rhyper - s : if [ "$(yabai -m query --spaces --space | jq -r '.type')" = "stack" ]; then yabai -m space --layout bsp; else yabai -m space --layout stack; fi
 rhyper - f : yabai -m window --toggle zoom-fullscreen
+rhyper - o : $HOME/.local/bin/openrecentfile
+rhyper + lcmd - o : $HOME/.local/bin/openfile
 rhyper - b : $HOME/.scripts/open_bookmark
 rhyper - p : $HOME/.scripts/open_paper
-rhyper - e : $HOME/.scripts/enter_emoji
+rhyper - e : $HOME/.local/bin/enter_emoji
 rhyper - 0: $HOME/.local/bin/sysact
 
 # Some are defined for both control and and cmd so that they work in kitty too
