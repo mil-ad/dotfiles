@@ -1,7 +1,7 @@
 {
     "telemetry.telemetryLevel": "off",
     "update.mode": "manual",
-    "editor.fontFamily": "'Cascadia Code', 'Noto Color Emoji', 'Vazirmatn UI NL', 'JetBrains Mono Medium', 'IBM Plex Mono Medium', 'Iosevka Nerd Font Mono', 'JetBrainsMono-Medium', 'Material Icons'",
+    "editor.fontFamily": "'IBM Plex Mono', 'Cascadia Code', 'Noto Color Emoji', 'Vazirmatn UI NL', 'IntelOne Mono',  'JetBrains Mono Medium', 'IBM Plex Mono Medium', 'Iosevka Nerd Font Mono', 'JetBrainsMono-Medium', 'Material Icons'",
     // "editor.fontWeight": "400",
     "editor.fontSize": 18,
     "editor.tabSize": 4,
@@ -59,7 +59,22 @@
     "workbench.statusBar.visible": true,
     "workbench.tips.enabled": false,
     "workbench.activityBar.visible": true,
-    "workbench.colorTheme": "Popping and Locking Black Theme",
+    "workbench.colorTheme": "Catppuccin Mocha",
+    "catppuccin.accentColor": "yellow",
+    "catppuccin.colorOverrides": {
+        "mocha": {
+            "base": "#181828",
+            "mantle": "#11111E",
+            "crust": "#020202",
+            "yellow": "#fabd2f"
+        }
+    },
+
+    "catppuccin.customUIColors": {
+        "mocha": {
+            "statusBar.foreground": "accent"
+        }
+    },
     "workbench.iconTheme": "material-icon-theme",
     "workbench.startupEditor": "newUntitledFile",
     "workbench.editorAssociations": {
@@ -73,7 +88,7 @@
     "explorer.incrementalNaming": "smart",
     "explorer.decorations.badges": false,
     "terminal.integrated.fontFamily": "'IosevkaTerm Nerd Font Mono', 'Iosevka Nerd Font Mono', 'Cascadia Code', 'Noto Color Emoji', 'Vazir WOL', 'JetBrains Mono Medium', 'JetBrainsMono-Medium','IBMPlexMono-Bold', 'IBM Plex Mono SemiBold', 'Courier New', Menlo",
-    "terminal.integrated.fontSize": 12,
+    "terminal.integrated.fontSize": 16,
     "terminal.integrated.inheritEnv": true,
     "terminal.external.linuxExec": "kitty",
     "terminal.integrated.macOptionClickForcesSelection": true,
@@ -220,7 +235,7 @@
     "spellright.spellContextByClass": {
         "latex": "body",
         // "markdown": "comments",
-        "python": "comments strings",
+        "python": "comments",
     },
     "spellright.statusBarIndicator": false,
     "[todo]": {
@@ -237,5 +252,7 @@
     "notebook.output.textLineLimit": 40,
     "workbench.editor.enablePreview": false,
     "diffEditor.ignoreTrimWhitespace": false,
-    "window.zoomLevel": -1,
+    "notebook.lineNumbers": "on",
+    "window.zoomLevel": -3,
+    "workbench.layoutControl.enabled": false,
 }
