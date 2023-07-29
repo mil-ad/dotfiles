@@ -1,7 +1,7 @@
 {
     "telemetry.telemetryLevel": "off",
     "update.mode": "manual",
-    "editor.fontFamily": "'IBM Plex Mono', 'Cascadia Code', 'Noto Color Emoji', 'Vazirmatn UI NL', 'IntelOne Mono',  'JetBrains Mono Medium', 'IBM Plex Mono Medium', 'Iosevka Nerd Font Mono', 'JetBrainsMono-Medium', 'Material Icons'",
+    "editor.fontFamily": "'IBM Plex Mono', 'Cascadia Code', 'Symbols Nerd Font', 'Noto Color Emoji', 'Vazirmatn UI NL', 'IntelOne Mono', 'JetBrains Mono Medium', 'IBM Plex Mono Medium', 'Iosevka Nerd Font Mono', 'JetBrainsMono-Medium', 'Material Icons'",
     // "editor.fontWeight": "400",
     "editor.fontSize": 18,
     "editor.tabSize": 4,
@@ -38,15 +38,15 @@
                     "comment.block.documentation",
                     "comment.line",
                     "comment.line.double-slash",
-                    "punctuation.definition.comment",
+                    "punctuation.definition.comment"
                 ],
                 "settings": {
-                    "fontStyle": "",
+                    "fontStyle": ""
                     // "fontStyle": "italic",
                     // "fontStyle": "italic underline",
                     // "fontStyle": "italic bold underline",
                 }
-            },
+            }
         ]
     },
     "files.associations": {
@@ -96,7 +96,7 @@
             "terminal.ansiCyan": "#689d6a",
             "terminal.ansiBrightCyan": "#7ec16e",
             "terminal.ansiWhite": "#a89984",
-            "terminal.ansiBrightWhite": "#ebdbb2",
+            "terminal.ansiBrightWhite": "#ebdbb2"
         }
     },
     "workbench.iconTheme": "material-icon-theme",
@@ -111,8 +111,9 @@
     "explorer.sortOrder": "type",
     "explorer.incrementalNaming": "smart",
     "explorer.decorations.badges": false,
-    "terminal.integrated.fontFamily": "'IosevkaTerm Nerd Font Mono', 'Iosevka Nerd Font Mono', 'Cascadia Code', 'Noto Color Emoji', 'Vazir WOL', 'JetBrains Mono Medium', 'JetBrainsMono-Medium','IBMPlexMono-Bold', 'IBM Plex Mono SemiBold', 'Courier New', Menlo",
-    "terminal.integrated.fontSize": 16,
+    "terminal.integrated.fontFamily": "'Iosevka Nerd Font', 'IosevkaTerm Nerd Font Mono', 'IosevkaTerm Nerd Font Mono', 'Iosevka Nerd Font Mono', 'Cascadia Code', 'Noto Color Emoji', 'Vazir WOL', 'JetBrains Mono Medium', 'JetBrainsMono-Medium','IBMPlexMono-Bold', 'IBM Plex Mono SemiBold', 'Courier New', Menlo",
+    // "terminal.integrated.fontFamily": "",
+    "terminal.integrated.fontSize": 12,
     "terminal.integrated.inheritEnv": true,
     "terminal.external.linuxExec": "kitty",
     "terminal.integrated.macOptionClickForcesSelection": true,
@@ -143,8 +144,8 @@
         ],
         "editor.formatOnSave": true,
         "editor.codeActionsOnSave": {
-            "source.organizeImports": true,
-        },
+            "source.organizeImports": true
+        }
     },
     "[latex]": {
         "editor.wordWrap": "bounded",
@@ -152,12 +153,12 @@
         "editor.rulers": [
             80
         ],
-        "editor.formatOnSave": false,
+        "editor.formatOnSave": false
     },
     "[markdown]": {
         "editor.wordWrap": "bounded",
         "editor.wordWrapColumn": 80,
-        "files.trimTrailingWhitespace": false,
+        "files.trimTrailingWhitespace": false
     },
     // =========================================================================
     // Extension settings
@@ -178,7 +179,7 @@
     "python.linting.enabled": true,
     "python.linting.flake8Enabled": true,
     "python.linting.flake8Args": [
-        "--ignore=E501",
+        "--ignore=E501"
     ],
     "python.testing.pytestEnabled": false,
     "python.testing.unittestEnabled": false,
@@ -259,7 +260,7 @@
     "spellright.spellContextByClass": {
         "latex": "body",
         // "markdown": "comments",
-        "python": "comments",
+        "python": "comments"
     },
     "spellright.statusBarIndicator": false,
     "[todo]": {
@@ -271,12 +272,13 @@
         "editor.renderWhitespace": "none",
         "editor.renderControlCharacters": false,
         "editor.wordWrap": "bounded",
-        "editor.wordWrapColumn": 120,
+        "editor.wordWrapColumn": 120
     },
     "notebook.output.textLineLimit": 40,
-    "workbench.editor.enablePreview": false,
-    "diffEditor.ignoreTrimWhitespace": false,
     "notebook.lineNumbers": "on",
-    "window.zoomLevel": -3,
     "workbench.layoutControl.enabled": false,
+    "window.zoomLevel": -1,
+    "window.menuBarVisibility": "toggle",
+    "diffEditor.ignoreTrimWhitespace": false,
+    "update.showReleaseNotes": false
 }
