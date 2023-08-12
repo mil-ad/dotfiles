@@ -3,6 +3,7 @@
 engine=$(printf 'DuckDuckGo
 YouTube
 Google Scholar
+Google Maps
 Letterboxd
 Amazon
 eBay
@@ -17,6 +18,7 @@ case $engine in
 	"DuckDuckGo") URL="https://duckduckgo.com/?q=${query}" ;;
     "YouTube") URL="https://www.youtube.com/results?search_query=${query}" ;;
     "Google Scholar") URL="https://scholar.google.com/scholar?q=${query}" ;;
+    "Google Maps") URL="https://google.com/maps/search/${query}" ;;
     "Letterboxd") URL="https://letterboxd.com/search/${query}" ;;
     "Amazon") URL="https://www.amazon.co.uk/s?k=${query}" ;;
     "eBay") URL="https://www.ebay.co.uk/sch/i.html?_nkw=${query}" ;;
