@@ -10,9 +10,9 @@ eBay
 goodreads
 Wirecutter
 CamelCamelCamel
-GitHub Repositories' | dmenu)
+GitHub Repositories' | rofimenu)
 
-[[ $engine ]] && query=$(echo '' | dmenu -l 0 -p "🔍 $engine")
+[[ $engine ]] && query=$(echo '' | rofimenu -l 0 -p "🔍 $engine:")
 
 case $engine in
 	"DuckDuckGo") URL="https://duckduckgo.com/?q=${query}" ;;
