@@ -1,3 +1,9 @@
 #!/usr/bin/env bash
 
-cat | /usr/bin/rofi -dmenu -i -sort -sorting-method fzf
+if [[ "$@" =~ "-p" ]]; then
+    prompt_arg=()
+else
+    prompt_arg=(-theme-str 'prompt { enabled: false; }')
+fi
+
+cat | /usr/bin/rofi -dmenu -i -sort -sorting-method fzf "${prompt_arg[@]}" "$@"
