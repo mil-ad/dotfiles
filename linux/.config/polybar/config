@@ -9,8 +9,8 @@ primary = #ffb52a
 secondary = #e60053
 alert = #cc241d
 
-#green = #98971a
-green = #55aa55
+green = #8ec07c
+#green = #55aa55
 yellow = #d79921
 grey = #928374
 
@@ -177,23 +177,13 @@ type = internal/network
 interface = wlan0
 interval = 5.0
 
-; format-connected = <ramp-signal> <label-connected>
-; format-connected = <label-connected>
-format-connected-underline = ${colors.green}
 label-connected =  %essid%
 label-disconnected = 
 
-format-disconnected = <label-disconnected>
-;format-disconnected-underline = ${colors.alert}
-;label-disconnected-foreground = ${colors.foreground-alt}
+format-disconnected = %{A:rfkill toggle wifi:}<label-disconnected>%{A}
+format-connected = %{A:rfkill toggle wifi:}<label-connected>%{A}
+format-connected-underline = ${colors.green}
 label-disconnected-foreground = ${colors.grey}
-
-ramp-signal-0 = 
-ramp-signal-1 = 
-ramp-signal-2 = 
-ramp-signal-3 = 
-ramp-signal-4 = 
-ramp-signal-foreground = ${colors.foreground-alt}
 
 [module/wired-network]
 type = internal/network
