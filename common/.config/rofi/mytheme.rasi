@@ -1,4 +1,4 @@
-/* 
+/*
 Based on the official Gruvbox theme in Rofi with some modifications
 
 https://github.com/morhetz/gruvbox
@@ -79,11 +79,12 @@ textbox {
 }
 
 listview {
-    border:       None; 
+    border:       None;
     padding:      2px 0 0;
     border-color: @separatorcolor;
     spacing:      2px;
     scrollbar:    @scrollbar;
+    fixed-height: false;
 }
 
 element {
@@ -153,7 +154,7 @@ inputbar {
     spacing:    0;
     text-color: @normal-foreground;
     padding:    10px 25px;
-    children:   [ entry ];
+    children:   [ prompt, entry ];
 }
 
 case-indicator,
@@ -162,6 +163,11 @@ prompt,
 button {
     spacing:    0;
     text-color: @normal-foreground;
+}
+
+prompt {
+    padding: 0px 20px 0px 0px;
+    margin: 0px;
 }
 
 button.selected {
@@ -175,8 +181,8 @@ textbox-prompt-sep {
     text-color: @normal-foreground;
     margin:     0 0.3em 0 0;
 }
+
 element-text, element-icon {
     background-color: inherit;
-    text-color:       inherit;
+    text-color: inherit;
 }
-
