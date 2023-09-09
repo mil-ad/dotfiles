@@ -29,6 +29,7 @@ video/mpeg=mpv.desktop;
 video/quicktime=mpv.desktop;
 video/x-matroska=mpv.desktop;
 video/x-ms-wmv=mpv.desktop;
+audio/ogg=mpv.desktop;
 
 [Added Associations]
 application/epub+zip=zathura.desktop;
@@ -44,7 +45,7 @@ application/x-extension-xhtml=firefox.desktop;brave.desktop;
 application/xhtml+xml=firefox.desktop;brave.desktop;
 audio/mp4=vlc.desktop;
 video/quicktime=mpv.desktop;
-image/bmp=sxiv-rifle.desktop;
+image/bmp=nsxiv-rifle.desktop;
 image/gif=imv-here.desktop;imv-folder.desktop;
 image/HEIC=imv-here.desktop;imv-folder.desktop;gpicview.desktop;
 image/heif=imv-here.desktop;imv-folder.desktop;
