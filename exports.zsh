@@ -6,6 +6,6 @@ export KEYTIMEOUT=5
 export GPG_TTY=$(tty)
 
 if [[ $(uname) == 'Darwin' ]]; then
-        export PATH="$HOME/.local/bin:$PATH"
-        export PATH="/opt/homebrew/opt/grep/libexec/gnubin:$PATH"
+    export PATH="$HOME/.local/bin:$PATH"
+    export PATH="/opt/homebrew/opt/grep/libexec/gnubin:$PATH"
 fi

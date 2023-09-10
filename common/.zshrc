@@ -12,8 +12,8 @@ antigen apply
 
 eval "$(starship init zsh)"
 
-source ~/.dotfiles/aliases
-source ~/.dotfiles/exports
+source ~/.dotfiles/aliases.zsh
+source ~/.dotfiles/exports.zsh
 source ~/.dotfiles/fzf
 
 if [[ $(uname) == 'Darwin' ]]; then
