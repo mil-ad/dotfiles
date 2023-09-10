@@ -311,12 +311,12 @@ screenchange-reload = true
 ;compositing-border = over
 ;pseudo-transparency = false
 
-[module/bluetoothctl]
+[module/airpods]
 type = custom/script
-exec = ~/.scripts/polybar-bluetoothctl.sh
+exec = ~/.scripts/polybar-bluetooth-device.sh --status B8:81:FA:7E:BE:49
 tail = false
-interval = 1
-click-left = ~/.scripts/polybar-bluetoothctl.sh --toggle &
+interval = 2
+click-left = ~/.scripts/polybar-bluetooth-device.sh --toggle B8:81:FA:7E:BE:49 &
 
 [module/wireguard]
 type = custom/script
