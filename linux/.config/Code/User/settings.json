@@ -1,6 +1,7 @@
 {
     "telemetry.telemetryLevel": "off",
     "update.mode": "manual",
+    // "editor.fontFamily": "'IBM Plex Mono', 'Cascadia Code', 'Symbols Nerd Font', 'Noto Color Emoji', 'Vazirmatn UI NL', 'IntelOne Mono', 'JetBrains Mono Medium', 'IBM Plex Mono Medium', 'Iosevka Nerd Font Mono', 'JetBrainsMono-Medium', 'Material Icons'",
     "editor.fontFamily": "'IBM Plex Mono', 'Cascadia Code', 'Symbols Nerd Font', 'Noto Color Emoji', 'Vazirmatn UI NL', 'IntelOne Mono', 'JetBrains Mono Medium', 'IBM Plex Mono Medium', 'Iosevka Nerd Font Mono', 'JetBrainsMono-Medium', 'Material Icons'",
     // "editor.fontWeight": "400",
     "editor.fontSize": 18,
@@ -65,6 +66,7 @@
         "mocha": {
             "base": "#181828",
             "mantle": "#11111E",
+            // "mantle": "#020202",
             "crust": "#020202",
             "yellow": "#fabd2f"
         }
@@ -113,7 +115,7 @@
     "explorer.decorations.badges": false,
     "terminal.integrated.fontFamily": "'Iosevka Nerd Font', 'IosevkaTerm Nerd Font Mono', 'IosevkaTerm Nerd Font Mono', 'Iosevka Nerd Font Mono', 'Cascadia Code', 'Noto Color Emoji', 'Vazir WOL', 'JetBrains Mono Medium', 'JetBrainsMono-Medium','IBMPlexMono-Bold', 'IBM Plex Mono SemiBold', 'Courier New', Menlo",
     // "terminal.integrated.fontFamily": "",
-    "terminal.integrated.fontSize": 12,
+    "terminal.integrated.fontSize": 16,
     "terminal.integrated.inheritEnv": true,
     "terminal.external.linuxExec": "kitty",
     "terminal.integrated.macOptionClickForcesSelection": true,
@@ -184,7 +186,6 @@
     "python.testing.pytestEnabled": false,
     "python.testing.unittestEnabled": false,
     "python.testing.autoTestDiscoverOnSaveEnabled": false,
-    "jupyter.sendSelectionToInteractiveWindow": true,
     "jupyter.askForKernelRestart": false,
     "latex-workshop.view.pdf.viewer": "external",
     "latex-workshop.view.pdf.external.viewer.command": "sioyek",
@@ -280,5 +281,6 @@
     "window.zoomLevel": -1,
     "window.menuBarVisibility": "toggle",
     "diffEditor.ignoreTrimWhitespace": false,
-    "update.showReleaseNotes": false
+    "update.showReleaseNotes": true,
+    "jupyter.interactiveWindow.textEditor.executeSelection": true
 }
