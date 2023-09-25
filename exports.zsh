@@ -1,4 +1,6 @@
 export EDITOR=vim
+export MANPAGER="less -R --use-color -Dd+r -Du+b"
+export MANROFFOPT="-P -c"
 export KEYTIMEOUT=5
 
 # Without this the SSH remote environment in VS Code has a hard time prompting
