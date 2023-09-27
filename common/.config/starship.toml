@@ -1,9 +1,8 @@
 format = """
-$username\
 $hostname\
 $shlvl\
-$conda\
 $directory\
+$conda\
 $git_branch\
 $git_commit\
 $git_state\
@@ -16,6 +15,11 @@ $character"""
 
 add_newline = false
 
+[hostname]
+ssh_only = true
+format = '[$ssh_symbol $hostname](bold blue) '
+ssh_symbol = "󰢩"
+
 [character]
 success_symbol = "[❯](bold purple)"
 
@@ -27,13 +31,13 @@ style = "bright-black"
 [git_status]
 format = '([$all_status$ahead_behind]($style) )'
 style = "bold blue"
-stashed = ""
-deleted = ""
+stashed = ""
+deleted = ""
 modified = "*"
 conflicted = "💥"
 
 [conda]
-format = '[\($environment\)](dimmed white) '
+format = '[$symbol$environment](dimmed white) '
 symbol = " "
 
 [jobs]
