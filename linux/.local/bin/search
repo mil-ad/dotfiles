@@ -6,6 +6,7 @@ Google Scholar
 Google Maps
 Letterboxd
 Amazon
+Amazon Orders
 eBay
 goodreads
 Wirecutter
@@ -21,6 +22,7 @@ case $engine in
     "Google Maps") URL="https://google.com/maps/search/${query}" ;;
     "Letterboxd") URL="https://letterboxd.com/search/${query}" ;;
     "Amazon") URL="https://www.amazon.co.uk/s?k=${query}" ;;
+	"Amazon Orders") URL="https://www.amazon.co.uk/gp/your-account/order-history/search=${query}" ;;
     "eBay") URL="https://www.ebay.co.uk/sch/i.html?_nkw=${query}" ;;
     "goodreads") URL="https://www.goodreads.com/search?q=${query}" ;;
     "Wirecutter") URL="https://www.nytimes.com/wirecutter/search/?s=${query}" ;;
