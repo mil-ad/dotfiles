@@ -73,19 +73,14 @@ bindkey -M emacs '^?' backward-delete-char
 bindkey -M viins '^?' backward-delete-char
 bindkey -M vicmd '^?' backward-delete-char
 
-# [Ctrl-RightArrow] - move forward one word
-bindkey -M emacs '^[[1;5C' forward-word
-bindkey -M viins '^[[1;5C' forward-word
-bindkey -M vicmd '^[[1;5C' forward-word
 # [Ctrl-LeftArrow] - move backward one word
-bindkey -M emacs '^[[1;5D' backward-word
-bindkey -M viins '^[[1;5D' backward-word
-bindkey -M vicmd '^[[1;5D' backward-word
-
-if [[ $(uname) == 'Darwin' ]]; then
-	bindkey "\e[1;3D" backward-word # ⌥←
-	bindkey "\e[1;3C" forward-word # ⌥→
-fi
+bindkey -M emacs "${terminfo[kLFT5]}"  backward-word
+bindkey -M viins "${terminfo[kLFT5]}"  backward-word
+bindkey -M vicmd "${terminfo[kLFT5]}"  backward-word
+# [Ctrl-RightArrow] - move forward one word
+bindkey -M emacs "${terminfo[kRIT5]}"  forward-word
+bindkey -M viins "${terminfo[kRIT5]}"  forward-word
+bindkey -M vicmd "${terminfo[kRIT5]}"  forward-word
 
 # Basic auto/tab complete:
 autoload -U compinit
