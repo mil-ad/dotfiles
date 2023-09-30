@@ -30,6 +30,7 @@ video/quicktime=mpv.desktop;
 video/x-matroska=mpv.desktop;
 video/x-ms-wmv=mpv.desktop;
 audio/ogg=mpv.desktop;
+audio/mpeg=mpv.desktop;
 
 [Added Associations]
 application/epub+zip=zathura.desktop;
