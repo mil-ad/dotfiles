@@ -1,3 +1,8 @@
+vim.g.loaded_netrw = 1
+vim.g.loaded_netrwPlugin = 1
+
+require("nvim-tree").setup()
+
 require'nvim-treesitter.configs'.setup {
   ensure_installed = { "python", "bash", "lua", "javascript" },
   sync_install = false,
