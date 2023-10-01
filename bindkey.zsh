@@ -1,4 +1,4 @@
-# bindkey -v # Selects keymap "viins" for any operations by the current command
+bindkey -v # Selects keymap "viins" for any operations by the current command
 
 HISTSIZE=100000
 SAVEHIST=50000
@@ -81,6 +81,11 @@ bindkey -M vicmd "${terminfo[kLFT5]}"  backward-word
 bindkey -M emacs "${terminfo[kRIT5]}"  forward-word
 bindkey -M viins "${terminfo[kRIT5]}"  forward-word
 bindkey -M vicmd "${terminfo[kRIT5]}"  forward-word
+
+bindkey -M viins "^[." insert-last-word
+
+# Esc for switching from vicmd to viins
+bindkey -M vicmd "^[" vi-insert
 
 # Basic auto/tab complete:
 autoload -U compinit
