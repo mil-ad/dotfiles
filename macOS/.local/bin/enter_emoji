@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+
+chosen=$(dmenu < ~/.local/share/emojis.txt | cut -d " " -f1)
+
+[ "$chosen" != "" ] || exit
+
+osascript ~/.local/bin/macos_type.applescript "$chosen"
