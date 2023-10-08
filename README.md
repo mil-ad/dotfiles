@@ -1,3 +1,9 @@
+<p align="center">
+    ![Static Badge](https://img.shields.io/badge/OS-Arch_Linux-blue)
+    ![Static Badge](https://img.shields.io/badge/WM-i3-285577)
+    ![Static Badge](https://img.shields.io/badge/Terminal-Kitty-black)
+</p>
+
 # Dotfiles
 
 These are the dotfiles that I use on Linux (and macOS).
