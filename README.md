@@ -1,9 +1,7 @@
 <p align="center">
-
-    ![Static Badge](https://img.shields.io/badge/OS-Arch_Linux-blue)
-    ![Static Badge](https://img.shields.io/badge/WM-i3-285577)
-    ![Static Badge](https://img.shields.io/badge/Terminal-Kitty-black)
-
+    <img alt="Static Badge" src="https://img.shields.io/badge/OS-Arch_Linux-blue">
+    <img alt="Static Badge" src="https://img.shields.io/badge/WM-i3-285577">
+    <img alt="Static Badge" src="https://img.shields.io/badge/Terminal-Kitty-black">
 </p>
 
 # Dotfiles
