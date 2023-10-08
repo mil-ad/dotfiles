@@ -6,7 +6,7 @@ source ~/.dotfiles/wd.zsh
 
 source ~/.dotfiles/aliases.zsh
 source ~/.dotfiles/exports.zsh
-source ~/.dotfiles/fzf
 source ~/.dotfiles/bindkey.zsh
+source ~/.dotfiles/fzf
 
 [ -e $HOME/.zshrc_local ] && source $HOME/.zshrc_local
