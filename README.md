@@ -1,7 +1,7 @@
 <p align="center">
     <img alt="Static Badge" src="https://img.shields.io/badge/OS-Arch_Linux-blue">
     <img alt="Static Badge" src="https://img.shields.io/badge/WM-i3-285577">
-    <img alt="Static Badge" src="https://img.shields.io/badge/Terminal-Kitty-black">
+    <img alt="Static Badge" src="https://img.shields.io/badge/Terminal-Kitty-784421">
 </p>
 
 # Dotfiles
