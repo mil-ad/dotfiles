@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 
-engine=$(printf 'DuckDuckGo
+engine=$(printf 'Kagi
+DuckDuckGo
 YouTube
 Google Scholar
 Google Maps
@@ -16,6 +17,7 @@ GitHub Repositories' | rofimenu)
 [[ $engine ]] && query=$(echo '' | rofimenu -l 0 -p "🔍 $engine:")
 
 case $engine in
+	"Kagi") URL="https://kagi.com/search?q=${query}" ;;
 	"DuckDuckGo") URL="https://duckduckgo.com/?q=${query}" ;;
     "YouTube") URL="https://www.youtube.com/results?search_query=${query}" ;;
     "Google Scholar") URL="https://scholar.google.com/scholar?q=${query}" ;;
