@@ -25,7 +25,7 @@ Plug 'ryanoasis/vim-devicons'
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 
 Plug 'nvim-lua/plenary.nvim'
-Plug 'nvim-telescope/telescope.nvim', { 'tag': '0.1.1' }
+Plug 'nvim-telescope/telescope.nvim', { 'tag': '0.1.4' }
 Plug 'luisiacc/gruvbox-baby', {'branch': 'main'}
 
 call plug#end()
@@ -50,7 +50,7 @@ set wildmode=longest:full,full
 set clipboard+=unnamedplus " Use system clipboard?
 
 set ignorecase          " Ignore case when searching
-set smartcase           " Override ignorecase when search pattern includes upper case
+set smartcase           " Override ignorecase when search pattern includes uppercase
 
 set incsearch           " Search as you type
 set hlsearch            " Highlight all search matches, use :nohlsearch to hide them
