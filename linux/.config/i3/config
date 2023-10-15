@@ -280,7 +280,7 @@ for_window [class="(?i)zoom"] floating enable
 for_window [class="join\?action=join"] floating enable
 for_window [title="UxPlay"] floating enable
 for_window [class="Matplotlib"] floating enable
-for_window [class="fzfmenu"] floating enable resize set 1500 px 750px, move position center
+for_window [class="fzfmenu"] floating enable resize set 1200 px 750px, move position center
 for_window [class="1Password"] floating enable
 for_window [class="Anki"] floating enable
 for_window [class="transmission-gtk"] floating enable
