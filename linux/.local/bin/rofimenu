@@ -6,4 +6,5 @@ else
     prompt_arg=(-theme-str 'prompt { enabled: false; }')
 fi
 
-cat | /usr/bin/rofi -dmenu -i -sort -sorting-method fzf "${prompt_arg[@]}" "$@"
+cat | /usr/bin/rofi -dmenu -i -matching fuzzy -sort -sorting-method fzf "${prompt_arg[@]}" "$@"
+-matching fuzzy -sort-method fzf -sort
