@@ -1,5 +1,3 @@
-bindkey -v # Selects keymap "viins" for any operations by the current command
-
 HISTSIZE=100000
 SAVEHIST=50000
 HISTFILE="$HOME/.cache/zsh_history"
@@ -17,8 +15,6 @@ setopt auto_menu         # show completion menu on successive tab press
 setopt complete_in_word
 setopt always_to_end
 
-
-
 # Make sure that the terminal is in application mode when zle is active, since
 # only then values from $terminfo are valid
 # Milad: important for keybindings, for example I've always had issues with home key
@@ -34,6 +30,7 @@ if (( ${+terminfo[smkx]} )) && (( ${+terminfo[rmkx]} )); then
   zle -N zle-line-finish
 fi
 
+bindkey -v # Selects keymap "viins" for any operations by the current command
 
 # Start typing + [Up-Arrow] - fuzzy find history forward
 if [[ -n "${terminfo[kcuu1]}" ]]; then
