@@ -17,11 +17,12 @@ rhyper - b : $HOME/.scripts/open_bookmark
 rhyper - p : $HOME/.scripts/open_paper
 rhyper - e : $HOME/.local/bin/enter_emoji
 rhyper - 0: $HOME/.local/bin/sysact
+#rhyper - tab : $HOME/.local/bin/enter_emoji
 
 # Some are defined for both control and and cmd so that they work in kitty too
 rhyper + lshift - space : yabai -m window --toggle float
 rhyper + lcmd - e : skhd -k "cmd + ctrl - space"
-rhyper + lctrl - r : /Users/miladalizadeh/.dotfiles/linux/.local/bin/open_github_repo
+rhyper - r : /Users/miladalizadeh/.dotfiles/linux/.local/bin/open_github_repo
 rhyper + lcmd - r : /Users/miladalizadeh/.dotfiles/linux/.local/bin/open_github_repo
 
 # Move window to another space
