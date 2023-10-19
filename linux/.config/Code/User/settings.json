@@ -1,6 +1,7 @@
 {
     "telemetry.telemetryLevel": "off",
     "update.mode": "manual",
+    "update.showReleaseNotes": true,
     // "editor.fontFamily": "'IBM Plex Mono', 'Cascadia Code', 'Symbols Nerd Font', 'Noto Color Emoji', 'Vazirmatn UI NL', 'IntelOne Mono', 'JetBrains Mono Medium', 'IBM Plex Mono Medium', 'Iosevka Nerd Font Mono', 'JetBrainsMono-Medium', 'Material Icons'",
     "editor.fontFamily": "'IBM Plex Mono', 'Cascadia Code', 'Symbols Nerd Font', 'Noto Color Emoji', 'Vazirmatn UI NL', 'IntelOne Mono', 'JetBrains Mono Medium', 'IBM Plex Mono Medium', 'Iosevka Nerd Font Mono', 'JetBrainsMono-Medium', 'Material Icons'",
     // "editor.fontWeight": "400",
@@ -53,6 +54,9 @@
     "files.associations": {
         "*.mplstyle": "python"
     },
+    "files.trimTrailingWhitespace": true,
+    "files.trimFinalNewlines": true,
+    "files.insertFinalNewline": true,
     "workbench.editor.enablePreview": false,
     "workbench.editor.labelFormat": "short",
     "workbench.editor.decorations.badges": false,
@@ -60,6 +64,9 @@
     "workbench.statusBar.visible": true,
     "workbench.tips.enabled": false,
     "workbench.activityBar.visible": true,
+    "window.menuBarVisibility": "toggle",
+    "window.commandCenter": false,
+    "window.nativeFullScreen": false,
     "workbench.colorTheme": "Catppuccin Mocha",
     "catppuccin.accentColor": "yellow",
     "catppuccin.colorOverrides": {
@@ -106,22 +113,22 @@
     "workbench.editorAssociations": {
         "*.ipynb": "jupyter-notebook"
     },
-    "files.trimTrailingWhitespace": true,
-    "files.trimFinalNewlines": true,
-    "files.insertFinalNewline": true,
+    "workbench.layoutControl.enabled": false,
+    "workbench.editor.pinnedTabsOnSeparateRow": true,
     "explorer.decorations.colors": false,
     "explorer.sortOrder": "type",
     "explorer.incrementalNaming": "smart",
     "explorer.decorations.badges": false,
     "terminal.integrated.fontFamily": "'Iosevka Nerd Font', 'IosevkaTerm Nerd Font Mono', 'IosevkaTerm Nerd Font Mono', 'Iosevka Nerd Font Mono', 'Cascadia Code', 'Noto Color Emoji', 'Vazir WOL', 'JetBrains Mono Medium', 'JetBrainsMono-Medium','IBMPlexMono-Bold', 'IBM Plex Mono SemiBold', 'Courier New', Menlo",
     // "terminal.integrated.fontFamily": "",
-    "terminal.integrated.fontSize": 16,
+    "terminal.integrated.fontSize": 23,
     "terminal.integrated.inheritEnv": true,
     "terminal.external.linuxExec": "kitty",
     "terminal.integrated.macOptionClickForcesSelection": true,
     "terminal.integrated.macOptionIsMeta": true,
     "terminal.integrated.enableMultiLinePasteWarning": false,
-    "terminal.integrated.gpuAcceleration": "auto",
+    "terminal.integrated.gpuAcceleration": "on",
+    "terminal.external.osxExec": "/Applications/kitty.app",
     "scm.diffDecorationsGutterWidth": 2,
     "scm.diffDecorations": "gutter",
     "git.autofetch": true,
@@ -187,6 +194,9 @@
     "python.testing.unittestEnabled": false,
     "python.testing.autoTestDiscoverOnSaveEnabled": false,
     "jupyter.askForKernelRestart": false,
+    "jupyter.interactiveWindow.textEditor.executeSelection": true,
+    "notebook.output.textLineLimit": 200,
+    "notebook.lineNumbers": "on",
     "latex-workshop.view.pdf.viewer": "external",
     "latex-workshop.view.pdf.external.viewer.command": "sioyek",
     "latex-workshop.view.pdf.external.synctex.command": "sioyek",
@@ -231,9 +241,9 @@
     "rewrap.autoWrap.enabled": false,
     "autoDocstring.startOnNewLine": true,
     "autoDocstring.docstringFormat": "google",
+    "autoDocstring.generateDocstringOnEnter": false,
     "githubPullRequests.telemetry.enabled": false,
     "githubPullRequests.fileListLayout": "tree",
-    "autoDocstring.generateDocstringOnEnter": false,
     "markdown.marp.enableHtml": true,
     "markdown.marp.chromePath": "/usr/bin/brave",
     // =========================================================================
@@ -260,7 +270,7 @@
     ],
     "spellright.spellContextByClass": {
         "latex": "body",
-        // "markdown": "comments",
+        "markdown": "body",
         "python": "comments"
     },
     "spellright.statusBarIndicator": false,
@@ -275,12 +285,5 @@
         "editor.wordWrap": "bounded",
         "editor.wordWrapColumn": 120
     },
-    "notebook.output.textLineLimit": 40,
-    "notebook.lineNumbers": "on",
-    "workbench.layoutControl.enabled": false,
-    "window.zoomLevel": -1,
-    "window.menuBarVisibility": "toggle",
-    "diffEditor.ignoreTrimWhitespace": false,
-    "update.showReleaseNotes": true,
-    "jupyter.interactiveWindow.textEditor.executeSelection": true
+    "diffEditor.ignoreTrimWhitespace": false
 }
