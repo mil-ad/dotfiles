@@ -41,6 +41,7 @@ if [[ -n "${terminfo[kcuu1]}" ]]; then
   bindkey -M viins "${terminfo[kcuu1]}" up-line-or-beginning-search
   bindkey -M vicmd "${terminfo[kcuu1]}" up-line-or-beginning-search
 fi
+
 # Start typing + [Down-Arrow] - fuzzy find history backward
 if [[ -n "${terminfo[kcud1]}" ]]; then
   autoload -U down-line-or-beginning-search
@@ -71,13 +72,18 @@ bindkey -M viins '^?' backward-delete-char
 bindkey -M vicmd '^?' backward-delete-char
 
 # [Ctrl-LeftArrow] - move backward one word
-bindkey -M emacs "${terminfo[kLFT5]}"  backward-word
-bindkey -M viins "${terminfo[kLFT5]}"  backward-word
-bindkey -M vicmd "${terminfo[kLFT5]}"  backward-word
 # [Ctrl-RightArrow] - move forward one word
-bindkey -M emacs "${terminfo[kRIT5]}"  forward-word
-bindkey -M viins "${terminfo[kRIT5]}"  forward-word
-bindkey -M vicmd "${terminfo[kRIT5]}"  forward-word
+if [[ $(uname) == 'Darwin' ]]; then
+  bindkey -M emacs "^[[1;3D"  backward-word
+  bindkey -M viins "^[[1;3D"  backward-word
+  bindkey -M emacs "^[[1;3C"  forward-word
+  bindkey -M viins "^[[1;3C"  forward-word
+else
+  bindkey -M emacs "${terminfo[kLFT5]}"  backward-word
+  bindkey -M viins "${terminfo[kLFT5]}"  backward-word
+  bindkey -M emacs "${terminfo[kRIT5]}"  forward-word
+  bindkey -M viins "${terminfo[kRIT5]}"  forward-word
+fi
 
 bindkey -M viins "^[." insert-last-word
 
