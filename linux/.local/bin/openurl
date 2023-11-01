@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-URL=$(rofimenu -kb-accept-alt "" -kb-custom-1 "Shift+Return" -l 0 -p "🔗 Address")
+URL=$(rofimenu -kb-accept-alt "" -kb-custom-1 "Shift+Return" -l 0 -p "🔗")
 
 exit_code=$?
 
