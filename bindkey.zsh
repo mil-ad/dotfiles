@@ -66,6 +66,21 @@ if [[ -n "${terminfo[kend]}" ]]; then
   bindkey -M vicmd "${terminfo[kend]}"  end-of-line
 fi
 
+# [Delete] - delete forward
+if [[ -n "${terminfo[kdch1]}" ]]; then
+  bindkey -M emacs "${terminfo[kdch1]}" delete-char
+  bindkey -M viins "${terminfo[kdch1]}" delete-char
+  bindkey -M vicmd "${terminfo[kdch1]}" delete-char
+else
+  bindkey -M emacs "^[[3~" delete-char
+  bindkey -M viins "^[[3~" delete-char
+  bindkey -M vicmd "^[[3~" delete-char
+
+  bindkey -M emacs "^[3;5~" delete-char
+  bindkey -M viins "^[3;5~" delete-char
+  bindkey -M vicmd "^[3;5~" delete-char
+fi
+
 # [Backspace] - delete backward
 bindkey -M emacs '^?' backward-delete-char
 bindkey -M viins '^?' backward-delete-char
