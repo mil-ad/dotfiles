@@ -1,0 +1,15 @@
+#!/usr/bin/env bash
+
+URL=$(rofimenu -kb-accept-alt "" -kb-custom-1 "Shift+Return" -l 0 -p "🔗 Address")
+
+exit_code=$?
+
+if [[ $original_string != ^https?:\/\/* ]]; then
+    URL="https://${URL}"
+fi
+
+if [ $exit_code -eq 0 ]; then
+    open $URL
+elif  [ $exit_code -eq 10 ]; then
+    gtk-launch firefox-minimal.desktop $URL
+fi
