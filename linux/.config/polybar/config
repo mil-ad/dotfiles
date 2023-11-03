@@ -330,7 +330,7 @@ type = custom/ipc
 hook-0 = echo "%{F#928374}杖"
 hook-1 = echo "%{u#55aa55}%{F#fabd2f}盛"
 hook-2 = [[ $(xset q) =~ "DPMS is Disabled" ]] && polybar-msg action caffeine hook 1 ||  polybar-msg action caffeine hook 0
-click-left = ~/.scripts/toggle_caffeine
+click-left = ~/.local/bin/toggle_caffeine
 initial = 3 ; 1-based index, 0 means no hooks runs at launch
 
 [module/polypomo]
