@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+
+new_name=$(rofimenu -l 0 -p "🖼️") && i3-msg title_format $new_name

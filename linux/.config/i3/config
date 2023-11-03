@@ -204,7 +204,7 @@ bindsym $mod+Ctrl+i exec --no-startup-id ~/.local/bin/synonym
 bindsym $mod+Ctrl+o exec --no-startup-id $HOME/.local/bin/openfile
 bindsym $mod+Ctrl+p exec --no-startup-id ~/.scripts/open_paper_no_annotations
 bindsym $mod+Ctrl+space exec --no-startup-id ~/.scripts/enter_snippet
-bindsym $mod+comma exec --no-startup-id ~/.scripts/rename_i3_container
+bindsym $mod+comma exec --no-startup-id $HOME/.local/bin/rename_i3_container
 
 ##########################################
 #                Colours
