@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+
+if [[ $(xset q) =~ "DPMS is Disabled" ]]
+then
+    xset +dpms
+    xset s on
+    polybar-msg action caffeine hook 0
+else
+    xset -dpms
+    xset s off
+    polybar-msg action caffeine hook 1
+fi
