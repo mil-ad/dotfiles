@@ -119,9 +119,9 @@
     "explorer.sortOrder": "type",
     "explorer.incrementalNaming": "smart",
     "explorer.decorations.badges": false,
-    "terminal.integrated.fontFamily": "'Iosevka Nerd Font', 'IosevkaTerm Nerd Font Mono', 'IosevkaTerm Nerd Font Mono', 'Iosevka Nerd Font Mono', 'Cascadia Code', 'Noto Color Emoji', 'Vazir WOL', 'JetBrains Mono Medium', 'JetBrainsMono-Medium','IBMPlexMono-Bold', 'IBM Plex Mono SemiBold', 'Courier New', Menlo",
+    "terminal.integrated.fontFamily": "'IosevkaTerm Nerd Font Mono', 'Iosevka Nerd Font', 'Iosevka Nerd Font Mono', 'Cascadia Code', 'Noto Color Emoji', 'Vazir WOL', 'JetBrains Mono Medium', 'JetBrainsMono-Medium','IBMPlexMono-Bold', 'IBM Plex Mono SemiBold'",
     // "terminal.integrated.fontFamily": "",
-    "terminal.integrated.fontSize": 23,
+    "terminal.integrated.fontSize": 20,
     "terminal.integrated.inheritEnv": true,
     "terminal.external.linuxExec": "kitty",
     "terminal.integrated.macOptionClickForcesSelection": true,
@@ -153,7 +153,8 @@
         ],
         "editor.formatOnSave": true,
         "editor.codeActionsOnSave": {
-            "source.organizeImports": true
+            "source.organizeImports": true,
+            "editor.defaultFormatter": "ms-python.black-formatter"
         }
     },
     "[latex]": {
@@ -172,22 +173,17 @@
     // =========================================================================
     // Extension settings
     // =========================================================================
-    "python.showStartPage": false,
-    "python.jediEnabled": false, // Use Microsoft Python Analysis instead
     "python.languageServer": "Pylance",
-    "python.formatting.provider": "black",
     // Providing pylintArgs disables all the sensible defaults that VSCode
     // applies. I have therefore copy-pasted them manually (see
     // pylintUseMinimalCheckers). The real change I want to make here is
     // extension-pkg-whitelist
-    "python.linting.pylintArgs": [
+    "pylint.args": [
         "--disable=all",
         "--enable=F,E,unreachable,duplicate-key,unnecessary-semicolon,global-variable-not-assigned,unused-variable,binary-op-exception,bad-format-string,anomalous-backslash-in-string,bad-open-mode",
         "--extension-pkg-whitelist=torch,numpy"
     ],
-    "python.linting.enabled": true,
-    "python.linting.flake8Enabled": true,
-    "python.linting.flake8Args": [
+    "flake8.args": [
         "--ignore=E501"
     ],
     "python.testing.pytestEnabled": false,
@@ -285,5 +281,6 @@
         "editor.wordWrap": "bounded",
         "editor.wordWrapColumn": 120
     },
-    "diffEditor.ignoreTrimWhitespace": false
+    "diffEditor.ignoreTrimWhitespace": false,
+    "window.zoomLevel": -2
 }
