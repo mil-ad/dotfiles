@@ -27,7 +27,7 @@ Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim', { 'tag': '0.1.4' }
 Plug 'luisiacc/gruvbox-baby', {'branch': 'main'}
-
+        
 call plug#end()
 " -----------------------8<-------------------------8<------------------------ "
 
@@ -61,6 +61,7 @@ set listchars=space:·,tab:🡒\ ,nbsp:␣,extends:⟩,precedes:⟨
 
 set tabstop=4
 set shiftwidth=4
+set expandtab
 
 " The last semicolon is the key here. Keep going up the directory hierarchy when
 " looking for the tags file
@@ -77,7 +78,7 @@ set t_Co=256
 set background=dark
 let g:gruvbox_contrast_dark='hard'
 colorscheme gruvbox
-hi Normal guibg=NONE ctermbg=NONE	" Make the background transparent
+hi Normal guibg=NONE ctermbg=NONE   " Make the background transparent
 
 " Key mappings
 let mapleader=" " " Use spacekey as <Leader>
