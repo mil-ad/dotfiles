@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+
+selected_name=$(jq -r '.bookmarks[].name' ~/.scripts/bookmarks.json | rofimenu)
+
+[ -n "$selected_name" ] && jq -r ".bookmarks.[] | select(.name==\"""$selected_name""\") | .url" ~/.scripts/bookmarks.json | xargs open
