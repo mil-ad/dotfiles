@@ -89,10 +89,10 @@ style = "bright-black"
 format = '([$all_status$ahead_behind]($style) )'
 # style = "bold blue"
 style = "bold bright-black"
-stashed = ""
-deleted = ""
-staged = ""
-modified = ""
+stashed = " "
+deleted = " "
+staged = " "
+modified = " "
 conflicted = "💥"
 
 [conda]
