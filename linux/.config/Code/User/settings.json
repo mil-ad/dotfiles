@@ -51,6 +51,15 @@
             }
         ]
     },
+    "terminal.external.linuxExec": "kitty",
+    "terminal.integrated.fontFamily": "'Symbols Nerd Font', 'Iosevka Term Medium', 'Noto Color Emoji', 'Vazir WOL'",
+    "terminal.integrated.fontSize": 22,
+    "terminal.integrated.inheritEnv": true,
+    "terminal.integrated.macOptionClickForcesSelection": true,
+    "terminal.integrated.macOptionIsMeta": true,
+    "terminal.integrated.enableMultiLinePasteWarning": false,
+    "terminal.integrated.shellIntegration.decorationsEnabled": "never",
+    "terminal.external.osxExec": "/Applications/kitty.app",
     "files.associations": {
         "*.mplstyle": "python"
     },
@@ -63,7 +72,6 @@
     "workbench.editor.decorations.colors": false,
     "workbench.statusBar.visible": true,
     "workbench.tips.enabled": false,
-    "workbench.activityBar.visible": true,
     "window.menuBarVisibility": "toggle",
     "window.commandCenter": false,
     "window.nativeFullScreen": false,
@@ -119,16 +127,6 @@
     "explorer.sortOrder": "type",
     "explorer.incrementalNaming": "smart",
     "explorer.decorations.badges": false,
-    "terminal.integrated.fontFamily": "'IosevkaTerm Nerd Font Mono', 'Iosevka Nerd Font', 'Iosevka Nerd Font Mono', 'Cascadia Code', 'Noto Color Emoji', 'Vazir WOL', 'JetBrains Mono Medium', 'JetBrainsMono-Medium','IBMPlexMono-Bold', 'IBM Plex Mono SemiBold'",
-    // "terminal.integrated.fontFamily": "",
-    "terminal.integrated.fontSize": 20,
-    "terminal.integrated.inheritEnv": true,
-    "terminal.external.linuxExec": "kitty",
-    "terminal.integrated.macOptionClickForcesSelection": true,
-    "terminal.integrated.macOptionIsMeta": true,
-    "terminal.integrated.enableMultiLinePasteWarning": false,
-    "terminal.integrated.gpuAcceleration": "on",
-    "terminal.external.osxExec": "/Applications/kitty.app",
     "scm.diffDecorationsGutterWidth": 2,
     "scm.diffDecorations": "gutter",
     "git.autofetch": true,
@@ -282,5 +280,6 @@
         "editor.wordWrapColumn": 120
     },
     "diffEditor.ignoreTrimWhitespace": false,
-    "window.zoomLevel": -2
+    "window.zoomLevel": -2,
+    "audioCues.terminalCommandFailed": "off"
 }
