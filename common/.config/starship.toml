@@ -85,10 +85,10 @@ success_symbol = "[❯](bold purple)"
 [git_branch]
 format = "[$symbol$branch]($style) "
 symbol = ""
-style = "neutral_yellow"
+style = "neutral_orange"
 
 [git_commit]
-style = "neutral_yellow"
+style = "neutral_orange"
 format = '[ $hash]($style) '
 tag_disabled = true
 only_detached = true
@@ -98,7 +98,7 @@ tag_symbol = '󱈤 '
 
 [git_status]
 format = '([$all_status$ahead_behind]($style) )'
-style = "neutral_yellow"
+style = "neutral_orange"
 stashed = " "
 deleted = " "
 staged = " "
@@ -108,7 +108,7 @@ conflicted = " "
 [custom.git_tags]
 command = 'git tag --points-at HEAD | sed "s/^/󱈤 /g" | xargs'
 format = '[$output]($style) '
-style = "neutral_yellow"
+style = "neutral_orange"
 when = '[[ -n $(git tag --points-at HEAD) ]]'
 require_repo = true
 
