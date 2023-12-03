@@ -4,13 +4,15 @@ $directory\
 $conda\
 $git_branch\
 $git_commit\
+${custom.git_tags}\
 $git_state\
 $git_status\
 $cmd_duration\
 $line_break\
 $jobs\
 $status\
-$character"""
+$character
+"""
 
 add_newline = false
 
@@ -83,25 +85,43 @@ success_symbol = "[❯](bold purple)"
 [git_branch]
 format = "[$symbol$branch]($style) "
 symbol = ""
-style = "bright-black"
+style = "bright_purple"
+
+[git_commit]
+style = "bright_purple"
+format = '[ $hash]($style) '
+tag_disabled = true
+only_detached = true
+tag_symbol = '󱈤 '
+
+[git_state]
 
 [git_status]
 format = '([$all_status$ahead_behind]($style) )'
-# style = "bold blue"
-style = "bold bright-black"
+style = "bright_purple"
 stashed = " "
 deleted = " "
 staged = " "
 modified = " "
-conflicted = "💥"
+conflicted = " "
+
+[custom.git_tags]
+command = 'git tag --points-at HEAD | sed "s/^/󱈤 /g" | xargs'
+format = '[$output]($style) '
+style = "bright_purple"
+when = '[[ -n $(git tag --points-at HEAD) ]]'
+require_repo = true
 
 [conda]
-style = "fg:dark2 bg:neutral_yellow"
+style = "fg:dark0 bg:neutral_yellow"
 format = '[](fg:neutral_yellow bg:transparent)[$symbol$environment]($style)[](fg:neutral_yellow bg:transparent) '
 symbol = " "
 
 [jobs]
-symbol = "杖"
+format = '[$number$symbol]($style) '
+number_threshold = 2
+symbol = ""
+style = "light3"
 
 [cmd_duration]
 format = "[$duration]($style) "
