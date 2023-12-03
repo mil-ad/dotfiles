@@ -71,6 +71,7 @@ truncate_to_repo = false
 truncation_length = 0
 truncation_symbol = ".../"
 format = '[$path]($style)[$read_only]($read_only_style) '
+style = 'bold neutral_aqua'
 
 [directory.substitutions]
 # Order matters
