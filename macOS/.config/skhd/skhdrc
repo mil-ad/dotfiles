@@ -8,6 +8,7 @@ rhyper + lshift - return : open -n ~
 rhyper + lshift - r : launchctl kickstart -k "gui/${UID}/homebrew.mxcl.yabai"
 rhyper - return : /Applications/kitty.app/Contents/MacOS/kitty --single-instance -d ~
 rhyper - z : skhd -k "cmd + ctrl + shift - 4"
+rhyper + lshift - z : skhd -k "cmd + shift - 4"
 rhyper - q : skhd -k "cmd - w"
 rhyper - s : if [ "$(yabai -m query --spaces --space | jq -r '.type')" = "stack" ]; then yabai -m space --layout bsp; else yabai -m space --layout stack; fi
 rhyper - f : yabai -m window --toggle zoom-fullscreen
@@ -17,6 +18,8 @@ rhyper - b : $HOME/.local/bin/open_bookmark
 rhyper - p : $HOME/.scripts/open_paper
 rhyper - e : $HOME/.local/bin/enter_emoji
 rhyper - 0: $HOME/.local/bin/sysact
+rhyper - space: $HOME/.local/bin/winmenu
+
 #rhyper - tab : $HOME/.local/bin/enter_emoji
 
 # Some are defined for both control and and cmd so that they work in kitty too

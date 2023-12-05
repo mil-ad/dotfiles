@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+
+set -x
+
+state=$(yabai -m query --windows)
+selected_idx=$(echo "$state" | jq -r '.[] | "\(.app): \(.title)"' | rofimenu -i)
+
+if [[ $selected_idx -ge 0 ]]; then
+    echo "$state" | jq ".[$selected_idx].id" | xargs yabai -m window --focus
+fi
