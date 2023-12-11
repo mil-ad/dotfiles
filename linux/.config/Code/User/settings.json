@@ -137,8 +137,7 @@
     "problems.decorations.enabled": false,
     "search.quickOpen.includeHistory": false,
     "isort.args": [
-        "--profile",
-        "black"
+        "--profile black",
     ],
     // =========================================================================
     // Per file type settings
@@ -149,10 +148,10 @@
             88,
             120
         ],
+        "editor.defaultFormatter": "ms-python.black-formatter",
         "editor.formatOnSave": true,
         "editor.codeActionsOnSave": {
             "source.organizeImports": true,
-            "editor.defaultFormatter": "ms-python.black-formatter"
         }
     },
     "[latex]": {
@@ -172,6 +171,7 @@
     // Extension settings
     // =========================================================================
     "python.languageServer": "Pylance",
+    "python.analysis.typeCheckingMode": "off",
     // Providing pylintArgs disables all the sensible defaults that VSCode
     // applies. I have therefore copy-pasted them manually (see
     // pylintUseMinimalCheckers). The real change I want to make here is
@@ -280,6 +280,10 @@
         "editor.wordWrapColumn": 120
     },
     "diffEditor.ignoreTrimWhitespace": false,
-    "window.zoomLevel": -2,
-    "audioCues.terminalCommandFailed": "off"
+    "audioCues.terminalCommandFailed": "off",
+    "window.title": "${rootNameShort}${separator}${profileName}",
+    "isort.importStrategy": "fromEnvironment",
+    "extensions.ignoreRecommendations": true,
+    "terminal.integrated.minimumContrastRatio": 1,
+    "window.zoomLevel": -2
 }
