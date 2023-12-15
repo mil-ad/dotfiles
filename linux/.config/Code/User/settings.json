@@ -137,7 +137,7 @@
     "problems.decorations.enabled": false,
     "search.quickOpen.includeHistory": false,
     "isort.args": [
-        "--profile black",
+        "--profile", "black",
     ],
     // =========================================================================
     // Per file type settings
