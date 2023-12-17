@@ -12,14 +12,10 @@ call plug#begin('~/.vim/plugged')
 Plug 'junegunn/fzf.vim'
 Plug 'tpope/vim-fugitive'
 Plug 'haya14busa/is.vim'
-"Plug 'vim-airline/vim-airline'
-"Plug 'vim-airline/vim-airline-themes'
-"Plug 'feline-nvim/feline.nvim'
 Plug 'nvim-lualine/lualine.nvim'
 Plug 'nvim-tree/nvim-web-devicons'
 Plug 'morhetz/gruvbox'
 Plug 'tpope/vim-surround'
-"Plug 'scrooloose/nerdtree'
 Plug 'nvim-tree/nvim-tree.lua'
 Plug 'ryanoasis/vim-devicons'
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
@@ -47,7 +43,7 @@ set wildmenu            " Show possible options when doing tab-completion
 " until longest common string.
 set wildmode=longest:full,full
 
-set clipboard+=unnamedplus " Use system clipboard?
+"set clipboard+=unnamedplus " Use system clipboard?
 
 set ignorecase          " Ignore case when searching
 set smartcase           " Override ignorecase when search pattern includes uppercase
