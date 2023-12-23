@@ -1,7 +1,5 @@
 #!/usr/bin/env bash
 
-set -x
-
 state=$(yabai -m query --windows)
 selected_idx=$(echo "$state" | jq -r '.[] | "\(.app): \(.title)"' | rofimenu -i)
 
