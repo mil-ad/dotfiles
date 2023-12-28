@@ -38,12 +38,51 @@ require("telescope").setup{
   }
 }
 
+local commander = require("commander")
+
+commander.setup({
+  components = {
+    "DESC"
+  },
+  integration = {
+      telescope = {
+          enable = true,
+      }
+  }
+})
+
+commander.add({
+    {
+        desc = "Convert tabs to spaces",
+        cmd = "<CMD>retab<CR>"
+    },
+  {
+    desc = "Search inside current buffer",
+    cmd = "<CMD>Telescope current_buffer_fuzzy_find<CR>",
+    keys = { "n", "<leader>fl" },
+  }, {
+    -- You can specify multiple keys for the same cmd ...
+    desc = "Show document symbols",
+    cmd = "<CMD>Telescope lsp_document_symbols<CR>",
+    keys = {
+      {"n", "<leader>ss", { noremap = true } },
+      {"n", "<leader>ssd", { noremap = true } },
+    },
+  }, {
+    -- You can pass in a key sequences as if you would type them in nvim
+    desc = "My favorite key sequence",
+    cmd = "A  -- Add a comment at the end of a line",
+    keys = {"n", "<leader>Ac" }
+  }
+})
+
+
 local builtin = require('telescope.builtin')
 vim.keymap.set('n', '<C-p>', builtin.find_files, {})
 vim.keymap.set('n', '<C-Tab>', builtin.buffers, {})
 vim.keymap.set('n', '<C-f>', builtin.live_grep, {})
 vim.keymap.set('n', '<C-r>', builtin.treesitter, {})
-vim.keymap.set('n', '<leader>h', builtin.help_tags, {})
+vim.keymap.set('n', '<leader>p', ':Telescope commander<CR>', {})
 
 vim.keymap.set('n', '<A-j>', ':m .+1<CR>', {})
 vim.keymap.set('n', '<A-k>', ':m .-2<CR>', {})

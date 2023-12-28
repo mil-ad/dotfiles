@@ -19,11 +19,11 @@ Plug 'tpope/vim-surround'
 Plug 'nvim-tree/nvim-tree.lua'
 Plug 'ryanoasis/vim-devicons'
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
-
 Plug 'nvim-lua/plenary.nvim'
-Plug 'nvim-telescope/telescope.nvim', { 'tag': '0.1.4' }
+Plug 'nvim-telescope/telescope.nvim'
 Plug 'luisiacc/gruvbox-baby', {'branch': 'main'}
-        
+Plug 'FeiyouG/commander.nvim'
+
 call plug#end()
 " -----------------------8<-------------------------8<------------------------ "
 
