@@ -12,9 +12,11 @@ eBay
 goodreads
 Wirecutter
 CamelCamelCamel
-GitHub Repositories' | rofimenu)
+GitHub Repositories' | rofimenu -no-custom)
 
 [[ $engine ]] && query=$(echo '' | rofimenu -l 0 -p "🔍 $engine:")
+
+echo "BOOM"
 
 case $engine in
 	"Kagi") URL="https://kagi.com/search?q=${query}" ;;
