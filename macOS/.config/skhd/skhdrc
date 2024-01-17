@@ -63,6 +63,9 @@ rhyper - right : yabai -m window --focus east
 rhyper - up : yabai -m window --focus stack.prev || yabai -m window --focus stack.last || yabai -m window --focus north
 rhyper - down : yabai -m window --focus stack.next || yabai -m window --focus stack.first || yabai -m window --focus south
 
+# 0x21 -> [
+rhyper - 0x21 : yabai -m window --focus recent
+
 cmd - left: skhd -k "alt - left"
 cmd - right: skhd -k "alt - right"
 cmd + shift - left: skhd -k "alt + shift - left"
