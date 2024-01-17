@@ -116,7 +116,7 @@ require_repo = true
 [conda]
 style = "fg:dark0 bg:neutral_yellow"
 format = '[](fg:neutral_yellow bg:transparent)[$symbol$environment]($style)[](fg:neutral_yellow bg:transparent) '
-symbol = " "
+symbol = "  "
 
 [jobs]
 format = '[$number$symbol]($style) '
