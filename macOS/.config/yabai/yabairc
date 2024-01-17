@@ -31,7 +31,7 @@ yabai -m rule --add title='.*Info$' manage=off sticky=on
 yabai -m rule --add app="^1Password$" manage=off sticky=on
 yabai -m rule --add app="Karabiner" manage=off sticky=on
 yabai -m rule --add app="choose" manage=off sticky=on
-yabai -m rule --add app=".*Anki.*" manage=off sticky=on
+yabai -m rule --add app=".*Anki.*" manage=off sticky=off
 
 yabai -m rule --add app="Code" space=2
 yabai -m rule --add app="Kitty" space=1
@@ -54,3 +54,5 @@ yabai -m signal --add event=window_resized action='echo "refresh windows" | nc -
 yabai -m signal --add event=window_minimized action='echo "refresh windows" | nc -U /tmp/yabai-indicator.socket'
 yabai -m signal --add event=window_deminimized action='echo "refresh windows" | nc -U /tmp/yabai-indicator.socket'
 
+# https://github.com/FelixKratz/JankyBorders
+borders active_color=0xfffabd2f inactive_color=0xff504945 width=5.0 &
