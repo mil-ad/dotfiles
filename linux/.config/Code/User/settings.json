@@ -18,7 +18,7 @@
     "editor.wordWrapColumn": 80,
     "editor.renderWhitespace": "all",
     "editor.renderControlCharacters": false,
-    "editor.wordBasedSuggestions": false,
+    "editor.wordBasedSuggestions": "off",
     "editor.formatOnPaste": true,
     "editor.suggestSelection": "first",
     "editor.accessibilitySupport": "off",
@@ -285,5 +285,7 @@
     "isort.importStrategy": "fromEnvironment",
     "extensions.ignoreRecommendations": true,
     "terminal.integrated.minimumContrastRatio": 1,
-    "window.zoomLevel": -2
+    "window.zoomLevel": -2,
+    "terminal.integrated.defaultProfile.linux": "zsh",
+    "terminal.integrated.showExitAlert": false
 }
