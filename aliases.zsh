@@ -19,7 +19,12 @@ alias 8='cd -8'
 alias 9='cd -9'
 
 alias ssh="TERM=xterm-256color ssh"
+
 alias gcloud="TERM=xterm-256color gcloud"
+alias gscat="gsutil cat"
+alias gsls"gsutil ls"
+
+alias jqpager="jq -C | less -R"
 
 alias mm="micromamba"
 alias mma="micromamba activate"
