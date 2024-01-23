@@ -151,6 +151,10 @@ zstyle ':completion:*:cd:*' tag-order local-directories directory-stack path-dir
 zstyle ':completion:*' use-cache yes
 zstyle ':completion:*' cache-path $ZSH_CACHE_DIR
 
+# completion for GNU make (see https://github.com/zsh-users/zsh-completions/issues/813#issuecomment-902592371)
+zstyle ':completion:*:make:*:targets' call-command true
+zstyle ':completion:*:*:make:*' tag-order 'targets'
+
 # Don't complete uninteresting users
 zstyle ':completion:*:*:*:users' ignored-patterns \
         adm amanda apache at avahi avahi-autoipd beaglidx bin cacti canna \
