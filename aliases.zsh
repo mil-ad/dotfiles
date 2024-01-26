@@ -31,7 +31,7 @@ alias mma="micromamba activate"
 alias mmc="micromamba create --name"
 alias mmd="micromamba deactivate"
 alias mmls='micromamba env list'
-alias mmrm='micromamba env remove --name'
+alias mmrm='micromamba env remove --yes --name'
 alias condarm='conda env remove --name'
 
 alias gs='git status'
