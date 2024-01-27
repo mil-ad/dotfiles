@@ -57,6 +57,10 @@ commander.setup({
 
 commander.add({
     {
+        desc = "Toggle wrapping",
+        cmd = "<CMD>set wrap!<CR>"
+    },
+    {
         desc = "Convert tabs to spaces",
         cmd = "<CMD>retab<CR>"
     },
