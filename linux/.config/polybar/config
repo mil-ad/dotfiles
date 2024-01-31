@@ -13,6 +13,7 @@ green = #8ec07c
 #green = #55aa55
 yellow = #d79921
 grey = #928374
+red = #fb4934
 
 [bar/milad]
 ; Use either of the following command to list available outputs:
@@ -67,6 +68,7 @@ font-2 = Noto Color Emoji:scale=8
     ; There's a bug with Noto font size hence the use of "scale":
     ; https://github.com/polybar/polybar/issues/905
 font-3 = Material Icons:style=Regular:size=15
+font-4 = Symbols Nerd Font:style=Regular:size=15
 ; font-4 = scientifica:style=Medium:size=16
 
 modules-left = i3
@@ -348,3 +350,11 @@ scroll-down = ~/.scripts/polypomo time -60
 
 font-0 = fixed:pixelsize=10;1
 font-1 = Noto Emoji:scale=15:antialias=false;0
+
+[module/screen-capture]
+type = custom/text
+format = <label>
+format-foreground = ${colors.red}
+label = %{T5}󰐾%{T-}
+hidden = true
+click-left = ~/.local/bin/record-screen-area-stop

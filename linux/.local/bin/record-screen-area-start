@@ -1,0 +1,21 @@
+#!/usr/bin/env bash
+
+set -x
+
+ps -af | pgrep --full x11grab && { notify-send "Found an ongoing capture. Aborting ..."; exit 1; }
+
+slop=$(slop -f "%x %y %w %h %g %i") || exit 1
+read -r X Y W H G ID <<< $slop
+
+polybar-msg action screen-capture module_show
+
+filename="screen-area-capture-$(date '+%Y-%m-%d-%H:%M:%S').mp4"
+
+ffmpeg -f x11grab \
+    -s "$W"x"$H" \
+    -i :0.0+$X,$Y \
+    -loglevel quiet \
+    ~/Downloads/"$filename"
+
+notify-send "Saved to: $filename"
+

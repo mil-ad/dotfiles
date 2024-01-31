@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+
+ps -af | pgrep --full x11grab | xargs kill && polybar-msg action '#screen-capture.module_hide' || notify-send 'Did NOT find an ongoing recording!'
