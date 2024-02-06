@@ -36,6 +36,9 @@ alias condarm='conda env remove --name'
 
 alias gs='git status'
 alias goops='git rebase -i HEAD~2'
+alias gwls='git worktree list'
+alias gwadd='git worktree add'
+alias gwrm='git worktree remove'
 
 alias icat='kitty +kitten icat'
 
