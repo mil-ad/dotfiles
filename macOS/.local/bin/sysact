@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+
+# A choose-gui wrapper script for system functions.
+
+case "$(printf "🔃 reload yabai" | dmenu)" in
+	'🔃 reload yabai') yabai --restart-service ;;
+	*) exit 1 ;;
+esac
