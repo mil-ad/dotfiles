@@ -23,13 +23,14 @@ Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim'
 Plug 'luisiacc/gruvbox-baby', {'branch': 'main'}
 Plug 'FeiyouG/commander.nvim'
+Plug 'neovim/nvim-lspconfig'
 
 call plug#end()
 " -----------------------8<-------------------------8<------------------------ "
 
+syntax on               " Enable syntax highlighting
 set number              " Show line numbers
 set nowrap              " Do not wrap lines
-syntax on               " Enable syntax highlighting
 set mouse=a             " Enable mouse support in all modes
 set colorcolumn=81,121  " Show ruler at 80(+1) and 120(+1) columns
 set foldmethod=syntax   " Fold based on syntax
@@ -37,7 +38,7 @@ set foldlevelstart=99   " Unfold everything when opening a buffer
 set cursorline          " Highlight current line
 set showmatch           " show matching brackets
 set encoding=UTF-8
-
+set undofile            " write undo history to file for persistent undo across session
 set wildmenu            " Show possible options when doing tab-completion
 " When more than one match in tab-complete, list all matches and complete
 " until longest common string.
@@ -47,7 +48,6 @@ set wildmode=longest:full,full
 
 set ignorecase          " Ignore case when searching
 set smartcase           " Override ignorecase when search pattern includes uppercase
-
 set incsearch           " Search as you type
 set hlsearch            " Highlight all search matches, use :nohlsearch to hide them
 
@@ -85,9 +85,9 @@ nnoremap <Leader>w :bdelete<CR>
 nnoremap <Leader>r :CtrlPBufTag<CR>
 nnoremap <Leader>/ :set hlsearch!<CR>
 nnoremap <Leader>r :source $MYVIMRC<CR>
+nnoremap <Leader>bp :NvimTreeToggle<CR>
 "nn <C-p> :Files<CR>
 "nn <C-r> :BTags<CR>
-nn <C-/> :NERDTreeToggle<CR>
 map q <Nop>
 
 " custom text-objects for /
