@@ -1,0 +1,22 @@
+#!/usr/bin/env bash
+
+# Expects to find GutHub authentication in ~/.netrc
+
+cache_file="$HOME/.cache/github_prs"
+
+function generate_cache {
+    curl -s --netrc "https://api.github.com/search/issues?q=type:pr+author:mil-ad+state:open+sort:updated" > "$cache_file"
+}
+
+[ ! -e "$cache_file" ] && generate_cache
+
+user_selected=$(jq -r '.items[] | .title' < "$cache_file" | dmenu)
+
+if [ -n "$user_selected" ]; then
+  jq -r ".items[] | select(.title == \"$user_selected\") | .html_url" < "$cache_file" | xargs xdg-open
+fi
+
+# If the cache file is 2min+ old, regenerate it
+if test "$(find "$cache_file" -mmin +2)"; then
+    generate_cache
+fi

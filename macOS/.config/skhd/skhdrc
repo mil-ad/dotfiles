@@ -5,7 +5,7 @@
 # combined with another midifier on the left.
 
 rhyper + lshift - return : open -n ~
-rhyper + lshift - r : launchctl kickstart -k "gui/${UID}/homebrew.mxcl.yabai"
+#rhyper + lshift - r : launchctl kickstart -k "gui/${UID}/homebrew.mxcl.yabai"
 rhyper - return : /Applications/kitty.app/Contents/MacOS/kitty --single-instance -d ~
 rhyper - z : skhd -k "cmd + ctrl + shift - 4"
 rhyper + lshift - z : skhd -k "cmd + shift - 4"
@@ -27,6 +27,7 @@ rhyper + lshift - space : yabai -m window --toggle float
 rhyper + lcmd - e : skhd -k "cmd + ctrl - space"
 rhyper - r : /Users/miladalizadeh/.dotfiles/linux/.local/bin/open_github_repo
 rhyper + lcmd - r : /Users/miladalizadeh/.dotfiles/linux/.local/bin/open_github_repo
+rhyper + lshift - r : /Users/miladalizadeh/.local/bin/open-github-pr
 
 # Move window to another space
 rhyper + lshift - 1 : yabai -m window --space 1; yabai -m space --focus 1
