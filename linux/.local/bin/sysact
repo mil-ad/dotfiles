@@ -3,7 +3,7 @@
 # A dmenu wrapper script for system functions.
 # modified version of https://github.com/LukeSmithxyz/voidrice/blob/8cbd259bc1b31cb17e5d6bf9fba59dfb45ada224/.local/bin/sysact
 
-case "$(printf "📹 record area\n🔒 lock\n💤 sleep\n🐻 hibernate\n🚪 logout\n🔫 xkill\n♻ restart i3\n🖖 (un)split monitor\n🚀 reboot\n🖥 shutdown" | dmenu)" in
+case "$(printf "🔒 lock\n💤 sleep\n🐻 hibernate\n🚪 logout\n🔫 xkill\n♻ restart i3\n📹 record area\n🖖 (un)split monitor\n🚀 reboot\n🖥 shutdown" | dmenu)" in
     '📹 record area') ~/.local/bin/record-screen-area-start ;;
     '🔒 lock')  ~/.local/bin/betterblurlock ;;
     '💤 sleep') systemctl suspend ;;
