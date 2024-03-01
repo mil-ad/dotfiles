@@ -10,10 +10,18 @@ function generate_cache {
 
 [ ! -e "$cache_file" ] && generate_cache
 
-user_selected=$(jq -r '.items[] | .title' < "$cache_file" | dmenu)
+prs=$(jq -r '.items[] | .title' < "$cache_file")
 
-if [ -n "$user_selected" ]; then
-  jq -r ".items[] | select(.title == \"$user_selected\") | .html_url" < "$cache_file" | xargs xdg-open
+# We have the full repo URL in the response but not the repo name on its own.
+# Let's construct it for dmenu
+repos=$(jq -r ".items[] | .repository_url" < "$cache_file" | awk -F '/' '{print $(NF-1)"/"$NF}')
+
+prompts=$(paste -d "\t" <(printf "$repos") <(printf "$prs"))
+
+user_selected_idx=$(printf "$prompts" | rofimenu -i)
+
+if [ "$user_selected_idx" -ge 0 ]; then
+  jq -r ".items[$user_selected_idx] | .html_url" < "$cache_file" | xargs xdg-open
 fi
 
 # If the cache file is 2min+ old, regenerate it
