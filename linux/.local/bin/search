@@ -11,6 +11,7 @@ Amazon Orders
 eBay
 goodreads
 Wirecutter
+RoyalMail Tracking
 CamelCamelCamel
 GitHub Repositories' | rofimenu -no-custom)
 
@@ -28,6 +29,7 @@ case $engine in
     "eBay") URL="https://www.ebay.co.uk/sch/i.html?_nkw=${query}" ;;
     "goodreads") URL="https://www.goodreads.com/search?q=${query}" ;;
     "Wirecutter") URL="https://www.nytimes.com/wirecutter/search/?s=${query}" ;;
+    "RoyalMail Tracking") URL="https://www.royalmail.com/track-your-item#/tracking-results/${query}" ;;
     "CamelCamelCamel") URL="https://uk.camelcamelcamel.com/search?sq=${query}" ;;
     "GitHub Repositories") URL="https://github.com/search?q=${query}&type=repositories" ;;
 esac
