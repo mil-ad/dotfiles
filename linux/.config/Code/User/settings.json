@@ -280,12 +280,14 @@
         "editor.wordWrapColumn": 120
     },
     "diffEditor.ignoreTrimWhitespace": false,
-    "audioCues.terminalCommandFailed": "off",
     "window.title": "${rootNameShort}${separator}${profileName}",
     "isort.importStrategy": "fromEnvironment",
     "extensions.ignoreRecommendations": true,
     "terminal.integrated.minimumContrastRatio": 1,
     "window.zoomLevel": -2,
     "terminal.integrated.defaultProfile.linux": "zsh",
-    "terminal.integrated.showExitAlert": false
+    "terminal.integrated.showExitAlert": false,
+    "accessibility.signals.terminalCommandFailed": {
+        "sound": "off"
+    }
 }

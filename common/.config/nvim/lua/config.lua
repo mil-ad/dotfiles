@@ -84,8 +84,6 @@ commander.add({
   }
 })
 
-require("scrollbar").setup()
-
 require('lualine').setup {
   options = {
     icons_enabled = true,
