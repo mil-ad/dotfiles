@@ -1,8 +1,6 @@
 # Mod1=<Alt>, Mod4=<Super>
 set $mod Mod4
 
-set $hidpi_scale GDK_SCALE=2 GDK_DPI_SCALE=0.5 QT_AUTO_SCREEN_SCALE_FACTOR=1
-
 workspace 1 output DP-0-virtDown DP-0
 workspace 2 output DP-0-virtDown DP-0
 workspace 3 output DP-0-virtDown DP-0
@@ -182,9 +180,9 @@ mode "resize" {
 #         External Keybindings
 ##########################################
 
-bindsym $mod+Return exec $hidpi_scale kitty
-bindsym $mod+d exec --no-startup-id $hidpi_scale dmenu_run
-bindsym $mod+Shift+Return exec $hidpi_scale pcmanfm
+bindsym $mod+Return exec kitty
+bindsym $mod+d exec --no-startup-id ~/.local/bin/dmenu_run
+bindsym $mod+Shift+Return exec pcmanfm
 bindsym $mod+BackSpace exec --no-startup-id CM_OUTPUT_CLIP=1 CM_LAUNCHER=rofi clipmenu
 
 bindsym $mod+z --release exec --no-startup-id maim -s /dev/stdout | xclip -selection clipboard -t image/png
@@ -196,7 +194,7 @@ bindsym $mod+b exec --no-startup-id ~/.local/bin/open_bookmark
 bindsym $mod+e exec --no-startup-id ~/.local/bin/enter_emoji
 bindsym $mod+i exec --no-startup-id $HOME/.local/bin/search
 bindsym $mod+l exec --no-startup-id $HOME/.local/bin/openurl
-bindsym $mod+o exec --no-startup-id $hidpi_scale $HOME/.local/bin/openrecentfile
+bindsym $mod+o exec --no-startup-id $HOME/.local/bin/openrecentfile
 bindsym $mod+p exec --no-startup-id ~/.scripts/open_paper
 bindsym $mod+r exec --no-startup-id  ~/.local/bin/open_github_repo
 bindsym $mod+space exec --no-startup-id $HOME/.local/bin/winmenu

@@ -13,11 +13,6 @@ export SSH_AUTH_SOCK
 
 case $(hostnamectl --static) in
 
-	milad-matebook13)
-		xrandr --output eDP1 --mode 2160x1440 --pos 0x0 --primary --scale 1.3x1.3
-		xbindkeys -f $HOME/.config/xbindkeys/matebook13
-		;;
-
 	milad-matebook14s)
 		xbindkeys -f $HOME/.config/xbindkeys/matebook14s
 		;;
@@ -29,11 +24,13 @@ case $(hostnamectl --static) in
 		;;
 esac
 
-#export GDK_SCALE=2
-#export GDK_DPI_SCALE=0.5
+export GDK_SCALE=2
+export GDK_DPI_SCALE=0.5
 #export QT_AUTO_SCREEN_SCALE_FACTOR=1
 #export QT_STYLE_OVERRIDE=adwaita-dark
 export QT_QPA_PLATFORMTHEME=qt5ct
+export QT_ENABLE_HIGHDPI_SCALING=1
+export QT_AUTO_SCREEN_SCALE_FACTOR=1
 
 #setxkbmap gb,ir -option 'grp:rctrl_rshift_toggle'
 
