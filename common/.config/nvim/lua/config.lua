@@ -1,7 +1,4 @@
 vim.o.relativenumber = true
-
-
-
 vim.g.loaded_netrw = 1
 vim.g.loaded_netrwPlugin = 1
 
@@ -124,12 +121,12 @@ require('lualine').setup {
 }
 
 local builtin = require('telescope.builtin')
+
 vim.keymap.set('n', '<C-p>', builtin.find_files, {})
 vim.keymap.set('n', '<C-Tab>', builtin.buffers, {})
 vim.keymap.set('n', '<C-f>', builtin.live_grep, {})
 vim.keymap.set('n', '<C-r>', builtin.treesitter, {})
 vim.keymap.set('n', '<leader>p', ':Telescope commander<CR>', {})
-
 vim.keymap.set('n', '<A-j>', ':m .+1<CR>', {})
 vim.keymap.set('n', '<A-k>', ':m .-2<CR>', {})
 

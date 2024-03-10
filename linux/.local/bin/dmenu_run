@@ -2,7 +2,7 @@
 
 set -x
 
-selected_program=$(dmenu_path | dmenu "$@")
+selected_program=$(dmenu_path | rofimenu -l 10)
 
 case "$selected_program" in
     "transmission-gtk"|"some_future_program")
