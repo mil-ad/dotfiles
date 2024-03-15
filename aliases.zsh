@@ -24,8 +24,6 @@ alias gcloud="TERM=xterm-256color gcloud"
 alias gscat="gsutil cat"
 alias gsls="gsutil ls"
 
-alias jqpager="jq -C | less -R"
-
 alias mm="micromamba"
 alias mma="micromamba activate"
 alias mmc="micromamba create --name"
@@ -81,3 +79,5 @@ alias present_remotely='nohup pdfpc -Ssg -w presentation'
 if [[ $(uname) == 'Darwin' ]]; then
     alias yay='brew upgrade && brew upgrade --cask'
 fi
+
+alias pre-commit-file="pre-commit run --file"
