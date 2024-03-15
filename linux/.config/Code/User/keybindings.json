@@ -183,6 +183,10 @@
         "key": "ctrl+]",
         "command": "workbench.action.navigateForward"
     },
+    {
+        "key": "cmd+]",
+        "command": "workbench.action.navigateForward"
+    },
     // {
     //     "key": "ctrl+]",
     //     "command": "-editor.action.indentLines",
@@ -404,6 +408,22 @@
         "when": "isMac && terminalFocus"
     },
     {
+        "key": "alt+left",
+        "command": "workbench.action.terminal.sendSequence",
+        "args": {
+            "text": "\u001b[1;5D"
+        },
+        "when": "isMac && terminalFocus"
+    },
+    {
+        "key": "alt+right",
+        "command": "workbench.action.terminal.sendSequence",
+        "args": {
+            "text": "\u001b[1;5C"
+        },
+        "when": "isMac && terminalFocus"
+    },
+    {
         "key": "alt+f3",
         "command": "workbench.action.compareEditor.nextChange",
         "when": "textCompareEditorVisible"
@@ -422,5 +442,47 @@
         "key": "shift+alt+f5",
         "command": "-workbench.action.compareEditor.previousChange",
         "when": "textCompareEditorVisible"
+    },
+    {
+        "key": "cmd+g cmd+d",
+        "command": "git.openChange",
+        "when": "isMac"
+    },
+    {
+        "key": "cmd+o",
+        "command": "-workbench.action.files.openFolderViaWorkspace",
+        "when": "!openFolderWorkspaceSupport && workbenchState == 'workspace'"
+    },
+    {
+        "key": "cmd+o",
+        "command": "-workbench.action.files.openFileFolder",
+        "when": "isMacNative && openFolderWorkspaceSupport"
+    },
+    {
+        "key": "cmd+o",
+        "command": "-workbench.action.files.openLocalFileFolder",
+        "when": "remoteFileDialogVisible"
+    },
+    {
+        "key": "cmd+o",
+        "command": "-workbench.action.files.openFile",
+        "when": "false"
+    },
+    {
+        "key": "cmd+o",
+        "command": "workbench.action.files.openFolder"
+    },
+    {
+        "key": "shift+cmd+]",
+        "command": "-workbench.action.nextEditor"
+    },
+    {
+        "key": "shift+cmd+[",
+        "command": "-workbench.action.previousEditor"
+    },
+    {
+        "key": "cmd+]",
+        "command": "-editor.action.indentLines",
+        "when": "editorTextFocus && !editorReadonly"
     },
 ]

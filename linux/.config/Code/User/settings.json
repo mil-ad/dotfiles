@@ -1,16 +1,12 @@
 {
-    "telemetry.telemetryLevel": "off",
-    "update.mode": "manual",
-    "update.showReleaseNotes": true,
-    // "editor.fontFamily": "'IBM Plex Mono', 'Cascadia Code', 'Symbols Nerd Font', 'Noto Color Emoji', 'Vazirmatn UI NL', 'IntelOne Mono', 'JetBrains Mono Medium', 'IBM Plex Mono Medium', 'Iosevka Nerd Font Mono', 'JetBrainsMono-Medium', 'Material Icons'",
-    "editor.fontFamily": "'IBM Plex Mono', 'Cascadia Code', 'Symbols Nerd Font', 'Noto Color Emoji', 'Vazirmatn UI NL', 'IntelOne Mono', 'JetBrains Mono Medium', 'IBM Plex Mono Medium', 'Iosevka Nerd Font Mono', 'JetBrainsMono-Medium', 'Material Icons'",
-    // "editor.fontWeight": "400",
+    "editor.fontFamily": "'IBM Plex Mono', 'Cascadia Code', 'Symbols Nerd Font', 'Noto Color Emoji', 'Vazirmatn UI NL', 'JetBrains Mono Medium', 'Material Icons'",
+    "editor.fontWeight": "400",
     "editor.fontSize": 18,
+    "editor.formatOnPaste": true,
     "editor.tabSize": 4,
     "editor.mouseWheelZoom": false,
     "editor.multiCursorModifier": "ctrlCmd",
     "editor.cursorBlinking": "smooth",
-    // "editor.cursorSmoothCaretAnimation": true,
     "editor.rulers": [
         80,
         120
@@ -18,8 +14,7 @@
     "editor.wordWrapColumn": 80,
     "editor.renderWhitespace": "all",
     "editor.renderControlCharacters": false,
-    "editor.wordBasedSuggestions": "off",
-    "editor.formatOnPaste": true,
+    "editor.wordBasedSuggestions": false,
     "editor.suggestSelection": "first",
     "editor.accessibilitySupport": "off",
     "editor.unicodeHighlight.nonBasicASCII": true,
@@ -27,9 +22,11 @@
     "editor.gotoLocation.multipleDeclarations": "gotoAndPeek",
     "editor.gotoLocation.multipleDefinitions": "gotoAndPeek",
     "editor.gotoLocation.multipleTypeDefinitions": "gotoAndPeek",
+    "editor.semanticHighlighting.enabled": true,
+    "editor.minimap.scale": 2,
+    "editor.minimap.renderCharacters": false,
     "editor.minimap.enabled": false,
-    // Disable italics in comment blocks
-    // From https://stackoverflow.com/a/46278282/298209
+    // Disable italics in comment blocks (see From https://stackoverflow.com/a/46278282/298209)
     "editor.tokenColorCustomizations": {
         "textMateRules": [
             {
@@ -44,28 +41,32 @@
                 ],
                 "settings": {
                     "fontStyle": ""
-                    // "fontStyle": "italic",
-                    // "fontStyle": "italic underline",
-                    // "fontStyle": "italic bold underline",
                 }
             }
         ]
     },
-    "terminal.external.linuxExec": "kitty",
-    "terminal.integrated.fontFamily": "'Symbols Nerd Font', 'Iosevka Term Medium', 'Noto Color Emoji', 'Vazir WOL'",
-    "terminal.integrated.fontSize": 22,
-    "terminal.integrated.inheritEnv": true,
-    "terminal.integrated.macOptionClickForcesSelection": true,
-    "terminal.integrated.macOptionIsMeta": true,
-    "terminal.integrated.enableMultiLinePasteWarning": false,
-    "terminal.integrated.shellIntegration.decorationsEnabled": "never",
-    "terminal.external.osxExec": "/Applications/kitty.app",
+    "extensions.ignoreRecommendations": true,
     "files.associations": {
         "*.mplstyle": "python"
     },
     "files.trimTrailingWhitespace": true,
     "files.trimFinalNewlines": true,
     "files.insertFinalNewline": true,
+    "terminal.external.linuxExec": "kitty",
+    "terminal.integrated.fontFamily": "'Symbols Nerd Font', 'Iosevka Term Medium', 'Noto Color Emoji', 'Vazir WOL'",
+    "terminal.integrated.fontSize": 15,
+    "terminal.integrated.inheritEnv": true,
+    "terminal.integrated.macOptionClickForcesSelection": true,
+    "terminal.integrated.macOptionIsMeta": true,
+    "terminal.integrated.enableMultiLinePasteWarning": false,
+    "terminal.integrated.shellIntegration.decorationsEnabled": "never",
+    "terminal.external.osxExec": "/Applications/kitty.app",
+    "terminal.integrated.minimumContrastRatio": 1,
+    "terminal.integrated.defaultProfile.linux": "zsh",
+    "terminal.integrated.showExitAlert": false,
+    "telemetry.telemetryLevel": "off",
+    "update.mode": "manual",
+    "update.showReleaseNotes": true,
     "workbench.editor.enablePreview": false,
     "workbench.editor.labelFormat": "short",
     "workbench.editor.decorations.badges": false,
@@ -73,9 +74,8 @@
     "workbench.statusBar.visible": true,
     "workbench.tips.enabled": false,
     "window.menuBarVisibility": "toggle",
-    "window.commandCenter": false,
     "window.nativeFullScreen": false,
-    "workbench.colorTheme": "Catppuccin Mocha",
+    "workbench.colorTheme": "Popping and Locking",
     "catppuccin.accentColor": "yellow",
     "catppuccin.colorOverrides": {
         "mocha": {
@@ -91,14 +91,14 @@
             "statusBar.foreground": "accent",
             "sideBarTitle.foreground": "accent",
             "statusBarItem.remoteBackground": "accent",
-            "focusBorder": "accent"
+            "focusBorder": "accent",
         }
     },
     "workbench.colorCustomizations": {
+        // "terminal.background": "#1d2021",
         "[Catppuccin Mocha]": {
-            // "terminal.background": "#020202",
             "terminal.foreground": "#f2e5bc",
-            "terminal.ansiBlack": "#1d2021",
+            "terminal.ansiBlack": "#d4ba0e",
             "terminal.ansiBrightBlack": "#928374",
             "terminal.ansiRed": "#cc241d",
             "terminal.ansiBrightRed": "#f42c3e",
@@ -122,6 +122,9 @@
         "*.ipynb": "jupyter-notebook"
     },
     "workbench.layoutControl.enabled": false,
+    "window.title": "${rootNameShort}${separator}${profileName}",
+    "window.commandCenter": false,
+    "window.zoomLevel": -2,
     "workbench.editor.pinnedTabsOnSeparateRow": true,
     "explorer.decorations.colors": false,
     "explorer.sortOrder": "type",
@@ -171,7 +174,7 @@
     // Extension settings
     // =========================================================================
     "python.languageServer": "Pylance",
-    "python.analysis.typeCheckingMode": "off",
+    "python.analysis.typeCheckingMode": "standard",
     // Providing pylintArgs disables all the sensible defaults that VSCode
     // applies. I have therefore copy-pasted them manually (see
     // pylintUseMinimalCheckers). The real change I want to make here is
@@ -243,13 +246,6 @@
     // =========================================================================
     // Archive
     // =========================================================================
-    "todo.embedded.provider": "ag",
-    "todo.symbols.box": "[ ]",
-    "todo.symbols.cancelled": "[-]",
-    "todo.symbols.done": "[x]",
-    // "todo.symbols.box": "-",
-    // "todo.symbols.cancelled": "-",
-    // "todo.symbols.done": "-",
     "spellright.language": [
         "en_GB",
         "en_US"
@@ -268,6 +264,7 @@
         "python": "comments"
     },
     "spellright.statusBarIndicator": false,
+    "spellright.notificationClass": "warning",
     "[todo]": {
         "editor.quickSuggestions": {
             "comments": "off",
@@ -280,14 +277,11 @@
         "editor.wordWrapColumn": 120
     },
     "diffEditor.ignoreTrimWhitespace": false,
-    "window.title": "${rootNameShort}${separator}${profileName}",
+    "audioCues.terminalCommandFailed": "off",
     "isort.importStrategy": "fromEnvironment",
-    "extensions.ignoreRecommendations": true,
-    "terminal.integrated.minimumContrastRatio": 1,
-    "window.zoomLevel": -2,
-    "terminal.integrated.defaultProfile.linux": "zsh",
-    "terminal.integrated.showExitAlert": false,
     "accessibility.signals.terminalCommandFailed": {
         "sound": "off"
-    }
+    },
+    "remote.SSH.enableX11Forwarding": false,
+    "git-blame.config.showBlameInline": false
 }
