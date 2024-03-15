@@ -3,6 +3,7 @@ eval "$(starship init zsh)"
 source ~/.dotfiles/colored-man-pages.zsh
 source ~/.dotfiles/wd.zsh
 source ~/.dotfiles/aliases.zsh
+source ~/.dotfiles/functions.zsh
 source ~/.dotfiles/exports.zsh
 source ~/.dotfiles/bindkey.zsh
 source ~/.dotfiles/fzf.zsh
