@@ -16,7 +16,7 @@ prs=$(jq -r '.items[] | .title' < "$cache_file")
 # Let's construct it for dmenu
 repos=$(jq -r ".items[] | .repository_url" < "$cache_file" | awk -F '/' '{print $(NF-1)"/"$NF}')
 
-prompts=$(paste -d "\t" <(printf "$repos") <(printf "$prs"))
+prompts=$(paste -d " " <(printf "$repos") <(printf "$prs"))
 
 user_selected_idx=$(printf "$prompts" | rofimenu -i)
 
