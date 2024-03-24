@@ -184,7 +184,7 @@ mode "resize" {
 bindsym $mod+Return exec kitty
 bindsym $mod+d exec --no-startup-id ~/.local/bin/dmenu_run
 bindsym $mod+Shift+Return exec pcmanfm
-bindsym $mod+v exec --no-startup-id CM_OUTPUT_CLIP=1 CM_LAUNCHER=rofi clipmenu
+bindsym $mod+v exec --no-startup-id clipmenu
 
 bindsym $mod+z --release exec --no-startup-id maim -s /dev/stdout | xclip -selection clipboard -t image/png
 bindsym $mod+Shift+z exec --no-startup-id maim -s "$HOME/Pictures/screenshot-$(date +%F_%T).png" && notify-send "Screenshot region saved to ${HOME}/Pictures"
