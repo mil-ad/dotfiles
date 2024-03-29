@@ -24,6 +24,7 @@ Plug 'nvim-telescope/telescope.nvim'
 Plug 'luisiacc/gruvbox-baby', {'branch': 'main'}
 Plug 'FeiyouG/commander.nvim'
 Plug 'neovim/nvim-lspconfig'
+Plug 'akinsho/toggleterm.nvim', {'tag' : '*'}
 
 call plug#end()
 " -----------------------8<-------------------------8<------------------------ "

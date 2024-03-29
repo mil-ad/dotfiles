@@ -142,3 +142,7 @@ require('lualine').setup {
     globalstatus = true,
   }
 }
+
+require("toggleterm").setup { 
+    open_mapping = [[<c-`>]],
+}
