@@ -1,5 +1,5 @@
-HISTSIZE=100000
-SAVEHIST=50000
+HISTSIZE=500000
+SAVEHIST=500000
 HISTFILE="$HOME/.cache/zsh_history"
 
 # setopt extended_history       # record timestamp of command in HISTFILE
