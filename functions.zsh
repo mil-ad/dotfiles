@@ -1,3 +1,3 @@
-jqpager () {
+jqp () {
     jq -C "$@" | less -R
 }
