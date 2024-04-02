@@ -23,6 +23,7 @@ alias ssh="TERM=xterm-256color ssh"
 alias gcloud="TERM=xterm-256color gcloud"
 alias gscat="gsutil cat"
 alias gsls="gsutil ls"
+alias gsrm="gsutil -m rm"
 
 alias mm="micromamba"
 alias mma="micromamba activate"
