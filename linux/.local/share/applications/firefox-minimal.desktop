@@ -1,4 +1,4 @@
 [Desktop Entry]
 Type=Application
 Name=Firefox-Minimal
-Exec=firefox -p minimal %u
+Exec=firefox --new-window -p minimal %u
