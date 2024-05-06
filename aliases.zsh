@@ -36,6 +36,7 @@ alias va="source .venv/bin/activate 2>/dev/null || uv venv && source .venv/bin/a
 alias vd="deactivate"
 alias vc="uv venv"
 
+alias gcm='git commit -m'
 alias gs='git status'
 alias goops='git rebase -i HEAD~2'
 
