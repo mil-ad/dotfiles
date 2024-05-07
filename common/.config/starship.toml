@@ -1,6 +1,7 @@
 format = """
 $hostname\
 $directory\
+$python\
 $conda\
 $git_branch\
 $git_commit\
@@ -63,7 +64,7 @@ faded_orange = '#af3a03'
 
 [hostname]
 ssh_only = true
-format = '[$ssh_symbol $hostname](bold blue) '
+format = '[$ssh_symbol ](bold blue) '
 ssh_symbol = "󰢩"
 
 [directory]
@@ -116,6 +117,11 @@ require_repo = true
 [conda]
 style = "fg:dark0 bg:neutral_yellow"
 format = '[](fg:neutral_yellow bg:transparent)[$symbol$environment]($style)[](fg:neutral_yellow bg:transparent) '
+symbol = "  "
+
+[python]
+style = "fg:dark0 bg:neutral_yellow"
+format = '[](fg:neutral_yellow bg:transparent)[${symbol}(${version} )($virtualenv)]($style)[](fg:neutral_yellow bg:transparent) '
 symbol = "  "
 
 [jobs]
