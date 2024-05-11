@@ -14,9 +14,11 @@ Plug 'tpope/vim-fugitive'
 Plug 'haya14busa/is.vim'
 Plug 'nvim-lualine/lualine.nvim'
 Plug 'nvim-tree/nvim-web-devicons'
+Plug 'nvim-lua/plenary.nvim'
+Plug 'MunifTanjim/nui.nvim'
+Plug 'nvim-neo-tree/neo-tree.nvim'
 Plug 'morhetz/gruvbox'
 Plug 'tpope/vim-surround'
-Plug 'nvim-tree/nvim-tree.lua'
 Plug 'ryanoasis/vim-devicons'
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 Plug 'nvim-lua/plenary.nvim'
@@ -86,7 +88,7 @@ nnoremap <Leader>w :bdelete<CR>
 nnoremap <Leader>r :CtrlPBufTag<CR>
 nnoremap <Leader>/ :set hlsearch!<CR>
 nnoremap <Leader>r :source $MYVIMRC<CR>
-nnoremap <Leader>bp :NvimTreeToggle<CR>
+nnoremap <Leader>bp :Neotree<CR>
 "nn <C-p> :Files<CR>
 "nn <C-r> :BTags<CR>
 map q <Nop>
