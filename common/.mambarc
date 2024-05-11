@@ -2,3 +2,5 @@ channels:
   - conda-forge
 changeps1: false
 auto_activate_base: false
+envs_dirs:
+  - $HOME/.local/share/micromamba/envs
