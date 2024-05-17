@@ -14,7 +14,7 @@
 [commit]
     gpgSign = true
 [gpg]
-    program = ssh
+    format = ssh
 [diff]
     colorMoved = plain
 [difftool]
