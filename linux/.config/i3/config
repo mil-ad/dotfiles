@@ -186,9 +186,9 @@ bindsym $mod+d exec --no-startup-id ~/.local/bin/dmenu_run
 bindsym $mod+Shift+Return exec pcmanfm
 bindsym $mod+v exec --no-startup-id clipmenu
 
-bindsym $mod+z --release exec --no-startup-id maim -s /dev/stdout | xclip -selection clipboard -t image/png
-bindsym $mod+Shift+z exec --no-startup-id maim -s "$HOME/Pictures/screenshot-$(date +%F_%T).png" && notify-send "Screenshot region saved to ${HOME}/Pictures"
-bindsym $mod+Ctrl+z exec --no-startup-id maim "$HOME/Pictures/screenshot-$(date +%F_%T).png" && notify-send "Screenshot saved to ${HOME}/Pictures"
+bindsym $mod+z --release exec --no-startup-id shotgun $(slop -f "-i %i -g %g") - | xclip -selection clipboard -t image/png
+bindsym $mod+Shift+z exec --no-startup-id shotgun $(slop -f "-i %i -g %g") "$HOME/Pictures/screenshot-$(date +%F_%T).png" && notify-send "Screenshot region saved to ${HOME}/Pictures"
+bindsym $mod+Ctrl+z exec --no-startup-id shotgun "$HOME/Pictures/screenshot-$(date +%F_%T).png" && notify-send "Screenshot saved to ${HOME}/Pictures"
 
 bindsym $mod+0 exec --no-startup-id ~/.local/bin/sysact
 bindsym $mod+b exec --no-startup-id ~/.local/bin/open_bookmark
