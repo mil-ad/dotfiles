@@ -32,10 +32,10 @@ alias mmd="micromamba deactivate"
 alias mmls='micromamba env list'
 alias mmrm='micromamba env remove --yes --name'
 alias condarm='conda env remove --name'
-alias va="source .venv/bin/activate 2>/dev/null || source ../.venv/bin/activate"
+alias va="source .venv/bin/activate 2>/dev/null || source ../.venv/bin/activate 2>/dev/null || echo 'no .env found in this or parent directory' && false"
 alias va!="source .venv/bin/activate 2>/dev/null || uv venv && source .venv/bin/activate"
-alias vd="deactivate"
 alias vc="uv venv"
+alias vd="deactivate"
 
 alias gcm='git commit -m'
 alias gs='git status'
