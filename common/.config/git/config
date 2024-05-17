@@ -7,24 +7,18 @@
 [core]
     editor = vim
     pager = delta
+	excludesFile = ~/.gitignore
 [push]
     default = simple
+    autoSetupRemote = true
 [commit]
     gpgSign = true
 [gpg]
-    program = gpg
-    format = ssh
+    program = ssh
 [diff]
-    tool = icdiff
-    colorMoved = default # detect moved blocks of code and style them differently
+    colorMoved = plain
 [difftool]
     prompt = false
-[difftool "p4merge"]
-    cmd = /Applications/p4merge.app/Contents/Resources/launchp4merge "\"$LOCAL\"" "\"$REMOTE    \""
-[difftool "icdiff"]
-    cmd = icdiff --line-numbers $LOCAL $REMOTE
-[interactive]
-    diffFilter = delta --color-only
 [filter "lfs"]
     required = true
     clean = git-lfs clean -- %f
@@ -43,6 +37,8 @@
     frag = magenta bold
     old = red reverse
     new = green reverse
+    oldMoved = bold blue reverse
+    newMoved = brightblue reverse
 [color "branch"]
     current = yellow reverse
     local = yellow
@@ -53,14 +49,12 @@
     rebase = true
 [init]
     defaultBranch = main
-[delta]
-    navigate = true    # use n and N to move between diff sections
-    light = false      # set to true if you're in a terminal w/ a light background color (e.g. the default macOS terminal)
 [include]
 	path = ~/.gitconfig.local
 [interactive]
-    diffFilter = delta --color-only
+    diffFilter = delta --color-only --features=interactive
 [delta]
+    true-color = always
     navigate = true    # use n and N to move between diff sections
     light = false      # set to true if you're in a terminal w/ a light background color (e.g. the default macOS terminal)
     line-numbers = true
