@@ -5,3 +5,6 @@ __pycache__
 
 #PyCharm project files
 .idea
+
+notebooks_milad/
+milad_notebooks/
