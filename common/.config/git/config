@@ -50,7 +50,7 @@
 [init]
     defaultBranch = main
 [include]
-	path = ~/.gitconfig.local
+    path = ~/.gitconfig.local
 [interactive]
     diffFilter = delta --color-only --features=interactive
 [delta]
