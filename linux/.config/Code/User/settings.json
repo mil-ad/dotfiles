@@ -1,5 +1,5 @@
 {
-    "editor.fontFamily": "'IBM Plex Mono', 'Cascadia Code', 'Symbols Nerd Font', 'Noto Color Emoji', 'Vazirmatn UI NL', 'JetBrains Mono Medium', 'Material Icons'",
+    "editor.fontFamily": "'Cascadia Code', 'Symbols Nerd Font', 'Noto Color Emoji', 'Vazirmatn UI NL', 'JetBrains Mono Medium', 'Material Icons'",
     "editor.fontWeight": "400",
     "editor.fontSize": 18,
     "editor.formatOnPaste": true,
@@ -14,7 +14,7 @@
     "editor.wordWrapColumn": 80,
     "editor.renderWhitespace": "all",
     "editor.renderControlCharacters": false,
-    "editor.wordBasedSuggestions": false,
+    "editor.wordBasedSuggestions": "off",
     "editor.suggestSelection": "first",
     "editor.accessibilitySupport": "off",
     "editor.unicodeHighlight.nonBasicASCII": true,
@@ -277,7 +277,6 @@
         "editor.wordWrapColumn": 120
     },
     "diffEditor.ignoreTrimWhitespace": false,
-    "audioCues.terminalCommandFailed": "off",
     "isort.importStrategy": "fromEnvironment",
     "accessibility.signals.terminalCommandFailed": {
         "sound": "off"
