@@ -18,7 +18,7 @@ setopt auto_pushd
 setopt pushd_ignore_dups
 setopt pushdminus
 
-# Make sure that the terminal is in application mode when zle is active, since
+# Make sure that the terminal is in application mode when zle is active, because
 # only then values from $terminfo are valid
 # Milad: important for keybindings, for example I've always had issues with home key
 # see https://github.com/romkatv/zsh4humans/issues/7
@@ -113,7 +113,7 @@ autoload -U compinit
 zstyle ':completion:*' menu select
 zmodload -i zsh/complist
 compinit
-_comp_options+=(globdots)		# Include hidden files.
+_comp_options+=(globdots) # Include hidden files.
 
 bindkey -M emacs "${terminfo[kcbt]}" reverse-menu-complete
 bindkey -M viins "${terminfo[kcbt]}" reverse-menu-complete
