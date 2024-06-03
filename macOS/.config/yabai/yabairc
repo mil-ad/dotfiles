@@ -32,6 +32,7 @@ yabai -m rule --add app="^1Password$" manage=off sticky=on
 yabai -m rule --add app="Karabiner" manage=off sticky=on
 yabai -m rule --add app="choose" manage=off sticky=on
 yabai -m rule --add app=".*Anki.*" manage=off sticky=off
+yabai -m rule --add app=".*Raycast Settings.*" manage=off sticky=off
 
 yabai -m rule --add app="Code" space=2
 yabai -m rule --add app="Kitty" space=1
