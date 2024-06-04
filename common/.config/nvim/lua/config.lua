@@ -2,6 +2,9 @@ vim.o.relativenumber = true
 vim.g.loaded_netrw = 1
 vim.g.loaded_netrwPlugin = 1
 
+-- optionally enable 24-bit colour
+vim.opt.termguicolors = true
+
 require'nvim-treesitter.configs'.setup {
   ensure_installed = { "python", "bash", "lua", "javascript" },
   sync_install = false,
@@ -79,51 +82,13 @@ commander.add({
   }
 })
 
-require('lualine').setup {
-  options = {
-    icons_enabled = true,
-    theme = 'auto',
-    disabled_filetypes = {
-      statusline = {},
-      winbar = {},
-    },
-    ignore_focus = {},
-    always_divide_middle = true,
-    globalstatus = false,
-    refresh = {
-      statusline = 1000,
-      tabline = 1000,
-      winbar = 1000,
-    }
-  },
-  sections = {
-    lualine_a = {'mode'},
-    lualine_b = {'branch'},
-    lualine_c = {'filename'},
-    lualine_x = {},
-    lualine_y = {'progress'},
-    lualine_z = {'location'}
-  },
-  inactive_sections = {
-    lualine_a = {},
-    lualine_b = {},
-    lualine_c = {'filename'},
-    lualine_x = {'location'},
-    lualine_y = {},
-    lualine_z = {}
-  },
-  tabline = {},
-  winbar = {},
-  inactive_winbar = {},
-  extensions = {}
-}
-
 local builtin = require('telescope.builtin')
 
 vim.keymap.set('n', '<C-p>', builtin.find_files, {})
 vim.keymap.set('n', '<C-Tab>', builtin.buffers, {})
 vim.keymap.set('n', '<C-f>', builtin.live_grep, {})
 vim.keymap.set('n', '<C-r>', builtin.treesitter, {})
+vim.keymap.set('n', '<leader>g', builtin.git_status, {})
 vim.keymap.set('n', '<leader>p', ':Telescope commander<CR>', {})
 vim.keymap.set('n', '<A-j>', ':m .+1<CR>', {})
 vim.keymap.set('n', '<A-k>', ':m .-2<CR>', {})
@@ -143,4 +108,33 @@ require('lualine').setup {
 
 require("toggleterm").setup { 
     open_mapping = [[<c-`>]],
+}
+
+local lspconfig = require('lspconfig')
+lspconfig.pyright.setup {}
+
+vim.diagnostic.config({
+    virtual_text = false,
+    update_in_insert = true
+})
+
+require("hlchunk").setup {
+  chunk = {
+    enable = true,
+    use_treesitter = true,
+    chars = {
+      horizontal_line = "━",
+      vertical_line = "┃",
+      left_top = "┏",
+      left_bottom = "┗",
+      right_arrow = "━",
+    },
+  },
+  blank = {
+    enable = false,
+  },
+  line_num = {
+    enable = true,
+    use_treesitter = true,
+  },
 }

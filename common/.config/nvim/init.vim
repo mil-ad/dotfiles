@@ -18,15 +18,17 @@ Plug 'nvim-lua/plenary.nvim'
 Plug 'MunifTanjim/nui.nvim'
 Plug 'nvim-neo-tree/neo-tree.nvim'
 Plug 'morhetz/gruvbox'
+Plug 'sainnhe/gruvbox-material'
+Plug 'luisiacc/gruvbox-baby', {'branch': 'main'}
 Plug 'tpope/vim-surround'
 Plug 'ryanoasis/vim-devicons'
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim'
-Plug 'luisiacc/gruvbox-baby', {'branch': 'main'}
 Plug 'FeiyouG/commander.nvim'
 Plug 'neovim/nvim-lspconfig'
 Plug 'akinsho/toggleterm.nvim', {'tag' : '*'}
+Plug 'shellRaining/hlchunk.nvim'
 
 call plug#end()
 " -----------------------8<-------------------------8<------------------------ "
@@ -74,8 +76,8 @@ let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
 set t_Co=256
 "let base16colorspace=256
 
-set background=dark
-let g:gruvbox_contrast_dark='hard'
+"set background=dark
+"let g:gruvbox_contrast_dark='hard'
 colorscheme gruvbox
 hi Normal guibg=NONE ctermbg=NONE   " Make the background transparent
 
