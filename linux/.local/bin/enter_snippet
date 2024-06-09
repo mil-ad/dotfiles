@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+
+selected_idx=$(yq -r '.[] | "\(.name): \(if (.value | split("\n") | length) > 1 then "(Multi-line Text Hidden)" else .value end)"' "$1" | rofimenu -format i)
+
+if [ "$selected_idx" == "" ]; then
+    exit
+else
+    yq -r ".["$selected_idx"].value" "$1" | xclip -selection clipboard | xdotool key Shift+Insert
+fi

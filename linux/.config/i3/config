@@ -202,7 +202,7 @@ bindsym $mod+space exec --no-startup-id $HOME/.local/bin/winmenu
 bindsym $mod+Ctrl+i exec --no-startup-id ~/.local/bin/synonym
 bindsym $mod+Ctrl+o exec --no-startup-id $HOME/.local/bin/openfile
 bindsym $mod+Ctrl+p exec --no-startup-id ~/.scripts/open_paper_no_annotations
-bindsym $mod+Ctrl+space exec --no-startup-id ~/.scripts/enter_snippet
+bindsym $mod+Ctrl+space exec --no-startup-id $HOME/.local/bin/enter_snippet $HOME/.scripts/snippets.txt
 bindsym $mod+comma exec --no-startup-id $HOME/.local/bin/rename_i3_container
 
 ##########################################
