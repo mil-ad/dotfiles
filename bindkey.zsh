@@ -166,6 +166,26 @@ zstyle ':completion:*:*:*:users' ignored-patterns \
         rpc rpcuser rpm rtkit scard shutdown squid sshd statd svn sync tftp \
         usbmux uucp vcsa wwwrun xfs '_*'
 
+_ssh_configfile="$HOME/.ssh/config"
+if [[ -f "$_ssh_configfile" ]]; then
+  _ssh_hosts=($(
+    ggrep -E '^Host.*' "$_ssh_configfile" |\
+    awk '{for (i=2; i<=NF; i++) print $i}' |\
+    sort |\
+    uniq |\
+    grep -v '^*' |\
+    sed -e 's/\.*\*$//'
+  ))
+  zstyle ':completion:*:hosts' hosts $_ssh_hosts
+  unset _ssh_hosts
+fi
+unset _ssh_configfile
+
+
+
+
+
+
 # ... unless we really want to.
 zstyle '*' single-ignored show
 
