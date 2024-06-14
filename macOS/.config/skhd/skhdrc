@@ -25,9 +25,9 @@ rhyper - space: $HOME/.local/bin/winmenu
 # Some are defined for both control and and cmd so that they work in kitty too
 rhyper + lshift - space : yabai -m window --toggle float
 rhyper + lcmd - e : skhd -k "cmd + ctrl - space"
-rhyper - r : /Users/miladalizadeh/.dotfiles/linux/.local/bin/open_github_repo
-rhyper + lcmd - r : /Users/miladalizadeh/.dotfiles/linux/.local/bin/open_github_repo
-rhyper + lshift - r : /Users/miladalizadeh/.local/bin/open-github-pr
+rhyper - r : $HOME/.dotfiles/linux/.local/bin/open_github_repo
+rhyper + lcmd - r : $HOME/.dotfiles/linux/.local/bin/open_github_repo
+rhyper + lshift - r : $HOME/.local/bin/open-github-pr
 
 # Move window to another space
 rhyper + lshift - 1 : yabai -m window --space 1; yabai -m space --focus 1
