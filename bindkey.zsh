@@ -181,11 +181,6 @@ if [[ -f "$_ssh_configfile" ]]; then
 fi
 unset _ssh_configfile
 
-
-
-
-
-
 # ... unless we really want to.
 zstyle '*' single-ignored show
 
