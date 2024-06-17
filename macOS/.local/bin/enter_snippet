@@ -1,0 +1,19 @@
+#!/usr/bin/env bash
+
+set -x
+
+selected_idx=$(yq -o=json < $1 | jq -r '
+.[] | 
+if (.value | type == "string" and (index("\n") | not)) then
+  "\(.name): \(.value)"
+else
+  "\(.name): Multi-line Text Hidden"
+end
+' | rofimenu -i)
+
+if [ "$selected_idx" == "" ]; then
+    exit
+else
+    value="$(yq -r ".["$selected_idx"].value" "$1")"
+    osascript ~/.local/bin/macos_type.applescript "$value"
+fi
