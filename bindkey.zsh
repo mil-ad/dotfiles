@@ -169,7 +169,7 @@ zstyle ':completion:*:*:*:users' ignored-patterns \
 _ssh_configfile="$HOME/.ssh/config"
 if [[ -f "$_ssh_configfile" ]]; then
   _ssh_hosts=($(
-    ggrep -E '^Host.*' "$_ssh_configfile" |\
+    grep -E '^Host.*' "$_ssh_configfile" |\
     awk '{for (i=2; i<=NF; i++) print $i}' |\
     sort |\
     uniq |\
