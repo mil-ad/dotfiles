@@ -19,6 +19,7 @@ rhyper - p : $HOME/.scripts/open_paper
 rhyper - e : $HOME/.local/bin/enter_emoji
 rhyper - 0: $HOME/.local/bin/sysact
 rhyper - space: $HOME/.local/bin/winmenu
+rhyper + lcmd - space: $HOME/.local/bin/enter_snippet $HOME/.scripts/snippets.yml
 
 #rhyper - tab : $HOME/.local/bin/enter_emoji
 
