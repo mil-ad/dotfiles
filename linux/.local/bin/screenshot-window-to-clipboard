@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+
+slop --nodecorations=1 -f "%i" | xargs -I {} shotgun --id {} - | xclip -selection clipboard -t image/png
