@@ -138,3 +138,7 @@ require("hlchunk").setup {
     use_treesitter = true,
   },
 }
+
+vim.opt.fillchars = {
+    eob = " ", -- suppress ~ at EndOfBuffer
+  }
