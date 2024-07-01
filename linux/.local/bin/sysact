@@ -1,10 +1,31 @@
 #!/usr/bin/env bash
 
-# A dmenu wrapper script for system functions.
+# A rofi wrapper script for various functionality that I don't want to put 
+# behind an explicit keybinding.
+
 # modified version of https://github.com/LukeSmithxyz/voidrice/blob/8cbd259bc1b31cb17e5d6bf9fba59dfb45ada224/.local/bin/sysact
 
-case "$(printf "🔒 lock\n💤 sleep\n🐻 hibernate\n🚪 logout\n🔫 xkill\n♻ restart i3\n📹 record area\n🖖 (un)split monitor\n🚀 reboot\n🖥 shutdown" | dmenu)" in
+set -x
+
+menu_items=(
+    "🔒 lock"
+    "💤 sleep"
+    "🔫 xkill"
+    "♻ restart i3"
+    "📹 record area"
+    "🖼️ screenshot window"
+    "🖖 (un)split monitor"
+    "🚪 logout"
+    "🚀 reboot"
+    "🐻 hibernate"
+    "🖥 shutdown"
+)
+
+selected_option=$(printf "%s\n" "${menu_items[@]}" | rofimenu)
+
+case "$selected_option" in
     '📹 record area') ~/.local/bin/record-screen-area-start ;;
+    "🖼️ screenshot window") ~/.local/bin/screenshot-window-to-clipboard ;;
     '🔒 lock')  ~/.local/bin/betterblurlock ;;
     '💤 sleep') systemctl suspend ;;
     '🐻 hibernate')  systemctl hibernate ;;
