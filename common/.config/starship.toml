@@ -2,8 +2,8 @@ format = """
 $hostname\
 $directory\
 $python\
-$nodejs \
-$ruby \
+$nodejs\
+$ruby\
 $git_branch\
 $git_commit\
 ${custom.git_tags}\
