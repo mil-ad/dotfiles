@@ -37,10 +37,11 @@ alias va!="source .venv/bin/activate 2>/dev/null || uv venv && source .venv/bin/
 alias vc="uv venv"
 alias vd="deactivate"
 
-alias gcm='git commit -m'
+alias p="git pull"
+alias P="git push"
+alias gcm="git commit -m"
 alias gs='git status'
 alias goops='git rebase -i HEAD~2'
-
 alias gwls='git worktree list'
 alias gwadd='git worktree add'
 alias gwrm='git worktree remove'

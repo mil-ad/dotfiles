@@ -9,3 +9,4 @@ function d () {
     dirs -v | head -n 10
   fi
 }
+
