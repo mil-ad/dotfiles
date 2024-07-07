@@ -11,7 +11,7 @@ menu_items=(
     "🔒 lock"
     "💤 sleep"
     "🔫 xkill"
-    "♻ restart i3"
+    "♻️ restart i3"
     "📹 record area"
     "🖼️ screenshot window"
     "🖖 (un)split monitor"
@@ -32,7 +32,7 @@ case "$selected_option" in
     '🚪 logout') i3-msg exit ;;
     '🔫 xkill') xkill ;;
     '🖖 (un)split monitor') ~/.local/bin/toggle_virtual_monitors ;;
-    '♻ restart i3') i3-msg restart ;;
+    '♻️ restart i3') i3-msg restart ;;
     '🚀 reboot')  systemctl reboot ;;
     '🖥 shutdown') systemctl poweroff ;;
     *) exit 1 ;;
