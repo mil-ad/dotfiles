@@ -4,9 +4,8 @@
 # it is important that hyper uses right side modifiers. This allows hyper to
 # combined with another midifier on the left.
 
-rhyper + lshift - return : open -n ~
-#rhyper + lshift - r : launchctl kickstart -k "gui/${UID}/homebrew.mxcl.yabai"
 rhyper - return : /Applications/kitty.app/Contents/MacOS/kitty --single-instance -d ~
+rhyper + lshift - return : open -n ~
 rhyper - z : skhd -k "cmd + ctrl + shift - 4"
 rhyper + lshift - z : skhd -k "cmd + shift - 4"
 rhyper - q : skhd -k "cmd - w"
@@ -20,8 +19,6 @@ rhyper - e : $HOME/.local/bin/enter_emoji
 rhyper - 0: $HOME/.local/bin/sysact
 rhyper - space: $HOME/.local/bin/winmenu
 rhyper + lcmd - space: $HOME/.local/bin/enter_snippet $HOME/.scripts/snippets.yml
-
-#rhyper - tab : $HOME/.local/bin/enter_emoji
 
 # Some are defined for both control and and cmd so that they work in kitty too
 rhyper + lshift - space : yabai -m window --toggle float
