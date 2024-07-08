@@ -19,6 +19,7 @@ alias 8='cd -8'
 alias 9='cd -9'
 
 alias ssh="TERM=xterm-256color ssh"
+alias kssh="kitten ssh"
 
 alias gcloud="TERM=xterm-256color gcloud"
 alias gscat="gsutil cat"
@@ -49,15 +50,15 @@ alias gwmv='git worktree move'
 
 alias icat='kitty +kitten icat'
 
-if command -v exa &> /dev/null
+if command -v lsd &> /dev/null
 then
-    alias l='exa -l --group-directories-first'
-    alias ls="exa"
-    alias ll='exa -laH --group-directories-first'
-    alias ldot='exa -ld .*'
+    alias l='lsd -l --group-directories-first'
+    alias ls="lsd"
+    alias ll='lsd -la --group-directories-first'
+    alias ldot='lsd -ld .*'
 else
     alias l='ls -lh'
-    alias ll='exa -laHh'
+    alias ll='lsd -lah'
 fi
 alias lsym='ls -l `find . -maxdepth 1 -type l -print`'
 
