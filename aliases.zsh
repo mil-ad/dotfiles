@@ -34,8 +34,8 @@ alias mmls='micromamba env list'
 alias mmrm='micromamba env remove --yes --name'
 alias condarm='conda env remove --name'
 alias va="source .venv/bin/activate 2>/dev/null || source ../.venv/bin/activate 2>/dev/null || echo 'no .env found in this or parent directory' && false"
-alias va!="source .venv/bin/activate 2>/dev/null || uv venv && source .venv/bin/activate"
-alias vc="uv venv"
+alias va!="source .venv/bin/activate 2>/dev/null || uv venv --seed && source .venv/bin/activate"
+alias vc="uv venv --seed"
 alias vd="deactivate"
 
 alias p="git pull"
@@ -58,7 +58,7 @@ then
     alias ldot='lsd -ld .*'
 else
     alias l='ls -lh'
-    alias ll='lsd -lah'
+    alias ll='ls -lah'
 fi
 alias lsym='ls -l `find . -maxdepth 1 -type l -print`'
 
@@ -90,6 +90,8 @@ fi
 
 alias pre-commit-file="pre-commit run --file"
 
-
 alias json2jsonl="jq -c .[]"
 alias jsonl2json="jq -s"
+
+alias parquetcat="parquet-tools cat --format='json'"
+
