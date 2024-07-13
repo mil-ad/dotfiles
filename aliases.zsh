@@ -7,7 +7,6 @@ alias .....="cd ../../../.."
 alias .....="cd ../../../../.."
 alias ......="cd ../../../../../.."
 
-alias -- -='cd -'
 alias 1='cd -1'
 alias 2='cd -2'
 alias 3='cd -3'
@@ -17,6 +16,7 @@ alias 6='cd -6'
 alias 7='cd -7'
 alias 8='cd -8'
 alias 9='cd -9'
+alias -- -='cd -'
 
 alias ssh="TERM=xterm-256color ssh"
 alias kssh="kitten ssh"
@@ -26,13 +26,15 @@ alias gscat="gsutil cat"
 alias gsls="gsutil ls"
 alias gsrm="gsutil -m rm"
 
+# micromamba
 alias mm="micromamba"
 alias mma="micromamba activate"
 alias mmc="micromamba create --name"
 alias mmd="micromamba deactivate"
 alias mmls='micromamba env list'
 alias mmrm='micromamba env remove --yes --name'
-alias condarm='conda env remove --name'
+
+# venv using uv
 alias va="source .venv/bin/activate 2>/dev/null || source ../.venv/bin/activate 2>/dev/null || echo 'no .env found in this or parent directory' && false"
 alias va!="source .venv/bin/activate 2>/dev/null || uv venv --seed && source .venv/bin/activate"
 alias vc="uv venv --seed"
@@ -43,6 +45,7 @@ alias P="git push"
 alias gcm="git commit -m"
 alias gs='git status'
 alias goops='git rebase -i HEAD~2'
+
 alias gwls='git worktree list'
 alias gwadd='git worktree add'
 alias gwrm='git worktree remove'
@@ -50,8 +53,7 @@ alias gwmv='git worktree move'
 
 alias icat='kitty +kitten icat'
 
-if command -v lsd &> /dev/null
-then
+if command -v lsd &> /dev/null; then
     alias l='lsd -l --group-directories-first'
     alias ls="lsd"
     alias ll='lsd -la --group-directories-first'
@@ -70,18 +72,12 @@ alias more="less"
 alias vi="nvim"
 alias vim="nvim"
 alias cal='cal -3'
-#alias tmux="tmux -2" # Force 256 colour support
 alias df='df -h'
 alias du='du -h'
-
-alias tmuxdump='capture-pane -pS -'
-
-alias psmem='ps auxf | sort -nr -k 4 | head -10'
-alias pscpu='ps auxf | sort -nr -k 3 | head -10'
-
-alias weather='curl wttr.in/London'
 alias difffolders='diff -rq'
 
+alias tmuxdump='capture-pane -pS -'
+alias weather='curl wttr.in/London'
 alias present_remotely='nohup pdfpc -Ssg -w presentation'
 
 if [[ $(uname) == 'Darwin' ]]; then
