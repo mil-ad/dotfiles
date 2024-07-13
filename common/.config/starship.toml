@@ -127,8 +127,8 @@ symbol = "  "
 
 [nodejs]
 style = "fg:dark0 bg:bright_green"
-format = '[](fg:bright_green bg:transparent)[${symbol}(${version} )]($style)[](fg:bright_green bg:transparent) '
-symbol = ' '
+format = '[](fg:bright_green bg:transparent)[${symbol}(${version})]($style)[](fg:bright_green bg:transparent) '
+symbol = '󰎙 '
 
 [ruby]
 style = "fg:dark0 bg:bright_red"
