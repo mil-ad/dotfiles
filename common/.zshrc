@@ -1,6 +1,5 @@
 eval "$(starship init zsh)"
 
-source ~/.dotfiles/colored-man-pages.zsh
 source ~/.dotfiles/wd.zsh
 source ~/.dotfiles/aliases.zsh
 source ~/.dotfiles/functions.zsh

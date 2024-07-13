@@ -20,6 +20,8 @@ function man() {
         LESS_TERMCAP_so=$(tput smso) \
         LESS_TERMCAP_se=$(tput rmso) \
         PAGER="${commands[less]:-$PAGER}" \
+        _NROFF_U=1 \
+        GROFF_NO_SGR=1 \
         man "$@"
 }
 
