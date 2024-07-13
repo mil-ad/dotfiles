@@ -97,8 +97,6 @@ tag_disabled = true
 only_detached = true
 tag_symbol = '󱈤 '
 
-[git_state]
-
 [git_status]
 format = '([$all_status$ahead_behind]($style) )'
 style = "neutral_orange"
