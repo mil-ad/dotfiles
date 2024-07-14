@@ -131,7 +131,7 @@ symbol = '󰎙 '
 [ruby]
 style = "fg:dark0 bg:bright_red"
 format = '[](fg:bright_red bg:transparent)[${symbol}(${version} )($virtualenv)]($style)[](fg:bright_red bg:transparent) '
-symbol = "  "
+symbol = "  "
 
 [jobs]
 format = '[$number$symbol]($style) '

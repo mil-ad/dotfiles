@@ -54,7 +54,7 @@
     "files.insertFinalNewline": true,
     "terminal.external.linuxExec": "kitty",
     "terminal.integrated.fontFamily": "'Symbols Nerd Font', 'Iosevka Term Medium', 'Noto Color Emoji', 'Vazir WOL'",
-    "terminal.integrated.fontSize": 15,
+    "terminal.integrated.fontSize": 14,
     "terminal.integrated.inheritEnv": true,
     "terminal.integrated.macOptionClickForcesSelection": true,
     "terminal.integrated.macOptionIsMeta": true,
@@ -67,6 +67,7 @@
     "telemetry.telemetryLevel": "off",
     "update.mode": "manual",
     "update.showReleaseNotes": true,
+    "workbench.activityBar.location": "bottom",
     "workbench.editor.enablePreview": false,
     "workbench.editor.labelFormat": "short",
     "workbench.editor.decorations.badges": false,
@@ -276,7 +277,7 @@
         "editor.wordWrap": "bounded",
         "editor.wordWrapColumn": 120
     },
-    "diffEditor.ignoreTrimWhitespace": false,
+    "diffEditor.ignoreTrimWhitespace": true,
     "isort.importStrategy": "fromEnvironment",
     "accessibility.signals.terminalCommandFailed": {
         "sound": "off"
