@@ -2,7 +2,9 @@
 
 for x in "$@"; do
     if ! which "$x" &> /dev/null && ! pacman -Qq "$x" &> /dev/null ; then
-        notify-send "\"$x\" is not installed" && exit 1 ;
+        notify-send "\"$x\" is not installed" 2>/dev/null
+        echo "\"$x\" is not installed" 
+	exit 1
     fi
 done
 

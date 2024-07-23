@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+
+sacct --noheader -u $USER -S today --format=JobID,State,Partition,JobName --parsable --allocations

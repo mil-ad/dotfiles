@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+
+isinstalled gum
+
+# TODO: add support for --placeholder as arg
+
+gum filter --placeholder "" --limit=1 | cut -d"|" -f1 <&0
