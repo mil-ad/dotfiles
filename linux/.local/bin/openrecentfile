@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-file=$(fd --type f --follow --no-ignore-vcs --exclude '*.sdr' --changed-within 3d -X ls -t | $HOME/.local/bin/rofimenu -kb-accept-alt "" -kb-custom-1 "Shift+Return")
+file=$(fd --type f --follow --no-ignore-vcs --exclude '*.sdr' --exclude '*.xz' --changed-within 3d -X ls -t | $HOME/.local/bin/rofimenu -kb-accept-alt "" -kb-custom-1 "Shift+Return")
 
 exit_code=$?
 
