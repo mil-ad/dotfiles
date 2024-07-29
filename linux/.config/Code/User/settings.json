@@ -23,9 +23,12 @@
     "editor.gotoLocation.multipleDefinitions": "gotoAndPeek",
     "editor.gotoLocation.multipleTypeDefinitions": "gotoAndPeek",
     "editor.semanticHighlighting.enabled": true,
-    "editor.minimap.scale": 2,
+    "editor.minimap.scale": 1,
     "editor.minimap.renderCharacters": false,
-    "editor.minimap.enabled": false,
+    "editor.minimap.enabled": true,
+    "editor.codeLens": false,
+    "editor.stickyScroll.scrollWithEditor": false,
+    "editor.hover.sticky": false,
     // Disable italics in comment blocks (see From https://stackoverflow.com/a/46278282/298209)
     "editor.tokenColorCustomizations": {
         "textMateRules": [
@@ -45,6 +48,8 @@
             }
         ]
     },
+    "breadcrumbs.filePath": "off",
+    "breadcrumbs.enabled": false,
     "extensions.ignoreRecommendations": true,
     "files.associations": {
         "*.mplstyle": "python"
@@ -53,30 +58,33 @@
     "files.trimFinalNewlines": true,
     "files.insertFinalNewline": true,
     "terminal.external.linuxExec": "kitty",
-    "terminal.integrated.fontFamily": "'Symbols Nerd Font', 'Iosevka Term Medium', 'Noto Color Emoji', 'Vazir WOL'",
-    "terminal.integrated.fontSize": 14,
+    "terminal.integrated.fontFamily": "'Cascadia Code', 'Symbols Nerd Font', 'Noto Color Emoji', 'Vazir WOL'",
     "terminal.integrated.inheritEnv": true,
     "terminal.integrated.macOptionClickForcesSelection": true,
     "terminal.integrated.macOptionIsMeta": true,
     "terminal.integrated.enableMultiLinePasteWarning": false,
     "terminal.integrated.shellIntegration.decorationsEnabled": "never",
-    "terminal.external.osxExec": "/Applications/kitty.app",
     "terminal.integrated.minimumContrastRatio": 1,
     "terminal.integrated.defaultProfile.linux": "zsh",
     "terminal.integrated.showExitAlert": false,
+    "terminal.external.osxExec": "/Applications/kitty.app",
+    "terminal.integrated.fontSize": 11,
+    "terminal.integrated.shellIntegration.enabled": false,
     "telemetry.telemetryLevel": "off",
     "update.mode": "manual",
     "update.showReleaseNotes": true,
-    "workbench.activityBar.location": "bottom",
+    "workbench.tree.enableStickyScroll": false,
+    "workbench.activityBar.location": "top",
     "workbench.editor.enablePreview": false,
+    "workbench.layoutControl.enabled": false,
     "workbench.editor.labelFormat": "short",
     "workbench.editor.decorations.badges": false,
     "workbench.editor.decorations.colors": false,
     "workbench.statusBar.visible": true,
     "workbench.tips.enabled": false,
+    "workbench.colorTheme": "Catppuccin Mocha",
     "window.menuBarVisibility": "toggle",
     "window.nativeFullScreen": false,
-    "workbench.colorTheme": "Popping and Locking",
     "catppuccin.accentColor": "yellow",
     "catppuccin.colorOverrides": {
         "mocha": {
@@ -96,7 +104,7 @@
         }
     },
     "workbench.colorCustomizations": {
-        // "terminal.background": "#1d2021",
+        "terminal.background": "#11111b",
         "[Catppuccin Mocha]": {
             "terminal.foreground": "#f2e5bc",
             "terminal.ansiBlack": "#d4ba0e",
@@ -115,6 +123,11 @@
             "terminal.ansiBrightCyan": "#7ec16e",
             "terminal.ansiWhite": "#a89984",
             "terminal.ansiBrightWhite": "#ebdbb2"
+        },
+        "[Popping and Locking]": {
+            // "activityBar.background": "#00AA00",
+            "sideBar.border": "#fabd2f",
+            "widget.border": "#fabd2f"
         }
     },
     "workbench.iconTheme": "material-icon-theme",
@@ -122,10 +135,9 @@
     "workbench.editorAssociations": {
         "*.ipynb": "jupyter-notebook"
     },
-    "workbench.layoutControl.enabled": false,
     "window.title": "${rootNameShort}${separator}${profileName}",
     "window.commandCenter": false,
-    "window.zoomLevel": -2,
+    "window.zoomLevel": -3,
     "workbench.editor.pinnedTabsOnSeparateRow": true,
     "explorer.decorations.colors": false,
     "explorer.sortOrder": "type",
@@ -136,7 +148,6 @@
     "git.autofetch": true,
     "git.confirmSync": false,
     "git.openDiffOnClick": false,
-    "git.mergeEditor": true,
     "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
     "problems.decorations.enabled": false,
     "search.quickOpen.includeHistory": false,
@@ -188,9 +199,11 @@
     "flake8.args": [
         "--ignore=E501"
     ],
+    "python.terminal.activateEnvironment": false,
     "python.testing.pytestEnabled": false,
     "python.testing.unittestEnabled": false,
     "python.testing.autoTestDiscoverOnSaveEnabled": false,
+    "remote.SSH.enableX11Forwarding": false,
     "jupyter.askForKernelRestart": false,
     "jupyter.interactiveWindow.textEditor.executeSelection": true,
     "notebook.output.textLineLimit": 200,
@@ -277,11 +290,25 @@
         "editor.wordWrap": "bounded",
         "editor.wordWrapColumn": 120
     },
-    "diffEditor.ignoreTrimWhitespace": true,
     "isort.importStrategy": "fromEnvironment",
     "accessibility.signals.terminalCommandFailed": {
         "sound": "off"
     },
-    "remote.SSH.enableX11Forwarding": false,
-    "git-blame.config.showBlameInline": false
+    "git-blame.config.showBlameInline": false,
+    "github.copilot.editor.enableAutoCompletions": true,
+    "diffEditor.ignoreTrimWhitespace": false,
+    "mypy.enabled": false,
+    "interactiveWindow.executeWithShiftEnter": true,
+    "ruff.nativeServer": true,
+    // -------------------------------------------------------------------------
+    // https: //github.com/microsoft/vscode/issues/174903#issuecomment-2189489981
+    // I have to test if these two work in Linux:
+    // "window.customTitleBarVisibility" is probably relevant too
+    "apc.electron": {
+        "titleBarStyle": "hidden",
+    },
+    "window.titleBarStyle": "custom",
+    "window.customTitleBarVisibility": "windowed",
+    // -------------------------------------------------------------------------
+    "git.mergeEditor": true
 }

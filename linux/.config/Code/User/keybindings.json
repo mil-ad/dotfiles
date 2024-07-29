@@ -169,16 +169,16 @@
         "command": "rewrap.rewrapComment",
         "when": "editorTextFocus"
     },
-    // { "key": "cmd+v",        "command": "pasteAndIndent.action",
-    //                             "when": "editorTextFocus && !editorReadonly" }
-    // { "key": "cmd+v",        "command": "editor.action.clipboardPasteAction",
-    //                             "when": "!editorTextFocus" }
-    // { "key": "cmd+shift+v",              "command": "editor.action.clipboardPasteAction",
-    //                             "when": "editorTextFocus && !editorReadonly" }
-    // { "key": "ctrl+[",               "command": "editor.action.outdentLines",
-    //                             "when": "!isMac && editorTextFocus && !editorReadonly" }
-    // { "key": "ctrl+]",               "command": "editor.action.indentLines",
-    //                             "when": "!isMac && editorTextFocus && !editorReadonly" }
+    // {
+    //     "key": "cmd+v",
+    //     "command": "pasteAndIndent.action",
+    //     "when": "editorTextFocus && !editorReadonly"
+    // },
+    // {
+    //     "key": "ctrl+v",
+    //     "command": "pasteAndIndent.action",
+    //     "when": "editorTextFocus && !editorReadonly"
+    // },
     {
         "key": "ctrl+]",
         "command": "workbench.action.navigateForward"
