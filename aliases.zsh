@@ -26,6 +26,10 @@ alias gscat="gsutil cat"
 alias gsls="gsutil ls"
 alias gsrm="gsutil -m rm"
 
+alias ag='ag --hidden --ignore-case --color-match="1;31" --silent'
+alias agc='ag --hidden --ignore-case --color-match="1;31" --silent -C 2'
+alias agf='ag --hidden --ignore .git --ignore .cache -g""'
+
 # micromamba
 alias mm="micromamba"
 alias mma="micromamba activate"
@@ -51,11 +55,9 @@ alias gwadd='git worktree add'
 alias gwrm='git worktree remove'
 alias gwmv='git worktree move'
 
-alias icat='kitty +kitten icat'
-
 if command -v lsd &> /dev/null; then
-    alias l='lsd -l --group-directories-first'
     alias ls="lsd"
+    alias l='lsd -l --group-directories-first'
     alias ll='lsd -la --group-directories-first'
     alias ldot='lsd -ld .*'
 else
@@ -63,10 +65,6 @@ else
     alias ll='ls -lah'
 fi
 alias lsym='ls -l `find . -maxdepth 1 -type l -print`'
-
-alias ag='ag --hidden --ignore-case --color-match="1;31" --silent'
-alias agc='ag --hidden --ignore-case --color-match="1;31" --silent -C 2'
-alias agf='ag --hidden --ignore .git --ignore .cache -g""'
 
 alias more="less"
 alias vi="nvim"
@@ -78,7 +76,6 @@ alias difffolders='diff -rq'
 
 alias tmuxdump='capture-pane -pS -'
 alias weather='curl wttr.in/London'
-alias present_remotely='nohup pdfpc -Ssg -w presentation'
 
 if [[ $(uname) == 'Darwin' ]]; then
     alias yay='brew upgrade && brew upgrade --cask'
