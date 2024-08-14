@@ -39,10 +39,10 @@ alias mmls='micromamba env list'
 alias mmrm='micromamba env remove --yes --name'
 
 # venv using uv
-alias va="source .venv/bin/activate 2>/dev/null || source ../.venv/bin/activate 2>/dev/null || echo 'no .env found in this or parent directory' && false"
-alias va!="source .venv/bin/activate 2>/dev/null || uv venv --seed && source .venv/bin/activate"
-alias vc="uv venv --seed"
-alias vd="deactivate"
+#alias va="source .venv/bin/activate 2>/dev/null || source ../.venv/bin/activate 2>/dev/null || echo 'no .env found in this or parent directory' && false"
+#alias va!="source .venv/bin/activate 2>/dev/null || uv venv --seed && source .venv/bin/activate"
+#alias vc="uv venv --seed"
+#alias vd="deactivate"
 
 alias p="git pull"
 alias P="git push"

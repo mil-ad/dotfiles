@@ -1,8 +1,8 @@
-function jqp () {
+jqp () {
     jq -C "$@" | less -R
 }
 
-function d () {
+d () {
   if [[ -n $1 ]]; then
     dirs "$@"
   else
@@ -10,7 +10,7 @@ function d () {
   fi
 }
 
-function man() {
+man () {
     env \
         LESS_TERMCAP_md=$(tput bold; tput setaf 4) \
         LESS_TERMCAP_me=$(tput sgr0) \
@@ -25,3 +25,16 @@ function man() {
         man "$@"
 }
 
+va () {
+    source .venv/bin/activate 2>/dev/null || source ../.venv/bin/activate 2>/dev/null || echo 'no .env found in this or parent directory' && false
+}
+
+va! () { 
+    va || vc && va
+}
+
+vc () {
+    uv venv --seed --python-preference managed "$@"
+}
+
+vd () { deactivate; }
