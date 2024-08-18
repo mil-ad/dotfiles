@@ -1,5 +1,5 @@
 {
-    "editor.fontFamily": "'Cascadia Code', 'Symbols Nerd Font', 'Noto Color Emoji', 'Vazirmatn UI NL', 'JetBrains Mono Medium', 'Material Icons'",
+    "editor.fontFamily": "'Cascadia Code', 'Symbols Nerd Font', 'Noto Color Emoji', 'Vazirmatn UI NL', 'Material Icons'",
     "editor.fontWeight": "400",
     "editor.fontSize": 18,
     "editor.formatOnPaste": true,
@@ -48,6 +48,19 @@
             }
         ]
     },
+    "terminal.external.linuxExec": "kitty",
+    "terminal.external.osxExec": "/Applications/kitty.app",
+    "terminal.integrated.fontFamily": "'Cascadia Code', 'Symbols Nerd Font', 'Noto Color Emoji', 'Vazir WOL'",
+    "terminal.integrated.inheritEnv": true,
+    "terminal.integrated.macOptionClickForcesSelection": true,
+    "terminal.integrated.macOptionIsMeta": true,
+    "terminal.integrated.enableMultiLinePasteWarning": "never",
+    "terminal.integrated.shellIntegration.decorationsEnabled": "never",
+    "terminal.integrated.minimumContrastRatio": 1,
+    "terminal.integrated.defaultProfile.linux": "zsh",
+    "terminal.integrated.showExitAlert": false,
+    "terminal.integrated.fontSize": 11,
+    "terminal.integrated.shellIntegration.enabled": false,
     "breadcrumbs.filePath": "off",
     "breadcrumbs.enabled": false,
     "extensions.ignoreRecommendations": true,
@@ -57,22 +70,6 @@
     "files.trimTrailingWhitespace": true,
     "files.trimFinalNewlines": true,
     "files.insertFinalNewline": true,
-    "terminal.external.linuxExec": "kitty",
-    "terminal.integrated.fontFamily": "'Cascadia Code', 'Symbols Nerd Font', 'Noto Color Emoji', 'Vazir WOL'",
-    "terminal.integrated.inheritEnv": true,
-    "terminal.integrated.macOptionClickForcesSelection": true,
-    "terminal.integrated.macOptionIsMeta": true,
-    "terminal.integrated.enableMultiLinePasteWarning": false,
-    "terminal.integrated.shellIntegration.decorationsEnabled": "never",
-    "terminal.integrated.minimumContrastRatio": 1,
-    "terminal.integrated.defaultProfile.linux": "zsh",
-    "terminal.integrated.showExitAlert": false,
-    "terminal.external.osxExec": "/Applications/kitty.app",
-    "terminal.integrated.fontSize": 11,
-    "terminal.integrated.shellIntegration.enabled": false,
-    "telemetry.telemetryLevel": "off",
-    "update.mode": "manual",
-    "update.showReleaseNotes": true,
     "workbench.tree.enableStickyScroll": false,
     "workbench.activityBar.location": "top",
     "workbench.editor.enablePreview": false,
@@ -82,27 +79,7 @@
     "workbench.editor.decorations.colors": false,
     "workbench.statusBar.visible": true,
     "workbench.tips.enabled": false,
-    "workbench.colorTheme": "Catppuccin Mocha",
-    "window.menuBarVisibility": "toggle",
-    "window.nativeFullScreen": false,
-    "catppuccin.accentColor": "yellow",
-    "catppuccin.colorOverrides": {
-        "mocha": {
-            "base": "#181828",
-            "mantle": "#11111E",
-            // "mantle": "#020202",
-            "crust": "#020202",
-            "yellow": "#fabd2f"
-        }
-    },
-    "catppuccin.customUIColors": {
-        "mocha": {
-            "statusBar.foreground": "accent",
-            "sideBarTitle.foreground": "accent",
-            "statusBarItem.remoteBackground": "accent",
-            "focusBorder": "accent",
-        }
-    },
+    "workbench.colorTheme": "Popping and Locking",
     "workbench.colorCustomizations": {
         "terminal.background": "#11111b",
         "[Catppuccin Mocha]": {
@@ -126,7 +103,7 @@
         },
         "[Popping and Locking]": {
             // "activityBar.background": "#00AA00",
-            "sideBar.border": "#fabd2f",
+            // "sideBar.border": "#fabd2f",
             "widget.border": "#fabd2f"
         }
     },
@@ -135,25 +112,45 @@
     "workbench.editorAssociations": {
         "*.ipynb": "jupyter-notebook"
     },
+    "workbench.editor.pinnedTabsOnSeparateRow": true,
+    "catppuccin.accentColor": "yellow",
+    "catppuccin.colorOverrides": {
+        "mocha": {
+            "base": "#181828",
+            "mantle": "#11111E",
+            // "mantle": "#020202",
+            "crust": "#020202",
+            "yellow": "#fabd2f"
+        }
+    },
+    "catppuccin.customUIColors": {
+        "mocha": {
+            "statusBar.foreground": "accent",
+            "sideBarTitle.foreground": "accent",
+            "statusBarItem.remoteBackground": "accent",
+            "focusBorder": "accent",
+        }
+    },
+    "telemetry.telemetryLevel": "off",
+    "update.mode": "manual",
+    "update.showReleaseNotes": true,
     "window.title": "${rootNameShort}${separator}${profileName}",
     "window.commandCenter": false,
     "window.zoomLevel": -3,
-    "workbench.editor.pinnedTabsOnSeparateRow": true,
+    "window.menuBarVisibility": "toggle",
     "explorer.decorations.colors": false,
     "explorer.sortOrder": "type",
     "explorer.incrementalNaming": "smart",
     "explorer.decorations.badges": false,
     "scm.diffDecorationsGutterWidth": 2,
     "scm.diffDecorations": "gutter",
+    "git.mergeEditor": true,
     "git.autofetch": true,
     "git.confirmSync": false,
     "git.openDiffOnClick": false,
     "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
     "problems.decorations.enabled": false,
     "search.quickOpen.includeHistory": false,
-    "isort.args": [
-        "--profile", "black",
-    ],
     // =========================================================================
     // Per file type settings
     // =========================================================================
@@ -198,6 +195,10 @@
     ],
     "flake8.args": [
         "--ignore=E501"
+    ],
+    "isort.args": [
+        "--profile",
+        "black",
     ],
     "python.terminal.activateEnvironment": false,
     "python.testing.pytestEnabled": false,
@@ -260,25 +261,6 @@
     // =========================================================================
     // Archive
     // =========================================================================
-    "spellright.language": [
-        "en_GB",
-        "en_US"
-    ],
-    "spellright.groupDictionaries": false,
-    "spellright.configurationScope": "user",
-    // Currently trying out LTeX extension
-    "spellright.documentTypes": [
-        "markdown",
-        "latex",
-        "python"
-    ],
-    "spellright.spellContextByClass": {
-        "latex": "body",
-        "markdown": "body",
-        "python": "comments"
-    },
-    "spellright.statusBarIndicator": false,
-    "spellright.notificationClass": "warning",
     "[todo]": {
         "editor.quickSuggestions": {
             "comments": "off",
@@ -307,8 +289,7 @@
     "apc.electron": {
         "titleBarStyle": "hidden",
     },
-    "window.titleBarStyle": "custom",
-    "window.customTitleBarVisibility": "windowed",
+    "window.titleBarStyle": "native",
+    "window.customTitleBarVisibility": "never"
     // -------------------------------------------------------------------------
-    "git.mergeEditor": true
 }
