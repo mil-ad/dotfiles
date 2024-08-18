@@ -50,7 +50,7 @@
     },
     "terminal.external.linuxExec": "kitty",
     "terminal.external.osxExec": "/Applications/kitty.app",
-    "terminal.integrated.fontFamily": "'Cascadia Code', 'Symbols Nerd Font', 'Noto Color Emoji', 'Vazir WOL'",
+    "terminal.integrated.fontFamily": "'Iosevka Term', 'Symbols Nerd Font', 'Noto Color Emoji', 'Vazir WOL'",
     "terminal.integrated.inheritEnv": true,
     "terminal.integrated.macOptionClickForcesSelection": true,
     "terminal.integrated.macOptionIsMeta": true,
@@ -59,7 +59,7 @@
     "terminal.integrated.minimumContrastRatio": 1,
     "terminal.integrated.defaultProfile.linux": "zsh",
     "terminal.integrated.showExitAlert": false,
-    "terminal.integrated.fontSize": 11,
+    "terminal.integrated.fontSize": 23,
     "terminal.integrated.shellIntegration.enabled": false,
     "breadcrumbs.filePath": "off",
     "breadcrumbs.enabled": false,
@@ -132,7 +132,7 @@
         }
     },
     "telemetry.telemetryLevel": "off",
-    "update.mode": "manual",
+    "update.mode": "start",
     "update.showReleaseNotes": true,
     "window.title": "${rootNameShort}${separator}${profileName}",
     "window.commandCenter": false,
@@ -248,7 +248,6 @@
             ]
         }
     ],
-    "fileutils.delete.useTrash": true,
     "git-graph.showStatusBarItem": false,
     "rewrap.autoWrap.enabled": false,
     "autoDocstring.startOnNewLine": true,
@@ -290,6 +289,9 @@
         "titleBarStyle": "hidden",
     },
     "window.titleBarStyle": "native",
-    "window.customTitleBarVisibility": "never"
+    "window.customTitleBarVisibility": "never",
+    "editor.autoClosingBrackets": "never",
+    "editor.copyWithSyntaxHighlighting": false,
+    "terminal.integrated.useWslProfiles": false,
     // -------------------------------------------------------------------------
 }
