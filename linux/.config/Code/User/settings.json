@@ -59,7 +59,7 @@
     "terminal.integrated.minimumContrastRatio": 1,
     "terminal.integrated.defaultProfile.linux": "zsh",
     "terminal.integrated.showExitAlert": false,
-    "terminal.integrated.fontSize": 23,
+    "terminal.integrated.fontSize": 10,
     "terminal.integrated.shellIntegration.enabled": false,
     "breadcrumbs.filePath": "off",
     "breadcrumbs.enabled": false,
@@ -293,5 +293,6 @@
     "editor.autoClosingBrackets": "never",
     "editor.copyWithSyntaxHighlighting": false,
     "terminal.integrated.useWslProfiles": false,
+    "easyTerminalZoom.step": 4,
     // -------------------------------------------------------------------------
 }
