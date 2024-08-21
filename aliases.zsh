@@ -30,6 +30,10 @@ alias ag='ag --hidden --ignore-case --color-match="1;31" --silent'
 alias agc='ag --hidden --ignore-case --color-match="1;31" --silent -C 2'
 alias agf='ag --hidden --ignore .git --ignore .cache -g""'
 
+alias g='rg --smart-case'
+alias gc='rg --smart-case --context 3'
+alias f='fd'
+
 # micromamba
 alias mm="micromamba"
 alias mma="micromamba activate"
