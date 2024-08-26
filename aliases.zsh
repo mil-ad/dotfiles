@@ -42,12 +42,6 @@ alias mmd="micromamba deactivate"
 alias mmls='micromamba env list'
 alias mmrm='micromamba env remove --yes --name'
 
-# venv using uv
-#alias va="source .venv/bin/activate 2>/dev/null || source ../.venv/bin/activate 2>/dev/null || echo 'no .env found in this or parent directory' && false"
-#alias va!="source .venv/bin/activate 2>/dev/null || uv venv --seed && source .venv/bin/activate"
-#alias vc="uv venv --seed"
-#alias vd="deactivate"
-
 alias p="git pull"
 alias P="git push"
 alias gcm="git commit -m"
@@ -76,9 +70,13 @@ alias vim="nvim"
 alias cal='cal -3'
 alias df='df -h'
 alias du='du -h'
+alias du0='du -h --max-depth 0'
+alias du1='du -h --max-depth 1'
+alias du2='du -h --max-depth 2'
+alias du3='du -h --max-depth 3'
 alias difffolders='diff -rq'
 
-alias tmuxdump='capture-pane -pS -'
+alias tmux2clipboard='tmux capture-pane -pS - | kitten clipboard'
 alias weather='curl wttr.in/London'
 
 if [[ $(uname) == 'Darwin' ]]; then
@@ -91,4 +89,3 @@ alias json2jsonl="jq -c .[]"
 alias jsonl2json="jq -s"
 
 alias parquetcat="parquet-tools cat --format='json'"
-
