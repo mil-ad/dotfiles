@@ -33,7 +33,7 @@ if (( ${+terminfo[smkx]} )) && (( ${+terminfo[rmkx]} )); then
   zle -N zle-line-finish
 fi
 
-bindkey -v # Selects keymap "viins" for any operations by the current command
+bindkey -v # Enable vi mode
 
 # Start typing + [Up-Arrow] - fuzzy find history forward
 if [[ -n "${terminfo[kcuu1]}" ]]; then
@@ -105,8 +105,11 @@ fi
 
 bindkey -M viins "^[." insert-last-word
 
-# Esc for switching from vicmd to viins
-bindkey -M vicmd "^[" vi-insert
+# Ctrl-J for toggling inset/command mode
+bindkey -r '^['        # Unbind Esc
+bindkey -r '\e'        # Unbind Alt/Meta sequences
+bindkey -M viins "^J" vi-cmd-mode
+bindkey -M vicmd "^J" vi-insert
 
 # Basic auto/tab complete:
 autoload -U compinit
