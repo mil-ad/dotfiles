@@ -38,3 +38,5 @@ vc () {
 }
 
 vd () { deactivate; }
+
+vrm () { rm -rf .venv; }
