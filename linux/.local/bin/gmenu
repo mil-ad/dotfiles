@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-isinstalled gum
+assert_installed gum
 
 # TODO: add support for --placeholder as arg
 
