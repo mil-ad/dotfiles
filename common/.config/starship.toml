@@ -65,7 +65,7 @@ faded_orange = '#af3a03'
 
 [hostname]
 ssh_only = true
-format = '[$ssh_symbol ](bold blue) '
+format = '[$ssh_symbol $hostname:](bold blue)'
 ssh_symbol = "󰢩"
 
 [directory]
