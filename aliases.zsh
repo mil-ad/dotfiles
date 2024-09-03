@@ -68,12 +68,16 @@ alias more="less"
 alias vi="nvim"
 alias vim="nvim"
 alias cal='cal -3'
+
 alias df='df -h'
 alias du='du -h'
 alias du0='du -h --max-depth 0 | sort -hr'
 alias du1='du -h --max-depth 1 | sort -hr'
 alias du2='du -h --max-depth 2 | sort -hr'
 alias du3='du -h --max-depth 3 | sort -hr'
+alias tree1='tree -L 1'
+alias tree2='tree -L 2'
+alias tree3='tree -L 3'
 alias difffolders='diff -rq'
 
 alias tmux2clipboard='tmux capture-pane -pS - | kitten clipboard'
