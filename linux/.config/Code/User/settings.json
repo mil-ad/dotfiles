@@ -6,7 +6,7 @@
     "editor.tabSize": 4,
     "editor.mouseWheelZoom": false,
     "editor.multiCursorModifier": "ctrlCmd",
-    "editor.cursorBlinking": "smooth",
+    "editor.cursorBlinking": "phase",
     "editor.rulers": [
         80,
         120
@@ -26,7 +26,7 @@
     "editor.minimap.scale": 1,
     "editor.minimap.renderCharacters": false,
     "editor.minimap.enabled": true,
-    "editor.codeLens": false,
+    "editor.codeLens": true,
     "editor.stickyScroll.scrollWithEditor": false,
     "editor.hover.sticky": false,
     // Disable italics in comment blocks (see From https://stackoverflow.com/a/46278282/298209)
@@ -59,7 +59,6 @@
     "terminal.integrated.minimumContrastRatio": 1,
     "terminal.integrated.defaultProfile.linux": "zsh",
     "terminal.integrated.showExitAlert": false,
-    "terminal.integrated.fontSize": 10,
     "terminal.integrated.shellIntegration.enabled": false,
     "breadcrumbs.filePath": "off",
     "breadcrumbs.enabled": false,
@@ -71,15 +70,15 @@
     "files.trimFinalNewlines": true,
     "files.insertFinalNewline": true,
     "workbench.tree.enableStickyScroll": false,
-    "workbench.activityBar.location": "top",
-    "workbench.editor.enablePreview": false,
+    "workbench.editor.enablePreview": true,
+    "workbench.editor.enablePreviewFromQuickOpen": false,
     "workbench.layoutControl.enabled": false,
     "workbench.editor.labelFormat": "short",
     "workbench.editor.decorations.badges": false,
     "workbench.editor.decorations.colors": false,
     "workbench.statusBar.visible": true,
     "workbench.tips.enabled": false,
-    "workbench.colorTheme": "Popping and Locking",
+    "workbench.colorTheme": "Catppuccin Mocha",
     "workbench.colorCustomizations": {
         "terminal.background": "#11111b",
         "[Catppuccin Mocha]": {
@@ -99,7 +98,10 @@
             "terminal.ansiCyan": "#689d6a",
             "terminal.ansiBrightCyan": "#7ec16e",
             "terminal.ansiWhite": "#a89984",
-            "terminal.ansiBrightWhite": "#ebdbb2"
+            "terminal.ansiBrightWhite": "#ebdbb2",
+            "sideBar.background": "#060606",
+            "sideBarSectionHeader.background": "#060606",
+            "focusBorder": "#45475a",
         },
         "[Popping and Locking]": {
             // "activityBar.background": "#00AA00",
@@ -108,11 +110,11 @@
         }
     },
     "workbench.iconTheme": "material-icon-theme",
-    "workbench.startupEditor": "newUntitledFile",
+    "workbench.startupEditor": "none",
     "workbench.editorAssociations": {
         "*.ipynb": "jupyter-notebook"
     },
-    "workbench.editor.pinnedTabsOnSeparateRow": true,
+    "workbench.editor.pinnedTabsOnSeparateRow": false,
     "catppuccin.accentColor": "yellow",
     "catppuccin.colorOverrides": {
         "mocha": {
@@ -200,7 +202,7 @@
         "--profile",
         "black",
     ],
-    "python.terminal.activateEnvironment": false,
+    "python.terminal.activateEnvironment": true,
     "python.testing.pytestEnabled": false,
     "python.testing.unittestEnabled": false,
     "python.testing.autoTestDiscoverOnSaveEnabled": false,
@@ -282,17 +284,25 @@
     "interactiveWindow.executeWithShiftEnter": true,
     "ruff.nativeServer": true,
     // -------------------------------------------------------------------------
-    // https: //github.com/microsoft/vscode/issues/174903#issuecomment-2189489981
+    // https://github.com/microsoft/vscode/issues/174903#issuecomment-2189489981
     // I have to test if these two work in Linux:
     // "window.customTitleBarVisibility" is probably relevant too
-    "apc.electron": {
-        "titleBarStyle": "hidden",
-    },
-    "window.titleBarStyle": "native",
-    "window.customTitleBarVisibility": "never",
+    // "apc.electron": {
+    //     "frame": false,
+    //     "titleBarStyle": "customButtonsOnHover",
+    // },
+    // Experimenting with this:
+    // "apc.activityBar": {
+    //     "size": 30, // Height (when top/bottom) or width (in default position)
+    //     "itemSize": 36, // Size of items within the bar (default: size)
+    //     "itemMargin": 6 // Margin between two items (default: 3)
+    // },
+    "window.titleBarStyle": "custom",
     "editor.autoClosingBrackets": "never",
     "editor.copyWithSyntaxHighlighting": false,
     "terminal.integrated.useWslProfiles": false,
-    "easyTerminalZoom.step": 4,
+    "easyTerminalZoom.step": 3,
+    "terminal.integrated.fontSize": 14,
+    "workbench.activityBar.location": "top",
     // -------------------------------------------------------------------------
 }
