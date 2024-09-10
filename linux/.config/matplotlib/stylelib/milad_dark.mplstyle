@@ -57,7 +57,7 @@
 # Gruvbox Bright
 # axes.prop_cycle: cycler('color', ["83a598", "fe8019", "fb4934", "b8bb26", "fabd2f", "d3869b", "8ec07c",])
 # Gruvbox Neutral
-axes.prop_cycle: cycler('color', ["458588", "d65d0e", "cc241d", "98971a", "d79921", "b16286", "689d6a",])
+axes.prop_cycle: cycler('color', ["d79921", "689d6a","458588", "d65d0e", "cc241d", "98971a", "b16286"])
 
 axes.facecolor: 181921
 axes.labelcolor:    f2e5bc
@@ -67,6 +67,7 @@ axes.labelcolor:    f2e5bc
 savefig.dpi: 600
 savefig.transparent: True
 figure.constrained_layout.use: True
+figure.facecolor: 181921
 
 ytick.color:        f2e5bc   # color of the ticks
 xtick.color:        f2e5bc   # color of the ticks
