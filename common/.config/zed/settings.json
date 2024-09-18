@@ -18,5 +18,8 @@
   "telemetry": {
     "diagnostics": true,
     "metrics": true
+  },
+  "terminal": {
+    "font_size": 12
   }
 }
