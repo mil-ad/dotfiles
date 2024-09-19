@@ -33,6 +33,7 @@ yabai -m rule --add app="choose" manage=off sticky=on
 yabai -m rule --add app=".*Anki.*" manage=off sticky=off
 yabai -m rule --add app=".*Raycast Settings.*" manage=off sticky=off
 yabai -m rule --add app=".*Seafile.*" manage=off sticky=off
+yabai -m rule --add app=".*fzfmenu.*" manage=off sticky=off
 yabai -m rule --add app="Finder" manage=off sticky=off
 
 yabai -m rule --add app="Code" space=2
