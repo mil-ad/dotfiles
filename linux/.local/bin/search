@@ -3,6 +3,7 @@
 engine=$(printf 'Kagi
 DuckDuckGo
 YouTube
+YouTube Music
 Google Scholar
 Google Maps
 Letterboxd
@@ -21,6 +22,7 @@ case $engine in
     "Kagi") URL="https://kagi.com/search?q=${query}" ;;
     "DuckDuckGo") URL="https://duckduckgo.com/?q=${query}" ;;
     "YouTube") URL="https://www.youtube.com/results?search_query=${query}" ;;
+    "YouTube Music") URL="https://music.youtube.com/search?q=${query}" ;;
     "Google Scholar") URL="https://scholar.google.com/scholar?q=${query}" ;;
     "Google Maps") URL="https://google.com/maps/search/${query}" ;;
     "Letterboxd") URL="https://letterboxd.com/search/${query}" ;;
