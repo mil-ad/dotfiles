@@ -262,9 +262,6 @@
     "githubPullRequests.fileListLayout": "tree",
     "markdown.marp.enableHtml": true,
     "markdown.marp.chromePath": "/usr/bin/brave",
-    // =========================================================================
-    // Archive
-    // =========================================================================
     "accessibility.signals.terminalCommandFailed": {
         "sound": "off"
     },
@@ -288,13 +285,13 @@
     //     "itemMargin": 6 // Margin between two items (default: 3)
     // },
     "window.titleBarStyle": "native",
+    "window.customTitleBarVisibility": "auto",
     "editor.autoClosingBrackets": "never",
     "editor.copyWithSyntaxHighlighting": false,
     "terminal.integrated.useWslProfiles": false,
     "easyTerminalZoom.step": 3,
     "terminal.integrated.fontSize": 14,
     "interactiveWindow.showExecutionHint": false,
-    "window.customTitleBarVisibility": "auto",
     "interactiveWindow.executeWithShiftEnter": true,
     // -------------------------------------------------------------------------
 }
