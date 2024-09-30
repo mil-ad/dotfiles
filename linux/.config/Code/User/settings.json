@@ -60,15 +60,7 @@
     "terminal.integrated.defaultProfile.linux": "zsh",
     "terminal.integrated.showExitAlert": false,
     "terminal.integrated.shellIntegration.enabled": false,
-    "breadcrumbs.filePath": "off",
-    "breadcrumbs.enabled": false,
-    "extensions.ignoreRecommendations": true,
-    "files.associations": {
-        "*.mplstyle": "python"
-    },
-    "files.trimTrailingWhitespace": true,
-    "files.trimFinalNewlines": true,
-    "files.insertFinalNewline": true,
+    "workbench.activityBar.location": "top",
     "workbench.tree.enableStickyScroll": false,
     "workbench.editor.enablePreview": true,
     "workbench.editor.enablePreviewFromQuickOpen": false,
@@ -115,6 +107,15 @@
         "*.ipynb": "jupyter-notebook"
     },
     "workbench.editor.pinnedTabsOnSeparateRow": false,
+    "breadcrumbs.filePath": "off",
+    "breadcrumbs.enabled": false,
+    "extensions.ignoreRecommendations": true,
+    "files.associations": {
+        "*.mplstyle": "python"
+    },
+    "files.trimTrailingWhitespace": true,
+    "files.trimFinalNewlines": true,
+    "files.insertFinalNewline": true,
     "catppuccin.accentColor": "yellow",
     "catppuccin.colorOverrides": {
         "mocha": {
@@ -162,8 +163,9 @@
             88,
             120
         ],
-        "editor.defaultFormatter": "ms-python.black-formatter",
         "editor.formatOnSave": true,
+        // "editor.defaultFormatter": "ms-python.black-formatter",
+        "editor.defaultFormatter": "charliermarsh.ruff",
         "editor.codeActionsOnSave": {
             "source.organizeImports": "explicit"
         }
@@ -202,6 +204,7 @@
         "--profile",
         "black",
     ],
+    "isort.importStrategy": "fromEnvironment",
     "python.terminal.activateEnvironment": true,
     "python.testing.pytestEnabled": false,
     "python.testing.unittestEnabled": false,
@@ -262,18 +265,6 @@
     // =========================================================================
     // Archive
     // =========================================================================
-    "[todo]": {
-        "editor.quickSuggestions": {
-            "comments": "off",
-            "strings": "off",
-            "other": "off"
-        },
-        "editor.renderWhitespace": "none",
-        "editor.renderControlCharacters": false,
-        "editor.wordWrap": "bounded",
-        "editor.wordWrapColumn": 120
-    },
-    "isort.importStrategy": "fromEnvironment",
     "accessibility.signals.terminalCommandFailed": {
         "sound": "off"
     },
@@ -281,7 +272,6 @@
     "github.copilot.editor.enableAutoCompletions": true,
     "diffEditor.ignoreTrimWhitespace": false,
     "mypy.enabled": false,
-    "interactiveWindow.executeWithShiftEnter": true,
     "ruff.nativeServer": true,
     // -------------------------------------------------------------------------
     // https://github.com/microsoft/vscode/issues/174903#issuecomment-2189489981
@@ -297,12 +287,14 @@
     //     "itemSize": 36, // Size of items within the bar (default: size)
     //     "itemMargin": 6 // Margin between two items (default: 3)
     // },
-    "window.titleBarStyle": "custom",
+    "window.titleBarStyle": "native",
     "editor.autoClosingBrackets": "never",
     "editor.copyWithSyntaxHighlighting": false,
     "terminal.integrated.useWslProfiles": false,
     "easyTerminalZoom.step": 3,
     "terminal.integrated.fontSize": 14,
-    "workbench.activityBar.location": "top",
+    "interactiveWindow.showExecutionHint": false,
+    "window.customTitleBarVisibility": "auto",
+    "interactiveWindow.executeWithShiftEnter": true,
     // -------------------------------------------------------------------------
 }
