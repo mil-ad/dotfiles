@@ -1,1 +1,18 @@
-dmenu
+#!/usr/bin/env bash
+
+tmp_in=$(mktemp)
+tmp_out=$(mktemp)
+
+cat > $tmp_in
+
+kitty \
+  --override background_opacity=1 \
+  --override background=#222222 \
+  --override macos_quit_when_last_window_closed=yes \
+  --override font_size=16 \
+  --title fzfmenu \
+  -- sh --noprofile --norc -c "fzf --reverse --prompt="" --pointer=' ' --no-info --color=gutter:-1,bg+:#d79921,fg+:#282828,hl+:#8f3f71,fg:#d5c4a1,hl:#d79921 $* < $tmp_in > $tmp_out"
+
+cat $tmp_out
+
+rm $tmp_in $tmp_out
