@@ -7,9 +7,9 @@
 // custom settings, run the `open default settings` command
 // from the command palette or from `Zed` application menu.
 {
-  "vim_mode": true,
-  "theme": "Rosé Pine",
-  "buffer_font_family": "Cascadia Code",
+  "vim_mode": false,
+  "theme": "Sandcastle",
+  "buffer_font_family": "JetBrains Mono",
   "buffer_font_fallbacks": ["Symbols Nerd Font"],
   "show_whitespaces": "all",
   "ui_font_size": 16,
@@ -20,6 +20,12 @@
     "metrics": true
   },
   "terminal": {
-    "font_size": 12
+    "font_size": 12,
+    "env": {
+      "TERM": "xterm-kitty",
+      // LANG and LC_ALL necessary because of: https://github.com/zed-industries/zed/issues/4360
+      "LANG": "en_GB.UTF-8",
+      "LC_ALL": "en_GB.UTF-8"
+    }
   }
 }

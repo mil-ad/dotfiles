@@ -60,7 +60,6 @@
     "terminal.integrated.defaultProfile.linux": "zsh",
     "terminal.integrated.showExitAlert": false,
     "terminal.integrated.shellIntegration.enabled": false,
-    "workbench.activityBar.location": "top",
     "workbench.tree.enableStickyScroll": false,
     "workbench.editor.enablePreview": true,
     "workbench.editor.enablePreviewFromQuickOpen": false,
