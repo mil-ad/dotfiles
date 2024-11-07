@@ -7,7 +7,15 @@
 // custom settings, run the `open default settings` command
 // from the command palette or from `Zed` application menu.
 {
-  "vim_mode": false,
+  "assistant": {
+    "default_model": {
+      "provider": "anthropic",
+      "model": "claude-3-5-sonnet-20240620"
+    },
+    "version": "2"
+  },
+  "vim_mode": true,
+  "soft_wrap": "bounded",
   "theme": "Sandcastle",
   "buffer_font_family": "JetBrains Mono",
   "buffer_font_fallbacks": ["Symbols Nerd Font"],
