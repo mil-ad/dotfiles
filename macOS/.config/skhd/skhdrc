@@ -75,3 +75,7 @@ ctrl - left [
 ctrl - right [
     "kitty": skhd -k "alt - right"
 ]
+
+rhyper + lctrl - space [
+     "kitty": $HOME/.local/bin/enter_snippet $HOME/.scripts/snippets.yml
+]
