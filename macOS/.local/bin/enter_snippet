@@ -1,7 +1,5 @@
 #!/usr/bin/env bash
 
-set -x
-
 selected_idx=$(yq -o=json < $1 | jq -r '
 .[] | 
 if (.value | type == "string" and (index("\n") | not)) then
