@@ -1,7 +1,7 @@
 [Default Applications]
-application/epub+zip=sioyek.desktop;
+application/epub+zip=sioyek.desktop
 application/vnd.comicbook+zip=sioyek.desktop
-application/pdf=sioyek.desktop;zathura.desktop;
+application/pdf=sioyek.desktop
 application/x-bittorrent=deluge.desktop
 application/x-extension-htm=firefox.desktop
 application/x-extension-html=firefox.desktop
