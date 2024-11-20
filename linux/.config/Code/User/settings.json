@@ -1,5 +1,5 @@
 {
-    "editor.fontFamily": "'Cascadia Code', 'Symbols Nerd Font', 'Noto Color Emoji', 'Vazirmatn UI NL', 'Material Icons'",
+    "editor.fontFamily": "'JetBrains Mono', 'Cascadia Code', 'Symbols Nerd Font', 'Noto Color Emoji', 'Vazirmatn UI NL', 'Material Icons'",
     "editor.fontWeight": "400",
     "editor.fontSize": 18,
     "editor.formatOnPaste": true,
@@ -69,7 +69,7 @@
     "workbench.editor.decorations.colors": false,
     "workbench.statusBar.visible": true,
     "workbench.tips.enabled": false,
-    "workbench.colorTheme": "Catppuccin Mocha",
+    "workbench.colorTheme": "Sandcastle",
     "workbench.colorCustomizations": {
         "terminal.background": "#11111b",
         "[Catppuccin Mocha]": {
@@ -289,8 +289,13 @@
     "editor.copyWithSyntaxHighlighting": false,
     "terminal.integrated.useWslProfiles": false,
     "easyTerminalZoom.step": 3,
-    "terminal.integrated.fontSize": 14,
+    "terminal.integrated.fontSize": 11,
     "interactiveWindow.showExecutionHint": false,
     "interactiveWindow.executeWithShiftEnter": true,
+    "spellright.notificationClass": "information",
+    "spellright.configurationScope": "user",
+    "spellright.language": [
+        "en-US"
+    ],
     // -------------------------------------------------------------------------
 }
