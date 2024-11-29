@@ -20,7 +20,7 @@ repos=$(jq -r ".items[] | .repository_url" < "$cache_file" | awk -F '/' '{print 
 
 prompts=$(paste -d " " <(printf "$repos") <(printf "$prs"))
 
-user_selected_idx=$(printf "$prompts" | rofimenu -i)
+user_selected_idx=$(printf "$prompts" | rofimenu -format i)
 
 if [ "$user_selected_idx" -ge 0 ]; then
   jq -r ".items[$user_selected_idx] | .html_url" < "$cache_file" | xargs xdg-open
