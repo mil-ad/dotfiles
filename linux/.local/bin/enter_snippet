@@ -1,6 +1,15 @@
 #!/usr/bin/env bash
 
-selected_idx=$(yq -r '.[] | "\(.name): \(if (.value | split("\n") | length) > 1 then "(Multi-line Text Hidden)" else .value end)"' "$1" | rofimenu -format i)
+set -x
+
+selected_idx=$(yq -o=json < $1 | jq -r '
+.[] |
+if (.value | type == "string" and (index("\n") | not)) then
+  "\(.name): \(.value)"
+else
+  "\(.name): Multi-line Text Hidden"
+end
+' | rofimenu -format i)
 
 if [ "$selected_idx" == "" ]; then
     exit
