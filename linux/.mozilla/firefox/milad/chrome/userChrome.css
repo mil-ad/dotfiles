@@ -75,7 +75,7 @@ tab:not([selected="true"]) > .tab-stack > .tab-background {
     /* 14px */
 }
 
-#tabbrowser-tabs, #titlebar {
+#tabbrowser-tabs, #titlebar, #navigator-toolbox {
     background: var(--dark0_hard) !important;
 }
 
