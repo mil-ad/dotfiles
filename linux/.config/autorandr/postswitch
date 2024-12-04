@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+
+assert_installed nitrogen
+
+i3-msg restart
+nitrogen --restore
