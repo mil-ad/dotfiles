@@ -1,15 +1,17 @@
 # Mod1=<Alt>, Mod4=<Super>
 set $mod Mod4
 
-workspace 1 output DP-virtDown DP-0
-workspace 2 output DP-virtDown DP-0
-workspace 3 output DP-virtDown DP-0
-workspace 4 output DP-virtDown DP-0
-workspace 5 output DP-virtDown DP-0
-workspace 6 output DP-virtDown DP-0
-workspace 7 output DP-virtDown DP-0
-workspace 8 output DP-virtDown DP-0
-workspace 9 output DP-virtUp HDMI-0 DP-0
+workspace 1 output DP-virtDown primary nonprimary
+workspace 2 output DP-virtDown primary nonprimary
+workspace 3 output DP-virtDown primary nonprimary
+workspace 4 output DP-virtDown primary nonprimary
+workspace 5 output DP-virtDown primary nonprimary
+workspace 6 output DP-virtDown primary nonprimary
+workspace 7 output DP-virtDown primary nonprimary
+workspace 8 output DP-virtDown primary nonprimary
+workspace 9 output DP-virtUp nonprimary primary
+
+default_orientation auto
 
 # Use Mouse+$mod to drag floating windows
 floating_modifier $mod
