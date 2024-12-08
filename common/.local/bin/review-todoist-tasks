@@ -1,15 +1,20 @@
 #!/usr/bin/env bash
 
 assert_installed jq
-#
-# user_input=$(echo '' | rofimenu -l 0 -p "✅ ")
-#
-# [[ -z "$user_input" ]] && exit 1
+assert_defined TODOIST_TOKEN
+
+set -x
 
 resp=$(curl --silent https://api.todoist.com/rest/v2/tasks \
     -H "Authorization: Bearer $TODOIST_TOKEN")
 
-echo $resp
+indices=$(echo $resp | jq -r ".[].content" | rofimenu -multi-select -format i)
 
-#echo $resp | jq -r ".[].content" | rofimenu -multi-select -format i
-#echo $resp | jq '.id' && notify-send -i " " "✅ Task Added"
+[[ -z $indices ]] && exit 1
+
+for index in $indices; do
+    task_id=$(echo $resp | jq -r ".["$index"].id")
+    task_content=$(echo $resp | jq ".[$index].content")
+    curl -X POST "https://api.todoist.com/rest/v2/tasks/$task_id/close" \
+      -H "Authorization: Bearer $TODOIST_TOKEN" && notify-send -i " " "🗑️ Task Removed:" "$task_content" 
+done
