@@ -134,7 +134,8 @@ bindsym $mod+Shift+Ctrl+Down move workspace to output down
 # split orientation
 #bindsym $mod+h split h;exec notify-send 'tile horizontally'
 #bindsym $mod+Shift+v split v;exec notify-send 'tile vertically'
-bindsym $mod+t split toggle;
+bindsym $mod+minus split vertical;
+bindsym $mod+backslash split horizontal;
 
 # toggle fullscreen mode for the focused container
 bindsym $mod+f fullscreen toggle
@@ -200,6 +201,8 @@ bindsym $mod+l exec --no-startup-id $HOME/.local/bin/openurl
 bindsym $mod+o exec --no-startup-id $HOME/.local/bin/openrecentfile
 bindsym $mod+p exec --no-startup-id ~/.scripts/open_paper
 bindsym $mod+r exec --no-startup-id  ~/.local/bin/open_github_repo
+bindsym $mod+t exec --no-startup-id  source ~/.tokens && ~/.local/bin/add-todoist-task
+bindsym $mod+Shift+r exec --no-startup-id  ~/.local/bin/open-github-pr
 bindsym $mod+space exec --no-startup-id $HOME/.local/bin/winmenu
 bindsym $mod+Ctrl+i exec --no-startup-id ~/.local/bin/synonym
 bindsym $mod+Ctrl+o exec --no-startup-id $HOME/.local/bin/openfile
