@@ -1,8 +1,9 @@
 #!/usr/bin/env bash
 
 assert_installed uuidgen jq
+assert_defined TODOIST_TOKEN
 
-user_input=$(echo '' | rofimenu -l 0 -p "✅ ")
+user_input=$(echo '' | rofimenu -l 0 -p "⬜ ")
 
 [[ -z "$user_input" ]] && exit 1
 
@@ -12,4 +13,4 @@ resp=$(curl --silent https://api.todoist.com/rest/v2/tasks \
     -H "X-Request-Id: $(uuidgen)" \
     -H "Authorization: Bearer $TODOIST_TOKEN")
 
-echo $resp | jq '.id' && notify-send -i " " "✅ Task Added"
+echo $resp | jq '.id' && notify-send -i " " "✅ Task Added" || notify-send -u critical "Couldn't add task to Todoist"
