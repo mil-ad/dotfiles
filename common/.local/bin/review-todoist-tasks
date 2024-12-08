@@ -1,0 +1,15 @@
+#!/usr/bin/env bash
+
+assert_installed jq
+#
+# user_input=$(echo '' | rofimenu -l 0 -p "✅ ")
+#
+# [[ -z "$user_input" ]] && exit 1
+
+resp=$(curl --silent https://api.todoist.com/rest/v2/tasks \
+    -H "Authorization: Bearer $TODOIST_TOKEN")
+
+echo $resp
+
+#echo $resp | jq -r ".[].content" | rofimenu -multi-select -format i
+#echo $resp | jq '.id' && notify-send -i " " "✅ Task Added"

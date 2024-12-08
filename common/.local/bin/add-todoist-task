@@ -1,0 +1,15 @@
+#!/usr/bin/env bash
+
+assert_installed uuidgen jq
+
+user_input=$(echo '' | rofimenu -l 0 -p "✅ ")
+
+[[ -z "$user_input" ]] && exit 1
+
+resp=$(curl --silent https://api.todoist.com/rest/v2/tasks \
+    --data "{\"content\": \"$user_input\"}" \
+    -H 'Content-Type: application/json' \
+    -H "X-Request-Id: $(uuidgen)" \
+    -H "Authorization: Bearer $TODOIST_TOKEN")
+
+echo $resp | jq '.id' && notify-send -i " " "✅ Task Added"
