@@ -1,6 +1,6 @@
-[ -e /usr/share/fzf/key-bindings.zsh ] && source /usr/share/fzf/key-bindings.zsh
-[ -e /usr/share/fzf/completion.zsh ] && source /usr/share/fzf/completion.zsh
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+assert_installed fzf
+
+source <(fzf --zsh)
 
 #export FZF_DEFAULT_COMMAND='ag --hidden --ignore .git --ignore .cache -g ""'
 export FZF_DEFAULT_COMMAND='fd --hidden --follow --exclude .git --exclude .cache .'
