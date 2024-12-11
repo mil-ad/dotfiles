@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+
+action=$(printf '🖥️ Open GCP VM
+' | rofimenu -no-custom) || exit 1
+
+case $action in
+    "🖥️ Open GCP VM") ~/.local/bin/open-gcp-vm ;;
+esac
