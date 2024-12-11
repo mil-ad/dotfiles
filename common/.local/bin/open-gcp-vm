@@ -1,0 +1,15 @@
+#!/usr/bin/env bash
+
+assert_installed jq gcloud rofimenu open
+
+data=$(gcloud compute instances list --format='json')
+chosen_idx=$(jq -r ".[].name" <<< $data | rofimenu -format i)
+
+instance_selflink=$(jq -r ".[$chosen_idx].selfLink" <<< $data)
+PROJECT=$(echo $instance_selflink | cut -d'/' -f7)
+ZONE=$(echo $instance_selflink| cut -d'/' -f9)
+INSTANCE=$(echo $instance_selflink | cut -d'/' -f11)
+
+open "https://console.cloud.google.com/compute/instancesDetail/zones/$ZONE/instances/$INSTANCE?project=$PROJECT"
+
+exit 0
