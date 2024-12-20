@@ -5,7 +5,7 @@ set -x
 selected_program=$(dmenu_path | rofimenu -l 10)
 
 case "$selected_program" in
-    "transmission-gtk"|"pavucontrol"|"rnote"|"transmission-gtk")
+    "transmission-gtk"|"pavucontrol"|"rnote"|"transmission-gtk"|"brave-browser"|"google-chrome")
         nohup ${SHELL:-"/bin/sh"} -c "GDK_SCALE=1 GDK_DPI_SCALE=1 $selected_program" < /dev/null > /dev/null 2>&1 &
         ;;
     *)
