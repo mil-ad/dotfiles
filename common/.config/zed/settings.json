@@ -9,7 +9,7 @@
 {
   "assistant": {
     "default_model": {
-      "provider": "anthropic",
+      "provider": "zed.dev",
       "model": "claude-3-5-sonnet-latest"
     },
     "version": "2"
@@ -21,7 +21,7 @@
     "use_smartcase_find": true,
     "toggle_relative_line_numbers": true
   },
-  "theme": "Gruvbox Dark Hard",
+  "theme": "Rosé Pine",
   "buffer_font_family": "Iosevka Nerd Font",
   "show_whitespaces": "all",
   "ui_font_size": 16,

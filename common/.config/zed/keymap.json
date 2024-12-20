@@ -17,21 +17,39 @@
       "ctrl-y": "editor::Undo", // vim default: line up
       "ctrl-f": "buffer_search::Deploy", // vim default: page down
       "ctrl-o": "workspace::Open", // vim default: go back
-      "ctrl-a": "editor::SelectAll" // vim default: increment
+      "ctrl-a": "editor::SelectAll", // vim default: increment
+      "ctrl-w": "pane::CloseActiveItem"
+    }
+  },
+  {
+    "context": "Editor && !VimControl",
+    "bindings": {
+      "ctrl-d": "editor::DeleteLine",
+      "ctrl-j": "editor::JoinLines"
+    }
+  },
+  {
+    "context": "Editor && vim_mode == normal && !VimWaiting && !menu",
+    "bindings": {
+      "space g g": [
+        "task::Spawn",
+        { "task_name": "lazygit", "target": "center" }
+      ]
     }
   },
   {
     "context": "Pane",
     "bindings": {
-      "ctrl-}": "pane::ActivateNextItem",
-      "ctrl-{": "pane::ActivatePrevItem"
+      "ctrl-]": "pane::ActivateNextItem",
+      "ctrl-[": "pane::ActivatePrevItem"
     }
   },
   {
     "context": "Terminal",
     "bindings": {
       "alt-c": "terminal::Copy",
-      "alt-v": "terminal::Paste"
+      "alt-v": "terminal::Paste",
+      "ctrl-t": ["terminal::SendKeystroke", "ctrl-t"]
     }
   }
 ]
