@@ -7,12 +7,12 @@ selected_idx=$(yq -o=json < $1 | jq -r '
 if (.value | type == "string" and (index("\n") | not)) then
   "\(.name): \(.value)"
 else
-  "\(.name): Multi-line Text Hidden"
+  "\(.name): ≣≣≣≣≣"
 end
 ' | rofimenu -format i)
 
 if [ "$selected_idx" == "" ]; then
     exit
 else
-    yq -r ".["$selected_idx"].value" "$1" | xclip -selection clipboard | xdotool key Shift+Insert
+    yq -r ".["$selected_idx"].value" "$1" | sed -z '$s/\n$//' | xclip -selection clipboard | xdotool key Shift+Insert
 fi
