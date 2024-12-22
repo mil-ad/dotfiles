@@ -81,7 +81,7 @@ alias tree2='tree -L 2'
 alias tree3='tree -L 3'
 alias difffolders='diff -rq'
 
-alias tmux2clipboard='tmux capture-pane -pS - | kitten clipboard'
+alias tmux2clip='tmux capture-pane -pS - | clipwrite'
 alias weather='curl wttr.in/London'
 
 if [[ $(uname) == 'Darwin' ]]; then
