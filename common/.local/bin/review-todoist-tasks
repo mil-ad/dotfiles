@@ -8,13 +8,15 @@ set -x
 resp=$(curl --silent https://api.todoist.com/rest/v2/tasks \
     -H "Authorization: Bearer $TODOIST_TOKEN")
 
-indices=$(echo $resp | jq -r ".[].content" | rofimenu -multi-select -format i)
+sorted_resp=$(jq "sort_by(.order)" <<< "$resp")
+
+indices=$(echo "$sorted_resp" | jq -r ".[].content" | rofimenu -multi-select -format i)
 
 [[ -z $indices ]] && exit 1
 
 for index in $indices; do
-    task_id=$(echo $resp | jq -r ".["$index"].id")
-    task_content=$(echo $resp | jq ".[$index].content")
+    task_id=$(echo "$sorted_resp" | jq -r ".[$index].id")
+    task_content=$(echo "$sorted_resp" | jq ".[$index].content")
     curl -X POST "https://api.todoist.com/rest/v2/tasks/$task_id/close" \
-      -H "Authorization: Bearer $TODOIST_TOKEN" && notify-send -i " " "✅ Marked as Done:" "$task_content" 
+      -H "Authorization: Bearer $TODOIST_TOKEN" && notify-send -i " " "✅ Marked as Done:" "$task_content"
 done
