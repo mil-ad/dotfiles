@@ -1,0 +1,9 @@
+window-decoration = false
+gtk-titlebar = false
+# See https://github.com/ghostty-org/ghostty/issues/2023
+theme = Popping and Locking
+font-family = Iosevka Term
+font-size = 6
+window-padding-x = 3
+window-padding-y = 3
+cursor-style = block
