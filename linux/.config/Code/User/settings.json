@@ -297,5 +297,6 @@
     "spellright.language": [
         "en-US"
     ],
+    "terminal.integrated.enableImages": true,
     // -------------------------------------------------------------------------
 }
