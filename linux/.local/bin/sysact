@@ -13,7 +13,7 @@ menu_items=(
     "🔫 xkill"
     "♻️ restart i3"
     "📹 record area"
-    "🖼️ screenshot window"
+    "📸 screenshot window"
     "🖖 (un)split monitor"
     "🚪 logout"
     "🚀 reboot"
@@ -25,7 +25,7 @@ selected_option=$(printf "%s\n" "${menu_items[@]}" | rofimenu)
 
 case "$selected_option" in
     '📹 record area') ~/.local/bin/record-screen-area-start ;;
-    "🖼️ screenshot window") ~/.local/bin/screenshot-window-to-clipboard ;;
+    "📸 screenshot window") ~/.local/bin/screenshot-window-to-clipboard ;;
     '🔒 lock')  ~/.local/bin/betterblurlock ;;
     '💤 sleep') systemctl suspend ;;
     '🐻 hibernate')  systemctl hibernate ;;
