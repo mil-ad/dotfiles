@@ -186,3 +186,8 @@ element-text, element-icon {
     background-color: inherit;
     text-color: inherit;
 }
+
+/* this is needed when you use `rofi -e "foo"` */
+textbox {
+    padding: 20px;
+}
