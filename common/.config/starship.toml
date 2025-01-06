@@ -83,7 +83,7 @@ style = 'bold neutral_aqua'
 "Pictures" = " "
 
 [character]
-success_symbol = "[❯](bold purple)"
+success_symbol = "[❯](purple)"
 
 [git_branch]
 format = "[$symbol$branch]($style) "
