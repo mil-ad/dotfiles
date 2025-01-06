@@ -2,7 +2,7 @@
 
 set -x
 
-selected_idx=$(yq -o=json < $1 | jq -r '
+selected_idx=$(yq < $1 | jq -r '
 .[] |
 if (.value | type == "string" and (index("\n") | not)) then
   "\(.name): \(.value)"
