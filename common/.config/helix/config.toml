@@ -1,6 +1,8 @@
+theme = "gruvbox_dark_hard"
+
 [editor]
 line-number = "relative"
-bufferline = "always"
+bufferline = "multiple"
 
 [editor.file-picker]
 hidden = false
