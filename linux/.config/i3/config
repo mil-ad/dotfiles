@@ -184,36 +184,32 @@ mode "resize" {
 ##########################################
 #         External Keybindings
 ##########################################
-
 bindsym $mod+Return exec kitty
-bindsym $mod+d exec --no-startup-id ~/.local/bin/dmenu_run
-bindsym $mod+Shift+Return exec pcmanfm
-bindsym $mod+v exec --no-startup-id clipmenu
-
-bindsym $mod+z --release exec --no-startup-id shotgun $(slop -f "-i %i -g %g") - | xclip -selection clipboard -t image/png
-bindsym $mod+Shift+z exec --no-startup-id shotgun $(slop -f "-i %i -g %g") "$HOME/Pictures/screenshot-$(date +%F_%T).png" && notify-send "Screenshot region saved to ${HOME}/Pictures"
-bindsym $mod+Ctrl+z exec --no-startup-id shotgun "$HOME/Pictures/screenshot-$(date +%F_%T).png" && notify-send "Screenshot saved to ${HOME}/Pictures"
-
+bindsym $mod+space exec --no-startup-id $HOME/.local/bin/winmenu
+bindsym $mod+comma exec --no-startup-id $HOME/.local/bin/rename_i3_container
 bindsym $mod+0 exec --no-startup-id ~/.local/bin/sysact
 bindsym $mod+b exec --no-startup-id ~/.local/bin/open_bookmark
+bindsym $mod+d exec --no-startup-id ~/.local/bin/dmenu_run
 bindsym $mod+e exec --no-startup-id ~/.local/bin/enter_emoji
-bindsym $mod+g exec --no-startup-id ~/.local/bin/gcp-actions
+bindsym $mod+g exec --no-startup-id ~/.local/bin/llmmenu
 bindsym $mod+i exec --no-startup-id ~/.local/bin/search
 bindsym $mod+l exec --no-startup-id ~/.local/bin/openurl
 bindsym $mod+o exec --no-startup-id ~/.local/bin/openrecentfile
 bindsym $mod+p exec --no-startup-id ~/.scripts/open_paper
+bindsym $mod+v exec --no-startup-id clipmenu
 bindsym $mod+r exec --no-startup-id  ~/.local/bin/open_github_repo
 bindsym $mod+t exec --no-startup-id  source ~/.tokens && ~/.local/bin/add-todoist-task
-bindsym $mod+Shift+t exec --no-startup-id  source ~/.tokens && ~/.local/bin/review-todoist-tasks
+bindsym $mod+z --release exec --no-startup-id shotgun $(slop -f "-i %i -g %g") - | xclip -selection clipboard -t image/png
+
 bindsym $mod+Shift+r exec --no-startup-id  ~/.local/bin/open-github-pr
-bindsym $mod+space exec --no-startup-id $HOME/.local/bin/winmenu
+bindsym $mod+Shift+t exec --no-startup-id  source ~/.tokens && ~/.local/bin/review-todoist-tasks
+bindsym $mod+Shift+z exec --no-startup-id shotgun $(slop -f "-i %i -g %g") "$HOME/Pictures/screenshot-$(date +%F_%T).png" && notify-send "📸 Screenshot region saved to ${HOME}/Pictures"
+bindsym $mod+Shift+Return exec pcmanfm
+
 bindsym $mod+Ctrl+i exec --no-startup-id ~/.local/bin/synonym
 bindsym $mod+Ctrl+o exec --no-startup-id $HOME/.local/bin/openfile
 bindsym $mod+Ctrl+p exec --no-startup-id ~/.scripts/open_paper_no_annotations
 bindsym $mod+Ctrl+space exec --no-startup-id $HOME/.local/bin/enter_snippet $HOME/.scripts/snippets.yml
-bindsym $mod+comma exec --no-startup-id $HOME/.local/bin/rename_i3_container
-bindsym $mod+F1 exec --no-startup-id ~/.local/bin/llmmenu
-
 
 ##########################################
 #                Colours
