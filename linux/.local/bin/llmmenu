@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+
+source "$HOME/.tokens"
+
+assert_installed gum mods
+
+kitty \
+  --override background_opacity=1 \
+  --override background=#222222 \
+  --class llmmenu \
+  -- sh --noprofile --norc -c 'mods <<< "$(gum input --placeholder="Prompt ..." --prompt="💭 " --no-show-help --cursor.foreground="#d79921")" && read -p "Press key to continue ..." -n1 -s'
