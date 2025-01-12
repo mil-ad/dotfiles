@@ -184,7 +184,7 @@ mode "resize" {
 ##########################################
 #         External Keybindings
 ##########################################
-bindsym $mod+Return exec kitty
+bindsym $mod+Return exec kitty --single-instance
 bindsym $mod+space exec --no-startup-id $HOME/.local/bin/winmenu
 bindsym $mod+comma exec --no-startup-id $HOME/.local/bin/rename_i3_container
 bindsym $mod+0 exec --no-startup-id ~/.local/bin/sysact
@@ -269,7 +269,7 @@ for_window [title="Slack"] layout tabbed
 for_window [class="zoom" title="Chat"] resize shrink width 20 px or 20 ppt
 
 # Open specific applications in floating and/or sticky modes
-for_window [class="fzfmenu"] floating enable resize set 1200 px 750px, move position center
+for_window [class="fzfmenu"] floating enable resize set 1500 px 750px, move position center
 for_window [class="llmmenu"] floating enable resize set 1500 px 750px, move position center
 for_window [class="Pavucontrol"] floating enable
 for_window [class="(?i)zoom"] floating enable

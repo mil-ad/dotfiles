@@ -1,12 +1,10 @@
 #!/usr/bin/env bash
 
-set -x
-
 for x in "$@"; do
     value="${!x}"
     if [ -z "$value" ] &> /dev/null ; then
         notify-send "\"$x\" is not defined" 2>/dev/null
-        echo "\"$x\" is not defined" 
+        echo "\"$x\" is not defined"
         exit 1
     fi
 done

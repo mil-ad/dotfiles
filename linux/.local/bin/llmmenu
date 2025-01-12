@@ -1,11 +1,8 @@
 #!/usr/bin/env bash
 
-source "$HOME/.tokens"
-
-assert_installed gum mods
-
 kitty \
+  --single-instance \
   --override background_opacity=1 \
   --override background=#222222 \
   --class llmmenu \
-  -- sh --noprofile --norc -c "~/.dotfiles/linux/.local/bin/mods_in_loop"
+  -- sh --noprofile --norc -c "mods_in_loop"
