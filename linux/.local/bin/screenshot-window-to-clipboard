@@ -2,4 +2,4 @@
 
 set -x
 
-slop --nodecorations=1 -f "%i" | xargs -I {} shotgun --id {} - | xclip -selection clipboard -t image/png && notify-send "🖼️ Screenshot copied to clipboard"
+slop --nodecorations=1 -f "%i" | xargs -I {} shotgun --id {} - | xclip -selection clipboard -t image/png && notify-send "📸 Screenshot copied to clipboard"
