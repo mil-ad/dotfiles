@@ -1,5 +1,5 @@
 # Default model (gpt-3.5-turbo, gpt-4, ggml-gpt4all-j...).
-default-model: claude3.5-sonnet
+default-model: claude-3-5-sonnet-latest
 # Text to append when using the -f flag.
 format-text:
   markdown: 'Format the response as markdown without enclosing backticks.'
@@ -100,6 +100,10 @@ apis:
         max-input-chars: 680000
       claude-3-opus-20240229:
         aliases: ["claude3-opus", "opus"]
+        max-input-chars: 680000
+      claude-3-5-sonnet-latest:
+        max-input-chars: 680000
+      claude-3-5-haiku-latest:
         max-input-chars: 680000
   cohere:
     base-url: https://api.cohere.com/v1
