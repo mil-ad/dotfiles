@@ -1,14 +1,7 @@
 @import "../../milad/chrome/userChrome.css";
 
-#navigator-toolbox {
-    height: 0px !important;
-    min-height: 0px !important;
-    overflow: hidden !important;
-}
-
-#navigator-toolbox:focus,
-#navigator-toolbox:focus-within,
-#navigator-toolbox:active {
-    height: auto !important;
-    overflow: visible !important;
+#navigator-toolbox,
+#urlbar-container,
+#urlbar {
+  visibility: collapse !important;
 }
