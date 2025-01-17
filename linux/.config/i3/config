@@ -192,6 +192,7 @@ bindsym $mod+b exec --no-startup-id ~/.local/bin/open_bookmark
 bindsym $mod+d exec --no-startup-id ~/.local/bin/dmenu_run
 bindsym $mod+e exec --no-startup-id ~/.local/bin/enter_emoji
 bindsym $mod+g exec --no-startup-id ~/.local/bin/llmmenu
+bindsym $mod+Shift+g exec --no-startup-id ~/.local/bin/llmmenu --continue
 bindsym $mod+i exec --no-startup-id ~/.local/bin/search
 bindsym $mod+l exec --no-startup-id ~/.local/bin/openurl
 bindsym $mod+o exec --no-startup-id ~/.local/bin/openrecentfile

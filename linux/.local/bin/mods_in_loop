@@ -13,10 +13,27 @@ get_prompt() {
         --cursor.foreground="#d79921"
 }
 
-first_prompt=$(get_prompt) && \
-    printf "🧑 %s\n🤖\n" "$first_prompt" && \
-    mods <<< "$first_prompt" || \
-    exit
+while [[ $# -gt 0 ]]; do
+    case $1 in
+    --continue)
+        CONTINUE=true
+        shift # Remove --blah from processing
+        ;;
+    *)
+        echo "Unknown option: $1"
+        shift
+        ;;
+    esac
+done
+
+if [[ -z $CONTINUE ]]; then
+    first_prompt=$(get_prompt) && \
+        printf "🧑 %s\n🤖\n" "$first_prompt" && \
+        mods <<< "$first_prompt" || \
+        exit
+else
+    mods --show-last
+fi
 
 while true; do
     next_prompt=$(get_prompt) && \
