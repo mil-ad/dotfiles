@@ -173,7 +173,7 @@ label = %percentage_used%%
 ; somehow this module uses Material Icons font?
 
 type = internal/network
-interface = wlan0
+interface = wlp9s0f0
 interval = 5.0
 
 label-connected =  %essid%
@@ -243,8 +243,8 @@ bar-volume-empty-foreground = ${colors.foreground-alt}
 
 [module/battery]
 type = internal/battery
-battery = BAT1
-adapter = ACAD
+battery = BAT0
+adapter = AC
 full-at = 98
 
 poll-interval = 10
@@ -303,7 +303,7 @@ ramp-2 = 
 ramp-foreground = ${colors.foreground-alt}
 
 [settings]
-screenchange-reload = true
+screenchange-reload = false
 ;compositing-background = xor
 ;compositing-background = screen
 ;compositing-foreground = source
