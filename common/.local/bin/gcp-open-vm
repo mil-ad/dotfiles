@@ -5,6 +5,8 @@ assert_installed jq gcloud rofimenu open
 data=$(gcloud compute instances list --format='json')
 chosen_idx=$(jq -r ".[].name" <<< $data | rofimenu -format i)
 
+[[ -z "$chosen_idx" ]] && exit 0
+
 instance_selflink=$(jq -r ".[$chosen_idx].selfLink" <<< $data)
 PROJECT=$(echo $instance_selflink | cut -d'/' -f7)
 ZONE=$(echo $instance_selflink| cut -d'/' -f9)
