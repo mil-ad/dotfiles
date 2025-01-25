@@ -1,19 +1,15 @@
 #!/bin/env bash
 
-# requires:
-# - sdcv (https://dushistov.github.io/sdcv/)
-# - Collins Thesaurus for StarDict (http://download.huzheng.org/bigdict/)
-
-word=$(echo "" | dmenu -l 0 -p "Synonyms")
-
-[[ -z $word ]] && exit 1
-
+assert_installed sdcv
 export STARDICT_DATA_DIR="$HOME"/.local/share/sdcv_dicts
 
-synonym=$(echo $word | xargs sdcv -n -u "Collins Thesaurus (En-En)")
+word=$(rofimenu -l 0 -p "💬")
+[[ -z $word ]] && exit 1
 
-[[ $synonym =~ "Nothing similar to" ]] && zenity --error --text="Did not find anything" exit 1
+synonym=$(echo $word | xargs sdcv --non-interactive -u "Collins Thesaurus (En-En)")
 
-selected=$(echo "$synonym" | sed '/\[.*\]/,$!d' | grep -v "\[" | sed -r 's/^[0-9]+. //g' | sed 's/, /\n/g' | sed '/^$/d' | dmenu | sed -r 's/\s+\(.+\)//g')
+[[ $synonym =~ "Nothing similar to" ]] && notify-send "No synonyms found." && exit 1
+
+selected=$(echo "$synonym" | sed '/\[.*\]/,$!d' | grep -v "\[" | sed -r 's/^[0-9]+. //g' | sed 's/, /\n/g' | sed '/^$/d' | rofimenu | sed -r 's/\s+\(.+\)//g')
 
 [[ -n $selected ]] && echo -n "$selected" | xclip -selection clipboard && xdotool key Shift+Insert
