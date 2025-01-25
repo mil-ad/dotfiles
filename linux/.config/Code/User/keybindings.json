@@ -536,4 +536,9 @@
         "command": "workbench.action.toggleSidebarVisibility",
         "when": "activeViewlet == 'workbench.view.search'"
     },
+    {
+        "key": "ctrl+k ctrl+f",
+        "command": "workbench.action.toggleMaximizedPanel",
+        "when": "terminalFocus"
+    }
 ]
