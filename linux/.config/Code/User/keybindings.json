@@ -55,6 +55,16 @@
         "command": "terminalFontSize.decrease",
         "when": "isMac && terminalFocus && terminalHasBeenCreated",
     },
+    {
+        "key": "ctrl+=",
+        "command": "terminalFontSize.increase",
+        "when": "!isMac && terminalFocus && terminalHasBeenCreated",
+    },
+    {
+        "key": "ctrl+-",
+        "command": "terminalFontSize.decrease",
+        "when": "!isMac && terminalFocus && terminalHasBeenCreated",
+    },
     // Multiple cursors
     {
         "key": "alt+meta+g",
@@ -145,19 +155,6 @@
         "key": "ctrl+j",
         "command": "editor.action.joinLines",
         "when": "!isMac & editorTextFocus && !editorReadonly",
-    },
-    {
-        "key": "cmd+b cmd+p",
-        "command": "workbench.action.toggleSidebarVisibility"
-    },
-    {
-        "key": "ctrl+b ctrl+p",
-        "command": "workbench.action.toggleSidebarVisibility",
-        "when": "!isMac"
-    },
-    {
-        "key": "cmd+b",
-        "command": "-workbench.action.toggleSidebarVisibility"
     },
     {
         "key": "alt+q",
@@ -484,5 +481,34 @@
         "key": "cmd+]",
         "command": "-editor.action.indentLines",
         "when": "editorTextFocus && !editorReadonly"
+    },
+    {
+        "key": "ctrl+k ctrl+k",
+        "command": "workbench.action.toggleSidebarVisibility"
+    },
+    {
+        "key": "ctrl+k ctrl+e",
+        "command": "workbench.view.explorer",
+        "when": "viewContainer.workbench.view.explorer.enabled"
+    },
+    {
+        "key": "ctrl+k ctrl+g",
+        "command": "workbench.view.scm",
+        "when": "workbench.scm.active"
+    },
+    {
+        "key": "ctrl+k ctrl+x",
+        "command": "workbench.view.extensions",
+        "when": "viewContainer.workbench.view.extensions.enabled"
+    },
+    {
+        "key": "ctrl+k ctrl+d",
+        "command": "workbench.view.debug",
+        "when": "viewContainer.workbench.view.debug.enabled"
+    },
+    {
+        "key": "ctrl+k ctrl+f",
+        "command": "workbench.view.search",
+        "when": "workbench.view.search.active"
     },
 ]

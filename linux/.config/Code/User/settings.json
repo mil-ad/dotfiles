@@ -1,5 +1,5 @@
 {
-    "editor.fontFamily": "'JetBrains Mono', 'Cascadia Code', 'Symbols Nerd Font', 'Noto Color Emoji', 'Vazirmatn UI NL', 'Material Icons'",
+    "editor.fontFamily": "'Iosevka Medium', 'Cascadia Code', 'Symbols Nerd Font', 'Noto Color Emoji', 'Vazirmatn UI NL', 'Material Icons'",
     "editor.fontWeight": "400",
     "editor.fontSize": 18,
     "editor.formatOnPaste": true,
@@ -11,6 +11,7 @@
         80,
         120
     ],
+    "editor.formatOnSave": false,
     "editor.wordWrapColumn": 80,
     "editor.renderWhitespace": "all",
     "editor.renderControlCharacters": false,
@@ -25,7 +26,7 @@
     "editor.semanticHighlighting.enabled": true,
     "editor.minimap.scale": 1,
     "editor.minimap.renderCharacters": false,
-    "editor.minimap.enabled": true,
+    "editor.minimap.enabled": false,
     "editor.codeLens": true,
     "editor.stickyScroll.scrollWithEditor": false,
     "editor.hover.sticky": false,
@@ -69,7 +70,6 @@
     "workbench.editor.decorations.colors": false,
     "workbench.statusBar.visible": true,
     "workbench.tips.enabled": false,
-    "workbench.colorTheme": "Sandcastle",
     "workbench.colorCustomizations": {
         "terminal.background": "#11111b",
         "[Catppuccin Mocha]": {
@@ -92,7 +92,7 @@
             "terminal.ansiBrightWhite": "#ebdbb2",
             "sideBar.background": "#060606",
             "sideBarSectionHeader.background": "#060606",
-            "focusBorder": "#45475a",
+            "focusBorder": "#45475a"
         },
         "[Popping and Locking]": {
             // "activityBar.background": "#00AA00",
@@ -130,7 +130,7 @@
             "statusBar.foreground": "accent",
             "sideBarTitle.foreground": "accent",
             "statusBarItem.remoteBackground": "accent",
-            "focusBorder": "accent",
+            "focusBorder": "accent"
         }
     },
     "telemetry.telemetryLevel": "off",
@@ -138,7 +138,7 @@
     "update.showReleaseNotes": true,
     "window.title": "${rootNameShort}${separator}${profileName}",
     "window.commandCenter": false,
-    "window.zoomLevel": -3,
+    "window.zoomLevel": 1,
     "window.menuBarVisibility": "toggle",
     "explorer.decorations.colors": false,
     "explorer.sortOrder": "type",
@@ -163,20 +163,21 @@
             120
         ],
         "editor.formatOnSave": true,
-        // "editor.defaultFormatter": "ms-python.black-formatter",
-        "editor.defaultFormatter": "charliermarsh.ruff",
         "editor.codeActionsOnSave": {
+        //     "source.fixAll": "explicit",
             "source.organizeImports": "explicit"
-        }
+        },
+        "editor.defaultFormatter": "charliermarsh.ruff",
+        "diffEditor.ignoreTrimWhitespace": true
     },
-    "[latex]": {
-        "editor.wordWrap": "bounded",
-        "editor.wordWrapColumn": 80,
-        "editor.rulers": [
-            80
-        ],
-        "editor.formatOnSave": false
-    },
+    // "[latex]": {
+    //     "editor.wordWrap": "bounded",
+    //     "editor.wordWrapColumn": 80,
+    //     "editor.rulers": [
+    //         80
+    //     ],
+    //     "editor.formatOnSave": false
+    // },
     "[markdown]": {
         "editor.wordWrap": "bounded",
         "editor.wordWrapColumn": 80,
@@ -191,14 +192,14 @@
     // applies. I have therefore copy-pasted them manually (see
     // pylintUseMinimalCheckers). The real change I want to make here is
     // extension-pkg-whitelist
-    "pylint.args": [
-        "--disable=all",
-        "--enable=F,E,unreachable,duplicate-key,unnecessary-semicolon,global-variable-not-assigned,unused-variable,binary-op-exception,bad-format-string,anomalous-backslash-in-string,bad-open-mode",
-        "--extension-pkg-whitelist=torch,numpy"
-    ],
-    "flake8.args": [
-        "--ignore=E501"
-    ],
+    // "pylint.args": [
+    //     "--disable=all",
+    //     "--enable=F,E,unreachable,duplicate-key,unnecessary-semicolon,global-variable-not-assigned,unused-variable,binary-op-exception,bad-format-string,anomalous-backslash-in-string,bad-open-mode",
+    //     "--extension-pkg-whitelist=torch,numpy"
+    // ],
+    // "flake8.args": [
+    //     "--ignore=E501"
+    // ],
     "isort.args": [
         "--profile",
         "black",
@@ -228,8 +229,8 @@
     ],
     "latex-workshop.message.error.show": false,
     "latex-workshop.message.warning.show": false,
-    "latex-workshop.latexindent.path": "latexindent",
-    "latex-workshop.latexindent.args": [
+    "latex-workshop.formatting.latexindent.path": "latexindent",
+    "latex-workshop.formatting.latexindent.args": [
         "-c",
         "%TMPDIR%/",
         "%TMPFILE%",
@@ -254,20 +255,25 @@
     ],
     "git-graph.showStatusBarItem": false,
     "rewrap.autoWrap.enabled": false,
-    "autoDocstring.startOnNewLine": true,
-    "autoDocstring.docstringFormat": "google",
-    "autoDocstring.generateDocstringOnEnter": false,
-    "githubPullRequests.telemetry.enabled": false,
-    "githubPullRequests.fileListLayout": "tree",
-    "markdown.marp.enableHtml": true,
-    "markdown.marp.chromePath": "/usr/bin/brave",
+    // "autoDocstring.startOnNewLine": true,
+    // "autoDocstring.docstringFormat": "google",
+    // "autoDocstring.generateDocstringOnEnter": false,
+    // "githubPullRequests.telemetry.enabled": false,
+    // "githubPullRequests.fileListLayout": "tree",
+    "markdown.marp.html": "all",
+    "markdown.marp.browser": "firefox",
+    "markdown.marp.themes": [
+        // "https://example.com/foo/bar/custom-theme.css",
+        "./dist/bazm.css",
+        "../simorq/simorq.css"
+    ],
     "accessibility.signals.terminalCommandFailed": {
         "sound": "off"
     },
     "git-blame.config.showBlameInline": false,
     "github.copilot.editor.enableAutoCompletions": true,
     "diffEditor.ignoreTrimWhitespace": false,
-    "mypy.enabled": false,
+    // "mypy.enabled": false,
     "ruff.nativeServer": true,
     // -------------------------------------------------------------------------
     // https://github.com/microsoft/vscode/issues/174903#issuecomment-2189489981
@@ -289,7 +295,7 @@
     "editor.copyWithSyntaxHighlighting": false,
     "terminal.integrated.useWslProfiles": false,
     "easyTerminalZoom.step": 3,
-    "terminal.integrated.fontSize": 11,
+    "terminal.integrated.fontSize": 13,
     "interactiveWindow.showExecutionHint": false,
     "interactiveWindow.executeWithShiftEnter": true,
     "spellright.notificationClass": "information",
@@ -298,5 +304,12 @@
         "en-US"
     ],
     "terminal.integrated.enableImages": true,
+    "workbench.colorTheme": "Popping and Locking",
+    "gitlens.codeLens.enabled": false,
+    "better-comments.multilineComments": false,
     // -------------------------------------------------------------------------
+    "vscode_custom_css.imports": [
+        "file:///home/milad/.dotfiles/linux/.config/Code/User/custom-css.css",
+    ],
+    "workbench.activityBar.location": "hidden"
 }
