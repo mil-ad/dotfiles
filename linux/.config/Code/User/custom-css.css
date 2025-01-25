@@ -16,3 +16,7 @@
     z-index: 1000000 !important;
     font-size: 1.2em;
 }
+
+.linux {
+    font-family: 'Iosevka Medium';
+}
