@@ -2,7 +2,9 @@
     "editor.fontFamily": "'Iosevka Medium', 'Cascadia Code', 'Symbols Nerd Font', 'Noto Color Emoji', 'Vazirmatn UI NL', 'Material Icons'",
     "editor.fontWeight": "400",
     "editor.fontSize": 18,
+    "editor.formatOnSave": true,
     "editor.formatOnPaste": true,
+    "editor.formatOnSaveMode": "modifications",
     "editor.tabSize": 4,
     "editor.mouseWheelZoom": false,
     "editor.multiCursorModifier": "ctrlCmd",
@@ -11,7 +13,6 @@
         80,
         120
     ],
-    "editor.formatOnSave": false,
     "editor.wordWrapColumn": 80,
     "editor.renderWhitespace": "all",
     "editor.renderControlCharacters": false,
@@ -29,7 +30,6 @@
     "editor.minimap.enabled": false,
     "editor.codeLens": true,
     "editor.stickyScroll.scrollWithEditor": false,
-    "editor.hover.sticky": false,
     "editor.autoClosingBrackets": "never",
     "editor.copyWithSyntaxHighlighting": false,
     // Disable italics in comment blocks (see From https://stackoverflow.com/a/46278282/298209)
@@ -64,7 +64,7 @@
     "terminal.integrated.showExitAlert": false,
     "terminal.integrated.shellIntegration.enabled": false,
     "terminal.integrated.useWslProfiles": false,
-    "terminal.integrated.fontSize": 11,
+    "terminal.integrated.fontSize": 8,
     "terminal.integrated.enableImages": true,
     "workbench.colorTheme": "Catppuccin Mocha",
     "workbench.activityBar.location": "hidden",
@@ -278,5 +278,4 @@
     "vscode_custom_css.imports": [
         "file:///home/milad/.dotfiles/linux/.config/Code/User/custom-css.css",
     ],
-    "editor.formatOnSaveMode": "modifications",
 }
