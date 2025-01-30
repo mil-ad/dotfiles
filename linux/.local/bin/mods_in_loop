@@ -6,10 +6,11 @@ assert_installed gum mods
 assert_defined ANTHROPIC_API_KEY
 
 get_prompt() {
-    gum input \
+    gum write \
         --placeholder="Prompt ..." \
-        --prompt="🧑 " \
+        --prompt="" \
         --no-show-help \
+        --char-limit=0 \
         --cursor.foreground="#d79921"
 }
 
