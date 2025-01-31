@@ -44,6 +44,7 @@ alias mmrm='micromamba env remove --yes --name'
 
 alias p="git pull"
 alias P="git push"
+alias pash="git pull --autostash"
 alias gcm="git commit -m"
 alias gs='git status'
 alias goops='git rebase -i HEAD~2'
