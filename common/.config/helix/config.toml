@@ -6,6 +6,7 @@ bufferline = "multiple"
 
 [editor.file-picker]
 hidden = false
+ignore = true
 
 [editor.cursor-shape]
 insert = "bar"
