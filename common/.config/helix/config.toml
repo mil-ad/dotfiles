@@ -1,5 +1,3 @@
-theme = "gruvbox_dark_hard"
-
 [editor]
 line-number = "relative"
 bufferline = "multiple"
@@ -23,3 +21,6 @@ newline = "⏎"
 
 [keys.normal]
 C-g = [":new", ":insert-output lazygit", ":buffer-close!", ":redraw"]
+
+[keys.normal.space]
+t = ":run-shell-command kitty @ launch --location=vsplit --cwd $(pwd)"
