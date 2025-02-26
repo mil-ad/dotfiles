@@ -15,6 +15,7 @@ goodreads
 Wirecutter
 RoyalMail Tracking
 CamelCamelCamel
+PyPi
 GitHub Repositories' | rofimenu -no-custom)
 
 [[ $engine ]] && query=$(echo '' | rofimenu -l 0 -p "🔍 $engine:")
@@ -35,6 +36,7 @@ case $engine in
     "Wirecutter") URL="https://www.nytimes.com/wirecutter/search/?s=${query}" ;;
     "RoyalMail Tracking") URL="https://www.royalmail.com/track-your-item#/tracking-results/${query}" ;;
     "CamelCamelCamel") URL="https://uk.camelcamelcamel.com/search?sq=${query}" ;;
+    "PyPi") URL="https://pypi.org/search/?q=${query}" ;;
     "GitHub Repositories") URL="https://github.com/search?q=${query}&type=repositories" ;;
 esac
 
