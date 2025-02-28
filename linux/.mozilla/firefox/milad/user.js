@@ -15,3 +15,4 @@ user_pref("browser.newtabpage.enabled", false);
 user_pref("browser.newtabpage.activity-stream.feeds.section.topstories", false);
 user_pref("browser.tabs.hoverPreview.showThumbnails", false);
 user_pref("browser.startup.homepage", "chrome://browser/content/blanktab.html");
+user_pref("browser.fixup.domainwhitelist.go", true);
