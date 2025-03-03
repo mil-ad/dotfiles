@@ -12,6 +12,7 @@ workspace 8 output DP-virtDown primary nonprimary
 workspace 9 output DP-virtUp nonprimary primary
 
 default_orientation auto
+popup_during_fullscreen smart
 
 # Use Mouse+$mod to drag floating windows
 floating_modifier $mod
