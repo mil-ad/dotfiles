@@ -2,17 +2,14 @@
     "editor.fontFamily": "'Iosevka Medium', 'Cascadia Code', 'Symbols Nerd Font', 'Noto Color Emoji', 'Vazirmatn UI NL', 'Material Icons'",
     "editor.fontWeight": "400",
     "editor.fontSize": 18,
-    "editor.formatOnSave": true,
+    "editor.formatOnSave": false,
     "editor.formatOnPaste": true,
     "editor.formatOnSaveMode": "modifications",
     "editor.tabSize": 4,
     "editor.mouseWheelZoom": false,
     "editor.multiCursorModifier": "ctrlCmd",
     "editor.cursorBlinking": "phase",
-    "editor.rulers": [
-        80,
-        120
-    ],
+    "editor.rulers": [80, 120],
     "editor.wordWrapColumn": 80,
     "editor.renderWhitespace": "all",
     "editor.renderControlCharacters": false,
@@ -25,14 +22,13 @@
     "editor.gotoLocation.multipleDefinitions": "gotoAndPeek",
     "editor.gotoLocation.multipleTypeDefinitions": "gotoAndPeek",
     "editor.semanticHighlighting.enabled": true,
+    "editor.minimap.enabled": false,
     "editor.minimap.scale": 1,
     "editor.minimap.renderCharacters": false,
-    "editor.minimap.enabled": false,
     "editor.codeLens": true,
     "editor.stickyScroll.scrollWithEditor": false,
     "editor.autoClosingBrackets": "never",
     "editor.copyWithSyntaxHighlighting": false,
-    // Disable italics in comment blocks (see From https://stackoverflow.com/a/46278282/298209)
     "editor.tokenColorCustomizations": {
         "textMateRules": [
             {
@@ -64,19 +60,17 @@
     "terminal.integrated.showExitAlert": false,
     "terminal.integrated.shellIntegration.enabled": false,
     "terminal.integrated.useWslProfiles": false,
-    "terminal.integrated.fontSize": 8,
+    "terminal.integrated.fontSize": 17,
     "terminal.integrated.enableImages": true,
     "workbench.colorTheme": "Catppuccin Mocha",
-    "workbench.activityBar.location": "hidden",
     "workbench.tree.enableStickyScroll": false,
     "workbench.editor.enablePreview": true,
     "workbench.editor.enablePreviewFromQuickOpen": false,
-    "workbench.layoutControl.enabled": false,
     "workbench.editor.labelFormat": "short",
     "workbench.editor.decorations.badges": false,
     "workbench.editor.decorations.colors": false,
-    "workbench.statusBar.visible": true,
     "workbench.tips.enabled": false,
+    "workbench.layoutControl.enabled": false,
     "workbench.colorCustomizations": {
         "terminal.background": "#11111b",
         "[Catppuccin Mocha]": {
@@ -102,8 +96,6 @@
             "focusBorder": "#45475a"
         },
         "[Popping and Locking]": {
-            // "activityBar.background": "#00AA00",
-            // "sideBar.border": "#fabd2f",
             "widget.border": "#fabd2f"
         }
     },
@@ -127,7 +119,6 @@
         "mocha": {
             "base": "#181828",
             "mantle": "#11111E",
-            // "mantle": "#020202",
             "crust": "#020202",
             "yellow": "#fabd2f"
         }
@@ -160,9 +151,6 @@
     "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
     "problems.decorations.enabled": false,
     "search.quickOpen.includeHistory": false,
-    // =========================================================================
-    // Per file type settings
-    // =========================================================================
     "[python]": {
         "editor.tabSize": 4,
         "editor.rulers": [
@@ -170,29 +158,18 @@
             120
         ],
         "editor.formatOnSave": true,
+        "editor.formatOnSaveMode": "file",
         "editor.codeActionsOnSave": {
-        //     "source.fixAll": "explicit",
             "source.organizeImports": "explicit"
         },
         "editor.defaultFormatter": "charliermarsh.ruff",
-        "diffEditor.ignoreTrimWhitespace": true
+        "diffEditor.ignoreTrimWhitespace": false
     },
-    // "[latex]": {
-    //     "editor.wordWrap": "bounded",
-    //     "editor.wordWrapColumn": 80,
-    //     "editor.rulers": [
-    //         80
-    //     ],
-    //     "editor.formatOnSave": false
-    // },
     "[markdown]": {
         "editor.wordWrap": "bounded",
         "editor.wordWrapColumn": 80,
         "files.trimTrailingWhitespace": false
     },
-    // =========================================================================
-    // Extension settings
-    // =========================================================================
     "python.languageServer": "Pylance",
     "python.analysis.typeCheckingMode": "standard",
     "python.terminal.activateEnvironment": true,
@@ -245,17 +222,10 @@
     ],
     "git-graph.showStatusBarItem": false,
     "rewrap.autoWrap.enabled": false,
-    // "autoDocstring.startOnNewLine": true,
-    // "autoDocstring.docstringFormat": "google",
-    // "autoDocstring.generateDocstringOnEnter": false,
-    // "githubPullRequests.telemetry.enabled": false,
-    // "githubPullRequests.fileListLayout": "tree",
     "markdown.marp.html": "all",
-    "markdown.marp.browser": "firefox",
+    "markdown.marp.browser": "chrome",
     "markdown.marp.themes": [
-        // "https://example.com/foo/bar/custom-theme.css",
-        "./dist/bazm.css",
-        "../simorq/simorq.css"
+        "./themes/compiled"
     ],
     "accessibility.signals.terminalCommandFailed": {
         "sound": "off"
@@ -263,7 +233,6 @@
     "git-blame.config.showBlameInline": false,
     "github.copilot.editor.enableAutoCompletions": true,
     "diffEditor.ignoreTrimWhitespace": false,
-    // "mypy.enabled": false,
     "ruff.nativeServer": true,
     "window.titleBarStyle": "native",
     "window.customTitleBarVisibility": "auto",
@@ -276,6 +245,14 @@
     ],
     "gitlens.codeLens.enabled": false,
     "vscode_custom_css.imports": [
-        "file:///home/milad/.dotfiles/linux/.config/Code/User/custom-css.css",
+        "file:///home/milad/.dotfiles/linux/.config/Code/User/custom-css.css"
     ],
+    "diffEditor.hideUnchangedRegions.enabled": true,
+    "cursor.cpp.disabledLanguages": [
+        "plaintext",
+        "markdown",
+        "scminput"
+    ],
+    "workbench.activityBar.orientation": "vertical",
+    "go.toolsManagement.autoUpdate": true,
 }
