@@ -291,7 +291,7 @@
         "when": "terminal.active"
     },
     {
-        "key": "ctrl+`",
+        "key": "ctrl+shift+`",
         "command": "workbench.action.terminal.toggleTerminal",
         "when": "terminal.active && !isMac"
     },
@@ -446,30 +446,6 @@
         "when": "isMac"
     },
     {
-        "key": "cmd+o",
-        "command": "-workbench.action.files.openFolderViaWorkspace",
-        "when": "!openFolderWorkspaceSupport && workbenchState == 'workspace'"
-    },
-    {
-        "key": "cmd+o",
-        "command": "-workbench.action.files.openFileFolder",
-        "when": "isMacNative && openFolderWorkspaceSupport"
-    },
-    {
-        "key": "cmd+o",
-        "command": "-workbench.action.files.openLocalFileFolder",
-        "when": "remoteFileDialogVisible"
-    },
-    {
-        "key": "cmd+o",
-        "command": "-workbench.action.files.openFile",
-        "when": "false"
-    },
-    {
-        "key": "cmd+o",
-        "command": "workbench.action.files.openFolder"
-    },
-    {
         "key": "shift+cmd+]",
         "command": "-workbench.action.nextEditor"
     },
@@ -540,5 +516,17 @@
         "key": "ctrl+k ctrl+f",
         "command": "workbench.action.toggleMaximizedPanel",
         "when": "terminalFocus"
+    },
+    {
+        "key": "ctrl+`",
+        "command": "workbench.action.tasks.runTask",
+        "args": "open kitty",
+        "when": "!taskRunning"
+    },
+    {
+        "key": "ctrl+`",
+        "command": "workbench.action.tasks.terminate",
+        "args": "open kitty",
+        "when": "taskRunning"
     }
 ]
