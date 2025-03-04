@@ -1,12 +1,10 @@
 [Unit]
-Description=Run my script every 15 minutes
+Description=Refresh Github caches every 15 mins
 After=network.target
 
 [Service]
 Type=oneshot
-ExecStart=/path/to/your/script.sh
-# If your script requires specific environment variables:
-# Environment=VAR1=value1 VAR2=value2
+ExecStart=%h/.local/bin/refresh-github-caches
 
 [Install]
 WantedBy=default.target
