@@ -1,0 +1,12 @@
+[Unit]
+Description=Run my script every 15 minutes
+After=network.target
+
+[Service]
+Type=oneshot
+ExecStart=/path/to/your/script.sh
+# If your script requires specific environment variables:
+# Environment=VAR1=value1 VAR2=value2
+
+[Install]
+WantedBy=default.target

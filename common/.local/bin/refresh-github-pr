@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+
+# Expects to find GutHub authentication in ~/.netrc
+
+cache_file="$HOME/.cache/github_prs"
+
+curl -s --netrc "https://api.github.com/search/issues?q=type:pr+involves:mil-ad+state:open+sort:updated" > "$cache_file"

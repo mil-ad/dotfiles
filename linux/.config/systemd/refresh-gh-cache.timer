@@ -1,0 +1,15 @@
+[Unit]
+Description=Run my script every 15 minutes
+Requires=myscript.service
+
+[Timer]
+Unit=myscript.service
+# Run every 15 minutes
+OnUnitActiveSec=15min
+# Also run 15 minutes after boot
+OnBootSec=15min
+# Random delay to distribute system load (optional)
+RandomizedDelaySec=30sec
+
+[Install]
+WantedBy=timers.target
