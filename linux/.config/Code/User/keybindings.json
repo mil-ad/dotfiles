@@ -291,7 +291,7 @@
         "when": "terminal.active"
     },
     {
-        "key": "ctrl+shift+`",
+        "key": "ctrl+`",
         "command": "workbench.action.terminal.toggleTerminal",
         "when": "terminal.active && !isMac"
     },
@@ -518,13 +518,13 @@
         "when": "terminalFocus"
     },
     {
-        "key": "ctrl+`",
+        "key": "ctrl+shift+`",
         "command": "workbench.action.tasks.runTask",
         "args": "open kitty",
         "when": "!taskRunning"
     },
     {
-        "key": "ctrl+`",
+        "key": "ctrl+shift+`",
         "command": "workbench.action.tasks.terminate",
         "args": "open kitty",
         "when": "taskRunning"
