@@ -45,6 +45,7 @@
     --faded_orange: #af3a03;
 
     --toolbarbutton-icon-fill: #ebdbb2 !important;
+    --toolbar-bgcolor: #1d2021 !important;
 }
 
 /* Only for macOS */
@@ -102,7 +103,7 @@ tab:not([selected="true"]) > .tab-stack > .tab-background {
 
 #urlbar, #searchbar .searchbar-textbox {
     color: var(--light1) !important;
-    
+
     /* macOS only */
     font-family: Iosevka, Vazirmatn !important;
 }
@@ -134,4 +135,8 @@ tab:not([selected="true"]) > .tab-stack > .tab-background {
 
 .titlebar-spacer[type="post-tabs"] {
     display: none !important;
+}
+
+#vertical-pinned-tabs-container {
+    max-height: inherit !important;
 }
