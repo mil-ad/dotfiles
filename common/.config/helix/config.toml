@@ -1,6 +1,9 @@
+theme = "default_transparent"
+
 [editor]
 line-number = "relative"
 bufferline = "multiple"
+mouse = true
 
 [editor.file-picker]
 hidden = false

@@ -1,6 +1,6 @@
 [[language]]
 name = "python"
-language-servers = ["pylsp"]
+language-servers = ["ruff", "jedi-language-server", "pylsp"]
 
 [language-server.pylsp.config.pylsp]
 plugins.pylsp_mypy.enabled = true
