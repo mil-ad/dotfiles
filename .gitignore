@@ -20,3 +20,6 @@ sublime-text-3/User/SBSCompareTheme.hidden-tmTheme
 antigen.zsh
 
 linux/.fonts/**/.uuid
+
+!linux/.config/systemd/user/refresh-gh-cache*
+!common/.local/bin/refresh-github-caches
