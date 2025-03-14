@@ -7,21 +7,24 @@
 // custom settings, run the `open default settings` command
 // from the command palette or from `Zed` application menu.
 {
+  "features": {
+    "edit_prediction_provider": "zed"
+  },
   "assistant": {
     "default_model": {
       "provider": "zed.dev",
-      "model": "claude-3-5-sonnet-latest"
+      "model": "claude-3-7-sonnet-latest"
     },
     "version": "2"
   },
-  "vim_mode": true,
+  "vim_mode": false,
   "vim": {
     "use_system_clipboard": "on_yank",
     "use_multiline_find": true,
     "use_smartcase_find": true,
     "toggle_relative_line_numbers": true
   },
-  "theme": "Rosé Pine",
+  "theme": "Ayu Dark",
   "buffer_font_family": "Iosevka Nerd Font",
   "show_whitespaces": "all",
   "ui_font_size": 16,
