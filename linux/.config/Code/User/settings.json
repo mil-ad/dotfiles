@@ -1,4 +1,11 @@
 {
+    "window.restoreWindows": "none",
+    "window.title": "${rootNameShort}${separator}${profileName}",
+    "window.commandCenter": false,
+    "window.zoomLevel": 0,
+    "window.menuBarVisibility": "toggle",
+    "window.titleBarStyle": "native",
+    "window.customTitleBarVisibility": "auto",
     "editor.fontFamily": "'Iosevka Medium', 'Cascadia Code', 'Symbols Nerd Font', 'Noto Color Emoji', 'Vazirmatn UI NL', 'Material Icons'",
     "editor.fontWeight": "400",
     "editor.fontSize": 18,
@@ -60,9 +67,9 @@
     "terminal.integrated.showExitAlert": false,
     "terminal.integrated.shellIntegration.enabled": false,
     "terminal.integrated.useWslProfiles": false,
-    "terminal.integrated.fontSize": 17,
+    "terminal.integrated.fontSize": 10,
     "terminal.integrated.enableImages": true,
-    "workbench.colorTheme": "Catppuccin Mocha",
+    "workbench.colorTheme": "Popping and Locking",
     "workbench.tree.enableStickyScroll": false,
     "workbench.editor.enablePreview": true,
     "workbench.editor.enablePreviewFromQuickOpen": false,
@@ -71,6 +78,7 @@
     "workbench.editor.decorations.colors": false,
     "workbench.tips.enabled": false,
     "workbench.layoutControl.enabled": false,
+    "workbench.activityBar.orientation": "vertical",
     "workbench.colorCustomizations": {
         "terminal.background": "#11111b",
         "[Catppuccin Mocha]": {
@@ -134,10 +142,6 @@
     "telemetry.telemetryLevel": "off",
     "update.mode": "start",
     "update.showReleaseNotes": true,
-    "window.title": "${rootNameShort}${separator}${profileName}",
-    "window.commandCenter": false,
-    "window.zoomLevel": 1,
-    "window.menuBarVisibility": "toggle",
     "explorer.decorations.colors": false,
     "explorer.sortOrder": "type",
     "explorer.incrementalNaming": "smart",
@@ -234,8 +238,6 @@
     "github.copilot.editor.enableAutoCompletions": true,
     "diffEditor.ignoreTrimWhitespace": false,
     "ruff.nativeServer": true,
-    "window.titleBarStyle": "native",
-    "window.customTitleBarVisibility": "auto",
     "interactiveWindow.showExecutionHint": false,
     "interactiveWindow.executeWithShiftEnter": true,
     "spellright.notificationClass": "information",
@@ -253,6 +255,5 @@
         "markdown",
         "scminput"
     ],
-    "workbench.activityBar.orientation": "vertical",
     "go.toolsManagement.autoUpdate": true,
 }
