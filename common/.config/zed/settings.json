@@ -8,7 +8,7 @@
 // from the command palette or from `Zed` application menu.
 {
   "features": {
-    "edit_prediction_provider": "zed"
+    "edit_prediction_provider": "none"
   },
   "assistant": {
     "default_model": {
@@ -24,11 +24,15 @@
     "use_smartcase_find": true,
     "toggle_relative_line_numbers": true
   },
-  "theme": "Ayu Dark",
-  "buffer_font_family": "Iosevka Nerd Font",
+  "theme": "Gruvbox Material Dark Colorscheme",
+  "buffer_font_family": "Iosevka Nerd Font Mono",
+  "buffer_font_size": 16,
+  "buffer_font_weight": 500,
+  "buffer_font_features": {
+    "calt": false
+  },
   "show_whitespaces": "all",
   "ui_font_size": 16,
-  "buffer_font_size": 16,
   // Let's leave the telemetry on for a while
   "telemetry": {
     "diagnostics": true,
@@ -45,7 +49,10 @@
       "LC_ALL": "en_GB.UTF-8"
     }
   },
-  "language_overrides": {
+  "languages": {
+    "Markdown": {
+      "soft_wrap": "editor_width"
+    },
     "Python": {
       "format_on_save": {
         "external": {
