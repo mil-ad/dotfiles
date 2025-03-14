@@ -18,7 +18,7 @@ function get_repos_all_pages {
     # Use pagination if necessary
     last_page=$(curl -s -I --netrc "${rest_request}" -H "${github_api_accept_header}" | grep -oP '(?<=page=)(\d+)(?=>; rel="last")')
     for page in $(seq "$last_page"); do
-        curl -s --netrc "${rest_request}&page=$1" -H "${github_api_accept_header}"  | jq ".[] | {name: .full_name, url: .html_url}"
+        curl -s --netrc "${rest_request}&page=$page" -H "${github_api_accept_header}"  | jq ".[] | {name: .full_name, url: .html_url}"
     done
 }
 

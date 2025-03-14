@@ -15,7 +15,7 @@ function maybe_regenerate_cache {
 
 [ ! -e "$cache_file" ] && refresh-github-caches
 
-selected=$(jq .name "$cache_file" | tr -d \" | dmenu)
+selected=$(jq .name "$cache_file" | tr -d \" | rofimenu)
 
 if [ -n "$selected" ]; then
   jq ". | select(.name == \"$selected\") | .url" "$cache_file" | tr -d \" | xargs xdg-open
