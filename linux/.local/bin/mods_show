@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+
+assert_installed gum mods
+
+mods --list | gum choose | awk '{print $1}' | xargs mods --show
