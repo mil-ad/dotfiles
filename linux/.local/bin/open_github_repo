@@ -1,44 +1,24 @@
 #!/bin/bash
 
-# Expects to find GutHub authentication in ~/.netrc
+set -e
 
-github_api_accept_header="Accept: application/vnd.github.v3+json"
-rest_request=https://api.github.com/user/repos?per_page=100\&affiliation=owner,collaborator,organization_member\&sort=push
+assert_installed jq refresh-github-caches
 
 cache_file="$HOME/.cache/github_repos_dmenu"
-
-function get_repos_one_page {
-    curl -s --netrc "${rest_request}&page=$1" -H "${github_api_accept_header}"  | jq ".[] | {name: .full_name, url: .html_url}"
-}
-
-function get_repos_all_pages {
-    # Use pagination if necessary
-    last_page=$(curl -s -I --netrc "${rest_request}" -H "${github_api_accept_header}" | grep -oP '(?<=page=)(\d+)(?=>; rel="last")')
-    for page in $(seq "$last_page"); do
-        get_repos_one_page "$page"
-    done
-}
-
-function generate_cache {
-    cache=$(get_repos_all_pages)
-    echo "$cache" > "$cache_file"
-}
 
 function maybe_regenerate_cache {
     if test "$(find "$cache_file" -mmin +2)"
     then
-        generate_cache
+        refresh-github-caches
     fi
 }
 
-[ ! -e "$cache_file" ] && generate_cache
-# generate_cache
+[ ! -e "$cache_file" ] && refresh-github-caches
 
 selected=$(jq .name "$cache_file" | tr -d \" | dmenu)
 
 if [ -n "$selected" ]; then
   jq ". | select(.name == \"$selected\") | .url" "$cache_file" | tr -d \" | xargs xdg-open
-#   i3-msg --quiet [urgent=latest] focus
 fi
 
 maybe_regenerate_cache

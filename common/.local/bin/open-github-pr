@@ -4,6 +4,8 @@
 
 set -x
 
+assert_installed jq rofimenu
+
 cache_file="$HOME/.cache/github_prs"
 
 function generate_cache {

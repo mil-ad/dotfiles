@@ -2,6 +2,25 @@
 
 # Expects to find GutHub authentication in ~/.netrc
 
-cache_file="$HOME/.cache/github_prs"
+set -x
 
-curl -s --netrc "https://api.github.com/search/issues?q=type:pr+involves:mil-ad+state:open+sort:updated" > "$cache_file"
+assert_installed jq curl
+
+prs_cache_file="$HOME/.cache/github_prs"
+repos_cache_file="$HOME/.cache/github_repos_dmenu"
+
+curl -s --netrc "https://api.github.com/search/issues?q=type:pr+involves:mil-ad+state:open+sort:updated" > "$prs_cache_file"
+
+rest_request=https://api.github.com/user/repos?per_page=100\&affiliation=owner,collaborator,organization_member\&sort=push
+function get_repos_all_pages {
+    github_api_accept_header="Accept: application/vnd.github.v3+json"
+
+    # Use pagination if necessary
+    last_page=$(curl -s -I --netrc "${rest_request}" -H "${github_api_accept_header}" | grep -oP '(?<=page=)(\d+)(?=>; rel="last")')
+    for page in $(seq "$last_page"); do
+        curl -s --netrc "${rest_request}&page=$1" -H "${github_api_accept_header}"  | jq ".[] | {name: .full_name, url: .html_url}"
+    done
+}
+
+repos=$(get_repos_all_pages)
+echo "$repos" > "$repos_cache_file"
