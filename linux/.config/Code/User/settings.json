@@ -16,7 +16,10 @@
     "editor.mouseWheelZoom": false,
     "editor.multiCursorModifier": "ctrlCmd",
     "editor.cursorBlinking": "phase",
-    "editor.rulers": [80, 120],
+    "editor.rulers": [
+        80,
+        120
+    ],
     "editor.wordWrapColumn": 80,
     "editor.renderWhitespace": "all",
     "editor.renderControlCharacters": false,
@@ -236,7 +239,7 @@
     },
     "git-blame.config.showBlameInline": false,
     "github.copilot.editor.enableAutoCompletions": true,
-    "diffEditor.ignoreTrimWhitespace": false,
+    "diffEditor.ignoreTrimWhitespace": true,
     "ruff.nativeServer": true,
     "interactiveWindow.showExecutionHint": false,
     "interactiveWindow.executeWithShiftEnter": true,
