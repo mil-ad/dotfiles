@@ -24,6 +24,7 @@ newline = "⏎"
 
 [keys.normal]
 C-g = [":new", ":insert-output lazygit", ":buffer-close!", ":redraw"]
+#C-y = [ ':sh rm -f /tmp/yazi-path', ':insert-output yazi %{buffer_name} --chooser-file=/tmp/yazi-path', ":open %sh{cat /tmp/yazi-path}", ":redraw" ]
 
 [keys.normal.space]
 t = ":run-shell-command kitty @ launch --location=vsplit --cwd $(pwd)"
