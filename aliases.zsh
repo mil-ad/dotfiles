@@ -95,3 +95,7 @@ alias json2jsonl="jq -c .[]"
 alias jsonl2json="jq -s"
 
 alias parquetcat="parquet-tools cat --format='json'"
+
+
+alias code="GDK_SCALE=1 GDK_DPI_SCALE=1 code"
+alias code="GDK_SCALE=1 GDK_DPI_SCALE=1 pavucontrol"
