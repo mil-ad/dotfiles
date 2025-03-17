@@ -22,6 +22,9 @@ nnbsp = "␣"
 tab = "→"
 newline = "⏎"
 
+[editor.soft-wrap]
+enable = true
+
 [keys.normal]
 C-g = [":new", ":insert-output lazygit", ":buffer-close!", ":redraw"]
 #C-y = [ ':sh rm -f /tmp/yazi-path', ':insert-output yazi %{buffer_name} --chooser-file=/tmp/yazi-path', ":open %sh{cat /tmp/yazi-path}", ":redraw" ]
