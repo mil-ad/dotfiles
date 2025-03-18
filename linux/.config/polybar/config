@@ -214,7 +214,7 @@ type = internal/pulseaudio
 ; If not, uses default sink
 ; sink = alsa_output.pci-0000_09_00.1.hdmi-stereo
 
-click-right = pavucontrol
+click-right = GDK_DPI_SCALE=1 GDK_SCALE=1 pavucontrol
 
 format-volume = <label-volume> <bar-volume>
 label-volume =  %percentage%%
