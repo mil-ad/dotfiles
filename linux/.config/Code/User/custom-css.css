@@ -24,3 +24,7 @@
 .monaco-workbench {
     --vscode-focusBorder: transparent !important;
 }
+
+.statusbar .__CUSTOM_CSS_JS_INDICATOR_CLS {
+    display: none !important;
+}

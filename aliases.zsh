@@ -96,6 +96,7 @@ alias jsonl2json="jq -s"
 
 alias parquetcat="parquet-tools cat --format='json'"
 
-
 alias code="GDK_SCALE=1 GDK_DPI_SCALE=1 code"
-alias code="GDK_SCALE=1 GDK_DPI_SCALE=1 pavucontrol"
+alias pavucontrol="GDK_SCALE=1 GDK_DPI_SCALE=1 pavucontrol"
+
+alias sinf='sinfo --format "%25N %10P %.15T %25G %.4c %.10O %30E" -p all'
