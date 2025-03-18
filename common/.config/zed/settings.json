@@ -24,7 +24,7 @@
     "use_smartcase_find": true,
     "toggle_relative_line_numbers": true
   },
-  "theme": "Gruvbox Material Dark Colorscheme",
+  "theme": "Catppuccin Mocha - No Italics",
   "buffer_font_family": "Iosevka Nerd Font Mono",
   "buffer_font_size": 16,
   "buffer_font_weight": 500,
