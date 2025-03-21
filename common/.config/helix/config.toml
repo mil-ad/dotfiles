@@ -5,6 +5,11 @@ line-number = "relative"
 bufferline = "multiple"
 mouse = true
 popup-border = "all"
+cursorline = true
+#end-of-line-diagnostics = "hint"
+
+#[editor.inline-diagnostics]
+#cursor-line = "warning" # show warnings and errors on the cursorline inline
 
 [editor.file-picker]
 hidden = false
