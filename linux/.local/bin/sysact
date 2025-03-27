@@ -25,7 +25,7 @@ menu_items=(
 selected_option=$(printf "%s\n" "${menu_items[@]}" | rofimenu)
 
 case "$selected_option" in
-    "🐍 Python") ~/.local/bin/kitty-app uvx bpython;;
+    "🐍 Python") ~/.local/bin/kitty-app uvx ptpython;;
     '📹 record area') ~/.local/bin/record-screen-area-start ;;
     "📸 screenshot program") ~/.local/bin/screenshot-window-to-clipboard ;;
     '🔒 lock')  ~/.local/bin/betterblurlock ;;
