@@ -5,7 +5,7 @@ then
     xrandr --delmonitor DP-virtUp
     xrandr --delmonitor DP-virtDown
 else
-    xrandr --setmonitor DP-virtDown 2560/470x1440/260+0+1440 DisplayPort-0
+    xrandr --setmonitor DP-virtDown 2560/470x1440/260+0+1440 DP-2-1-5
     xrandr --setmonitor DP-virtUp 2560/470x1440/260+0+0 none
 fi
 

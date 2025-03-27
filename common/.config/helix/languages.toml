@@ -1,5 +1,6 @@
 [[language]]
 name = "python"
+language-servers = ["ruff", "pylsp"]
 
 [language-server.pylsp.config.pylsp]
 plugins.ruff.enabled = true

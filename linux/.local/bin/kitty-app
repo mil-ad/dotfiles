@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+
+set -x
+
+#TODO options to wire up stdin
+
+#APP_NAME="bpython"
+
+kitty \
+  --single-instance \
+  --override background_opacity=1 \
+  --override background=#222222 \
+  --class kitty-app \
+  -- sh --noprofile --norc -c "$*"

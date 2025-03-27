@@ -1,7 +1,7 @@
 [user]
     name = Milad Alizadeh
     email = git@mil.ad
-    signingkey = ~/.ssh/id_rsa.pub
+    signingkey = ~/.ssh/google_compute_engine.pub
 [color]
     ui = auto
 [core]

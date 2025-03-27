@@ -272,6 +272,7 @@ for_window [class="zoom" title="Chat"] resize shrink width 20 px or 20 ppt
 # Open specific applications in floating and/or sticky modes
 for_window [class="fzfmenu"] floating enable resize set 1500 px 750px, move position center
 for_window [class="llmmenu"] floating enable resize set 1500 px 750px, move position center
+for_window [class="kitty-app"] floating enable resize set 1500 px 750px, move position center
 for_window [class="Pavucontrol"] floating enable
 for_window [class="(?i)zoom"] floating enable
 for_window [class="join\?action=join"] floating enable

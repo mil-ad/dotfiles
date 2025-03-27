@@ -232,7 +232,7 @@
     "markdown.marp.html": "all",
     "markdown.marp.browser": "chrome",
     "markdown.marp.themes": [
-        "./themes/compiled"
+        "/home/milad/Documents/presentations/esp_compute/themes/compiled"
     ],
     "accessibility.signals.terminalCommandFailed": {
         "sound": "off"
