@@ -19,6 +19,7 @@ alias 9='cd -9'
 alias -- -='cd -'
 
 alias ssh="TERM=xterm-256color ssh"
+alias ssh0="ssh -O exit"
 alias kssh="kitten ssh"
 
 alias gcloud="TERM=xterm-256color gcloud"
