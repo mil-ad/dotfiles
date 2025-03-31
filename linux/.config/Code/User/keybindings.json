@@ -518,6 +518,11 @@
         "when": "terminalFocus"
     },
     {
+        "key": "ctrl+k ctrl+o",
+        "command": "workbench.action.files.openFolder",
+        "when": "openFolderWorkspaceSupport"
+    },
+    {
         "key": "ctrl+shift+`",
         "command": "workbench.action.tasks.runTask",
         "args": "open kitty",
