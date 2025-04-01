@@ -6,6 +6,9 @@ set -x
 
 assert_installed jq curl
 
+ping -c 1 api.github.com > /dev/null || { echo "Cannot reach GitHub API. Exiting."; exit 1; }
+
+
 prs_cache_file="$HOME/.cache/github_prs"
 repos_cache_file="$HOME/.cache/github_repos_dmenu"
 
