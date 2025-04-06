@@ -2,9 +2,7 @@
 
 set -x
 
-#TODO options to wire up stdin
-
-#APP_NAME="bpython"
+#TODO options to redirect stdin/stdout
 
 kitty \
   --single-instance \
