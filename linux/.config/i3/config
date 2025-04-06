@@ -192,8 +192,8 @@ bindsym $mod+0 exec --no-startup-id ~/.local/bin/sysact
 bindsym $mod+b exec --no-startup-id ~/.local/bin/open_bookmark
 bindsym $mod+d exec --no-startup-id ~/.local/bin/dmenu_run
 bindsym $mod+e exec --no-startup-id ~/.local/bin/enter_emoji
-bindsym $mod+g exec --no-startup-id ~/.local/bin/llmmenu
-bindsym $mod+Shift+g exec --no-startup-id ~/.local/bin/llmmenu --continue
+bindsym $mod+g exec --no-startup-id ~/.local/bin/kitty-app mods_in_loop
+bindsym $mod+Shift+g exec --no-startup-id ~/.local/bin/kitty-app mods_in_loop --continue
 bindsym $mod+i exec --no-startup-id ~/.local/bin/search
 bindsym $mod+l exec --no-startup-id ~/.local/bin/openurl
 bindsym $mod+o exec --no-startup-id ~/.local/bin/openrecentfile
@@ -271,7 +271,6 @@ for_window [class="zoom" title="Chat"] resize shrink width 20 px or 20 ppt
 
 # Open specific applications in floating and/or sticky modes
 for_window [class="fzfmenu"] floating enable resize set 1500 px 750px, move position center
-for_window [class="llmmenu"] floating enable resize set 1500 px 750px, move position center
 for_window [class="kitty-app"] floating enable resize set 1500 px 750px, move position center
 for_window [class="Pavucontrol"] floating enable
 for_window [class="(?i)zoom"] floating enable

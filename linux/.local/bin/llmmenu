@@ -1,8 +1,0 @@
-#!/usr/bin/env bash
-
-kitty \
-  --single-instance \
-  --override background_opacity=1 \
-  --override background=#222222 \
-  --class llmmenu \
-  -- sh --noprofile --norc -c "mods_in_loop $*"
