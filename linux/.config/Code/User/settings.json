@@ -70,9 +70,8 @@
     "terminal.integrated.showExitAlert": false,
     "terminal.integrated.shellIntegration.enabled": false,
     "terminal.integrated.useWslProfiles": false,
-    "terminal.integrated.fontSize": 10,
+    "terminal.integrated.fontSize": 8,
     "terminal.integrated.enableImages": true,
-    "workbench.colorTheme": "Popping and Locking",
     "workbench.tree.enableStickyScroll": false,
     "workbench.editor.enablePreview": true,
     "workbench.editor.enablePreviewFromQuickOpen": false,
@@ -238,7 +237,6 @@
         "sound": "off"
     },
     "git-blame.config.showBlameInline": false,
-    "github.copilot.editor.enableAutoCompletions": true,
     "diffEditor.ignoreTrimWhitespace": true,
     "ruff.nativeServer": true,
     "interactiveWindow.showExecutionHint": false,
@@ -259,4 +257,7 @@
         "scminput"
     ],
     "go.toolsManagement.autoUpdate": true,
+    "git.openRepositoryInParentFolders": "never",
+    "workbench.colorTheme": "Popping and Locking",
+    "editor.hover.enabled": false,
 }

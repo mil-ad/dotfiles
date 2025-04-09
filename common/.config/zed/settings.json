@@ -24,10 +24,10 @@
     "use_smartcase_find": true,
     "toggle_relative_line_numbers": true
   },
-  "theme": "Catppuccin Mocha - No Italics",
+  "theme": "Fleet Dark Purple",
   "buffer_font_family": "Iosevka Nerd Font Mono",
   "buffer_font_size": 16,
-  "buffer_font_weight": 500,
+  "buffer_font_weight": 700,
   "buffer_font_features": {
     "calt": false
   },

@@ -2,4 +2,4 @@
 
 assert_installed gum mods
 
-mods --list | gum choose | awk '{print $1}' | xargs mods --show
+mods --list | gum choose | awk '{print $1}' | xargs mods --show && read -p "Press Enter to exit..."
