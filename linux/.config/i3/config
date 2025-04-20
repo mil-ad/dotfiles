@@ -21,21 +21,20 @@ focus_follows_mouse yes
 workspace_auto_back_and_forth yes
 floating_maximum_size 2560 x 1440
 
-# Configure border style <normal|1pixel|pixel xx|none|pixel>
-new_window pixel 2
-new_float normal
-
-# Hide borders
+default_border pixel 2
+default_floating_border pixel 2
 hide_edge_borders none
 
 # configure window title
 title_align center
-# for_window [class=".*"] title_format "%title"
+for_window [all] title_format %class
+for_window [class="kitty-app"] title_format %title
+for_window [all] title_window_icon padding 5px
 
 # Disable gaps and borders when there's only one container
 smart_gaps on
 smart_borders on
-gaps inner 10
+gaps inner 8
 gaps outer -2
 # bottom gap could be useful when using floating polybar
 # gaps bottom 35
@@ -43,7 +42,7 @@ gaps outer -2
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
 set $font_family Cascadia Code PL
-font pango:$font_family 6
+font pango:$font_family 8
 
 # switch to workspace with urgent window automatically
 for_window [urgent=latest] focus
@@ -197,7 +196,7 @@ bindsym $mod+Shift+g exec --no-startup-id ~/.local/bin/kitty-app mods_in_loop --
 bindsym $mod+i exec --no-startup-id ~/.local/bin/search
 bindsym $mod+l exec --no-startup-id ~/.local/bin/openurl
 bindsym $mod+o exec --no-startup-id ~/.local/bin/openrecentfile
-bindsym $mod+p exec --no-startup-id ~/.scripts/open_paper
+bindsym $mod+p exec --no-startup-id ~/.local/bin/open_paper
 bindsym $mod+v exec --no-startup-id clipmenu
 bindsym $mod+r exec --no-startup-id  ~/.local/bin/open_github_repo
 bindsym $mod+t exec --no-startup-id  ~/.local/bin/add-todoist-task
@@ -209,7 +208,7 @@ bindsym $mod+Shift+z exec --no-startup-id shotgun $(slop -f "-i %i -g %g") "$HOM
 bindsym $mod+Shift+Return exec pcmanfm
 
 bindsym $mod+Ctrl+o exec --no-startup-id $HOME/.local/bin/openfile
-bindsym $mod+Ctrl+p exec --no-startup-id ~/.scripts/open_paper_no_annotations
+bindsym $mod+Ctrl+p exec --no-startup-id ~/.local/bin/open_paper_no_annotations
 bindsym $mod+Ctrl+space exec --no-startup-id $HOME/.local/bin/enter_snippet $HOME/.scripts/snippets.yml
 
 ##########################################
