@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+
+assert_defined PAPERS_DIR
+assert_installed open
+
+SELECTED_FILE=$(ls -t $PAPERS_DIR | grep "\.pdf$" | ~/.local/bin/fzfmenu)
+
+[[ "$SELECTED_FILE" != "" ]] && open "$PAPERS_DIR/$SELECTED_FILE" & exit 0

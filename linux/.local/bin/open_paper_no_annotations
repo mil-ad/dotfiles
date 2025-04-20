@@ -1,0 +1,8 @@
+#!/bin/bash
+
+assert_installed pdftk zathura rofimenu
+assert_defined PAPERS_DIR
+
+SELECTED_FILE=$(ls -t $PAPERS_DIR | rofimenu)
+
+[[ "$SELECTED_FILE" != "" ]] && pdftk "$PAPERS_DIR/$SELECTED_FILE" output - uncompress | sed '/^\/Annots/d' | zathura -
