@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-assert_installed jq
+assert_installed jq curl rofimenu
 assert_defined TODOIST_TOKEN
 
 set -x

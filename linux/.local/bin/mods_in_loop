@@ -1,7 +1,5 @@
 #!/usr/bin/env bash
 
-[[ -f "$HOME/.tokens" ]] && source "$HOME/.tokens"
-
 assert_installed gum mods
 assert_defined ANTHROPIC_API_KEY
 
