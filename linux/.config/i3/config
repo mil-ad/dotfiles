@@ -132,8 +132,6 @@ bindsym $mod+Shift+Ctrl+Up move workspace to output up
 bindsym $mod+Shift+Ctrl+Down move workspace to output down
 
 # split orientation
-#bindsym $mod+h split h;exec notify-send 'tile horizontally'
-#bindsym $mod+Shift+v split v;exec notify-send 'tile vertically'
 bindsym $mod+minus split vertical;
 bindsym $mod+backslash split horizontal;
 
