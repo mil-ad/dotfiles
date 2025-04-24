@@ -7,7 +7,7 @@
     "window.titleBarStyle": "native",
     "window.customTitleBarVisibility": "auto",
     "editor.fontFamily": "'Iosevka Medium', 'Cascadia Code', 'Symbols Nerd Font', 'Noto Color Emoji', 'Vazirmatn UI NL', 'Material Icons'",
-    "editor.fontWeight": "400",
+    "editor.fontWeight": "500",
     "editor.fontSize": 18,
     "editor.formatOnSave": false,
     "editor.formatOnPaste": true,
@@ -70,7 +70,7 @@
     "terminal.integrated.showExitAlert": false,
     "terminal.integrated.shellIntegration.enabled": false,
     "terminal.integrated.useWslProfiles": false,
-    "terminal.integrated.fontSize": 8,
+    "terminal.integrated.fontSize": 18,
     "terminal.integrated.enableImages": true,
     "workbench.tree.enableStickyScroll": false,
     "workbench.editor.enablePreview": true,
@@ -174,7 +174,8 @@
     "[markdown]": {
         "editor.wordWrap": "bounded",
         "editor.wordWrapColumn": 80,
-        "files.trimTrailingWhitespace": false
+        "files.trimTrailingWhitespace": false,
+        "diffEditor.ignoreTrimWhitespace": true
     },
     "python.languageServer": "Pylance",
     "python.analysis.typeCheckingMode": "standard",
@@ -250,7 +251,6 @@
     "vscode_custom_css.imports": [
         "file:///home/milad/.dotfiles/linux/.config/Code/User/custom-css.css"
     ],
-    "diffEditor.hideUnchangedRegions.enabled": true,
     "cursor.cpp.disabledLanguages": [
         "plaintext",
         "markdown",
@@ -258,6 +258,6 @@
     ],
     "go.toolsManagement.autoUpdate": true,
     "git.openRepositoryInParentFolders": "never",
-    "workbench.colorTheme": "Popping and Locking",
+    "workbench.colorTheme": "Popping and Locking Black Theme",
     "editor.hover.enabled": false,
 }
