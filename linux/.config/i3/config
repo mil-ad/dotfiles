@@ -27,8 +27,9 @@ hide_edge_borders none
 
 # configure window title
 title_align center
-for_window [all] title_format %class
+for_window [all] title_format %title
 for_window [class="kitty-app"] title_format %title
+for_window [class="kitty"] title_format %class
 for_window [all] title_window_icon padding 5px
 
 # Disable gaps and borders when there's only one container

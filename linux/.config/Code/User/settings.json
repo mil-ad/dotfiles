@@ -6,7 +6,7 @@
     "window.menuBarVisibility": "toggle",
     "window.titleBarStyle": "native",
     "window.customTitleBarVisibility": "auto",
-    "editor.fontFamily": "'Iosevka Medium', 'Cascadia Code', 'Symbols Nerd Font', 'Noto Color Emoji', 'Vazirmatn UI NL', 'Material Icons'",
+    "editor.fontFamily": "'JetBrains Mono','Cascadia Code', 'Symbols Nerd Font', 'Noto Color Emoji', 'Vazirmatn UI NL', 'Iosevka Medium', 'Material Icons'",
     "editor.fontWeight": "500",
     "editor.fontSize": 18,
     "editor.formatOnSave": false,
@@ -70,7 +70,7 @@
     "terminal.integrated.showExitAlert": false,
     "terminal.integrated.shellIntegration.enabled": false,
     "terminal.integrated.useWslProfiles": false,
-    "terminal.integrated.fontSize": 18,
+    "terminal.integrated.fontSize": 15,
     "terminal.integrated.enableImages": true,
     "workbench.tree.enableStickyScroll": false,
     "workbench.editor.enablePreview": true,
@@ -82,8 +82,8 @@
     "workbench.layoutControl.enabled": false,
     "workbench.activityBar.orientation": "vertical",
     "workbench.colorCustomizations": {
-        "terminal.background": "#11111b",
         "[Catppuccin Mocha]": {
+            "terminal.background": "#11111b",
             "terminal.foreground": "#f2e5bc",
             "terminal.ansiBlack": "#d4ba0e",
             "terminal.ansiBrightBlack": "#928374",
@@ -106,6 +106,7 @@
             "focusBorder": "#45475a"
         },
         "[Popping and Locking]": {
+            "terminal.background": "#11111b",
             "widget.border": "#fabd2f"
         }
     },
@@ -258,6 +259,6 @@
     ],
     "go.toolsManagement.autoUpdate": true,
     "git.openRepositoryInParentFolders": "never",
-    "workbench.colorTheme": "Popping and Locking Black Theme",
+    "workbench.colorTheme": "Kanagawa",
     "editor.hover.enabled": false,
 }
