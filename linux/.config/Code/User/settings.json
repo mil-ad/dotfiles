@@ -55,7 +55,7 @@
                     "fontStyle": ""
                 }
             }
-        ]
+        ],
     },
     "terminal.external.linuxExec": "kitty",
     "terminal.external.osxExec": "/Applications/kitty.app",
@@ -70,7 +70,7 @@
     "terminal.integrated.showExitAlert": false,
     "terminal.integrated.shellIntegration.enabled": false,
     "terminal.integrated.useWslProfiles": false,
-    "terminal.integrated.fontSize": 15,
+    "terminal.integrated.fontSize": 13,
     "terminal.integrated.enableImages": true,
     "workbench.tree.enableStickyScroll": false,
     "workbench.editor.enablePreview": true,
@@ -108,6 +108,9 @@
         "[Popping and Locking]": {
             "terminal.background": "#11111b",
             "widget.border": "#fabd2f"
+        },
+        "[Kanagawa]": {
+            "editorWhitespace.foreground": "#363646",
         }
     },
     "workbench.iconTheme": "material-icon-theme",
@@ -261,4 +264,5 @@
     "git.openRepositoryInParentFolders": "never",
     "workbench.colorTheme": "Kanagawa",
     "editor.hover.enabled": false,
+    "github.copilot.nextEditSuggestions.enabled": false,
 }
