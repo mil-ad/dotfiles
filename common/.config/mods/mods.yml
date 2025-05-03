@@ -116,6 +116,9 @@ apis:
         max-input-chars: 128000
   google:
     models:
+      gemini-2.5-pro-preview-03-25:
+        aliases: ["gemini-2.5-pro"]
+        max-input-chars: 1048576
       gemini-1.5-pro-latest:
         aliases: ["gemini"]
         max-input-chars: 392000
