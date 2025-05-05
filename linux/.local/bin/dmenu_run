@@ -1,15 +1,15 @@
 #!/bin/sh
 
-set -x
-
 selected_program=$(dmenu_path | rofimenu -l 10)
 
 case "$selected_program" in
-    "transmission-gtk"|"pavucontrol"|"rnote"|"transmission-gtk"|"brave"|"brave-browser"|"code"|"google-chrome"|"slack"|"1password")
+    "transmission-gtk"|"pavucontrol"|"rnote")
        nohup ${SHELL:-"/bin/sh"} -c "GDK_SCALE=1 GDK_DPI_SCALE=1 $selected_program" < /dev/null > /dev/null 2>&1 &
+        ;;
+    "rnote"|"brave"|"brave-browser"|"code"|"google-chrome"|"slack"|"1password")
+       nohup ${SHELL:-"/bin/sh"} -c "$selected_program --force-device-scale-factor=2 --force-dark-mode" < /dev/null > /dev/null 2>&1 &
         ;;
     *)
         nohup ${SHELL:-"/bin/sh"} -c "$selected_program" < /dev/null > /dev/null 2>&1 &
         ;;
 esac
-
