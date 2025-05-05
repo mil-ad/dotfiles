@@ -1,0 +1,29 @@
+@font-face {
+  font-family: 'milad-icomoon';
+  src:
+    url('fonts/milad-icomoon.ttf?1wdqy9') format('truetype'),
+    url('fonts/milad-icomoon.woff?1wdqy9') format('woff'),
+    url('fonts/milad-icomoon.svg?1wdqy9#milad-icomoon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'milad-icomoon' !important;
+  speak: never;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-mullvad:before {
+  content: "\e900";
+}
