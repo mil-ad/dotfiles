@@ -204,7 +204,7 @@ bindsym $mod+z --release exec --no-startup-id shotgun $(slop -f "-i %i -g %g") -
 bindsym $mod+Shift+r exec --no-startup-id  ~/.local/bin/open-github-pr
 bindsym $mod+Shift+t exec --no-startup-id  ~/.local/bin/review-todoist-tasks
 bindsym $mod+Shift+z exec --no-startup-id shotgun $(slop -f "-i %i -g %g") "$HOME/Pictures/screenshot-$(date +%F_%T).png" && notify-send "📸 Screenshot region saved to ${HOME}/Pictures"
-bindsym $mod+Shift+Return exec pcmanfm-qt
+bindsym $mod+Shift+Return exec pcmanfm
 
 bindsym $mod+Ctrl+o exec --no-startup-id $HOME/.local/bin/openfile
 bindsym $mod+Ctrl+p exec --no-startup-id ~/.local/bin/open_paper_no_annotations

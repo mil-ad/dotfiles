@@ -23,13 +23,15 @@ case $(hostnamectl --static) in
 		;;
 esac
 
-#export GDK_SCALE=2
-#export GDK_DPI_SCALE=0.5
+export GDK_SCALE=2
+export GDK_DPI_SCALE=0.5
+
 #export QT_AUTO_SCREEN_SCALE_FACTOR=1
 #export QT_STYLE_OVERRIDE=adwaita-dark
 export QT_QPA_PLATFORMTHEME=qt5ct:qt6ct
 export QT_ENABLE_HIGHDPI_SCALING=1
 export QT_AUTO_SCREEN_SCALE_FACTOR=1
+
 export GTK_THEME=Adwaita:dark
 
 # e.g. clipmenud relies on this
