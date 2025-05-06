@@ -24,3 +24,5 @@ _fzf_comprun() {
     *)            fzf "$@" ;;
   esac
 }
+
+bindkey ${FZF_WD_BINDKEY:-'^B'} wd_browse_widget
