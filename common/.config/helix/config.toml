@@ -30,12 +30,21 @@ nnbsp = "␣"
 tab = "→"
 newline = "⏎"
 
+[editor.indent-guides]
+render = true
+character = "▏" # Some characters that work well: "▏", "┆", "┊", "⸽"
+skip-levels = 1
+
 [editor.soft-wrap]
 enable = true
 
 [keys.normal]
 C-g = [":new", ":insert-output lazygit", ":buffer-close!", ":redraw"]
-#C-y = [ ':sh rm -f /tmp/yazi-path', ':insert-output yazi %{buffer_name} --chooser-file=/tmp/yazi-path', ":open %sh{cat /tmp/yazi-path}", ":redraw" ]
-
-[keys.normal.space]
-t = ":run-shell-command kitty @ launch --location=vsplit --cwd $(pwd)"
+C-y = [
+  ':sh rm -f /tmp/unique-file',
+  ':insert-output yazi %{buffer_name} --chooser-file=/tmp/unique-file',
+  ':insert-output echo "\x1b[?1049h\x1b[?2004h" > /dev/tty',
+  ':open %sh{cat /tmp/unique-file}',
+  ':redraw',
+]
+"C-`" = ":sh kitty @ launch --location=vsplit --cwd $(pwd) > /dev/null"
