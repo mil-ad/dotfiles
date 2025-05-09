@@ -10,6 +10,6 @@ case "$selected_program" in
        nohup ${SHELL:-"/bin/sh"} -c "$selected_program --force-device-scale-factor=2 --force-dark-mode" < /dev/null > /dev/null 2>&1 &
         ;;
     *)
-        nohup ${SHELL:-"/bin/sh"} -c "$selected_program" < /dev/null > /dev/null 2>&1 &
-        ;;
+      nohup ${SHELL:-"/bin/sh"} -c "$selected_program" < /dev/null > /dev/null 2>&1 &
+      ;;
 esac
