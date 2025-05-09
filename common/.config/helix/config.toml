@@ -39,7 +39,13 @@ skip-levels = 1
 enable = true
 
 [keys.normal]
-C-g = [":new", ":insert-output lazygit", ":buffer-close!", ":redraw"]
+C-g = [
+    ":new", 
+    ":insert-output lazygit", 
+    ":buffer-close!", 
+    ":redraw", 
+    ":reload-all"
+]
 C-y = [
   ':sh rm -f /tmp/unique-file',
   ':insert-output yazi %{buffer_name} --chooser-file=/tmp/unique-file',
@@ -47,4 +53,4 @@ C-y = [
   ':open %sh{cat /tmp/unique-file}',
   ':redraw',
 ]
-"C-`" = ":sh kitty @ launch --location=vsplit --cwd $(pwd) > /dev/null"
+"C-t" = ":sh kitty @ launch --location=vsplit --cwd $(pwd) > /dev/null"
