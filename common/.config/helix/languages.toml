@@ -1,11 +1,21 @@
 [[language]]
 name = "python"
-language-servers = ["ruff", "pylsp"]
+language-servers = ["ruff", "basedpyright"]
+auto-format = false
+formatter = { command = "uvx", args = ["ruff","format", "-" ] }
 
 [language-server.pylsp.config.pylsp]
 plugins.ruff.enabled = true
-plugins.black.enabled = true
+plugins.black.enabled = false
 
 # Temporary until this lands on the latest release
 [language-server.golangci-lint-lsp.config]
 command = ["golangci-lint", "run", "--output.json.path=stdout", "--show-stats=false", "--issues-exit-code=1"]
+
+[language-server.basedpyright]
+command = 'uvx'
+args = ['--from', 'basedpyright', 'basedpyright-langserver', "--stdio"]
+
+# https://github.com/helix-editor/helix/discussions/6816
+[language-server.basedpyright.config]
+python.pythonPath = ".venv/bin/python"

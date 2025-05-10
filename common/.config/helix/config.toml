@@ -36,6 +36,9 @@ nnbsp = "␣"
 tab = "→"
 newline = "⏎"
 
+[editor.statusline]
+right = ["diagnostics", "position-percentage", "file-type"]
+
 [editor.indent-guides]
 render = true
 character = "▏" # Some characters that work well: "▏", "┆", "┊", "⸽"
@@ -46,12 +49,12 @@ enable = true
 
 [keys.normal]
 C-g = [
-    ":new", 
-    ":insert-output lazygit", 
-    ":buffer-close!", 
+    ":write-all", # without this the reload-all will get rid of unsaved changes?
+    ":noop %sh{kitty @ launch --type=overlay --cwd $(pwd) lazygit}",
     ":redraw", 
     ":reload-all"
 ]
+
 C-y = [
   ':sh rm -f /tmp/unique-file',
   ':insert-output yazi %{buffer_name} --chooser-file=/tmp/unique-file',
@@ -59,4 +62,10 @@ C-y = [
   ':open %sh{cat /tmp/unique-file}',
   ':redraw',
 ]
-"C-t" = ":sh kitty @ launch --location=vsplit --cwd $(pwd) > /dev/null"
+"C-t" = ":sh kitty @ launch --type=overlay --cwd $(pwd) > /dev/null"
+"C-`" = ":sh kitty @ launch --location=vsplit --bias -20 --cwd $(pwd) > /dev/null"
+
+[keys.normal.space.space]
+# Show blame info for current line
+b = ":sh git -C $(dirname $(realpath %{buffer_name})) blame -L %{cursor_line},%{cursor_line} $(realpath %{buffer_name})"
+

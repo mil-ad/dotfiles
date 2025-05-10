@@ -70,7 +70,7 @@
     "terminal.integrated.showExitAlert": false,
     "terminal.integrated.shellIntegration.enabled": false,
     "terminal.integrated.useWslProfiles": false,
-    "terminal.integrated.fontSize": 15,
+    "terminal.integrated.fontSize": 11,
     "terminal.integrated.enableImages": true,
     "workbench.tree.enableStickyScroll": false,
     "workbench.editor.enablePreview": true,
@@ -178,7 +178,7 @@
         "editor.wordWrap": "bounded",
         "editor.wordWrapColumn": 80,
         "files.trimTrailingWhitespace": false,
-        "diffEditor.ignoreTrimWhitespace": true
+        "diffEditor.ignoreTrimWhitespace": false
     },
     "python.languageServer": "Pylance",
     "python.analysis.typeCheckingMode": "standard",
@@ -255,14 +255,14 @@
         "file:///home/milad/.dotfiles/linux/.config/Code/User/custom-css.css"
     ],
     "cursor.cpp.disabledLanguages": [
-        "plaintext",
-        "markdown",
+        // "plaintext",
+        // "markdown",
         "scminput"
     ],
     "go.toolsManagement.autoUpdate": true,
     "git.openRepositoryInParentFolders": "never",
     "workbench.colorTheme": "Kanagawa",
-    "editor.hover.enabled": false,
+    "editor.hover.enabled": true,
     "github.copilot.nextEditSuggestions.enabled": false,
     "terminal.integrated.sendKeybindingsToShell": true,
 }
