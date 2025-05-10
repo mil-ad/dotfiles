@@ -69,7 +69,6 @@ alias lsym='ls -l `find . -maxdepth 1 -type l -print`'
 alias more="less"
 alias vi="nvim"
 alias vim='NVIM_APPNAME="nvim-kickstart" nvim'
-alias hx="helix"
 alias cal='cal -3'
 
 alias df='df -h'
