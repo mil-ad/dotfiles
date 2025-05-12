@@ -1,4 +1,5 @@
 xrdb -merge $HOME/.Xresources
+#/usr/bin/xsetting &
 
 if [ -d /etc/X11/xinit/xinitrc.d ] ; then
  for f in /etc/X11/xinit/xinitrc.d/?*.sh ; do
@@ -33,8 +34,5 @@ export QT_ENABLE_HIGHDPI_SCALING=1
 export QT_AUTO_SCREEN_SCALE_FACTOR=1
 
 export GTK_THEME=Adwaita:dark
-
-# e.g. clipmenud relies on this
-systemctl --user import-environment DISPLAY
 
 exec i3

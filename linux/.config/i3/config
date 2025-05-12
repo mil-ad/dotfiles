@@ -201,7 +201,7 @@ bindsym $mod+i exec --no-startup-id ~/.local/bin/search
 bindsym $mod+u exec --no-startup-id ~/.local/bin/openurl
 bindsym $mod+o exec --no-startup-id ~/.local/bin/openrecentfile
 bindsym $mod+p exec --no-startup-id ~/.local/bin/open_paper
-bindsym $mod+v exec --no-startup-id clipmenu
+bindsym $mod+v exec --no-startup-id ~/.local/bin/clipmenu
 bindsym $mod+r exec --no-startup-id  ~/.local/bin/open_github_repo
 bindsym $mod+t exec --no-startup-id  ~/.local/bin/add-todoist-task
 bindsym $mod+z --release exec --no-startup-id shotgun $(slop -f "-i %i -g %g") - | xclip -selection clipboard -t image/png
@@ -298,5 +298,6 @@ exec --no-startup-id redshift -l 51.50:0.127 -t 6500:3500
 exec --no-startup-id xss-lock --transfer-sleep-lock -- ~/.local/bin/betterblurlock
 exec --no-startup-id nitrogen --restore
 exec --no-startup-id dunst -config ~/.config/dunst/dunstrc
+exec_always --no-startup-id clipcatd
 exec_always --no-startup-id ~/.scripts/kill_until_dead polybar && ~/.scripts/start_polybar
 exec_always --no-startup-id ~/.scripts/kill_until_dead picom && picom
