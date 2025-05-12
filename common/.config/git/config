@@ -28,6 +28,7 @@
     conflictstyle = diff3
 [alias]
     wdiff = diff --color-words
+	unstage = restore --staged .
 [color "status"]
     added = yellow
     changed = green
