@@ -19,6 +19,7 @@ menu_items=(
     "📹 record area"
     "📸 screenshot program"
     "🖖 (un)split monitor"
+    "🔄 switch monitor input"
     "🚪 logout"
     "🚀 reboot"
     "🐻 hibernate"
@@ -38,6 +39,7 @@ case "$selected_option" in
     '🚪 logout') i3-msg exit ;;
     '🔫 xkill') xkill ;;
     '🖖 (un)split monitor') ~/.local/bin/toggle_virtual_monitors ;;
+    "🔄 switch monitor input") ~/.local/bin/switch-monitor-input ;;
     '♻️ restart i3') i3-msg restart ;;
     '🚀 reboot')  systemctl reboot ;;
     '🖥 shutdown') systemctl poweroff ;;
