@@ -62,8 +62,16 @@ C-y = [
   ':open %sh{cat /tmp/unique-file}',
   ':redraw',
 ]
+
 "C-t" = ":sh kitty @ launch --type=overlay --cwd $(pwd) > /dev/null"
 "C-`" = ":sh kitty @ launch --location=vsplit --bias -20 --cwd $(pwd) > /dev/null"
+
+[keys.normal.z]
+"d" = [
+  ":toggle inline-diagnostics.cursor-line disable error",
+  ":toggle inline-diagnostics.other-lines disable error",
+]
+
 
 [keys.normal.space.space]
 # Show blame info for current line
