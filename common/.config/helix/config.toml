@@ -7,12 +7,20 @@ mouse = true
 popup-border = "all"
 cursorline = true
 clipboard-provider = "termcode"
+rulers = [88, 120]
+gutters = [
+  # "diagnostics",
+  "spacer",
+  "line-numbers",
+  "spacer",
+  "diff"
+]
 
 # Minimum severity of diagnostics
 end-of-line-diagnostics = "disable"
 
 [editor.inline-diagnostics]
-cursor-line = "error" # show warnings and errors on the cursorline inline
+cursor-line = "disable" # show warnings and errors on the cursorline inline
 other-lines = "error"
 
 [editor.lsp]
@@ -66,14 +74,10 @@ C-y = [
 "C-t" = ":sh kitty @ launch --type=overlay --cwd $(pwd) > /dev/null"
 "C-`" = ":sh kitty @ launch --location=vsplit --bias -20 --cwd $(pwd) > /dev/null"
 
-[keys.normal.z]
-"d" = [
-  ":toggle inline-diagnostics.cursor-line disable error",
-  ":toggle inline-diagnostics.other-lines disable error",
-]
-
-
 [keys.normal.space.space]
 # Show blame info for current line
 b = ":sh git -C $(dirname $(realpath %{buffer_name})) blame -L %{cursor_line},%{cursor_line} $(realpath %{buffer_name})"
+
+R = ":lsp-restart"
+r = ":lsp-stop"
 
