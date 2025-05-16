@@ -80,4 +80,3 @@ b = ":sh git -C $(dirname $(realpath %{buffer_name})) blame -L %{cursor_line},%{
 
 R = ":lsp-restart"
 r = ":lsp-stop"
-
