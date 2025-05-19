@@ -23,7 +23,7 @@ menu_items=(
     "🚪 logout"
     "🚀 reboot"
     "🐻 hibernate"
-    "🖥 shutdown"
+    "🖥 power off"
 )
 
 selected_option=$(printf "%s\n" "${menu_items[@]}" | rofimenu)
@@ -42,6 +42,6 @@ case "$selected_option" in
     "🔄 switch monitor input") ~/.local/bin/switch-monitor-input ;;
     '♻️ restart i3') i3-msg restart ;;
     '🚀 reboot')  systemctl reboot ;;
-    '🖥 shutdown') systemctl poweroff ;;
+    '🖥 power off') systemctl poweroff ;;
     *) exit 1 ;;
 esac
