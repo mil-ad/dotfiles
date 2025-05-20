@@ -17,3 +17,6 @@
 
 "brightnessctl set 5%-"
   XF86MonBrightnessDown
+
+"autorandr --change --force"
+  XF86Display
