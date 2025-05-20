@@ -2,13 +2,13 @@
     "window.restoreWindows": "none",
     "window.title": "${rootNameShort}${separator}${profileName}",
     "window.commandCenter": true,
-    "window.zoomLevel": 0,
+    "window.zoomLevel": -1,
     "window.menuBarVisibility": "toggle",
     "window.customTitleBarVisibility": "never",
     "window.titleBarStyle": "native",
     "editor.fontFamily": "'JetBrains Mono','Cascadia Code', 'Symbols Nerd Font', 'Noto Color Emoji', 'Vazirmatn UI NL', 'Iosevka Medium', 'Material Icons'",
     "editor.fontWeight": "500",
-    "editor.fontSize": 18,
+    "editor.fontSize": 14,
     "editor.formatOnSave": false,
     "editor.formatOnPaste": true,
     "editor.formatOnSaveMode": "modifications",
@@ -36,6 +36,8 @@
     "editor.minimap.scale": 1,
     "editor.minimap.renderCharacters": false,
     "editor.codeLens": true,
+    "editor.hover.enabled": true,
+    "editor.tabCompletion": "on",
     "editor.stickyScroll.scrollWithEditor": false,
     "editor.autoClosingBrackets": "never",
     "editor.copyWithSyntaxHighlighting": false,
@@ -70,7 +72,7 @@
     "terminal.integrated.showExitAlert": false,
     "terminal.integrated.shellIntegration.enabled": false,
     "terminal.integrated.useWslProfiles": false,
-    "terminal.integrated.fontSize": 11,
+    "terminal.integrated.fontSize": 19,
     "terminal.integrated.enableImages": true,
     "workbench.tree.enableStickyScroll": false,
     "workbench.editor.enablePreview": true,
@@ -182,6 +184,7 @@
     },
     "python.languageServer": "Pylance",
     "python.analysis.typeCheckingMode": "standard",
+    "python.analysis.languageServerMode": "light",
     "python.terminal.activateEnvironment": true,
     "python.testing.pytestEnabled": false,
     "python.testing.unittestEnabled": false,
@@ -191,6 +194,53 @@
     "jupyter.interactiveWindow.textEditor.executeSelection": true,
     "notebook.output.textLineLimit": 200,
     "notebook.lineNumbers": "on",
+    "notebook.output.fontSize": 12,
+    "notebook.markup.fontSize": 12,
+    "git-graph.showStatusBarItem": false,
+    "rewrap.autoWrap.enabled": false,
+    "markdown.marp.html": "all",
+    "markdown.marp.browser": "chrome",
+    "markdown.marp.themes": [
+        "/home/milad/Documents/presentations/esp_compute/themes/compiled"
+    ],
+    "accessibility.signals.terminalCommandFailed": {
+        "sound": "off"
+    },
+    "git-blame.config.showBlameInline": false,
+    "diffEditor.ignoreTrimWhitespace": true,
+    "ruff.nativeServer": true,
+    "interactiveWindow.showExecutionHint": false,
+    "interactiveWindow.executeWithShiftEnter": true,
+    "spellright.notificationClass": "information",
+    "spellright.configurationScope": "user",
+    "spellright.language": [
+        "en-US"
+    ],
+    "gitlens.codeLens.enabled": false,
+    "vscode_custom_css.imports": [
+        "file:///home/milad/.dotfiles/linux/.config/Code/User/custom-css.css"
+    ],
+    "cursor.cpp.disabledLanguages": [
+        // "plaintext",
+        // "markdown",
+        "scminput"
+    ],
+    "go.toolsManagement.autoUpdate": true,
+    "git.openRepositoryInParentFolders": "never",
+    "workbench.colorTheme": "Kanagawa",
+    "github.copilot.nextEditSuggestions.enabled": false,
+    "terminal.integrated.sendKeybindingsToShell": true,
+    "cursor.chat.terminalShowHoverHint": false,
+    "github.copilot.enable": {
+        "*": false,
+        "plaintext": false,
+        "markdown": false,
+        "scminput": false,
+        "python": true
+    },
+    "markdown.preview.fontSize": 12,
+    "gopls.ui.semanticTokens": true,
+    "rust-analyzer.highlighting.strings": true,
     "latex-workshop.view.pdf.viewer": "external",
     "latex-workshop.view.pdf.external.viewer.command": "sioyek",
     "latex-workshop.view.pdf.external.synctex.command": "sioyek",
@@ -230,39 +280,4 @@
             ]
         }
     ],
-    "git-graph.showStatusBarItem": false,
-    "rewrap.autoWrap.enabled": false,
-    "markdown.marp.html": "all",
-    "markdown.marp.browser": "chrome",
-    "markdown.marp.themes": [
-        "/home/milad/Documents/presentations/esp_compute/themes/compiled"
-    ],
-    "accessibility.signals.terminalCommandFailed": {
-        "sound": "off"
-    },
-    "git-blame.config.showBlameInline": false,
-    "diffEditor.ignoreTrimWhitespace": true,
-    "ruff.nativeServer": true,
-    "interactiveWindow.showExecutionHint": false,
-    "interactiveWindow.executeWithShiftEnter": true,
-    "spellright.notificationClass": "information",
-    "spellright.configurationScope": "user",
-    "spellright.language": [
-        "en-US"
-    ],
-    "gitlens.codeLens.enabled": false,
-    "vscode_custom_css.imports": [
-        "file:///home/milad/.dotfiles/linux/.config/Code/User/custom-css.css"
-    ],
-    "cursor.cpp.disabledLanguages": [
-        // "plaintext",
-        // "markdown",
-        "scminput"
-    ],
-    "go.toolsManagement.autoUpdate": true,
-    "git.openRepositoryInParentFolders": "never",
-    "workbench.colorTheme": "Kanagawa",
-    "editor.hover.enabled": true,
-    "github.copilot.nextEditSuggestions.enabled": false,
-    "terminal.integrated.sendKeybindingsToShell": true,
 }
