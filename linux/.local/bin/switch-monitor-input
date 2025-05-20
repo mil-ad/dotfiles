@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+assert_installed ddcutil rofimenu || exit 1
+
 shopt -s lastpipe
 
 set -x
