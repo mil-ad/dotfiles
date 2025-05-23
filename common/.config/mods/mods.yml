@@ -1,5 +1,4 @@
-# Default model (gpt-3.5-turbo, gpt-4, ggml-gpt4all-j...).
-default-model: claude-3-7-sonnet-20250219
+default-model: claude-sonnet-4-0
 # Text to append when using the -f flag.
 format-text:
   markdown: 'Format the response as markdown without enclosing backticks.'
@@ -95,6 +94,8 @@ apis:
     api-key:
     api-key-env: ANTHROPIC_API_KEY
     models: # https://docs.anthropic.com/en/docs/about-claude/models
+      claude-sonnet-4-0:
+        max-input-chars: 680000
       claude-3-7-sonnet-20250219:
         max-input-chars: 680000
       claude-3-5-sonnet-20240620:
