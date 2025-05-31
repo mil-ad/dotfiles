@@ -7,7 +7,6 @@ set -x
 kitty \
   --single-instance \
   --override background_opacity=1 \
-  --override background=#222222 \
   --class kitty-app \
   --title $(basename "$1") \
   -- sh --noprofile --norc -c "$*"
