@@ -26,12 +26,14 @@ text/plain=mousepad.desktop
 x-scheme-handler/mailto=userapp-Thunderbird.desktop
 x-scheme-handler/msteams=teams.desktop
 video/mp4=mpv.desktop;
+video/webm=mpv.desktop;
 video/mpeg=mpv.desktop;
 video/quicktime=mpv.desktop;
 video/x-matroska=mpv.desktop;
 video/x-ms-wmv=mpv.desktop;
 audio/ogg=mpv.desktop;
 audio/mpeg=mpv.desktop;
+audio/x-opus+ogg=mpv.desktop;
 
 [Added Associations]
 application/epub+zip=zathura.desktop;
