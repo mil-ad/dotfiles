@@ -58,6 +58,7 @@ set $purple #b16286
 set $aqua #689d68
 set $grey #928374
 set $darkgray #1d2021
+set $white #f9f5d7
 set $bg #282828
 set $bg0 #282828
 set $fg4 #a89984
@@ -249,6 +250,7 @@ bindsym $mod+Ctrl+space exec --no-startup-id $HOME/.local/bin/enter_snippet $HOM
 # Theme colors
 # class                     border          backgr          text            indicator       child_border
 client.focused              $yellow         $yellow         $darkgray       $aqua           $yellow
+client.focused_tab_title    $yellow         $yellow         $darkgray       $aqua           $yellow
 client.focused_inactive     $darkgray       $darkgray       $yellow         $darkgray       $bg0
 client.unfocused            $yellow         $darkgray       $yellow         $darkgray       $bg0
 client.urgent               $bright_red     $bright_red     $white          $bright_red     $bright_red
