@@ -9,9 +9,9 @@ set -x
 printf "DP-1\nUSB-C\nHDMI-1\nHDMI-2" | rofimenu | read selected_input || exit 1
 
 case "$selected_input" in
-    "DP-1")  ddcutil setvcp xF4 x00D0 --i2c-source-addr=x50 --noverify;;
-    "USB-C")  ddcutil setvcp xF4 x00D1 --i2c-source-addr=x50 --noverify;;
-    "HDMI-1")  ddcutil setvcp xF4 x0090 --i2c-source-addr=x50 --noverify;;
-    "HDMI-2")  ddcutil setvcp xF4 x0091 --i2c-source-addr=x50 --noverify;;
+    "DP-1") ddcutil setvcp xF4 x00D0 --i2c-source-addr=x50 ;;
+    "USB-C") ddcutil setvcp xF4 x00D1 --i2c-source-addr=x50 ;;
+    "HDMI-1") ddcutil setvcp xF4 x0090 --i2c-source-addr=x50 ;;
+    "HDMI-2") ddcutil setvcp xF4 x0091 --i2c-source-addr=x50 ;;
     *) exit 1 ;;
 esac
