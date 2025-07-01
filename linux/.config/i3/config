@@ -28,8 +28,8 @@ hide_edge_borders none
 # configure window title
 title_align center
 for_window [all] title_format %title
+for_window [class="kitty"] title_format " "
 for_window [class="kitty-app"] title_format %title
-for_window [class="kitty"] title_format %class
 for_window [all] title_window_icon padding 5px
 
 # Disable gaps and borders when there's only one container
@@ -127,6 +127,11 @@ bindsym $mod+Shift+Left move left
 bindsym $mod+Shift+Down move down
 bindsym $mod+Shift+Up move up
 bindsym $mod+Shift+Right move right
+
+bindsym $mod+Shift+h move left
+bindsym $mod+Shift+j move down
+bindsym $mod+Shift+k move up
+bindsym $mod+Shift+l move right
 
 # workspace back and forth (with/without active container)
 bindsym $mod+bracketleft workspace back_and_forth
@@ -295,6 +300,7 @@ for_window [title="Picture-in-Picture"] sticky enable border none
 ##########################################
 #         Start-up Applications
 ##########################################
+exec --no-startup-id tuned-adm profile desktop
 exec --no-startup-id seafile-applet
 exec --no-startup-id redshift -l 51.50:0.127 -t 6500:3500
 exec --no-startup-id xss-lock --transfer-sleep-lock -- ~/.local/bin/betterblurlock
