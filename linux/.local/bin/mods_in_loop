@@ -1,5 +1,8 @@
 #!/usr/bin/env bash
 
+
+#exec &> >(tee /tmp/mods.log)
+
 assert_installed gum mods
 assert_defined ANTHROPIC_API_KEY
 
