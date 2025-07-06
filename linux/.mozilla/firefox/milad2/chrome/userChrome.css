@@ -1,112 +1,325 @@
+/* New Tab Flash */
 :root {
-    --tab-toolbar-navbar-overlap: 0px !important;
-    /* fix for full screen mode */
-    --tab-min-height: 15px !important;
+    --newtab-textbox-background-color: #272b35;
 }
 
-:root #tabbrowser-tabs {
-    --tab-min-height: 15px !important;
+/* Hide right click menu items */
+#context-bookmarklink,
+#context-savelinktopocket,
+#context-searchselect,
+#context-sendimage,
+#context-back,
+#context-forward,
+#context-reload,
+#context-bookmarkpage,
+#context-sep-navigation,
+#context-viewimageinfo,
+#inspect-separator,
+#context-inspect-a11y,
+#context-video-saveimage,
+#context-sendvideo,
+#context-viewpartialsource-selection,
+#context-print-selection,
+#context-sep-selectall,
+#context-viewinfo {
+    display: none !important;
 }
 
-#tabbrowser-tabs {
-    height: 1em !important;
+/* Replace favicon on tabs with close button on hover */
+.tabbrowser-tab:not(:hover) .tab-close-button {
+    display: none;
 }
 
-/* Tabs: remove padding/margin, shrink height, smaller fonts */
-tab {
-    padding: 0 !important;
-    margin: 0 !important;
-    min-height: 24px !important;
+.tabbrowser-tab:not([pinned]):hover .tab-close-button {
+    display: block !important;
 }
 
-/* Tab text: smaller font size */
-.tab-text {
-    font-family: Vazir WOL, Iosevka, monospace !important;
-    font-size: 11px !important;
-    line-height: 1.2 !important;
+
+/* .tabbrowser-tab:not([pinned]):hover .tab-icon-image {
+    display: none !important;
+} */
+
+.tabbrowser-tab:hover .tab-throbber,
+.tabbrowser-tab:hover .tab-icon-image,
+.tabbrowser-tab:hover .tab-sharing-icon-overlay,
+.tabbrowser-tab:hover .tab-icon-overlay,
+.tabbrowser-tab:hover .tab-label-container,
+.tabbrowser-tab:hover .tab-icon-sound {
+    -moz-box-ordinal-group: 2 !important;
 }
 
-/* Remove spacing below tabs */
-#TabsToolbar {
-    margin-bottom: 0 !important;
-    padding-bottom: 0 !important;
-    height: var(--tab-min-height) !important;
+.tabbrowser-tab .tab-close-button {
+    margin-left: -2px !important;
+    margin-right: 2px !important;
 }
 
-/* Remove any margin/padding on tab backgrounds and eliminate rounded borders */
-.tab-background {
-    margin: 0 !important;
-    padding: 0 !important;
-    border: none !important;
+#appMenu-fxa-separator,
+toolbarseparator {
+    display: none !important;
+}
+
+#urlbar,
+#urlbar-container,
+#urlbar-input-container,
+#urlbar-background,
+#searchbar,
+.searchbar-textbox {
     box-shadow: none !important;
-    border-radius: 0 !important;
-    /* <-- remove round borders */
-}
-
-/* Make tab contents more compact vertically */
-.tab-content {
-    padding-top: 0 !important;
-    padding-bottom: 0 !important;
-    margin-top: 0 !important;
-    margin-bottom: 0 !important;
-    min-height: 20px !important;
-    /* reduce tab content height further */
-}
-
-/* Ensure active tab is highlighted cleanly */
-tab[selected="true"] .tab-content {
-    background-color: var(--active) !important;
-    color: var(--bg) !important;
-    border-bottom: 2px solid var(--active) !important;
-}
-
-/* Inactive tabs */
-tab:not([selected="true"]) .tab-content {
-    background-color: var(--inactive) !important;
-    color: var(--fg) !important;
-}
-
-/* Tighten up TabsToolbar spacing */
-#TabsToolbar .toolbar-items,
-#TabsToolbar .titlebar-buttonbox-container {
-    margin: 0 !important;
+    background-color: #272b35 !important;
+    border: none !important;
     padding: 0 !important;
 }
 
-/* Optional: reduce space on tab bar left/right edges */
-#TabsToolbar .scrollbox-innerbox {
-    padding-left: 0 !important;
-    padding-right: 0 !important;
+#navigator-toolbox {
+    --tabs-border-color: transparent !important;
 }
 
-
-/* Make the address bar (urlbar) more compact with smaller font */
-#urlbar {
-    min-height: 28px !important;
-    /* reduce height */
-    font-size: 11px !important;
-    /* smaller font */
-}
-
-/* Reduce padding inside the urlbar for tighter vertical space */
-#urlbar-input-container {
-    padding-top: 0 !important;
-    padding-bottom: 0 !important;
-}
-
-/* Make the popup/search suggestions box match the compact style */
-#urlbar-results {
-    font-size: 11px !important;
-}
-
-/* Adjust the height of the entire navigation bar to match the compact urlbar */
 #nav-bar {
-    min-height: 32px !important;
-    /* optional: adjust toolbar height */
+    border-inline: var(--uc-window-drag-space-width) solid var(--toolbar-bgcolor);
 }
 
-/* Optional: tighten up the bookmarks toolbar if visible */
+/* Remove border around urlbar */
+:root {
+    --toolbar-field-focus-border-color: transparent !important;
+}
+
+/* Remove border under navbar */
+#navigator-toolbox::after {
+    border-bottom: 0px !important;
+}
+
+/* remove some borders */
+#navigator-toolbox {
+    border: none !important;
+}
+
+#titlebar {
+    border: none !important;
+}
+
+/* CENTER URLBAR TEXT - REMOVED */
+/*
+#urlbar #urlbar-input {
+    text-align: center !important
+}
+*/
+
+/* Hide right click menu items */
+#context-bookmarklink,
+#context-savelinktopocket,
+#context-searchselect,
+#context-sendimage,
+#context-back,
+#context-forward,
+#context-reload,
+#context-bookmarkpage,
+#context-sep-navigation,
+#context-viewimageinfo,
+#inspect-separator,
+#context-inspect-a11y,
+#context-video-saveimage,
+#context-sendvideo,
+#context-viewpartialsource-selection,
+#context-print-selection,
+#context-sep-selectall,
+#context-viewinfo {
+    display: none !important;
+}
+
+/* HIDE ITEMS IN URLBAR */
+#tracking-protection-icon-container,
+#identity-icon-box,
+#urlbar-search-button {
+    display: none !important;
+    width: 0 !important;
+    height: 0 !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    border: 0 !important;
+}
+
+/* CHANGE BACKGROUND COLOR OF URLBAR AREAS */
+#PanelUI-button,
+#nav-bar-customization-target {
+    background-color: #272b35 !important;
+    border: none !important;
+}
+
+#navigator-toolbox {
+    background-color: #272b35 !important;
+    border: none !important;
+}
+
+.search-one-offs,
+.urlbarView-body-outer,
+.urlbarView-body-inner {
+    border: none !important;
+}
+
+
+/* Hide tabs when only one open*/
+:root {
+    --tab-block-margin: var(--proton-tab-block-margin)
+}
+
+:root[sizemode="normal"] #nav-bar {
+    --uc-window-drag-space-width: 20px
+}
+
+#titlebar {
+    -moz-appearance: none !important;
+}
+
+#TabsToolbar {
+    min-height: 0px !important
+}
+
+#tabbrowser-tabs,
+#tabbrowser-tabs>.tabbrowser-arrowscrollbox,
+#tabbrowser-arrowscrollbox {
+    min-height: 0 !important;
+}
+
+:root:not([customizing]) #tabbrowser-tabs .tabs-newtab-button,
+:root:not([customizing]) #tabs-newtab-button,
+:root:not([customizing]) #TabsToolbar-customization-target>.toolbarbutton-1,
+:root:not([customizing]) #TabsToolbar .titlebar-button {
+    -moz-appearance: none !important;
+    height: 0px;
+    padding-top: 0px !important;
+    padding-bottom: 0px !important;
+    -moz-box-align: stretch;
+    margin: 0 !important;
+}
+
+.accessibility-indicator,
+.private-browsing-indicator {
+    height: unset !important;
+}
+
+.accessibility-indicator>hbox {
+    padding-block: 0 !important
+}
+
+#tabbrowser-tabs .tabbrowser-tab {
+    height: calc(var(--tab-min-height) + 2 * var(--tab-block-margin, 0px))
+}
+
+#tabbrowser-tabs .tabbrowser-tab[first-visible-tab="true"][last-visible-tab="true"] {
+    visibility: collapse !important;
+}
+
+/* Button re-styling */
+#tabs-newtab-button:hover,
+#tabbrowser-tabs .tabs-newtab-button:hover {
+    background-color: var(--toolbarbutton-hover-background)
+}
+
+#tabs-newtab-button>.toolbarbutton-icon,
+#tabbrowser-tabs .tabs-newtab-button>.toolbarbutton-icon {
+    padding: 0 !important;
+    transform: scale(0.6);
+    background-color: transparent !important;
+}
+
+/* Extra top padding  in maximized window */
+@media (-moz-os-version: windows-win7),
+(-moz-os-version: windows-win10) {
+    :root[sizemode="maximized"] #navigator-toolbox {
+        padding-top: 7px !important;
+    }
+}
+
+/* Fix window controls not being clickable */
+:root[tabsintitlebar] #toolbar-menubar[autohide="true"][inactive] {
+    transition: height 0ms steps(1) 80ms;
+}
+
+:where(#nav-bar) {
+    border-inline: var(--uc-window-drag-space-width) solid var(--toolbar-bgcolor);
+}
+
+/* ---Tabs/Tab Bar height--- */
+:root {
+    --tab-min-height: 24px !important;
+}
+
+/* Bookmarks bar */
 #PersonalToolbar {
-    min-height: 24px !important;
+    background-color: #272B35 !important;
+}
+
+/* Hide extra lines in tabs */
+hbox.tab-icon-sound {
+    display: none !important;
+}
+
+.tab-icon-sound-label {
+    display: none !important;
+}
+
+/* COMMENTED OUT TO SHOW TAB BAR */
+/*
+#TabsToolbar {
+    visibility: collapse;
+}
+*/
+
+/* Hide a unwanted separator in the right click menu */
+menuseparator {
+    display: none !important;
+}
+
+/* Hide the new extensions button */
+#unified-extensions-button,
+#unified-extensions-button>.toolbarbutton-icon {
+    width: 0px !important;
+    padding: 0px !important;
+}
+
+/* Add padding to sides of urlbar - REMOVED */
+/*
+.urlbar-input-box {
+    padding-left: 22px;
+    padding-right: 22px;
+}
+*/
+
+/* Hide back/forward buttons */
+#back-button,
+#forward-button {
+    display: none !important;
+}
+
+/* Tab styling - smaller font, rectangular shape, no gaps */
+.tabbrowser-tab .tab-label {
     font-size: 11px !important;
+}
+
+.tabbrowser-tab {
+    border-radius: 0 !important;
+    margin-inline: 0 !important;
+    padding-inline: 0 !important;
+}
+
+.tabbrowser-tab .tab-background {
+    border-radius: 0 !important;
+    margin-inline: 0 !important;
+}
+
+/* Address bar font size to match tabs */
+#urlbar #urlbar-input {
+    font-size: 11px !important;
+}
+
+/* Hide new tab button completely */
+#tabs-newtab-button,
+.tabs-newtab-button,
+#tabbrowser-tabs .tabs-newtab-button {
+    display: none !important;
+    visibility: hidden !important;
+    width: 0 !important;
+    height: 0 !important;
+    padding: 0 !important;
+    margin: 0 !important;
 }
