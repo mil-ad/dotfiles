@@ -1,6 +1,8 @@
 /* New Tab Flash */
 :root {
-    --newtab-textbox-background-color: #272b35;
+    --newtab-textbox-background-color: #1d2021;
+    --faded_yellow: #b57614;
+    --dark1: #3c3836;
 }
 
 /* Hide right click menu items */
@@ -65,7 +67,7 @@ toolbarseparator {
 #searchbar,
 .searchbar-textbox {
     box-shadow: none !important;
-    background-color: #272b35 !important;
+    background-color: #1d2021 !important;
     border: none !important;
     padding: 0 !important;
 }
@@ -141,12 +143,12 @@ toolbarseparator {
 /* CHANGE BACKGROUND COLOR OF URLBAR AREAS */
 #PanelUI-button,
 #nav-bar-customization-target {
-    background-color: #272b35 !important;
+    background-color: #1d2021 !important;
     border: none !important;
 }
 
 #navigator-toolbox {
-    background-color: #272b35 !important;
+    background-color: #1d2021 !important;
     border: none !important;
 }
 
@@ -171,13 +173,15 @@ toolbarseparator {
 }
 
 #TabsToolbar {
-    min-height: 0px !important
+    min-height: 0px !important;
+    background-color: #1d2021 !important;
 }
 
 #tabbrowser-tabs,
 #tabbrowser-tabs>.tabbrowser-arrowscrollbox,
 #tabbrowser-arrowscrollbox {
     min-height: 0 !important;
+    background-color: #1d2021 !important;
 }
 
 :root:not([customizing]) #tabbrowser-tabs .tabs-newtab-button,
@@ -202,7 +206,24 @@ toolbarseparator {
 }
 
 #tabbrowser-tabs .tabbrowser-tab {
-    height: calc(var(--tab-min-height) + 2 * var(--tab-block-margin, 0px))
+    height: calc(var(--tab-min-height) + 2 * var(--tab-block-margin, 0px));
+    /* background-color: #1d2021 !important; */
+}
+
+/* Active tab background color */
+#tabbrowser-tabs .tabbrowser-tab[selected] .tab-background {
+    background-color: #3c3836 !important;
+    /* border-color: var(--faded_yellow) !important;
+    border: solid;
+    border-width: 1px; */
+}
+
+/* Non-active tab background color */
+#tabbrowser-tabs .tabbrowser-tab:not([selected]) .tab-background {
+    background-color: #1d2021 !important;
+    /* border-color: var(--dark1) !important;
+    border: solid;
+    border-width: 1px; */
 }
 
 #tabbrowser-tabs .tabbrowser-tab[first-visible-tab="true"][last-visible-tab="true"] {
@@ -246,7 +267,7 @@ toolbarseparator {
 
 /* Bookmarks bar */
 #PersonalToolbar {
-    background-color: #272B35 !important;
+    background-color: #1d2021 !important;
 }
 
 /* Hide extra lines in tabs */
@@ -291,6 +312,12 @@ menuseparator {
     display: none !important;
 }
 
+/* Hide bookmark button */
+#bookmarks-menu-button,
+#star-button {
+    display: none !important;
+}
+
 /* Tab styling - smaller font, rectangular shape, no gaps */
 .tabbrowser-tab .tab-label {
     font-size: 11px !important;
@@ -312,6 +339,14 @@ menuseparator {
     font-size: 11px !important;
 }
 
+/* Make favicons smaller */
+.tab-icon-image {
+    width: 14px !important;
+    height: 14px !important;
+    min-width: 14px !important;
+    min-height: 14px !important;
+}
+
 /* Hide new tab button completely */
 #tabs-newtab-button,
 .tabs-newtab-button,
@@ -322,4 +357,36 @@ menuseparator {
     height: 0 !important;
     padding: 0 !important;
     margin: 0 !important;
+}
+
+
+/* Hide nav-bar / urlbar by default, show on focus */
+
+#urlbar {
+    margin-top: -400px;
+    transition: none;
+}
+
+#urlbar:focus-within {
+    margin-top: 0px;
+    transition: none;
+}
+
+
+#nav-bar {
+    height: 0 !important;
+    min-height: 0 !important;
+    overflow: hidden !important;
+    opacity: 0 !important;
+    pointer-events: none !important;
+    transition: none;
+}
+
+#nav-bar:focus-within {
+    height: auto !important;
+    min-height: initial !important;
+    opacity: 1 !important;
+    pointer-events: auto !important;
+    transition: none;
+    overflow: visible !important;
 }
