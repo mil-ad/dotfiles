@@ -1,0 +1,112 @@
+:root {
+    --tab-toolbar-navbar-overlap: 0px !important;
+    /* fix for full screen mode */
+    --tab-min-height: 15px !important;
+}
+
+:root #tabbrowser-tabs {
+    --tab-min-height: 15px !important;
+}
+
+#tabbrowser-tabs {
+    height: 1em !important;
+}
+
+/* Tabs: remove padding/margin, shrink height, smaller fonts */
+tab {
+    padding: 0 !important;
+    margin: 0 !important;
+    min-height: 24px !important;
+}
+
+/* Tab text: smaller font size */
+.tab-text {
+    font-family: Vazir WOL, Iosevka, monospace !important;
+    font-size: 11px !important;
+    line-height: 1.2 !important;
+}
+
+/* Remove spacing below tabs */
+#TabsToolbar {
+    margin-bottom: 0 !important;
+    padding-bottom: 0 !important;
+    height: var(--tab-min-height) !important;
+}
+
+/* Remove any margin/padding on tab backgrounds and eliminate rounded borders */
+.tab-background {
+    margin: 0 !important;
+    padding: 0 !important;
+    border: none !important;
+    box-shadow: none !important;
+    border-radius: 0 !important;
+    /* <-- remove round borders */
+}
+
+/* Make tab contents more compact vertically */
+.tab-content {
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
+    min-height: 20px !important;
+    /* reduce tab content height further */
+}
+
+/* Ensure active tab is highlighted cleanly */
+tab[selected="true"] .tab-content {
+    background-color: var(--active) !important;
+    color: var(--bg) !important;
+    border-bottom: 2px solid var(--active) !important;
+}
+
+/* Inactive tabs */
+tab:not([selected="true"]) .tab-content {
+    background-color: var(--inactive) !important;
+    color: var(--fg) !important;
+}
+
+/* Tighten up TabsToolbar spacing */
+#TabsToolbar .toolbar-items,
+#TabsToolbar .titlebar-buttonbox-container {
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+/* Optional: reduce space on tab bar left/right edges */
+#TabsToolbar .scrollbox-innerbox {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+}
+
+
+/* Make the address bar (urlbar) more compact with smaller font */
+#urlbar {
+    min-height: 28px !important;
+    /* reduce height */
+    font-size: 11px !important;
+    /* smaller font */
+}
+
+/* Reduce padding inside the urlbar for tighter vertical space */
+#urlbar-input-container {
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+}
+
+/* Make the popup/search suggestions box match the compact style */
+#urlbar-results {
+    font-size: 11px !important;
+}
+
+/* Adjust the height of the entire navigation bar to match the compact urlbar */
+#nav-bar {
+    min-height: 32px !important;
+    /* optional: adjust toolbar height */
+}
+
+/* Optional: tighten up the bookmarks toolbar if visible */
+#PersonalToolbar {
+    min-height: 24px !important;
+    font-size: 11px !important;
+}
