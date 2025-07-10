@@ -100,3 +100,6 @@ alias code="GDK_SCALE=1 GDK_DPI_SCALE=1 code"
 alias pavucontrol="GDK_SCALE=1 GDK_DPI_SCALE=1 pavucontrol"
 
 alias sinf='sinfo --format "%25N %10P %.15T %25G %.4c %.10O %30E" -p all'
+alias sq='squeue --Format="JobID:10,Partition:9,Name:30,UserName:20,State:10,TimeUsed:15,NumNodes:6,NodeList:40,NumCPUs:5,tres-alloc:40,tres-per-job:40"'
+alias stail='ls -1 ~/logs/*.log | sort -V | tail -1 | xargs tail -f'
+alias sless='ls -1 ~/logs/*.log | sort -V | tail -1 | xargs less'
