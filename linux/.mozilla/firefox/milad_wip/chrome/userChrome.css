@@ -334,10 +334,14 @@ toolbarseparator {
     }
 }
 
+
+
 /* Fix window controls not being clickable */
 :root[tabsintitlebar] #toolbar-menubar[autohide="true"][inactive] {
     transition: height 0ms steps(1) 80ms;
 }
+
+
 
 /* Bookmarks bar */
 #PersonalToolbar {
