@@ -6,7 +6,7 @@ case "$selected_program" in
     "transmission-gtk"|"pavucontrol"|"rnote")
        nohup ${SHELL:-"/bin/sh"} -c "GDK_SCALE=1 GDK_DPI_SCALE=1 $selected_program" < /dev/null > /dev/null 2>&1 &
         ;;
-    "rnote"|"brave"|"brave-browser"|"code"|"cursor"|"cursor.AppImage"|"google-chrome"|"signal-desktop"|"slack"|"1password")
+    "rnote"|"brave"|"brave-browser"|"code"|"cursor"|"cursor.AppImage"|"google-chrome"|"chromium"|"signal-desktop"|"slack"|"1password"|"vivaldi")
        nohup ${SHELL:-"/bin/sh"} -c "$selected_program --force-device-scale-factor=2 --force-dark-mode" < /dev/null > /dev/null 2>&1 &
         ;;
     *)
