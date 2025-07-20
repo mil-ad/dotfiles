@@ -3,28 +3,53 @@
     --newtab-textbox-background-color: #1d2021;
     --faded_yellow: #b57614;
     --dark1: #3c3836;
-}
 
-/* Hide right click menu items */
-#context-bookmarklink,
-#context-savelinktopocket,
-#context-searchselect,
-#context-sendimage,
-#context-back,
-#context-forward,
-#context-reload,
-#context-bookmarkpage,
-#context-sep-navigation,
-#context-viewimageinfo,
-#inspect-separator,
-#context-inspect-a11y,
-#context-video-saveimage,
-#context-sendvideo,
-#context-viewpartialsource-selection,
-#context-print-selection,
-#context-sep-selectall,
-#context-viewinfo {
-    display: none !important;
+    /* Add missing variables from original */
+    --dark0_hard: #1d2021;
+    --dark0: #282828;
+    --dark0_soft: #32302f;
+    --dark2: #504945;
+    --dark3: #665c54;
+    --dark4: #7c6f64;
+    --dark4_256: #7c6f64;
+
+    --gray_245: #928374;
+    --gray_244: #928374;
+
+    --light0_hard: #f9f5d7;
+    --light0: #fbf1c7;
+    --light0_soft: #f2e5bc;
+    --light1: #ebdbb2;
+    --light2: #d5c4a1;
+    --light3: #bdae93;
+    --light4: #a89984;
+    --light4_256: #a89984;
+
+    --bright_red: #fb4934;
+    --bright_green: #b8bb26;
+    --bright_yellow: #fabd2f;
+    --bright_blue: #83a598;
+    --bright_purple: #d3869b;
+    --bright_aqua: #8ec07c;
+    --bright_orange: #fe8019;
+
+    --neutral_red: #cc241d;
+    --neutral_green: #98971a;
+    --neutral_yellow: #d79921;
+    --neutral_blue: #458588;
+    --neutral_purple: #b16286;
+    --neutral_aqua: #689d6a;
+    --neutral_orange: #d65d0e;
+
+    --faded_red: #9d0006;
+    --faded_green: #79740e;
+    --faded_blue: #076678;
+    --faded_purple: #8f3f71;
+    --faded_aqua: #427b58;
+    --faded_orange: #af3a03;
+
+    --toolbarbutton-icon-fill: #ebdbb2 !important;
+    --toolbar-bgcolor: #1d2021 !important;
 }
 
 /* Replace favicon on tabs with close button on hover */
@@ -35,7 +60,6 @@
 .tabbrowser-tab:not([pinned]):hover .tab-close-button {
     display: block !important;
 }
-
 
 /* Fix pinned tabs being hidden when there are too many tabs */
 .tabbrowser-tab[pinned] {
@@ -78,10 +102,6 @@
     display: none !important;
 }
 
-/* .tabbrowser-tab:not([pinned]):hover .tab-icon-image {
-    display: none !important;
-} */
-
 .tabbrowser-tab:hover .tab-throbber,
 .tabbrowser-tab:hover .tab-icon-image,
 .tabbrowser-tab:hover .tab-sharing-icon-overlay,
@@ -101,16 +121,36 @@ toolbarseparator {
     display: none !important;
 }
 
-#urlbar,
+/* URL bar styling from original - modified for general elements */
 #urlbar-container,
 #urlbar-input-container,
-#urlbar-background,
 #searchbar,
 .searchbar-textbox {
     box-shadow: none !important;
-    background-color: #1d2021 !important;
-    border: none !important;
     padding: 0 !important;
+}
+
+/* URL bar background styling from original */
+#urlbar-background {
+    background-color: var(--dark0) !important;
+    border: solid !important;
+    border-width: 1px !important;
+    border-color: var(--faded_yellow) !important;
+}
+
+#urlbar:not([focused="true"]) #urlbar-background {
+    /* Unfocused state styling */
+}
+
+#urlbar[focused="true"] #urlbar-background {
+    border-width: 2px !important;
+    outline-color: var(--faded_yellow) !important;
+}
+
+#urlbar,
+#searchbar .searchbar-textbox {
+    color: var(--light1) !important;
+    font-family: Iosevka, Vazirmatn !important;
 }
 
 #navigator-toolbox {
@@ -118,7 +158,7 @@ toolbarseparator {
 }
 
 #nav-bar {
-    border-inline: var(--uc-window-drag-space-width) solid var(--toolbar-bgcolor);
+    border-inline: var(--uc-window-drag-space-width) solid var(--toolbar- bgcolor);
 }
 
 /* Remove border around urlbar */
@@ -138,35 +178,6 @@ toolbarseparator {
 
 #titlebar {
     border: none !important;
-}
-
-/* CENTER URLBAR TEXT - REMOVED */
-/*
-#urlbar #urlbar-input {
-    text-align: center !important
-}
-*/
-
-/* Hide right click menu items */
-#context-bookmarklink,
-#context-savelinktopocket,
-#context-searchselect,
-#context-sendimage,
-#context-back,
-#context-forward,
-#context-reload,
-#context-bookmarkpage,
-#context-sep-navigation,
-#context-viewimageinfo,
-#inspect-separator,
-#context-inspect-a11y,
-#context-video-saveimage,
-#context-sendvideo,
-#context-viewpartialsource-selection,
-#context-print-selection,
-#context-sep-selectall,
-#context-viewinfo {
-    display: none !important;
 }
 
 /* HIDE ITEMS IN URLBAR */
@@ -199,6 +210,10 @@ toolbarseparator {
     border: none !important;
 }
 
+/* URL bar dropdown styling from original */
+.urlbarView-row[selected=""]>.urlbarView-row-inner {
+    background-color: var(--faded_yellow) !important;
+}
 
 /* Hide tabs when only one open*/
 :root {
@@ -227,7 +242,7 @@ toolbarseparator {
 
 :root:not([customizing]) #tabbrowser-tabs .tabs-newtab-button,
 :root:not([customizing]) #tabs-newtab-button,
-:root:not([customizing]) #TabsToolbar-customization-target>.toolbarbutton-1,
+:root:not([customizing]) #TabsToolbar-customization-target>.toolbarbutton- 1,
 :root:not([customizing]) #TabsToolbar .titlebar-button {
     -moz-appearance: none !important;
     height: 0px;
@@ -248,26 +263,19 @@ toolbarseparator {
 
 #tabbrowser-tabs .tabbrowser-tab {
     height: calc(var(--tab-min-height) + 2 * var(--tab-block-margin, 0px));
-    /* background-color: #1d2021 !important; */
 }
 
 /* Active tab background color */
 #tabbrowser-tabs .tabbrowser-tab[selected] .tab-background {
     background-color: #3c3836 !important;
-    /* border-color: var(--faded_yellow) !important;
-    border: solid;
-    border-width: 1px; */
 }
 
 /* Non-active tab background color */
 #tabbrowser-tabs .tabbrowser-tab:not([selected]) .tab-background {
     background-color: #1d2021 !important;
-    /* border-color: var(--dark1) !important;
-    border: solid;
-    border-width: 1px; */
 }
 
-#tabbrowser-tabs .tabbrowser-tab[first-visible-tab="true"][last-visible-tab="true"] {
+#tabbrowser-tabs .tabbrowser-tab[first-visible-tab="true"][last-visible- tab="true"] {
     visibility: collapse !important;
 }
 
@@ -298,7 +306,7 @@ toolbarseparator {
 }
 
 :where(#nav-bar) {
-    border-inline: var(--uc-window-drag-space-width) solid var(--toolbar-bgcolor);
+    border-inline: var(--uc-window-drag-space-width) solid var(--toolbar- bgcolor);
 }
 
 /* ---Tabs/Tab Bar height--- */
@@ -320,13 +328,6 @@ hbox.tab-icon-sound {
     display: none !important;
 }
 
-/* COMMENTED OUT TO SHOW TAB BAR */
-/*
-#TabsToolbar {
-    visibility: collapse;
-}
-*/
-
 /* Hide a unwanted separator in the right click menu */
 menuseparator {
     display: none !important;
@@ -338,14 +339,6 @@ menuseparator {
     width: 0px !important;
     padding: 0px !important;
 }
-
-/* Add padding to sides of urlbar - REMOVED */
-/*
-.urlbar-input-box {
-    padding-left: 22px;
-    padding-right: 22px;
-}
-*/
 
 /* Hide back/forward buttons */
 #back-button,
@@ -400,9 +393,7 @@ menuseparator {
     margin: 0 !important;
 }
 
-
 /* Hide nav-bar / urlbar by default, show on focus */
-
 #urlbar {
     margin-top: -400px;
     transition: none;
@@ -412,7 +403,6 @@ menuseparator {
     margin-top: 0px;
     transition: none;
 }
-
 
 #nav-bar {
     height: 0 !important;
@@ -433,7 +423,8 @@ menuseparator {
 }
 
 /* Make search/recent list font smaller */
-.urlbarView-row, .urlbarView-row-inner {
+.urlbarView-row,
+.urlbarView-row-inner {
     font-size: 10px !important;
 }
 
