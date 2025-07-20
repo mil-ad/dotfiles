@@ -238,7 +238,7 @@ toolbarseparator {
     background-color: #1d2021 !important;
 }
 
-:root:not([customizing]) #tabbrowser-tabs .tabs-newtab-button,
+/* :root:not([customizing]) #tabbrowser-tabs .tabs-newtab-button,
 :root:not([customizing]) #tabs-newtab-button,
 :root:not([customizing]) #TabsToolbar-customization-target>.toolbarbutton- 1,
 :root:not([customizing]) #TabsToolbar .titlebar-button {
@@ -248,7 +248,7 @@ toolbarseparator {
     padding-bottom: 0px !important;
     -moz-box-align: stretch;
     margin: 0 !important;
-}
+} */
 
 .accessibility-indicator,
 .private-browsing-indicator {
@@ -334,14 +334,10 @@ toolbarseparator {
     }
 }
 
-
-
 /* Fix window controls not being clickable */
 :root[tabsintitlebar] #toolbar-menubar[autohide="true"][inactive] {
     transition: height 0ms steps(1) 80ms;
 }
-
-
 
 /* Bookmarks bar */
 #PersonalToolbar {
