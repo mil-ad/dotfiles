@@ -292,6 +292,42 @@ toolbarseparator {
     background-color: transparent !important;
 }
 
+/* Tab styling - smaller font, rectangular shape, no gaps */
+.tabbrowser-tab .tab-label {
+    font-size: 11px !important;
+}
+
+.tabbrowser-tab {
+    border-radius: 0 !important;
+    margin-inline: 0 !important;
+    padding-inline: 0 !important;
+}
+
+.tabbrowser-tab .tab-background {
+    border-radius: 0 !important;
+    margin-inline: 0 !important;
+}
+
+/* Make favicons smaller */
+.tab-icon-image {
+    width: 14px !important;
+    height: 14px !important;
+    min-width: 14px !important;
+    min-height: 14px !important;
+}
+
+/* Hide new tab button completely */
+#tabs-newtab-button,
+.tabs-newtab-button,
+#tabbrowser-tabs .tabs-newtab-button {
+    display: none !important;
+    visibility: hidden !important;
+    width: 0 !important;
+    height: 0 !important;
+    padding: 0 !important;
+    margin: 0 !important;
+}
+
 /* Extra top padding  in maximized window */
 @media (-moz-os-version: windows-win7),
 (-moz-os-version: windows-win10) {
@@ -352,45 +388,9 @@ menuseparator {
     display: none !important;
 }
 
-/* Tab styling - smaller font, rectangular shape, no gaps */
-.tabbrowser-tab .tab-label {
-    font-size: 11px !important;
-}
-
-.tabbrowser-tab {
-    border-radius: 0 !important;
-    margin-inline: 0 !important;
-    padding-inline: 0 !important;
-}
-
-.tabbrowser-tab .tab-background {
-    border-radius: 0 !important;
-    margin-inline: 0 !important;
-}
-
 /* Address bar font size to match tabs */
 #urlbar #urlbar-input {
     font-size: 11px !important;
-}
-
-/* Make favicons smaller */
-.tab-icon-image {
-    width: 14px !important;
-    height: 14px !important;
-    min-width: 14px !important;
-    min-height: 14px !important;
-}
-
-/* Hide new tab button completely */
-#tabs-newtab-button,
-.tabs-newtab-button,
-#tabbrowser-tabs .tabs-newtab-button {
-    display: none !important;
-    visibility: hidden !important;
-    width: 0 !important;
-    height: 0 !important;
-    padding: 0 !important;
-    margin: 0 !important;
 }
 
 /* Hide nav-bar / urlbar by default, show on focus */
@@ -403,6 +403,13 @@ menuseparator {
     margin-top: 0px;
     transition: none;
 }
+
+/* Make search/recent list font smaller */
+.urlbarView-row,
+.urlbarView-row-inner {
+    font-size: 10px !important;
+}
+
 
 #nav-bar {
     height: 0 !important;
@@ -422,11 +429,6 @@ menuseparator {
     overflow: visible !important;
 }
 
-/* Make search/recent list font smaller */
-.urlbarView-row,
-.urlbarView-row-inner {
-    font-size: 10px !important;
-}
 
 .titlebar-buttonbox {
     display: none !important;
