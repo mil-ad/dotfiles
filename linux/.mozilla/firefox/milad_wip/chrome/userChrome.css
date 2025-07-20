@@ -50,6 +50,16 @@
 
     --toolbarbutton-icon-fill: #ebdbb2 !important;
     --toolbar-bgcolor: #1d2021 !important;
+
+    --tab-min-height: 24px !important;
+
+    /* Hide tabs when only one open*/
+    --tab-block-margin: var(--proton-tab-block-margin)
+}
+
+
+:root[sizemode="normal"] #nav-bar {
+    --uc-window-drag-space-width: 20px
 }
 
 /* Replace favicon on tabs with close button on hover */
@@ -97,11 +107,6 @@
     flex-shrink: 0 !important;
 }
 
-/* Hide the new tab button */
-#new-tab-button {
-    display: none !important;
-}
-
 .tabbrowser-tab:hover .tab-throbber,
 .tabbrowser-tab:hover .tab-icon-image,
 .tabbrowser-tab:hover .tab-sharing-icon-overlay,
@@ -114,6 +119,11 @@
 .tabbrowser-tab .tab-close-button {
     margin-left: -2px !important;
     margin-right: 2px !important;
+}
+
+/* Hide the new tab button */
+#new-tab-button {
+    display: none !important;
 }
 
 #appMenu-fxa-separator,
@@ -136,10 +146,6 @@ toolbarseparator {
     border: solid !important;
     border-width: 1px !important;
     border-color: var(--faded_yellow) !important;
-}
-
-#urlbar:not([focused="true"]) #urlbar-background {
-    /* Unfocused state styling */
 }
 
 #urlbar[focused="true"] #urlbar-background {
@@ -215,14 +221,6 @@ toolbarseparator {
     background-color: var(--faded_yellow) !important;
 }
 
-/* Hide tabs when only one open*/
-:root {
-    --tab-block-margin: var(--proton-tab-block-margin)
-}
-
-:root[sizemode="normal"] #nav-bar {
-    --uc-window-drag-space-width: 20px
-}
 
 #titlebar {
     -moz-appearance: none !important;
@@ -275,7 +273,7 @@ toolbarseparator {
     background-color: #1d2021 !important;
 }
 
-#tabbrowser-tabs .tabbrowser-tab[first-visible-tab="true"][last-visible- tab="true"] {
+#tabbrowser-tabs .tabbrowser-tab[first-visible-tab="true"][last-visible-tab="true"] {
     visibility: collapse !important;
 }
 
@@ -341,15 +339,6 @@ toolbarseparator {
     transition: height 0ms steps(1) 80ms;
 }
 
-:where(#nav-bar) {
-    border-inline: var(--uc-window-drag-space-width) solid var(--toolbar- bgcolor);
-}
-
-/* ---Tabs/Tab Bar height--- */
-:root {
-    --tab-min-height: 24px !important;
-}
-
 /* Bookmarks bar */
 #PersonalToolbar {
     background-color: #1d2021 !important;
@@ -410,7 +399,6 @@ menuseparator {
     font-size: 10px !important;
 }
 
-
 #nav-bar {
     height: 0 !important;
     min-height: 0 !important;
@@ -429,6 +417,9 @@ menuseparator {
     overflow: visible !important;
 }
 
+:where(#nav-bar) {
+    border-inline: var(--uc-window-drag-space-width) solid var(--toolbar- bgcolor);
+}
 
 .titlebar-buttonbox {
     display: none !important;
