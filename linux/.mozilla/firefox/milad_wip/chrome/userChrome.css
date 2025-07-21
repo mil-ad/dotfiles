@@ -1,4 +1,3 @@
-/* New Tab Flash */
 :root {
     --newtab-textbox-background-color: #1d2021;
     --faded_yellow: #b57614;
@@ -221,7 +220,6 @@ toolbarseparator {
     background-color: var(--faded_yellow) !important;
 }
 
-
 #titlebar {
     -moz-appearance: none !important;
 }
@@ -375,13 +373,9 @@ menuseparator {
     padding: 0px !important;
 }
 
-/* Hide back/forward buttons */
+/* Hide back/forward/bookmark buttons */
 #back-button,
-#forward-button {
-    display: none !important;
-}
-
-/* Hide bookmark button */
+#forward-button,
 #bookmarks-menu-button,
 #star-button {
     display: none !important;
