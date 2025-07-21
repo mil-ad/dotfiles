@@ -266,6 +266,10 @@ toolbarseparator {
 /* Active tab background color */
 #tabbrowser-tabs .tabbrowser-tab[selected] .tab-background {
     background-color: #3c3836 !important;
+    /* border: solid !important;
+    border-width: 1px !important;
+    border-radius: 2px !important;
+    border-color: var(--faded_yellow) !important; */
 }
 
 /* Non-active tab background color */
@@ -324,6 +328,12 @@ toolbarseparator {
     height: 0 !important;
     padding: 0 !important;
     margin: 0 !important;
+}
+
+.tab-icon-pending,
+.tab-icon-overlay {
+    width: 12px !important;
+    height: 12px !important;
 }
 
 /* Extra top padding  in maximized window */
@@ -393,6 +403,23 @@ menuseparator {
     transition: none;
 }
 
+/* Show urlbar and nav-bar when urlbar is focused OR when the popup is open */
+#urlbar:focus-within,
+#urlbar[open="true"] {
+    margin-top: 0px !important;
+    transition: none !important;
+}
+
+#nav-bar:focus-within,
+#urlbar[open="true"]~#nav-bar {
+    height: auto !important;
+    min-height: initial !important;
+    opacity: 1 !important;
+    pointer-events: auto !important;
+    transition: none !important;
+    overflow: visible !important;
+}
+
 /* Make search/recent list font smaller */
 .urlbarView-row,
 .urlbarView-row-inner {
@@ -423,4 +450,9 @@ menuseparator {
 
 .titlebar-buttonbox {
     display: none !important;
+}
+
+/* disable tab update dot */
+.tab-content[titlechanged]:not([selected]) {
+    background-image: none !important;
 }
