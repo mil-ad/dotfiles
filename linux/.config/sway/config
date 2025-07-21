@@ -1,3 +1,15 @@
 include ~/.config/i3/config
 
+output eDP-1 scale 2
 
+input type:touchpad {
+    tap enabled
+    tap_button_map lrm
+    drag disabled
+}
+
+input type:keyboard {
+    xkb_layout "gb,ir"
+    xkb_model "pc105"
+    xkb_options "grp:rctrl_rshift_toggle"
+}
