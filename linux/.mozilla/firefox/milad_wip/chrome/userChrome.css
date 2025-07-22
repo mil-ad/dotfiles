@@ -428,3 +428,125 @@ menuseparator {
 .tab-content[titlechanged]:not([selected]) {
     background-image: none !important;
 }
+
+/* --- Overlay navbar and urlbar above content instead of pushing it down --- */
+#navigator-toolbox,
+#nav-bar,
+#urlbar {
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    width: 100vw !important;
+    z-index: 9999 !important;
+    /* Remove box-shadow or border if you want a flat overlay */
+}
+
+#browser {
+    margin-top: 0 !important;
+    padding-top: 0 !important;
+}
+
+#nav-bar {
+    opacity: 0 !important;
+    pointer-events: none !important;
+    transition: opacity 0.2s !important;
+}
+
+#nav-bar:focus-within,
+#urlbar[open="true"]~#nav-bar {
+    opacity: 1 !important;
+    pointer-events: auto !important;
+}
+
+/* --- End overlay section --- */
+
+/* --- Center urlbar in the middle of the app window, 50% width, 50% height --- */
+#urlbar {
+    position: fixed !important;
+    left: 50% !important;
+    top: 50% !important;
+    transform: translate(-50%, -50%) !important;
+    width: 50vw !important;
+    z-index: 10001 !important;
+    margin-top: 0 !important;
+    transition: none !important;
+}
+
+#urlbar:focus-within,
+#urlbar[open="true"] {
+    margin-top: 0 !important;
+    transition: none !important;
+}
+
+/* Keep nav-bar and tab bar at the top, unaffected */
+#navigator-toolbox,
+#nav-bar {
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    width: 100vw !important;
+    z-index: 9999 !important;
+}
+
+#TabsToolbar {
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    width: 100vw !important;
+    z-index: 10000 !important;
+}
+
+/* --- Hide urlbar when not focused, show only on focus or open --- */
+#urlbar {
+    opacity: 0 !important;
+    pointer-events: none !important;
+}
+#urlbar:focus-within,
+#urlbar[open="true"] {
+    opacity: 1 !important;
+    pointer-events: auto !important;
+}
+
+/* --- Fix navbar to appear to the right of the tab bar, in a single horizontal row, with original height --- */
+#navigator-toolbox {
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: stretch !important;
+    width: 100vw !important;
+    height: auto !important;
+    background: none !important;
+    box-shadow: none !important;
+    border: none !important;
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    z-index: 9999 !important;
+}
+
+#TabsToolbar {
+    order: 0 !important;
+    position: static !important;
+    width: auto !important;
+    min-height: var(--tab-min-height, 24px) !important;
+    z-index: 10000 !important;
+}
+
+#nav-bar {
+    order: 1 !important;
+    position: static !important;
+    width: auto !important;
+    min-height: var(--tab-min-height, 24px) !important;
+    z-index: 9999 !important;
+    display: flex !important;
+    align-items: stretch !important;
+    background: none !important;
+    box-shadow: none !important;
+    border: none !important;
+    opacity: 1 !important;
+    pointer-events: auto !important;
+    transition: none !important;
+}
