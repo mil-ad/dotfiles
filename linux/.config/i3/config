@@ -1,5 +1,6 @@
-# Mod1=<Alt>, Mod4=<Super>
+# Mod1=<Alt>, Mod4=<Super> Mod5=CapsLock (remapped via setxkbmap)
 set $mod Mod4
+set $caps Mod5
 
 workspace 1 output DP-virtDown primary nonprimary
 workspace 2 output DP-virtDown primary nonprimary
@@ -19,7 +20,7 @@ floating_modifier $mod
 
 focus_follows_mouse yes
 workspace_auto_back_and_forth yes
-floating_maximum_size 2560 x 1440
+# floating_maximum_size 2560 x 1440
 
 default_border pixel 2
 default_floating_border pixel 2
@@ -195,6 +196,7 @@ mode "resize" {
 #         External Keybindings
 ##########################################
 bindsym $mod+Return exec kitty --single-instance
+bindsym $caps+Return layout tabbed; exec kitty --single-instance
 bindsym $mod+space exec --no-startup-id $HOME/.local/bin/winmenu
 bindsym $mod+comma exec --no-startup-id $HOME/.local/bin/rename_i3_container
 bindsym $mod+0 exec --no-startup-id ~/.local/bin/sysact
