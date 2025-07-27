@@ -3,6 +3,7 @@
 	"in_process_packages":
 	[
 		"One Dark Color Scheme",
+		"Package Control",
 	],
 	"installed_packages":
 	[
@@ -42,7 +43,7 @@
 		"SublimeLinter-pycodestyle",
 		"SublimeLinter-pylint",
 		"Text Pastry",
-		"WordCount",
+		"WordingStatus",
 		"Wrap Plus"
 	],
 }
