@@ -16,3 +16,5 @@ user_pref("browser.newtabpage.activity-stream.feeds.section.topstories", false);
 user_pref("browser.startup.homepage", "chrome://browser/content/blanktab.html");
 user_pref("browser.fixup.domainwhitelist.go", true);
 user_pref("browser.tabs.hoverPreview.enabled", false);
+user_pref("extensions.formautofill.addresses.enabled", false);
+user_pref("extensions.formautofill.creditCards.enabled", false);
