@@ -1,0 +1,8 @@
+* {
+  -gtk-dpi: 96; /* 96 * 2 = 192 DPI for 2x scaling */
+}
+
+/* Keep font scaling at 1x (override the DPI scaling for text) */
+* {
+  font-size: 1rem; /* Base font size */
+}
