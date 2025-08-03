@@ -72,7 +72,7 @@
     "terminal.integrated.showExitAlert": false,
     "terminal.integrated.shellIntegration.enabled": false,
     "terminal.integrated.useWslProfiles": false,
-    "terminal.integrated.fontSize": 19,
+    "terminal.integrated.fontSize": 15,
     "terminal.integrated.enableImages": true,
     "workbench.tree.enableStickyScroll": false,
     "workbench.editor.enablePreview": true,
