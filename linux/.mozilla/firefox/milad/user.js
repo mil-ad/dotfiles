@@ -18,4 +18,5 @@ user_pref("browser.fixup.domainwhitelist.go", true);
 user_pref("browser.tabs.hoverPreview.enabled", false);
 user_pref("extensions.formautofill.addresses.enabled", false);
 user_pref("extensions.formautofill.creditCards.enabled", false);
-user_pref("rowser.translations.neverTranslateLanguages", "fa");
+user_pref("browser.translations.neverTranslateLanguages", "fa");
+user_pref("zen.workspaces.show-workspace-indicator", false)
