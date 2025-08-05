@@ -2,6 +2,7 @@ theme = "kanagawa"
 
 [editor]
 line-number = "relative"
+trim-trailing-whitespace = true
 bufferline = "multiple"
 mouse = true
 popup-border = "all"
@@ -58,7 +59,7 @@ enable = true
 [keys.normal]
 C-g = [
     ":write-all", # without this the reload-all will get rid of unsaved changes?
-    ":noop %sh{kitty @ launch --type=overlay --cwd $(pwd) lazygit}",
+    ":noop %sh{kitty @ launch --wait-for-child-to-exit --type=overlay --cwd $(pwd) lazygit}",
     ":redraw", 
     ":reload-all"
 ]
