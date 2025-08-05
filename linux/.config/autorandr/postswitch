@@ -2,5 +2,6 @@
 
 assert_installed nitrogen
 
+sleep 5
 i3-msg restart
 nitrogen --restore
