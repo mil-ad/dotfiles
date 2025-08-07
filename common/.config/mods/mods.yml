@@ -53,6 +53,10 @@ apis:
     api-key:
     api-key-env: OPENAI_API_KEY
     models: # https://platform.openai.com/docs/models
+      gpt-5:
+        aliases: ["5"]
+        max-input-chars: 1600000
+        fallback: "4"
       gpt-4o-mini:
         aliases: ["4o-mini"]
         max-input-chars: 392000
