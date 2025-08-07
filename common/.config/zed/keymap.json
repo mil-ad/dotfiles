@@ -41,7 +41,7 @@
     "context": "Pane",
     "bindings": {
       "ctrl-]": "pane::ActivateNextItem",
-      "ctrl-[": "pane::ActivatePrevItem"
+      "ctrl-[": "pane::ActivatePreviousItem"
     }
   },
   {
