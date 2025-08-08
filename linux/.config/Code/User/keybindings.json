@@ -232,11 +232,6 @@
         "when": "config.latex-workshop.bind.altKeymap.enabled && editorLangId =~ /latex|rsweave|jlweave/"
     },
     {
-        "key": "alt+meta+b",
-        "command": "latex-workshop.build",
-        "when": "!config.latex-workshop.bind.altKeymap.enabled && editorLangId =~ /latex|rsweave|jlweave/"
-    },
-    {
         "key": "ctrl+alt+b",
         "command": "-latex-workshop.build",
         "when": "!config.latex-workshop.bind.altKeymap.enabled && editorLangId =~ /latex|rsweave|jlweave/"
@@ -533,5 +528,29 @@
         "command": "workbench.action.tasks.terminate",
         "args": "open kitty",
         "when": "taskRunning"
-    }
+    },
+    {
+        "key": "alt+meta+k",
+        "command": "aipopup.action.modal.generate",
+        "when": "editorFocus && !composerBarIsVisible"
+    },
+    {
+        "key": "ctrl+shift+k",
+        "command": "-aipopup.action.modal.generate",
+        "when": "editorFocus && !composerBarIsVisible"
+    },
+    {
+        "key": "ctrl+i",
+        "command": "composerMode.agent"
+    },
+    {
+        "key": "ctrl+v",
+        "command": "extension.paste-indent",
+        "when": "editorFocus"
+    },
+    // Limit Cursor's Ctrl-l to editorTextFocus because otherwise it interferes with the terminal
+    {
+        "key": "ctrl+l",
+        "command": "-aichat.newchataction"
+    },
 ]
