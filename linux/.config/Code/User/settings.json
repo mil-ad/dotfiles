@@ -6,9 +6,9 @@
     "window.menuBarVisibility": "toggle",
     "window.customTitleBarVisibility": "never",
     "window.titleBarStyle": "native",
-    "editor.fontFamily": "'JetBrains Mono','Cascadia Code', 'Symbols Nerd Font', 'Noto Color Emoji', 'Vazirmatn UI NL', 'Iosevka Medium', 'Material Icons'",
+    "editor.fontFamily": "'IBM Plex Mono', 'Cascadia Code', 'Iosevka Term', 'JetBrains Mono', 'Symbols Nerd Font', 'Noto Color Emoji', 'Vazirmatn UI NL', 'Iosevka Medium', 'Material Icons'",
     "editor.fontWeight": "500",
-    "editor.fontSize": 14,
+    "editor.fontSize": 15,
     "editor.formatOnSave": false,
     "editor.formatOnPaste": true,
     "editor.formatOnSaveMode": "modifications",
@@ -62,6 +62,7 @@
     "terminal.external.linuxExec": "kitty",
     "terminal.external.osxExec": "/Applications/kitty.app",
     "terminal.integrated.fontFamily": "'Iosevka Term', 'Symbols Nerd Font', 'Noto Color Emoji', 'Vazir WOL'",
+    "terminal.integrated.fontSize": 12,
     "terminal.integrated.inheritEnv": true,
     "terminal.integrated.macOptionClickForcesSelection": true,
     "terminal.integrated.macOptionIsMeta": true,
@@ -72,7 +73,6 @@
     "terminal.integrated.showExitAlert": false,
     "terminal.integrated.shellIntegration.enabled": false,
     "terminal.integrated.useWslProfiles": false,
-    "terminal.integrated.fontSize": 15,
     "terminal.integrated.enableImages": true,
     "workbench.tree.enableStickyScroll": false,
     "workbench.editor.enablePreview": true,
@@ -80,10 +80,14 @@
     "workbench.editor.labelFormat": "short",
     "workbench.editor.decorations.badges": false,
     "workbench.editor.decorations.colors": false,
+    "workbench.editor.restoreViewState": false,
     "workbench.tips.enabled": false,
     "workbench.activityBar.orientation": "vertical",
     "workbench.colorCustomizations": {
         "[Catppuccin Mocha]": {
+            "sideBar.background": "#060606",
+            "sideBarSectionHeader.background": "#060606",
+            "focusBorder": "#45475a",
             "terminal.background": "#11111b",
             "terminal.foreground": "#f2e5bc",
             "terminal.ansiBlack": "#d4ba0e",
@@ -102,16 +106,14 @@
             "terminal.ansiBrightCyan": "#7ec16e",
             "terminal.ansiWhite": "#a89984",
             "terminal.ansiBrightWhite": "#ebdbb2",
-            "sideBar.background": "#060606",
-            "sideBarSectionHeader.background": "#060606",
-            "focusBorder": "#45475a"
         },
         "[Popping and Locking]": {
             "terminal.background": "#11111b",
             "widget.border": "#fabd2f"
         },
         "[Kanagawa]": {
-            "editorWhitespace.foreground": "#363646"
+            "editorWhitespace.foreground": "#363646",
+            "widget.border": "#fabd2f",
         }
     },
     "workbench.iconTheme": "material-icon-theme",
@@ -120,6 +122,9 @@
         "*.ipynb": "jupyter-notebook"
     },
     "workbench.editor.pinnedTabsOnSeparateRow": false,
+    "explorer.decorations.colors": true,
+    "explorer.sortOrder": "type",
+    "explorer.incrementalNaming": "smart",
     "breadcrumbs.filePath": "off",
     "breadcrumbs.enabled": false,
     "extensions.ignoreRecommendations": true,
@@ -149,9 +154,6 @@
     "telemetry.telemetryLevel": "off",
     "update.mode": "start",
     "update.showReleaseNotes": true,
-    "explorer.decorations.colors": false,
-    "explorer.sortOrder": "type",
-    "explorer.incrementalNaming": "smart",
     "explorer.decorations.badges": false,
     "scm.diffDecorationsGutterWidth": 2,
     "scm.diffDecorations": "gutter",
@@ -160,7 +162,6 @@
     "git.confirmSync": false,
     "git.openDiffOnClick": false,
     "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
-    "problems.decorations.enabled": false,
     "search.quickOpen.includeHistory": false,
     "[python]": {
         "editor.tabSize": 4,
@@ -174,7 +175,8 @@
             "source.organizeImports": "explicit"
         },
         "editor.defaultFormatter": "charliermarsh.ruff",
-        "diffEditor.ignoreTrimWhitespace": false
+        "diffEditor.ignoreTrimWhitespace": false,
+        "editor.codeLens": true // TODO: disable Run Cell from cell mode
     },
     "[markdown]": {
         "editor.wordWrap": "bounded",
@@ -221,9 +223,9 @@
         "file:///home/milad/.dotfiles/linux/.config/Code/User/custom-css.css"
     ],
     "cursor.cpp.disabledLanguages": [
-        // "plaintext",
-        // "markdown",
-        "scminput"
+        "scminput",
+        "untitled",
+        "markdown"
     ],
     "go.toolsManagement.autoUpdate": true,
     "git.openRepositoryInParentFolders": "never",
@@ -280,4 +282,5 @@
             ]
         }
     ],
+    "zenMode.restore": false,
 }
