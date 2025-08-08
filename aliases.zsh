@@ -16,13 +16,13 @@ alias 6='cd -6'
 alias 7='cd -7'
 alias 8='cd -8'
 alias 9='cd -9'
-alias -- -='cd -'
 
-alias ssh="TERM=xterm-256color ssh"
+alias ssh="ssh"
 alias ssh0="ssh -O exit"
+alias ssh-="ssh-keygen -R"
 alias kssh="kitten ssh"
 
-alias gcloud="TERM=xterm-256color gcloud"
+alias gcloud="gcloud"
 alias gscat="gsutil cat"
 alias gsls="gsutil ls"
 alias gsrm="gsutil -m rm"
@@ -67,7 +67,6 @@ fi
 alias lsym='ls -l `find . -maxdepth 1 -type l -print`'
 
 alias more="less"
-alias vi="vim"
 #alias hx="helix"
 alias cal='cal -3'
 
@@ -95,9 +94,6 @@ alias json2jsonl="jq -c .[]"
 alias jsonl2json="jq -s"
 
 alias parquetcat="parquet-tools cat --format='json'"
-
-alias code="GDK_SCALE=1 GDK_DPI_SCALE=1 code"
-alias pavucontrol="GDK_SCALE=1 GDK_DPI_SCALE=1 pavucontrol"
 
 alias sinf='sinfo --format "%25N %10P %.15T %25G %.4c %.10O %30E" -p all'
 alias sq='squeue --Format="JobID:10,Partition:9,Name:30,UserName:20,State:10,TimeUsed:15,NumNodes:6,NodeList:40,NumCPUs:5,tres-alloc:40,tres-per-job:40"'
