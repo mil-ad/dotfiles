@@ -1,0 +1,6 @@
+version: 1
+git_protocol: ssh
+editor: hx
+color_labels: enabled
+aliases:
+  pv: pr view --web
