@@ -13,3 +13,7 @@ input type:keyboard {
     xkb_model "pc105"
     xkb_options "grp:rctrl_rshift_toggle"
 }
+
+bar swaybar_command waybar
+
+exec waybar
