@@ -1,13 +1,13 @@
 * {
     /* `otf-font-awesome` is required to be installed for icons */
-    font-family: FontAwesome, Roboto, Helvetica, Arial, sans-serif;
-    font-size: 13px;
+    font-family: "Font Awesome 5", Cascadia Code, Roboto, Helvetica, Arial, sans-serif;
+    font-size: 10px;
 }
 
 window#waybar {
-    background-color: rgba(43, 48, 59, 1);
-    border-bottom: 3px solid rgba(100, 114, 125, 0.5);
-    color: #ffffff;
+    background-color: #222;
+    /* border-bottom: 3px solid rgba(100, 114, 125, 0.5); */
+    color: #dfdfdf;
     transition-property: background-color;
     transition-duration: .5s;
 }
@@ -114,7 +114,7 @@ button:hover {
 }
 
 #clock {
-    background-color: #64727D;
+    /* background-color: inherit; */
 }
 
 #battery {
@@ -235,7 +235,7 @@ label:focus {
 }
 
 #tray {
-    background-color: #2980b9;
+    /* background-color: #2980b9; */
 }
 
 #tray > .passive {
@@ -248,12 +248,13 @@ label:focus {
 }
 
 #idle_inhibitor {
-    background-color: #2d3436;
+    font-family: "Material Icons";
+    /* background-color: #2d3436; */
 }
 
 #idle_inhibitor.activated {
-    background-color: #ecf0f1;
-    color: #2d3436;
+    /* background-color: #ecf0f1; */
+    color: #fabd2f;
 }
 
 #mpd {
