@@ -33,7 +33,7 @@ case "$selected_option" in
     "🐍 Python") ~/.local/bin/kitty-app uvx --with pandas --with numpy --with matplotlib ptpython;;
     '📹 record area') ~/.local/bin/record-screen-area-start ;;
     "📸 screenshot program") ~/.local/bin/screenshot-window-to-clipboard ;;
-    '🔒 lock')  ~/.local/bin/betterblurlock ;;
+    '🔒 lock') ~/.local/bin/betterblurlock ;;
     '💤 sleep') systemctl suspend ;;
     '🐻 hibernate')  systemctl hibernate ;;
     '🚪 logout') swaymsg exit ;;

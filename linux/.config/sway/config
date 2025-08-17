@@ -2,7 +2,7 @@ include ~/.config/i3/config
 
 output eDP-1 scale 2
 
-for_window [app_id="kitty"] title_format " "
+for_window [app_id="kitty"] title_format "kitty" # TODO
 for_window [app_id="kitty-app"] title_format %title
 for_window [all] title_window_icon padding 5px
 
@@ -22,6 +22,11 @@ input type:keyboard {
     xkb_options "grp:rctrl_rshift_toggle"
 }
 
+exec swayidle -w \
+    timeout 300 'betterblurlock' \
+    timeout 600 'swaymsg "output * dpms off"' \
+            resume 'swaymsg "output * dpms on"' \
+    before-sleep 'betterblurlock'
 
 # TODO: make machine specific?
 # this is for matebook 14s
@@ -41,6 +46,6 @@ bindsym XF86MonBrightnessDown exec light -U 1
 # bindsym XF86MonBrightnessDown exec brightnessctl set 5%-
 # bindsym XF86Display exec autorandr --load laptop-only --force
 
-bar swaybar_command waybar
 
+bar swaybar_command waybar
 exec waybar
