@@ -6,5 +6,5 @@ export PATH=$PATH:~/.scripts:~/.local/bin:~/Application
 [ -e $HOME/.zprofile_local ] && source $HOME/.zprofile_local
 
 if [ -z "${DISPLAY}" ] && [ "${XDG_VTNR}" -eq 1 ]; then
-  exec startx
+  exec sway
 fi
