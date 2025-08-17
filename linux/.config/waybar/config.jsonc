@@ -16,9 +16,10 @@
         "clock"
     ],
     "modules-right": [
+        "custom/gojeh",
         "idle_inhibitor",
-        "pulseaudio",
         "network",
+        "pulseaudio",
         "power-profiles-daemon",
         "keyboard-state",
         "sway/language",
@@ -62,6 +63,11 @@
         "tooltip": true,
         "tooltip-format": "{app}: {title}"
     },
+    "sway/language": {
+        "format": "{flag}",
+        "on-click": "swaymsg input type:keyboard xkb_switch_layout next",
+        "tooltip": false
+    },
     "mpd": {
         "format": "{stateIcon} {consumeIcon}{randomIcon}{repeatIcon}{singleIcon}{artist} - {album} - {title} ({elapsedTime:%M:%S}/{totalTime:%M:%S}) ⸨{songPosition}|{queueLength}⸩ {volume}% ",
         "format-disconnected": "Disconnected ",
@@ -93,7 +99,8 @@
         "format-icons": {
             "activated": "",
             "deactivated": ""
-        }
+        },
+        "tooltip": false
     },
     "tray": {
         // "icon-size": 21,
@@ -160,11 +167,11 @@
     },
     "network": {
         // "interface": "wlp2*", // (Optional) To force the use of this interface
-        "format-wifi": "{essid} ({signalStrength}%) ",
+        "format-wifi": "  {essid} ({signalStrength}%)",
         "format-ethernet": "{ipaddr}/{cidr} ",
         "tooltip-format": "{ifname} via {gwaddr} ",
         "format-linked": "{ifname} (No IP) ",
-        "format-disconnected": "Disconnected ⚠",
+        "format-disconnected": "",
         "format-alt": "{ifname}: {ipaddr}/{cidr}"
     },
     "pulseaudio": {
@@ -197,6 +204,14 @@
         "escape": true,
         "exec": "$HOME/.config/waybar/mediaplayer.py 2> /dev/null" // Script in resources folder
         // "exec": "$HOME/.config/waybar/mediaplayer.py --player spotify 2> /dev/null" // Filter player based on name
+    },
+    "custom/gojeh": {
+        "exec": "$HOME/.local/share/go/bin/gojeh",
+        "on-click": "echo toggle | nc -U /tmp/gojeh.sock",
+        "on-click-right": "echo next | nc -U /tmp/gojeh.sock",
+        "on-scroll-up": "echo more_time | nc -U /tmp/gojeh.sock",
+        "on-scroll-down": "echo less_time | nc -U /tmp/gojeh.sock",
+        "tooltip": false
     },
     "custom/power": {
         "format" : "⏻ ",
