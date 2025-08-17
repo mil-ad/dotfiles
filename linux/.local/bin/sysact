@@ -7,7 +7,7 @@
 
 set -x
 
-assert_installed uvx xkill i3-msg
+assert_installed uvx xkill swaymsg
 
 menu_items=(
     "🤖 Mods History"
@@ -15,7 +15,7 @@ menu_items=(
     "🔒 lock"
     "💤 sleep"
     "🔫 xkill"
-    "♻️ restart i3"
+    "♻️ restart sway"
     "📹 record area"
     "📸 screenshot program"
     "🖖 (un)split monitor"
@@ -36,11 +36,11 @@ case "$selected_option" in
     '🔒 lock')  ~/.local/bin/betterblurlock ;;
     '💤 sleep') systemctl suspend ;;
     '🐻 hibernate')  systemctl hibernate ;;
-    '🚪 logout') i3-msg exit ;;
+    '🚪 logout') swaymsg exit ;;
     '🔫 xkill') xkill ;;
     '🖖 (un)split monitor') ~/.local/bin/toggle_virtual_monitors ;;
     "🔄 switch monitor input") ~/.local/bin/switch-monitor-input ;;
-    '♻️ restart i3') i3-msg restart ;;
+    '♻️ restart sway') swaymsg reload ;;
     '🚀 reboot')  systemctl reboot ;;
     '🖥 power off') systemctl poweroff ;;
     *) exit 1 ;;

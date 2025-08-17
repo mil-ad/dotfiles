@@ -2,6 +2,14 @@ include ~/.config/i3/config
 
 output eDP-1 scale 2
 
+for_window [app_id="kitty"] title_format " "
+for_window [app_id="kitty-app"] title_format %title
+for_window [all] title_window_icon padding 5px
+
+for_window [app_id="fzfmenu"] floating enable, resize set 750px 375px, move position center
+for_window [app_id="kitty-app"] floating enable, resize set 750px 375px, move position center
+for_window [app_id="Pavucontrol"] floating enable
+
 input type:touchpad {
     tap enabled
     tap_button_map lrm
@@ -32,9 +40,6 @@ bindsym XF86MonBrightnessDown exec light -U 1
 # bindsym XF86MonBrightnessUp exec brightnessctl set +5%
 # bindsym XF86MonBrightnessDown exec brightnessctl set 5%-
 # bindsym XF86Display exec autorandr --load laptop-only --force
-
-
-
 
 bar swaybar_command waybar
 

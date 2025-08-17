@@ -53,12 +53,12 @@ https://github.com/davatorium/rofi/blob/next/themes/gruvbox-dark.rasi
     selected-urgent-background:  @gruvbox-dark-red-light;
     selected-urgent-foreground:  @urgent-foreground;
 
-	 font: "Iosevka Medium 24";
+	 font: "Iosevka Medium 10";
 }
 
 window {
     background-color: @background;
-    border:           5;
+    border:           0.18em;
     padding:          0;
 }
 
@@ -89,7 +89,7 @@ listview {
 
 element {
     border:  0;
-    padding: 0px 25px 0px;
+    padding: 0px 0.75em 0px;
 }
 
 element.normal.normal {
@@ -153,7 +153,7 @@ mode-switcher {
 inputbar {
     spacing:    0;
     text-color: @normal-foreground;
-    padding:    10px 25px;
+    padding:    0.25em 0.75em;
     children:   [ prompt, entry ];
 }
 
@@ -166,7 +166,7 @@ button {
 }
 
 prompt {
-    padding: 0px 20px 0px 0px;
+    padding: 0px 0.75em 0px 0px;
     margin: 0px;
 }
 
@@ -189,5 +189,5 @@ element-text, element-icon {
 
 /* this is needed when you use `rofi -e "foo"` */
 textbox {
-    padding: 20px;
+    padding: 0.75em;
 }
