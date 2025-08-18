@@ -546,7 +546,7 @@
     {
         "key": "ctrl+v",
         "command": "extension.paste-indent",
-        "when": "editorFocus"
+        "when": "editorTextFocus"
     },
     // Limit Cursor's Ctrl-l to editorTextFocus because otherwise it interferes with the terminal
     {
