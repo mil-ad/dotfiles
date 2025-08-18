@@ -60,7 +60,7 @@ enable = true
 C-g = [
     ":write-all", # without this the reload-all will get rid of unsaved changes?
     ":noop %sh{kitty @ launch --wait-for-child-to-exit --type=overlay --cwd $(pwd) lazygit}",
-    ":redraw", 
+    ":redraw",
     ":reload-all"
 ]
 
