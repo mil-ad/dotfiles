@@ -30,7 +30,7 @@ selected_option=$(printf "%s\n" "${menu_items[@]}" | rofimenu)
 
 case "$selected_option" in
     "🤖 Mods History") ~/.local/bin/kitty-app mods_show;;
-    "🐍 Python") ~/.local/bin/kitty-app uvx --with pandas ptpython;;
+    "🐍 Python") ~/.local/bin/kitty-app uvx --with pandas --with numpy --with matplotlib ptpython;;
     '📹 record area') ~/.local/bin/record-screen-area-start ;;
     "📸 screenshot program") ~/.local/bin/screenshot-window-to-clipboard ;;
     '🔒 lock')  ~/.local/bin/betterblurlock ;;
