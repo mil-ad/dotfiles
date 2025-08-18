@@ -20,3 +20,5 @@ user_pref("extensions.formautofill.addresses.enabled", false);
 user_pref("extensions.formautofill.creditCards.enabled", false);
 user_pref("browser.translations.neverTranslateLanguages", "fa");
 user_pref("zen.workspaces.show-workspace-indicator", false)
+user_pref("sidebar.animation.enabled", false)
+// user_pref("sidebar.verticalTabs", true)
