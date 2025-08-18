@@ -241,7 +241,7 @@
         "python": true
     },
     "markdown.preview.fontSize": 12,
-    "gopls.ui.semanticTokens": true,
+    // "gopls.ui.semanticTokens": true,
     "rust-analyzer.highlighting.strings": true,
     "latex-workshop.view.pdf.viewer": "external",
     "latex-workshop.view.pdf.external.viewer.command": "sioyek",
