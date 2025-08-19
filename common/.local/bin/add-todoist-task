@@ -13,4 +13,10 @@ resp=$(curl --silent https://api.todoist.com/rest/v2/tasks \
     -H "X-Request-Id: $(uuidgen)" \
     -H "Authorization: Bearer $TODOIST_TOKEN")
 
-echo $resp | jq '.id' && notify-send -i " " "📝 Task Added" "$user_input" || notify-send -u critical "Couldn't add task to Todoist"
+if [ $? -eq 0 ]; then
+    echo $resp | jq '.id' && notify-send -i " " "📝 Task Added" "$user_input"
+    exit 0
+else
+    notify-send -u critical "Couldn't add task to Todoist"
+    exit 1
+fi

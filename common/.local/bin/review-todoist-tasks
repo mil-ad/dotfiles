@@ -14,9 +14,19 @@ indices=$(echo "$sorted_resp" | jq -r ".[].content" | rofimenu -multi-select -fo
 
 [[ -z $indices ]] && exit 1
 
+exit_code=0
 for index in $indices; do
     task_id=$(echo "$sorted_resp" | jq -r ".[$index].id")
     task_content=$(echo "$sorted_resp" | jq ".[$index].content")
-    curl -X POST "https://api.todoist.com/rest/v2/tasks/$task_id/close" \
-      -H "Authorization: Bearer $TODOIST_TOKEN" && notify-send -i " " "✅ Marked as Done:" "$task_content"
+    resp=$(curl -X POST "https://api.todoist.com/rest/v2/tasks/$task_id/close" \
+      -H "Authorization: Bearer $TODOIST_TOKEN")
+
+    if [ $? -eq 0 ]; then
+        notify-send -i " " "✅ Marked as done:" "$task_content"
+    else
+        exit_code=1
+        notify-send -u critical " " "❌ Could NOT mark task as done:" "$task_content"
+    fi
 done
+
+exit $exit_code
