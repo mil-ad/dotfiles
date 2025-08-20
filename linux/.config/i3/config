@@ -198,7 +198,7 @@ mode "resize" {
 bindsym $mod+Return exec kitty --single-instance
 bindsym $caps+Return layout tabbed; exec kitty --single-instance
 bindsym $mod+space exec $HOME/.local/bin/winmenu
-bindsym $mod+comma exec $HOME/.local/bin/rename_i3_container
+bindsym $mod+comma exec $HOME/.local/bin/rename-sway-container
 bindsym $mod+0 exec ~/.local/bin/sysact
 bindsym $mod+b exec ~/.local/bin/open_bookmark
 bindsym $mod+d exec ~/.local/bin/dmenu_run
