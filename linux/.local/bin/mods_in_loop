@@ -13,7 +13,7 @@ get_prompt() {
         --prompt="" \
         --no-show-help \
         --char-limit=0 \
-        --cursor.foreground="#d79921"
+        --cursor.foreground="#d79921" | tee >(wl-copy)
 }
 
 while [[ $# -gt 0 ]]; do
