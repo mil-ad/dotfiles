@@ -18,14 +18,17 @@
     "modules-right": [
         "custom/gojeh",
         "idle_inhibitor",
+        "custom/mullvad",
+        "custom/airpods",
         "network",
+        "network.ethernet",
         "pulseaudio",
         "power-profiles-daemon",
         "keyboard-state",
         "sway/language",
         "battery",
         "battery#bat2",
-        "tray",
+        "tray"
     ],
     // Modules configuration
     // "sway/workspaces": {
@@ -45,7 +48,7 @@
     //     }
     // },
     "keyboard-state": {
-        "numlock": true,
+        "numlock": false,
         "capslock": true,
         "format": "{name} {icon}",
         "format-icons": {
@@ -104,7 +107,7 @@
     },
     "tray": {
         // "icon-size": 21,
-        "spacing": 10,
+        "spacing": 1
         // "icons": {
         //   "blueman": "bluetooth",
         //   "TelegramDesktop": "$HOME/.local/share/icons/hicolor/16x16/apps/telegram.png"
@@ -166,12 +169,20 @@
       }
     },
     "network": {
-        // "interface": "wlp2*", // (Optional) To force the use of this interface
+        "interface": "w*",
         "format-wifi": "  {essid} ({signalStrength}%)",
         "format-ethernet": "{ipaddr}/{cidr} ",
         "tooltip-format": "{ifname} via {gwaddr} ",
         "format-linked": "{ifname} (No IP) ",
         "format-disconnected": "",
+        "format-alt": "{ifname}: {ipaddr}/{cidr}"
+    },
+    "network.ethernet": {
+        "interface": "en*",
+        "format-ethernet": "{ipaddr}/{cidr}  blah",
+        "tooltip-format": "{ifname} via {gwaddr} ",
+        "format-linked": "{ifname} (No IP) ",
+        "format-disconnected": " bbb",
         "format-alt": "{ifname}: {ipaddr}/{cidr}"
     },
     "pulseaudio": {
@@ -204,6 +215,16 @@
         "escape": true,
         "exec": "$HOME/.config/waybar/mediaplayer.py 2> /dev/null" // Script in resources folder
         // "exec": "$HOME/.config/waybar/mediaplayer.py --player spotify 2> /dev/null" // Filter player based on name
+    },
+    "custom/airpods": {
+        // "exec": "~/.scripts/polybar-bluetooth-device.sh --status 14:14:7D:DF:7B:DB",
+        "exec": "echo airpods",
+        "interval": 2
+    },
+    "custom/mullvad": {
+        // "exec": "~/.scripts/polybar-bluetooth-device.sh --status 14:14:7D:DF:7B:DB",
+        "exec": "echo mullvad",
+        "interval": 2
     },
     "custom/gojeh": {
         "exec": "$HOME/.local/share/go/bin/gojeh",

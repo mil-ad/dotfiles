@@ -1,6 +1,8 @@
 include ~/.config/i3/config
 
+# TODO: maybe these should be in machine-specific kanshi settings?
 output eDP-1 scale 2
+output DP-1 scale 2
 
 bindsym --no-repeat $mod+z exec slurp | grim -g - - | wl-copy -t image/png
 
@@ -11,7 +13,9 @@ for_window [all] title_window_icon padding 5px
 
 for_window [app_id="fzfmenu"] floating enable, resize set 750px 375px, move position center
 for_window [app_id="kitty-app"] floating enable, resize set 750px 375px, move position center
-for_window [app_id="Pavucontrol"] floating enable
+for_window [app_id="(?i)pavucontrol"] floating enable
+for_window [app_id="anki"] floating enable
+
 
 input type:touchpad {
     tap enabled
@@ -49,6 +53,8 @@ bindsym XF86MonBrightnessDown exec light -U 1
 # bindsym XF86MonBrightnessDown exec brightnessctl set 5%-
 # bindsym XF86Display exec autorandr --load laptop-only --force
 
+exec kanshi
+
 # TODO is the always needed? usually useful when (dis)connecting monitors
 exec_always waypaper --restore
-exec waybar
+exec_always ~/.scripts/kill_until_dead waybar && waybar

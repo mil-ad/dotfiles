@@ -85,6 +85,7 @@ button:hover {
 #temperature,
 #backlight,
 #network,
+#network.ethernet,
 #pulseaudio,
 #wireplumber,
 #custom-media,
@@ -94,7 +95,7 @@ button:hover {
 #scratchpad,
 #power-profiles-daemon,
 #mpd {
-    padding: 0 10px;
+    padding: 0 0.4rem;
     color: #ffffff;
 }
 
@@ -186,11 +187,12 @@ label:focus {
 }
 
 #network {
-    background-color: #2980b9;
+    /* background-color: #2980b9; */
+    color: #1ca000;
 }
 
 #network.disconnected {
-    background-color: #f53c3c;
+    color: #f53c3c;
 }
 
 #pulseaudio {
@@ -283,8 +285,8 @@ label:focus {
 }
 
 #keyboard-state {
-    background: #97e1ad;
-    color: #000000;
+    /* background: #97e1ad; */
+    /* color: #000000; */
     padding: 0 0px;
     margin: 0 5px;
     min-width: 16px;
