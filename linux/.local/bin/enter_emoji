@@ -1,9 +1,9 @@
 #!/usr/bin/env bash
 
+assert_installed type-clipboard-content rofimenu wl-copy
+
 chosen=$(rofimenu < ~/.local/share/emojis.txt | cut -d " " -f1)
 
 [ "$chosen" != "" ] || exit
 
-# Ctrl+Shift+V seems to works well in GTK apps and alacritty, but not st but 
-# there's a bug in Roam that double pastes! So switching to shift+insert
-echo -n "$chosen" | xclip -selection clipboard | xdotool key Shift+Insert
+echo -n "$chosen" | wl-copy && type-clipboard-content
