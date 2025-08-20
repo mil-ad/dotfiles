@@ -7,6 +7,7 @@ assert_installed gum mods
 assert_defined ANTHROPIC_API_KEY
 
 get_prompt() {
+    set -o pipefail
     gum write \
         --placeholder="Prompt ..." \
         --prompt="" \

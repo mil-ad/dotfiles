@@ -294,10 +294,9 @@ for_window [class="1Password"] floating enable
 for_window [class="transmission-gtk"] floating enable
 for_window [class="matplotlib"] floating enable
 for_window [class="Mathpix Snipping Tool"] floating enable
-# for_window [class="Lxappearance"] floating enable sticky enable border normal
 for_window [class="qt5ct"] floating enable sticky enable border normal
-# for_window [class="Nitrogen"] floating enable sticky enable border normal
-for_window [title="Picture-in-Picture"] floating enable sticky enable border none
+for_window [app_id="firefox" title="^Picture-in-Picture$"] border none, floating enable, sticky enable, resize set width 224 px height 144 px, move position 80 ppt 85 ppt
+
 
 ##########################################
 #         Start-up Applications
