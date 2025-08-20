@@ -5,6 +5,7 @@ assert_installed rofimenu
 file=$(fd --type f --follow --no-ignore-vcs \
     -e html \
     -e pdf \
+    -e epub \
     -e flac \
     -e mp3 \
     -e mp4 \
