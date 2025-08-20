@@ -49,4 +49,6 @@ bindsym XF86MonBrightnessDown exec light -U 1
 # bindsym XF86MonBrightnessDown exec brightnessctl set 5%-
 # bindsym XF86Display exec autorandr --load laptop-only --force
 
+# TODO is the always needed? usually useful when (dis)connecting monitors
+exec_always waypaper --restore
 exec waybar
