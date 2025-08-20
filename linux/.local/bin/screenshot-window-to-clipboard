@@ -1,5 +1,9 @@
 #!/usr/bin/env bash
 
-set -x
+assert_installed jq slurp grim
 
-slop --nodecorations=1 -f "%i" | xargs -I {} shotgun --id {} - | xclip -selection clipboard -t image/png && notify-send "📸 Screenshot copied to clipboard"
+GEOM=$(swaymsg -t get_tree | jq -r '.. | select(.pid? and .visible?) | .rect | "\(.x),\(.y) \(.width)x\(.height)"' | slurp -r)
+
+[ -z "$GEOM" ] && exit 1
+
+grim -g "$GEOM" - | wl-copy
