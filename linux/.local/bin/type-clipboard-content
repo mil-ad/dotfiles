@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+
+assert_installed ydotool
+
+# Ctrl+Shift+V seems to works well in GTK apps and alacritty, but not st but
+# there's a bug in Roam that double pastes! So switching to shift+insert
+
+# (Left)Shift: 42
+# Insert: 110
+ydotool key 42:1 110:1 42:0 110:0
