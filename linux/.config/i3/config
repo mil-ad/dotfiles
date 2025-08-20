@@ -189,7 +189,7 @@ mode "resize" {
     bindsym Right resize grow width 10 px or 10 ppt
 
     bindsym Return mode "default"
-    bindsym Escape mode "default"
+    bindsym Escape mod--releasee "default"
 }
 
 ##########################################
@@ -197,31 +197,31 @@ mode "resize" {
 ##########################################
 bindsym $mod+Return exec kitty --single-instance
 bindsym $caps+Return layout tabbed; exec kitty --single-instance
-bindsym $mod+space exec --no-startup-id $HOME/.local/bin/winmenu
-bindsym $mod+comma exec --no-startup-id $HOME/.local/bin/rename_i3_container
-bindsym $mod+0 exec --no-startup-id ~/.local/bin/sysact
-bindsym $mod+b exec --no-startup-id ~/.local/bin/open_bookmark
-bindsym $mod+d exec --no-startup-id ~/.local/bin/dmenu_run
-bindsym $mod+e exec --no-startup-id ~/.local/bin/enter_emoji
-bindsym $mod+g exec --no-startup-id ~/.local/bin/kitty-app mods_in_loop
-bindsym $mod+Shift+g exec --no-startup-id ~/.local/bin/kitty-app mods_in_loop --continue
-bindsym $mod+i exec --no-startup-id ~/.local/bin/search
-bindsym $mod+u exec --no-startup-id ~/.local/bin/openurl
-bindsym $mod+o exec --no-startup-id ~/.local/bin/openrecentfile
-bindsym $mod+p exec --no-startup-id ~/.local/bin/open_paper
-bindsym $mod+v exec --no-startup-id ~/.local/bin/clipmenu
-bindsym $mod+r exec --no-startup-id  ~/.local/bin/open_github_repo
-bindsym $mod+t exec --no-startup-id  ~/.local/bin/add-todoist-task
-# bindsym $mod+z --release exec --no-startup-id shotgun $(slop -f "-i %i -g %g") - | xclip -selection clipboard -t image/png
+bindsym $mod+space exec $HOME/.local/bin/winmenu
+bindsym $mod+comma exec $HOME/.local/bin/rename_i3_container
+bindsym $mod+0 exec ~/.local/bin/sysact
+bindsym $mod+b exec ~/.local/bin/open_bookmark
+bindsym $mod+d exec ~/.local/bin/dmenu_run
+bindsym $mod+e exec ~/.local/bin/enter_emoji
+bindsym $mod+g exec ~/.local/bin/kitty-app mods_in_loop
+bindsym $mod+Shift+g exec ~/.local/bin/kitty-app mods_in_loop --continue
+bindsym $mod+i exec ~/.local/bin/search
+bindsym $mod+u exec ~/.local/bin/openurl
+bindsym $mod+o exec ~/.local/bin/openrecentfile
+bindsym $mod+p exec ~/.local/bin/open_paper
+bindsym $mod+v exec ~/.local/bin/clipmenu
+bindsym $mod+r exec  ~/.local/bin/open_github_repo
+bindsym $mod+t exec  ~/.local/bin/add-todoist-task
+# bindsym $mod+z --release exec shotgun $(slop -f "-i %i -g %g") - | xclip -selection clipboard -t image/png
 
-bindsym $mod+Shift+r exec --no-startup-id  ~/.local/bin/open-github-pr
-bindsym $mod+Shift+t exec --no-startup-id  ~/.local/bin/review-todoist-tasks
-bindsym $mod+Shift+z exec --no-startup-id shotgun $(slop -f "-i %i -g %g") "$HOME/Pictures/screenshot-$(date +%F_%T).png" && notify-send "📸 Screenshot region saved to ${HOME}/Pictures"
+bindsym $mod+Shift+r exec  ~/.local/bin/open-github-pr
+bindsym $mod+Shift+t exec  ~/.local/bin/review-todoist-tasks
+bindsym $mod+Shift+z exec shotgun $(slop -f "-i %i -g %g") "$HOME/Pictures/screenshot-$(date +%F_%T).png" && notify-send "📸 Screenshot region saved to ${HOME}/Pictures"
 bindsym $mod+Shift+Return exec pcmanfm
 
-bindsym $mod+Ctrl+o exec --no-startup-id $HOME/.local/bin/openfile
-bindsym $mod+Ctrl+p exec --no-startup-id ~/.local/bin/open_paper_no_annotations
-bindsym $mod+Ctrl+space exec --no-startup-id $HOME/.local/bin/enter_snippet $HOME/.scripts/snippets.yml
+bindsym $mod+Ctrl+o exec $HOME/.local/bin/openfile
+bindsym $mod+Ctrl+p exec ~/.local/bin/open_paper_no_annotations
+bindsym $mod+Ctrl+space exec $HOME/.local/bin/enter_snippet $HOME/.scripts/snippets.yml
 
 ##########################################
 #                Colours
@@ -302,11 +302,11 @@ for_window [title="Picture-in-Picture"] sticky enable border none
 ##########################################
 #         Start-up Applications
 ##########################################
-exec --no-startup-id seafile-applet
-exec --no-startup-id redshift -l 51.50:0.127 -t 6500:3500
-# exec --no-startup-id xss-lock --transfer-sleep-lock -- ~/.local/bin/betterblurlock
-# exec --no-startup-id nitrogen --restore
-exec --no-startup-id dunst -config ~/.config/dunst/dunstrc
-exec_always --no-startup-id clipcatd --replace
-# exec_always --no-startup-id ~/.scripts/kill_until_dead polybar && ~/.scripts/start_polybar
-# exec_always --no-startup-id ~/.scripts/kill_until_dead picom && picom
+exec seafile-applet
+exec gammastep -l 51.50:0.127 -t 6500:3500
+# exec xss-lock --transfer-sleep-lock -- ~/.local/bin/betterblurlock
+# exec nitrogen --restore
+exec dunst -config ~/.config/dunst/dunstrc
+exec_always clipcatd --replace
+# exec_always ~/.scripts/kill_until_dead polybar && ~/.scripts/start_polybar
+# exec_always ~/.scripts/kill_until_dead picom && picom

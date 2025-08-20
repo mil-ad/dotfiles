@@ -2,7 +2,8 @@ include ~/.config/i3/config
 
 output eDP-1 scale 2
 
-bindsym $mod+z --release exec slurp | grim -g - - | wl-copy -t image/png
+bindsym --no-repeat $mod+z exec slurp | grim -g - - | wl-copy -t image/png
+
 
 for_window [app_id="kitty"] title_format "kitty" # TODO
 for_window [app_id="kitty-app"] title_format %title
