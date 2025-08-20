@@ -1,7 +1,6 @@
 #!/usr/bin/env bash
 
-assert_installed nitrogen
+assert_installed swaymsg
 
 sleep 5
-i3-msg restart
-nitrogen --restore
+swaymsg reload

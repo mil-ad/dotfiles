@@ -42,4 +42,4 @@ case $engine in
     "GitHub Repositories") URL="https://github.com/search?q=${query}&type=repositories" ;;
 esac
 
-[[ $query ]] && xdg-open "${URL}" && i3-msg --quiet [urgent=latest] focus
+[[ $query ]] && xdg-open "${URL}" && swaymsg --quiet [urgent=latest] focus

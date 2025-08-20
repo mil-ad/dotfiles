@@ -2,10 +2,10 @@
 
 set -e
 
-windows=$(i3-msg -t get_tree | jq '.. | objects | select(.window_type == "normal") |
-	{name: (.window_properties.class + ": " + .name), id: .id}')
+windows=$(swaymsg -t get_tree | jq -r '.. | objects | select(.type == "con" and (.app_id != null or .window_properties.class != null)) |
+	{name: ((.app_id // .window_properties.class) + ": " + .name), id: .id}')
 
 selected_window=$(echo "$windows" | jq -r '.name' | rofimenu)
 export selected_window
 
-window_id=$(echo "$windows" | jq 'select(.name==env.selected_window) | .id') && i3-msg "[con_id=$window_id] focus"
+window_id=$(echo "$windows" | jq 'select(.name==env.selected_window) | .id') && swaymsg "[con_id=$window_id] focus"
