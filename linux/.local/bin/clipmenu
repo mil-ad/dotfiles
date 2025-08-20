@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
 
-assert_installed clipcatctl
+assert_installed clipcatctl type-clipboard-content
 
-clipcatctl | rofimenu  -p "📋" -display-columns 2 -display-column-separator ": " | cut -d':' -f1 | xargs clipcatctl promote && xdotool key Shift+Insert
+clipcatctl | rofimenu  -p "📋" -display-columns 2 -display-column-separator ": " | cut -d':' -f1 | xargs clipcatctl promote && type-clipboard-content

@@ -212,7 +212,7 @@ bindsym $mod+p exec --no-startup-id ~/.local/bin/open_paper
 bindsym $mod+v exec --no-startup-id ~/.local/bin/clipmenu
 bindsym $mod+r exec --no-startup-id  ~/.local/bin/open_github_repo
 bindsym $mod+t exec --no-startup-id  ~/.local/bin/add-todoist-task
-bindsym $mod+z --release exec --no-startup-id shotgun $(slop -f "-i %i -g %g") - | xclip -selection clipboard -t image/png
+# bindsym $mod+z --release exec --no-startup-id shotgun $(slop -f "-i %i -g %g") - | xclip -selection clipboard -t image/png
 
 bindsym $mod+Shift+r exec --no-startup-id  ~/.local/bin/open-github-pr
 bindsym $mod+Shift+t exec --no-startup-id  ~/.local/bin/review-todoist-tasks
@@ -260,7 +260,7 @@ client.focused              $yellow         $yellow         $darkgray       $aqu
 client.focused_tab_title    $yellow         $yellow         $darkgray       $aqua           $yellow
 client.focused_inactive     $darkgray       $darkgray       $yellow         $darkgray       $bg0
 client.unfocused            $yellow         $darkgray       $yellow         $darkgray       $bg0
-client.urgent               $bright_red     $bright_red     $white          $bright_red     $bright_red
+#client.urgent               $bright_red     $bright_red     $white          $bright_red     $bright_red
 client.placeholder          #000000         #0c0c0c         #ffffff         #000000
 client.background           #2B2C2B
 
@@ -302,12 +302,11 @@ for_window [title="Picture-in-Picture"] sticky enable border none
 ##########################################
 #         Start-up Applications
 ##########################################
-exec --no-startup-id tuned-adm profile desktop
 exec --no-startup-id seafile-applet
 exec --no-startup-id redshift -l 51.50:0.127 -t 6500:3500
-exec --no-startup-id xss-lock --transfer-sleep-lock -- ~/.local/bin/betterblurlock
-exec --no-startup-id nitrogen --restore
+# exec --no-startup-id xss-lock --transfer-sleep-lock -- ~/.local/bin/betterblurlock
+# exec --no-startup-id nitrogen --restore
 exec --no-startup-id dunst -config ~/.config/dunst/dunstrc
 exec_always --no-startup-id clipcatd --replace
-exec_always --no-startup-id ~/.scripts/kill_until_dead polybar && ~/.scripts/start_polybar
-exec_always --no-startup-id ~/.scripts/kill_until_dead picom && picom
+# exec_always --no-startup-id ~/.scripts/kill_until_dead polybar && ~/.scripts/start_polybar
+# exec_always --no-startup-id ~/.scripts/kill_until_dead picom && picom

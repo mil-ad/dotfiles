@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-assert_installed yq jq xdotool xclip rofimenu
+assert_installed yq jq ydotool wl-copy rofimenu type-clipboard-content
 
 selected_idx=$(yq -o json < $1 | jq -r '
 .[] |
@@ -14,5 +14,5 @@ end
 if [ "$selected_idx" == "" ]; then
     exit
 else
-    yq -r ".["$selected_idx"].value" "$1" | sed -z '$s/\n$//' | xclip -selection clipboard | xdotool key Shift+Insert
+    yq -r ".["$selected_idx"].value" "$1" | sed -z '$s/\n$//' | wl-copy && type-clipboard-content
 fi

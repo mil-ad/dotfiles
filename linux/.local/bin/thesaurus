@@ -1,6 +1,7 @@
 #!/bin/env bash
 
-assert_installed sdcv
+assert_installed sdcv type-clipboard-content wl-copy
+
 export STARDICT_DATA_DIR="$HOME"/.local/share/sdcv_dicts
 
 word=$(rofimenu -l 0 -p "💬")
@@ -12,4 +13,4 @@ synonym=$(echo $word | xargs sdcv --non-interactive -u "Collins Thesaurus (En-En
 
 selected=$(echo "$synonym" | sed '/\[.*\]/,$!d' | grep -v "\[" | sed -r 's/^[0-9]+. //g' | sed 's/, /\n/g' | sed '/^$/d' | rofimenu | sed -r 's/\s+\(.+\)//g')
 
-[[ -n $selected ]] && echo -n "$selected" | xclip -selection clipboard && xdotool key Shift+Insert
+[[ -n $selected ]] && echo -n "$selected" | wl-copy && type-clipboard-content
