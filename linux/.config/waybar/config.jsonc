@@ -204,6 +204,11 @@
         },
         "on-click": "pavucontrol"
     },
+    "pulseaudio/slider": {
+        "min": 0,
+        "max": 100,
+        "orientation": "horizontal"
+    },
     "custom/media": {
         "format": "{icon} {text}",
         "return-type": "json",

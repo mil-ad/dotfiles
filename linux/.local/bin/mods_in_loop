@@ -6,14 +6,17 @@
 assert_installed gum mods
 assert_defined ANTHROPIC_API_KEY
 
+# set -x
+# set -o pipefail
+
 get_prompt() {
-    set -o pipefail
     gum write \
         --placeholder="Prompt ..." \
         --prompt="" \
         --no-show-help \
         --char-limit=0 \
-        --cursor.foreground="#d79921" | tee >(wl-copy)
+        --cursor.foreground="#d79921"
+        # --cursor.foreground="#d79921" | tee >(wl-copy)
 }
 
 while [[ $# -gt 0 ]]; do
