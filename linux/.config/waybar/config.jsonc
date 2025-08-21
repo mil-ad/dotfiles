@@ -21,10 +21,10 @@
         "custom/mullvad",
         "custom/airpods",
         "network",
-        "network.ethernet",
+        "network#ethernet",
         "pulseaudio",
         "power-profiles-daemon",
-        "keyboard-state",
+        // "keyboard-state",
         "sway/language",
         "battery",
         "battery#bat2",
@@ -50,7 +50,9 @@
     "keyboard-state": {
         "numlock": false,
         "capslock": true,
-        "format": "{name} {icon}",
+        "format": {
+            "capslock": "{name} {icon}"
+        },
         "format-icons": {
             "locked": "",
             "unlocked": ""
@@ -170,20 +172,20 @@
     },
     "network": {
         "interface": "w*",
-        "format-wifi": "  {essid} ({signalStrength}%)",
-        "format-ethernet": "{ipaddr}/{cidr} ",
-        "tooltip-format": "{ifname} via {gwaddr} ",
-        "format-linked": "{ifname} (No IP) ",
-        "format-disconnected": "",
-        "format-alt": "{ifname}: {ipaddr}/{cidr}"
+        "format-wifi": "󰖩 {essid}",
+        "tooltip-format": "{ipaddr} - RSSI {signalStrength}%",
+        "on-click": "rfkill toggle wifi",
+        "format-linked": "󱛅",
+        "format-disconnected": "󱛇",
+        "format-disabled": "󱚼"
     },
-    "network.ethernet": {
+    "network#ethernet": {
         "interface": "en*",
-        "format-ethernet": "{ipaddr}/{cidr}  blah",
-        "tooltip-format": "{ifname} via {gwaddr} ",
+        "format-ethernet": "󰈀 {ipaddr}",
+        "tooltip-format": "󰇚 {bandwidthDownBits} | 󰕒 {bandwidthUpBits}",
         "format-linked": "{ifname} (No IP) ",
-        "format-disconnected": " bbb",
-        "format-alt": "{ifname}: {ipaddr}/{cidr}"
+        "format-disconnected": "󰌙"
+        // "format-alt": "{ifname}: {ipaddr}/{cidr}"
     },
     "pulseaudio": {
         // "scroll-step": 1, // %, can be a float
