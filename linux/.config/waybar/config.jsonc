@@ -228,7 +228,8 @@
     },
     "custom/mullvad": {
         // "exec": "~/.scripts/polybar-bluetooth-device.sh --status 14:14:7D:DF:7B:DB",
-        "exec": "echo mullvad",
+        "exec": "$HOME/.scripts/wireguard_polybar",
+        "on-click": "$HOME/.scripts/wireguard_polybar --toggle &",
         "interval": 2
     },
     "custom/gojeh": {
