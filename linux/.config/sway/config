@@ -8,7 +8,9 @@ output DP-1 scale 2
 bindsym --no-repeat $mod+z exec slurp | grim -g - - | wl-copy -t image/png
 
 
-for_window [app_id="kitty"] title_format "kitty" # TODO
+# TODO?
+for_window [app_id="kitty"] title_format "🐈"
+
 for_window [app_id="kitty-app"] title_format %title
 for_window [all] title_window_icon padding 5px
 
@@ -16,7 +18,7 @@ for_window [app_id="fzfmenu"] floating enable, resize set 750px 375px, move posi
 for_window [app_id="kitty-app"] floating enable, resize set 750px 375px, move position center
 for_window [app_id="(?i)pavucontrol"] floating enable
 for_window [app_id="anki"] floating enable
-
+for_window [app_id="waypaper"] floating enable, move position center
 
 input type:touchpad {
     tap enabled
