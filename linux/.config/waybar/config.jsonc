@@ -22,9 +22,11 @@
         "custom/airpods",
         "network",
         "network#ethernet",
-        "pulseaudio",
+        // "pulseaudio",
+        "wireplumber",
         "power-profiles-daemon",
         // "keyboard-state",
+        "systemd-failed-units",
         "sway/language",
         "battery",
         "battery#bat2",
@@ -173,7 +175,7 @@
     "network": {
         "interface": "w*",
         "format-wifi": "󰖩 {essid}",
-        "tooltip-format": "{ipaddr} - RSSI {signalStrength}%",
+        "tooltip-format": "{ipaddr} | Strength {signalStrength}% | 󰇚 {bandwidthDownBits} | 󰕒 {bandwidthUpBits}",
         "on-click": "rfkill toggle wifi",
         "format-linked": "󱛅",
         "format-disconnected": "󱛇",
@@ -211,6 +213,16 @@
         "max": 100,
         "orientation": "horizontal"
     },
+    "wireplumber": {
+        "format": "{volume}% {icon} {format_source}",
+        // "format-muted": " {format_source}",
+        // "format-source": "{source_volume}% ",
+        // "format-source-muted": " ",
+        // "format-icons": {
+        //     "default": ["", ""]
+        // },
+        // "on-click": "helvum"
+    },
     "custom/media": {
         "format": "{icon} {text}",
         "return-type": "json",
@@ -231,7 +243,15 @@
     "custom/mullvad": {
         // "exec": "~/.scripts/polybar-bluetooth-device.sh --status 14:14:7D:DF:7B:DB",
         "exec": "$HOME/.scripts/wireguard_polybar",
-        "on-click": "$HOME/.scripts/wireguard_polybar --toggle &",
+        "return-type": "json",
+        "format": "{icon}",
+        "tooltip": true,
+        "tooltip-format": "{text}",
+        "format-icons": {
+            "connected": "",
+            "disconnected": ""
+        },
+        "on-click": "$HOME/.scripts/wireguard_polybar --toggle",
         "interval": 2
     },
     "custom/gojeh": {
