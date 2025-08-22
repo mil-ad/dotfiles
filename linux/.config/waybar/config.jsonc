@@ -4,7 +4,7 @@
     "position": "bottom",
     "height": 30, // Waybar height (to be removed for auto height)
     // "width": 1280, // Waybar width
-    "spacing": 4, // Gaps between modules (4px)
+    "spacing": 5, // Gaps between modules (4px)
     // Choose the order of the modules
     "modules-left": [
         "sway/workspaces",
@@ -20,10 +20,10 @@
         "idle_inhibitor",
         "custom/mullvad",
         "custom/airpods",
-        "network",
         "network#ethernet",
-        // "pulseaudio",
-        "wireplumber",
+        "network",
+        "pulseaudio",
+        // "wireplumber",
         "power-profiles-daemon",
         // "keyboard-state",
         "systemd-failed-units",
@@ -69,6 +69,9 @@
         "format-icons": ["", ""],
         "tooltip": true,
         "tooltip-format": "{app}: {title}"
+    },
+    "systemd-failed-units": {
+        "hide-on-ok": true
     },
     "sway/language": {
         "format": "{flag}",
@@ -145,18 +148,15 @@
     },
     "battery": {
         "states": {
-            // "good": 95,
+            "good": 90,
             "warning": 30,
             "critical": 15
         },
-        "format": "{capacity}% {icon}",
-        "format-full": "{capacity}% {icon}",
-        "format-charging": "{capacity}% ",
-        "format-plugged": "{capacity}% ",
+        "interval": 5,
+        "format-discharging": "{icon} {capacity}",
+        "format-charging": " {capacity}%",
         "format-alt": "{time} {icon}",
-        // "format-good": "", // An empty format will hide the module
-        // "format-full": "",
-        "format-icons": ["", "", "", "", ""]
+        "format-icons": ["󰂎", "󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"]
     },
     "battery#bat2": {
         "bat": "BAT2"
@@ -174,7 +174,7 @@
     },
     "network": {
         "interface": "w*",
-        "format-wifi": "󰖩 {essid}",
+        "format-wifi": "󰖩  {essid}",
         "tooltip-format": "{ipaddr} | Strength {signalStrength}% | 󰇚 {bandwidthDownBits} | 󰕒 {bandwidthUpBits}",
         "on-click": "rfkill toggle wifi",
         "format-linked": "󱛅",
@@ -186,15 +186,15 @@
         "format-ethernet": "󰈀 {ipaddr}",
         "tooltip-format": "󰇚 {bandwidthDownBits} | 󰕒 {bandwidthUpBits}",
         "format-linked": "{ifname} (No IP) ",
-        "format-disconnected": "󰌙"
+        "format-disconnected": "󰈀"
         // "format-alt": "{ifname}: {ipaddr}/{cidr}"
     },
     "pulseaudio": {
         // "scroll-step": 1, // %, can be a float
-        "format": "{volume}% {icon}",
+        "format": "{icon} {volume}%",
         "format-bluetooth": "{volume}% {icon} {format_source}",
         "format-bluetooth-muted": " {icon} {format_source}",
-        "format-muted": "MUTED TODO",
+        "format-muted": "",
         "format-source": "{volume}% ",
         "format-source-muted": "",
         "format-icons": {
@@ -204,9 +204,10 @@
             "phone": "",
             "portable": "",
             "car": "",
-            "default": ["", "", ""]
+            "default": ["", ""]
         },
-        "on-click": "pavucontrol"
+        "on-click": "pactl set-sink-mute @DEFAULT_SINK@ toggle",
+        "on-click-right": "pavucontrol"
     },
     "pulseaudio/slider": {
         "min": 0,
@@ -214,14 +215,16 @@
         "orientation": "horizontal"
     },
     "wireplumber": {
-        "format": "{volume}% {icon} {format_source}",
+        "on-click": "pactl set-sink-mute @DEFAULT_SINK@ toggle",
+        "on-click-right": "pavucontrol",
+        "format": "{icon} {volume}%",
+        "format-icons": ["", ""]
         // "format-muted": " {format_source}",
         // "format-source": "{source_volume}% ",
         // "format-source-muted": " ",
         // "format-icons": {
         //     "default": ["", ""]
         // },
-        // "on-click": "helvum"
     },
     "custom/media": {
         "format": "{icon} {text}",
