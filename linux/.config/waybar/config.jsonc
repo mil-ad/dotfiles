@@ -4,7 +4,7 @@
     "position": "bottom",
     "height": 30, // Waybar height (to be removed for auto height)
     // "width": 1280, // Waybar width
-    "spacing": 5, // Gaps between modules (4px)
+    "spacing": 4, // Gaps between modules (4px)
     // Choose the order of the modules
     "modules-left": [
         "sway/workspaces",
@@ -24,9 +24,9 @@
         "network",
         "pulseaudio",
         // "wireplumber",
-        "power-profiles-daemon",
+        // "power-profiles-daemon",
         // "keyboard-state",
-        "systemd-failed-units",
+        // "systemd-failed-units",
         "sway/language",
         "battery",
         "battery#bat2",
@@ -114,7 +114,7 @@
     },
     "tray": {
         // "icon-size": 21,
-        "spacing": 1
+        "spacing": 5
         // "icons": {
         //   "blueman": "bluetooth",
         //   "TelegramDesktop": "$HOME/.local/share/icons/hicolor/16x16/apps/telegram.png"
@@ -239,12 +239,13 @@
         // "exec": "$HOME/.config/waybar/mediaplayer.py --player spotify 2> /dev/null" // Filter player based on name
     },
     "custom/airpods": {
-        // "exec": "~/.scripts/polybar-bluetooth-device.sh --status 14:14:7D:DF:7B:DB",
-        "exec": "echo airpods",
+        "exec": "~/.scripts/polybar-bluetooth-device.sh --status 14:14:7D:DF:7B:DB",
+        "return-type": "json",
+        "format": "󰂯",
+        "on-click": "$HOME/.scripts/polybar-bluetooth-device.sh --toggle 14:14:7D:DF:7B:DB",
         "interval": 2
     },
     "custom/mullvad": {
-        // "exec": "~/.scripts/polybar-bluetooth-device.sh --status 14:14:7D:DF:7B:DB",
         "exec": "$HOME/.scripts/wireguard_polybar",
         "return-type": "json",
         "format": "{icon}",
