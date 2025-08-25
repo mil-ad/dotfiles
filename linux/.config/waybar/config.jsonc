@@ -248,7 +248,7 @@
     "custom/mullvad": {
         "exec": "$HOME/.scripts/wireguard_polybar",
         "return-type": "json",
-        "format": "{icon}",
+        "format": "{icon} {text}",
         "tooltip": true,
         "tooltip-format": "{text}",
         "format-icons": {

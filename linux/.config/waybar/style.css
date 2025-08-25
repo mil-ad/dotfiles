@@ -250,19 +250,19 @@ label:focus {
 }
 
 #custom-airpods.connected {
-    color: @gruvbux-green;
+    color: @gruvbox-green;
 }
 
 #custom-airpods.connecting {
-    color: @gruvbux-yellow;
+    color: @gruvbox-yellow;
 }
 
-#custom-airpods.idle {
+/* #custom-airpods.idle { */
 
-}
+/* } */
 
 #custom-airpods.disabled {
-    color: @gruvbux-grey;
+    color: @gruvbox-grey;
 }
 
 #custom-media {
