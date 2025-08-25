@@ -242,7 +242,13 @@
     "custom/airpods": {
         "exec": "~/.scripts/polybar-bluetooth-device.sh --status 14:14:7D:DF:7B:DB",
         "return-type": "json",
-        "format": "󰂯",
+        "format": "{icon}",
+        "format-icons": {
+            "connected": "󰂱",
+            "connecting": "󰂯",
+            "idle": "󰂯",
+            "disabled": "󰂲",
+        },
         "on-click": "$HOME/.scripts/polybar-bluetooth-device.sh --toggle 14:14:7D:DF:7B:DB",
         "interval": 2
     },
