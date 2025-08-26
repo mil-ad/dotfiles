@@ -19,6 +19,7 @@ for_window [app_id="kitty-app"] floating enable, resize set 750px 375px, move po
 for_window [app_id="(?i)pavucontrol"] floating enable
 for_window [app_id="anki"] floating enable
 for_window [app_id="waypaper"] floating enable, move position center
+for_window [app_id="Zoom Workplace"] floating enable, move position center
 
 input type:touchpad {
     tap enabled

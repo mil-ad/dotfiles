@@ -6,8 +6,9 @@ assert_installed magick grim jq swaylock
 # doesn't preserve resolution and the final output has slightly different
 # resolution compared to the input.
 width_height=$(swaymsg -t get_outputs --raw | jq -r '.[0].current_mode | "\(.width)x\(.height)"')
+output=$(swaymsg -t get_outputs --raw | jq -r '.[0].name')
 
 export TMPSUFFIX=.png
 
 # ppm is uncompressed and much faster
-swaylock --daemonize --show-keyboard-layout --image =(grim -t ppm - | magick - -scale 10% -blur 0x2.5 -resize "$width_height" -)
+swaylock --daemonize --show-keyboard-layout --image =(grim -o $output -t ppm - | magick - -scale 10% -blur 0x2.5 -resize "$width_height" PNG:-)
