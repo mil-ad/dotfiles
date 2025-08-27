@@ -2,8 +2,10 @@ include /etc/sway/config.d/*
 include ~/.config/i3/config
 
 # TODO: maybe these should be in machine-specific kanshi settings?
-output eDP-1 scale 2
-output DP-1 scale 2
+# output eDP-1 scale 2
+# output DP-1 scale 2
+# output "LG Electronics LG SDQHD 203NTBKCY173" scale 2
+# output "Samsung Display Corp. 0x4165 Unknown" scale 2.5
 
 bindsym --no-repeat $mod+z exec slurp | grim -g - - | wl-copy -t image/png
 
@@ -41,23 +43,24 @@ exec swayidle -w \
 
 # TODO: make machine specific?
 # this is for matebook 14s
-bindsym XF86AudioRaiseVolume exec pamixer --increase 5
-bindsym XF86AudioLowerVolume exec pamixer --decrease 5
-bindsym XF86AUdioMute exec pamixer --toggle-mute
-bindsym XF86MonBrightnessUp exec light -A 1
-bindsym XF86MonBrightnessDown exec light -U 1
+# bindsym XF86AudioRaiseVolume exec pamixer --increase 5
+# bindsym XF86AudioLowerVolume exec pamixer --decrease 5
+# bindsym XF86AUdioMute exec pamixer --toggle-mute
+# bindsym XF86MonBrightnessUp exec light -A 1
+# bindsym XF86MonBrightnessDown exec light -U 1
 
 # thinkpad p1:
 #
-# bindsym XF86AudioRaiseVolume exec pactl set-sink-volume @DEFAULT_SINK@ +1000
-# bindsym XF86AudioLowerVolume exec pactl set-sink-volume @DEFAULT_SINK@ -1000
-# bindsym XF86AudioMute exec pactl set-sink-mute @DEFAULT_SINK@ toggle
-# bindsym XF86AudioMicMute exec pactl set-source-mute @DEFAULT_SOURCE@ toggle
-# bindsym XF86MonBrightnessUp exec brightnessctl set +5%
-# bindsym XF86MonBrightnessDown exec brightnessctl set 5%-
-# bindsym XF86Display exec autorandr --load laptop-only --force
+bindsym XF86AudioRaiseVolume exec pactl set-sink-volume @DEFAULT_SINK@ +1000
+bindsym XF86AudioLowerVolume exec pactl set-sink-volume @DEFAULT_SINK@ -1000
+bindsym XF86AudioMute exec pactl set-sink-mute @DEFAULT_SINK@ toggle
+bindsym XF86AudioMicMute exec pactl set-source-mute @DEFAULT_SOURCE@ toggle
+bindsym XF86MonBrightnessUp exec brightnessctl set +5%
+bindsym XF86MonBrightnessDown exec brightnessctl set 5%-
+bindsym XF86Display exec kanshictl switch laptop-only
 
 exec kanshi
+exec_always kanshictl reload
 
 # TODO is the always needed? usually useful when (dis)connecting monitors
 exec_always waypaper --restore

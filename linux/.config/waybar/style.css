@@ -6,7 +6,7 @@
 * {
     /* `otf-font-awesome` is required to be installed for icons */
     font-family: "milad-icomoon", Cascadia Code, "Symbols Nerd Font", "Font Awesome 6 Free", Roboto, Helvetica, Arial, sans-serif;
-    font-size: 0.80rem;
+    font-size: 0.70rem;
 }
 
 window#waybar {
