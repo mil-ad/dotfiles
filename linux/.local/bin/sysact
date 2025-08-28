@@ -36,12 +36,12 @@ case "$selected_option" in
     '🔒 lock') ~/.local/bin/betterblurlock ;;
     '💤 sleep') systemctl suspend ;;
     '🐻 hibernate')  systemctl hibernate ;;
-    '🚪 logout') swaymsg exit ;;
+    '🚪 logout') rofi-confirm && swaymsg exit ;;
     '🔫 xkill') xkill ;;
     '🖖 (un)split monitor') ~/.local/bin/toggle_virtual_monitors ;;
     "🔄 switch monitor input") ~/.local/bin/switch-monitor-input ;;
     '♻️ restart sway') swaymsg reload ;;
-    '🚀 reboot')  systemctl reboot ;;
+    '🚀 reboot')  rofi-confirm && systemctl reboot ;;
     '🖥 power off') systemctl poweroff ;;
     *) exit 1 ;;
 esac

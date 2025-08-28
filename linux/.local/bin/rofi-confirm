@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+
+set -x
+echo -e "No\nYes" | rofimenu -p "Are you sure?" | grep -q "Yes"
