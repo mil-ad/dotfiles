@@ -11,11 +11,13 @@ assert_installed uvx xkill swaymsg
 
 menu_items=(
     "🤖 Mods History"
+    "⚙️ Edit dotfiles"
     "🐍 Python"
     "🔒 lock"
     "💤 sleep"
-    "🔫 xkill"
+    # "🔫 xkill"
     "♻️ restart sway"
+    "🎨 color picker"
     "📹 record area"
     "📸 screenshot program"
     "🖖 (un)split monitor"
@@ -30,7 +32,9 @@ selected_option=$(printf "%s\n" "${menu_items[@]}" | rofimenu)
 
 case "$selected_option" in
     "🤖 Mods History") ~/.local/bin/kitty-app mods_show;;
+    "⚙️ Edit dotfiles") kitty-app hx ~/.dotfiles ;;
     "🐍 Python") ~/.local/bin/kitty-app uvx --with pandas --with numpy --with matplotlib ptpython;;
+    "🎨 color picker") hyprpicker --autocopy ;;
     '📹 record area') ~/.local/bin/record-screen-area-start ;;
     "📸 screenshot program") ~/.local/bin/screenshot-window-to-clipboard ;;
     '🔒 lock') ~/.local/bin/betterblurlock ;;
