@@ -19,7 +19,7 @@
     "modules-right": [
         "custom/gojeh",
         "idle_inhibitor",
-        // "custom/mullvad",
+        "custom/mullvad",
         "custom/airpods",
         "network",
         "network#ethernet",
@@ -194,8 +194,8 @@
     "pulseaudio": {
         // "scroll-step": 1, // %, can be a float
         "format": "{icon} {volume}%",
-        "format-bluetooth": "{volume}% {icon} {format_source}",
-        "format-bluetooth-muted": " {icon} {format_source}",
+        "format-bluetooth": "{icon} {volume}%",
+        "format-bluetooth-muted": "{icon} {volume}%",
         "format-muted": "",
         "format-source": "{volume}% ",
         "format-source-muted": "",
