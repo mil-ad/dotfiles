@@ -22,6 +22,7 @@ for_window [app_id="(?i)pavucontrol"] floating enable
 for_window [app_id="anki"] floating enable
 for_window [app_id="waypaper"] floating enable, move position center
 for_window [app_id="Zoom Workplace"] floating enable, move position center
+# for_window [name="Transmission"] floating enable, move position center
 
 input type:touchpad {
     tap enabled
@@ -33,6 +34,11 @@ input type:keyboard {
     xkb_layout "gb,ir"
     xkb_model "pc105"
     xkb_options "grp:rctrl_rshift_toggle"
+}
+
+input "12815:20565:RDR_IQUNIX_MG65_Mechanical_Keyboard" {
+    xkb_layout "us,ir"
+    xkb_model "pc104"
 }
 
 exec swayidle -w \
