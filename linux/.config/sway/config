@@ -39,6 +39,7 @@ input type:keyboard {
 input "12815:20565:RDR_IQUNIX_MG65_Mechanical_Keyboard" {
     xkb_layout "us,ir"
     xkb_model "pc104"
+    xkb_options "grp:rctrl_rshift_toggle"
 }
 
 exec swayidle -w \
