@@ -13,21 +13,20 @@ menu_items=(
     "🤖 Mods History"
     "⚙️ Edit dotfiles"
     "🐍 Python"
-    "🔒 lock"
-    "💤 sleep"
     # "🔫 xkill"
-    "♻️ restart sway"
     "🎨 color picker"
     "📹 record area"
     "📸 screenshot program"
     "🖖 (un)split monitor"
     "🔄 switch monitor input"
+    "♻️ restart sway"
     "🚪 logout"
     "🚀 reboot"
+    "🔒 lock"
+    "💤 sleep"
     "🐻 hibernate"
     "🖥 power off"
 )
-
 selected_option=$(printf "%s\n" "${menu_items[@]}" | rofimenu)
 
 case "$selected_option" in
