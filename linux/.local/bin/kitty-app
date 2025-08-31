@@ -1,12 +1,17 @@
 #!/usr/bin/env bash
 
-exec &> >(tee /tmp/kitty.log)
+set -x
+exec &> >(tee /tmp/kitty-app.log)
 
 #TODO options to redirect stdin/stdout
 
-kitty \
-  --single-instance \
-  --override background_opacity=1 \
-  --class kitty-app \
-  --title $(basename "$1") \
+# Default kitty options
+KITTY_OPTS="--single-instance --override background_opacity=1 --class kitty-app"
+
+# Allow overriding kitty options via environment variable
+if [[ -n "$KITTY_EXTRA_OPTS" ]]; then
+    KITTY_OPTS="$KITTY_OPTS $KITTY_EXTRA_OPTS"
+fi
+
+kitty $KITTY_OPTS \
   -- sh --noprofile --norc -c "$*"

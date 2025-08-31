@@ -32,7 +32,7 @@ selected_option=$(printf "%s\n" "${menu_items[@]}" | rofimenu)
 
 case "$selected_option" in
     "🤖 Mods History") ~/.local/bin/kitty-app mods_show;;
-    "⚙️ Edit dotfiles") kitty-app hx ~/.dotfiles ;;
+    "⚙️ Edit dotfiles") KITTY_EXTRA_OPTS="--class=hx" kitty-app hx ~/.dotfiles ;;
     "🐍 Python") ~/.local/bin/kitty-app uvx --with pandas --with numpy --with matplotlib ptpython;;
     "🎨 color picker") hyprpicker --autocopy ;;
     '📹 record area') ~/.local/bin/record-screen-area-start ;;
@@ -41,7 +41,7 @@ case "$selected_option" in
     '💤 sleep') systemctl suspend ;;
     '🐻 hibernate')  systemctl hibernate ;;
     '🚪 logout') rofi-confirm && swaymsg exit ;;
-    '🔫 xkill') xkill ;;
+    # '🔫 xkill') xkill ;;
     '🖖 (un)split monitor') ~/.local/bin/toggle_virtual_monitors ;;
     "🔄 switch monitor input") ~/.local/bin/switch-monitor-input ;;
     '♻️ restart sway') swaymsg reload ;;
