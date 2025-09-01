@@ -75,7 +75,6 @@
     "terminal.integrated.useWslProfiles": false,
     "terminal.integrated.enableImages": true,
     "workbench.tree.enableStickyScroll": false,
-    "workbench.editor.enablePreview": true,
     "workbench.editor.enablePreviewFromQuickOpen": false,
     "workbench.editor.labelFormat": "short",
     "workbench.editor.decorations.badges": false,
@@ -125,6 +124,7 @@
     "explorer.decorations.colors": true,
     "explorer.sortOrder": "type",
     "explorer.incrementalNaming": "smart",
+    "explorer.autoReveal": false,
     "breadcrumbs.filePath": "off",
     "breadcrumbs.enabled": false,
     "extensions.ignoreRecommendations": true,
@@ -283,4 +283,5 @@
         }
     ],
     "zenMode.restore": false,
+    "outline.collapseItems": "alwaysCollapse",
 }

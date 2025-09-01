@@ -12,6 +12,7 @@ assert_installed uvx xkill swaymsg
 menu_items=(
     "🤖 Mods History"
     "⚙️ Edit dotfiles"
+    "⚙️ Edit scripts"
     "🐍 Python"
     # "🔫 xkill"
     "🎨 color picker"
@@ -32,6 +33,7 @@ selected_option=$(printf "%s\n" "${menu_items[@]}" | rofimenu)
 case "$selected_option" in
     "🤖 Mods History") ~/.local/bin/kitty-app mods_show;;
     "⚙️ Edit dotfiles") KITTY_EXTRA_OPTS="--class=hx" kitty-app hx ~/.dotfiles ;;
+    "⚙️ Edit scripts") KITTY_EXTRA_OPTS="--class=hx" kitty-app hx ~/.scripts ;;
     "🐍 Python") ~/.local/bin/kitty-app uvx --with pandas --with numpy --with matplotlib ptpython;;
     "🎨 color picker") hyprpicker --autocopy ;;
     '📹 record area') ~/.local/bin/record-screen-area-start ;;
