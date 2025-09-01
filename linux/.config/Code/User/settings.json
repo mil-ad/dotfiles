@@ -1,4 +1,5 @@
 {
+    "telemetry.telemetryLevel": "off",
     "window.restoreWindows": "none",
     "window.title": "${rootNameShort}${separator}${profileName}",
     "window.commandCenter": true,
@@ -151,9 +152,8 @@
             "focusBorder": "accent"
         }
     },
-    "telemetry.telemetryLevel": "off",
-    "update.mode": "start",
-    "update.showReleaseNotes": true,
+    "update.mode": "manual",
+    "update.showReleaseNotes": false,
     "explorer.decorations.badges": false,
     "scm.diffDecorationsGutterWidth": 2,
     "scm.diffDecorations": "gutter",
