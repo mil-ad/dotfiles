@@ -553,4 +553,8 @@
         "key": "ctrl+l",
         "command": "-aichat.newchataction"
     },
+    {
+        "key": "ctrl+k ctrl+t",
+        "command": "editor.cpp.toggle"
+    },
 ]
