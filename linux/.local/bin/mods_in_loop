@@ -1,49 +1,54 @@
 #!/usr/bin/env bash
 
-
-#exec &> >(tee /tmp/mods.log)
+# exec &> >(tee /tmp/mods.log)
 
 assert_installed gum mods
 assert_defined ANTHROPIC_API_KEY
 
-# set -x
-# set -o pipefail
-
 get_prompt() {
-    gum write \
+    user_prompt=$(gum write \
         --placeholder="Prompt ..." \
         --prompt="" \
         --no-show-help \
         --char-limit=0 \
-        --cursor.foreground="#d79921"
-        # --cursor.foreground="#d79921" | tee >(wl-copy)
+        --cursor.foreground="#d79921")
+
+    local exit_code=$?
+
+    # I tried using wl-copy but that seems to leave a process in the background and
+    # makes exiting from the script difficult
+    if [[ $exit_code -eq 0 ]]; then
+        clipwrite <<< "$user_prompt"
+    fi
+
+    return $exit_code
 }
 
 while [[ $# -gt 0 ]]; do
     case $1 in
     --continue)
         CONTINUE=true
-        shift # Remove --blah from processing
+        shift
         ;;
     *)
         echo "Unknown option: $1"
-        shift
+        exit 1
         ;;
     esac
 done
 
 if [[ -z $CONTINUE ]]; then
-    first_prompt=$(get_prompt) && \
-        printf "🧑 %s\n🤖\n" "$first_prompt" && \
-        mods <<< "$first_prompt" || \
+    get_prompt && \
+        printf "🧑 %s\n🤖\n" "$user_prompt" && \
+        mods <<< "$user_prompt" || \
         exit
 else
     mods --show-last
 fi
 
 while true; do
-    next_prompt=$(get_prompt) && \
-    printf "🧑 %s\n🤖\n" "$next_prompt" && \
-    mods --continue-last <<< "$next_prompt" || \
+    get_prompt && \
+    printf "🧑 %s\n🤖\n" "$user_prompt" && \
+    mods --continue-last <<< "$user_prompt" || \
     break
 done
