@@ -63,7 +63,7 @@
     "terminal.external.linuxExec": "kitty",
     "terminal.external.osxExec": "/Applications/kitty.app",
     "terminal.integrated.fontFamily": "'Iosevka Term', 'Symbols Nerd Font', 'Noto Color Emoji', 'Vazir WOL'",
-    "terminal.integrated.fontSize": 12,
+    "terminal.integrated.fontSize": 16,
     "terminal.integrated.inheritEnv": true,
     "terminal.integrated.macOptionClickForcesSelection": true,
     "terminal.integrated.macOptionIsMeta": true,
@@ -229,7 +229,7 @@
     ],
     "go.toolsManagement.autoUpdate": true,
     "git.openRepositoryInParentFolders": "never",
-    "workbench.colorTheme": "Kanagawa",
+    "workbench.colorTheme": "Catppuccin Mocha",
     "github.copilot.nextEditSuggestions.enabled": false,
     "terminal.integrated.sendKeybindingsToShell": true,
     "cursor.chat.terminalShowHoverHint": false,
@@ -284,4 +284,5 @@
     ],
     "zenMode.restore": false,
     "outline.collapseItems": "alwaysCollapse",
+    "workbench.reduceMotion": "on",
 }
