@@ -15,6 +15,7 @@ eBay
 goodreads
 Wirecutter
 RoyalMail Tracking
+17TRACK
 CamelCamelCamel
 PyPi
 GitHub Repositories' | rofimenu -no-custom)
@@ -37,6 +38,7 @@ case $engine in
     "goodreads") URL="https://www.goodreads.com/search?q=${query}" ;;
     "Wirecutter") URL="https://www.nytimes.com/wirecutter/search/?s=${query}" ;;
     "RoyalMail Tracking") URL="https://www.royalmail.com/track-your-item#/tracking-results/${query}" ;;
+    "17TRACK") URL="https://t.17track.net/en#nums=${query}" ;;
     "CamelCamelCamel") URL="https://uk.camelcamelcamel.com/search?sq=${query}" ;;
     "PyPi") URL="https://pypi.org/search/?q=${query}" ;;
     "GitHub Repositories") URL="https://github.com/search?q=${query}&type=repositories" ;;
