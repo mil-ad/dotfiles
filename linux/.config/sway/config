@@ -10,7 +10,7 @@ include ~/.config/i3/config
 bindsym --no-repeat $mod+z exec slurp | grim -g - - | wl-copy -t image/png
 
 
-# TODO?
+# unlike i3
 for_window [app_id="kitty"] title_format "🐈"
 
 for_window [app_id="kitty-app"] title_format %title
