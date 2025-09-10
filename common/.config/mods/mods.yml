@@ -105,6 +105,9 @@ apis:
       claude-3-5-sonnet-20240620:
         aliases: ["claude3.5-sonnet", "claude-3-5-sonnet", "sonnet-3.5"]
         max-input-chars: 680000
+      claude-opus-4-1-20250805:
+        max-input-chars: 680000
+        aliases: ["opus-4.1"]
       claude-3-opus-20240229:
         aliases: ["claude3-opus", "opus"]
         max-input-chars: 680000
