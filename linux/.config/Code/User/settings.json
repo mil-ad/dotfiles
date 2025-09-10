@@ -7,7 +7,7 @@
     "window.menuBarVisibility": "toggle",
     "window.customTitleBarVisibility": "never",
     "window.titleBarStyle": "native",
-    "editor.fontFamily": "'Fira Mono', 'IBM Plex Mono', 'Cascadia Code', 'Iosevka Term', 'JetBrains Mono', 'Symbols Nerd Font', 'Noto Color Emoji', 'Vazirmatn UI NL', 'Iosevka Medium', 'Material Icons'",
+    "editor.fontFamily": "'Fira Mono', 'IBM Plex Mono', 'Cascadia Code', 'Iosevka Term', 'JetBrains Mono', 'Noto Color Emoji', 'Symbols Nerd Font', 'Vazirmatn UI NL', 'Iosevka Medium', 'Material Icons'",
     "editor.fontWeight": "500",
     "editor.fontSize": 15,
     "editor.formatOnSave": false,
@@ -63,7 +63,6 @@
     "terminal.external.linuxExec": "kitty",
     "terminal.external.osxExec": "/Applications/kitty.app",
     "terminal.integrated.fontFamily": "'Iosevka Term', 'Symbols Nerd Font', 'Noto Color Emoji', 'Vazir WOL'",
-    "terminal.integrated.fontSize": 16,
     "terminal.integrated.inheritEnv": true,
     "terminal.integrated.macOptionClickForcesSelection": true,
     "terminal.integrated.macOptionIsMeta": true,
@@ -75,6 +74,11 @@
     "terminal.integrated.shellIntegration.enabled": false,
     "terminal.integrated.useWslProfiles": false,
     "terminal.integrated.enableImages": true,
+    "terminal.integrated.sendKeybindingsToShell": false,
+    "terminal.integrated.commandsToSkipShell": [
+         "workbench.action.terminal.copySelection",
+         "workbench.action.terminal.paste",
+    ],
     "workbench.tree.enableStickyScroll": false,
     "workbench.editor.enablePreviewFromQuickOpen": false,
     "workbench.editor.labelFormat": "short",
@@ -116,7 +120,7 @@
             "widget.border": "#fabd2f",
         }
     },
-    "workbench.iconTheme": "material-icon-theme",
+    "workbench.iconTheme": "Monokai Pro (Filter Ristretto) Icons",
     "workbench.startupEditor": "none",
     "workbench.editorAssociations": {
         "*.ipynb": "jupyter-notebook"
@@ -229,9 +233,8 @@
     ],
     "go.toolsManagement.autoUpdate": true,
     "git.openRepositoryInParentFolders": "never",
-    "workbench.colorTheme": "Omni",
+    "workbench.colorTheme": "Gruvbox Dark Hard",
     "github.copilot.nextEditSuggestions.enabled": false,
-    "terminal.integrated.sendKeybindingsToShell": true,
     "cursor.chat.terminalShowHoverHint": false,
     "github.copilot.enable": {
         "*": false,
@@ -285,4 +288,5 @@
     "zenMode.restore": false,
     "outline.collapseItems": "alwaysCollapse",
     "workbench.reduceMotion": "on",
+    "terminal.integrated.fontSize": 14,
 }
