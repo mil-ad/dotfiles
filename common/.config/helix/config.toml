@@ -84,3 +84,19 @@ b = ":sh git -C $(dirname $(realpath %{buffer_name})) blame -L %{cursor_line},%{
 
 R = ":lsp-restart"
 r = ":lsp-stop"
+# p = [
+#   ":write-all",
+#   ":cd %sh{kitty @ launch --wait-for-child-to-exit --location=vsplit --bias -20 sh -c 'fd . -t d -d 2 ~/repos | fzf'}",
+#   ":buffer-close-all",
+#   ":redraw"
+# ]
+
+# p = ":cd ~/repos/ %sh{cd ~/repos && fd -t d -d 2 | fzf}"
+# Problem: no cancel support
+p = [
+  ":write-all",
+  ":cd %sh{cd ~/repos && fd . -t d -d 2 /home/milad/repos | fzf}",
+  ":buffer-close-all!",
+  ":redraw"
+]
+"`" = ":sh kitty @ launch --location=vsplit --bias -20 --cwd $(pwd) > /dev/null"
