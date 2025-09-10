@@ -179,8 +179,8 @@
         "format-wifi": "󰖩  {essid}",
         "tooltip-format": "{ipaddr} | Strength {signalStrength}% | 󰇚 {bandwidthDownBits} | 󰕒 {bandwidthUpBits}",
         "on-click": "rfkill toggle wifi",
-        "format-linked": "󱛅",
-        "format-disconnected": "󱛇",
+        "format-linked": "󱛇",
+        "format-disconnected": "󱛅",
         "format-disabled": "󱚼"
     },
     "network#ethernet": {
