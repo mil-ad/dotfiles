@@ -193,12 +193,12 @@ label:focus {
     box-shadow: inset 0 -2px @gruvbox-green;
 }
 
-#network.disconnected {
+#network.linked {
     color: @gruvbox-yellow;
     box-shadow: none;
 }
 
-#network.disabled, #network.ethernet.disconnected {
+#network.disabled, #network.disconnected, #network.ethernet.disconnected {
     color: @gruvbox-grey;
     box-shadow: none;
 }
