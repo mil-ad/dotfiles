@@ -48,11 +48,14 @@
 😮‍💨 face exhaling
 🤥 lying face
 🫨 shaking face
+🙂‍↔️ head shaking horizontally
+🙂‍↕️ head shaking vertically
 😌 relieved face
 😔 pensive face
 😪 sleepy face
 🤤 drooling face
 😴 sleeping face
+🫩 face with bags under eyes
 😷 face with medical mask
 🤒 face with thermometer
 🤕 face with head-bandage
@@ -80,6 +83,7 @@
 😯 hushed face
 😲 astonished face
 😳 flushed face
+🫪 distorted face
 🥺 pleading face
 🥹 face holding back tears
 😦 frowning face with open mouth
@@ -153,6 +157,7 @@
 💋 kiss mark
 💯 hundred points
 💢 anger symbol
+🫯 fight cloud
 💥 collision
 💫 dizzy
 💦 sweat droplets
@@ -1348,12 +1353,12 @@
 🤶🏽 Mrs. Claus: medium skin tone
 🤶🏾 Mrs. Claus: medium-dark skin tone
 🤶🏿 Mrs. Claus: dark skin tone
-🧑‍🎄 mx claus
-🧑🏻‍🎄 mx claus: light skin tone
-🧑🏼‍🎄 mx claus: medium-light skin tone
-🧑🏽‍🎄 mx claus: medium skin tone
-🧑🏾‍🎄 mx claus: medium-dark skin tone
-🧑🏿‍🎄 mx claus: dark skin tone
+🧑‍🎄 Mx Claus
+🧑🏻‍🎄 Mx Claus: light skin tone
+🧑🏼‍🎄 Mx Claus: medium-light skin tone
+🧑🏽‍🎄 Mx Claus: medium skin tone
+🧑🏾‍🎄 Mx Claus: medium-dark skin tone
+🧑🏿‍🎄 Mx Claus: dark skin tone
 🦸 superhero
 🦸🏻 superhero: light skin tone
 🦸🏼 superhero: medium-light skin tone
@@ -1487,6 +1492,7 @@
 🧟‍♂️ man zombie
 🧟‍♀️ woman zombie
 🧌 troll
+🫈 hairy creature
 💆 person getting massage
 💆🏻 person getting massage: light skin tone
 💆🏼 person getting massage: medium-light skin tone
@@ -1541,6 +1547,24 @@
 🚶🏽‍♀️ woman walking: medium skin tone
 🚶🏾‍♀️ woman walking: medium-dark skin tone
 🚶🏿‍♀️ woman walking: dark skin tone
+🚶‍➡️ person walking facing right
+🚶🏻‍➡️ person walking facing right: light skin tone
+🚶🏼‍➡️ person walking facing right: medium-light skin tone
+🚶🏽‍➡️ person walking facing right: medium skin tone
+🚶🏾‍➡️ person walking facing right: medium-dark skin tone
+🚶🏿‍➡️ person walking facing right: dark skin tone
+🚶‍♀️‍➡️ woman walking facing right
+🚶🏻‍♀️‍➡️ woman walking facing right: light skin tone
+🚶🏼‍♀️‍➡️ woman walking facing right: medium-light skin tone
+🚶🏽‍♀️‍➡️ woman walking facing right: medium skin tone
+🚶🏾‍♀️‍➡️ woman walking facing right: medium-dark skin tone
+🚶🏿‍♀️‍➡️ woman walking facing right: dark skin tone
+🚶‍♂️‍➡️ man walking facing right
+🚶🏻‍♂️‍➡️ man walking facing right: light skin tone
+🚶🏼‍♂️‍➡️ man walking facing right: medium-light skin tone
+🚶🏽‍♂️‍➡️ man walking facing right: medium skin tone
+🚶🏾‍♂️‍➡️ man walking facing right: medium-dark skin tone
+🚶🏿‍♂️‍➡️ man walking facing right: dark skin tone
 🧍 person standing
 🧍🏻 person standing: light skin tone
 🧍🏼 person standing: medium-light skin tone
@@ -1577,60 +1601,132 @@
 🧎🏽‍♀️ woman kneeling: medium skin tone
 🧎🏾‍♀️ woman kneeling: medium-dark skin tone
 🧎🏿‍♀️ woman kneeling: dark skin tone
+🧎‍➡️ person kneeling facing right
+🧎🏻‍➡️ person kneeling facing right: light skin tone
+🧎🏼‍➡️ person kneeling facing right: medium-light skin tone
+🧎🏽‍➡️ person kneeling facing right: medium skin tone
+🧎🏾‍➡️ person kneeling facing right: medium-dark skin tone
+🧎🏿‍➡️ person kneeling facing right: dark skin tone
+🧎‍♀️‍➡️ woman kneeling facing right
+🧎🏻‍♀️‍➡️ woman kneeling facing right: light skin tone
+🧎🏼‍♀️‍➡️ woman kneeling facing right: medium-light skin tone
+🧎🏽‍♀️‍➡️ woman kneeling facing right: medium skin tone
+🧎🏾‍♀️‍➡️ woman kneeling facing right: medium-dark skin tone
+🧎🏿‍♀️‍➡️ woman kneeling facing right: dark skin tone
+🧎‍♂️‍➡️ man kneeling facing right
+🧎🏻‍♂️‍➡️ man kneeling facing right: light skin tone
+🧎🏼‍♂️‍➡️ man kneeling facing right: medium-light skin tone
+🧎🏽‍♂️‍➡️ man kneeling facing right: medium skin tone
+🧎🏾‍♂️‍➡️ man kneeling facing right: medium-dark skin tone
+🧎🏿‍♂️‍➡️ man kneeling facing right: dark skin tone
 🧑‍🦯 person with white cane
 🧑🏻‍🦯 person with white cane: light skin tone
 🧑🏼‍🦯 person with white cane: medium-light skin tone
 🧑🏽‍🦯 person with white cane: medium skin tone
 🧑🏾‍🦯 person with white cane: medium-dark skin tone
 🧑🏿‍🦯 person with white cane: dark skin tone
+🧑‍🦯‍➡️ person with white cane facing right
+🧑🏻‍🦯‍➡️ person with white cane facing right: light skin tone
+🧑🏼‍🦯‍➡️ person with white cane facing right: medium-light skin tone
+🧑🏽‍🦯‍➡️ person with white cane facing right: medium skin tone
+🧑🏾‍🦯‍➡️ person with white cane facing right: medium-dark skin tone
+🧑🏿‍🦯‍➡️ person with white cane facing right: dark skin tone
 👨‍🦯 man with white cane
 👨🏻‍🦯 man with white cane: light skin tone
 👨🏼‍🦯 man with white cane: medium-light skin tone
 👨🏽‍🦯 man with white cane: medium skin tone
 👨🏾‍🦯 man with white cane: medium-dark skin tone
 👨🏿‍🦯 man with white cane: dark skin tone
+👨‍🦯‍➡️ man with white cane facing right
+👨🏻‍🦯‍➡️ man with white cane facing right: light skin tone
+👨🏼‍🦯‍➡️ man with white cane facing right: medium-light skin tone
+👨🏽‍🦯‍➡️ man with white cane facing right: medium skin tone
+👨🏾‍🦯‍➡️ man with white cane facing right: medium-dark skin tone
+👨🏿‍🦯‍➡️ man with white cane facing right: dark skin tone
 👩‍🦯 woman with white cane
 👩🏻‍🦯 woman with white cane: light skin tone
 👩🏼‍🦯 woman with white cane: medium-light skin tone
 👩🏽‍🦯 woman with white cane: medium skin tone
 👩🏾‍🦯 woman with white cane: medium-dark skin tone
 👩🏿‍🦯 woman with white cane: dark skin tone
+👩‍🦯‍➡️ woman with white cane facing right
+👩🏻‍🦯‍➡️ woman with white cane facing right: light skin tone
+👩🏼‍🦯‍➡️ woman with white cane facing right: medium-light skin tone
+👩🏽‍🦯‍➡️ woman with white cane facing right: medium skin tone
+👩🏾‍🦯‍➡️ woman with white cane facing right: medium-dark skin tone
+👩🏿‍🦯‍➡️ woman with white cane facing right: dark skin tone
 🧑‍🦼 person in motorized wheelchair
 🧑🏻‍🦼 person in motorized wheelchair: light skin tone
 🧑🏼‍🦼 person in motorized wheelchair: medium-light skin tone
 🧑🏽‍🦼 person in motorized wheelchair: medium skin tone
 🧑🏾‍🦼 person in motorized wheelchair: medium-dark skin tone
 🧑🏿‍🦼 person in motorized wheelchair: dark skin tone
+🧑‍🦼‍➡️ person in motorized wheelchair facing right
+🧑🏻‍🦼‍➡️ person in motorized wheelchair facing right: light skin tone
+🧑🏼‍🦼‍➡️ person in motorized wheelchair facing right: medium-light skin tone
+🧑🏽‍🦼‍➡️ person in motorized wheelchair facing right: medium skin tone
+🧑🏾‍🦼‍➡️ person in motorized wheelchair facing right: medium-dark skin tone
+🧑🏿‍🦼‍➡️ person in motorized wheelchair facing right: dark skin tone
 👨‍🦼 man in motorized wheelchair
 👨🏻‍🦼 man in motorized wheelchair: light skin tone
 👨🏼‍🦼 man in motorized wheelchair: medium-light skin tone
 👨🏽‍🦼 man in motorized wheelchair: medium skin tone
 👨🏾‍🦼 man in motorized wheelchair: medium-dark skin tone
 👨🏿‍🦼 man in motorized wheelchair: dark skin tone
+👨‍🦼‍➡️ man in motorized wheelchair facing right
+👨🏻‍🦼‍➡️ man in motorized wheelchair facing right: light skin tone
+👨🏼‍🦼‍➡️ man in motorized wheelchair facing right: medium-light skin tone
+👨🏽‍🦼‍➡️ man in motorized wheelchair facing right: medium skin tone
+👨🏾‍🦼‍➡️ man in motorized wheelchair facing right: medium-dark skin tone
+👨🏿‍🦼‍➡️ man in motorized wheelchair facing right: dark skin tone
 👩‍🦼 woman in motorized wheelchair
 👩🏻‍🦼 woman in motorized wheelchair: light skin tone
 👩🏼‍🦼 woman in motorized wheelchair: medium-light skin tone
 👩🏽‍🦼 woman in motorized wheelchair: medium skin tone
 👩🏾‍🦼 woman in motorized wheelchair: medium-dark skin tone
 👩🏿‍🦼 woman in motorized wheelchair: dark skin tone
+👩‍🦼‍➡️ woman in motorized wheelchair facing right
+👩🏻‍🦼‍➡️ woman in motorized wheelchair facing right: light skin tone
+👩🏼‍🦼‍➡️ woman in motorized wheelchair facing right: medium-light skin tone
+👩🏽‍🦼‍➡️ woman in motorized wheelchair facing right: medium skin tone
+👩🏾‍🦼‍➡️ woman in motorized wheelchair facing right: medium-dark skin tone
+👩🏿‍🦼‍➡️ woman in motorized wheelchair facing right: dark skin tone
 🧑‍🦽 person in manual wheelchair
 🧑🏻‍🦽 person in manual wheelchair: light skin tone
 🧑🏼‍🦽 person in manual wheelchair: medium-light skin tone
 🧑🏽‍🦽 person in manual wheelchair: medium skin tone
 🧑🏾‍🦽 person in manual wheelchair: medium-dark skin tone
 🧑🏿‍🦽 person in manual wheelchair: dark skin tone
+🧑‍🦽‍➡️ person in manual wheelchair facing right
+🧑🏻‍🦽‍➡️ person in manual wheelchair facing right: light skin tone
+🧑🏼‍🦽‍➡️ person in manual wheelchair facing right: medium-light skin tone
+🧑🏽‍🦽‍➡️ person in manual wheelchair facing right: medium skin tone
+🧑🏾‍🦽‍➡️ person in manual wheelchair facing right: medium-dark skin tone
+🧑🏿‍🦽‍➡️ person in manual wheelchair facing right: dark skin tone
 👨‍🦽 man in manual wheelchair
 👨🏻‍🦽 man in manual wheelchair: light skin tone
 👨🏼‍🦽 man in manual wheelchair: medium-light skin tone
 👨🏽‍🦽 man in manual wheelchair: medium skin tone
 👨🏾‍🦽 man in manual wheelchair: medium-dark skin tone
 👨🏿‍🦽 man in manual wheelchair: dark skin tone
+👨‍🦽‍➡️ man in manual wheelchair facing right
+👨🏻‍🦽‍➡️ man in manual wheelchair facing right: light skin tone
+👨🏼‍🦽‍➡️ man in manual wheelchair facing right: medium-light skin tone
+👨🏽‍🦽‍➡️ man in manual wheelchair facing right: medium skin tone
+👨🏾‍🦽‍➡️ man in manual wheelchair facing right: medium-dark skin tone
+👨🏿‍🦽‍➡️ man in manual wheelchair facing right: dark skin tone
 👩‍🦽 woman in manual wheelchair
 👩🏻‍🦽 woman in manual wheelchair: light skin tone
 👩🏼‍🦽 woman in manual wheelchair: medium-light skin tone
 👩🏽‍🦽 woman in manual wheelchair: medium skin tone
 👩🏾‍🦽 woman in manual wheelchair: medium-dark skin tone
 👩🏿‍🦽 woman in manual wheelchair: dark skin tone
+👩‍🦽‍➡️ woman in manual wheelchair facing right
+👩🏻‍🦽‍➡️ woman in manual wheelchair facing right: light skin tone
+👩🏼‍🦽‍➡️ woman in manual wheelchair facing right: medium-light skin tone
+👩🏽‍🦽‍➡️ woman in manual wheelchair facing right: medium skin tone
+👩🏾‍🦽‍➡️ woman in manual wheelchair facing right: medium-dark skin tone
+👩🏿‍🦽‍➡️ woman in manual wheelchair facing right: dark skin tone
 🏃 person running
 🏃🏻 person running: light skin tone
 🏃🏼 person running: medium-light skin tone
@@ -1649,6 +1745,30 @@
 🏃🏽‍♀️ woman running: medium skin tone
 🏃🏾‍♀️ woman running: medium-dark skin tone
 🏃🏿‍♀️ woman running: dark skin tone
+🏃‍➡️ person running facing right
+🏃🏻‍➡️ person running facing right: light skin tone
+🏃🏼‍➡️ person running facing right: medium-light skin tone
+🏃🏽‍➡️ person running facing right: medium skin tone
+🏃🏾‍➡️ person running facing right: medium-dark skin tone
+🏃🏿‍➡️ person running facing right: dark skin tone
+🏃‍♀️‍➡️ woman running facing right
+🏃🏻‍♀️‍➡️ woman running facing right: light skin tone
+🏃🏼‍♀️‍➡️ woman running facing right: medium-light skin tone
+🏃🏽‍♀️‍➡️ woman running facing right: medium skin tone
+🏃🏾‍♀️‍➡️ woman running facing right: medium-dark skin tone
+🏃🏿‍♀️‍➡️ woman running facing right: dark skin tone
+🏃‍♂️‍➡️ man running facing right
+🏃🏻‍♂️‍➡️ man running facing right: light skin tone
+🏃🏼‍♂️‍➡️ man running facing right: medium-light skin tone
+🏃🏽‍♂️‍➡️ man running facing right: medium skin tone
+🏃🏾‍♂️‍➡️ man running facing right: medium-dark skin tone
+🏃🏿‍♂️‍➡️ man running facing right: dark skin tone
+🧑‍🩰 ballet dancer
+🧑🏻‍🩰 ballet dancer: light skin tone
+🧑🏼‍🩰 ballet dancer: medium-light skin tone
+🧑🏽‍🩰 ballet dancer: medium skin tone
+🧑🏾‍🩰 ballet dancer: medium-dark skin tone
+🧑🏿‍🩰 ballet dancer: dark skin tone
 💃 woman dancing
 💃🏻 woman dancing: light skin tone
 💃🏼 woman dancing: medium-light skin tone
@@ -1668,8 +1788,83 @@
 🕴🏾 person in suit levitating: medium-dark skin tone
 🕴🏿 person in suit levitating: dark skin tone
 👯 people with bunny ears
+👯🏻 people with bunny ears: light skin tone
+👯🏼 people with bunny ears: medium-light skin tone
+👯🏽 people with bunny ears: medium skin tone
+👯🏾 people with bunny ears: medium-dark skin tone
+👯🏿 people with bunny ears: dark skin tone
 👯‍♂️ men with bunny ears
+👯🏻‍♂️ men with bunny ears: light skin tone
+👯🏼‍♂️ men with bunny ears: medium-light skin tone
+👯🏽‍♂️ men with bunny ears: medium skin tone
+👯🏾‍♂️ men with bunny ears: medium-dark skin tone
+👯🏿‍♂️ men with bunny ears: dark skin tone
 👯‍♀️ women with bunny ears
+👯🏻‍♀️ women with bunny ears: light skin tone
+👯🏼‍♀️ women with bunny ears: medium-light skin tone
+👯🏽‍♀️ women with bunny ears: medium skin tone
+👯🏾‍♀️ women with bunny ears: medium-dark skin tone
+👯🏿‍♀️ women with bunny ears: dark skin tone
+🧑🏻‍🐰‍🧑🏼 people with bunny ears: light skin tone, medium-light skin tone
+🧑🏻‍🐰‍🧑🏽 people with bunny ears: light skin tone, medium skin tone
+🧑🏻‍🐰‍🧑🏾 people with bunny ears: light skin tone, medium-dark skin tone
+🧑🏻‍🐰‍🧑🏿 people with bunny ears: light skin tone, dark skin tone
+🧑🏼‍🐰‍🧑🏻 people with bunny ears: medium-light skin tone, light skin tone
+🧑🏼‍🐰‍🧑🏽 people with bunny ears: medium-light skin tone, medium skin tone
+🧑🏼‍🐰‍🧑🏾 people with bunny ears: medium-light skin tone, medium-dark skin tone
+🧑🏼‍🐰‍🧑🏿 people with bunny ears: medium-light skin tone, dark skin tone
+🧑🏽‍🐰‍🧑🏻 people with bunny ears: medium skin tone, light skin tone
+🧑🏽‍🐰‍🧑🏼 people with bunny ears: medium skin tone, medium-light skin tone
+🧑🏽‍🐰‍🧑🏾 people with bunny ears: medium skin tone, medium-dark skin tone
+🧑🏽‍🐰‍🧑🏿 people with bunny ears: medium skin tone, dark skin tone
+🧑🏾‍🐰‍🧑🏻 people with bunny ears: medium-dark skin tone, light skin tone
+🧑🏾‍🐰‍🧑🏼 people with bunny ears: medium-dark skin tone, medium-light skin tone
+🧑🏾‍🐰‍🧑🏽 people with bunny ears: medium-dark skin tone, medium skin tone
+🧑🏾‍🐰‍🧑🏿 people with bunny ears: medium-dark skin tone, dark skin tone
+🧑🏿‍🐰‍🧑🏻 people with bunny ears: dark skin tone, light skin tone
+🧑🏿‍🐰‍🧑🏼 people with bunny ears: dark skin tone, medium-light skin tone
+🧑🏿‍🐰‍🧑🏽 people with bunny ears: dark skin tone, medium skin tone
+🧑🏿‍🐰‍🧑🏾 people with bunny ears: dark skin tone, medium-dark skin tone
+👨🏻‍🐰‍👨🏼 men with bunny ears: light skin tone, medium-light skin tone
+👨🏻‍🐰‍👨🏽 men with bunny ears: light skin tone, medium skin tone
+👨🏻‍🐰‍👨🏾 men with bunny ears: light skin tone, medium-dark skin tone
+👨🏻‍🐰‍👨🏿 men with bunny ears: light skin tone, dark skin tone
+👨🏼‍🐰‍👨🏻 men with bunny ears: medium-light skin tone, light skin tone
+👨🏼‍🐰‍👨🏽 men with bunny ears: medium-light skin tone, medium skin tone
+👨🏼‍🐰‍👨🏾 men with bunny ears: medium-light skin tone, medium-dark skin tone
+👨🏼‍🐰‍👨🏿 men with bunny ears: medium-light skin tone, dark skin tone
+👨🏽‍🐰‍👨🏻 men with bunny ears: medium skin tone, light skin tone
+👨🏽‍🐰‍👨🏼 men with bunny ears: medium skin tone, medium-light skin tone
+👨🏽‍🐰‍👨🏾 men with bunny ears: medium skin tone, medium-dark skin tone
+👨🏽‍🐰‍👨🏿 men with bunny ears: medium skin tone, dark skin tone
+👨🏾‍🐰‍👨🏻 men with bunny ears: medium-dark skin tone, light skin tone
+👨🏾‍🐰‍👨🏼 men with bunny ears: medium-dark skin tone, medium-light skin tone
+👨🏾‍🐰‍👨🏽 men with bunny ears: medium-dark skin tone, medium skin tone
+👨🏾‍🐰‍👨🏿 men with bunny ears: medium-dark skin tone, dark skin tone
+👨🏿‍🐰‍👨🏻 men with bunny ears: dark skin tone, light skin tone
+👨🏿‍🐰‍👨🏼 men with bunny ears: dark skin tone, medium-light skin tone
+👨🏿‍🐰‍👨🏽 men with bunny ears: dark skin tone, medium skin tone
+👨🏿‍🐰‍👨🏾 men with bunny ears: dark skin tone, medium-dark skin tone
+👩🏻‍🐰‍👩🏼 women with bunny ears: light skin tone, medium-light skin tone
+👩🏻‍🐰‍👩🏽 women with bunny ears: light skin tone, medium skin tone
+👩🏻‍🐰‍👩🏾 women with bunny ears: light skin tone, medium-dark skin tone
+👩🏻‍🐰‍👩🏿 women with bunny ears: light skin tone, dark skin tone
+👩🏼‍🐰‍👩🏻 women with bunny ears: medium-light skin tone, light skin tone
+👩🏼‍🐰‍👩🏽 women with bunny ears: medium-light skin tone, medium skin tone
+👩🏼‍🐰‍👩🏾 women with bunny ears: medium-light skin tone, medium-dark skin tone
+👩🏼‍🐰‍👩🏿 women with bunny ears: medium-light skin tone, dark skin tone
+👩🏽‍🐰‍👩🏻 women with bunny ears: medium skin tone, light skin tone
+👩🏽‍🐰‍👩🏼 women with bunny ears: medium skin tone, medium-light skin tone
+👩🏽‍🐰‍👩🏾 women with bunny ears: medium skin tone, medium-dark skin tone
+👩🏽‍🐰‍👩🏿 women with bunny ears: medium skin tone, dark skin tone
+👩🏾‍🐰‍👩🏻 women with bunny ears: medium-dark skin tone, light skin tone
+👩🏾‍🐰‍👩🏼 women with bunny ears: medium-dark skin tone, medium-light skin tone
+👩🏾‍🐰‍👩🏽 women with bunny ears: medium-dark skin tone, medium skin tone
+👩🏾‍🐰‍👩🏿 women with bunny ears: medium-dark skin tone, dark skin tone
+👩🏿‍🐰‍👩🏻 women with bunny ears: dark skin tone, light skin tone
+👩🏿‍🐰‍👩🏼 women with bunny ears: dark skin tone, medium-light skin tone
+👩🏿‍🐰‍👩🏽 women with bunny ears: dark skin tone, medium skin tone
+👩🏿‍🐰‍👩🏾 women with bunny ears: dark skin tone, medium-dark skin tone
 🧖 person in steamy room
 🧖🏻 person in steamy room: light skin tone
 🧖🏼 person in steamy room: medium-light skin tone
@@ -1883,8 +2078,83 @@
 🤸🏾‍♀️ woman cartwheeling: medium-dark skin tone
 🤸🏿‍♀️ woman cartwheeling: dark skin tone
 🤼 people wrestling
+🤼🏻 people wrestling: light skin tone
+🤼🏼 people wrestling: medium-light skin tone
+🤼🏽 people wrestling: medium skin tone
+🤼🏾 people wrestling: medium-dark skin tone
+🤼🏿 people wrestling: dark skin tone
 🤼‍♂️ men wrestling
+🤼🏻‍♂️ men wrestling: light skin tone
+🤼🏼‍♂️ men wrestling: medium-light skin tone
+🤼🏽‍♂️ men wrestling: medium skin tone
+🤼🏾‍♂️ men wrestling: medium-dark skin tone
+🤼🏿‍♂️ men wrestling: dark skin tone
 🤼‍♀️ women wrestling
+🤼🏻‍♀️ women wrestling: light skin tone
+🤼🏼‍♀️ women wrestling: medium-light skin tone
+🤼🏽‍♀️ women wrestling: medium skin tone
+🤼🏾‍♀️ women wrestling: medium-dark skin tone
+🤼🏿‍♀️ women wrestling: dark skin tone
+🧑🏻‍🫯‍🧑🏼 people wrestling: light skin tone, medium-light skin tone
+🧑🏻‍🫯‍🧑🏽 people wrestling: light skin tone, medium skin tone
+🧑🏻‍🫯‍🧑🏾 people wrestling: light skin tone, medium-dark skin tone
+🧑🏻‍🫯‍🧑🏿 people wrestling: light skin tone, dark skin tone
+🧑🏼‍🫯‍🧑🏻 people wrestling: medium-light skin tone, light skin tone
+🧑🏼‍🫯‍🧑🏽 people wrestling: medium-light skin tone, medium skin tone
+🧑🏼‍🫯‍🧑🏾 people wrestling: medium-light skin tone, medium-dark skin tone
+🧑🏼‍🫯‍🧑🏿 people wrestling: medium-light skin tone, dark skin tone
+🧑🏽‍🫯‍🧑🏻 people wrestling: medium skin tone, light skin tone
+🧑🏽‍🫯‍🧑🏼 people wrestling: medium skin tone, medium-light skin tone
+🧑🏽‍🫯‍🧑🏾 people wrestling: medium skin tone, medium-dark skin tone
+🧑🏽‍🫯‍🧑🏿 people wrestling: medium skin tone, dark skin tone
+🧑🏾‍🫯‍🧑🏻 people wrestling: medium-dark skin tone, light skin tone
+🧑🏾‍🫯‍🧑🏼 people wrestling: medium-dark skin tone, medium-light skin tone
+🧑🏾‍🫯‍🧑🏽 people wrestling: medium-dark skin tone, medium skin tone
+🧑🏾‍🫯‍🧑🏿 people wrestling: medium-dark skin tone, dark skin tone
+🧑🏿‍🫯‍🧑🏻 people wrestling: dark skin tone, light skin tone
+🧑🏿‍🫯‍🧑🏼 people wrestling: dark skin tone, medium-light skin tone
+🧑🏿‍🫯‍🧑🏽 people wrestling: dark skin tone, medium skin tone
+🧑🏿‍🫯‍🧑🏾 people wrestling: dark skin tone, medium-dark skin tone
+👨🏻‍🫯‍👨🏼 men wrestling: light skin tone, medium-light skin tone
+👨🏻‍🫯‍👨🏽 men wrestling: light skin tone, medium skin tone
+👨🏻‍🫯‍👨🏾 men wrestling: light skin tone, medium-dark skin tone
+👨🏻‍🫯‍👨🏿 men wrestling: light skin tone, dark skin tone
+👨🏼‍🫯‍👨🏻 men wrestling: medium-light skin tone, light skin tone
+👨🏼‍🫯‍👨🏽 men wrestling: medium-light skin tone, medium skin tone
+👨🏼‍🫯‍👨🏾 men wrestling: medium-light skin tone, medium-dark skin tone
+👨🏼‍🫯‍👨🏿 men wrestling: medium-light skin tone, dark skin tone
+👨🏽‍🫯‍👨🏻 men wrestling: medium skin tone, light skin tone
+👨🏽‍🫯‍👨🏼 men wrestling: medium skin tone, medium-light skin tone
+👨🏽‍🫯‍👨🏾 men wrestling: medium skin tone, medium-dark skin tone
+👨🏽‍🫯‍👨🏿 men wrestling: medium skin tone, dark skin tone
+👨🏾‍🫯‍👨🏻 men wrestling: medium-dark skin tone, light skin tone
+👨🏾‍🫯‍👨🏼 men wrestling: medium-dark skin tone, medium-light skin tone
+👨🏾‍🫯‍👨🏽 men wrestling: medium-dark skin tone, medium skin tone
+👨🏾‍🫯‍👨🏿 men wrestling: medium-dark skin tone, dark skin tone
+👨🏿‍🫯‍👨🏻 men wrestling: dark skin tone, light skin tone
+👨🏿‍🫯‍👨🏼 men wrestling: dark skin tone, medium-light skin tone
+👨🏿‍🫯‍👨🏽 men wrestling: dark skin tone, medium skin tone
+👨🏿‍🫯‍👨🏾 men wrestling: dark skin tone, medium-dark skin tone
+👩🏻‍🫯‍👩🏼 women wrestling: light skin tone, medium-light skin tone
+👩🏻‍🫯‍👩🏽 women wrestling: light skin tone, medium skin tone
+👩🏻‍🫯‍👩🏾 women wrestling: light skin tone, medium-dark skin tone
+👩🏻‍🫯‍👩🏿 women wrestling: light skin tone, dark skin tone
+👩🏼‍🫯‍👩🏻 women wrestling: medium-light skin tone, light skin tone
+👩🏼‍🫯‍👩🏽 women wrestling: medium-light skin tone, medium skin tone
+👩🏼‍🫯‍👩🏾 women wrestling: medium-light skin tone, medium-dark skin tone
+👩🏼‍🫯‍👩🏿 women wrestling: medium-light skin tone, dark skin tone
+👩🏽‍🫯‍👩🏻 women wrestling: medium skin tone, light skin tone
+👩🏽‍🫯‍👩🏼 women wrestling: medium skin tone, medium-light skin tone
+👩🏽‍🫯‍👩🏾 women wrestling: medium skin tone, medium-dark skin tone
+👩🏽‍🫯‍👩🏿 women wrestling: medium skin tone, dark skin tone
+👩🏾‍🫯‍👩🏻 women wrestling: medium-dark skin tone, light skin tone
+👩🏾‍🫯‍👩🏼 women wrestling: medium-dark skin tone, medium-light skin tone
+👩🏾‍🫯‍👩🏽 women wrestling: medium-dark skin tone, medium skin tone
+👩🏾‍🫯‍👩🏿 women wrestling: medium-dark skin tone, dark skin tone
+👩🏿‍🫯‍👩🏻 women wrestling: dark skin tone, light skin tone
+👩🏿‍🫯‍👩🏼 women wrestling: dark skin tone, medium-light skin tone
+👩🏿‍🫯‍👩🏽 women wrestling: dark skin tone, medium skin tone
+👩🏿‍🫯‍👩🏾 women wrestling: dark skin tone, medium-dark skin tone
 🤽 person playing water polo
 🤽🏻 person playing water polo: light skin tone
 🤽🏼 person playing water polo: medium-light skin tone
@@ -2281,7 +2551,6 @@
 👩🏿‍❤️‍👩🏽 couple with heart: woman, woman, dark skin tone, medium skin tone
 👩🏿‍❤️‍👩🏾 couple with heart: woman, woman, dark skin tone, medium-dark skin tone
 👩🏿‍❤️‍👩🏿 couple with heart: woman, woman, dark skin tone
-👪 family
 👨‍👩‍👦 family: man, woman, boy
 👨‍👩‍👧 family: man, woman, girl
 👨‍👩‍👧‍👦 family: man, woman, girl, boy
@@ -2311,7 +2580,13 @@
 👤 bust in silhouette
 👥 busts in silhouette
 🫂 people hugging
+👪 family
+🧑‍🧑‍🧒 family: adult, adult, child
+🧑‍🧑‍🧒‍🧒 family: adult, adult, child, child
+🧑‍🧒 family: adult, child
+🧑‍🧒‍🧒 family: adult, child, child
 👣 footprints
+🫆 fingerprint
 🐵 monkey face
 🐒 monkey
 🦍 gorilla
@@ -2399,6 +2674,7 @@
 🪽 wing
 🐦‍⬛ black bird
 🪿 goose
+🐦‍🔥 phoenix
 🐸 frog
 🐊 crocodile
 🐢 turtle
@@ -2411,6 +2687,7 @@
 🐳 spouting whale
 🐋 whale
 🐬 dolphin
+🫍 orca
 🦭 seal
 🐟 fish
 🐠 tropical fish
@@ -2420,6 +2697,11 @@
 🐚 spiral shell
 🪸 coral
 🪼 jellyfish
+🦀 crab
+🦞 lobster
+🦐 shrimp
+🦑 squid
+🦪 oyster
 🐌 snail
 🦋 butterfly
 🐛 bug
@@ -2464,11 +2746,13 @@
 🪹 empty nest
 🪺 nest with eggs
 🍄 mushroom
+🪾 leafless tree
 🍇 grapes
 🍈 melon
 🍉 watermelon
 🍊 tangerine
 🍋 lemon
+🍋‍🟩 lime
 🍌 banana
 🍍 pineapple
 🥭 mango
@@ -2500,6 +2784,8 @@
 🌰 chestnut
 🫚 ginger root
 🫛 pea pod
+🍄‍🟫 brown mushroom
+🫜 root vegetable
 🍞 bread
 🥐 croissant
 🥖 baguette bread
@@ -2551,11 +2837,6 @@
 🥟 dumpling
 🥠 fortune cookie
 🥡 takeout box
-🦀 crab
-🦞 lobster
-🦐 shrimp
-🦑 squid
-🦪 oyster
 🍦 soft ice cream
 🍧 shaved ice
 🍨 ice cream
@@ -2606,6 +2887,7 @@
 🧭 compass
 🏔️ snow-capped mountain
 ⛰️ mountain
+🛘 landslide
 🌋 volcano
 🗻 mount fuji
 🏕️ camping
@@ -2966,16 +3248,18 @@
 🎧 headphone
 📻 radio
 🎷 saxophone
+🎺 trumpet
+🪊 trombone
 🪗 accordion
 🎸 guitar
 🎹 musical keyboard
-🎺 trumpet
 🎻 violin
 🪕 banjo
 🥁 drum
 🪘 long drum
 🪇 maracas
 🪈 flute
+🪉 harp
 📱 mobile phone
 📲 mobile phone with arrow
 ☎️ telephone
@@ -3029,8 +3313,9 @@
 📑 bookmark tabs
 🔖 bookmark
 🏷️ label
-💰 money bag
 🪙 coin
+💰 money bag
+🪎 treasure chest
 💴 yen banknote
 💵 dollar banknote
 💶 euro banknote
@@ -3108,11 +3393,13 @@
 ⚖️ balance scale
 🦯 white cane
 🔗 link
+⛓️‍💥 broken chain
 ⛓️ chains
 🪝 hook
 🧰 toolbox
 🧲 magnet
 🪜 ladder
+🪏 shovel
 ⚗️ alembic
 🧪 test tube
 🧫 petri dish
@@ -3298,6 +3585,7 @@
 ©️ copyright
 ®️ registered
 ™️ trade mark
+🫟 splatter
 #️⃣ keycap: #
 *️⃣ keycap: *
 0️⃣ keycap: 0
@@ -3443,6 +3731,7 @@
 🇨🇳 flag: China
 🇨🇴 flag: Colombia
 🇨🇵 flag: Clipperton Island
+🇨🇶 flag: Sark
 🇨🇷 flag: Costa Rica
 🇨🇺 flag: Cuba
 🇨🇻 flag: Cape Verde
@@ -3623,7 +3912,7 @@
 🇹🇲 flag: Turkmenistan
 🇹🇳 flag: Tunisia
 🇹🇴 flag: Tonga
-🇹🇷 flag: Turkey
+🇹🇷 flag: Türkiye
 🇹🇹 flag: Trinidad & Tobago
 🇹🇻 flag: Tuvalu
 🇹🇼 flag: Taiwan
