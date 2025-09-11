@@ -14,6 +14,7 @@ workspace 9 output DP-virtUp nonprimary primary
 
 default_orientation auto
 popup_during_fullscreen smart
+focus_on_window_activation smart
 
 # Use Mouse+$mod to drag floating windows
 floating_modifier $mod
