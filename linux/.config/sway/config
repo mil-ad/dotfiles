@@ -8,7 +8,7 @@ include ~/.config/i3/config
 # output "Samsung Display Corp. 0x4165 Unknown" scale 2.5
 
 bindsym --no-repeat $mod+z exec slurp | grim -g - - | wl-copy -t image/png
-
+bindsym $mod+Shift+z exec exec slurp | grim -g - "$HOME/Pictures/screenshot-$(date +%F_%T).png" && notify-send "📸 Screenshot region saved to ${HOME}/Pictures"
 
 # unlike i3
 for_window [app_id="kitty"] title_format "🐈"
