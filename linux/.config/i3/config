@@ -212,11 +212,9 @@ bindsym $mod+p exec ~/.local/bin/open_paper
 bindsym $mod+v exec ~/.local/bin/clipmenu
 bindsym $mod+r exec  ~/.local/bin/open_github_repo
 bindsym $mod+t exec  ~/.local/bin/add-todoist-task
-# bindsym $mod+z --release exec shotgun $(slop -f "-i %i -g %g") - | xclip -selection clipboard -t image/png
 
 bindsym $mod+Shift+r exec  ~/.local/bin/open-github-pr
 bindsym $mod+Shift+t exec  ~/.local/bin/review-todoist-tasks
-bindsym $mod+Shift+z exec shotgun $(slop -f "-i %i -g %g") "$HOME/Pictures/screenshot-$(date +%F_%T).png" && notify-send "📸 Screenshot region saved to ${HOME}/Pictures"
 bindsym $mod+Shift+Return exec pcmanfm
 
 bindsym $mod+Ctrl+o exec $HOME/.local/bin/openfile
