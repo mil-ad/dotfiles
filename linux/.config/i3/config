@@ -199,7 +199,7 @@ bindsym $mod+Return exec kitty --single-instance
 bindsym $caps+Return layout tabbed; exec kitty --single-instance
 bindsym $mod+space exec $HOME/.local/bin/winmenu
 bindsym $mod+comma exec $HOME/.local/bin/rename-sway-container
-bindsym $mod+0 exec ~/.local/bin/sysact
+bindsym $mod+0 exec ~/.local/bin/sysmenu
 bindsym $mod+b exec ~/.local/bin/open_bookmark
 bindsym $mod+d exec ~/.local/bin/dmenu_run
 bindsym $mod+e exec ~/.local/bin/enter_emoji
