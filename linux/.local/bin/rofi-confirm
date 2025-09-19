@@ -1,4 +1,3 @@
 #!/usr/bin/env bash
 
-set -x
-echo -e "No\nYes" | rofimenu -theme-str '* { border-color: #cc241d; }' -p "🤔 Are you sure?" | grep -q "Yes"
+echo -e "No\nYes" | rofimenu -theme-str '* { border-color: #cc241d; selected-normal-background: #cc241d; }' -p "🤔 Are you sure?" | grep -q "Yes"
