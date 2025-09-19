@@ -289,7 +289,7 @@ for_window [class="(?i)zoom"] floating enable
 for_window [class="join\?action=join"] floating enable
 for_window [title="UxPlay"] floating enable
 for_window [class="Matplotlib"] floating enable
-for_window [class="1Password"] floating enable
+for_window [app_id="1Password"] floating enable
 # for_window [class="Anki"] floating enable
 for_window [class="transmission-gtk"] floating enable
 for_window [class="matplotlib"] floating enable
