@@ -50,28 +50,6 @@ font pango:$font_family 8
 # switch to workspace with urgent window automatically
 for_window [urgent=latest] focus
 
-# Colours from Gruvbox (Dark mode palette)
-# https://github.com/morhetz/gruvbox#dark-mode-1
-set $red #cc241d
-set $green #98971a
-set $yellow #d79921
-set $blue #458588
-set $purple #b16286
-set $aqua #689d68
-set $grey #928374
-set $darkgray #1d2021
-set $white #f9f5d7
-set $bg #282828
-set $bg0 #282828
-set $fg4 #a89984
-
-set $bright_red: #fb4934
-set $bright_green: #b8bb26
-set $bright_yellow: #fabd2f
-set $bright_blue: #83a598
-set $bright_purple: #d3869b
-set $bright_aqua: #8ec07c
-set $bright_orange: #fe8019
 
 ##########################################
 #             Keybindings
@@ -226,34 +204,28 @@ bindsym $mod+Ctrl+space exec $HOME/.local/bin/enter_snippet $HOME/.scripts/snipp
 #                Colours
 ##########################################
 
-# Color palette used for the terminal (~/.Xresources file)
-# Colors are gathered based on the documentation:
-# https://i3wm.org/docs/userguide.html#xresources
+# Colours from Gruvbox (Dark mode palette): https://github.com/morhetz/gruvbox#dark-mode-1
+set $red #cc241d
+set $green #98971a
+set $yellow #d79921
+set $blue #458588
+set $purple #b16286
+set $aqua #689d68
+set $grey #928374
+set $darkgray #1d2021
+set $white #f9f5d7
+set $bg #282828
+set $bg0 #282828
+set $fg4 #a89984
 
-# Change the variable name at the place you want to match the color of your
-# terminal. For example if you want your bar to have the same background color
-# as your terminal background change `background #14191D` to `background
-# $term_background`. Same logic applied to everything else.
-# set_from_resource $term_background background
-# set_from_resource $term_foreground foreground
-# set_from_resource $term_color0     color0
-# set_from_resource $term_color1     color1
-# set_from_resource $term_color2     color2
-# set_from_resource $term_color3     color3
-# set_from_resource $term_color4     color4
-# set_from_resource $term_color5     color5
-# set_from_resource $term_color6     color6
-# set_from_resource $term_color7     color7
-# set_from_resource $term_color8     color8
-# set_from_resource $term_color9     color9
-# set_from_resource $term_color10    color10
-# set_from_resource $term_color11    color11
-# set_from_resource $term_color12    color12
-# set_from_resource $term_color13    color13
-# set_from_resource $term_color14    color14
-# set_from_resource $term_color15    color15
+set $bright_red: #fb4934
+set $bright_green: #b8bb26
+set $bright_yellow: #fabd2f
+set $bright_blue: #83a598
+set $bright_purple: #d3869b
+set $bright_aqua: #8ec07c
+set $bright_orange: #fe8019
 
-# Theme colors
 # class                     border          backgr          text            indicator       child_border
 client.focused              $yellow         $yellow         $darkgray       $aqua           $yellow
 client.focused_tab_title    $yellow         $yellow         $darkgray       $aqua           $yellow
@@ -306,9 +278,5 @@ exec tuned-adm profile balanced
 
 exec seafile-applet
 exec gammastep -l 51.50:0.127 -t 6500:3500
-# exec xss-lock --transfer-sleep-lock -- ~/.local/bin/betterblurlock
-# exec nitrogen --restore
 exec dunst -config ~/.config/dunst/dunstrc
 exec_always clipcatd --replace
-# exec_always ~/.scripts/kill_until_dead polybar && ~/.scripts/start_polybar
-# exec_always ~/.scripts/kill_until_dead picom && picom
