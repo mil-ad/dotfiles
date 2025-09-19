@@ -6,6 +6,9 @@ case "$selected_program" in
     # "brave"|"brave-browser"|"code"|"cursor"|"cursor.AppImage"|"google-chrome"|"chromium"|"signal-desktop"|"slack"|"1password"|"vivaldi")
     #    nohup ${SHELL:-"/bin/sh"} -c "$selected_program --force-device-scale-factor=2 --force-dark-mode" < /dev/null > /dev/null 2>&1 &
     #     ;;
+    "slack")
+      nohup ${SHELL:-"/bin/sh"} -c "$selected_program --enable-features=UseOzonePlatform --ozone-platform=wayland" < /dev/null > /dev/null 2>&1 &
+        ;;
     *)
       nohup ${SHELL:-"/bin/sh"} -c "$selected_program" < /dev/null > /dev/null 2>&1 &
       ;;
