@@ -47,6 +47,6 @@ case "$selected_option" in
     "🔄 switch monitor input") ~/.local/bin/switch-monitor-input ;;
     '♻️ restart sway') swaymsg reload ;;
     '🚀 reboot')  rofi-confirm && systemctl reboot ;;
-    '🖥 power off') systemctl poweroff ;;
+    '🖥 power off') rofi-confirm && systemctl poweroff ;;
     *) exit 1 ;;
 esac
