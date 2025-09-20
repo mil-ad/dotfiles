@@ -2,14 +2,14 @@
 set $mod Mod4
 set $caps Mod5
 
-workspace 1 output DP-virtDown primary nonprimary
-workspace 2 output DP-virtDown primary nonprimary
-workspace 3 output DP-virtDown primary nonprimary
-workspace 4 output DP-virtDown primary nonprimary
-workspace 5 output DP-virtDown primary nonprimary
-workspace 6 output DP-virtDown primary nonprimary
-workspace 7 output DP-virtDown primary nonprimary
-workspace 8 output DP-virtDown primary nonprimary
+workspace 1 output 'LG Electronics LG SDQHD 203NTBKCY173' 'e-DP1' DP-virtDown primary nonprimary
+workspace 2 output 'LG Electronics LG SDQHD 203NTBKCY173' 'e-DP1' DP-virtDown primary nonprimary
+workspace 3 output 'LG Electronics LG SDQHD 203NTBKCY173' 'e-DP1' DP-virtDown primary nonprimary
+workspace 4 output 'LG Electronics LG SDQHD 203NTBKCY173' 'e-DP1' DP-virtDown primary nonprimary
+workspace 5 output 'LG Electronics LG SDQHD 203NTBKCY173' 'e-DP1' DP-virtDown primary nonprimary
+workspace 6 output 'LG Electronics LG SDQHD 203NTBKCY173' 'e-DP1' DP-virtDown primary nonprimary
+workspace 7 output 'LG Electronics LG SDQHD 203NTBKCY173' 'e-DP1' DP-virtDown primary nonprimary
+workspace 8 output 'LG Electronics LG SDQHD 203NTBKCY173' 'e-DP1' DP-virtDown primary nonprimary
 workspace 9 output DP-virtUp nonprimary primary
 
 default_orientation auto
@@ -227,13 +227,14 @@ set $bright_aqua: #8ec07c
 set $bright_orange: #fe8019
 
 # class                     border          backgr          text            indicator       child_border
+client.background                           #2B2C2B
 client.focused              $yellow         $yellow         $darkgray       $aqua           $yellow
 client.focused_tab_title    $yellow         $yellow         $darkgray       $aqua           $yellow
 client.focused_inactive     $darkgray       $darkgray       $yellow         $darkgray       $bg0
 client.unfocused            $yellow         $darkgray       $yellow         $darkgray       $bg0
-#client.urgent               $bright_red     $bright_red     $white          $bright_red     $bright_red
+# TODO: For some reason I can't use $bright_red. Is this a bug?
+client.urgent               #fb4934     #fb4934     $white          #fb4934     #fb4934
 client.placeholder          #000000         #0c0c0c         #ffffff         #000000
-client.background           #2B2C2B
 
 ##########################################
 #         Application-specific
