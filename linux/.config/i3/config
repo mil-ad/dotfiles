@@ -63,19 +63,6 @@ bindsym $mod+7 workspace 7
 bindsym $mod+8 workspace 8
 bindsym $mod+9 workspace 9
 
-bindsym $mod+Ctrl+Right workspace next
-bindsym $mod+Ctrl+Left workspace prev
-
-bindsym $mod+Ctrl+1 move container to workspace 1
-bindsym $mod+Ctrl+2 move container to workspace 2
-bindsym $mod+Ctrl+3 move container to workspace 3
-bindsym $mod+Ctrl+4 move container to workspace 4
-bindsym $mod+Ctrl+5 move container to workspace 5
-bindsym $mod+Ctrl+6 move container to workspace 6
-bindsym $mod+Ctrl+7 move container to workspace 7
-bindsym $mod+Ctrl+8 move container to workspace 8
-bindsym $mod+Ctrl+9 move container to workspace 9
-
 bindsym $mod+Shift+1 move container to workspace 1; workspace 1
 bindsym $mod+Shift+2 move container to workspace 2; workspace 2
 bindsym $mod+Shift+3 move container to workspace 3; workspace 3
@@ -86,57 +73,43 @@ bindsym $mod+Shift+7 move container to workspace 7; workspace 7
 bindsym $mod+Shift+8 move container to workspace 8; workspace 8
 bindsym $mod+Shift+9 move container to workspace 9; workspace 9
 
-# move workspace between monitors
-bindsym $mod+Shift+Ctrl+Right move workspace to output right
-bindsym $mod+Shift+Ctrl+Left move workspace to output left
-bindsym $mod+Shift+Ctrl+Up move workspace to output up
-bindsym $mod+Shift+Ctrl+Down move workspace to output down
-
-# change focus
-bindsym $mod+Left focus left
-bindsym $mod+Down focus down
-bindsym $mod+Up focus up
-bindsym $mod+Right focus right
-
 bindsym $mod+h focus left
 bindsym $mod+j focus down
 bindsym $mod+k focus up
 bindsym $mod+l focus right
-
-# move focused window
-bindsym $mod+Shift+Left move left
-bindsym $mod+Shift+Down move down
-bindsym $mod+Shift+Up move up
-bindsym $mod+Shift+Right move right
 
 bindsym $mod+Shift+h move left
 bindsym $mod+Shift+j move down
 bindsym $mod+Shift+k move up
 bindsym $mod+Shift+l move right
 
+# move workspace between monitors
+bindsym $mod+Shift+Ctrl+Right move workspace to output right
+bindsym $mod+Shift+Ctrl+Left move workspace to output left
+bindsym $mod+Shift+Ctrl+Up move workspace to output up
+bindsym $mod+Shift+Ctrl+Down move workspace to output down
+
 # workspace back and forth (with/without active container)
 bindsym $mod+bracketleft workspace back_and_forth
 bindsym $mod+Shift+b move container to workspace back_and_forth; workspace back_and_forth
 
-# split orientation
 bindsym $mod+minus split vertical;
 bindsym $mod+backslash split horizontal;
 
 # change container layout (stacked, tabbed, toggle split)
 bindsym $mod+s layout toggle splitv splith tabbed stacking
 
+bindsym $mod+a focus parent
+bindsym $mod+m move scratchpad
+bindsym $mod+Tab scratchpad show
 bindsym $mod+f fullscreen toggle
 bindsym $mod+Shift+q kill
 bindsym $mod+Shift+space floating toggle
 bindsym $mod+Shift+s sticky toggle
-bindsym $mod+a focus parent
-bindsym $mod+m move scratchpad
-bindsym $mod+Tab scratchpad show
 
-# i3 gaps
-bindsym $mod+Shift+plus gaps inner current plus 5; gaps outer current plus 5
+bindsym $mod+plus gaps inner current plus 5; gaps outer current plus 5
 bindsym $mod+Shift+minus gaps inner current minus 5; gaps outer current minus 5
-bindsym $mod+Shift+0 gaps inner current set 10; gaps outer current set -2
+bindsym $mod+Shift+0 gaps inner current set 8; gaps outer current set -2
 
 # Resize window (you can also use the mouse for that)
 # TODO
