@@ -179,9 +179,8 @@ bindsym $mod+Ctrl+p exec ~/.local/bin/open_paper_no_annotations
 bindsym $mod+Ctrl+space exec ~/.local/bin/enter_snippet $HOME/.scripts/snippets.yml
 
 ##########################################
-#                Colours
+# Colours
 ##########################################
-
 # Colours from Gruvbox (Dark mode palette): https://github.com/morhetz/gruvbox#dark-mode-1
 set $red #cc241d
 set $green #98971a
@@ -196,13 +195,13 @@ set $bg #282828
 set $bg0 #282828
 set $fg4 #a89984
 
-set $bright_red: #fb4934
-set $bright_green: #b8bb26
-set $bright_yellow: #fabd2f
-set $bright_blue: #83a598
-set $bright_purple: #d3869b
-set $bright_aqua: #8ec07c
-set $bright_orange: #fe8019
+set $bright_red #fb4934
+set $bright_green #b8bb26
+set $bright_yellow #fabd2f
+set $bright_blue #83a598
+set $bright_purple #d3869b
+set $bright_aqua #8ec07c
+set $bright_orange #fe8019
 
 # class                     border          backgr          text            indicator       child_border
 client.background                           #2B2C2B
@@ -211,7 +210,7 @@ client.focused_tab_title    $yellow         $yellow         $darkgray       $aqu
 client.focused_inactive     $darkgray       $darkgray       $yellow         $darkgray       $bg0
 client.unfocused            $yellow         $darkgray       $yellow         $darkgray       $bg0
 # TODO: For some reason I can't use $bright_red. Is this a bug?
-client.urgent               #fb4934     #fb4934     $white          #fb4934     #fb4934
+client.urgent               $bright_red     $bright_red     $white          $bright_red     $bright_red
 client.placeholder          #000000         #0c0c0c         #ffffff         #000000
 
 ##########################################
