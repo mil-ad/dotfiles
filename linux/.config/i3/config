@@ -2,14 +2,14 @@
 set $mod Mod4
 set $caps Mod5
 
-workspace 1 output 'LG Electronics LG SDQHD 203NTBKCY173' e-DP1 DP-virtDown primary nonprimary
-workspace 2 output 'LG Electronics LG SDQHD 203NTBKCY173' e-DP1 DP-virtDown primary nonprimary
-workspace 3 output 'LG Electronics LG SDQHD 203NTBKCY173' e-DP1 DP-virtDown primary nonprimary
-workspace 4 output 'LG Electronics LG SDQHD 203NTBKCY173' e-DP1 DP-virtDown primary nonprimary
-workspace 5 output 'LG Electronics LG SDQHD 203NTBKCY173' e-DP1 DP-virtDown primary nonprimary
-workspace 6 output 'LG Electronics LG SDQHD 203NTBKCY173' e-DP1 DP-virtDown primary nonprimary
-workspace 7 output 'LG Electronics LG SDQHD 203NTBKCY173' e-DP1 DP-virtDown primary nonprimary
-workspace 8 output 'LG Electronics LG SDQHD 203NTBKCY173' e-DP1 DP-virtDown primary nonprimary
+workspace 1 output 'LG Electronics LG SDQHD 203NTBKCY173' eDP-1 DP-virtDown primary nonprimary
+workspace 2 output 'LG Electronics LG SDQHD 203NTBKCY173' eDP-1 DP-virtDown primary nonprimary
+workspace 3 output 'LG Electronics LG SDQHD 203NTBKCY173' eDP-1 DP-virtDown primary nonprimary
+workspace 4 output 'LG Electronics LG SDQHD 203NTBKCY173' eDP-1 DP-virtDown primary nonprimary
+workspace 5 output 'LG Electronics LG SDQHD 203NTBKCY173' eDP-1 DP-virtDown primary nonprimary
+workspace 6 output 'LG Electronics LG SDQHD 203NTBKCY173' eDP-1 DP-virtDown primary nonprimary
+workspace 7 output 'LG Electronics LG SDQHD 203NTBKCY173' eDP-1 DP-virtDown primary nonprimary
+workspace 8 output 'LG Electronics LG SDQHD 203NTBKCY173' eDP-1 DP-virtDown primary nonprimary
 workspace 9 output DP-virtUp nonprimary primary
 
 default_orientation auto
@@ -128,8 +128,10 @@ mode "resize" {
 # External Keybindings
 ##########################################
 bindsym $mod+Return exec kitty --single-instance
+bindsym $mod+Shift+Return exec pcmanfm
 bindsym $caps+Return layout tabbed; exec kitty --single-instance
 bindsym $mod+space exec ~/.local/bin/winmenu
+bindsym $mod+Ctrl+space exec ~/.local/bin/enter_snippet $HOME/.scripts/snippets.yml
 bindsym $mod+comma exec ~/.local/bin/rename-sway-container
 bindsym $mod+0 exec ~/.local/bin/sysmenu
 bindsym $mod+b exec ~/.local/bin/open_bookmark
@@ -146,10 +148,8 @@ bindsym $mod+r exec  ~/.local/bin/open_github_repo
 bindsym $mod+t exec  ~/.local/bin/add-todoist-task
 bindsym $mod+Shift+r exec  ~/.local/bin/open-github-pr
 bindsym $mod+Shift+t exec  ~/.local/bin/review-todoist-tasks
-bindsym $mod+Shift+Return exec pcmanfm
 bindsym $mod+Ctrl+o exec ~/.local/bin/openfile
 bindsym $mod+Ctrl+p exec ~/.local/bin/open_paper_no_annotations
-bindsym $mod+Ctrl+space exec ~/.local/bin/enter_snippet $HOME/.scripts/snippets.yml
 
 ##########################################
 # Colours
