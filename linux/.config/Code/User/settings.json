@@ -233,7 +233,7 @@
     ],
     "go.toolsManagement.autoUpdate": true,
     "git.openRepositoryInParentFolders": "never",
-    "workbench.colorTheme": "Gruvbox Dark Hard",
+    "workbench.colorTheme": "Kanagawa",
     "github.copilot.nextEditSuggestions.enabled": false,
     "cursor.chat.terminalShowHoverHint": false,
     "github.copilot.enable": {
