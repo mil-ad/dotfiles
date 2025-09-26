@@ -1,21 +1,12 @@
 include /etc/sway/config.d/*
 include ~/.config/i3/config
 
-# TODO: maybe these should be in machine-specific kanshi settings?
-# output eDP-1 scale 2
-# output DP-1 scale 2
-# output "LG Electronics LG SDQHD 203NTBKCY173" scale 2
-# output "Samsung Display Corp. 0x4165 Unknown" scale 2.5
-
 bindsym --no-repeat $mod+z exec slurp | grim -g - - | wl-copy -t image/png
-bindsym $mod+Shift+z exec exec slurp | grim -g - "$HOME/Pictures/screenshot-$(date +%F_%T).png" && notify-send "📸 Screenshot region saved to ${HOME}/Pictures"
+bindsym --no-repeat $mod+Shift+z exec exec slurp | grim -g - "$HOME/Pictures/screenshot-$(date +%F_%T).png" && notify-send "📸 Screenshot region saved to ${HOME}/Pictures"
 
-# unlike i3
 for_window [app_id="kitty"] title_format "🐈"
-
 for_window [app_id="kitty-app"] title_format %title
 for_window [all] title_window_icon padding 5px
-
 for_window [app_id="fzfmenu"] floating enable, resize set 750px 375px, move position center
 for_window [app_id="kitty-app"] floating enable, resize set 750px 375px, move position center
 for_window [app_id="(?i)pavucontrol"] floating enable
@@ -53,11 +44,7 @@ exec swayidle -w \
 # bindsym XF86AudioRaiseVolume exec pamixer --increase 5
 # bindsym XF86AudioLowerVolume exec pamixer --decrease 5
 # bindsym XF86AUdioMute exec pamixer --toggle-mute
-# bindsym XF86MonBrightnessUp exec light -A 1
-# bindsym XF86MonBrightnessDown exec light -U 1
 
-# thinkpad p1:
-#
 bindsym XF86AudioRaiseVolume exec pactl set-sink-volume @DEFAULT_SINK@ +1000
 bindsym XF86AudioLowerVolume exec pactl set-sink-volume @DEFAULT_SINK@ -1000
 bindsym XF86AudioMute exec pactl set-sink-mute @DEFAULT_SINK@ toggle
