@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+
+exec 2> /tmp/kill_stderr.log
+exec 1> /tmp/kill_stdout.log
+set -x
+
+pkill $1
+
+while pkill -0 $1; do 
+    sleep 0.3
+done
