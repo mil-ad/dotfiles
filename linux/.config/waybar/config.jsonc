@@ -209,7 +209,8 @@
             "default": ["", ""]
         },
         "on-click": "pactl set-sink-mute @DEFAULT_SINK@ toggle",
-        "on-click-right": "pavucontrol"
+        "on-click-right": "pavucontrol",
+        "scroll-step": 5
     },
     "pulseaudio/slider": {
         "min": 0,

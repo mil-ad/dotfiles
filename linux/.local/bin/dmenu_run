@@ -8,7 +8,7 @@ case "$selected_program" in
     #     ;;
     "slack")
       nohup ${SHELL:-"/bin/sh"} -c "$selected_program --enable-features=UseOzonePlatform --ozone-platform=wayland" < /dev/null > /dev/null 2>&1 &
-        ;;
+      ;;
     *)
       nohup ${SHELL:-"/bin/sh"} -c "$selected_program" < /dev/null > /dev/null 2>&1 &
       ;;

@@ -58,4 +58,4 @@ exec_always kanshictl reload
 
 # TODO is the always needed? usually useful when (dis)connecting monitors
 exec_always waypaper --restore
-exec_always ~/.local/bin//kill-until-dead waybar && waybar
+exec_always ~/.local/bin/kill-until-dead waybar && waybar

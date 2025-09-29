@@ -34,7 +34,7 @@ case "$selected_option" in
     "🤖 Mods History") ~/.local/bin/kitty-app mods_show;;
     "⚙️ Edit dotfiles") KITTY_EXTRA_OPTS="--class=hx" kitty-app hx ~/.dotfiles ;;
     "⚙️ Edit scripts") KITTY_EXTRA_OPTS="--class=hx" kitty-app hx ~/.scripts ;;
-    "🐍 Python") ~/.local/bin/kitty-app uvx --with pandas --with numpy --with matplotlib ptpython 2>/dev/null;;
+    "🐍 Python") ~/.local/bin/kitty-app 'uvx --with pandas --with numpy --with matplotlib ptpython 1>&2 2>/dev/null';;
     "🎨 color picker") hyprpicker --autocopy ;;
     '📹 record area') ~/.local/bin/record-screen-area-start ;;
     "📸 screenshot program") ~/.local/bin/screenshot-window-to-clipboard ;;
