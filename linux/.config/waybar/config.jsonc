@@ -210,7 +210,7 @@
         },
         "on-click": "pactl set-sink-mute @DEFAULT_SINK@ toggle",
         "on-click-right": "pavucontrol",
-        "scroll-step": 5
+        "scroll-step": 2
     },
     "pulseaudio/slider": {
         "min": 0,
