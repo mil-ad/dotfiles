@@ -14,6 +14,8 @@ file=$(fd --type f --follow --no-ignore-vcs \
     -e wav \
     -e png \
     -e jpg -e jpeg \
+    -e docx \
+    -e xlsx \
     --changed-within 6d -X ls -t | rofimenu -kb-accept-alt "" -kb-custom-1 "Shift+Return")
 
 exit_code=$?
