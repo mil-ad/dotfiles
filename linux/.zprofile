@@ -1,4 +1,5 @@
 export GOPATH="$HOME/.local/share/go"
+export GOBIN="$HOME/.local/bin"
 
 # so that scripts are available in dmenu_run:
 export PATH=$PATH:~/.scripts:~/.local/bin:~/Application
