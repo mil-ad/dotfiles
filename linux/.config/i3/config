@@ -138,7 +138,7 @@ mode "resize" {
 # External Keybindings
 ##########################################
 bindsym $mod+Return exec kitty --single-instance
-bindsym $mod+Shift+Return exec pcmanfm
+bindsym $mod+Shift+Return exec thunar
 bindsym $caps+Return layout tabbed; exec kitty --single-instance
 bindsym $mod+space exec ~/.local/bin/winmenu
 bindsym $mod+Ctrl+space exec ~/.local/bin/enter_snippet $HOME/.scripts/snippets.yml
