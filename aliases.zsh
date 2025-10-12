@@ -70,7 +70,7 @@ alias more="less"
 #alias hx="helix"
 alias cal='cal -3'
 
-alias df='df -h'
+alias df='df -h --exclude-type squashfs --exclude-type tmpfs'
 alias du='du -h'
 alias du0='du -h -d 0 | sort -hr'
 alias du1='du -h -d 1 | sort -hr'
