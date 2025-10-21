@@ -16,6 +16,7 @@ menu_items=(
     "🖖 (un)split monitor"
     "🔄 switch monitor input"
     "♻️ restart sway"
+    "🌍 change timezone"
     "🚪 logout"
     "🚀 reboot"
     "🔒 lock"
@@ -40,6 +41,7 @@ case "$selected_option" in
     # '🔫 xkill') xkill ;;
     '🖖 (un)split monitor') ~/.local/bin/toggle_virtual_monitors ;;
     "🔄 switch monitor input") ~/.local/bin/switch-monitor-input ;;
+    "🌍 change timezone") ~/.local/bin/change-timezone-menu ;;
     '♻️ restart sway') swaymsg reload ;;
     '🚀 reboot')  rofi-confirm && systemctl reboot ;;
     '🖥 power off') rofi-confirm && systemctl poweroff ;;

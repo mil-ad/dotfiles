@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+
+assert_installed timedatectl
+
+set -o pipefail
+
+timedatectl list-timezones | rofimenu | xargs timedatectl set-timezone
