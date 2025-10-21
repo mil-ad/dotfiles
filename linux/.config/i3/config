@@ -101,7 +101,7 @@ bindsym $mod+Shift+Ctrl+Down move workspace to output down
 
 # workspace back and forth (with/without active container)
 bindsym $mod+bracketleft workspace back_and_forth
-bindsym $mod+Shift+b move container to workspace back_and_forth; workspace back_and_forth
+# bindsym $mod+Shift+b move container to workspace back_and_forth; workspace back_and_forth
 
 bindsym $mod+minus split vertical;
 bindsym $mod+backslash split horizontal;
@@ -145,6 +145,7 @@ bindsym $mod+Ctrl+space exec ~/.local/bin/enter_snippet $HOME/.scripts/snippets.
 bindsym $mod+comma exec ~/.local/bin/rename-sway-container
 bindsym $mod+0 exec ~/.local/bin/sysmenu
 bindsym $mod+b exec ~/.local/bin/open_bookmark
+bindsym $mod+Shift+b exec ~/.local/bin/add-bookmark-menu $HOME/.scripts/bookmarks.json
 bindsym $mod+d exec ~/.local/bin/dmenu_run
 bindsym $mod+e exec ~/.local/bin/enter_emoji
 bindsym $mod+g exec ~/.local/bin/kitty-app mods_in_loop

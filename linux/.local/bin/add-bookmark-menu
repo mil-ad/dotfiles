@@ -1,0 +1,24 @@
+#!/usr/bin/env bash
+
+if [ -z "$1" ]; then
+    echo "Error: Argument not provided"
+    exit 1
+fi
+
+bookmarks_file="$1"
+
+if [ ! -e "$bookmarks_file" ]; then
+    touch "$bookmarks_file"
+fi
+
+title=$(rofimenu -l 0 -p "📌 Title") && url=$(rofimenu -l 0 -p "🔗 URL") || exit 1
+
+if [ -z "$title" ] || [ -z "$url" ]; then
+    echo "Error: Title and URL cannot be empty"
+    exit 1
+fi
+
+jq --arg title "$title" --arg url "$url" '.bookmarks += [{"name": $title, "url": $url}]' "$bookmarks_file" > "$bookmarks_file.tmp"
+mv "$bookmarks_file.tmp" "$bookmarks_file"
+
+exit 0
