@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+
+port=${1:-8000}
+
+uv run --python 3.12 python -m http.server "$port"
