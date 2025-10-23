@@ -193,7 +193,6 @@ client.focused              $yellow         $yellow         $darkgray       $aqu
 client.focused_tab_title    $yellow         $yellow         $darkgray       $aqua           $yellow
 client.focused_inactive     $darkgray       $darkgray       $yellow         $darkgray       $bg0
 client.unfocused            $yellow         $darkgray       $yellow         $darkgray       $bg0
-# TODO: For some reason I can't use $bright_red. Is this a bug?
 client.urgent               $bright_red     $bright_red     $white          $bright_red     $bright_red
 client.placeholder          #000000         #0c0c0c         #ffffff         #000000
 
