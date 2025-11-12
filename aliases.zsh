@@ -49,7 +49,7 @@ alias pash="git pull --autostash"
 alias gcm="git commit -m"
 alias gs='git status'
 alias goops='git rebase -i HEAD~2'
-alias pre-commit!='pre-commit run --all-files'
+alias pre-commit!='uv run pre-commit run --all-files'
 
 alias gwls='git worktree list'
 alias gwadd='git worktree add'
