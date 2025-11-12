@@ -2,15 +2,15 @@
 set $mod Mod4
 set $caps Mod5
 
-workspace 1 output 'LG Electronics LG SDQHD 203NTBKCY173' eDP-1 DP-virtDown primary nonprimary
-workspace 2 output 'LG Electronics LG SDQHD 203NTBKCY173' eDP-1 DP-virtDown primary nonprimary
-workspace 3 output 'LG Electronics LG SDQHD 203NTBKCY173' eDP-1 DP-virtDown primary nonprimary
-workspace 4 output 'LG Electronics LG SDQHD 203NTBKCY173' eDP-1 DP-virtDown primary nonprimary
-workspace 5 output 'LG Electronics LG SDQHD 203NTBKCY173' eDP-1 DP-virtDown primary nonprimary
-workspace 6 output 'LG Electronics LG SDQHD 203NTBKCY173' eDP-1 DP-virtDown primary nonprimary
-workspace 7 output 'LG Electronics LG SDQHD 203NTBKCY173' eDP-1 DP-virtDown primary nonprimary
-workspace 8 output 'LG Electronics LG SDQHD 203NTBKCY173' eDP-1 DP-virtDown primary nonprimary
-workspace 9 output DP-virtUp nonprimary primary
+workspace 9 output eDP-1
+workspace 8 output 'LG Electronics LG SDQHD 203NTBKCY173' eDP-1
+workspace 7 output 'LG Electronics LG SDQHD 203NTBKCY173' eDP-1
+workspace 6 output 'LG Electronics LG SDQHD 203NTBKCY173' eDP-1
+workspace 5 output 'LG Electronics LG SDQHD 203NTBKCY173' eDP-1
+workspace 4 output 'LG Electronics LG SDQHD 203NTBKCY173' eDP-1
+workspace 3 output 'LG Electronics LG SDQHD 203NTBKCY173' eDP-1
+workspace 2 output 'LG Electronics LG SDQHD 203NTBKCY173' eDP-1
+workspace 1 output 'LG Electronics LG SDQHD 203NTBKCY173' eDP-1
 
 default_orientation auto
 popup_during_fullscreen smart
@@ -248,5 +248,4 @@ exec tuned-adm profile balanced
 
 exec seafile-applet
 exec gammastep -l 51.50:0.127 -t 6500:3500
-exec dunst -config ~/.config/dunst/dunstrc
 exec_always clipcatd --replace
