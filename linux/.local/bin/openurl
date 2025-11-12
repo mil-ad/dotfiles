@@ -1,10 +1,11 @@
 #!/usr/bin/env bash
 
+set -x
 URL=$(rofimenu -kb-accept-alt "" -kb-custom-1 "Shift+Return" -l 0 -p "🌍")
 
 exit_code=$?
 
-if [[ $original_string != ^https?:\/\/* ]]; then
+if [[ ! "$URL" =~ ^https?:// ]]; then
     URL="https://${URL}"
 fi
 
