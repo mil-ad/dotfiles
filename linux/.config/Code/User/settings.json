@@ -7,7 +7,9 @@
     "window.menuBarVisibility": "toggle",
     "window.customTitleBarVisibility": "never",
     "window.titleBarStyle": "native",
-    "editor.fontFamily": "'Fira Mono', 'IBM Plex Mono', 'Cascadia Code', 'Iosevka Term', 'JetBrains Mono', 'Noto Color Emoji', 'Symbols Nerd Font', 'Vazirmatn UI NL', 'Iosevka Medium', 'Material Icons'",
+    "editor.fontFamily": "'Berkeley Mono Medium SemiCondensed', 'Cascadia Code', 'IBM Plex Mono', 'Iosevka Term', 'JetBrains Mono', 'Noto Color Emoji', 'Symbols Nerd Font', 'Vazirmatn UI NL', 'Iosevka Medium', 'Material Icons'",
+    // "editor.fontVariations": "'wght' 800, 'wdth' 90",
+    // "editor.fontLigatures": true,
     "editor.fontWeight": "500",
     "editor.fontSize": 15,
     "editor.formatOnSave": false,
@@ -60,9 +62,14 @@
             }
         ]
     },
+    "explorer.decorations.colors": true,
+    "explorer.sortOrder": "type",
+    "explorer.incrementalNaming": "smart",
+    "explorer.autoReveal": "focusNoScroll",
+    "explorer.decorations.badges": false,
     "terminal.external.linuxExec": "kitty",
     "terminal.external.osxExec": "/Applications/kitty.app",
-    "terminal.integrated.fontFamily": "'Iosevka Term', 'Symbols Nerd Font', 'Noto Color Emoji', 'Vazir WOL'",
+    "terminal.integrated.fontFamily": "'Berkeley Mono Medium SemiCondensed', 'Iosevka Term', 'Symbols Nerd Font', 'Noto Color Emoji', 'Vazir WOL'",
     "terminal.integrated.inheritEnv": true,
     "terminal.integrated.macOptionClickForcesSelection": true,
     "terminal.integrated.macOptionIsMeta": true,
@@ -126,10 +133,6 @@
         "*.ipynb": "jupyter-notebook"
     },
     "workbench.editor.pinnedTabsOnSeparateRow": false,
-    "explorer.decorations.colors": true,
-    "explorer.sortOrder": "type",
-    "explorer.incrementalNaming": "smart",
-    "explorer.autoReveal": false,
     "breadcrumbs.filePath": "off",
     "breadcrumbs.enabled": false,
     "extensions.ignoreRecommendations": true,
@@ -158,7 +161,6 @@
     },
     "update.mode": "manual",
     "update.showReleaseNotes": false,
-    "explorer.decorations.badges": false,
     "scm.diffDecorationsGutterWidth": 2,
     "scm.diffDecorations": "gutter",
     "git.mergeEditor": true,
@@ -188,7 +190,7 @@
         "files.trimTrailingWhitespace": false,
         "diffEditor.ignoreTrimWhitespace": false
     },
-    "python.languageServer": "Pylance",
+    "python.languageServer": "None", // TODO: vscode needs Pylance but Cursor doesn't support that
     "python.analysis.typeCheckingMode": "standard",
     "python.analysis.languageServerMode": "light",
     "python.terminal.activateEnvironment": true,
@@ -288,5 +290,6 @@
     "zenMode.restore": false,
     "outline.collapseItems": "alwaysCollapse",
     "workbench.reduceMotion": "on",
-    "terminal.integrated.fontSize": 14,
+    "editor.inlayHints.enabled": "off",
+    // "cursorpyright.analysis.typeCheckingMode": "basic",
 }
