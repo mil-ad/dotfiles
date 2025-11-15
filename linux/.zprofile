@@ -4,8 +4,11 @@ export GOBIN="$HOME/.local/bin"
 # so that scripts are available in dmenu_run:
 export PATH=$PATH:~/.scripts:~/.local/bin:~/Application
 
-# Wayland settings
+export HOMEBREW_NO_ANALYTICS=1
+
+# Wayland
 export ELECTRON_OZONE_PLATFORM_HINT=wayland
+export ELECTRON_ENABLE_WAYLAND=1
 export MOZ_ENABLE_WAYLAND=1
 
 [ -e $HOME/.zprofile_local ] && source $HOME/.zprofile_local
