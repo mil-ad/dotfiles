@@ -557,4 +557,9 @@
         "key": "ctrl+k ctrl+t",
         "command": "editor.cpp.toggle"
     },
+    {
+        "key": "alt+c",
+        "command": "-markdown.extension.checkTaskList",
+        "when": "editorTextFocus && editorLangId =~ /^markdown$|^rmd$|^quarto$/"
+    },
 ]
