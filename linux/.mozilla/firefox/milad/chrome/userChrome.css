@@ -46,6 +46,7 @@
 
     --toolbarbutton-icon-fill: #ebdbb2 !important;
     --toolbar-bgcolor: #1d2021 !important;
+    --tab-height-with-margin-padding: 2.2rem !important;
 }
 
 /* Only for macOS */
@@ -138,5 +139,104 @@ tab:not([selected="true"]) > .tab-stack > .tab-background {
 }
 
 #vertical-pinned-tabs-container {
-    max-height: inherit !important;
+    max-height: inherit;
+}
+
+
+
+.urlbar-background {
+    border: 0.5px solid var(--faded_yellow) !important;
+    border-radius: 5px !important;
+}
+
+
+
+
+
+
+/* Latest experiments: */
+
+
+
+
+
+#urlbar {
+    font-family: "Berkeley Mono SemiCondensed", "Iosevka Milad" !important;
+    font-weight: 600 !important;
+    font-size: 1rem !important;
+}
+
+/* Only apply these styles when vertical tabs are enabled */
+@media -moz-pref("sidebar.verticalTabs") {
+
+    .browser-toolbox-background {
+        background-color: #1D2021 !important;
+    }
+
+    #vertical-pinned-tabs-splitter {
+        border-top-color: : inherit !important;
+    }
+
+    #pinned-tabs-container > tab.tabbrowser-tab {
+        height: 30px;
+    }
+
+    .tab-text {
+        font-size: 10px !important;
+        font-family: "Berkeley Mono SemiCondensed", "Iosevka Milad" !important;
+        font-weight: 600 !important;
+    }
+
+    /* Reduce tab height */
+    #tabbrowser-tabs {
+        --tab-min-height: 28px !important;
+    }
+
+    /* Reduce spacing between tabs */
+    .tabbrowser-tab {
+        padding-top: 0.1px !important;
+        padding-bottom: 0.1px !important;
+    }
+
+    /* Compact the tools/extensions area at bottom */
+    .tools-and-extensions {
+        padding-block: 1px !important;
+        gap: 0px !important;
+    }
+
+    .tab-background {
+        margin-inline: 0.4rem !important;
+        border-radius: 6px !important;
+    }
+
+    #tabbrowser-arrowscrollbox .tab-content {
+        padding: 0 0.75rem !important;
+    }
+
+    #pinned-tabs-container .tab-content {
+        padding: 0px !important;
+
+    }
+
+    #tabbrowser-tabbox {
+        border-radius: 5px !important;
+        margin: 0 5px 5px 5px !important;
+
+    }
+
+    /* Hide New Tab button in sidebar */
+    #tabs-newtab-button, #vertical-tabs-newtab-button {
+        display: none !important;
+        color: red !important;
+    }
+
+
+    #sidebar-tools-and-extensions-splitter {
+
+/*         border-width: 1px 0 !important; */
+/*         border-color: red !important; */
+    }
+
+
+
 }
