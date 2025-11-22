@@ -1,5 +1,5 @@
 :root {
-    --dark0_hard: #1d2021;
+    ---dark0_hard: #1d2021;
     --dark0: #282828;
     --dark0_soft: #32302f;
     --dark1: #3c3836;
@@ -36,6 +36,28 @@
     --neutral_aqua: #689d6a;
     --neutral_orange: #d65d0e;
 
+    /* Popping-n-Locking colors */
+    --pnl-bright_black: #928374;
+    --pnl-bright_red: #f42c3e;
+    --pnl-bright_green: #b8bb26;
+    --pnl-bright_yellow: #fabd2f;
+    --pnl-bright_blue: #99c6ca;
+    --pnl-bright_magenta: #d3869b;
+    --pnl-bright_cyan: #7ec16e;
+    --pnl-bright_white: #ebdbb2;
+    --pnl-black: #1d2021;
+    --pnl-red: #cc241d;
+    --pnl-green: #98971a;
+    --pnl-yellow: #d79921;
+    --pnl-blue: #458588;
+    --pnl-magenta: #b16286;
+    --pnl-cyan: #689d6a;
+    --pnl-white: #a89984;
+    --pnl-foreground: #ebdbb2;
+    --pnl-background: #181921;
+    --pnl-background2: #21222d;
+    --pnl-foreground2: #f2e5bc;
+
     --faded_red: #9d0006;
     --faded_green: #79740e;
     --faded_yellow: #b57614;
@@ -43,6 +65,8 @@
     --faded_purple: #8f3f71;
     --faded_aqua: #427b58;
     --faded_orange: #af3a03;
+
+    --main-custom-color: var(--pnl-background);
 
     --toolbarbutton-icon-fill: #ebdbb2 !important;
     --toolbar-bgcolor: #1d2021 !important;
@@ -64,7 +88,7 @@ tab[selected="true"] > .tab-stack > .tab-background {
 }
 
 tab:not([selected="true"]) > .tab-stack > .tab-background {
-    background-color: var(--dark0_hard) !important;
+    background-color: var(--main-custom-color) !important;
     border-color: var(--dark1) !important;
     border: solid;
     border-width: 1px;
@@ -78,7 +102,7 @@ tab:not([selected="true"]) > .tab-stack > .tab-background {
 }
 
 #tabbrowser-tabs, #titlebar, #navigator-toolbox {
-    background: var(--dark0_hard) !important;
+    background: var(--main-custom-color) !important;
 }
 
 /* #titlebar */
@@ -116,7 +140,7 @@ tab:not([selected="true"]) > .tab-stack > .tab-background {
 } */
 
 #nav-bar {
-    background-color: var(--dark0_hard) !important;
+    background-color: var(--main-custom-color) !important;
 }
 
 /* Remove Minimize, Maximize and Close buttons */
@@ -168,18 +192,33 @@ tab:not([selected="true"]) > .tab-stack > .tab-background {
 
 /* Only apply these styles when vertical tabs are enabled */
 @media -moz-pref("sidebar.verticalTabs") {
+    
+    
+    /* For some reason in vertical mode there's a spacer in the toolbar (between <- -> buttons and the address bar) that is not removable. This removes it*/
+    #forward-button ~ #vertical-spacer {
+        display: None !important;;
+    }
 
     .browser-toolbox-background {
-        background-color: #1D2021 !important;
+        background-color: var(--main-custom-color) !important;
     }
 
+    /* By unsetting height in #pinned-tabs-container the container auto-heights to fill all 
+     * pinned tabs so we don't need the splitter anyway 
+    */
     #vertical-pinned-tabs-splitter {
-        border-top-color: : inherit !important;
+        display: none !important;
     }
 
-    #pinned-tabs-container > tab.tabbrowser-tab {
-        height: 30px;
+    #pinned-tabs-container {
+        height: unset !important;
     }
+    
+    #pinned-tabs-container > tab.tabbrowser-tab {
+/*         height: 30px; */
+/*         height: auto !important; */
+    }
+    
 
     .tab-text {
         font-size: 10px !important;
@@ -196,6 +235,11 @@ tab:not([selected="true"]) > .tab-stack > .tab-background {
     .tabbrowser-tab {
         padding-top: 0.1px !important;
         padding-bottom: 0.1px !important;
+        
+
+        &:not(:hover) .tab-close-button {
+            display: none;
+        }
     }
 
     /* Compact the tools/extensions area at bottom */
@@ -210,7 +254,7 @@ tab:not([selected="true"]) > .tab-stack > .tab-background {
     }
 
     #tabbrowser-arrowscrollbox .tab-content {
-        padding: 0 0.75rem !important;
+        padding: 0 0.8rem !important;
     }
 
     #pinned-tabs-container .tab-content {
@@ -218,10 +262,27 @@ tab:not([selected="true"]) > .tab-stack > .tab-background {
 
     }
 
+    
+    
+    /* I want to remove the padding between sidebar and the main content but I have to do it
+     * conditionally based on sidebar location. I'm hijacking this "sidebar-position" attributes
+     * which exists when sidebar is in the right and not when it's in the left
+     */
+   
+    /* Sidebar on the right */
+    box#sidebar-main[sidebar-positionend] tabs#tabbrowser-tabs {
+        margin: 0 0px 0px 0px !important;
+    }
+    
+    /* Sidebar on the left */
+    box#sidebar-main:not([sidebar-positionend]) tabs#tabbrowser-tabs {
+        margin: 0 0px 0px 0px !important;
+    }
+    
     #tabbrowser-tabbox {
-        border-radius: 5px !important;
-        margin: 0 5px 5px 5px !important;
-
+/*         border-radius: 2px !important; */
+/*         margin: 0 5px 5px 5px !important; */
+        box-shadow: none !important;
     }
 
     /* Hide New Tab button in sidebar */
@@ -232,9 +293,14 @@ tab:not([selected="true"]) > .tab-stack > .tab-background {
 
 
     #sidebar-tools-and-extensions-splitter {
+        margin-block-end: 0 !important;
 
 /*         border-width: 1px 0 !important; */
 /*         border-color: red !important; */
+    }
+    
+    .buttons-wrapper {
+      min-height: unset !important;
     }
 
 
