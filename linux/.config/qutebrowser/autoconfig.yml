@@ -90,6 +90,8 @@ settings:
     global: default_family
   tabs.background:
     global: true
+  tabs.close_mouse_button_on_bar:
+    global: new-tab
   tabs.padding:
     global:
       bottom: 3
@@ -98,6 +100,8 @@ settings:
       top: 3
   tabs.pinned.frozen:
     global: true
+  tabs.tabs_are_windows:
+    global: false
   url.default_page:
     global: about:blank
   url.searchengines:
