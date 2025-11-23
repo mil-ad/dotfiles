@@ -7,12 +7,9 @@ alias .....="cd ../../../.."
 alias .....="cd ../../../../.."
 alias ......="cd ../../../../../.."
 
-alias ssh="ssh"
 alias ssh0="ssh -O exit"
 alias ssh-="ssh-keygen -R"
-alias kssh="kitten ssh"
 
-alias gcloud="gcloud"
 alias gscat="gsutil cat"
 alias gsls="gsutil ls"
 alias gsrm="gsutil -m rm"
@@ -21,14 +18,13 @@ alias g="rg --hidden --smart-case -g '!.git'"
 alias gc="rg --hidden --smart-case -g '!.git' --context 3"
 alias f='fd --hidden --exclude .git --exclude .cache'
 
-
 alias p="git pull"
 alias P="git push"
 alias pash="git pull --autostash"
 alias gcm="git commit -m"
 alias gs='git status'
-alias goops='git rebase -i HEAD~2'
 alias pre-commit!='uv run pre-commit run --all-files'
+alias pre-commit-file="pre-commit run --file"
 
 alias gwls='git worktree list'
 alias gwadd='git worktree add'
@@ -66,8 +62,6 @@ alias london='curl wttr.in/London'
 if [[ $(uname) == 'Darwin' ]]; then
     alias yay='brew upgrade && brew upgrade --cask'
 fi
-
-alias pre-commit-file="pre-commit run --file"
 
 alias json2jsonl="jq -c .[]"
 alias jsonl2json="jq -s"
