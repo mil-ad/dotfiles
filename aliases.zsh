@@ -7,16 +7,6 @@ alias .....="cd ../../../.."
 alias .....="cd ../../../../.."
 alias ......="cd ../../../../../.."
 
-alias 1='cd -1'
-alias 2='cd -2'
-alias 3='cd -3'
-alias 4='cd -4'
-alias 5='cd -5'
-alias 6='cd -6'
-alias 7='cd -7'
-alias 8='cd -8'
-alias 9='cd -9'
-
 alias ssh="ssh"
 alias ssh0="ssh -O exit"
 alias ssh-="ssh-keygen -R"
@@ -27,21 +17,10 @@ alias gscat="gsutil cat"
 alias gsls="gsutil ls"
 alias gsrm="gsutil -m rm"
 
-alias ag='ag --hidden --ignore-case --color-match="1;31" --silent'
-alias agc='ag --hidden --ignore-case --color-match="1;31" --silent -C 2'
-alias agf='ag --hidden --ignore .git --ignore .cache -g""'
-
 alias g="rg --hidden --smart-case -g '!.git'"
 alias gc="rg --hidden --smart-case -g '!.git' --context 3"
 alias f='fd --hidden --exclude .git --exclude .cache'
 
-# micromamba
-alias mm="micromamba"
-alias mma="micromamba activate"
-alias mmc="micromamba create --name"
-alias mmd="micromamba deactivate"
-alias mmls='micromamba env list'
-alias mmrm='micromamba env remove --yes --name'
 
 alias p="git pull"
 alias P="git push"
@@ -68,7 +47,6 @@ fi
 alias lsym='ls -l `find . -maxdepth 1 -type l -print`'
 
 alias more="less"
-#alias hx="helix"
 alias cal='cal -3'
 
 alias df='df -h --exclude-type squashfs --exclude-type tmpfs'
@@ -83,7 +61,7 @@ alias tree3='tree -L 3'
 alias difffolders='diff -rq'
 
 alias tmux2clip='tmux capture-pane -pS - | clipwrite'
-alias weather='curl wttr.in/London'
+alias london='curl wttr.in/London'
 
 if [[ $(uname) == 'Darwin' ]]; then
     alias yay='brew upgrade && brew upgrade --cask'
@@ -102,3 +80,18 @@ alias stail='ls -1 ~/logs/*.log | sort -V | tail -1 | xargs tail -f'
 alias sless='ls -1 ~/logs/*.log | sort -V | tail -1 | xargs less'
 
 alias yt-dlp!='yt-dlp --ies Generic,HTML5'
+
+
+# [obsolete] micromamba
+alias mm="micromamba"
+alias mma="micromamba activate"
+alias mmc="micromamba create --name"
+alias mmd="micromamba deactivate"
+alias mmls='micromamba env list'
+alias mmrm='micromamba env remove --yes --name'
+
+# [obsolete] ag
+alias ag='ag --hidden --ignore-case --color-match="1;31" --silent'
+alias agc='ag --hidden --ignore-case --color-match="1;31" --silent -C 2'
+alias agf='ag --hidden --ignore .git --ignore .cache -g""'
+
