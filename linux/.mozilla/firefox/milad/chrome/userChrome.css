@@ -71,6 +71,9 @@
     --toolbarbutton-icon-fill: #ebdbb2 !important;
     --toolbar-bgcolor: #1d2021 !important;
     --tab-height-with-margin-padding: 2.2rem !important;
+
+    --toolbarbutton-inner-padding:4px !important;
+    --tab-min-height: 24px !important;
 }
 
 /* Only for macOS */
@@ -104,6 +107,14 @@ tab:not([selected="true"]) > .tab-stack > .tab-background {
 #tabbrowser-tabs, #titlebar, #navigator-toolbox {
     background: var(--main-custom-color) !important;
 }
+
+
+/* Copied to make address bar more compact: https://www.reddit.com/r/FirefoxCSS/comments/lnwhnn/comment/go3iy85 */
+.titlebar-button{ padding-block: 4px !important; }
+#urlbar-container, #search-container{ padding-block: 1px !important; }
+#titlebar{ -moz-appearance:none !important; }
+:root[sizemode="maximized"] #navigator-toolbox{ margin-top: 8px }
+
 
 /* #titlebar */
 
@@ -169,6 +180,7 @@ toolbarspring#vertical-spacer.chromeclass-toolbar-additional.titlebar-spacer {
 #nav-bar-customization-target > #urlbar-container:first-child {
     margin-left: 0px !important;
     padding-left: 5px !important;
+    margin-right: 10px !important;
 }
 
 #vertical-pinned-tabs-container {
@@ -181,22 +193,19 @@ toolbarspring#vertical-spacer.chromeclass-toolbar-additional.titlebar-spacer {
 }
 
 
-/* Hide bookmark (star) button*/
-#star-button-box {
-    display: None !important;
-}
-
-/* Hide reader mode button */
-#reader-mode-button {
+/* Hide more buttons */
+#star-button-box, #urlbar-zoom-button, #reader-mode-button {
     display: None !important;
 }
 
 
 
-/* Latest experiments: */
-
-
-
+/* Configure context menus */
+#contentAreaContextMenu label {
+    font-family: "Berkeley Mono SemiCondensed", "Iosevka Milad" !important;
+    font-weight: 600 !important;
+    font-size: 0.75rem !important;
+}
 
 
 #urlbar {
@@ -207,8 +216,8 @@ toolbarspring#vertical-spacer.chromeclass-toolbar-additional.titlebar-spacer {
 
 /* Only apply these styles when vertical tabs are enabled */
 @media -moz-pref("sidebar.verticalTabs") {
-    
-    
+
+
     /* Make pinned tab cells narrower */
     :root {
       /* Width of the background "pill" around pinned icons */
@@ -216,24 +225,24 @@ toolbarspring#vertical-spacer.chromeclass-toolbar-additional.titlebar-spacer {
       /* Optional: also make them a bit shorter */
       --tab-min-height: 24px !important;
     }
-    
+
     /* Override the grid min width for pinned items */
     #pinned-tabs-container[orient="vertical"]::part(items-wrapper) {
       grid-template-columns: repeat(auto-fit, minmax(24px, max-content)) !important;
     }
-  
+
     /* Kill any extra padding inside pinned tabs */
     #pinned-tabs-container[orient="vertical"] .tab-content {
       padding: 0 !important;
       justify-content: center !important;
     }
-  
+
     /* Reduce the inline margin of the background so it hugs the icon more */
     #pinned-tabs-container[orient="vertical"] .tab-background {
       margin-inline: 2px !important;
     }
-      
-    
+
+
     /* For some reason in vertical mode there's a spacer in the toolbar (between <- -> buttons and the address bar) that is not removable. This removes it*/
     #forward-button ~ #vertical-spacer {
         display: None !important;;
@@ -243,8 +252,8 @@ toolbarspring#vertical-spacer.chromeclass-toolbar-additional.titlebar-spacer {
         background-color: var(--main-custom-color) !important;
     }
 
-    /* By unsetting height in #pinned-tabs-container the container auto-heights to fill all 
-     * pinned tabs so we don't need the splitter anyway 
+    /* By unsetting height in #pinned-tabs-container the container auto-heights to fill all
+     * pinned tabs so we don't need the splitter anyway
     */
     #vertical-pinned-tabs-splitter {
         display: none !important;
@@ -253,12 +262,12 @@ toolbarspring#vertical-spacer.chromeclass-toolbar-additional.titlebar-spacer {
     #pinned-tabs-container {
         height: unset !important;
     }
-    
+
     #pinned-tabs-container > tab.tabbrowser-tab {
 /*         height: 30px; */
 /*         height: auto !important; */
     }
-    
+
 
     .tab-text {
         font-size: 10px !important;
@@ -275,7 +284,7 @@ toolbarspring#vertical-spacer.chromeclass-toolbar-additional.titlebar-spacer {
     .tabbrowser-tab {
         padding-top: 0.1px !important;
         padding-bottom: 0.1px !important;
-        
+
 
         &:not(:hover) .tab-close-button {
             display: none;
@@ -302,28 +311,28 @@ toolbarspring#vertical-spacer.chromeclass-toolbar-additional.titlebar-spacer {
 
     }
 
-    
-    
+
+
     /* I want to remove the padding between sidebar and the main content but I have to do it
      * conditionally based on sidebar location. I'm hijacking this "sidebar-position" attributes
      * which exists when sidebar is in the right and not when it's in the left
      */
-   
+
     /* Sidebar on the right */
     box#sidebar-main[sidebar-positionend] tabs#tabbrowser-tabs {
         margin: 0 0px 0px 0px !important;
     }
-    
+
     /* Sidebar on the left */
     box#sidebar-main:not([sidebar-positionend]) tabs#tabbrowser-tabs {
         margin: 0 0px 0px 0px !important;
     }
-    
+
     /* margin has to be different when tabs are left vs right */
     #tabbrowser-tabbox {
         border-radius: 0px !important;
         margin: 2px 0px 5px 5px !important;
-        box-shadow: none !important;        
+        box-shadow: none !important;
         border: 0.5px solid var(--dark0_hard) !important;
     }
 
@@ -333,78 +342,12 @@ toolbarspring#vertical-spacer.chromeclass-toolbar-additional.titlebar-spacer {
         color: red !important;
     }
 
-
     #sidebar-tools-and-extensions-splitter {
-        margin-block-end: 0 !important;
-
-/*         border-width: 1px 0 !important; */
-/*         border-color: red !important; */
+        display: none !important;
     }
-    
+
     .buttons-wrapper {
       min-height: unset !important;
     }
-    
-}
 
-
-/* Vertical tabs + auto-hide (expand-on-hover) specific tweaks */
-@media (-moz-pref("sidebar.verticalTabs")) and (-moz-pref("sidebar.visibility", "expand-on-hover")) {
-
-  /* --- COLLAPSED STATE: icons-only strip --- */
-
-  /* Remove gaps and margins so icons sit tight */
-  #tabbrowser-tabs[orient="vertical"]:not([expanded]) {
-    --tab-inline-padding: 0 !important;
-    grid-gap: 2px !important;
-  }
-
-  #tabbrowser-tabs[orient="vertical"]:not([expanded]) .tab-background {
-    margin-inline: 0 !important;
-    width: var(--tab-collapsed-background-width) !important;
-    justify-content: center;
-  }
-
-  #tabbrowser-tabs[orient="vertical"]:not([expanded]) .tab-content {
-    padding: 0 !important;
-    justify-content: center !important;
-  }
-
-  #tabbrowser-tabs[orient="vertical"]:not([expanded]) .tab-icon-image {
-    margin-inline: 0 !important;
-  }
-
-  /* Pinned tabs when collapsed: make them the same tight icons */
-  #pinned-tabs-container[orient="vertical"]::part(items-wrapper) {
-    display: grid !important;
-    grid-auto-rows: var(--tab-height-with-margin-padding);
-    grid-template-columns: repeat(auto-fit, minmax(24px, max-content)) !important;
-    justify-content: center;
-  }
-
-  #pinned-tabs-container[orient="vertical"] .tab-background {
-    margin-inline: 0 !important;
-    width: var(--tab-collapsed-background-width) !important;
-  }
-
-  #pinned-tabs-container[orient="vertical"] .tab-content {
-    padding: 0 !important;
-    justify-content: center !important;
-  }
-
-  /* --- EXPANDED STATE: full sidebar with labels --- */
-
-  #tabbrowser-tabs[orient="vertical"][expanded] {
-    --tab-inline-padding: 6px !important;   /* less padding = less dead space */
-    grid-gap: 3px !important;              /* tighten gaps between tabs */
-  }
-
-  #tabbrowser-tabs[orient="vertical"][expanded] .tab-background {
-    margin-inline: 4px !important;         /* smaller “pill” margins */
-  }
-
-  /* Let pinned tabs in expanded mode look like small square pills */
-  #pinned-tabs-container[orient="vertical"] .tab-background {
-    border-radius: 6px !important;
-  }
 }
