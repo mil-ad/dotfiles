@@ -150,9 +150,8 @@ tab:not([selected="true"]) > .tab-stack > .tab-background {
   background-color: var(--faded_yellow) !important;
 }
 
-/*  #back-button,
- #forward-button */
-#home-button { display:none!important; }
+
+#home-button { display:none !important; }
 
 .titlebar-spacer[type="pre-tabs"] {
     display: none !important;
@@ -162,11 +161,19 @@ tab:not([selected="true"]) > .tab-stack > .tab-background {
     display: none !important;
 }
 
+toolbarspring#vertical-spacer.chromeclass-toolbar-additional.titlebar-spacer {
+    display: none !important;
+}
+
+/* If urlbar is placed at the very left of the toolbar then remove its left margin */
+#nav-bar-customization-target > #urlbar-container:first-child {
+    margin-left: 0px !important;
+    padding-left: 5px !important;
+}
+
 #vertical-pinned-tabs-container {
     max-height: inherit;
 }
-
-
 
 .urlbar-background {
     border: 0.5px solid var(--faded_yellow) !important;
@@ -174,7 +181,15 @@ tab:not([selected="true"]) > .tab-stack > .tab-background {
 }
 
 
+/* Hide bookmark (star) button*/
+#star-button-box {
+    display: None !important;
+}
 
+/* Hide reader mode button */
+#reader-mode-button {
+    display: None !important;
+}
 
 
 
@@ -193,6 +208,31 @@ tab:not([selected="true"]) > .tab-stack > .tab-background {
 /* Only apply these styles when vertical tabs are enabled */
 @media -moz-pref("sidebar.verticalTabs") {
     
+    
+    /* Make pinned tab cells narrower */
+    :root {
+      /* Width of the background "pill" around pinned icons */
+      --tab-pinned-expanded-background-width: 24px !important;
+      /* Optional: also make them a bit shorter */
+      --tab-min-height: 24px !important;
+    }
+    
+    /* Override the grid min width for pinned items */
+    #pinned-tabs-container[orient="vertical"]::part(items-wrapper) {
+      grid-template-columns: repeat(auto-fit, minmax(24px, max-content)) !important;
+    }
+  
+    /* Kill any extra padding inside pinned tabs */
+    #pinned-tabs-container[orient="vertical"] .tab-content {
+      padding: 0 !important;
+      justify-content: center !important;
+    }
+  
+    /* Reduce the inline margin of the background so it hugs the icon more */
+    #pinned-tabs-container[orient="vertical"] .tab-background {
+      margin-inline: 2px !important;
+    }
+      
     
     /* For some reason in vertical mode there's a spacer in the toolbar (between <- -> buttons and the address bar) that is not removable. This removes it*/
     #forward-button ~ #vertical-spacer {
@@ -279,10 +319,12 @@ tab:not([selected="true"]) > .tab-stack > .tab-background {
         margin: 0 0px 0px 0px !important;
     }
     
+    /* margin has to be different when tabs are left vs right */
     #tabbrowser-tabbox {
-/*         border-radius: 2px !important; */
-/*         margin: 0 5px 5px 5px !important; */
-        box-shadow: none !important;
+        border-radius: 0px !important;
+        margin: 2px 0px 5px 5px !important;
+        box-shadow: none !important;        
+        border: 0.5px solid var(--dark0_hard) !important;
     }
 
     /* Hide New Tab button in sidebar */
@@ -302,7 +344,67 @@ tab:not([selected="true"]) > .tab-stack > .tab-background {
     .buttons-wrapper {
       min-height: unset !important;
     }
+    
+}
 
 
+/* Vertical tabs + auto-hide (expand-on-hover) specific tweaks */
+@media (-moz-pref("sidebar.verticalTabs")) and (-moz-pref("sidebar.visibility", "expand-on-hover")) {
 
+  /* --- COLLAPSED STATE: icons-only strip --- */
+
+  /* Remove gaps and margins so icons sit tight */
+  #tabbrowser-tabs[orient="vertical"]:not([expanded]) {
+    --tab-inline-padding: 0 !important;
+    grid-gap: 2px !important;
+  }
+
+  #tabbrowser-tabs[orient="vertical"]:not([expanded]) .tab-background {
+    margin-inline: 0 !important;
+    width: var(--tab-collapsed-background-width) !important;
+    justify-content: center;
+  }
+
+  #tabbrowser-tabs[orient="vertical"]:not([expanded]) .tab-content {
+    padding: 0 !important;
+    justify-content: center !important;
+  }
+
+  #tabbrowser-tabs[orient="vertical"]:not([expanded]) .tab-icon-image {
+    margin-inline: 0 !important;
+  }
+
+  /* Pinned tabs when collapsed: make them the same tight icons */
+  #pinned-tabs-container[orient="vertical"]::part(items-wrapper) {
+    display: grid !important;
+    grid-auto-rows: var(--tab-height-with-margin-padding);
+    grid-template-columns: repeat(auto-fit, minmax(24px, max-content)) !important;
+    justify-content: center;
+  }
+
+  #pinned-tabs-container[orient="vertical"] .tab-background {
+    margin-inline: 0 !important;
+    width: var(--tab-collapsed-background-width) !important;
+  }
+
+  #pinned-tabs-container[orient="vertical"] .tab-content {
+    padding: 0 !important;
+    justify-content: center !important;
+  }
+
+  /* --- EXPANDED STATE: full sidebar with labels --- */
+
+  #tabbrowser-tabs[orient="vertical"][expanded] {
+    --tab-inline-padding: 6px !important;   /* less padding = less dead space */
+    grid-gap: 3px !important;              /* tighten gaps between tabs */
+  }
+
+  #tabbrowser-tabs[orient="vertical"][expanded] .tab-background {
+    margin-inline: 4px !important;         /* smaller “pill” margins */
+  }
+
+  /* Let pinned tabs in expanded mode look like small square pills */
+  #pinned-tabs-container[orient="vertical"] .tab-background {
+    border-radius: 6px !important;
+  }
 }
