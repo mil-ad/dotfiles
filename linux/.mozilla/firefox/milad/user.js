@@ -7,7 +7,8 @@ user_pref("ui.popup.disable_autohide", false);
 user_pref("privacy.webrtc.hideGlobalIndicator", true);
 user_pref("privacy.webrtc.legacyGlobalIndicator", false);
 user_pref("newtabpage.activity-stream.feeds.topsites", false);
-user_pref("browser.urlbar.maxRichResults", 5);
+user_pref("browser.urlbar.maxRichResults", 2);
+user_pref("browser.urlbar.maxHistoricalSearchSuggestions", 2);
 user_pref("browser.urlbar.suggest.quickactions", false)
 user_pref("browser.urlbar.suggest.openpage", false)
 user_pref("browser.urlbar.suggest.topsites", false)
