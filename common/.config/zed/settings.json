@@ -7,10 +7,16 @@
 // custom settings, run the `open default settings` command
 // from the command palette or from `Zed` application menu.
 {
+  "helix_mode": true,
+  "buffer_line_height": "comfortable",
+  "ui_font_family": "Berkeley Mono",
+  "ui_font_features": {},
+  "ui_font_size": 13,
   "features": {
     "edit_prediction_provider": "none"
   },
   "agent": {
+    "enable_feedback": false,
     "default_model": {
       "provider": "zed.dev",
       "model": "claude-3-7-sonnet-latest"
@@ -22,37 +28,33 @@
     "use_smartcase_find": true,
     "toggle_relative_line_numbers": true
   },
-  "theme": "Catppuccin Mocha",
-  "buffer_font_family": "JetBrains Mono",
+  "theme": "Kanagawa Wave",
+  "buffer_font_family": "Berkeley Mono",
+  "buffer_font_fallbacks": ["Symbols Nerd Font"], // doesn't seem to work :(
   "buffer_font_size": 16,
   "buffer_font_weight": 600,
   "buffer_font_features": {
     "calt": false
   },
   "show_whitespaces": "all",
-  "ui_font_size": 16,
   // Let's leave the telemetry on for a while
   "telemetry": {
-    "diagnostics": true,
-    "metrics": true
+    "diagnostics": false,
+    "metrics": false
   },
   "soft_wrap": "none",
   "wrap_guides": [80, 120],
   "terminal": {
-    "font_size": 12,
-    "env": {
-      "TERM": "alacritty",
-      // LANG and LC_ALL necessary because of: https://github.com/zed-industries/zed/issues/4360
-      "LANG": "en_GB.UTF-8",
-      "LC_ALL": "en_GB.UTF-8"
-    }
+    "font_family": "Iosevka Nerd Font Mono",
+    "line_height": "standard",
+    "font_fallbacks": ["Symbols Nerd Font"] // doesn't seem to work
   },
   "languages": {
     "Markdown": {
       "soft_wrap": "editor_width"
     },
     "Python": {
-      "format_on_save": {
+      "formatter": {
         "external": {
           "command": "ruff",
           "arguments": [
@@ -64,7 +66,8 @@
             "-"
           ]
         }
-      }
+      },
+      "format_on_save": "on"
     }
   }
 }
