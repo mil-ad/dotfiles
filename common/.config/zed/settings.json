@@ -7,37 +7,42 @@
 // custom settings, run the `open default settings` command
 // from the command palette or from `Zed` application menu.
 {
-  "helix_mode": true,
+  "show_edit_predictions": true,
+  "icon_theme": "Zed (Default)",
+  "allow_rewrap": "in_selections",
   "buffer_line_height": "comfortable",
   "ui_font_family": "Berkeley Mono",
   "ui_font_features": {},
-  "ui_font_size": 13,
+  "ui_font_size": 12,
   "features": {
-    "edit_prediction_provider": "none"
+    "edit_prediction_provider": "zed"
   },
   "agent": {
     "enable_feedback": false,
     "default_model": {
-      "provider": "zed.dev",
-      "model": "claude-3-7-sonnet-latest"
+      "provider": "anthropic",
+      "model": "claude-sonnet-4-5-latest"
     }
   },
-  "vim_mode": true,
+  "agent_servers": {
+    "claude": {}
+  },
+  "vim_mode": false,
+  "helix_mode": true,
   "vim": {
     "use_system_clipboard": "on_yank",
     "use_smartcase_find": true,
-    "toggle_relative_line_numbers": true
+    "toggle_relative_line_numbers": false
   },
-  "theme": "Kanagawa Wave",
+  "theme": "Kanagawa Wave - No Italics",
   "buffer_font_family": "Berkeley Mono",
   "buffer_font_fallbacks": ["Symbols Nerd Font"], // doesn't seem to work :(
-  "buffer_font_size": 16,
+  "buffer_font_size": 12,
   "buffer_font_weight": 600,
   "buffer_font_features": {
     "calt": false
   },
   "show_whitespaces": "all",
-  // Let's leave the telemetry on for a while
   "telemetry": {
     "diagnostics": false,
     "metrics": false
@@ -47,26 +52,19 @@
   "terminal": {
     "font_family": "Iosevka Nerd Font Mono",
     "line_height": "standard",
-    "font_fallbacks": ["Symbols Nerd Font"] // doesn't seem to work
+    "font_fallbacks": ["Symbols Nerd Font"], // doesn't seem to work
+    "detect_venv": {
+      "on": {
+        "directories": [".venv"],
+        "activate_script": "default"
+      }
+    }
   },
   "languages": {
     "Markdown": {
       "soft_wrap": "editor_width"
     },
     "Python": {
-      "formatter": {
-        "external": {
-          "command": "ruff",
-          "arguments": [
-            "check",
-            "--exit-zero",
-            "--fix",
-            "--stdin-filename",
-            "{buffer_path}",
-            "-"
-          ]
-        }
-      },
       "format_on_save": "on"
     }
   }

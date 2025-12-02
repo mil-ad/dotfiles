@@ -4,7 +4,25 @@
     "context": "Workspace",
     "bindings": {
       "ctrl-`": "workspace::ToggleBottomDock",
-      "cmd-`": "workspace::ToggleBottomDock"
+      "cmd-`": "workspace::ToggleBottomDock",
+      "alt-super-n": [
+        "task::Spawn",
+        { "task_name": "start lazygit", "reveal_target": "center" }
+      ],
+      "ctrl-k ctrl-g": "git_panel::ToggleFocus",
+      "ctrl-k ctrl-b": "project_panel::ToggleFocus"
+    }
+  },
+  {
+    "context": "Editor",
+    "bindings": {
+      "alt-super-g": "editor::SelectAllMatches",
+      "alt-super-i": [
+        "editor::SelectNext",
+        {
+          "replace_newest": false
+        }
+      ]
     }
   },
   {
@@ -16,7 +34,7 @@
       "alt-v": "editor::Paste",
       "ctrl-y": "editor::Undo", // vim default: line up
       "ctrl-f": "buffer_search::Deploy", // vim default: page down
-      "ctrl-o": "workspace::Open", // vim default: go back
+      // vim default: go back
       "ctrl-a": "editor::SelectAll", // vim default: increment
       "ctrl-w": "pane::CloseActiveItem"
     }
@@ -50,6 +68,11 @@
       "alt-c": "terminal::Copy",
       "alt-v": "terminal::Paste",
       "ctrl-t": ["terminal::SendKeystroke", "ctrl-t"]
+    }
+  },
+  {
+    "bindings": {
+      "alt-super-o": "workspace::Open"
     }
   }
 ]
