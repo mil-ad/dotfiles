@@ -1,6 +1,8 @@
 include /etc/sway/config.d/*
 include ~/.config/i3/config
 
+seat seat0 xcursor_theme "Adwaita" 24
+
 input type:touchpad {
     tap enabled
     tap_button_map lrm
