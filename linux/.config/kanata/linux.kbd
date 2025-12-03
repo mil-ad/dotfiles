@@ -1,0 +1,22 @@
+(defcfg
+  process-unmapped-keys yes
+)
+
+(defsrc
+  caps
+  h j k l
+)
+
+(deflayer base
+  @cap
+  h j k l
+)
+
+(deflayer vim
+  _
+  left down up rght
+)
+
+(defalias
+  cap (tap-hold 200 200 esc (layer-while-held vim))
+)
