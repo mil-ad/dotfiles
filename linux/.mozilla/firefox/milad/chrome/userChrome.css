@@ -351,4 +351,10 @@ toolbarspring#vertical-spacer.chromeclass-toolbar-additional.titlebar-spacer {
       height: unset !important;
     }
 
+    /* Get rid of mask/shadow when there are more tabs to scroll */
+    spacer[part="overflow-start-indicator"],
+    spacer[part="overflow-end-indicator"] {
+          display: none !important;
+    }
+
 }
