@@ -5,14 +5,13 @@
     "bindings": {
       "ctrl-`": "workspace::ToggleBottomDock",
       "cmd-`": "workspace::ToggleBottomDock",
-      "alt-super-n": [
-        "task::Spawn",
-        { "task_name": "start lazygit", "reveal_target": "center" }
-      ],
       "ctrl-k ctrl-g": "git_panel::ToggleFocus",
-      "ctrl-k ctrl-b": "project_panel::ToggleFocus"
+      "ctrl-k ctrl-b": "project_panel::ToggleFocus",
+      "alt-super-o": "projects::OpenRecent",
+      "ctrl-?": "workspace::ToggleRightDock"
     }
   },
+  //TODO: I'm not sure what's the point of !menu yet
   {
     "context": "Editor",
     "bindings": {
@@ -32,9 +31,7 @@
       "ctrl-x": "editor::Cut", // vim default: decrement
       "ctrl-v": "editor::Paste", // vim default: visual block mode
       "alt-v": "editor::Paste",
-      "ctrl-y": "editor::Undo", // vim default: line up
       "ctrl-f": "buffer_search::Deploy", // vim default: page down
-      // vim default: go back
       "ctrl-a": "editor::SelectAll", // vim default: increment
       "ctrl-w": "pane::CloseActiveItem"
     }
@@ -47,11 +44,15 @@
     }
   },
   {
-    "context": "Editor && vim_mode == normal && !VimWaiting && !menu",
+    "context": "Editor && vim_mode == helix_normal && !VimWaiting && !menu",
     "bindings": {
-      "space g g": [
+      "ctrl-g": [
         "task::Spawn",
-        { "task_name": "lazygit", "target": "center" }
+        { "task_name": "start lazygit", "reveal_target": "center" }
+      ],
+      "ctrl-y": [
+        "task::Spawn",
+        { "task_name": "start yazi", "reveal_target": "center" }
       ]
     }
   },
@@ -68,11 +69,6 @@
       "alt-c": "terminal::Copy",
       "alt-v": "terminal::Paste",
       "ctrl-t": ["terminal::SendKeystroke", "ctrl-t"]
-    }
-  },
-  {
-    "bindings": {
-      "alt-super-o": "workspace::Open"
     }
   }
 ]

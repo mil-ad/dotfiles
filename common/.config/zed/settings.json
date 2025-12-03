@@ -1,31 +1,13 @@
-// Zed settings
-//
-// For information on how to configure Zed, see the Zed
 // documentation: https://zed.dev/docs/configuring-zed
-//
-// To see all of Zed's default settings without changing your
-// custom settings, run the `open default settings` command
-// from the command palette or from `Zed` application menu.
 {
   "show_edit_predictions": true,
   "icon_theme": "Zed (Default)",
   "allow_rewrap": "in_selections",
-  "buffer_line_height": "comfortable",
   "ui_font_family": "Berkeley Mono",
   "ui_font_features": {},
   "ui_font_size": 12,
   "features": {
     "edit_prediction_provider": "zed"
-  },
-  "agent": {
-    "enable_feedback": false,
-    "default_model": {
-      "provider": "anthropic",
-      "model": "claude-sonnet-4-5-latest"
-    }
-  },
-  "agent_servers": {
-    "claude": {}
   },
   "vim_mode": false,
   "helix_mode": true,
@@ -42,6 +24,7 @@
   "buffer_font_features": {
     "calt": false
   },
+  "buffer_line_height": "comfortable",
   "show_whitespaces": "all",
   "telemetry": {
     "diagnostics": false,
@@ -67,5 +50,15 @@
     "Python": {
       "format_on_save": "on"
     }
+  },
+  "agent": {
+    "enable_feedback": false,
+    "default_model": {
+      "provider": "anthropic",
+      "model": "claude-sonnet-4-5-latest"
+    }
+  },
+  "agent_servers": {
+    "claude": {}
   }
 }
