@@ -348,6 +348,7 @@ toolbarspring#vertical-spacer.chromeclass-toolbar-additional.titlebar-spacer {
 
     .buttons-wrapper {
       min-height: unset !important;
+      height: unset !important;
     }
 
 }
