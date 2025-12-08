@@ -1,8 +1,16 @@
 // documentation: https://zed.dev/docs/configuring-zed
 {
-  "show_edit_predictions": true,
+  "edit_predictions": {
+    "mode": "subtle"
+  },
+  "show_edit_predictions": false,
   "icon_theme": "Zed (Default)",
   "allow_rewrap": "in_selections",
+  "preview_tabs": {
+    "enable_preview_from_code_navigation": true,
+    "enable_preview_from_file_finder": false,
+    "enabled": true
+  },
   "ui_font_family": "Berkeley Mono",
   "ui_font_features": {},
   "ui_font_size": 12,
@@ -33,9 +41,11 @@
   "soft_wrap": "none",
   "wrap_guides": [80, 120],
   "terminal": {
-    "font_family": "Iosevka Nerd Font Mono",
-    "line_height": "standard",
-    "font_fallbacks": ["Symbols Nerd Font"], // doesn't seem to work
+    "font_family": "BerkeleyMono Nerd Font Mono",
+    "line_height": {
+      "custom": 1.2292
+    },
+    // "font_fallbacks": ["Symbols Nerd Font"], // doesn't seem to work
     "detect_venv": {
       "on": {
         "directories": [".venv"],
