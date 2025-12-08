@@ -72,7 +72,7 @@
     --toolbar-bgcolor: #1d2021 !important;
     --tab-height-with-margin-padding: 2.2rem !important;
 
-    --toolbarbutton-inner-padding:4px !important;
+    --toolbarbutton-inner-padding: 4px !important;
     --tab-min-height: 24px !important;
 }
 
@@ -104,17 +104,27 @@ tab:not([selected="true"]) > .tab-stack > .tab-background {
     /* 14px */
 }
 
-#tabbrowser-tabs, #titlebar, #navigator-toolbox {
+#tabbrowser-tabs,
+#titlebar,
+#navigator-toolbox {
     background: var(--main-custom-color) !important;
 }
 
 
 /* Copied to make address bar more compact: https://www.reddit.com/r/FirefoxCSS/comments/lnwhnn/comment/go3iy85 */
-.titlebar-button{ padding-block: 4px !important; }
-#urlbar-container, #search-container{ padding-block: 1px !important; }
-#titlebar{ -moz-appearance:none !important; }
-:root[sizemode="maximized"] #navigator-toolbox{ margin-top: 8px }
-
+.titlebar-button {
+    padding-block: 4px !important;
+}
+#urlbar-container,
+#search-container {
+    padding-block: 1px !important;
+}
+#titlebar {
+    -moz-appearance: none !important;
+}
+:root[sizemode="maximized"] #navigator-toolbox {
+    margin-top: 8px;
+}
 
 /* #titlebar */
 
@@ -130,14 +140,24 @@ tab:not([selected="true"]) > .tab-stack > .tab-background {
     border-color: var(--faded_yellow) !important;
 }
 
-#urlbar:not([focused="true"]) #urlbar-background {}
+#urlbar:not([focused="true"]) #urlbar-background {
+}
 
 #urlbar[focused="true"] #urlbar-background {
     border-width: 2px !important;
     outline-color: var(--faded_yellow) !important;
 }
 
-#urlbar, #searchbar .searchbar-textbox {
+/* Remove the blue border that appears in the urlbar when focus or hover */
+[focused]:not([suppress-focus-border]) > .urlbar-background,
+#searchbar:focus-within {
+    outline: none !important;
+    outline-color: none !important;
+    border-color: transparent;
+}
+
+#urlbar,
+#searchbar .searchbar-textbox {
     color: var(--light1) !important;
 
     /* macOS only */
@@ -155,14 +175,17 @@ tab:not([selected="true"]) > .tab-stack > .tab-background {
 }
 
 /* Remove Minimize, Maximize and Close buttons */
-.titlebar-buttonbox-container{ display:none }
-
-.urlbarView-row[selected=""] > .urlbarView-row-inner {
-  background-color: var(--faded_yellow) !important;
+.titlebar-buttonbox-container {
+    display: none;
 }
 
+.urlbarView-row[selected=""] > .urlbarView-row-inner {
+    background-color: var(--faded_yellow) !important;
+}
 
-#home-button { display:none !important; }
+#home-button {
+    display: none !important;
+}
 
 .titlebar-spacer[type="pre-tabs"] {
     display: none !important;
@@ -192,13 +215,12 @@ toolbarspring#vertical-spacer.chromeclass-toolbar-additional.titlebar-spacer {
     border-radius: 5px !important;
 }
 
-
 /* Hide more buttons */
-#star-button-box, #urlbar-zoom-button, #reader-mode-button {
+#star-button-box,
+#urlbar-zoom-button,
+#reader-mode-button {
     display: None !important;
 }
-
-
 
 /* Configure context menus */
 #contentAreaContextMenu label {
@@ -206,7 +228,6 @@ toolbarspring#vertical-spacer.chromeclass-toolbar-additional.titlebar-spacer {
     font-weight: 600 !important;
     font-size: 0.75rem !important;
 }
-
 
 #urlbar {
     font-family: "Berkeley Mono SemiCondensed", "Iosevka Milad" !important;
@@ -220,32 +241,34 @@ toolbarspring#vertical-spacer.chromeclass-toolbar-additional.titlebar-spacer {
 
     /* Make pinned tab cells narrower */
     :root {
-      /* Width of the background "pill" around pinned icons */
-      --tab-pinned-expanded-background-width: 24px !important;
-      /* Optional: also make them a bit shorter */
-      --tab-min-height: 24px !important;
+        /* Width of the background "pill" around pinned icons */
+        --tab-pinned-expanded-background-width: 24px !important;
+        /* Optional: also make them a bit shorter */
+        --tab-min-height: 24px !important;
     }
 
     /* Override the grid min width for pinned items */
     #pinned-tabs-container[orient="vertical"]::part(items-wrapper) {
-      grid-template-columns: repeat(auto-fit, minmax(24px, max-content)) !important;
+        grid-template-columns: repeat(
+            auto-fit,
+            minmax(24px, max-content)
+        ) !important;
     }
 
     /* Kill any extra padding inside pinned tabs */
     #pinned-tabs-container[orient="vertical"] .tab-content {
-      padding: 0 !important;
-      justify-content: center !important;
+        padding: 0 !important;
+        justify-content: center !important;
     }
 
     /* Reduce the inline margin of the background so it hugs the icon more */
     #pinned-tabs-container[orient="vertical"] .tab-background {
-      margin-inline: 2px !important;
+        margin-inline: 2px !important;
     }
-
 
     /* For some reason in vertical mode there's a spacer in the toolbar (between <- -> buttons and the address bar) that is not removable. This removes it*/
     #forward-button ~ #vertical-spacer {
-        display: None !important;;
+        display: None !important;
     }
 
     .browser-toolbox-background {
@@ -264,10 +287,9 @@ toolbarspring#vertical-spacer.chromeclass-toolbar-additional.titlebar-spacer {
     }
 
     #pinned-tabs-container > tab.tabbrowser-tab {
-/*         height: 30px; */
-/*         height: auto !important; */
+        /*         height: 30px; */
+        /*         height: auto !important; */
     }
-
 
     .tab-text {
         font-size: 10px !important;
@@ -284,7 +306,6 @@ toolbarspring#vertical-spacer.chromeclass-toolbar-additional.titlebar-spacer {
     .tabbrowser-tab {
         padding-top: 0.1px !important;
         padding-bottom: 0.1px !important;
-
 
         &:not(:hover) .tab-close-button {
             display: none;
@@ -308,10 +329,7 @@ toolbarspring#vertical-spacer.chromeclass-toolbar-additional.titlebar-spacer {
 
     #pinned-tabs-container .tab-content {
         padding: 0px !important;
-
     }
-
-
 
     /* I want to remove the padding between sidebar and the main content but I have to do it
      * conditionally based on sidebar location. I'm hijacking this "sidebar-position" attributes
@@ -337,7 +355,8 @@ toolbarspring#vertical-spacer.chromeclass-toolbar-additional.titlebar-spacer {
     }
 
     /* Hide New Tab button in sidebar */
-    #tabs-newtab-button, #vertical-tabs-newtab-button {
+    #tabs-newtab-button,
+    #vertical-tabs-newtab-button {
         display: none !important;
         color: red !important;
     }
@@ -347,14 +366,13 @@ toolbarspring#vertical-spacer.chromeclass-toolbar-additional.titlebar-spacer {
     }
 
     .buttons-wrapper {
-      min-height: unset !important;
-      height: unset !important;
+        min-height: unset !important;
+        height: unset !important;
     }
 
     /* Get rid of mask/shadow when there are more tabs to scroll */
     spacer[part="overflow-start-indicator"],
     spacer[part="overflow-end-indicator"] {
-          display: none !important;
+        display: none !important;
     }
-
 }
