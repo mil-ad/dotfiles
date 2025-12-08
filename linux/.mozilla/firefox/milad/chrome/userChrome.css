@@ -139,9 +139,6 @@ tab:not([selected="true"]) > .tab-stack > .tab-background {
     border-color: var(--faded_yellow) !important;
 }
 
-#urlbar:not([focused="true"]) #urlbar-background {
-}
-
 #urlbar[focused="true"] #urlbar-background {
     border-width: 2px !important;
     outline-color: var(--faded_yellow) !important;
@@ -200,9 +197,14 @@ toolbarspring#vertical-spacer.chromeclass-toolbar-additional.titlebar-spacer {
 
 /* If urlbar is placed at the very left of the toolbar then remove its left margin */
 #nav-bar-customization-target > #urlbar-container:first-child {
-    margin-left: 0px !important;
-    padding-left: 5px !important;
+    margin-left: 10px !important;
+    padding-left: 0px !important;
     margin-right: 10px !important;
+}
+
+#nav-bar-customization-target > #urlbar-container {
+    margin-top: 7px !important;
+    margin-bottom: 5px !important;
 }
 
 #vertical-pinned-tabs-container {
@@ -236,7 +238,10 @@ toolbarspring#vertical-spacer.chromeclass-toolbar-additional.titlebar-spacer {
 
 /* Only apply these styles when vertical tabs are enabled */
 @media -moz-pref("sidebar.verticalTabs") {
-
+    /*     #nav-bar {
+        margin: 10px 5px 5px 5px !important;
+    }
+ */
 
     /* Make pinned tab cells narrower */
     :root {
@@ -348,7 +353,7 @@ toolbarspring#vertical-spacer.chromeclass-toolbar-additional.titlebar-spacer {
     /* margin has to be different when tabs are left vs right */
     #tabbrowser-tabbox {
         border-radius: 0px !important;
-        margin: 2px 0px 5px 5px !important;
+        margin: 2px 0px 10px 7px !important;
         box-shadow: none !important;
         border: 0.5px solid var(--dark0_hard) !important;
     }
