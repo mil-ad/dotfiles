@@ -110,7 +110,6 @@ tab:not([selected="true"]) > .tab-stack > .tab-background {
     background: var(--main-custom-color) !important;
 }
 
-
 /* Copied to make address bar more compact: https://www.reddit.com/r/FirefoxCSS/comments/lnwhnn/comment/go3iy85 */
 .titlebar-button {
     padding-block: 4px !important;
