@@ -24,7 +24,7 @@
     "use_smartcase_find": true,
     "toggle_relative_line_numbers": false
   },
-  "theme": "Kanagawa Wave - No Italics",
+  "theme": "Kanagawa",
   "buffer_font_family": "Berkeley Mono",
   "buffer_font_fallbacks": ["Symbols Nerd Font"], // doesn't seem to work :(
   "buffer_font_size": 12,
@@ -42,6 +42,7 @@
   "wrap_guides": [80, 120],
   "terminal": {
     "font_family": "BerkeleyMono Nerd Font Mono",
+    "font_weight": 600,
     "line_height": {
       "custom": 1.2292
     },

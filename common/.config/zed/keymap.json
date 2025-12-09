@@ -1,12 +1,21 @@
 // documentation: https://zed.dev/docs/key-bindings
 [
   {
+    "bindings": {
+      // I woould have put it in Workspace context but for some reason the default
+      // takes higher precedence. So overwriting that instead.
+      "f11": "workspace::ToggleZoom"
+    }
+  },
+  {
     "context": "Workspace",
     "bindings": {
-      "ctrl-`": "workspace::ToggleBottomDock",
+      "f11": "workspace::ToggleZoom",
+      "ctrl-`": "terminal_panel::ToggleFocus",
       "cmd-`": "workspace::ToggleBottomDock",
       "ctrl-k ctrl-g": "git_panel::ToggleFocus",
       "ctrl-k ctrl-b": "project_panel::ToggleFocus",
+      "ctrl-k ctrl-o": "workspace::Open",
       "alt-super-o": "projects::OpenRecent",
       "ctrl-?": "workspace::ToggleRightDock",
       "ctrl-g": [
@@ -19,6 +28,18 @@
       ]
     }
   },
+  {
+    "context": "Workspace && buttom_dock == TerminalPanel",
+    "bindings": {
+      "ctrl-`": "terminal_panel::ToggleFocus"
+    }
+  },
+  {
+    "context": "Workspace && buttom_dock != TerminalPanel",
+    "bindings": {
+      "ctrl-`": "terminal_panel::Toggle"
+    }
+  },
   // {
   //   "context": "Workspace && !left_dock == ProjectPanel",
   //   "bindings": {
@@ -29,14 +50,14 @@
   {
     "context": "Editor",
     "bindings": {
-      "alt-super-g": "editor::SelectAllMatches",
       "alt-super-i": [
         "editor::SelectNext",
         {
           "replace_newest": false
         }
       ],
-      "alt-super-e": "editor::SplitSelectionIntoLines"
+      "alt-super-e": "editor::SplitSelectionIntoLines",
+      "alt-super-q": "editor::Rewrap"
     }
   },
   {
@@ -83,7 +104,9 @@
     "bindings": {
       "alt-c": "terminal::Copy",
       "alt-v": "terminal::Paste",
-      "ctrl-t": ["terminal::SendKeystroke", "ctrl-t"]
+      "ctrl-t": ["terminal::SendKeystroke", "ctrl-t"],
+      "ctrl-f": "workspace::ToggleZoom",
+      "ctrl-e": "editor::ToggleFocus"
     }
   }
 ]
