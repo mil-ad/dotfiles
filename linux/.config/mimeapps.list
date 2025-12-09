@@ -20,7 +20,7 @@ image/heif=imv-here.desktop
 image/jpeg=imv-here.desktop
 image/png=imv-here.desktop
 image/svg+xml=org.inkscape.Inkscape.desktop
-inode/directory=pcmanfm.desktop
+inode/directory=thunar.desktop
 message/rfc822=userapp-Thunderbird.desktop
 text/plain=mousepad.desktop
 x-scheme-handler/mailto=userapp-Thunderbird.desktop
@@ -34,6 +34,7 @@ video/x-ms-wmv=mpv.desktop;
 audio/ogg=mpv.desktop;
 audio/mpeg=mpv.desktop;
 audio/x-opus+ogg=mpv.desktop;
+application/vnd.openxmlformats-officedocument.wordprocessingml.document=libreoffice-writer.desktop
 
 [Added Associations]
 application/epub+zip=zathura.desktop;
