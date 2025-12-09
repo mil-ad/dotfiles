@@ -227,7 +227,7 @@ toolbarspring#vertical-spacer.chromeclass-toolbar-additional.titlebar-spacer {
 }
 
 /* Configure context menus */
-#contentAreaContextMenu label {
+#contentAreaContextMenu label, toolbarbutton {
     /* TODO: find a way to change the background */
     font-family: "Berkeley Mono SemiCondensed", "Iosevka Milad" !important;
     font-weight: 600 !important;
