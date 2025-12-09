@@ -18,6 +18,7 @@ RoyalMail Tracking
 17TRACK
 CamelCamelCamel
 PyPi
+AUR
 GitHub Repositories' | rofimenu -no-custom)
 
 [[ $engine ]] && query=$(echo '' | rofimenu -l 0 -p "🔍 $engine:")
@@ -41,6 +42,7 @@ case $engine in
     "17TRACK") URL="https://t.17track.net/en#nums=${query}" ;;
     "CamelCamelCamel") URL="https://uk.camelcamelcamel.com/search?sq=${query}" ;;
     "PyPi") URL="https://pypi.org/search/?q=${query}" ;;
+    "AUR") URL="https://aur.archlinux.org/packages?K=${query}" ;;
     "GitHub Repositories") URL="https://github.com/search?q=${query}&type=repositories" ;;
 esac
 
