@@ -74,6 +74,9 @@
 
     --toolbarbutton-inner-padding: 4px !important;
     --tab-min-height: 24px !important;
+    
+    --arrowpanel-background: var(--pnl-background) !important;
+    
 }
 
 /* Only for macOS */
@@ -225,9 +228,18 @@ toolbarspring#vertical-spacer.chromeclass-toolbar-additional.titlebar-spacer {
 
 /* Configure context menus */
 #contentAreaContextMenu label {
+    /* TODO: find a way to change the background */
     font-family: "Berkeley Mono SemiCondensed", "Iosevka Milad" !important;
     font-weight: 600 !important;
     font-size: 0.75rem !important;
+}
+
+
+#appMenu-popup panelview {
+    font-family: "Berkeley Mono SemiCondensed", "Iosevka Milad" !important;
+    font-weight: 600 !important;
+    font-size: 0.75rem !important;
+
 }
 
 #urlbar {
@@ -235,6 +247,7 @@ toolbarspring#vertical-spacer.chromeclass-toolbar-additional.titlebar-spacer {
     font-weight: 600 !important;
     font-size: 1rem !important;
 }
+
 
 /* Only apply these styles when vertical tabs are enabled */
 @media -moz-pref("sidebar.verticalTabs") {
@@ -372,6 +385,7 @@ toolbarspring#vertical-spacer.chromeclass-toolbar-additional.titlebar-spacer {
     .buttons-wrapper {
         min-height: unset !important;
         height: unset !important;
+        padding-bottom: 7px !important;
     }
 
     /* Get rid of mask/shadow when there are more tabs to scroll */

@@ -27,8 +27,10 @@ user_pref("browser.tabs.hoverPreview.enabled", false);
 user_pref("browser.translations.neverTranslateLanguages", "fa");
 user_pref("extensions.formautofill.addresses.enabled", false);
 user_pref("extensions.formautofill.creditCards.enabled", false);
-user_pref("sidebar.animation.enabled", false)
 user_pref("sidebar.verticalTabs", true)
+user_pref("sidebar.revamp", true)
+user_pref("sidebar.animation.enabled", false)
+user_pref("sidebar.position_start", false)
 user_pref("sidebar.animation.expand-on-hover.duration-ms", 0)
 user_pref("sidebar.animation.expand-on-hover.delay-duration-ms", 0)
 user_pref("signon.rememberSignons", false)
