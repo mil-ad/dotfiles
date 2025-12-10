@@ -223,9 +223,48 @@ toolbarspring#vertical-spacer.chromeclass-toolbar-additional.titlebar-spacer {
 /* Hide more buttons */
 #star-button-box,
 #urlbar-zoom-button,
-#reader-mode-button {
+#reader-mode-button
+{
     display: None !important;
 }
+
+
+/* Copied from PanelUI-Shared.css */
+
+:is(
+  panelview .toolbarbutton-1,
+  toolbarbutton.subviewbutton,
+  .widget-overflow-list .toolbarbutton-1,
+  .toolbaritem-combined-buttons:is(:not([cui-areatype="toolbar"]), [overflowedItem="true"]) > toolbarbutton
+) {
+  color: var(--button-text-color-ghost);
+  background-color: var(--button-background-color-ghost);
+
+  &:focus-visible {
+    outline: var(--focus-outline);
+    outline-offset: var(--focus-outline-inset);
+  }
+
+  &[disabled] {
+    color: var(--button-text-color-ghost-disabled);
+    background-color: var(--button-background-color-ghost-disabled);
+    opacity: var(--button-opacity-disabled);
+  }
+
+  &:not([disabled]):hover {
+/*     color: var(--button-text-color-ghost-hover); */
+    color: var(--pnl-bright_yellow) !important;;
+    background-color: var(--button-background-color-ghost-hover);
+
+    &:active {
+      color: var(--button-text-color-ghost-active);
+/*       color: var(--pnl-yellow) !important;; */
+      background-color: var(--button-background-color-ghost-active);
+      box-shadow: 0 1px 0 hsla(210, 4%, 10%, 0.03) inset;
+    }
+  }
+}
+
 
 /* Configure context menus */
 #contentAreaContextMenu label, toolbarbutton {
