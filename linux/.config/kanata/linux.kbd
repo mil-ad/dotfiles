@@ -3,21 +3,21 @@
 )
 
 (defsrc
-  caps
-  h j k l
-  n m
+  w
+  caps h j k l
+  b n m
 )
 
 (deflayer base
-  @cap
-  h j k l
-  n m
+  w
+  @cap h j k l
+  b n m
 )
 
 (deflayer extend
-  _
-  left down up rght
-  mlft mrgt
+  C-rght
+  _ left down up rght
+  C-left mlft mrgt
 )
 
 (defalias
