@@ -7,6 +7,16 @@ alias .....="cd ../../../.."
 alias .....="cd ../../../../.."
 alias ......="cd ../../../../../.."
 
+alias 1='cd -1'
+alias 2='cd -2'
+alias 3='cd -3'
+alias 4='cd -4'
+alias 5='cd -5'
+alias 6='cd -6'
+alias 7='cd -7'
+alias 8='cd -8'
+alias 9='cd -9'
+
 alias ssh0="ssh -O exit"
 alias ssh-="ssh-keygen -R"
 
@@ -88,4 +98,3 @@ alias mmrm='micromamba env remove --yes --name'
 alias ag='ag --hidden --ignore-case --color-match="1;31" --silent'
 alias agc='ag --hidden --ignore-case --color-match="1;31" --silent -C 2'
 alias agf='ag --hidden --ignore .git --ignore .cache -g""'
-
