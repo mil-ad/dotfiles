@@ -53,7 +53,7 @@ https://github.com/davatorium/rofi/blob/next/themes/gruvbox-dark.rasi
     selected-urgent-background:  @gruvbox-dark-red-light;
     selected-urgent-foreground:  @urgent-foreground;
 
-	 font: "Berkeley Mono SemiCondensed Medium 13";
+	 font: "Berkeley Mono Medium SemiCondensed 12";
 }
 
 window {
