@@ -1,9 +1,12 @@
 // documentation: https://zed.dev/docs/configuring-zed
 {
+  "auto_install_extensions": {
+    "ini": true
+  },
   "edit_predictions": {
     "mode": "subtle"
   },
-  "show_edit_predictions": false,
+  "show_edit_predictions": true,
   "icon_theme": "Zed (Default)",
   "allow_rewrap": "in_selections",
   "preview_tabs": {
@@ -26,7 +29,7 @@
   },
   "theme": "Kanagawa",
   "buffer_font_family": "Berkeley Mono",
-  "buffer_font_fallbacks": ["Symbols Nerd Font"], // doesn't seem to work :(
+  "buffer_font_fallbacks": ["Symbols Nerd Font", "Noto Emoji"], // doesn't seem to work :(
   "buffer_font_size": 12,
   "buffer_font_weight": 600,
   "buffer_font_features": {
@@ -63,6 +66,7 @@
     }
   },
   "agent": {
+    "default_profile": "ask",
     "enable_feedback": false,
     "default_model": {
       "provider": "anthropic",
@@ -71,5 +75,14 @@
   },
   "agent_servers": {
     "claude": {}
+  },
+  "file_types": {
+    "ini": ["*.mplstyle"]
+  },
+  "theme_overrides": {
+    "Kanagawa": {
+      "border.variant": "#b57614",
+      "text.accent": "#fabd2f"
+    }
   }
 }

@@ -100,6 +100,12 @@
     }
   },
   {
+    "context": "AgentPanel",
+    "bindings": {
+      "ctrl-n": "agent::NewThread"
+    }
+  },
+  {
     "context": "Terminal",
     "bindings": {
       "alt-c": "terminal::Copy",
@@ -109,4 +115,10 @@
       "ctrl-e": "editor::ToggleFocus"
     }
   }
+  // {
+  //   "context": "Workspace > !Editor",
+  //   "bindings": {
+  //     "ctrl-e": "editor::ToggleFocus"
+  //   }
+  // }
 ]
