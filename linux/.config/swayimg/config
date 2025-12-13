@@ -1,4 +1,3 @@
-# Swayimg configuration file.
 # vim: filetype=dosini
 
 [general]
@@ -12,11 +11,8 @@ position = auto
 overlay = no
 # Use window decoration (yes/no)
 decoration = no
-# Action performed by SIGUSR1 signal (same format as for key bindings)
 sigusr1 = reload
-# Action performed by SIGUSR2 signal (same format as for key bindings)
 sigusr2 = next_file
-# Application ID and window class name
 app_id = swayimg
 
 [drm]
@@ -163,21 +159,22 @@ bottom_right = name,status
 f = fullscreen
 j = next_file
 k = prev_file
-r = reload
+F5 = reload
+r = rotate_right
+Shift+r = rotate_left
+Space = rand_file
 i = info
 q = exit
-Shift+Delete = exec rm -f '%' && echo "File removed: %"; skip_file
-Shift+Return= exec thunar '%'
+Shift+Delete = exec mv '%' ~/.local/share/Trash/files && notify-send "File moved to trash: %"; skip_file
+o = exec thunar '%'
 Home = first_file
 End = last_file
 Prior = prev_file
 Next = next_file
-Space = next_file
-Shift+r = rand_file
 Shift+d = prev_dir
 d = next_dir
 Shift+o = prev_frame
-o = next_frame
+# o = next_frame
 c = skip_file
 s = mode slideshow
 n = animation
