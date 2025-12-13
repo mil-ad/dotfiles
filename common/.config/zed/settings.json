@@ -66,7 +66,7 @@
     }
   },
   "agent": {
-    "default_profile": "ask",
+    "default_profile": "write",
     "enable_feedback": false,
     "default_model": {
       "provider": "anthropic",

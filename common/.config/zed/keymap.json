@@ -2,8 +2,8 @@
 [
   {
     "bindings": {
-      // I woould have put it in Workspace context but for some reason the default
-      // takes higher precedence. So overwriting that instead.
+      // I would have put this in Workspace context but for some reason the
+      // default takes higher precedence. So overwriting that instead.
       "f11": "workspace::ToggleZoom"
     }
   },
@@ -56,6 +56,7 @@
           "replace_newest": false
         }
       ],
+      "alt-super-g": "editor::SelectAllMatches",
       "alt-super-e": "editor::SplitSelectionIntoLines",
       "alt-super-q": "editor::Rewrap"
     }
