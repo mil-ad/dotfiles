@@ -1,0 +1,32 @@
+#!/usr/bin/env zsh
+
+assert_installed fd swayimg
+
+[[ -z "$1" ]] && { echo "Error: No file or directory path provided"; exit 1; }
+[[ ! -e "$1" ]] && { echo "Error: Path does not exist: $1"; exit 1; }
+
+if [[ -d "$1" ]]; then
+    dir="$1"
+    target_file=""
+else
+    dir="$(dirname "$1")"
+    target_file="$(basename "$1")"
+fi
+
+# Find all image files with full paths, sorted by name
+# ${(f)...} is zsh parameter expansion: (f) flag splits on newlines into array
+files=(${(f)"$(fd -e avif -e bmp -e gif -e heif -e heic -e jpeg -e jpg -e jxl \
+    -e pbm -e png -e svg -e tiff -e tif -e webp -e exr -e pnm -e pgm -e ppm -e tga \
+    --max-depth 1 --type f --absolute-path . "$dir" | sort)"})
+
+[[ ${#files[@]} -eq 0 ]] && { echo "Error: No image files found in directory: $dir"; exit 1; }
+
+# Rotate array to start with target file if specified
+[[ -n "$target_file" ]] && {
+    # ${files[(i)...]} finds index of first matching element (zsh array index lookup)
+    idx=${files[(i)$dir/$target_file]}
+    # If found, rotate: [idx,-1] is slice from idx to end, [1,$idx-1] is slice from start to idx-1
+    [[ $idx -le ${#files[@]} ]] && files=($files[$idx,-1] $files[1,$idx-1])
+}
+
+exec swayimg $files
