@@ -178,7 +178,7 @@ Shift+o = prev_frame
 c = skip_file
 s = mode slideshow
 n = animation
-Return = mode gallery
+Tab = mode gallery
 F1 = help
 Left = step_left 10
 Right = step_right 10
@@ -192,7 +192,7 @@ Shift+w = zoom height
 z = zoom fit
 Shift+z = zoom fill
 0 = zoom real
-BackSpace = zoom optimal
+BackSpace = prev_file
 ; k = zoom keep
 Alt+s = zoom
 Alt+p = position
@@ -217,6 +217,43 @@ MouseSide = prev_file
 MouseExtra = next_file
 
 ################################################################################
+# Gallery mode key binding configuration: key = action [parameters]
+################################################################################
+[keys.gallery]
+Tab = mode viewer
+h = step_left
+j = step_down
+k = step_up
+l = step_right
+Shift+Delete = exec mv '%' ~/.local/share/Trash/files && notify-send "File moved to trash: %"; skip_file
+F1 = help
+Home = first_file
+End = last_file
+Left = step_left
+Right = step_right
+Prior = page_up
+Next = page_down
+c = skip_file
+s = mode slideshow
+f = fullscreen
+a = antialiasing
+r = reload
+i = info
+Equal = thumb +20
+Plus = thumb +20
+Minus = thumb -20
+Escape = exit
+q = exit
+# Mouse related
+ScrollLeft = step_right
+ScrollRight = step_left
+ScrollUp = step_up
+ScrollDown = step_down
+Ctrl+ScrollUp = thumb +20
+Ctrl+ScrollDown = thumb -20
+MouseLeft = mode viewer
+
+################################################################################
 # Slideshow mode key binding configuration: key = action [parameters]
 ################################################################################
 [keys.slideshow]
@@ -234,38 +271,3 @@ f = fullscreen
 Return = mode
 Escape = exit
 q = exit
-
-################################################################################
-# Gallery mode key binding configuration: key = action [parameters]
-################################################################################
-[keys.gallery]
-F1 = help
-Home = first_file
-End = last_file
-Left = step_left
-Right = step_right
-Up = step_up
-Down = step_down
-Prior = page_up
-Next = page_down
-c = skip_file
-s = mode slideshow
-f = fullscreen
-Return = mode viewer
-a = antialiasing
-r = reload
-i = info
-Equal = thumb +20
-Plus = thumb +20
-Minus = thumb -20
-Shift+Delete = exec rm -f '%' && echo "File removed: %"; skip_file
-Escape = exit
-q = exit
-# Mouse related
-ScrollLeft = step_right
-ScrollRight = step_left
-ScrollUp = step_up
-ScrollDown = step_down
-Ctrl+ScrollUp = thumb +20
-Ctrl+ScrollDown = thumb -20
-MouseLeft = mode viewer
