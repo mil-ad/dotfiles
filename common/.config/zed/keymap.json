@@ -83,6 +83,8 @@
   {
     "context": "Editor && vim_mode == helix_normal && !VimWaiting && !menu",
     "bindings": {
+      "shift-j": "editor::MoveLineDown",
+      "shift-k": "editor::MoveLineUp",
       "ctrl-g": [
         "task::Spawn",
         { "task_name": "start lazygit", "reveal_target": "center" }
