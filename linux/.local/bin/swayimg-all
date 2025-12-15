@@ -11,6 +11,8 @@ if [[ -d "$1" ]]; then
 else
     dir="$(dirname "$1")"
     target_file="$(basename "$1")"
+    # Convert to absolute path for matching
+    [[ "$dir" != /* ]] && dir="$(cd "$dir" && pwd)"
 fi
 
 # Find all image files with full paths, sorted by name

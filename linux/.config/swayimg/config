@@ -40,7 +40,7 @@ antialiasing = mks13
 # Loop image list: jump to first image when end of list is reached (yes/no)
 loop = yes
 # Number of previously viewed images to store in cache
-history = 1
+history = 80
 # Number of preloaded images (read ahead)
 preload = 10
 
@@ -78,7 +78,7 @@ fill = yes
 # Anti-aliasing mode for thumbnails (none/box/bilinear/bicubic/mks13)
 antialiasing = mks13
 # Background color of the window (RGBA)
-window = #00000000
+window = #000000ff
 # Background color of non-selected tiles (RGBA)
 background = #202020ff
 # Background color of the selected tile (RGBA)
@@ -165,8 +165,8 @@ Shift+r = rotate_left
 Space = rand_file
 i = info
 q = exit
-Shift+Delete = exec mv '%' ~/.local/share/Trash/files && notify-send "File moved to trash: %"; skip_file
-o = exec swaymsg exec thunar '%'
+Shift+Delete = exec mv \"%" ~/.local/share/Trash/files && notify-send "File moved to trash: \"%\""; skip_file
+o = exec swaymsg exec thunar \"%\"
 Home = first_file
 End = last_file
 Prior = prev_file
@@ -225,7 +225,7 @@ h = step_left
 j = step_down
 k = step_up
 l = step_right
-Shift+Delete = exec mv '%' ~/.local/share/Trash/files && notify-send "File moved to trash: %"; skip_file
+Shift+Delete = exec mv \"%" ~/.local/share/Trash/files && notify-send "File moved to trash: \"%\""; skip_file
 F1 = help
 Home = first_file
 End = last_file
