@@ -5,16 +5,26 @@
 
 * {
     /* `otf-font-awesome` is required to be installed for icons */
-    font-family: "milad-icomoon", Cascadia Code, "Symbols Nerd Font", "Font Awesome 6 Free", Roboto, Helvetica, Arial, sans-serif;
-    font-size: 0.70rem;
+    font-family:
+        "milad-icomoon",
+        "Berkeley Mono Medium",
+        Cascadia Code,
+        "Symbols Nerd Font",
+        "Font Awesome 6 Free",
+        Roboto,
+        Helvetica,
+        Arial,
+        sans-serif;
+    font-size: 0.7rem;
 }
 
 window#waybar {
-    background-color: #222;
+    background-color: #222222;
+    /*background: rgba(0, 0, 0, 0.9);*/
     /* border-bottom: 3px solid rgba(100, 114, 125, 0.5); */
     color: #dfdfdf;
     transition-property: background-color;
-    transition-duration: .5s;
+    transition-duration: 0.5s;
 }
 
 window#waybar.hidden {
@@ -31,7 +41,7 @@ window#waybar.solo {
 */
 
 window#waybar.termite {
-    background-color: #3F3F3F;
+    background-color: #3f3f3f;
 }
 
 window#waybar.chromium {
@@ -77,7 +87,7 @@ button:hover {
 }
 
 #mode {
-    background-color: #64727D;
+    background-color: #64727d;
     box-shadow: inset 0 -3px #ffffff;
 }
 
@@ -126,7 +136,8 @@ button:hover {
     /* color: #000000; */
 }
 
-#battery.charging, #battery.plugged {
+#battery.charging,
+#battery.plugged {
     /* color: #ffffff; */
     /* background-color: #26A65B; */
 }
@@ -182,7 +193,7 @@ label:focus {
 }
 
 #disk {
-    background-color: #964B00;
+    background-color: #964b00;
 }
 
 #backlight {
@@ -198,7 +209,9 @@ label:focus {
     box-shadow: none;
 }
 
-#network.disabled, #network.disconnected, #network.ethernet.disconnected {
+#network.disabled,
+#network.disconnected,
+#network.ethernet.disconnected {
     color: @gruvbox-grey;
     box-shadow: none;
 }
@@ -244,7 +257,6 @@ label:focus {
 #custom-mullvad.connected {
     box-shadow: inset 0 -2px @gruvbox-green;
 }
-
 
 #custom-airpods {
 }
@@ -356,7 +368,7 @@ label:focus {
 }
 
 #scratchpad.empty {
-	background-color: transparent;
+    background-color: transparent;
 }
 
 #privacy {
