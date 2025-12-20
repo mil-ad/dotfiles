@@ -12,12 +12,9 @@
     "bindings": {
       "f11": "workspace::ToggleZoom",
       "ctrl-`": "terminal_panel::ToggleFocus",
-      "cmd-`": "workspace::ToggleBottomDock",
       "ctrl-k ctrl-g": "git_panel::ToggleFocus",
       "ctrl-k ctrl-b": "project_panel::ToggleFocus",
       "ctrl-k ctrl-o": "workspace::Open",
-      "alt-super-o": "projects::OpenRecent",
-      "ctrl-?": "workspace::ToggleRightDock",
       "ctrl-g": [
         "task::Spawn",
         { "task_name": "start lazygit", "reveal_target": "center" }
@@ -25,7 +22,11 @@
       "ctrl-y": [
         "task::Spawn",
         { "task_name": "start yazi", "reveal_target": "center" }
-      ]
+      ],
+      "alt-super-o": "projects::OpenRecent",
+      "alt-super-h": "workspace::ToggleLeftDock",
+      "alt-super-l": "workspace::ToggleRightDock",
+      "alt-super-j": "workspace::ToggleBottomDock"
     }
   },
   {
@@ -40,12 +41,6 @@
       "ctrl-`": "terminal_panel::Toggle"
     }
   },
-  // {
-  //   "context": "Workspace && !left_dock == ProjectPanel",
-  //   "bindings": {
-  //     "ctrl-k ctrl-b": "project_panel:",
-  //   }
-  // }
   //TODO: I'm not sure what's the point of !menu yet
   {
     "context": "Editor",
@@ -70,7 +65,9 @@
       "alt-v": "editor::Paste",
       "ctrl-f": "buffer_search::Deploy", // vim default: page down
       "ctrl-a": "editor::SelectAll", // vim default: increment
-      "ctrl-w": "pane::CloseActiveItem"
+      "ctrl-w": "pane::CloseActiveItem",
+      "ctrl-r": "outline::Toggle",
+      "ctrl-shift-r": "project_symbols::Toggle"
     }
   },
   {

@@ -1,5 +1,24 @@
 // documentation: https://zed.dev/docs/configuring-zed
 {
+  "project_panel": {
+    "starts_open": false,
+    "git_status": true,
+    "folder_icons": false,
+    "file_icons": true,
+    "hide_gitignore": true
+  },
+  "window_decorations": "client",
+  "tabs": {
+    "file_icons": false
+  },
+  "tab_bar": {
+    "show_tab_bar_buttons": true,
+    "show_nav_history_buttons": false,
+    "show": true
+  },
+  "file_finder": {
+    "file_icons": true
+  },
   "auto_install_extensions": {
     "ini": true,
     "kanagawa-themes": true,
@@ -54,7 +73,7 @@
     "font_family": "BerkeleyMono Nerd Font",
     "font_weight": 600,
     "line_height": {
-      "custom": 1.2292
+      "custom": 1.225
     },
     // "font_fallbacks": ["Symbols Nerd Font"], // doesn't seem to work
     "detect_venv": {
@@ -88,8 +107,18 @@
   },
   "theme_overrides": {
     "Kanagawa": {
-      "border.variant": "#b57614",
+      "border.variant": "#689d6a",
       "text.accent": "#fabd2f"
+    },
+    "Popping and Locking": {
+      "editor.invisible": "#363636",
+      "border": "#3c3836",
+      "tab.active_background": "#3c3836",
+      "ghost_element.selected": "#3c3836",
+      "element.hover": "#3c3836",
+      "element.background": "#3c3836",
+      "element.active": "#3c3836",
+      "editor.active_line.background": "#DCD7BA0d"
     }
   }
 }
