@@ -1,11 +1,18 @@
 // documentation: https://zed.dev/docs/configuring-zed
 {
   "auto_install_extensions": {
-    "ini": true
+    "ini": true,
+    "kanagawa-themes": true,
+    "toml": true,
+    "terraform": true,
+    "dockerfile": true,
+    "make": true,
+    "popping-and-locking": true
   },
   "edit_predictions": {
     "mode": "subtle"
   },
+  "auto_indent_on_paste": true,
   "show_edit_predictions": true,
   "icon_theme": "Zed (Default)",
   "allow_rewrap": "in_selections",
