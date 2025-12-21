@@ -1,17 +1,27 @@
 #!/usr/bin/env bash
 
-set -x
-exec &> >(tee /tmp/kitty-app.log)
-
-#TODO options to redirect stdin/stdout
+# exec &> >(tee /tmp/kitty-app.log)
 
 # Default kitty options
-KITTY_OPTS="--single-instance --override background_opacity=1 --class kitty-app"
+KITTY_OPTS="--override background_opacity=1 --class kitty-app"
 
 # Allow overriding kitty options via environment variable
 if [[ -n "$KITTY_EXTRA_OPTS" ]]; then
     KITTY_OPTS="$KITTY_OPTS $KITTY_EXTRA_OPTS"
 fi
 
+# Handle stdin/stdout redirection via environment variables
+stdin_redirect=""
+stdout_redirect=""
+
+if [[ "$KITTY_APP_REDIRECT_STDIN" == "1" ]]; then
+    stdin_redirect="< /proc/$$/fd/0"
+fi
+
+if [[ "$KITTY_APP_REDIRECT_STDOUT" == "1" ]]; then
+    stdout_redirect="> /proc/$$/fd/1"
+fi
+
+# Execute the command with optional redirections
 kitty $KITTY_OPTS \
-  -- sh --noprofile --norc -c "$*"
+  -- sh --noprofile --norc -c "$* $stdin_redirect $stdout_redirect"
