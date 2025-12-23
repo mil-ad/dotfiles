@@ -73,6 +73,8 @@
   {
     "context": "Editor && vim_mode == helix_normal && !VimWaiting && !menu",
     "bindings": {
+      "j": ["vim::Down", { "display_lines": true }],
+      "k": ["vim::Up", { "display_lines": true }],
       "alt-j": "editor::MoveLineDown",
       "alt-k": "editor::MoveLineUp",
       "ctrl-g": [
