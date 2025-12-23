@@ -5,19 +5,19 @@
     "git_status": true,
     "folder_icons": false,
     "file_icons": true,
-    "hide_gitignore": true
+    "hide_gitignore": true,
   },
   "window_decorations": "client",
   "tabs": {
-    "file_icons": false
+    "file_icons": false,
   },
   "tab_bar": {
     "show_tab_bar_buttons": true,
     "show_nav_history_buttons": false,
-    "show": true
+    "show": true,
   },
   "file_finder": {
-    "file_icons": true
+    "file_icons": true,
   },
   "auto_install_extensions": {
     "ini": true,
@@ -26,32 +26,32 @@
     "terraform": true,
     "dockerfile": true,
     "make": true,
-    "popping-and-locking": true
+    "popping-and-locking": true,
   },
   "edit_predictions": {
-    "mode": "subtle"
+    "mode": "subtle",
   },
   "auto_indent_on_paste": true,
   "show_edit_predictions": true,
   "icon_theme": "Zed (Default)",
   "allow_rewrap": "in_selections",
   "preview_tabs": {
-    "enable_preview_from_code_navigation": true,
+    "enable_keep_preview_on_code_navigation": true,
     "enable_preview_from_file_finder": false,
-    "enabled": true
+    "enabled": true,
   },
   "ui_font_family": "Berkeley Mono",
   "ui_font_features": {},
   "ui_font_size": 12,
   "features": {
-    "edit_prediction_provider": "zed"
+    "edit_prediction_provider": "zed",
   },
   "vim_mode": false,
   "helix_mode": true,
   "vim": {
     "use_system_clipboard": "on_yank",
     "use_smartcase_find": true,
-    "toggle_relative_line_numbers": false
+    "toggle_relative_line_numbers": false,
   },
   "theme": "Kanagawa",
   "buffer_font_family": "Berkeley Mono",
@@ -59,13 +59,13 @@
   "buffer_font_size": 12,
   "buffer_font_weight": 600,
   "buffer_font_features": {
-    "calt": false
+    "calt": false,
   },
   "buffer_line_height": "comfortable",
   "show_whitespaces": "all",
   "telemetry": {
     "diagnostics": false,
-    "metrics": false
+    "metrics": false,
   },
   "soft_wrap": "none",
   "wrap_guides": [80, 120],
@@ -73,42 +73,47 @@
     "font_family": "BerkeleyMono Nerd Font",
     "font_weight": 600,
     "line_height": {
-      "custom": 1.225
+      "custom": 1.225,
     },
-    // "font_fallbacks": ["Symbols Nerd Font"], // doesn't seem to work
+    // "font_fallbacks": ["Symbols Nerd Font"], // doesn't work on Linux yet
     "detect_venv": {
       "on": {
         "directories": [".venv"],
-        "activate_script": "default"
-      }
-    }
+        "activate_script": "default",
+      },
+    },
   },
   "languages": {
     "Markdown": {
-      "soft_wrap": "editor_width"
+      "show_edit_predictions": false,
+      "completions": {
+        "words": "disabled",
+      },
+      "soft_wrap": "bounded",
+      "wrap_guides": [],
     },
     "Python": {
-      "format_on_save": "on"
-    }
+      "format_on_save": "on",
+    },
   },
   "agent": {
     "default_profile": "write",
     "enable_feedback": false,
     "default_model": {
       "provider": "anthropic",
-      "model": "claude-sonnet-4-5-latest"
-    }
+      "model": "claude-sonnet-4-5-latest",
+    },
   },
   "agent_servers": {
-    "claude": {}
+    "claude": {},
   },
   "file_types": {
-    "ini": ["*.mplstyle"]
+    "ini": ["*.mplstyle"],
   },
   "theme_overrides": {
     "Kanagawa": {
       "border.variant": "#689d6a",
-      "text.accent": "#fabd2f"
+      "text.accent": "#fabd2f",
     },
     "Popping and Locking": {
       "editor.invisible": "#363636",
@@ -118,7 +123,7 @@
       "element.hover": "#3c3836",
       "element.background": "#3c3836",
       "element.active": "#3c3836",
-      "editor.active_line.background": "#DCD7BA0d"
-    }
-  }
+      "editor.active_line.background": "#DCD7BA0d",
+    },
+  },
 }

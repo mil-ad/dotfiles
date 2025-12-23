@@ -4,8 +4,8 @@
     "bindings": {
       // I would have put this in Workspace context but for some reason the
       // default takes higher precedence. So overwriting that instead.
-      "f11": "workspace::ToggleZoom"
-    }
+      "f11": "workspace::ToggleZoom",
+    },
   },
   {
     "context": "Workspace",
@@ -17,29 +17,29 @@
       "ctrl-k ctrl-o": "workspace::Open",
       "ctrl-g": [
         "task::Spawn",
-        { "task_name": "start lazygit", "reveal_target": "center" }
+        { "task_name": "start lazygit", "reveal_target": "center" },
       ],
       "ctrl-y": [
         "task::Spawn",
-        { "task_name": "start yazi", "reveal_target": "center" }
+        { "task_name": "start yazi", "reveal_target": "center" },
       ],
       "alt-super-o": "projects::OpenRecent",
       "alt-super-h": "workspace::ToggleLeftDock",
       "alt-super-l": "workspace::ToggleRightDock",
-      "alt-super-j": "workspace::ToggleBottomDock"
-    }
+      "alt-super-j": "workspace::ToggleBottomDock",
+    },
   },
   {
     "context": "Workspace && buttom_dock == TerminalPanel",
     "bindings": {
-      "ctrl-`": "terminal_panel::ToggleFocus"
-    }
+      "ctrl-`": "terminal_panel::ToggleFocus",
+    },
   },
   {
     "context": "Workspace && buttom_dock != TerminalPanel",
     "bindings": {
-      "ctrl-`": "terminal_panel::Toggle"
-    }
+      "ctrl-`": "terminal_panel::Toggle",
+    },
   },
   //TODO: I'm not sure what's the point of !menu yet
   {
@@ -48,13 +48,13 @@
       "alt-super-i": [
         "editor::SelectNext",
         {
-          "replace_newest": false
-        }
+          "replace_newest": false,
+        },
       ],
       "alt-super-g": "editor::SelectAllMatches",
       "alt-super-e": "editor::SplitSelectionIntoLines",
-      "alt-super-q": "editor::Rewrap"
-    }
+      "alt-super-q": "editor::Rewrap",
+    },
   },
   {
     "context": "Editor && !menu",
@@ -67,43 +67,36 @@
       "ctrl-a": "editor::SelectAll", // vim default: increment
       "ctrl-w": "pane::CloseActiveItem",
       "ctrl-r": "outline::Toggle",
-      "ctrl-shift-r": "project_symbols::Toggle"
-    }
-  },
-  {
-    "context": "Editor && !VimControl",
-    "bindings": {
-      "ctrl-d": "editor::DeleteLine",
-      "ctrl-j": "editor::JoinLines"
-    }
+      "ctrl-shift-r": "project_symbols::Toggle",
+    },
   },
   {
     "context": "Editor && vim_mode == helix_normal && !VimWaiting && !menu",
     "bindings": {
-      "shift-j": "editor::MoveLineDown",
-      "shift-k": "editor::MoveLineUp",
+      "alt-j": "editor::MoveLineDown",
+      "alt-k": "editor::MoveLineUp",
       "ctrl-g": [
         "task::Spawn",
-        { "task_name": "start lazygit", "reveal_target": "center" }
+        { "task_name": "start lazygit", "reveal_target": "center" },
       ],
       "ctrl-y": [
         "task::Spawn",
-        { "task_name": "start yazi", "reveal_target": "center" }
-      ]
-    }
+        { "task_name": "start yazi", "reveal_target": "center" },
+      ],
+    },
   },
   {
     "context": "Pane",
     "bindings": {
       "ctrl-]": "pane::ActivateNextItem",
-      "ctrl-[": "pane::ActivatePreviousItem"
-    }
+      "ctrl-[": "pane::ActivatePreviousItem",
+    },
   },
   {
     "context": "AgentPanel",
     "bindings": {
-      "ctrl-n": "agent::NewThread"
-    }
+      "ctrl-n": "agent::NewThread",
+    },
   },
   {
     "context": "Terminal",
@@ -112,9 +105,9 @@
       "alt-v": "terminal::Paste",
       "ctrl-t": ["terminal::SendKeystroke", "ctrl-t"],
       "ctrl-f": "workspace::ToggleZoom",
-      "ctrl-e": "editor::ToggleFocus"
-    }
-  }
+      "ctrl-e": "editor::ToggleFocus",
+    },
+  },
   // {
   //   "context": "Workspace > !Editor",
   //   "bindings": {
