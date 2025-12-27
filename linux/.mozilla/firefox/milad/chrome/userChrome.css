@@ -74,9 +74,9 @@
 
     --toolbarbutton-inner-padding: 4px !important;
     --tab-min-height: 24px !important;
-    
+
     --arrowpanel-background: var(--pnl-background) !important;
-    
+
 }
 
 /* Only for macOS */
@@ -353,14 +353,14 @@ toolbarspring#vertical-spacer.chromeclass-toolbar-additional.titlebar-spacer {
         font-family: "Berkeley Mono SemiCondensed", "Iosevka Milad" !important;
         font-weight: 600 !important;
     }
-    
+
     .tab-group-label {
         font-size: 11px !important;
         font-family: "Berkeley Mono SemiCondensed", "Iosevka Milad" !important;
         font-weight: 800 !important;
     }
-    
-    
+
+
     /* Reduce tab height */
     #tabbrowser-tabs {
         --tab-min-height: 28px !important;
@@ -411,7 +411,7 @@ toolbarspring#vertical-spacer.chromeclass-toolbar-additional.titlebar-spacer {
     }
 
     /* margin has to be different when tabs are left vs right */
-    #tabbrowser-tabbox {
+    #tabbrowser-tabboxr[inFullscreen="false"] {
         border-radius: 0px !important;
         margin: 2px 0px 10px 7px !important;
         box-shadow: none !important;
