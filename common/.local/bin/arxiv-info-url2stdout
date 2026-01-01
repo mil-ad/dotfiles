@@ -1,0 +1,29 @@
+#!/usr/bin/env -S uv run --script
+# /// script
+# requires-python = ">=3.12"
+# dependencies = [
+# "feedparser",
+# ]
+# ///
+
+import re
+import sys
+
+import feedparser
+
+url = sys.argv[1]
+
+id_pattern = re.compile(r"\d+\.\d+(v\d+)?")
+id = id_pattern.search(url).group()
+
+feed = feedparser.parse(f"http://export.arxiv.org/api/query?id_list={id}&max_results=1")
+
+paper = feed.entries[0]
+
+title = paper["title"]
+authors = [author["name"] for author in paper["authors"]]
+
+authors_roam = ", ".join([f"[[{author}]]" for author in authors])
+
+print(title)
+print(authors_roam)
