@@ -1,6 +1,9 @@
 #!/usr/bin/env bash
 
-assert_installed wl-copy rg
+assert_installed wl-copy
+
 set -eo pipefail
 
-echo $1 | rg -o "\d+\.\d+(v\d+)?.pdf$" | xargs -r -I {} ~/.scripts/roam_arxiv_authors "https://arxiv.org/abs/{}" | wl-copy && notify-send "📋 Copied to clipboard" || notify-send "❌ Failed to copy"
+# echo $1 | rg -o "\d+\.\d+(v\d+)?.pdf$" | xargs -r -I {} arxiv-info-url2stdout "https://arxiv.org/abs/{}" | wl-copy && notify-send "📋 Copied to clipboard" || notify-send "❌ Failed to copy"
+
+arxiv-info-url2stdout "$1" | wl-copy && notify-send "📋 Copied to clipboard" || notify-send "❌ Failed to copy"
