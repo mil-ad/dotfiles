@@ -1,1 +1,1 @@
-anthropic/claude-3-7-sonnet-latest
+anthropic/claude-sonnet-4-5
