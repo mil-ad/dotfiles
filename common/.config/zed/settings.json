@@ -67,7 +67,7 @@
     "diagnostics": false,
     "metrics": false,
   },
-  "soft_wrap": "none",
+  "soft_wrap": "bounded",
   "wrap_guides": [80, 120],
   "terminal": {
     "font_family": "BerkeleyMono Nerd Font",
