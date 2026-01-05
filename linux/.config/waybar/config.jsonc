@@ -109,6 +109,7 @@
         "format": "{icon}",
         "format-icons": {
             "activated": "🌞",
+            "activated": "☀️",
             "deactivated": "💤"
         },
         "tooltip": false
