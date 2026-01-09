@@ -29,6 +29,11 @@ while [[ $# -gt 0 ]]; do
     --continue)
         CONTINUE=true
         shift
+        # Check if next argument is an ID (not empty and not starting with --)
+        if [[ -n $1 && $1 != --* ]]; then
+            CONTINUE_ID=$1
+            shift
+        fi
         ;;
     *)
         echo "Unknown option: $1"
@@ -43,12 +48,19 @@ if [[ -z $CONTINUE ]]; then
         mods <<< "$user_prompt" || \
         exit
 else
-    mods --show-last
+    if [[ -n $CONTINUE_ID ]]; then
+        mods --show "$CONTINUE_ID"
+    else
+        mods --show-last
+    fi
 fi
 
 while true; do
-    get_prompt && \
-    printf "🧑 %s\n🤖\n" "$user_prompt" && \
-    mods --continue-last <<< "$user_prompt" || \
-    break
+    get_prompt || break
+    printf "🧑 %s\n🤖\n" "$user_prompt"
+    if [[ -n $CONTINUE_ID ]]; then
+        mods --continue "$CONTINUE_ID" <<< "$user_prompt" || break
+    else
+        mods --continue-last <<< "$user_prompt" || break
+    fi
 done
