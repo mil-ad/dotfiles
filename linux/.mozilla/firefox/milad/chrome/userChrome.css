@@ -411,13 +411,13 @@ toolbarspring#vertical-spacer.chromeclass-toolbar-additional.titlebar-spacer {
     }
 
     /* margin has to be different when tabs are left vs right */
-    #tabbrowser-tabboxr[inFullscreen="false"] {
+    :root:not([sizemode="fullscreen"])  #tabbrowser-tabbox {
         border-radius: 0px !important;
         margin: 2px 0px 10px 7px !important;
         box-shadow: none !important;
         border: 0.5px solid var(--dark0_hard) !important;
     }
-
+    
     /* Hide New Tab button in sidebar */
     #tabs-newtab-button,
     #vertical-tabs-newtab-button {
