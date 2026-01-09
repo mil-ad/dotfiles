@@ -225,7 +225,13 @@ for_window [app_id="fzfmenu"] floating enable, resize set 750px 375px, move posi
 for_window [app_id="(?i)pavucontrol"] floating enable
 for_window [app_id="anki"] floating enable
 for_window [app_id="waypaper"] floating enable, move position center
-for_window [app_id="firefox" title="^Picture-in-Picture$"] border none, floating enable, sticky enable, resize set width 224 px height 144 px, move position 80 ppt 85 ppt
+for_window [app_id="firefox" title="^Picture-in-Picture$"] {
+    border none
+    floating enable
+    sticky enable
+    resize set width 32 ppt height 18 ppt
+    move position 70 ppt 60 ppt
+}
 for_window [app_id="Roam Research"] layout tabbed
 for_window [app_id="1Password"] floating enable
 for_window [class="join\?action=join"] floating enable
