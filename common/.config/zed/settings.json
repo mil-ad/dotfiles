@@ -26,7 +26,7 @@
     "terraform": true,
     "dockerfile": true,
     "make": true,
-    "popping-and-locking": true,
+    // "popping-and-locking": true,
   },
   "edit_predictions": {
     "mode": "subtle",
@@ -53,7 +53,7 @@
     "use_smartcase_find": true,
     "toggle_relative_line_numbers": false,
   },
-  "theme": "Kanagawa",
+  "theme": "Popping and Locking",
   "buffer_font_family": "Berkeley Mono",
   "buffer_font_fallbacks": ["Symbols Nerd Font", "Noto Emoji"], // doesn't seem to work :(
   "buffer_font_size": 12,
@@ -97,7 +97,7 @@
     },
   },
   "agent": {
-    "default_profile": "write",
+    "default_profile": "ask",
     "enable_feedback": false,
     "default_model": {
       "provider": "anthropic",
@@ -115,15 +115,15 @@
       "border.variant": "#689d6a",
       "text.accent": "#fabd2f",
     },
-    "Popping and Locking": {
-      "editor.invisible": "#363636",
-      "border": "#3c3836",
-      "tab.active_background": "#3c3836",
-      "ghost_element.selected": "#3c3836",
-      "element.hover": "#3c3836",
-      "element.background": "#3c3836",
-      "element.active": "#3c3836",
-      "editor.active_line.background": "#DCD7BA0d",
-    },
+    // "Popping and Locking": {
+    //   "editor.invisible": "#363636",
+    //   "border": "#3c3836",
+    //   "tab.active_background": "#3c3836",
+    //   "ghost_element.selected": "#3c3836",
+    //   "element.hover": "#3c3836",
+    //   "element.background": "#3c3836",
+    //   "element.active": "#3c3836",
+    //   "editor.active_line.background": "#DCD7BA0d",
+    // },
   },
 }
