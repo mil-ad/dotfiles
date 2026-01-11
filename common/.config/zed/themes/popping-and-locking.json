@@ -59,11 +59,11 @@
 
         "search.match_background": "#FFFFBE55",
 
-        "scrollbar.thumb.background": "#31324280",
-        "scrollbar.thumb.hover_background": "#313242",
-        "scrollbar.thumb.border": "#31324200",
-        "scrollbar.track.background": "#1C1D2600",
-        "scrollbar.track.border": "#27283600",
+        "scrollbar.thumb.background": "#44444B",
+        "scrollbar.thumb.hover_background": "#55555f",
+        "scrollbar.thumb.border": "#44444B00",
+        "scrollbar.track.background": "#21222d00",
+        "scrollbar.track.border": "#21222d00",
 
         "editor.foreground": "#f2e5bc",
         "editor.background": "#21222d",
