@@ -26,7 +26,7 @@
     "terraform": true,
     "dockerfile": true,
     "make": true,
-    // "popping-and-locking": true,
+    "comment": true,
   },
   "edit_predictions": {
     "mode": "subtle",
@@ -67,7 +67,7 @@
     "diagnostics": false,
     "metrics": false,
   },
-  "soft_wrap": "bounded",
+  "soft_wrap": "editor_width",
   "wrap_guides": [80, 120],
   "terminal": {
     "font_family": "BerkeleyMono Nerd Font",
@@ -97,7 +97,8 @@
     },
   },
   "agent": {
-    "default_profile": "ask",
+    "always_allow_tool_actions": true,
+    "default_profile": "write",
     "enable_feedback": false,
     "default_model": {
       "provider": "anthropic",
