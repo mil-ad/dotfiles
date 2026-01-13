@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+
+if command -v chromium &>/dev/null; then
+    browser=chromium
+elif command -v chromium-browser &>/dev/null; then
+    browser=chromium-browser
+else
+    echo "Error: Neither 'chromium' nor 'chromium-browser' found in PATH"
+    exit 1
+fi
+
+$browser --app="https://gemini.google.com/app"
