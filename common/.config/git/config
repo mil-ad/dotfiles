@@ -17,6 +17,7 @@
     format = ssh
 [diff]
     colorMoved = plain
+    algorithm = histogram
 [difftool]
     prompt = false
 [filter "lfs"]
@@ -62,4 +63,4 @@
     line-numbers = true
     side-by-side = true
 [merge]
-    conflictstyle = diff3
+    conflictstyle = zdiff3
