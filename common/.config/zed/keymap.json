@@ -108,6 +108,8 @@
       "ctrl-t": ["terminal::SendKeystroke", "ctrl-t"],
       "ctrl-f": "workspace::ToggleZoom",
       "ctrl-e": "editor::ToggleFocus",
+      "shift-left": "pane::ActivatePreviousItem",
+      "shift-right": "pane::ActivateNextItem",
     },
   },
   // {
