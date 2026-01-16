@@ -7,10 +7,10 @@
     "window.menuBarVisibility": "toggle",
     "window.customTitleBarVisibility": "never",
     "window.titleBarStyle": "native",
-    "editor.fontFamily": "'Berkeley Mono Medium SemiCondensed', 'Cascadia Code', 'IBM Plex Mono', 'Iosevka Term', 'JetBrains Mono', 'Noto Color Emoji', 'Symbols Nerd Font', 'Vazirmatn UI NL', 'Iosevka Medium', 'Material Icons'",
+    "editor.fontFamily": "'Berkeley Mono', 'Berkeley Mono Medium SemiCondensed', 'Cascadia Code', 'IBM Plex Mono', 'Iosevka Term', 'JetBrains Mono', 'Noto Color Emoji', 'Symbols Nerd Font', 'Vazirmatn UI NL', 'Iosevka Medium', 'Material Icons'",
     // "editor.fontVariations": "'wght' 800, 'wdth' 90",
     // "editor.fontLigatures": true,
-    "editor.fontWeight": "500",
+    "editor.fontWeight": "600",
     "editor.fontSize": 15,
     "editor.formatOnSave": false,
     "editor.formatOnPaste": true,
@@ -39,7 +39,7 @@
     "editor.minimap.scale": 1,
     "editor.minimap.renderCharacters": false,
     "editor.codeLens": true,
-    "editor.hover.enabled": true,
+    "editor.hover.enabled": "on",
     "editor.tabCompletion": "on",
     "editor.stickyScroll.scrollWithEditor": false,
     "editor.autoClosingBrackets": "never",
@@ -159,7 +159,6 @@
             "focusBorder": "accent"
         }
     },
-    "update.mode": "manual",
     "update.showReleaseNotes": false,
     "scm.diffDecorationsGutterWidth": 2,
     "scm.diffDecorations": "gutter",
@@ -191,8 +190,8 @@
         "diffEditor.ignoreTrimWhitespace": false
     },
     "python.languageServer": "None", // TODO: vscode needs Pylance but Cursor doesn't support that
-    "python.analysis.typeCheckingMode": "standard",
     "python.analysis.languageServerMode": "light",
+    "python.analysis.typeCheckingMode": "standard",
     "python.terminal.activateEnvironment": true,
     "python.testing.pytestEnabled": false,
     "python.testing.unittestEnabled": false,
@@ -291,5 +290,9 @@
     "outline.collapseItems": "alwaysCollapse",
     "workbench.reduceMotion": "on",
     "editor.inlayHints.enabled": "off",
+    "terminal.integrated.fontSize": 19,
+    "diffEditor.renderSideBySide": true,
+    "diffEditor.useInlineViewWhenSpaceIsLimited": false,
+    "claudeCode.preferredLocation": "panel",
     // "cursorpyright.analysis.typeCheckingMode": "basic",
 }
