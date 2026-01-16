@@ -8,3 +8,5 @@ __pycache__
 
 notebooks_milad/
 milad_notebooks/
+
+**/.claude/settings.local.json
