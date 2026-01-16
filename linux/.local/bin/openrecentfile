@@ -2,7 +2,7 @@
 
 assert_installed rofimenu
 
-file=$(fd --type f --follow --no-ignore-vcs \
+mapfile -t files < <(fd --type f --follow --no-ignore-vcs \
     -e html \
     -e pdf \
     -e epub \
@@ -16,12 +16,24 @@ file=$(fd --type f --follow --no-ignore-vcs \
     -e jpg -e jpeg \
     -e docx \
     -e xlsx \
-    --changed-within 6d -X ls -t | rofimenu -kb-accept-alt "" -kb-custom-1 "Shift+Return")
+    --changed-within 6d -X ls -t)
+
+# Create display names with last two dirs + filename
+mapfile -t display_names < <(printf '%s\n' "${files[@]}" | awk -F'/' '{
+    if (NF > 3) print "…/" $(NF-2) "/" $(NF-1) "/" $NF
+    else print $0
+}')
+
+# Use rofi format to get index
+index=$(printf '%s\n' "${display_names[@]}" | rofimenu -kb-accept-alt "" -kb-custom-1 "Shift+Return" -format i)
 
 exit_code=$?
 
-if [ $exit_code -eq 0 ]; then
-    open "$file"
-elif  [ $exit_code -eq 10 ]; then
-    thunar "$file"
+if [[ -n "$index" && "$index" =~ ^[0-9]+$ ]]; then
+    file="${files[$index]}"
+    if [ $exit_code -eq 0 ]; then
+        open "$file"
+    elif [ $exit_code -eq 10 ]; then
+        thunar "$file"
+    fi
 fi
