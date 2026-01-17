@@ -44,7 +44,7 @@ gaps outer -2
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
-set $font_family Berkeley Mono SemiCondExtraensed
+set $font_family Berkeley Mono SemiCondensed Medium
 font pango:$font_family 8
 
 # switch to workspace with urgent window automatically
@@ -232,6 +232,7 @@ for_window [app_id="firefox" title="^Picture-in-Picture$"] {
     resize set width 32 ppt height 18 ppt
     move position 70 ppt 60 ppt
 }
+for_window [title="Zed — Settings"] floating enable
 for_window [app_id="Roam Research"] layout tabbed
 for_window [app_id="1Password"] floating enable
 for_window [class="join\?action=join"] floating enable
