@@ -34,13 +34,14 @@
     "dockerfile": true,
     "make": true,
     "comment": true,
+    "material-icon-theme": true,
   },
   "edit_predictions": {
     "mode": "subtle",
   },
   "auto_indent_on_paste": true,
   "show_edit_predictions": true,
-  "icon_theme": "Zed (Default)",
+  "icon_theme": "Material Icon Theme",
   "allow_rewrap": "in_selections",
   "preview_tabs": {
     "enable_keep_preview_on_code_navigation": true,
