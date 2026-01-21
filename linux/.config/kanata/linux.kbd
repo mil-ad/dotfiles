@@ -4,22 +4,30 @@
 
 (defsrc
   w
-  caps h j k l
+  caps a s d f h j k l ;
   b n m
 )
 
 (deflayer base
   w
-  @cap h j k l
+  @cap @a @s @d @f @h @j @k @l ;
   b n m
 )
 
 (deflayer extend
   C-rght
-  _ left down up rght
+  _ _ _ _ _ left down up rght _
   C-left mlft mrgt
 )
 
 (defalias
   cap (tap-hold 200 200 esc (layer-while-held extend))
+  a (tap-hold 200 200 a lsft)
+  s (tap-hold 200 200 s lctl)
+  d (tap-hold 200 200 d lalt)
+  f (tap-hold 200 200 f lmet)
+  h (tap-hold 200 200 h rmet)
+  j (tap-hold 200 200 j ralt)
+  k (tap-hold 200 200 k rctl)
+  l (tap-hold 200 200 l rsft)
 )
