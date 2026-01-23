@@ -20,13 +20,20 @@
   C-left mlft mrgt
 )
 
+(defvar
+  tap-time 200
+  tap-time-fast 150
+  hold-time 200
+  hold-timeout 1500
+)
+
 (defalias
-  cap (tap-hold 250 250 esc (layer-while-held extend))
-  s (tap-hold 250 250 s lctl)
-  d (tap-hold 250 250 d lalt)
-  f (tap-hold 250 250 f lmet)
-  h (tap-hold 250 250 h lmet)
-  j (tap-hold-release-timeout 250 500 j lalt j)
-  k (tap-hold-release-timeout 250 500 k lctl k)
-  spc (tap-hold-release 250 250 spc lsft)
+  cap (tap-hold $tap-time $hold-time esc (layer-while-held extend))
+  s (tap-hold $tap-time $hold-time s lctl)
+  d (tap-hold $tap-time $hold-time d lalt)
+  f (tap-hold $tap-time $hold-time f lmet)
+  h (tap-hold $tap-time $hold-time h lmet)
+  j (tap-hold-release-timeout $tap-time $hold-timeout j lalt j)
+  k (tap-hold-release-timeout $tap-time $hold-timeout k lctl k)
+  spc (tap-hold-release $tap-time-fast $tap-time-fast spc lsft)
 )
