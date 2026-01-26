@@ -35,5 +35,5 @@
   h (tap-hold $tap-time $hold-time h lmet)
   j (tap-hold-release-timeout $tap-time $hold-timeout j lalt j)
   k (tap-hold-release-timeout $tap-time $hold-timeout k lctl k)
-  spc (tap-hold-release $tap-time-fast $tap-time-fast spc lsft)
+  spc (tap-hold $tap-time $hold-time spc lsft)
 )
