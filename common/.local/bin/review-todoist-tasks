@@ -5,10 +5,10 @@ assert_defined TODOIST_TOKEN
 
 set -x
 
-resp=$(curl --silent https://api.todoist.com/rest/v2/tasks \
+resp=$(curl --silent https://api.todoist.com/api/v1/tasks \
     -H "Authorization: Bearer $TODOIST_TOKEN")
 
-sorted_resp=$(jq "sort_by(.order)" <<< "$resp")
+sorted_resp=$(jq ".results | sort_by(.order)" <<< "$resp")
 
 indices=$(echo "$sorted_resp" | jq -r ".[].content" | rofimenu -multi-select -format i)
 
@@ -18,7 +18,7 @@ exit_code=0
 for index in $indices; do
     task_id=$(echo "$sorted_resp" | jq -r ".[$index].id")
     task_content=$(echo "$sorted_resp" | jq ".[$index].content")
-    resp=$(curl -X POST "https://api.todoist.com/rest/v2/tasks/$task_id/close" \
+    resp=$(curl -X POST "https://api.todoist.com/api/v1/tasks/$task_id/close" \
       -H "Authorization: Bearer $TODOIST_TOKEN")
 
     if [ $? -eq 0 ]; then
