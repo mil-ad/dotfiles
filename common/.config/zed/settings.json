@@ -1,5 +1,9 @@
 // documentation: https://zed.dev/docs/configuring-zed
 {
+  "disable_ai": true,
+  "minimap": {
+    "show": "never"
+  },
   "which_key": {
     "enabled": true,
   },
