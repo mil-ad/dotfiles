@@ -155,7 +155,7 @@ zstyle ':completion:*' use-cache yes
 zstyle ':completion:*' cache-path $ZSH_CACHE_DIR
 
 # completion for GNU make (see https://github.com/zsh-users/zsh-completions/issues/813#issuecomment-902592371)
-zstyle ':completion:*:make:*:targets' call-command true
+# zstyle ':completion:*:make:*:targets' call-command true
 zstyle ':completion:*:*:make:*' tag-order 'targets'
 
 # Don't complete uninteresting users
