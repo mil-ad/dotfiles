@@ -2,7 +2,14 @@
   "permissions": {
     "allow": [
       "Bash(gh pr view:*)",
-      "Bash(gh issue view:*)"
+      "Bash(gh issue view:*)",
+      "Bash(gh pr diff:*)",
+      "Bash(gh pr list:*)",
+      "Bash(find:*)",
+      "Bash(grep:*)",
+      "Bash(tree:*)",
+      "Bash(git show-ref:*)",
+      "Bash(git checkout:*)"
     ]
   }
 }
