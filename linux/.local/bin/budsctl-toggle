@@ -1,0 +1,26 @@
+#!/usr/bin/env bash
+
+CONFIG="${XDG_CONFIG_HOME:-$HOME/.config}/budsctl/devices.json"
+
+state=$(budsctl status | jq -r '.state')
+
+# If connected, just disconnect.
+if [[ "$state" == "connected" ]]; then
+    budsctl toggle
+    exit 0
+fi
+
+# Not connected — pick a device to connect.
+count=$(jq 'length' "$CONFIG")
+
+if [[ "$count" -le 1 ]]; then
+    budsctl toggle
+    exit 0
+fi
+
+# Multiple devices — prompt with rofi.
+index=$(jq -r '.[].name' "$CONFIG" | rofimenu -format i)
+[[ -z "$index" ]] && exit 1
+
+addr=$(jq -r ".[$index].address" "$CONFIG")
+budsctl toggle "$addr"
