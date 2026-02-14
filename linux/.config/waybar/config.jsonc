@@ -242,16 +242,16 @@
         // "exec": "$HOME/.config/waybar/mediaplayer.py --player spotify 2> /dev/null" // Filter player based on name
     },
     "custom/airpods": {
-        "exec": "~/.scripts/polybar-bluetooth-device.sh --status 14:14:7D:DF:7B:DB",
+        "exec": "budsctl status | jq -c '{class: .state, alt: .state, text: .state}'",
         "return-type": "json",
         "format": "{icon}",
         "format-icons": {
             "connected": "󰂱",
             "connecting": "󰂯",
-            "idle": "󰂯",
+            "blocked": "󰂯",
             "disabled": "󰂲",
         },
-        "on-click": "$HOME/.scripts/polybar-bluetooth-device.sh --toggle 14:14:7D:DF:7B:DB",
+        "on-click": "budsctl-toggle",
         "interval": 2
     },
     "custom/mullvad": {
