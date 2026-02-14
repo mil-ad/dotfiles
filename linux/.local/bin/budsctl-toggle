@@ -1,20 +1,21 @@
 #!/usr/bin/env bash
 
-CONFIG="${XDG_CONFIG_HOME:-$HOME/.config}/budsctl/devices.json"
+CONFIG="${XDG_CONFIG_HOME:-$HOME/.config}/bluetooth-devices.json"
 
 state=$(budsctl status | jq -r '.state')
 
 # If connected, just disconnect.
-if [[ "$state" == "connected" ]]; then
-    budsctl toggle
+if [[ "$state" == "connected" || "$state" == "connecting" ]]; then
+    budsctl toggle "$(budsctl status | jq -r '.device')"
     exit 0
 fi
 
 # Not connected — pick a device to connect.
 count=$(jq 'length' "$CONFIG")
 
-if [[ "$count" -le 1 ]]; then
-    budsctl toggle
+if [[ "$count" -eq 1 ]]; then
+    addr=$(jq -r '.[0].address' "$CONFIG")
+    budsctl toggle "$addr"
     exit 0
 fi
 
