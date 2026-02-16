@@ -1,7 +1,5 @@
 #!/usr/bin/env bash
 
-set -x
-
 assert_installed uuidgen jq
 assert_defined TODOIST_TOKEN
 
