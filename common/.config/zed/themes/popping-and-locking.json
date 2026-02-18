@@ -87,6 +87,9 @@
         "conflict.background": "#d65d0e40",
         "conflict.border": "#d65d0e",
 
+        "version_control.conflict_marker.ours": "#7ec16e20",
+        "version_control.conflict_marker.theirs": "#fabd2f20",
+
         "created": "#7ec16e",
         "created.background": "#7ec16e40",
         "created.border": "#7ec16e",
