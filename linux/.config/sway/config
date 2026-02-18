@@ -27,12 +27,6 @@ exec swayidle -w \
             resume 'swaymsg "output * dpms on"' \
     before-sleep 'betterblurlock'
 
-# TODO: make machine specific?
-# this is for matebook 14s
-# bindsym XF86AudioRaiseVolume exec pamixer --increase 5
-# bindsym XF86AudioLowerVolume exec pamixer --decrease 5
-# bindsym XF86AUdioMute exec pamixer --toggle-mute
-
 bindsym XF86AudioRaiseVolume exec pactl set-sink-volume @DEFAULT_SINK@ +1000
 bindsym XF86AudioLowerVolume exec pactl set-sink-volume @DEFAULT_SINK@ -1000
 bindsym XF86AudioMute exec pactl set-sink-mute @DEFAULT_SINK@ toggle
@@ -40,6 +34,9 @@ bindsym XF86AudioMicMute exec pactl set-source-mute @DEFAULT_SOURCE@ toggle
 bindsym XF86MonBrightnessUp exec brightnessctl set +5%
 bindsym XF86MonBrightnessDown exec brightnessctl set 5%-
 bindsym XF86Display exec kanshictl switch laptop-only
+
+bindswitch --reload --locked lid:on output eDP-1 enable dpms on
+bindswitch --reload --locked lid:off output eDP-1 disable
 
 exec kanshi
 exec_always kanshictl reload
