@@ -1,5 +1,15 @@
 // documentation: https://zed.dev/docs/configuring-zed
 {
+  "diagnostics_max_severity": "off",
+  "diagnostics": {
+    "include_warnings": true,
+    "lsp_pull_diagnostics": {
+      "enabled": true
+    },
+    "inline": {
+      "enabled": false
+    }
+  },
   "disable_ai": true,
   "minimap": {
     "show": "never",
