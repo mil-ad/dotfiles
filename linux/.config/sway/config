@@ -21,12 +21,6 @@ input "12815:20565:RDR_IQUNIX_MG65_Mechanical_Keyboard" {
     xkb_options "grp:rctrl_rshift_toggle"
 }
 
-exec swayidle -w \
-    timeout 900 'betterblurlock' \
-    timeout 1800 'swaymsg "output * dpms off"' \
-            resume 'swaymsg "output * dpms on"' \
-    before-sleep 'betterblurlock'
-
 bindsym XF86AudioRaiseVolume exec pactl set-sink-volume @DEFAULT_SINK@ +1000
 bindsym XF86AudioLowerVolume exec pactl set-sink-volume @DEFAULT_SINK@ -1000
 bindsym XF86AudioMute exec pactl set-sink-mute @DEFAULT_SINK@ toggle
@@ -37,6 +31,23 @@ bindsym XF86Display exec kanshictl switch laptop-only
 
 bindswitch --reload --locked lid:on output eDP-1 enable dpms on
 bindswitch --reload --locked lid:off output eDP-1 disable
+
+##########################################
+#         Start-up Applications
+##########################################
+
+exec swayidle -w \
+    timeout 900 'betterblurlock' \
+    timeout 1800 'swaymsg "output * dpms off"' \
+            resume 'swaymsg "output * dpms on"' \
+    before-sleep 'betterblurlock'
+
+# exec tuned-adm profile desktop
+exec tuned-adm profile balanced
+
+exec seafile-applet
+exec gammastep -l 51.50:0.127 -t 6500:3500
+exec_always clipcatd --replace
 
 exec kanshi
 exec_always kanshictl reload

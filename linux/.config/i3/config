@@ -12,6 +12,9 @@ workspace 3 output 'LG Electronics LG SDQHD 203NTBKCY173' eDP-1
 workspace 2 output 'LG Electronics LG SDQHD 203NTBKCY173' eDP-1
 workspace 1 output 'LG Electronics LG SDQHD 203NTBKCY173' eDP-1
 
+# repeating a workspace switch command should switch back to the prior workspace
+workspace_auto_back_and_forth yes
+
 default_orientation auto
 popup_during_fullscreen smart
 focus_on_window_activation smart
@@ -20,19 +23,11 @@ focus_on_window_activation smart
 floating_modifier $mod
 
 focus_follows_mouse yes
-workspace_auto_back_and_forth yes
 # floating_maximum_size 2560 x 1440
 
 default_border pixel 2
 default_floating_border pixel 2
 hide_edge_borders --i3 none
-
-# configure window title
-title_align center
-for_window [all] title_format %title
-for_window [class="kitty"] title_format " "
-for_window [class="kitty-app"] title_format %title
-for_window [all] title_window_icon padding 5px
 
 # Disable gaps and borders when there's only one container
 smart_gaps on
@@ -41,6 +36,12 @@ gaps inner 8
 gaps outer -2
 # bottom gap could be useful when using floating polybar
 # gaps bottom 35
+
+title_align left
+for_window [all] title_format %title
+for_window [all] title_window_icon padding 5px
+for_window [app_id="kitty"] title_format "󰆍 "
+for_window [app_id="kitty-app"] title_format %title
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
@@ -93,7 +94,6 @@ bindsym $mod+Shift+Down move down
 bindsym $mod+Shift+Up move up
 bindsym $mod+Shift+Right move right
 
-# move workspace between monitors
 bindsym $mod+Shift+Ctrl+Right move workspace to output right
 bindsym $mod+Shift+Ctrl+Left move workspace to output left
 bindsym $mod+Shift+Ctrl+Up move workspace to output up
@@ -164,7 +164,6 @@ bindsym --no-repeat $mod+Ctrl+p exec ~/.local/bin/open_paper_no_annotations
 bindsym --no-repeat $mod+z exec slurp | grim -g - - | wl-copy -t image/png
 bindsym --no-repeat $mod+Shift+z exec exec slurp | grim -g - "$HOME/Pictures/screenshot-$(date +%F_%T).png" && notify-send "📸 Screenshot region saved to ${HOME}/Pictures"
 
-
 ##########################################
 # Colours
 ##########################################
@@ -203,26 +202,17 @@ client.placeholder          #000000         #0c0c0c         #ffffff         #000
 #         Application-specific
 ##########################################
 
-# Open specific applications on specific workspaces
 assign [app_id="Slack"] 4
-assign [class="Telegram"] 4
-assign [class="Signal"] 4
+assign [title="Telegram"] 4
 assign [app_id="Roam Research"] 8
 
-# Open specific applications in specific layouts
 for_window [title="Telegram"] layout tabbed
 for_window [title="Signal"] layout tabbed
 for_window [app_id="Slack"] layout tabbed
 
-#
-for_window [app_id="kitty"] title_format "🐈"
-for_window [app_id="kitty-app"] title_format %title
-
-# Open specific applications in specific sizes
-for_window [all] title_window_icon padding 5px
+# for_window [all] title_window_icon padding 5px
 for_window [app_id="kitty-app"] floating enable, resize set 750px 375px, move position center
 for_window [app_id="fzfmenu"] floating enable, resize set 750px 375px, move position center
-for_window [app_id="(?i)pavucontrol"] floating enable
 for_window [app_id="anki"] floating enable
 for_window [app_id="waypaper"] floating enable, move position center
 for_window [app_id="firefox" title="^Picture-in-Picture$"] {
@@ -232,27 +222,9 @@ for_window [app_id="firefox" title="^Picture-in-Picture$"] {
     resize set width 32 ppt height 18 ppt
     move position 70 ppt 60 ppt
 }
-for_window [title="Zed — Settings"] floating enable
+# for_window [title="Zed — Settings"] floating enable
 for_window [app_id="Roam Research"] layout tabbed
 for_window [app_id="1Password"] floating enable
-for_window [class="join\?action=join"] floating enable
 for_window [title="UxPlay"] floating enable
-for_window [class="Matplotlib"] floating enable
-for_window [class="matplotlib"] floating enable
-for_window [class="transmission-gtk"] floating enable
-# for_window [name="Transmission"] floating enable, move position center
-for_window [class="Mathpix Snipping Tool"] floating enable
-for_window [class="qt5ct"] floating enable sticky enable border normal
-for_window [class="zoom" title="Chat"] resize shrink width 20 px or 20 ppt
+for_window [app_id="qt5ct"] floating enable sticky enable border normal
 for_window [app_id="Zoom Workplace"] floating enable, move position center
-for_window [class="(?i)zoom"] floating enable
-
-##########################################
-#         Start-up Applications
-##########################################
-# exec tuned-adm profile desktop
-exec tuned-adm profile balanced
-
-exec seafile-applet
-exec gammastep -l 51.50:0.127 -t 6500:3500
-exec_always clipcatd --replace
