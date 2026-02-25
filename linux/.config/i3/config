@@ -25,21 +25,21 @@ floating_modifier $mod
 focus_follows_mouse yes
 # floating_maximum_size 2560 x 1440
 
-default_border pixel 2
+default_border pixel 1
 default_floating_border pixel 2
 hide_edge_borders --i3 none
 
 # Disable gaps and borders when there's only one container
 smart_gaps on
 smart_borders on
-gaps inner 8
-gaps outer -2
+gaps inner 0
+gaps outer 0
 # bottom gap could be useful when using floating polybar
 # gaps bottom 35
 
 title_align left
 for_window [all] title_format %title
-for_window [all] title_window_icon padding 5px
+# for_window [all] title_window_icon padding 5px
 for_window [app_id="kitty"] title_format "󰆍 "
 for_window [app_id="kitty-app"] title_format %title
 
@@ -146,7 +146,8 @@ bindsym --no-repeat $mod+b exec ~/.local/bin/open_bookmark
 bindsym --no-repeat $mod+Shift+b exec ~/.local/bin/add-bookmark-menu $HOME/.scripts/bookmarks.json
 bindsym --no-repeat $mod+d exec ~/.local/bin/dmenu_run
 bindsym --no-repeat $mod+e exec ~/.local/bin/enter_emoji
-bindsym --no-repeat $mod+g exec ~/.local/bin/kitty-app mods_in_loop
+bindsym --no-repeat $mod+g exec env KITTY_EXTRA_OPTS="-o font_size=10" ~/.local/bin/kitty-app mods -i
+# bindsym --no-repeat $mod+g exec ~/.local/bin/kitty-app ~/.local/bin/mods
 bindsym --no-repeat $mod+Shift+g exec ~/.local/bin/kitty-app mods_in_loop --continue
 bindsym --no-repeat $mod+i exec ~/.local/bin/search
 bindsym --no-repeat $mod+u exec ~/.local/bin/openurl
