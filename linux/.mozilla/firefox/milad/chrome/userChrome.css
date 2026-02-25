@@ -288,6 +288,17 @@ toolbarspring#vertical-spacer.chromeclass-toolbar-additional.titlebar-spacer {
     font-size: 1rem !important;
 }
 
+#bookmarksPanel {
+    font-family: "Berkeley Mono SemiCondensed", "Iosevka Milad" !important;
+    background: var(--main-custom-color) !important;
+}
+
+browser#sidebar {
+    
+    border-radius: 3px !important;
+    border: solid 1px !important;
+    border-color: var(--dark1) !important;  
+}
 
 /* Only apply these styles when vertical tabs are enabled */
 @media -moz-pref("sidebar.verticalTabs") {
