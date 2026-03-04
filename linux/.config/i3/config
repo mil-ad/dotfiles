@@ -146,9 +146,8 @@ bindsym --no-repeat $mod+b exec ~/.local/bin/open_bookmark
 bindsym --no-repeat $mod+Shift+b exec ~/.local/bin/add-bookmark-menu $HOME/.scripts/bookmarks.json
 bindsym --no-repeat $mod+d exec ~/.local/bin/dmenu_run
 bindsym --no-repeat $mod+e exec ~/.local/bin/enter_emoji
-bindsym --no-repeat $mod+g exec env KITTY_EXTRA_OPTS="-o font_size=10" ~/.local/bin/kitty-app mods -i
-# bindsym --no-repeat $mod+g exec ~/.local/bin/kitty-app ~/.local/bin/mods
-bindsym --no-repeat $mod+Shift+g exec ~/.local/bin/kitty-app mods_in_loop --continue
+bindsym --no-repeat $mod+g exec env KITTY_EXTRA_OPTS="-o font_size=10" ~/.local/bin/kitty-app mods -i --delete-older-than 4w
+bindsym --no-repeat $mod+Shift+g exec env KITTY_EXTRA_OPTS="-o font_size=9" ~/.local/bin/kitty-app mods -i --continue-last
 bindsym --no-repeat $mod+i exec ~/.local/bin/search
 bindsym --no-repeat $mod+u exec ~/.local/bin/openurl
 bindsym --no-repeat $mod+o exec ~/.local/bin/openrecentfile
@@ -210,8 +209,9 @@ for_window [title="Signal"] layout tabbed
 for_window [app_id="Slack"] layout tabbed
 
 # for_window [all] title_window_icon padding 5px
-for_window [app_id="kitty-app"] floating enable, resize set 750px 375px, move position center
-for_window [app_id="fzfmenu"] floating enable, resize set 750px 375px, move position center
+for_window [app_id="kitty-app"] floating enable, resize set 75 ppt 70 ppt, move position center
+# for_window [app_id="org.mozilla.firefox" title="^\[Presenter view\].*Mozilla Firefox$"] floating enable
+for_window [app_id="fzfmenu"] floating enable, resize set 65 ppt 50 ppt, move position center
 for_window [app_id="anki"] floating enable
 for_window [app_id="waypaper"] floating enable, move position center
 for_window [app_id="firefox" title="^Picture-in-Picture$"] {
