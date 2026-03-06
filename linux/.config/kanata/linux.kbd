@@ -5,19 +5,19 @@
 (defsrc
   w
   caps s d f h j k l spc
-  b n m
+  b n m min
 )
 
 (deflayer base
   w
   @cap @s @d @f @h @j @k l @spc
-  b n m
+  b n m min
 )
 
 (deflayer extend
   C-rght
   _ _ _ _ left down up rght _
-  C-left mlft mrgt
+  C-left mlft mrgt (unicode —)
 )
 
 (defvar
