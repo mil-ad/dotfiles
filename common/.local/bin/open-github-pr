@@ -2,8 +2,6 @@
 
 # Expects to find GutHub authentication in ~/.netrc
 
-set -x
-
 assert_installed jq rofimenu
 
 cache_file="$HOME/.cache/github_prs"
