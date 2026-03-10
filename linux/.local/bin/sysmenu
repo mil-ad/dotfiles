@@ -1,13 +1,10 @@
 #!/usr/bin/env bash
 
-set -x
-
-assert_installed uvx swaymsg
+assert_installed uvx swaymsg rofi-confirm || exit 1
 
 menu_items=(
-    "🤖 Mods History"
     "⚙️ Edit dotfiles"
-    "⚙️ Edit scripts"
+    "⚙️ Edit private dotfiles"
     "🐍 Python"
     # "🔫 xkill"
     "🎨 color picker"
@@ -24,12 +21,12 @@ menu_items=(
     "🐻 hibernate"
     "🖥 power off"
 )
+
 selected_option=$(printf "%s\n" "${menu_items[@]}" | rofimenu)
 
 case "$selected_option" in
-    "🤖 Mods History") ~/.local/bin/kitty-app mods_show;;
     "⚙️ Edit dotfiles") KITTY_EXTRA_OPTS="--class=hx" kitty-app hx ~/.dotfiles ;;
-    "⚙️ Edit scripts") KITTY_EXTRA_OPTS="--class=hx" kitty-app hx ~/.scripts ;;
+    "⚙️ Edit private dotfiles") KITTY_EXTRA_OPTS="--class=hx" kitty-app hx ~/.scripts ;;
     "🐍 Python") ~/.local/bin/kitty-app 'uvx --with pandas --with numpy --with matplotlib ptpython 1>&2 2>/dev/null';;
     "🎨 color picker") hyprpicker --autocopy ;;
     '📹 record area') ~/.local/bin/record-screen-area-start ;;
