@@ -29,7 +29,7 @@ case "$selected_option" in
     "⚙️ Edit private dotfiles") KITTY_EXTRA_OPTS="--class=hx" kitty-app hx ~/.scripts ;;
     "🐍 Python") ~/.local/bin/kitty-app 'uvx --with pandas --with numpy --with matplotlib ptpython 1>&2 2>/dev/null';;
     "🎨 color picker") hyprpicker --autocopy ;;
-    '📹 record area') ~/.local/bin/record-screen-area-start ;;
+    '📹 record area') ~/.local/bin/record-screen-area ;;
     "📸 screenshot program") ~/.local/bin/screenshot-window-to-clipboard ;;
     '🔒 lock') ~/.local/bin/betterblurlock ;;
     '💤 sleep') systemctl suspend ;;

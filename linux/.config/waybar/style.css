@@ -371,6 +371,10 @@ label:focus {
     background-color: transparent;
 }
 
+#custom-screen-recording.recording {
+    color: #fb4934;
+}
+
 #privacy {
     padding: 0;
 }

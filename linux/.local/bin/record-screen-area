@@ -1,0 +1,18 @@
+#!/usr/bin/env bash
+
+assert_installed wf-recorder notify-send || exit 1
+
+# Select area first, then show indicator and start recording
+geometry="$(slurp)" || exit 0
+
+echo '{"text": "󰐾 REC", "class": "recording", "tooltip": "Click to stop"}' > /tmp/waybar-recording
+pkill -SIGRTMIN+9 waybar   # wake the module
+
+filename="screen-area-capture-$(date '+%Y-%m-%d-%H:%M:%S').mp4"
+wf-recorder -g "$geometry" --file ~/Downloads/"$filename"
+
+# Recording stopped (by on-click sending SIGINT to wf-recorder)
+rm /tmp/waybar-recording
+pkill -SIGRTMIN+9 waybar   # wake again → empty output → module hides
+
+notify-send "Saved to: $filename"

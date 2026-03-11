@@ -17,6 +17,8 @@
         "clock"
     ],
     "modules-right": [
+        "custom/screen-recording",
+        // "custom/power",
         "custom/gojeh",
         "idle_inhibitor",
         "custom/mullvad",
@@ -274,6 +276,13 @@
         "on-scroll-up": "echo more_time | nc -U /tmp/gojeh.sock",
         "on-scroll-down": "echo less_time | nc -U /tmp/gojeh.sock",
         "tooltip": false
+    },
+    "custom/screen-recording": {
+        "exec": "cat /tmp/waybar-recording 2>/dev/null",
+        "signal": 9,
+        "return-type": "json",
+        "on-click": "pkill -INT wf-recorder",
+        "format": "{}"
     },
     "custom/power": {
         "format" : "⏻ ",
