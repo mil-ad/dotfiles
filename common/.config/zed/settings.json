@@ -4,11 +4,11 @@
   "diagnostics": {
     "include_warnings": true,
     "lsp_pull_diagnostics": {
-      "enabled": true
+      "enabled": true,
     },
     "inline": {
-      "enabled": false
-    }
+      "enabled": false,
+    },
   },
   "disable_ai": true,
   "minimap": {
@@ -119,9 +119,14 @@
     "Python": {
       "format_on_save": "on",
     },
+    "YAML": {
+      "format_on_save": "off",
+    },
   },
   "agent": {
-    "always_allow_tool_actions": true,
+    "tool_permissions": {
+      "default": "allow",
+    },
     "default_profile": "write",
     "enable_feedback": false,
     "default_model": {
