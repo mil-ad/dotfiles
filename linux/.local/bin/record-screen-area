@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-assert_installed wf-recorder notify-send || exit 1
+assert_installed slurp wf-recorder notify-send || exit 1
 
 # Select area first, then show indicator and start recording
 geometry="$(slurp)" || exit 0
