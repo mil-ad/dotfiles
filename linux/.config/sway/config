@@ -27,10 +27,13 @@ bindsym XF86AudioMute exec pactl set-sink-mute @DEFAULT_SINK@ toggle
 bindsym XF86AudioMicMute exec pactl set-source-mute @DEFAULT_SOURCE@ toggle
 bindsym XF86MonBrightnessUp exec brightnessctl set +5%
 bindsym XF86MonBrightnessDown exec brightnessctl set 5%-
-bindsym XF86Display exec kanshictl switch laptop-only
 
-bindswitch --reload --locked lid:on output eDP-1 enable dpms on
-bindswitch --reload --locked lid:off output eDP-1 disable
+# This is sometimes useful when I disconnect the laptop from the dock and it gets
+# confused about connected displays' CRTs
+bindsym XF86Display exec \
+    swaymsg "output * dpms on" && \
+    sleep 1 && \
+    kanshictl reload
 
 ##########################################
 #         Start-up Applications
@@ -40,8 +43,7 @@ exec swayidle -w \
     timeout 900 'betterblurlock' \
     timeout 1800 'swaymsg "output * dpms off"' \
             resume 'swaymsg "output * dpms on"' \
-    before-sleep 'betterblurlock' \
-    after-resume 'swaymsg "output * dpms on"'
+    before-sleep 'betterblurlock'
 
 # exec tuned-adm profile desktop
 exec tuned-adm profile balanced

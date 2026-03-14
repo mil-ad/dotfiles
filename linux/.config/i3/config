@@ -210,9 +210,9 @@ for_window [app_id="Slack"] layout tabbed
 for_window [app_id="dev.zed.Zed"] layout tabbed
 
 # for_window [all] title_window_icon padding 5px
-for_window [app_id="kitty-app"] floating enable, resize set 75 ppt 40 ppt, move position center
+for_window [app_id="kitty-app"] floating enable, resize set 75 ppt 40 ppt, move position center, border pixel 2
 # for_window [app_id="org.mozilla.firefox" title="^\[Presenter view\].*Mozilla Firefox$"] floating enable
-for_window [app_id="fzfmenu"] floating enable, resize set 65 ppt 50 ppt, move position center
+for_window [app_id="fzfmenu"] floating enable, resize set 65 ppt 50 ppt, move position center, border pixel 3
 for_window [app_id="anki"] floating enable
 for_window [app_id="waypaper"] floating enable, move position center
 for_window [app_id="firefox" title="^Picture-in-Picture$"] {
