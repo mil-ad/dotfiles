@@ -32,8 +32,8 @@ hide_edge_borders --i3 none
 # Disable gaps and borders when there's only one container
 smart_gaps on
 smart_borders on
-gaps inner 0
-gaps outer 0
+gaps inner 4
+gaps outer -1
 # bottom gap could be useful when using floating polybar
 # gaps bottom 35
 
@@ -219,7 +219,7 @@ for_window [app_id="firefox" title="^Picture-in-Picture$"] {
     border none
     floating enable
     sticky enable
-    resize set width 32 ppt height 18 ppt
+    resize set width 285 ppx height 160 ppx
     move position 70 ppt 60 ppt
 }
 # for_window [title="Zed — Settings"] floating enable
