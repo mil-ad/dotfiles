@@ -142,8 +142,8 @@
         "warning.background": "#fabd2f20",
         "warning.border": "#fabd2f",
 
-        "terminal.background": "#181921",
-        "terminal.foreground": "#ebdbb2",
+        "terminal.background": "#0e0e1c",
+        "terminal.foreground": "#f2e5bc",
         "terminal.bright_foreground": "#f2e5bc",
         "terminal.dim_foreground": "#a89984",
         "terminal.ansi.black": "#1d2021",
