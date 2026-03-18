@@ -64,3 +64,9 @@
     side-by-side = true
 [merge]
     conflictstyle = zdiff3
+[lfs]
+	concurrenttransfers = 3
+[lfs "customtransfer.xet"]
+	path = git-xet
+	args = transfer
+	concurrent = true
