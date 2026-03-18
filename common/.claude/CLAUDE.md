@@ -1,0 +1,1 @@
+- Do NOT sign git commit messages as Claude
