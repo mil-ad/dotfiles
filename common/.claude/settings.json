@@ -5,11 +5,17 @@
       "Bash(gh issue view:*)",
       "Bash(gh pr diff:*)",
       "Bash(gh pr list:*)",
+      "Bash(gh api *)",
       "Bash(find:*)",
       "Bash(grep:*)",
+      "Bash(head *)",
       "Bash(tree:*)",
       "Bash(git show-ref:*)",
       "Bash(git checkout:*)"
     ]
-  }
+  },
+  "enabledPlugins": {
+    "gopls-lsp@claude-plugins-official": true
+  },
+  "voiceEnabled": true
 }
