@@ -1,5 +1,6 @@
 // documentation: https://zed.dev/docs/configuring-zed
 {
+  "word_diff_enabled": true,
   "diagnostics_max_severity": "off",
   "diagnostics": {
     "include_warnings": true,
@@ -14,8 +15,13 @@
   "minimap": {
     "show": "never",
   },
+  "git": {
+    "inline_blame": {
+      "enabled": true,
+    },
+  },
   "git_panel": {
-    "tree_view": true,
+    "tree_view": false,
   },
   "which_key": {
     "enabled": true,
@@ -124,9 +130,6 @@
     },
   },
   "agent": {
-    "tool_permissions": {
-      "default": "allow",
-    },
     "default_profile": "write",
     "enable_feedback": false,
     "default_model": {
@@ -135,7 +138,9 @@
     },
   },
   "agent_servers": {
-    "claude": {},
+    "claude-acp": {
+      "type": "registry",
+    },
   },
   "file_types": {
     "ini": ["*.mplstyle"],

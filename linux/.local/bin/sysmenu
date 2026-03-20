@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-assert_installed uvx swaymsg rofi-confirm || exit 1
+assert_installed uvx swaymsg rofi-confirm wdisplays || exit 1
 
 menu_items=(
     "⚙️ Edit dotfiles"
@@ -12,6 +12,7 @@ menu_items=(
     "📸 screenshot program"
     "🖖 (un)split monitor"
     "🔄 switch monitor input"
+    "📺 Configure displays"
     "♻️ restart sway"
     "🌍 change timezone"
     "🚪 logout"
@@ -39,6 +40,7 @@ case "$selected_option" in
     '🖖 (un)split monitor') ~/.local/bin/toggle_virtual_monitors ;;
     "🔄 switch monitor input") ~/.local/bin/switch-monitor-input ;;
     "🌍 change timezone") ~/.local/bin/change-timezone-menu ;;
+    "📺 Configure displays") wdisplays ;;
     '♻️ restart sway') swaymsg reload ;;
     '🚀 reboot')  rofi-confirm && systemctl reboot ;;
     '🖥 power off') rofi-confirm && systemctl poweroff ;;
