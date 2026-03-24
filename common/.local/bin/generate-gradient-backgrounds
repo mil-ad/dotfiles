@@ -1,0 +1,127 @@
+#!/usr/bin/env bash
+#
+# Generate gradient backgrounds with grain texture.
+# Requires ImageMagick 7+.
+#
+# Usage:
+#   ./generate.sh COLOR1 COLOR2 [COLOR3] [COLOR4] [COLOR5] [-o output_dir]
+#
+# Examples:
+#   ./generate.sh "#129C7B" "#04D78A"
+#   ./generate.sh "#129C7B" "#04D78A" "#A7ED99" "#C3E409" "#D5D5D5" -o ./out
+#
+
+assert_installed magick parallel || exit 1
+
+set -euo pipefail
+
+WIDTH=3840
+HEIGHT=2160
+BLUR_RADIUS=40
+
+# Noise parameters
+NOISE_GAMMA=0.45
+NOISE_SCALE=0.47
+
+# Parse args: colors first, then optional -o dir
+COLORS=()
+OUTDIR="."
+while [[ $# -gt 0 ]]; do
+  case "$1" in
+    -o) OUTDIR="$2"; shift 2 ;;
+    *)  COLORS+=("$1"); shift ;;
+  esac
+done
+
+if (( ${#COLORS[@]} < 2 || ${#COLORS[@]} > 5 )); then
+  echo "Error: provide 2 to 5 colors" >&2
+  exit 1
+fi
+
+mkdir -p "$OUTDIR"
+
+# Build corner layouts from available colors.
+# Each variant assigns colors to [top-left, top-right, bottom-left, bottom-right].
+# "r" variants are the reverse.
+c="${COLORS[@]}"
+C=( ${COLORS[@]} )
+n=${#C[@]}
+
+build_coords() {
+  # args: TL TR BL BR (as indices into C array)
+  echo "0,0 ${C[$1]}  ${WIDTH},0 ${C[$2]}  0,${HEIGHT} ${C[$3]}  ${WIDTH},${HEIGHT} ${C[$4]}"
+}
+
+declare -A VARIANTS
+
+case $n in
+  2)
+    VARIANTS["01"]=$(build_coords 0 1 1 0)
+    VARIANTS["01r"]=$(build_coords 1 0 0 1)
+    VARIANTS["02"]=$(build_coords 0 0 1 1)
+    VARIANTS["02r"]=$(build_coords 1 1 0 0)
+    VARIANTS["03"]=$(build_coords 0 1 0 1)
+    VARIANTS["03r"]=$(build_coords 1 0 1 0)
+    ;;
+  3)
+    VARIANTS["01"]=$(build_coords 0 2 1 0)
+    VARIANTS["01r"]=$(build_coords 0 1 2 0)
+    VARIANTS["02"]=$(build_coords 2 1 0 2)
+    VARIANTS["02r"]=$(build_coords 2 0 1 2)
+    VARIANTS["03"]=$(build_coords 0 2 1 2)
+    VARIANTS["03r"]=$(build_coords 2 1 2 0)
+    ;;
+  4)
+    VARIANTS["01"]=$(build_coords 0 3 1 2)
+    VARIANTS["01r"]=$(build_coords 2 1 3 0)
+    VARIANTS["02"]=$(build_coords 2 1 0 3)
+    VARIANTS["02r"]=$(build_coords 3 0 1 2)
+    VARIANTS["03"]=$(build_coords 0 2 1 3)
+    VARIANTS["03r"]=$(build_coords 3 1 2 0)
+    ;;
+  5)
+    VARIANTS["01"]=$(build_coords 0 3 1 4)
+    VARIANTS["01r"]=$(build_coords 4 1 3 0)
+    VARIANTS["02"]=$(build_coords 4 1 2 0)
+    VARIANTS["02r"]=$(build_coords 0 2 1 4)
+    VARIANTS["03"]=$(build_coords 0 4 1 3)
+    VARIANTS["03r"]=$(build_coords 3 1 4 0)
+    ;;
+esac
+
+# Generate noise texture
+echo "Generating noise texture..."
+NOISE_FILE=$(mktemp /tmp/gradient-noise-XXXX.png)
+trap "rm -f $NOISE_FILE" EXIT
+
+magick -size "${WIDTH}x${HEIGHT}" xc:black \
+  \( -size "${WIDTH}x${HEIGHT}" xc:gray50 +noise Gaussian -channel R -separate \
+     -auto-level -gamma "$NOISE_GAMMA" -evaluate multiply "$NOISE_SCALE" \) \
+  -alpha off -compose CopyOpacity -composite \
+  "$NOISE_FILE"
+
+# Write variants to a temp file as tab-separated key\tcoords
+JOBS_FILE=$(mktemp /tmp/gradient-jobs-XXXX.tsv)
+trap "rm -f $NOISE_FILE $JOBS_FILE" EXIT
+
+for key in $(echo "${!VARIANTS[@]}" | tr ' ' '\n' | sort); do
+  printf '%s\t%s\n' "$key" "${VARIANTS[$key]}" >> "$JOBS_FILE"
+done
+
+generate_one() {
+  local key="$1" coords="$2" outdir="$3" noise="$4" w="$5" h="$6" blur="$7"
+  local outfile="$outdir/gradient-${key}.jpg"
+
+  magick -size "${w}x${h}" xc: \
+    -sparse-color Bilinear "$coords" \
+    -blur "0x${blur}" \
+    "$noise" -compose ColorBurn -define compose:args=50 -composite \
+    "$outfile"
+
+  echo "Generated ${outfile}"
+}
+export -f generate_one
+
+parallel --colsep '\t' generate_one {1} {2} "$OUTDIR" "$NOISE_FILE" "$WIDTH" "$HEIGHT" "$BLUR_RADIUS" :::: "$JOBS_FILE"
+
+echo "Done. Generated $(ls "$OUTDIR"/gradient-*.jpg | wc -l) images in $OUTDIR/"
