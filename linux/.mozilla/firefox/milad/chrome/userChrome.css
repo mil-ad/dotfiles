@@ -76,7 +76,6 @@
     --tab-min-height: 24px !important;
 
     --arrowpanel-background: var(--pnl-background) !important;
-
 }
 
 /* Only for macOS */
@@ -223,63 +222,63 @@ toolbarspring#vertical-spacer.chromeclass-toolbar-additional.titlebar-spacer {
 /* Hide more buttons */
 #star-button-box,
 #urlbar-zoom-button,
-#reader-mode-button
-{
+#reader-mode-button {
     display: None !important;
 }
-
 
 /* Copied from PanelUI-Shared.css */
 
 :is(
-  panelview .toolbarbutton-1,
-  toolbarbutton.subviewbutton,
-  .widget-overflow-list .toolbarbutton-1,
-  .toolbaritem-combined-buttons:is(:not([cui-areatype="toolbar"]), [overflowedItem="true"]) > toolbarbutton
+    panelview .toolbarbutton-1,
+    toolbarbutton.subviewbutton,
+    .widget-overflow-list .toolbarbutton-1,
+    .toolbaritem-combined-buttons:is(
+            :not([cui-areatype="toolbar"]),
+            [overflowedItem="true"]
+        )
+        > toolbarbutton
 ) {
-  color: var(--button-text-color-ghost);
-  background-color: var(--button-background-color-ghost);
+    color: var(--button-text-color-ghost);
+    background-color: var(--button-background-color-ghost);
 
-  &:focus-visible {
-    outline: var(--focus-outline);
-    outline-offset: var(--focus-outline-inset);
-  }
-
-  &[disabled] {
-    color: var(--button-text-color-ghost-disabled);
-    background-color: var(--button-background-color-ghost-disabled);
-    opacity: var(--button-opacity-disabled);
-  }
-
-  &:not([disabled]):hover {
-/*     color: var(--button-text-color-ghost-hover); */
-    color: var(--pnl-bright_yellow) !important;;
-    background-color: var(--button-background-color-ghost-hover);
-
-    &:active {
-      color: var(--button-text-color-ghost-active);
-/*       color: var(--pnl-yellow) !important;; */
-      background-color: var(--button-background-color-ghost-active);
-      box-shadow: 0 1px 0 hsla(210, 4%, 10%, 0.03) inset;
+    &:focus-visible {
+        outline: var(--focus-outline);
+        outline-offset: var(--focus-outline-inset);
     }
-  }
+
+    &[disabled] {
+        color: var(--button-text-color-ghost-disabled);
+        background-color: var(--button-background-color-ghost-disabled);
+        opacity: var(--button-opacity-disabled);
+    }
+
+    &:not([disabled]):hover {
+        /*     color: var(--button-text-color-ghost-hover); */
+        color: var(--pnl-bright_yellow) !important;
+        background-color: var(--button-background-color-ghost-hover);
+
+        &:active {
+            color: var(--button-text-color-ghost-active);
+            /*       color: var(--pnl-yellow) !important;; */
+            background-color: var(--button-background-color-ghost-active);
+            box-shadow: 0 1px 0 hsla(210, 4%, 10%, 0.03) inset;
+        }
+    }
 }
 
-
 /* Configure context menus */
-#contentAreaContextMenu label, toolbarbutton {
+#contentAreaContextMenu label,
+toolbarbutton {
     /* TODO: find a way to change the background */
     font-family: "Berkeley Mono SemiCondensed", "Iosevka Milad" !important;
     font-weight: 600 !important;
     font-size: 0.75rem !important;
 }
 
-
 #appMenu-popup panelview {
     font-family: "Berkeley Mono SemiCondensed", "Iosevka Milad" !important;
     font-weight: 600 !important;
     font-size: 0.75rem !important;
-
 }
 
 #urlbar {
@@ -294,10 +293,9 @@ toolbarspring#vertical-spacer.chromeclass-toolbar-additional.titlebar-spacer {
 }
 
 browser#sidebar {
-    
     border-radius: 3px !important;
     border: solid 1px !important;
-    border-color: var(--dark1) !important;  
+    border-color: var(--dark1) !important;
 }
 
 /* Only apply these styles when vertical tabs are enabled */
@@ -371,7 +369,6 @@ browser#sidebar {
         font-weight: 800 !important;
     }
 
-
     /* Reduce tab height */
     #tabbrowser-tabs {
         --tab-min-height: 28px !important;
@@ -422,13 +419,22 @@ browser#sidebar {
     }
 
     /* margin has to be different when tabs are left vs right */
-    :root:not([sizemode="fullscreen"])  #tabbrowser-tabbox {
+    #tabbrowser-tabbox {
         border-radius: 0px !important;
         margin: 2px 0px 10px 7px !important;
         box-shadow: none !important;
         border: 0.5px solid var(--dark0_hard) !important;
     }
-    
+
+    /* Don't show margins when a video is being played in full-screen */
+    :root[sizemode="fullscreen"][inDOMFullscreen="true"] #tabbrowser-tabbox {
+        margin: 0px !important;
+    }
+
+    .browserContainer {
+        border-radius: 0px !important;
+    }
+
     /* Hide New Tab button in sidebar */
     #tabs-newtab-button,
     #vertical-tabs-newtab-button {
