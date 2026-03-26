@@ -42,12 +42,8 @@ vd () { deactivate; }
 vrm () { rm -rf .venv; }
 
 tmp () {
-  cd "$(mktemp -d)"
-  chmod -R 0700 .
-  if [[ $# -eq 1 ]]; then
-    \mkdir -p "$1"
-    cd "$1"
-    chmod -R 0700 .
-  fi
+  local name="${1:-$(generate-random-name)}"
+  local dir="$(mktemp -d -t "${name}.XXX")"
+  chmod 0700 "$dir"
+  cd "$dir"
 }
-

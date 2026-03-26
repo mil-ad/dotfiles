@@ -1,0 +1,53 @@
+#!/usr/bin/env bash
+
+adjectives=(
+  aged ancient autumn billowing bitter black blue bold
+  bouncy breezy broad broken bubbly bumpy calm chaotic
+  cheeky chunky clumsy cold confused cool cranky crimson
+  crispy crunchy curly damp dark dawn delicate divine
+  dizzy dreamy drowsy dry dusty eager elastic empty
+  falling fancy fizzy flat floral fluffy fragrant frosty
+  fuzzy gentle giddy gloomy green grumpy hasty hazy
+  hidden holy icy itchy jazzy jolly lanky late
+  lazy lingering little lively long lucky lumpy misty
+  moody morning muddy mushy mute nameless nerdy noisy
+  nutty odd oily old orange patient peppy perky
+  plain plucky pointy polished proud puffy purple quiet
+  quirky rapid raspy red restless rough round royal
+  rusty salty sassy scruffy shiny shrill shy silent
+  silly sleepy slippery sloppy small sneaky snoozy snowy
+  soft solitary sour sparkling spicy spring squishy square
+  steep still stubborn summer super sweet tangy throbbing
+  tight tiny toasty twilight twitchy verbose vivid wacky
+  wandering weathered white wild winter wispy withered wobbly
+  wonky yellow young zany zesty zippy
+)
+
+nouns=(
+  art badger balloon band bar base bird biscuit
+  blanket block boat bobcat bonus bread breeze brook
+  bubble burrito bush butterfly cactus cake candle cell
+  cherry chipmunk cloud coconut comet cookie crayon credit
+  cubicle darkness dawn dew disk dolphin donut dream
+  dumpling dust falcon feather ferret field fire firefly
+  flower fog forest fossil frog frost gazelle giraffe
+  glade glitter goblin grass hall hammock hat haze
+  heart hedgehog hill igloo jackal jellyfish kazoo kettle
+  king koala lab lake lantern leaf limit llama
+  mango math meadow mode moon morning mountain mouse
+  mud muffin narwhal night noodle octopus otter pancake
+  paper parrot pebble pelican penguin pickle pigeon pillow
+  pine platypus poetry pond pretzel pumpkin queen raccoon
+  rain raven recipe resonance rice river salad sandwich
+  scene sea seagull shadow shape silence sky sloth
+  smoke snow snowflake sound sparrow squid star starfish
+  sun sunset surf taco tangerine teapot term thunder
+  tooth toucan tree truffle truth turnip turtle union
+  unit violet voice waffle walrus water waterfall wave
+  wildflower wind wombat wood yak
+)
+
+adj=${adjectives[$((RANDOM % ${#adjectives[@]}))]}
+noun=${nouns[$((RANDOM % ${#nouns[@]}))]}
+
+echo "${adj}-${noun}"
