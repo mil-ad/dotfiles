@@ -1,0 +1,10 @@
+{
+  "bindings": [
+    {
+      "context": "Chat",
+      "bindings": {
+        "]": "voice:pushToTalk"
+      }
+    }
+  ]
+}
