@@ -1,9 +1,7 @@
 #!/usr/bin/env bash
 
-# exec &> >(tee /tmp/mods.log)
-
-assert_installed gum mods
-assert_defined ANTHROPIC_API_KEY
+assert_installed gum mods clipwrite || exit 1
+assert_defined ANTHROPIC_API_KEY || exit 1
 
 get_prompt() {
     user_prompt=$(gum write \
@@ -15,8 +13,8 @@ get_prompt() {
 
     local exit_code=$?
 
-    # I tried using wl-copy but that seems to leave a process in the background and
-    # makes exiting from the script difficult
+    # I tried using wl-copy but that seems to leave a process in the background
+    # and makes exiting from the script difficult
     if [[ $exit_code -eq 0 ]]; then
         clipwrite <<< "$user_prompt"
     fi
