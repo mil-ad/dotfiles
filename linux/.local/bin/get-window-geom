@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+
+assert_installed jq slurp swaymsg
+
+GEOM=$(swaymsg -t get_tree | jq -r '.. | select(.pid? and .visible?) | .rect | "\(.x),\(.y) \(.width)x\(.height)"' | slurp -r -c '#689d6aff' -s '#689d6a33' -B '#00000000' -w 3)
+
+[ -z "$GEOM" ] && exit 1
+
+echo "$GEOM"
