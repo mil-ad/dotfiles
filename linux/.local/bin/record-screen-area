@@ -2,14 +2,23 @@
 
 assert_installed slurp wf-recorder notify-send || exit 1
 
-# Select area first, then show indicator and start recording
-geometry="$(slurp)" || exit 0
+# Use provided geometry or select area with slurp, then show indicator and start recording
+geometry="${*:-$(slurp)}" || exit 0
 
 echo '{"text": "󰐾 REC", "class": "recording", "tooltip": "Click to stop"}' > /tmp/waybar-recording
 pkill -SIGRTMIN+9 waybar   # wake the module
 
 filename="screen-area-capture-$(date '+%Y-%m-%d-%H:%M:%S').mp4"
-wf-recorder -g "$geometry" --file ~/Downloads/"$filename"
+wf-recorder \
+    -g "$geometry" \
+    -c libx264 \
+    -x yuv420p \
+    -r 30 \
+    -p crf=23 \
+    -p preset=veryfast \
+    -p profile=high \
+    -p level=4.1 \
+    --file ~/Downloads/"$filename"
 
 # Recording stopped (by on-click sending SIGINT to wf-recorder)
 rm /tmp/waybar-recording

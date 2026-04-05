@@ -1,9 +1,7 @@
 #!/usr/bin/env bash
 
-assert_installed jq slurp grim
+assert_installed grim
 
-GEOM=$(swaymsg -t get_tree | jq -r '.. | select(.pid? and .visible?) | .rect | "\(.x),\(.y) \(.width)x\(.height)"' | slurp -r)
-
-[ -z "$GEOM" ] && exit 1
+GEOM=$(get-window-geom) || exit 1
 
 grim -g "$GEOM" - | wl-copy

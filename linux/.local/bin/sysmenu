@@ -9,6 +9,7 @@ menu_items=(
     # "🔫 xkill"
     "🎨 color picker"
     "📹 record area"
+    "📹 record window"
     "📸 screenshot program"
     "🖖 (un)split monitor"
     "🔄 switch monitor input"
@@ -31,6 +32,7 @@ case "$selected_option" in
     "🐍 Python") ~/.local/bin/kitty-app 'uvx --with pandas --with numpy --with matplotlib ptpython 1>&2 2>/dev/null';;
     "🎨 color picker") hyprpicker --autocopy ;;
     '📹 record area') ~/.local/bin/record-screen-area ;;
+    '📹 record window') ~/.local/bin/record-screen-area $(get-window-geom) ;;
     "📸 screenshot program") ~/.local/bin/screenshot-window-to-clipboard ;;
     '🔒 lock') ~/.local/bin/betterblurlock ;;
     '💤 sleep') systemctl suspend ;;
