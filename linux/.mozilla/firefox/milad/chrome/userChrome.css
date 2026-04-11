@@ -1,5 +1,5 @@
 :root {
-    ---dark0_hard: #1d2021;
+    --dark0_hard: #1d2021;
     --dark0: #282828;
     --dark0_soft: #32302f;
     --dark1: #3c3836;
@@ -223,7 +223,7 @@ toolbarspring#vertical-spacer.chromeclass-toolbar-additional.titlebar-spacer {
 #star-button-box,
 #urlbar-zoom-button,
 #reader-mode-button {
-    display: None !important;
+    display: none !important;
 }
 
 /* Copied from PanelUI-Shared.css */
@@ -296,6 +296,14 @@ browser#sidebar {
     border-radius: 3px !important;
     border: solid 1px !important;
     border-color: var(--dark1) !important;
+    font-family: "Berkeley Mono SemiCondensed", "Iosevka Milad" !important;
+    font-weight: 600 !important;
+    font-size: 0.75rem !important;
+    background: var(--main-custom-color) !important;
+}
+
+.sidebar-panel {
+    padding: 5px !important;
 }
 
 /* Only apply these styles when vertical tabs are enabled */
