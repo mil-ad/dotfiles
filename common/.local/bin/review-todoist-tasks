@@ -1,13 +1,9 @@
 #!/usr/bin/env bash
 
-assert_installed jq curl rofimenu
-assert_defined TODOIST_TOKEN
+assert_installed jq curl rofimenu || exit 1
+assert_defined TODOIST_TOKEN || exit 1
 
-set -x
-
-resp=$(curl --silent https://api.todoist.com/api/v1/tasks \
-    -H "Authorization: Bearer $TODOIST_TOKEN")
-
+resp=$(curl --silent https://api.todoist.com/api/v1/tasks -H "Authorization: Bearer $TODOIST_TOKEN")
 sorted_resp=$(jq ".results | sort_by(.order)" <<< "$resp")
 
 indices=$(echo "$sorted_resp" | jq -r ".[].content" | rofimenu -multi-select -format i)
