@@ -17,6 +17,8 @@ alias 7='cd -7'
 alias 8='cd -8'
 alias 9='cd -9'
 
+alias hx!='sudo hx'
+
 alias ssh0="ssh -O exit"
 alias ssh-="ssh-keygen -R"
 
@@ -67,7 +69,6 @@ alias tree3='tree -L 3'
 alias difffolders='diff -rq'
 
 alias tmux2clip='tmux capture-pane -pS - | clipwrite'
-alias london='curl wttr.in/London'
 
 if [[ $(uname) == 'Darwin' ]]; then
     alias yay='brew upgrade && brew upgrade --cask'
@@ -85,16 +86,3 @@ alias sless='ls -1 ~/logs/*.log | sort -V | tail -1 | xargs less'
 
 alias yt-dlp!='yt-dlp --ies Generic,HTML5'
 
-
-# [obsolete] micromamba
-alias mm="micromamba"
-alias mma="micromamba activate"
-alias mmc="micromamba create --name"
-alias mmd="micromamba deactivate"
-alias mmls='micromamba env list'
-alias mmrm='micromamba env remove --yes --name'
-
-# [obsolete] ag
-alias ag='ag --hidden --ignore-case --color-match="1;31" --silent'
-alias agc='ag --hidden --ignore-case --color-match="1;31" --silent -C 2'
-alias agf='ag --hidden --ignore .git --ignore .cache -g""'
