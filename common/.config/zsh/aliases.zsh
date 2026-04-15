@@ -86,3 +86,4 @@ alias sless='ls -1 ~/logs/*.log | sort -V | tail -1 | xargs less'
 
 alias yt-dlp!='yt-dlp --ies Generic,HTML5'
 
+alias new-presentation='uvx cookiecutter git@github.com:mil-ad/marp-template.git --directory template'
