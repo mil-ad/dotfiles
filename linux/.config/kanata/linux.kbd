@@ -16,7 +16,7 @@
 
 (deflayer extend
   C-rght
-  _ _ _ _ left down up rght _
+  _ _ _ _ left down up rght spc
   C-left mlft mrgt (unicode —)
 )
 
