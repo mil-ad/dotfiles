@@ -7,7 +7,7 @@
 [core]
     editor = vim
     pager = delta
-	excludesFile = ~/.gitignore
+	excludesFile = ~/.config/git/.gitignore
 [push]
     default = simple
     autoSetupRemote = true
