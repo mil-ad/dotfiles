@@ -50,7 +50,7 @@ exec tuned-adm profile balanced
 
 exec seafile-applet
 exec gammastep -l 51.50:0.127 -t 6500:3500
-exec_always clipcatd --replace
+exec wl-paste --watch cliphist store
 
 exec kanshi
 exec_always kanshictl reload
