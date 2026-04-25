@@ -11,12 +11,20 @@
       "Bash(head *)",
       "Bash(tree:*)",
       "Bash(git show-ref:*)",
-      "Bash(git checkout:*)"
+      "Bash(git checkout:*)",
+      "WebFetch(domain:wiki.archlinux.org)",
+      "Bash(* --version)",
+      "Bash(* --help *)"
     ]
   },
   "enabledPlugins": {
     "gopls-lsp@claude-plugins-official": true,
     "clangd-lsp@claude-plugins-official": true
   },
-  "voiceEnabled": true
+  "voice": {
+    "enabled": true,
+    "mode": "hold"
+  },
+  "voiceEnabled": true,
+  "preferredNotifChannel": "notifications_disabled"
 }
