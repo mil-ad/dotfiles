@@ -1,0 +1,24 @@
+#!/bin/bash
+
+set -e
+
+assert_installed jq refresh-github-caches
+
+cache_file="$HOME/.cache/github_repos_dmenu"
+
+function maybe_regenerate_cache {
+    if test "$(find "$cache_file" -mmin +2)"
+    then
+        refresh-github-caches
+    fi
+}
+
+[ ! -e "$cache_file" ] && refresh-github-caches
+
+selected=$(jq .name "$cache_file" | tr -d \" | fzfmenu)
+
+if [ -n "$selected" ]; then
+  jq ". | select(.name == \"$selected\") | .url" "$cache_file" | tr -d \" | xargs xdg-open
+fi
+
+maybe_regenerate_cache
