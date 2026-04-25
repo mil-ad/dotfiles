@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
 
-assert_installed clipcatctl paste-clipboard-content
+assert_installed cliphist paste-clipboard-content
 
-clipcatctl | rofimenu  -p "📋" -display-columns 2 -display-column-separator ": " | cut -d':' -f1 | xargs clipcatctl promote && paste-clipboard-content
+cliphist list | rofimenu -display-columns 2 | cliphist decode | wl-copy && paste-clipboard-content
