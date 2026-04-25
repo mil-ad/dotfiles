@@ -1,11 +1,11 @@
-#!/bin/env bash
+#!/usr/bin/env bash
 
 set -e
 
-windows=$(swaymsg -t get_tree | jq -r '.. | objects | select(.type == "con" and (.app_id != null or .window_properties.class != null)) |
-	{name: ((.app_id // .window_properties.class) + ": " + .name), id: .id}')
+selected=$(swaymsg -t get_tree |
+	jq -r '.. | objects
+		| select(.type == "con" and (.app_id != null or .window_properties.class != null))
+		| "\(.id)\t\(.app_id // .window_properties.class): \(.name)"' |
+	rofimenu)
 
-selected_window=$(echo "$windows" | jq -r '.name' | rofimenu)
-export selected_window
-
-window_id=$(echo "$windows" | jq 'select(.name==env.selected_window) | .id') && swaymsg "[con_id=$window_id] focus"
+swaymsg "[con_id=${selected%%$'\t'*}] focus"

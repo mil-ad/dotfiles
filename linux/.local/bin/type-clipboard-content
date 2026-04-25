@@ -2,8 +2,8 @@
 
 assert_installed ydotool
 
-# Ctrl+Shift+V seems to works well in GTK apps and alacritty, but not st but
-# there's a bug in Roam that double pastes! So switching to shift+insert
+# Ctrl+Shift+V seems to works well in GTK apps but I have run into issues with
+# it. Shift+Insert seems to be more reliable
 
 # (Left)Shift: 42
 # Insert: 110

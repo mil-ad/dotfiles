@@ -4,8 +4,6 @@ assert_installed ddcutil rofimenu || exit 1
 
 shopt -s lastpipe
 
-set -x
-
 printf "DP-1\nUSB-C\nHDMI-1\nHDMI-2" | rofimenu | read selected_input || exit 1
 
 case "$selected_input" in
