@@ -1,5 +1,3 @@
-assert_installed fzf
-
 source <(fzf --zsh)
 
 export FZF_DEFAULT_COMMAND='fd --hidden --follow --exclude .git --exclude .cache .'

@@ -9,3 +9,7 @@ setopt pushdminus
 
 # Disable Ctrl-S / Ctrl-Q flow control so those keys are free for bindings.
 unsetopt flowcontrol
+
+# Allow `# comments` typed at the interactive prompt (handy for parking
+# a command in history with a note).
+setopt interactive_comments

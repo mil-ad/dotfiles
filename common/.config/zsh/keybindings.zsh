@@ -71,7 +71,7 @@ bindkey -M vicmd '^?' backward-delete-char
 
 # [Ctrl-LeftArrow] - move backward one word
 # [Ctrl-RightArrow] - move forward one word
-if [[ $(uname) == 'Darwin' ]]; then
+if [[ $OSTYPE == darwin* ]]; then
   bindkey -M emacs "^[[1;3D"  backward-word
   bindkey -M viins "^[[1;3D"  backward-word
   bindkey -M emacs "^[[1;3C"  forward-word
@@ -85,7 +85,7 @@ fi
 
 bindkey -M viins "^[." insert-last-word
 
-# Ctrl-J for toggling inset/command mode
+# Ctrl-J for toggling insert/command mode
 bindkey -r '^['        # Unbind Esc
 bindkey -r '\e'        # Unbind Alt/Meta sequences
 bindkey -M viins "^J" vi-cmd-mode

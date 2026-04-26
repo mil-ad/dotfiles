@@ -4,8 +4,7 @@ alias ..="cd .."
 alias ...="cd ../.."
 alias ....="cd ../../.."
 alias .....="cd ../../../.."
-alias .....="cd ../../../../.."
-alias ......="cd ../../../../../.."
+alias ......="cd ../../../../.."
 
 alias 1='cd -1'
 alias 2='cd -2'
@@ -70,7 +69,7 @@ alias difffolders='diff -rq'
 
 alias tmux2clip='tmux capture-pane -pS - | clipwrite'
 
-if [[ $(uname) == 'Darwin' ]]; then
+if [[ $OSTYPE == darwin* ]]; then
     alias yay='brew upgrade && brew upgrade --cask'
 fi
 
