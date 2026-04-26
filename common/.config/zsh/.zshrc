@@ -1,10 +1,13 @@
 eval "$(starship init zsh)"
 
-source $ZDOTDIR/bindkey.zsh
+source $ZDOTDIR/exports.zsh
+source $ZDOTDIR/options.zsh
+source $ZDOTDIR/history.zsh
+source $ZDOTDIR/keybindings.zsh
+source $ZDOTDIR/completion.zsh
 source $ZDOTDIR/wd.zsh
 source $ZDOTDIR/aliases.zsh
 source $ZDOTDIR/functions.zsh
-source $ZDOTDIR/exports.zsh
 source $ZDOTDIR/fzf.zsh
 source $ZDOTDIR/s.zsh
 
