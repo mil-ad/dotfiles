@@ -111,12 +111,46 @@ bindkey -r '\e'        # Unbind Alt/Meta sequences
 bindkey -M viins "^J" vi-cmd-mode
 bindkey -M vicmd "^J" vi-insert
 
-# Basic auto/tab complete:
-autoload -U compinit
+# ------------------------------------------------------------------
+# Tab completion
+# ------------------------------------------------------------------
+# `compinit` is zsh's completion engine bootstrap: it scans $fpath for
+# completion functions (the _foo files), audits their permissions, and
+# builds a "dump" file (an index of command -> completion function).
+# It's the single biggest cost in shell startup, so we cache aggressively.
+
+# Show an interactive menu when tab-completing, navigable with arrow keys.
 zstyle ':completion:*' menu select
+# Load the menu-selection module compinit needs for the above.
 zmodload -i zsh/complist
-compinit
-_comp_options+=(globdots) # Include hidden files.
+
+autoload -Uz compinit
+
+# Keep the dump out of $HOME — XDG-clean. Versioned per zsh release so
+# upgrades don't try to load an incompatible dump.
+_zcompdump="${XDG_CACHE_HOME:-$HOME/.cache}/zsh/zcompdump-${ZSH_VERSION}"
+mkdir -p "${_zcompdump:h}"
+
+# Two paths:
+#   - fast: dump is < 24h old -> trust it, skip the security audit (-C).
+#   - slow: dump is missing or stale -> full audit + rebuild (runs once a day).
+# The glob qualifier (#qNmh-24) matches the file only if it was modified
+# less than 24 hours ago (N=nullglob, m=mtime, h=hours, -=less than).
+if [[ -n $_zcompdump(#qNmh-24) ]]; then
+  compinit -C -d "$_zcompdump"
+else
+  compinit -d "$_zcompdump"
+fi
+
+# Pre-compile the dump to bytecode (.zwc) so the next shell loads it
+# via mmap instead of parsing text. Only recompile when the dump changes.
+if [[ -s $_zcompdump && (! -s ${_zcompdump}.zwc || $_zcompdump -nt ${_zcompdump}.zwc) ]]; then
+  zcompile "$_zcompdump"
+fi
+unset _zcompdump
+
+# Make tab-completion match dotfiles too (e.g. `cd .config/<TAB>`).
+_comp_options+=(globdots)
 
 bindkey -M emacs "${terminfo[kcbt]}" reverse-menu-complete
 bindkey -M viins "${terminfo[kcbt]}" reverse-menu-complete

@@ -8,9 +8,9 @@ source $ZDOTDIR/exports.zsh
 source $ZDOTDIR/fzf.zsh
 source $ZDOTDIR/s.zsh
 
-#source <(av completion zsh)
-
 [ -e $HOME/.zshrc_local ] && source $HOME/.zshrc_local
+
+#source <(av completion zsh)
 
 # bun completions
 # [ -s "/home/milad/.bun/_bun" ] && source "/home/milad/.bun/_bun"
