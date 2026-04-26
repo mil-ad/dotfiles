@@ -1,0 +1,28 @@
+profile dual-up-combo {
+	output "LG Electronics LG SDQHD 203NTBKCY173" enable scale 2 position 0,0
+	output "Samsung Display Corp. 0x4165 Unknown" enable scale 3 position 1280,1024
+	exec waypaper --restore
+}
+
+profile dual-up-clamshell {
+	output "LG Electronics LG SDQHD 203NTBKCY173" enable scale 2
+	output "Samsung Display Corp. 0x4165 Unknown" disable
+}
+
+profile laptop-only {
+	output "Samsung Display Corp. 0x4165 Unknown" enable scale 3 position 0,0
+}
+
+profile dualup-only {
+	output "LG Electronics LG SDQHD 203NTBKCY173" enable scale 2
+}
+
+profile generic-presentation {
+	output "Samsung Display Corp. 0x4165 Unknown" enable scale 3 position 0,0
+	output * enable mode preferred position 1280,0
+}
+
+profile virtual-monitors {
+	output "WL-1" enable scale 2 position 0,0
+	output "WL-2" enable scale 2 position 2560,0
+}
