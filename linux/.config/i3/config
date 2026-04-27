@@ -1,6 +1,5 @@
-# Mod1=<Alt>, Mod4=<Super> Mod5=CapsLock (remapped via setxkbmap)
+# Mod4=<Super>
 set $mod Mod4
-set $caps Mod5
 
 workspace 1 output 'LG Electronics LG SDQHD 203NTBKCY173' eDP-1 DP-virtDown WL-1
 workspace 2 output 'LG Electronics LG SDQHD 203NTBKCY173' eDP-1 DP-virtDown WL-1
@@ -43,8 +42,6 @@ for_window [all] title_format %title
 for_window [app_id="kitty"] title_format "󰆍 "
 for_window [app_id="kitty-app"] title_format %title
 
-# Font for window titles. Will also be used by the bar unless a different font
-# is used in the bar {} block below.
 set $font_family Berkeley Mono SemiCondensed Medium
 font pango:$font_family 8
 
@@ -98,9 +95,8 @@ bindsym $mod+Shift+Ctrl+Left move workspace to output left
 bindsym $mod+Shift+Ctrl+Up move workspace to output up
 bindsym $mod+Shift+Ctrl+Down move workspace to output down
 
-# workspace back and forth (with/without active container)
 bindsym $mod+bracketleft workspace back_and_forth
-# bindsym $mod+Shift+b move container to workspace back_and_forth; workspace back_and_forth
+bindsym $mod+Shift+bracketleft move container to workspace back_and_forth; workspace back_and_forth
 
 bindsym $mod+minus split vertical;
 bindsym $mod+backslash split horizontal;
@@ -137,7 +133,6 @@ mode "resize" {
 ##########################################
 bindsym --no-repeat $mod+Return exec kitty --single-instance
 bindsym --no-repeat $mod+Shift+Return exec thunar
-bindsym --no-repeat $caps+Return layout tabbed; exec kitty --single-instance
 bindsym --no-repeat $mod+space exec ~/.local/bin/winmenu
 bindsym --no-repeat $mod+Ctrl+space exec ~/.local/bin/enter_snippet $HOME/.scripts/snippets.yml
 bindsym --no-repeat $mod+comma exec ~/.local/bin/rename-sway-container
@@ -145,6 +140,7 @@ bindsym --no-repeat $mod+0 exec ~/.local/bin/sysmenu
 bindsym --no-repeat $mod+b exec ~/.local/bin/open_bookmark
 bindsym --no-repeat $mod+Shift+b exec ~/.local/bin/add-bookmark-menu $HOME/.scripts/bookmarks.json
 bindsym --no-repeat $mod+d exec ~/.local/bin/dmenu_run
+bindsym --no-repeat $mod+Shift+d exec env KITTY_EXTRA_OPTS="-o font_size=9" ~/.local/bin/kitty-app gh dash
 bindsym --no-repeat $mod+e exec ~/.local/bin/enter_emoji
 bindsym --no-repeat $mod+g exec env KITTY_EXTRA_OPTS="-o font_size=10" ~/.local/bin/kitty-app mods -i --delete-older-than 4w
 bindsym --no-repeat $mod+Shift+g exec env KITTY_EXTRA_OPTS="-o font_size=9" ~/.local/bin/kitty-app mods -i --continue-last
