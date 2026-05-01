@@ -1,5 +1,11 @@
 // documentation: https://zed.dev/docs/configuring-zed
 {
+  "outline_panel": {
+    "dock": "left"
+  },
+  "collaboration_panel": {
+    "dock": "left"
+  },
   "word_diff_enabled": true,
   "diagnostics_max_severity": "off",
   "diagnostics": {
@@ -21,6 +27,7 @@
     },
   },
   "git_panel": {
+    "dock": "left",
     "tree_view": false,
   },
   "which_key": {
@@ -31,6 +38,7 @@
   },
   "auto_update": true,
   "project_panel": {
+    "dock": "left",
     "starts_open": false,
     "git_status": true,
     "folder_icons": false,
@@ -130,6 +138,7 @@
     },
   },
   "agent": {
+    "dock": "right",
     "default_profile": "write",
     "enable_feedback": false,
     "default_model": {
