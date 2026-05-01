@@ -7,4 +7,8 @@ assert_installed ydotool
 
 # (Left)Shift: 42
 # Insert: 110
-ydotool key 42:1 110:1 42:0 110:0
+# ydotool key 42:1 110:1 42:0 110:0
+
+
+wtype -P Shift_L -k Insert -p Shift_L
+

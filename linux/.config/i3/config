@@ -25,6 +25,7 @@ focus_follows_mouse yes
 # floating_maximum_size 2560 x 1440
 
 default_border pixel 1
+titlebar_border_thickness 1
 default_floating_border pixel 2
 hide_edge_borders --i3 none
 
