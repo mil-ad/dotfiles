@@ -34,6 +34,10 @@ user_pref("sidebar.position_start", false);
 user_pref("sidebar.animation.expand-on-hover.duration-ms", 0);
 user_pref("sidebar.animation.expand-on-hover.delay-duration-ms", 0);
 user_pref("signon.rememberSignons", false);
+user_pref("accessibility.force_disabled", 1);
+user_pref("network.http.max-connections", 1800);
+user_pref("network.http.max-persistent-connections-per-server", 10);
+user_pref("gfx.webrender.all", true);
 
 /** Experimenting with some settings from BetterBox: ***/
 

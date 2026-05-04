@@ -196,7 +196,6 @@ client.placeholder          #000000         #0c0c0c         #ffffff         #000
 ##########################################
 #         Application-specific
 ##########################################
-
 assign [app_id="Slack"] 4
 assign [title="Telegram"] 4
 assign [app_id="Roam Research"] 8
@@ -207,9 +206,9 @@ for_window [app_id="Slack"] layout tabbed
 for_window [app_id="dev.zed.Zed"] layout tabbed
 
 # for_window [all] title_window_icon padding 5px
+# for_window [app_id="org.mozilla.firefox" title="^\[Presenter view\].*Mozilla Firefox$"] floating enable
 for_window [app_id="1password"] floating enable, resize set 75ppt 50 ppt
 for_window [app_id="kitty-app"] floating enable, resize set 75 ppt 45 ppt, move position center, border pixel 2
-# for_window [app_id="org.mozilla.firefox" title="^\[Presenter view\].*Mozilla Firefox$"] floating enable
 for_window [app_id="fzfmenu"] floating enable, resize set 65 ppt 50 ppt, move position center, border pixel 3
 for_window [app_id="anki"] floating enable
 for_window [app_id="waypaper"] floating enable, move position center
@@ -217,8 +216,8 @@ for_window [app_id="firefox" title="^Picture-in-Picture$"] {
     border none
     floating enable
     sticky enable
-    resize set width 285 ppx height 160 ppx
-    move position 70 ppt 60 ppt
+    resize set width 18 ppt height 9 ppt
+    move position 80 ppt 90 ppt
 }
 # for_window [title="Zed — Settings"] floating enable
 for_window [app_id="Roam Research"] layout tabbed
@@ -226,3 +225,5 @@ for_window [app_id="1Password"] floating enable
 for_window [title="UxPlay"] floating enable
 for_window [app_id="qt5ct"] floating enable sticky enable border normal
 for_window [app_id="Zoom Workplace"] floating enable, move position center
+
+for_window [app_id="chrome-yahoo.com__-Default"] title_format "ChatGPT"

@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
 
-assert_installed cliphist rofimenu wl-copy wtype
+assert_installed cliphist rofimenu wl-copy
 
-cliphist list | rofimenu -display-columns 2 | cliphist decode | wl-copy && wtype -M shift -k Insert -m shift
+cliphist list | rofimenu -display-columns 2 | cliphist decode | wl-copy && paste-clipboard-menu
