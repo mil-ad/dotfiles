@@ -292,6 +292,10 @@ toolbarbutton {
     background: var(--main-custom-color) !important;
 }
 
+hbox#browser {
+    background-color: var(--main-custom-color) !important;
+}
+
 browser#sidebar {
     border-radius: 3px !important;
     border: solid 1px !important;
@@ -429,9 +433,9 @@ browser#sidebar {
     /* margin has to be different when tabs are left vs right */
     #tabbrowser-tabbox {
         border-radius: 0px !important;
-        margin: 2px 0px 10px 7px !important;
+        margin: 2px 0px 5px 5px !important;
         box-shadow: none !important;
-        border: 0.5px solid var(--dark0_hard) !important;
+        border: 0.5px solid green !important;
     }
 
     /* Don't show margins when a video is being played in full-screen */
