@@ -162,6 +162,10 @@ tab:not([selected="true"]) > .tab-stack > .tab-background {
     font-family: Iosevka, Vazirmatn !important;
 }
 
+.searchmode-switcher {
+    border-radius: 3px !important;
+}
+
 /* @-moz-document url("about:home"), url("about:newtab"), url(about:privatebrowsing) {
     .logo-and-wordmark {
         display: none !important;
@@ -432,10 +436,10 @@ browser#sidebar {
 
     /* margin has to be different when tabs are left vs right */
     #tabbrowser-tabbox {
-        border-radius: 0px !important;
-        margin: 2px 0px 5px 5px !important;
+        border-radius: 10px !important;
+        margin: 2px 0px 7px 7px !important;
         box-shadow: none !important;
-        border: 0.5px solid green !important;
+        border: 0.5px solid var(--dark0_hard) !important;
     }
 
     /* Don't show margins when a video is being played in full-screen */

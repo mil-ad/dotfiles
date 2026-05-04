@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
-# Ctrl+Shift+V seems to works well in GTK apps but I have run into issues with
-# some programs. Shift+Insert seems to be more reliable
+# I have experimented with Shift+Insert and Ctrl+Shift+V with both ydotool and
+# wtype to varying levels success
 
 # assert_installed ydotool
 # (Left)Shift: 42
@@ -9,4 +9,5 @@
 # ydotool key 42:1 110:1 42:0 110:0
 
 # wtype -P Shift_L -k Insert -p Shift_L
-wtype -M shift -k Insert -m shift
+# wtype -M shift -k Insert -m shift
+wtype -M ctrl -M shift -k v

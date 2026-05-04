@@ -43,7 +43,7 @@
     "git_status": true,
     "folder_icons": false,
     "file_icons": true,
-    "hide_gitignore": true,
+    "hide_gitignore": false,
   },
   "window_decorations": "client",
   "tabs": {
@@ -142,8 +142,10 @@
     "default_profile": "write",
     "enable_feedback": false,
     "default_model": {
+      "effort": "high",
+      "enable_thinking": true,
       "provider": "anthropic",
-      "model": "claude-sonnet-4-5-latest",
+      "model": "claude-sonnet-4-6-latest",
     },
   },
   "agent_servers": {
