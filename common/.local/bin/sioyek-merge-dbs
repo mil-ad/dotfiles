@@ -1,0 +1,201 @@
+#!/usr/bin/env -S uv run --script
+# /// script
+# requires-python = ">=3.10"
+# dependencies = ["click"]
+# ///
+"""Merge sioyek shared databases from other hosts.
+
+Reads `shared_database_path` from your sioyek prefs_user.config to find
+this host's per-host `<HOST>.shared-sioyek.db`. Every other
+`*.shared-sioyek.db` file in the same directory is treated as a peer
+host and merged in:
+
+  - rows are matched by `uuid`; conflicts resolved by `modification_time`
+    (last-write-wins)
+  - a `tombstones` table propagates deletions (installed by sioyek-sync-setup)
+
+Safe to run while sioyek is open: uses sqlite3's busy-timeout and a
+sync-dir lockfile so two hosts don't merge each other simultaneously.
+"""
+
+import fcntl
+import os
+import re
+import socket
+import sqlite3
+import sys
+from contextlib import contextmanager
+from pathlib import Path
+
+import click
+
+SYNCABLE_TABLES = ("marks", "bookmarks", "highlights", "links")
+
+PREFS_USER_PATH = Path.home() / ".config/sioyek/prefs_user.config"
+
+
+def find_my_db():
+    if not PREFS_USER_PATH.exists():
+        sys.exit(f"error: {PREFS_USER_PATH} does not exist; run sioyek-sync-setup first.")
+    value = None
+    for line in PREFS_USER_PATH.read_text(encoding="utf-8").splitlines():
+        line = line.strip()
+        if not line or line.startswith("#"):
+            continue
+        m = re.match(r"^shared_database_path\s+(.+)$", line)
+        if m:
+            value = m.group(1).strip()
+    if value is None:
+        sys.exit(f"error: shared_database_path is not set in {PREFS_USER_PATH}.")
+    db = Path(value).expanduser()
+    if not db.exists():
+        sys.exit(f"error: shared_database_path points at {db}, which does not exist.")
+
+    expected_name = f"{socket.gethostname()}.shared-sioyek.db"
+    if db.name != expected_name:
+        click.echo(
+            f"warning: shared_database_path basename is '{db.name}' but this host's "
+            f"expected name is '{expected_name}'. Peer discovery may merge stale data.",
+            err=True,
+        )
+    return db
+
+
+@contextmanager
+def sync_dir_lock(sync_dir):
+    lock_path = sync_dir / ".sioyek-merge.lock"
+    fd = os.open(lock_path, os.O_CREAT | os.O_WRONLY, 0o644)
+    try:
+        try:
+            fcntl.flock(fd, fcntl.LOCK_EX | fcntl.LOCK_NB)
+        except BlockingIOError:
+            sys.exit("another sioyek-merge run is in progress; exiting.")
+        yield
+    finally:
+        fcntl.flock(fd, fcntl.LOCK_UN)
+        os.close(fd)
+
+
+def table_columns(con, table):
+    return [row[1] for row in con.execute(f"PRAGMA table_info({table})")]
+
+
+def remote_has_table(con, name):
+    return bool(
+        con.execute(
+            "SELECT 1 FROM remote.sqlite_master WHERE type='table' AND name=?",
+            (name,),
+        ).fetchone()
+    )
+
+
+def merge_one(con, remote_path, verbose):
+    con.execute("ATTACH DATABASE ? AS remote", (str(remote_path),))
+    try:
+        con.execute("BEGIN IMMEDIATE")
+        try:
+            remote_tombstones = remote_has_table(con, "tombstones")
+            if not remote_tombstones:
+                print(
+                    f"warning: peer {remote_path.name} has no tombstones table; "
+                    "deletions from that host will not propagate. "
+                    "Run sioyek-sync-setup on that host.",
+                    file=sys.stderr,
+                )
+
+            # 1. Apply remote tombstones FIRST: delete locally, then copy the
+            # tombstone rows in so we re-propagate them onward.
+            if remote_tombstones:
+                for table in SYNCABLE_TABLES:
+                    cur = con.execute(
+                        f"DELETE FROM main.{table} WHERE uuid IN "
+                        "(SELECT uuid FROM remote.tombstones WHERE table_name = ?)",
+                        (table,),
+                    )
+                    if verbose and cur.rowcount:
+                        print(f"  {remote_path.name}: deleted {cur.rowcount} from {table}")
+                con.execute(
+                    "INSERT OR IGNORE INTO main.tombstones(uuid, table_name, deleted_at) "
+                    "SELECT uuid, table_name, deleted_at FROM remote.tombstones"
+                )
+
+            # 2. Insert + update by uuid for each syncable table.
+            for table in SYNCABLE_TABLES:
+                cols = table_columns(con, table)
+                # `id` is autoincrement on each host independently — never copy
+                # it across, let main's sequence assign a fresh id.
+                insert_cols = [c for c in cols if c != "id"]
+                col_list = ", ".join(insert_cols)
+
+                cur = con.execute(
+                    f"INSERT INTO main.{table} ({col_list}) "
+                    f"SELECT {col_list} FROM remote.{table} "
+                    "WHERE uuid IS NOT NULL "
+                    f"AND uuid NOT IN (SELECT uuid FROM main.{table}) "
+                    "AND uuid NOT IN (SELECT uuid FROM main.tombstones "
+                    f"                 WHERE table_name = '{table}')"
+                )
+                if verbose and cur.rowcount:
+                    print(f"  {remote_path.name}: inserted {cur.rowcount} into {table}")
+
+                # LWW update for rows that already exist locally.
+                update_cols = [c for c in cols if c not in ("id", "uuid")]
+                if not update_cols:
+                    continue
+                assigns = ", ".join(
+                    f"{c} = (SELECT {c} FROM remote.{table} "
+                    f"WHERE remote.{table}.uuid = main.{table}.uuid)"
+                    for c in update_cols
+                )
+                cur = con.execute(
+                    f"UPDATE main.{table} SET {assigns} "
+                    "WHERE EXISTS ("
+                    f"  SELECT 1 FROM remote.{table} "
+                    f"  WHERE remote.{table}.uuid = main.{table}.uuid "
+                    f"    AND COALESCE(remote.{table}.modification_time, 0) "
+                    f"      > COALESCE(main.{table}.modification_time, 0)"
+                    ")"
+                )
+                if verbose and cur.rowcount:
+                    print(f"  {remote_path.name}: updated {cur.rowcount} in {table}")
+            con.execute("COMMIT")
+        except Exception:
+            con.execute("ROLLBACK")
+            raise
+    finally:
+        con.execute("DETACH DATABASE remote")
+
+
+@click.command(help="Merge sioyek shared DBs across hosts.")
+@click.option(
+    "--my-db",
+    type=click.Path(dir_okay=False, path_type=Path),
+    help="Override the local per-host shared DB path (default: read from prefs_user.config).",
+)
+@click.option("-v", "--verbose", is_flag=True)
+def main(my_db, verbose):
+    my_db = my_db if my_db else find_my_db()
+    sync_dir = my_db.parent
+    others = sorted(p for p in sync_dir.glob("*.shared-sioyek.db") if p != my_db)
+
+    if not others:
+        if verbose:
+            click.echo(f"no peer DBs in {sync_dir}")
+        return
+
+    if verbose:
+        click.echo(f"merging into {my_db}")
+        for o in others:
+            click.echo(f"  peer: {o}")
+
+    with sync_dir_lock(sync_dir):
+        con = sqlite3.connect(str(my_db), timeout=30, isolation_level=None)
+        try:
+            for remote in others:
+                merge_one(con, remote, verbose)
+        finally:
+            con.close()
+
+
+if __name__ == "__main__":
+    main()

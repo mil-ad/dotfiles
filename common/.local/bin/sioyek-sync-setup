@@ -1,0 +1,138 @@
+#!/usr/bin/env -S uv run --script
+# /// script
+# requires-python = ">=3.10"
+# dependencies = ["click"]
+# ///
+"""Bootstrap this machine for sioyek multi-host sync.
+
+\b
+  1. Compute the per-host DB path: <source-db's dir>/<HOST>.shared-sioyek.db
+     (HOST = this machine's `hostname`).
+  2. Copy --source-db there (error if the target already exists).
+  3. Install a `tombstones` table + BEFORE DELETE triggers on the new DB
+     so deletions are captured (no sioyek source change needed).
+  4. Print follow-up reminders (update prefs_user.config, enable the
+     systemd timer). Those steps you do yourself.
+"""
+
+import re
+import shutil
+import socket
+import sqlite3
+import sys
+from pathlib import Path
+
+import click
+
+SYNCABLE_TABLES = ("marks", "bookmarks", "highlights", "links")
+
+
+def install_tombstones_schema(db_path, dry_run):
+    sql_table = (
+        "CREATE TABLE IF NOT EXISTS tombstones ("
+        " uuid TEXT PRIMARY KEY,"
+        " table_name TEXT NOT NULL,"
+        " deleted_at INTEGER NOT NULL"
+        ")"
+    )
+    trigger_template = (
+        "DROP TRIGGER IF EXISTS tombstone_{table};\n"
+        "CREATE TRIGGER tombstone_{table}\n"
+        "  BEFORE DELETE ON {table}\n"
+        "  FOR EACH ROW WHEN OLD.uuid IS NOT NULL\n"
+        "  BEGIN\n"
+        "    INSERT OR REPLACE INTO tombstones(uuid, table_name, deleted_at)\n"
+        "    VALUES (OLD.uuid, '{table}', CAST(strftime('%s','now') AS INTEGER));\n"
+        "  END"
+    )
+
+    click.echo(f"[schema] installing tombstones table + triggers on {db_path}")
+    if dry_run:
+        click.echo("  (dry-run; not executing)")
+        return
+
+    con = sqlite3.connect(str(db_path), timeout=30)
+    try:
+        con.execute(sql_table)
+        for table in SYNCABLE_TABLES:
+            exists = con.execute(
+                "SELECT 1 FROM sqlite_master WHERE type='table' AND name=?",
+                (table,),
+            ).fetchone()
+            if not exists:
+                click.echo(f"  warning: table '{table}' not present; skipping its trigger.")
+                click.echo(f"  Re-run this script after sioyek creates {table} on first launch.")
+                continue
+            con.executescript(trigger_template.format(table=table))
+        con.commit()
+    finally:
+        con.close()
+    click.echo("  done.")
+
+
+def copy_source_to_target(source, target, dry_run):
+    if not source.exists():
+        raise click.ClickException(f"--source-db {source} does not exist.")
+    click.echo(f"[copy] {source} -> {target}")
+    if dry_run:
+        click.echo("  (dry-run; not copying)")
+        return
+    target.parent.mkdir(parents=True, exist_ok=True)
+    shutil.copy2(source, target)
+
+
+def print_followup(target_db):
+    click.echo()
+    click.echo("Next steps (do these manually):")
+    click.echo()
+    click.echo("  1. Point sioyek at the new DB. Edit ~/.config/sioyek/prefs_user.config:")
+    click.echo(f"       shared_database_path {target_db}")
+    click.echo("     (That file is symlinked into the dotfiles repo; to keep this")
+    click.echo("      change local-only, run:")
+    click.echo("         cd ~/.dotfiles && git update-index --skip-worktree \\")
+    click.echo("           linux/.config/sioyek/prefs_user.config)")
+    click.echo()
+    click.echo("  2. Enable the merge timer:")
+    click.echo("       systemctl --user daemon-reload")
+    click.echo("       systemctl --user enable --now sioyek-merge-dbs.timer")
+    click.echo()
+    click.echo("  3. Launch sioyek and confirm your bookmarks/highlights still load.")
+
+
+@click.command(help=__doc__)
+@click.option(
+    "--source-db",
+    required=True,
+    type=click.Path(dir_okay=False, path_type=Path),
+    help="Path to seed the new per-host DB from (original DB on day 1, or "
+    "another host's *.shared-sioyek.db for late joiners). The new "
+    "<HOST>.shared-sioyek.db is created in this file's directory.",
+)
+@click.option("--dry-run", is_flag=True, help="Print actions without performing them.")
+def main(source_db, dry_run):
+    source_db = source_db.expanduser().resolve()
+    host = re.sub(r"[^A-Za-z0-9_.-]", "_", socket.gethostname())
+    target_db = source_db.parent / f"{host}.shared-sioyek.db"
+
+    click.echo(f"[init] hostname:  {host}")
+    click.echo(f"[init] source DB: {source_db}")
+    click.echo(f"[init] target DB: {target_db}")
+
+    if source_db == target_db:
+        raise click.ClickException(
+            "--source-db and the computed target are the same path. "
+            "Pass a different --source-db or --host."
+        )
+    if target_db.exists():
+        raise click.ClickException(
+            f"target DB {target_db} already exists; refusing to overwrite. "
+            "Move/delete it first if you really want to re-run."
+        )
+
+    copy_source_to_target(source_db, target_db, dry_run)
+    install_tombstones_schema(target_db, dry_run)
+    print_followup(target_db)
+
+
+if __name__ == "__main__":
+    main()

@@ -1,0 +1,9 @@
+[Unit]
+Description=Merge sioyek shared DBs from other hosts
+
+[Service]
+Type=oneshot
+ExecStart=%h/.local/bin/sioyek-merge-dbs
+
+[Install]
+WantedBy=default.target

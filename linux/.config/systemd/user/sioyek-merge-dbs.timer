@@ -1,0 +1,11 @@
+[Unit]
+Description=Timer for merging sioyek shared DBs every 5 mins
+
+[Timer]
+OnBootSec=2min
+OnUnitActiveSec=5min
+RandomizedDelaySec=30sec
+Persistent=true
+
+[Install]
+WantedBy=timers.target
