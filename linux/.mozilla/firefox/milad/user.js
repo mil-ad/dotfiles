@@ -38,6 +38,19 @@ user_pref("accessibility.force_disabled", 1);
 user_pref("network.http.max-connections", 1800);
 user_pref("network.http.max-persistent-connections-per-server", 10);
 user_pref("gfx.webrender.all", true);
+user_pref("browser.ml.enable", false);
+user_pref("browser.ml.chat.enabled", false);
+user_pref("browser.ml.chat.hideFromLabs", true);
+user_pref("browser.ml.chat.hideLabsShortcuts", true);
+user_pref("browser.ml.chat.page", false);
+user_pref("browser.ml.chat.page.footerBadge", false);
+user_pref("browser.ml.chat.page.menuBadge", false);
+user_pref("browser.ml.chat.menu", false);
+user_pref("browser.ml.linkPreview.enabled", false);
+user_pref("browser.ml.pageAssist.enabled", false);
+user_pref("browser.tabs.groups.smart.enabled", false);
+user_pref("browser.tabs.groups.smart.userEnabled", false);
+user_pref("extensions.ml.enabled", false);
 
 /** Experimenting with some settings from BetterBox: ***/
 
