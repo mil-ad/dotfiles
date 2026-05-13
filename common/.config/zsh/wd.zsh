@@ -631,9 +631,15 @@ wd() {
     return $WD_EXIT_CODE
 }
 
-# One-time init at source: triggers ~/.warprc creation if missing and
-# exports static named directories when WD_EXPORT is set.
-wd > /dev/null
+# One-time init at source: ensure ~/.warprc exists, and export static
+# named directories when WD_EXPORT is set. Previously this called
+# `wd > /dev/null`, which ran full arg-parsing + usage printing just to
+# reach these two side effects (~3.5ms at shell init).
+[[ -e ${WD_CONFIG:=$HOME/.warprc} ]] || touch "$WD_CONFIG"
+if [[ -n $WD_EXPORT ]]; then
+    typeset wd_config_file=$WD_CONFIG
+    wd_export_static_named_directories
+fi
 
 # zle widgets
 zle -N wd_browse_widget
