@@ -133,7 +133,7 @@ mode "resize" {
 # External Keybindings
 ##########################################
 bindsym --no-repeat $mod+Return exec kitty --single-instance
-bindsym --no-repeat $mod+Shift+Return exec thunar
+bindsym --no-repeat $mod+Shift+Return exec pcmanfm
 bindsym --no-repeat $mod+space exec ~/.local/bin/winmenu
 bindsym --no-repeat $mod+Ctrl+space exec ~/.local/bin/enter_snippet $HOME/.scripts/snippets.yml
 bindsym --no-repeat $mod+comma exec ~/.local/bin/rename-sway-container
