@@ -135,14 +135,14 @@ mode "resize" {
 bindsym --no-repeat $mod+Return exec kitty --single-instance
 bindsym --no-repeat $mod+Shift+Return exec pcmanfm
 bindsym --no-repeat $mod+space exec ~/.local/bin/winmenu
-bindsym --no-repeat $mod+Ctrl+space exec ~/.local/bin/enter_snippet $HOME/.scripts/snippets.yml
+bindsym --no-repeat $mod+Ctrl+space exec ~/.local/bin/enter-snippet $HOME/.scripts/snippets.yml
 bindsym --no-repeat $mod+comma exec ~/.local/bin/rename-sway-container
 bindsym --no-repeat $mod+0 exec ~/.local/bin/sysmenu
 bindsym --no-repeat $mod+b exec ~/.local/bin/open_bookmark
 bindsym --no-repeat $mod+Shift+b exec ~/.local/bin/add-bookmark-menu $HOME/.scripts/bookmarks.json
 bindsym --no-repeat $mod+d exec ~/.local/bin/dmenu_run
 bindsym --no-repeat $mod+Shift+d exec env KITTY_EXTRA_OPTS="-o font_size=9" ~/.local/bin/kitty-app gh dash
-bindsym --no-repeat $mod+e exec ~/.local/bin/enter_emoji
+bindsym --no-repeat $mod+e exec ~/.local/bin/enter-emoji
 bindsym --no-repeat $mod+g exec env KITTY_EXTRA_OPTS="-o font_size=10" ~/.local/bin/kitty-app mods -i --delete-older-than 4w
 bindsym --no-repeat $mod+Shift+g exec env KITTY_EXTRA_OPTS="-o font_size=9" ~/.local/bin/kitty-app mods -i --continue-last
 bindsym --no-repeat $mod+i exec ~/.local/bin/search

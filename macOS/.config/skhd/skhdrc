@@ -15,10 +15,10 @@ rhyper - o : $HOME/.local/bin/open-recent-file
 rhyper + lcmd - o : $HOME/.local/bin/openfile
 rhyper - b : $HOME/.local/bin/open_bookmark
 rhyper - p : $HOME/.scripts/open_paper
-rhyper - e : $HOME/.local/bin/enter_emoji
+rhyper - e : $HOME/.local/bin/enter-emoji
 rhyper - 0: $HOME/.local/bin/sysmenu
 rhyper - space: $HOME/.local/bin/winmenu
-rhyper + lcmd - space: $HOME/.local/bin/enter_snippet $HOME/.scripts/snippets.yml
+rhyper + lcmd - space: $HOME/.local/bin/enter-snippet $HOME/.scripts/snippets.yml
 
 # Some are defined for both control and and cmd so that they work in kitty too
 rhyper + lshift - space : yabai -m window --toggle float
@@ -77,5 +77,5 @@ ctrl - right [
 ]
 
 rhyper + lctrl - space [
-     "kitty": $HOME/.local/bin/enter_snippet $HOME/.scripts/snippets.yml
+     "kitty": $HOME/.local/bin/enter-snippet $HOME/.scripts/snippets.yml
 ]
