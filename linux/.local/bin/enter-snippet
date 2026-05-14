@@ -1,18 +1,30 @@
 #!/usr/bin/env bash
 
-assert_installed yq jq ydotool wl-copy rofimenu paste-clipboard-content
+file="$1"
 
-selected_idx=$(yq -o json < $1 | jq -r '
-.[] |
-if (.value | type == "string" and (index("\n") | not)) then
-  "\(.name): \(.value)"
-else
-  "\(.name): ≣≣≣≣≣"
-end
-' | rofimenu -format i)
-
-if [ "$selected_idx" == "" ]; then
+# Inner mode: invoked inside the kitty popup to run fzf
+if [ "$2" = "--select" ]; then
+    yq -o=json < "$file" \
+      | jq -r 'to_entries[] | "\(.key)\t\(.value.name)"' \
+      | fzf --delimiter=$'\t' --with-nth=2 \
+            --no-separator --reverse --prompt='' --pointer='' --no-info \
+            --color='gutter:#222222,bg+:#d79921,fg+:#282828,hl+:#8f3f71,fg:#d5c4a1,hl:#d79921' \
+            --preview "i={1}; yq -r \".[\$i].value\" \"$file\" | bat --color=always -pp -l yaml" \
+            --preview-window=right:60%:wrap
     exit
-else
-    yq -r ".["$selected_idx"].value" "$1" | sed -z '$s/\n$//' | wl-copy && paste-clipboard-content
 fi
+
+assert_installed yq jq fzf bat wl-copy paste-clipboard-content kitty
+
+selected_line=$(kitty \
+    --override background_opacity=1 \
+    --override background=#222222 \
+    --override window_padding_width="0.5 5" \
+    --override cursor_shape=beam \
+    --class fzfmenu \
+    -- sh --noprofile --norc -c "\"$0\" \"$file\" --select > /proc/$$/fd/1")
+
+selected_idx=$(echo "$selected_line" | cut -f1)
+[ -z "$selected_idx" ] && exit
+
+yq -r ".[$selected_idx].value" "$file" | sed -z '$s/\n$//' | wl-copy && paste-clipboard-content
