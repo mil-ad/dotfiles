@@ -213,7 +213,6 @@ for_window [app_id="dev.zed.Zed"] layout tabbed
 for_window [app_id="1password"] floating enable, resize set 75ppt 50 ppt
 for_window [app_id="kitty-app"] floating enable, resize set 75 ppt 45 ppt, move position center, border pixel 2
 for_window [app_id="fzfmenu"] floating enable, resize set 65 ppt 50 ppt, move position center, border pixel 3
-for_window [app_id="anki"] floating enable
 for_window [app_id="waypaper"] floating enable, move position center
 for_window [app_id="firefox" title="^Picture-in-Picture$"] {
     border none
