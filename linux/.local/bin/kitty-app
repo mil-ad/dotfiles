@@ -3,11 +3,13 @@
 # exec &> >(tee /tmp/kitty-app.log)
 
 # Default kitty options
-KITTY_OPTS="--override background_opacity=1 --class kitty-app"
+KITTY_OPTS=(--override background_opacity=1 --class kitty-app)
 
-# Allow overriding kitty options via environment variable
+# Allow overriding kitty options via environment variable.
+# KITTY_EXTRA_OPTS is parsed with shell quoting, so values containing
+# spaces can be quoted, e.g. KITTY_EXTRA_OPTS='--override "window_padding_width=0.5 5"'.
 if [[ -n "$KITTY_EXTRA_OPTS" ]]; then
-    KITTY_OPTS="$KITTY_OPTS $KITTY_EXTRA_OPTS"
+    eval "KITTY_OPTS+=($KITTY_EXTRA_OPTS)"
 fi
 
 # Handle stdin/stdout redirection via environment variables
@@ -23,5 +25,5 @@ if [[ "$KITTY_APP_REDIRECT_STDOUT" == "1" ]]; then
 fi
 
 # Execute the command with optional redirections
-kitty $KITTY_OPTS \
+kitty "${KITTY_OPTS[@]}" \
   -- sh --noprofile --norc -c "$* $stdin_redirect $stdout_redirect"

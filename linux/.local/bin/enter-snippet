@@ -14,15 +14,11 @@ if [ "$2" = "--select" ]; then
     exit
 fi
 
-assert_installed yq jq fzf bat wl-copy paste-clipboard-content kitty
+assert_installed yq jq fzf bat wl-copy paste-clipboard-content kitty kitty-app
 
-selected_line=$(kitty \
-    --override background_opacity=1 \
-    --override background=#222222 \
-    --override window_padding_width="0.5 5" \
-    --override cursor_shape=beam \
-    --class fzfmenu \
-    -- sh --noprofile --norc -c "\"$0\" \"$file\" --select > /proc/$$/fd/1")
+selected_line=$(KITTY_APP_REDIRECT_STDOUT=1 \
+    KITTY_EXTRA_OPTS='--override background=#222222 --override "window_padding_width=0.5 5" --override cursor_shape=beam --class fzfmenu' \
+    kitty-app "$0" "$file" --select)
 
 selected_idx=$(echo "$selected_line" | cut -f1)
 [ -z "$selected_idx" ] && exit
