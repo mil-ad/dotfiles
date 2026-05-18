@@ -18,6 +18,7 @@
     ],
     "modules-right": [
         "custom/screen-recording",
+        "custom/voxtype",
         // "custom/power",
         "custom/gojeh",
         "idle_inhibitor",
@@ -187,8 +188,8 @@
     },
     "network#ethernet": {
         "interface": "en*",
-        "format-ethernet": "󰈀 {ipaddr}",
-        "tooltip-format": "󰇚 {bandwidthDownBits} | 󰕒 {bandwidthUpBits}",
+        "format-ethernet": "󰈀",
+        "tooltip-format": "{ipaddr} | 󰇚 {bandwidthDownBits} | 󰕒 {bandwidthUpBits}",
         "format-linked": "{ifname} (No IP) ",
         "format-disconnected": "󰈀"
         // "format-alt": "{ifname}: {ipaddr}/{cidr}"
@@ -282,6 +283,11 @@
         "signal": 9,
         "return-type": "json",
         "on-click": "pkill -INT wf-recorder",
+        "format": "{}"
+    },
+    "custom/voxtype": {
+        "exec": "voxtype status --follow --format json --icon-theme nerd-font | jq --unbuffered -c '.text = \"\\uf130\"'",
+        "return-type": "json",
         "format": "{}"
     },
     "custom/power": {

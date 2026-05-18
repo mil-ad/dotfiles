@@ -375,6 +375,14 @@ label:focus {
     color: #fb4934;
 }
 
+#custom-voxtype {
+    color: #928374;
+}
+
+#custom-voxtype.recording {
+    color: #fb4934;
+}
+
 #privacy {
     padding: 0;
 }
