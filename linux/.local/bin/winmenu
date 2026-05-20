@@ -2,10 +2,11 @@
 
 set -e
 
-selected=$(swaymsg -t get_tree |
+mapfile -t windows < <(swaymsg -t get_tree |
 	jq -r '.. | objects
 		| select(.type == "con" and (.app_id != null or .window_properties.class != null))
-		| "\(.id)\t\(.app_id // .window_properties.class): \(.name)"' |
-	rofimenu)
+		| "\(.id)\t\(.name)"')
 
-swaymsg "[con_id=${selected%%$'\t'*}] focus"
+index=$(printf '%s\n' "${windows[@]}" | cut -f2- | rofimenu -format i)
+
+swaymsg "[con_id=${windows[$index]%%$'\t'*}] focus"
