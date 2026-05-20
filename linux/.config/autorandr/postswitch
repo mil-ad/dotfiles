@@ -1,6 +1,0 @@
-#!/usr/bin/env bash
-
-assert_installed swaymsg
-
-sleep 5
-swaymsg reload
