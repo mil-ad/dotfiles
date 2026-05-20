@@ -25,6 +25,7 @@
     "enabled": true,
     "mode": "hold"
   },
+  "preferredNotifChannel": "notifications_disabled",
   "voiceEnabled": true,
-  "preferredNotifChannel": "notifications_disabled"
+  "skipAutoPermissionPrompt": true
 }
