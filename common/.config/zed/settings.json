@@ -1,5 +1,9 @@
 // documentation: https://zed.dev/docs/configuring-zed
 {
+  "cli_default_open_behavior": "new_window",
+  "use_system_path_prompts": true,
+  "when_closing_with_no_tabs": "keep_window_open",
+  "proxy": "",
   "outline_panel": {
     "dock": "left"
   },

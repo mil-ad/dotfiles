@@ -261,6 +261,7 @@
         "exec": "$HOME/.scripts/wireguard_polybar",
         "return-type": "json",
         "format": "{icon} {text}",
+        "hide-empty-text": true,
         "tooltip": true,
         "tooltip-format": "{text}",
         "format-icons": {
