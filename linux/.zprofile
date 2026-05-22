@@ -8,8 +8,7 @@ export ZDOTDIR="$XDG_CONFIG_HOME/zsh"
 export GOPATH="$HOME/.local/share/go"
 export GOBIN="$HOME/.local/bin"
 
-# so that scripts are available in dmenu_run:
-export PATH=$PATH:~/.scripts:~/.local/bin:~/Application
+export PATH="$PATH:$HOME/.local/bin:$HOME/Application"
 
 export HOMEBREW_NO_ANALYTICS=1
 

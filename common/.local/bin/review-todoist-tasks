@@ -3,8 +3,17 @@
 assert_installed jq curl rofimenu || exit 1
 assert_defined TODOIST_TOKEN || exit 1
 
-resp=$(curl --silent https://api.todoist.com/api/v1/tasks -H "Authorization: Bearer $TODOIST_TOKEN")
-sorted_resp=$(jq ".results | sort_by(.order)" <<< "$resp")
+all_tasks="[]"
+cursor=""
+while :; do
+    url="https://api.todoist.com/api/v1/tasks?limit=200"
+    [[ -n $cursor ]] && url="$url&cursor=$cursor"
+    resp=$(curl --silent "$url" -H "Authorization: Bearer $TODOIST_TOKEN")
+    all_tasks=$(jq -n --argjson a "$all_tasks" --argjson b "$(jq .results <<< "$resp")" '$a + $b')
+    cursor=$(jq -r '.next_cursor // ""' <<< "$resp")
+    [[ -z $cursor ]] && break
+done
+sorted_resp=$(jq 'sort_by(.order)' <<< "$all_tasks")
 
 indices=$(echo "$sorted_resp" | jq -r ".[].content" | rofimenu -multi-select -format i)
 

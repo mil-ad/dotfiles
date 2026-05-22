@@ -19,7 +19,6 @@
     "modules-right": [
         "custom/screen-recording",
         "custom/voxtype",
-        // "custom/power",
         "custom/gojeh",
         "idle_inhibitor",
         "custom/mullvad",
@@ -30,7 +29,7 @@
         // "wireplumber",
         // "power-profiles-daemon",
         // "keyboard-state",
-        // "systemd-failed-units",
+        "systemd-failed-units",
         "sway/language",
         "battery",
         // "battery#bat2",
@@ -258,9 +257,11 @@
         "interval": 2
     },
     "custom/mullvad": {
-        "exec": "$HOME/.scripts/wireguard_polybar",
+        "exec": "$HOME/.local/bin/wireguard-waybar-module",
         "return-type": "json",
-        "format": "{icon} {text}",
+        // No space in format: the script supplies its own leading space when connected,
+        // so disconnected (zero-width text) renders as just the icon.
+        "format": "{icon}{text}",
         "hide-empty-text": true,
         "tooltip": true,
         "tooltip-format": "{text}",
@@ -268,7 +269,7 @@
             "connected": "",
             "disconnected": ""
         },
-        "on-click": "$HOME/.scripts/wireguard_polybar --toggle",
+        "on-click": "$HOME/.local/bin/wireguard-waybar-module --toggle",
         "interval": 2
     },
     "custom/gojeh": {
@@ -291,16 +292,4 @@
         "return-type": "json",
         "format": "{}"
     },
-    "custom/power": {
-        "format" : "⏻ ",
-        "tooltip": false,
-        "menu": "on-click",
-        "menu-file": "$HOME/.config/waybar/power_menu.xml", // Menu file in resources folder
-        "menu-actions": {
-        "shutdown": "shutdown",
-        "reboot": "reboot",
-        "suspend": "systemctl suspend",
-        "hibernate": "systemctl hibernate"
-        }
-    }
 }
