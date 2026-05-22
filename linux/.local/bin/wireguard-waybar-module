@@ -1,0 +1,63 @@
+#!/usr/bin/env sh
+
+configs_path="$HOME/.wireguard"
+connected_interface=$(command -v networkctl >/dev/null 2>&1 && networkctl 2>/dev/null | grep -P "\d+ .* wireguard routable" -o | cut -d" " -f2)
+
+connect() {
+    assert_installed rofimenu wg-quick || exit 0
+    selected_config=$(ls $configs_path/*.conf | xargs basename -a -s .conf | rofimenu)
+    [[ $selected_config ]] && sudo wg-quick up "$configs_path"/"$selected_config".conf
+}
+
+disconnect() {
+    assert_installed networkctl wg-quick || exit 0
+    # Normally we should have a single connected interface but technically
+    # there's nothing stopping us from having multiple active intgerfaces so
+    # let's do this in a loop:
+    for connected_config in $(networkctl | grep -P "\d+ .* wireguard routable" -o | cut -d" " -f2)
+    do
+        sudo wg-quick down $configs_path/"$connected_config".conf
+    done
+}
+
+toggle() {
+    if [[ $connected_interface ]]
+    then
+        disconnect
+    else
+        connect
+    fi
+}
+
+print() {
+    # If wireguard isn't installed on this machine, render nothing so the
+    # waybar widget collapses (pair with "hide-empty-text": true in the config).
+    if ! command -v networkctl >/dev/null 2>&1 || ! command -v wg-quick >/dev/null 2>&1; then
+        echo '{"text": "", "alt": "missing"}'
+        return
+    fi
+
+    if [[ $connected_interface ]]
+    then
+        # Leading space separates icon from interface name (format has no literal space).
+        echo "{\"class\": \"connected\", \"alt\": \"connected\", \"text\": \" "$connected_interface"\"}"
+    else
+        # Zero-width space keeps text non-empty so hide-empty-text doesn't hide the icon.
+        echo "{\"class\": \"disconnected\", \"alt\": \"disconnected\", \"text\": \"​\"}"
+    fi
+}
+
+case "$1" in
+    --connect)
+        connect
+        ;;
+    --disconnect)
+        disconnect
+        ;;
+    --toggle)
+        toggle
+        ;;
+    *)
+        print
+        ;;
+esac
