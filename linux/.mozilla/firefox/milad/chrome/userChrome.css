@@ -1,211 +1,111 @@
+/* ============================================================
+ * userChrome.css — Gruvbox-themed Firefox UI
+ *
+ * Tuned for the vertical-tabs sidebar layout (`sidebar.verticalTabs`).
+ * Sections marked below; variables centralized in :root.
+ * ============================================================ */
+
 :root {
+    /* Gruvbox accents */
     --dark0_hard: #1d2021;
     --dark0: #282828;
-    --dark0_soft: #32302f;
     --dark1: #3c3836;
-    --dark2: #504945;
-    --dark3: #665c54;
-    --dark4: #7c6f64;
-    --dark4_256: #7c6f64;
-
-    --gray_245: #928374;
-    --gray_244: #928374;
-
-    --light0_hard: #f9f5d7;
     --light0: #fbf1c7;
-    --light0_soft: #f2e5bc;
     --light1: #ebdbb2;
-    --light2: #d5c4a1;
-    --light3: #bdae93;
-    --light4: #a89984;
-    --light4_256: #a89984;
-
-    --bright_red: #fb4934;
-    --bright_green: #b8bb26;
+    --faded_yellow: #b57614;
     --bright_yellow: #fabd2f;
-    --bright_blue: #83a598;
-    --bright_purple: #d3869b;
-    --bright_aqua: #8ec07c;
-    --bright_orange: #fe8019;
 
-    --neutral_red: #cc241d;
-    --neutral_green: #98971a;
-    --neutral_yellow: #d79921;
-    --neutral_blue: #458588;
-    --neutral_purple: #b16286;
-    --neutral_aqua: #689d6a;
-    --neutral_orange: #d65d0e;
-
-    /* Popping-n-Locking colors */
-    --pnl-bright_black: #928374;
-    --pnl-bright_red: #f42c3e;
-    --pnl-bright_green: #b8bb26;
-    --pnl-bright_yellow: #fabd2f;
-    --pnl-bright_blue: #99c6ca;
-    --pnl-bright_magenta: #d3869b;
-    --pnl-bright_cyan: #7ec16e;
-    --pnl-bright_white: #ebdbb2;
-    --pnl-black: #1d2021;
-    --pnl-red: #cc241d;
-    --pnl-green: #98971a;
-    --pnl-yellow: #d79921;
-    --pnl-blue: #458588;
-    --pnl-magenta: #b16286;
-    --pnl-cyan: #689d6a;
-    --pnl-white: #a89984;
-    --pnl-foreground: #ebdbb2;
+    /* Custom background tones (cooler than gruvbox dark) */
     --pnl-background: #181921;
     --pnl-background2: #21222d;
-    --pnl-foreground2: #f2e5bc;
+    --urlbar-bg: #1e1e28;
 
-    --faded_red: #9d0006;
-    --faded_green: #79740e;
-    --faded_yellow: #b57614;
-    --faded_blue: #076678;
-    --faded_purple: #8f3f71;
-    --faded_aqua: #427b58;
-    --faded_orange: #af3a03;
-
+    /* App-wide tokens */
     --main-custom-color: var(--pnl-background);
+    --ui-font: "Berkeley Mono SemiCondensed", "Iosevka Milad";
 
-    --toolbarbutton-icon-fill: #ebdbb2 !important;
-    --toolbar-bgcolor: #1d2021 !important;
+    /* Firefox UI variable overrides */
+    --toolbarbutton-icon-fill: var(--light1) !important;
+    --toolbar-bgcolor: var(--dark0_hard) !important;
     --tab-height-with-margin-padding: 2.2rem !important;
-
     --toolbarbutton-inner-padding: 4px !important;
     --tab-min-height: 24px !important;
 
+    /* Panel / menupopup colors — covers the hamburger menu, extensions
+     * popup, bookmarks dropdowns, context menus, etc. Firefox migrated
+     * from `--arrowpanel-background` to `--panel-background`; keeping
+     * both for cross-version safety. */
+    --panel-background: var(--pnl-background) !important;
+    --panel-color: var(--light1) !important;
+    --panel-border-color: var(--dark1) !important;
     --arrowpanel-background: var(--pnl-background) !important;
 }
 
-/* Only for macOS */
-#TabsToolbar {
-    margin-top: 6px;
-    margin-left: 8px;
-    margin-right: 8px;
-}
+/* ============================================================
+ * Titlebar / window chrome
+ * ============================================================ */
 
-tab[selected="true"] > .tab-stack > .tab-background {
-    background: var(--dark1) !important;
-    border-color: var(--faded_yellow) !important;
-    border: solid;
-    border-width: 1px;
-}
-
-tab:not([selected="true"]) > .tab-stack > .tab-background {
-    background-color: var(--main-custom-color) !important;
-    border-color: var(--dark1) !important;
-    border: solid;
-    border-width: 1px;
-}
-
-.tab-text {
-    font-family: Iosevka, Vazirmatn !important;
-    /* font-size: 0.875rem; */
-    color: var(--light0);
-    /* 14px */
+@media (-moz-platform: macos) {
+    #TabsToolbar {
+        margin-top: 6px;
+        margin-left: 8px;
+        margin-right: 8px;
+    }
 }
 
 #tabbrowser-tabs,
 #titlebar,
-#navigator-toolbox {
+#navigator-toolbox,
+#nav-bar {
     background: var(--main-custom-color) !important;
 }
 
-/* Copied to make address bar more compact: https://www.reddit.com/r/FirefoxCSS/comments/lnwhnn/comment/go3iy85 */
-.titlebar-button {
-    padding-block: 4px !important;
-}
-#urlbar-container,
-#search-container {
-    padding-block: 1px !important;
-}
 #titlebar {
     -moz-appearance: none !important;
 }
+
 :root[sizemode="maximized"] #navigator-toolbox {
     margin-top: 8px;
 }
 
-/* #titlebar */
-
-/* TODO: gets applied to search icon of a verified domain too */
-/* .verifiedDomain {
-    color: var(--faded_green) !important;
-} */
-
-#urlbar-background {
-    background-color: var(--dark0) !important;
-    border: solid !important;
-    border-width: 1px !important;
-    border-color: var(--faded_yellow) !important;
+.titlebar-button {
+    padding-block: 4px !important;
 }
 
-#urlbar[focused="true"] #urlbar-background {
-    border-width: 2px !important;
-    outline-color: var(--faded_yellow) !important;
-}
-
-/* Remove the blue border that appears in the urlbar when focus or hover */
-[focused]:not([suppress-focus-border]) > .urlbar-background,
-#searchbar:focus-within {
-    outline: none !important;
-    outline-color: none !important;
-    border-color: transparent;
-}
-
-#urlbar,
-#searchbar .searchbar-textbox {
-    color: var(--light1) !important;
-
-    /* macOS only */
-    font-family: Iosevka, Vazirmatn !important;
-}
-
-.searchmode-switcher {
-    border-radius: 3px !important;
-}
-
-/* @-moz-document url("about:home"), url("about:newtab"), url(about:privatebrowsing) {
-    .logo-and-wordmark {
-        display: none !important;
-    }
-} */
-
-#nav-bar {
-    background-color: var(--main-custom-color) !important;
-}
-
-/* Remove Minimize, Maximize and Close buttons */
-.titlebar-buttonbox-container {
-    display: none;
-}
-
-.urlbarView-row[selected=""] > .urlbarView-row-inner {
-    background-color: var(--faded_yellow) !important;
-}
-
-#home-button {
-    display: none !important;
-}
-
-.titlebar-spacer[type="pre-tabs"] {
-    display: none !important;
-}
-
-.titlebar-spacer[type="post-tabs"] {
-    display: none !important;
-}
-
+/* Hide window controls + tab spacers */
+.titlebar-buttonbox-container,
+.titlebar-spacer[type="pre-tabs"],
+.titlebar-spacer[type="post-tabs"],
 toolbarspring#vertical-spacer.chromeclass-toolbar-additional.titlebar-spacer {
     display: none !important;
 }
 
-/* If urlbar is placed at the very left of the toolbar then remove its left margin */
-#nav-bar-customization-target > #urlbar-container:first-child {
-    margin-left: 7px !important;
-    padding-left: 0px !important;
-    margin-right: 10px !important;
+/* ============================================================
+ * Tabs (horizontal-mode styling; overridden inside @media below)
+ * ============================================================ */
+
+tab[selected="true"] > .tab-stack > .tab-background {
+    background: var(--dark1) !important;
+    border: 1px solid var(--faded_yellow) !important;
+}
+
+tab:not([selected="true"]) > .tab-stack > .tab-background {
+    background-color: var(--main-custom-color) !important;
+    border: 1px solid var(--dark1) !important;
+}
+
+.tab-text {
+    font-family: Iosevka, Vazirmatn !important;
+    color: var(--light0);
+}
+
+/* ============================================================
+ * URL bar & search
+ * ============================================================ */
+
+#urlbar-container,
+#search-container {
+    padding-block: 1px !important;
 }
 
 #nav-bar-customization-target > #urlbar-container {
@@ -213,184 +113,146 @@ toolbarspring#vertical-spacer.chromeclass-toolbar-additional.titlebar-spacer {
     margin-bottom: 5px !important;
 }
 
-#vertical-pinned-tabs-container {
-    max-height: inherit;
+/* Drop left margin/padding when urlbar is first in toolbar */
+#nav-bar-customization-target > #urlbar-container:first-child {
+    margin-left: 7px !important;
+    margin-right: 10px !important;
+    padding-left: 0px !important;
 }
 
+/* The element uses the `.urlbar-background` class (not `#urlbar-background`),
+ * and the same element is reused for both the closed urlbar and the expanded
+ * autocomplete dropdown — so this rule colors both. Border is transparent
+ * by default to preserve layout, and becomes yellow only on focus. */
 .urlbar-background {
-    border: 0.75px solid var(--dark1) !important;
+    background-color: var(--urlbar-bg) !important;
+    border: 1px solid var(--dark1) !important;
     border-radius: 5px !important;
-    background-color: var(--pnl-background2) !important;
 }
 
-/* Hide more buttons */
+.urlbar[focused] > .urlbar-background {
+    border-color: var(--faded_yellow) !important;
+}
+
+[focused]:not([suppress-focus-border]) > .urlbar-background,
+#searchbar:focus-within {
+    outline: none !important;
+}
+
+#urlbar,
+#searchbar .searchbar-textbox {
+    color: var(--light1) !important;
+}
+
+#searchbar .searchbar-textbox {
+    font-family: Iosevka, Vazirmatn !important;
+}
+
+#urlbar {
+    font-family: var(--ui-font) !important;
+    font-weight: 600 !important;
+    font-size: 1rem !important;
+}
+
+.urlbarView-row[selected=""] > .urlbarView-row-inner {
+    background-color: var(--faded_yellow) !important;
+}
+
+/* Hide star / zoom / reader / home buttons + search-mode switcher */
 #star-button-box,
 #urlbar-zoom-button,
-#reader-mode-button {
+#reader-mode-button,
+#home-button,
+.searchmode-switcher {
     display: none !important;
 }
 
-/* Copied from PanelUI-Shared.css */
+/* ============================================================
+ * Menus & panels
+ * ============================================================ */
 
+#contentAreaContextMenu label,
+toolbarbutton,
+#appMenu-popup panelview,
+#bookmarksPanel {
+    font-family: var(--ui-font) !important;
+    font-weight: 600 !important;
+    font-size: 0.75rem !important;
+}
+
+#bookmarksPanel {
+    background: var(--main-custom-color) !important;
+}
+
+/* Override hover color on menu/panel toolbarbuttons */
 :is(
     panelview .toolbarbutton-1,
     toolbarbutton.subviewbutton,
     .widget-overflow-list .toolbarbutton-1,
     .toolbaritem-combined-buttons:is(
-            :not([cui-areatype="toolbar"]),
-            [overflowedItem="true"]
-        )
-        > toolbarbutton
-) {
-    color: var(--button-text-color-ghost);
-    background-color: var(--button-background-color-ghost);
-
-    &:focus-visible {
-        outline: var(--focus-outline);
-        outline-offset: var(--focus-outline-inset);
-    }
-
-    &[disabled] {
-        color: var(--button-text-color-ghost-disabled);
-        background-color: var(--button-background-color-ghost-disabled);
-        opacity: var(--button-opacity-disabled);
-    }
-
-    &:not([disabled]):hover {
-        /*     color: var(--button-text-color-ghost-hover); */
-        color: var(--pnl-bright_yellow) !important;
-        background-color: var(--button-background-color-ghost-hover);
-
-        &:active {
-            color: var(--button-text-color-ghost-active);
-            /*       color: var(--pnl-yellow) !important;; */
-            background-color: var(--button-background-color-ghost-active);
-            box-shadow: 0 1px 0 hsla(210, 4%, 10%, 0.03) inset;
-        }
-    }
+        :not([cui-areatype="toolbar"]),
+        [overflowedItem="true"]
+    ) > toolbarbutton
+):not([disabled]):hover {
+    color: var(--bright_yellow) !important;
 }
 
-/* Configure context menus */
-#contentAreaContextMenu label,
-toolbarbutton {
-    /* TODO: find a way to change the background */
-    font-family: "Berkeley Mono SemiCondensed", "Iosevka Milad" !important;
-    font-weight: 600 !important;
-    font-size: 0.75rem !important;
-}
-
-#appMenu-popup panelview {
-    font-family: "Berkeley Mono SemiCondensed", "Iosevka Milad" !important;
-    font-weight: 600 !important;
-    font-size: 0.75rem !important;
-}
-
-#urlbar {
-    font-family: "Berkeley Mono SemiCondensed", "Iosevka Milad" !important;
-    font-weight: 600 !important;
-    font-size: 1rem !important;
-}
-
-#bookmarksPanel {
-    font-family: "Berkeley Mono SemiCondensed", "Iosevka Milad" !important;
-    background: var(--main-custom-color) !important;
-}
+/* ============================================================
+ * Sidebar
+ * ============================================================ */
 
 hbox#browser {
     background-color: var(--main-custom-color) !important;
 }
 
 browser#sidebar {
+    border: 1px solid var(--dark1) !important;
     border-radius: 3px !important;
-    border: solid 1px !important;
-    border-color: var(--dark1) !important;
-    font-family: "Berkeley Mono SemiCondensed", "Iosevka Milad" !important;
+    background: var(--main-custom-color) !important;
+    font-family: var(--ui-font) !important;
     font-weight: 600 !important;
     font-size: 0.75rem !important;
-    background: var(--main-custom-color) !important;
 }
 
 .sidebar-panel {
     padding: 5px !important;
 }
 
-/* Only apply these styles when vertical tabs are enabled */
+#vertical-pinned-tabs-container {
+    max-height: inherit;
+}
+
+/* ============================================================
+ * Vertical tabs layout
+ * ============================================================ */
+
 @media -moz-pref("sidebar.verticalTabs") {
-    /*     #nav-bar {
-        margin: 10px 5px 5px 5px !important;
-    }
- */
-
-    /* Make pinned tab cells narrower */
     :root {
-        /* Width of the background "pill" around pinned icons */
+        /* Width of the pill around pinned-tab icons */
         --tab-pinned-expanded-background-width: 24px !important;
-        /* Optional: also make them a bit shorter */
-        --tab-min-height: 24px !important;
-    }
-
-    /* Override the grid min width for pinned items */
-    #pinned-tabs-container[orient="vertical"]::part(items-wrapper) {
-        grid-template-columns: repeat(
-            auto-fit,
-            minmax(24px, max-content)
-        ) !important;
-    }
-
-    /* Kill any extra padding inside pinned tabs */
-    #pinned-tabs-container[orient="vertical"] .tab-content {
-        padding: 0 !important;
-        justify-content: center !important;
-    }
-
-    /* Reduce the inline margin of the background so it hugs the icon more */
-    #pinned-tabs-container[orient="vertical"] .tab-background {
-        margin-inline: 2px !important;
-    }
-
-    /* For some reason in vertical mode there's a spacer in the toolbar (between <- -> buttons and the address bar) that is not removable. This removes it*/
-    #forward-button ~ #vertical-spacer {
-        display: None !important;
     }
 
     .browser-toolbox-background {
         background-color: var(--main-custom-color) !important;
     }
 
-    /* By unsetting height in #pinned-tabs-container the container auto-heights to fill all
-     * pinned tabs so we don't need the splitter anyway
-    */
-    #vertical-pinned-tabs-splitter {
-        display: none !important;
-    }
-
-    #pinned-tabs-container {
-        height: unset !important;
-    }
-
-    #pinned-tabs-container > tab.tabbrowser-tab {
-        /*         height: 30px; */
-        /*         height: auto !important; */
-    }
-
+    /* Tab labels & groups */
     .tab-text {
+        font-family: var(--ui-font) !important;
         font-size: 10px !important;
-        font-family: "Berkeley Mono SemiCondensed", "Iosevka Milad" !important;
         font-weight: 600 !important;
     }
 
     .tab-group-label {
+        font-family: var(--ui-font) !important;
         font-size: 11px !important;
-        font-family: "Berkeley Mono SemiCondensed", "Iosevka Milad" !important;
         font-weight: 800 !important;
     }
 
-    /* Reduce tab height */
     #tabbrowser-tabs {
         --tab-min-height: 28px !important;
     }
 
-    /* Reduce spacing between tabs */
     .tabbrowser-tab {
         padding-top: 0.1px !important;
         padding-bottom: 0.1px !important;
@@ -398,12 +260,6 @@ browser#sidebar {
         &:not(:hover) .tab-close-button {
             display: none;
         }
-    }
-
-    /* Compact the tools/extensions area at bottom */
-    .tools-and-extensions {
-        padding-block: 1px !important;
-        gap: 0px !important;
     }
 
     .tab-background {
@@ -415,62 +271,69 @@ browser#sidebar {
         padding: 0 0.8rem !important;
     }
 
+    /* Pinned tabs — narrower cells, no inner padding */
+    #pinned-tabs-container {
+        height: unset !important;
+    }
+
+    #pinned-tabs-container[orient="vertical"]::part(items-wrapper) {
+        grid-template-columns: repeat(
+            auto-fit,
+            minmax(24px, max-content)
+        ) !important;
+    }
+
     #pinned-tabs-container .tab-content {
-        padding: 0px !important;
+        padding: 0 !important;
+        justify-content: center !important;
     }
 
-    /* I want to remove the padding between sidebar and the main content but I have to do it
-     * conditionally based on sidebar location. I'm hijacking this "sidebar-position" attributes
-     * which exists when sidebar is in the right and not when it's in the left
-     */
-
-    /* Sidebar on the right */
-    box#sidebar-main[sidebar-positionend] tabs#tabbrowser-tabs {
-        margin: 0 0px 0px 0px !important;
+    #pinned-tabs-container[orient="vertical"] .tab-background {
+        margin-inline: 2px !important;
     }
 
-    /* Sidebar on the left */
-    box#sidebar-main:not([sidebar-positionend]) tabs#tabbrowser-tabs {
-        margin: 0 0px 0px 0px !important;
-    }
-
-    /* margin has to be different when tabs are left vs right */
+    /* Browser content frame */
     #tabbrowser-tabbox {
-        border-radius: 10px !important;
-        margin: 2px 0px 7px 7px !important;
-        box-shadow: none !important;
         border: 0.5px solid var(--dark0_hard) !important;
+        border-radius: 10px !important;
+        margin: 2px 0 7px 7px !important;
+        box-shadow: none !important;
     }
 
-    /* Don't show margins when a video is being played in full-screen */
+    /* No margin in fullscreen video */
     :root[sizemode="fullscreen"][inDOMFullscreen="true"] #tabbrowser-tabbox {
-        margin: 0px !important;
+        margin: 0 !important;
     }
 
     .browserContainer {
-        border-radius: 0px !important;
+        border-radius: 0 !important;
     }
 
-    /* Hide New Tab button in sidebar */
+    /* Zero out gap between sidebar and main content (both sidebar positions) */
+    box#sidebar-main tabs#tabbrowser-tabs {
+        margin: 0 !important;
+    }
+
+    /* Hide cruft */
+    #forward-button ~ #vertical-spacer,
+    #vertical-pinned-tabs-splitter,
+    #sidebar-tools-and-extensions-splitter,
     #tabs-newtab-button,
-    #vertical-tabs-newtab-button {
+    #vertical-tabs-newtab-button,
+    spacer[part="overflow-start-indicator"],
+    spacer[part="overflow-end-indicator"] {
         display: none !important;
-        color: red !important;
     }
 
-    #sidebar-tools-and-extensions-splitter {
-        display: none !important;
+    /* Compact tools/extensions area at sidebar bottom */
+    .tools-and-extensions {
+        padding-block: 1px !important;
+        gap: 0 !important;
     }
 
     .buttons-wrapper {
         min-height: unset !important;
         height: unset !important;
         padding-bottom: 7px !important;
-    }
-
-    /* Get rid of mask/shadow when there are more tabs to scroll */
-    spacer[part="overflow-start-indicator"],
-    spacer[part="overflow-end-indicator"] {
-        display: none !important;
     }
 }
