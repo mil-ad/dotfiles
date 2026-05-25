@@ -1,0 +1,364 @@
+/* === Color palette (from Firefox userChrome.css) === */
+:root {
+    --dark0_hard: #1d2021;
+    --dark0: #282828;
+    --dark0_soft: #32302f;
+    --dark1: #3c3836;
+    --dark2: #504945;
+    --dark3: #665c54;
+    --dark4: #7c6f64;
+
+    --light0_hard: #f9f5d7;
+    --light0: #fbf1c7;
+    --light1: #ebdbb2;
+    --light2: #d5c4a1;
+    --light3: #bdae93;
+    --light4: #a89984;
+
+    --faded_yellow: #b57614;
+
+    /* Popping-n-Locking */
+    --pnl-bright_yellow: #fabd2f;
+    --pnl-background: #181921;
+    --pnl-background2: #21222d;
+    --pnl-foreground: #ebdbb2;
+    --pnl-foreground2: #f2e5bc;
+}
+
+/* === Override Vivaldi's theme variables === */
+#browser {
+    --colorBg: var(--pnl-background) !important;
+    --colorBgDark: #14151c !important;
+    --colorBgDarker: var(--dark0_hard) !important;
+    --colorBgLight: var(--pnl-background2) !important;
+    --colorBgLighter: var(--dark1) !important;
+    --colorBgLightIntense: var(--pnl-background2) !important;
+    --colorBgIntense: var(--pnl-background) !important;
+    --colorBgIntenser: var(--dark0_hard) !important;
+    --colorBgFaded: var(--pnl-background2) !important;
+
+    --colorFg: var(--pnl-foreground) !important;
+    --colorFgIntense: var(--light0) !important;
+    --colorFgFaded: var(--light1) !important;
+    --colorFgFadedMore: var(--light2) !important;
+    --colorFgFadedMost: var(--light3) !important;
+
+    --colorAccentBg: var(--dark1) !important;
+    --colorAccentBgDark: var(--dark0_hard) !important;
+    --colorAccentFg: var(--pnl-foreground) !important;
+
+    --colorBorder: var(--dark1) !important;
+    --colorBorderSubtle: var(--dark1) !important;
+    --colorBorderIntense: var(--faded_yellow) !important;
+
+    --colorHighlightBg: var(--faded_yellow) !important;
+    --colorHighlightBgDark: #8f5d10 !important;
+    --colorHighlightFg: var(--pnl-foreground) !important;
+
+    --colorTabBar: var(--pnl-background) !important;
+}
+
+/* === Fonts === */
+#browser,
+#browser button,
+#browser input,
+#browser select,
+#browser textarea,
+.menu,
+.button-popup,
+#contentAreaContextMenu {
+    font-family: "Berkeley Mono SemiCondensed", "Iosevka Milad" !important;
+    font-weight: 600 !important;
+    font-size: 0.75rem !important;
+}
+
+.UrlBar-UrlField,
+.UrlBar-AddressField input[type="text"] {
+    font-family: "Berkeley Mono SemiCondensed", "Iosevka Milad" !important;
+    font-weight: 600 !important;
+    font-size: 1rem !important;
+}
+
+.tab .title {
+    font-family: "Berkeley Mono SemiCondensed", "Iosevka Milad" !important;
+    font-weight: 600 !important;
+    font-size: 10px !important;
+    color: var(--light0) !important;
+}
+
+.tabbar-workspace-button .button-title,
+.WorkspacePopup-Items .title {
+    font-family: "Berkeley Mono SemiCondensed", "Iosevka Milad" !important;
+    font-weight: 800 !important;
+    font-size: 11px !important;
+}
+
+/* === Tabs === */
+#browser .tab {
+    border-radius: 6px !important;
+    border: 1px solid var(--dark1) !important;
+    background-color: #1E1E28 !important;
+}
+
+#browser .tab.active {
+    background-color: var(--dark1) !important;
+    border: 1px solid var(--faded_yellow) !important;
+    color: var(--pnl-foreground) !important;
+}
+
+/* hide close button on inactive tabs */
+.tab:not(:hover) .close {
+    display: none !important;
+}
+
+/* Move the first tab up to align with the floating webview's top border:
+ * the workspace button + tab-bar-before sit above the first tab by default. */
+.tabs-left #tabs-tabbar-container .toolbar-tabbar-before,
+.tabs-right #tabs-tabbar-container .toolbar-tabbar-before {
+    display: none !important;
+}
+
+/* Vertical tab spacing: tabs are absolutely positioned at fixed --Height
+ * intervals, so the "gap" between them is created by leaving 4px of the
+ * slot empty (2px at top, 2px at bottom of the tab). Tab-header is forced
+ * flexible so its content stays centered when the tab shrinks. */
+.tabs-left .tab-wrapper,
+.tabs-right .tab-wrapper {
+    margin-inline: 4px !important;
+    margin-block: 2px !important;
+    max-height: calc(var(--Height) - 4px) !important;
+}
+
+#browser.tabs-left .tab:not(.tab-accordion, .tab-in-accordion),
+#browser.tabs-right .tab:not(.tab-accordion, .tab-in-accordion) {
+    max-height: calc(var(--Height) - 4px) !important;
+}
+
+#browser.tabs-left .tab .tab-header,
+#browser.tabs-right .tab .tab-header {
+    flex: 1 1 auto !important;
+    min-height: 0 !important;
+}
+
+/* pinned tabs narrower */
+:root {
+    --tab-pinned-expanded-background-width: 24px !important;
+    --tab-min-height: 24px !important;
+}
+
+/* === Address bar === */
+.UrlBar-AddressField {
+    background-color: #1E1E28 !important;
+    border: 1px solid var(--dark2) !important;
+    border-radius: 5px !important;
+}
+
+.UrlBar-AddressField:focus-within {
+    border-color: var(--faded_yellow) !important;
+    outline: none !important;
+    box-shadow: none !important;
+}
+
+#browser .UrlBar-UrlField {
+    color: var(--light1) !important;
+    background-color: transparent !important;
+}
+
+/* === Backgrounds ===
+ * Two layers:
+ *   - "shell" (toolbar + tab sidebar + panels) lighter
+ *   - "canvas" (root + webview area) darker, so the shell appears to float above it
+ */
+#browser:not(.is-settingspage) {
+    background-color: var(--pnl-background) !important;
+    background-image: none !important;
+}
+
+#webview-container {
+    background-color: #24242A !important;
+}
+
+/* Shell layer — toolbar, tab sidebar, panels */
+#tabs-tabbar-container,
+#header,
+.tabbar-wrapper,
+#panels-container,
+#panels,
+#switch,
+.mainbar,
+.toolbar-mainbar {
+    background-color: #24242A !important;
+}
+
+/* If unified-ui is on, kill its translucent overlay so colors don't mix with the page */
+#browser.unified-ui:not(.is-settingspage):before {
+    background-color: transparent !important;
+    backdrop-filter: none !important;
+}
+
+/* === Floating webview === */
+#browser:not(.fullscreen):not(.is-settingspage) #webpage-stack .webpageview.active {
+    margin: 2px 6px 6px 6px !important;
+    border: 1px solid var(--dark2) !important;
+    border-radius: 6px !important;
+    overflow: clip !important;
+    background-color: #24242A !important;
+}
+
+#browser:not(.fullscreen):not(.is-settingspage) #webpage-stack .webpageview.active .webpage,
+#browser:not(.fullscreen):not(.is-settingspage) #webpage-stack .webpageview.active .internal-page {
+    background-color: #24242A !important;
+}
+
+#browser.fullscreen #webpage-stack .webpageview.active {
+    margin: 0 !important;
+    border: none !important;
+    border-radius: 0 !important;
+}
+
+/* === Hover/active button colors (yellow accent) === */
+.button-toolbar > button:hover:not(:disabled),
+.button-toolbar > button:focus-visible:not(:disabled) {
+    color: var(--pnl-bright_yellow) !important;
+    background-color: transparent !important;
+}
+
+.bookmark-bar button:hover,
+.bookmark-bar button:focus-visible {
+    color: var(--pnl-bright_yellow) !important;
+    background-color: var(--dark1) !important;
+}
+
+/* === Menus / popups === */
+.menu > ul,
+.menu ul ul,
+.button-popup,
+.OmniDropdown {
+    background-color: var(--pnl-background) !important;
+    border: 1px solid var(--dark1) !important;
+}
+
+.menu > ul li.selectedItem > a,
+.menu > ul li a:focus {
+    background-color: var(--faded_yellow) !important;
+    color: var(--pnl-foreground) !important;
+}
+
+/* Kill Vivaldi's inverse-rounding "mask" so it doesn't fight our border */
+#browser #webpage-stack .webpageview.tiled.visible:before,
+#browser #webpage-stack .webpageview.tiled.visible:after,
+#browser #webpage-stack:before,
+#browser #webpage-stack:after {
+    -webkit-mask-box-image: none !important;
+    mask-box-image: none !important;
+    content: none !important;
+}
+
+/* === Hide window buttons (titlebar disabled) === */
+.window-buttongroup {
+    display: none !important;
+}
+
+/* === Remove the 1px application border (Linux non-native) === */
+#browser.linux:not(.native),
+#browser {
+    border: none !important;
+}
+
+/* === Selection in URL bar === */
+.UrlBar-UrlField.pseudo-selected:first-line {
+    color: var(--pnl-foreground) !important;
+    background-color: var(--faded_yellow) !important;
+}
+
+/* === Suggestion dropdown highlighted item === */
+.OmniLinkItem--Highlighted:not(.OmniLinkItem--ButtonFocus) {
+    background-color: var(--faded_yellow) !important;
+    color: var(--pnl-foreground) !important;
+}
+
+/* === Bookmark bar === */
+.bookmark-bar {
+    background-color: var(--pnl-background) !important;
+    color: var(--pnl-foreground) !important;
+    border-color: var(--dark1) !important;
+}
+
+/* === Hide toolbar elements === */
+/* Show Panel toggle button */
+.button-toolbar:has(> button[data-name="PanelToggle"]) {
+    display: none !important;
+}
+
+/* Panel-width spacer */
+.button-toolbar.toolbar-spacer-panel,
+.button-toolbar:has(> button[data-name="PanelWidthSpacer"]) {
+    display: none !important;
+}
+
+/* Tabs popup button */
+.button-toolbar:has(> button[data-name="TabButton"]) {
+    display: none !important;
+}
+
+/* Generic toolbar spacers */
+.button-toolbar.toolbar-spacer,
+.button-toolbar.toolbar-spacer-flexible,
+.button-toolbar:has(> button[data-name="Spacer"]),
+.button-toolbar:has(> button[data-name="FlexibleSpacer"]) {
+    display: none !important;
+}
+
+/* VPN / Proton VPN button */
+.button-toolbar.protonVPN,
+.button-toolbar:has(> button[data-name="VPNButton"]),
+.button-toolbar:has(> button[data-name="ProxyButton"]) {
+    display: none !important;
+}
+
+/* Profile button (the real data-name is AccountButton) */
+.button-toolbar.profile-popup,
+.button-toolbar:has(> button[data-name="ProfileButton"]),
+.button-toolbar:has(> button[data-name="AccountButton"]) {
+    display: none !important;
+}
+
+/* New Tab button (in the tab bar) */
+.button-toolbar.newtab,
+.button-toolbar:has(> button[data-name="NewTab"]) {
+    display: none !important;
+}
+
+/* Vivaldi menu / burger button */
+button.vivaldi {
+    display: none !important;
+}
+
+/* Bookmark Page button inside the address bar */
+.UrlBar-AddressField .BookmarkButton {
+    display: none !important;
+}
+
+/* === Address bar fills available space === */
+.toolbar-mainbar .UrlBar-AddressField {
+    flex: 1 1 auto !important;
+    max-width: none !important;
+    /* Vivaldi gives the URL bar its own 2px side-margin; reset so the
+       toolbar's 6px padding alone controls alignment with the page border */
+    margin: 0 !important;
+}
+
+/* Vivaldi reserves 100px on the right of the mainbar/titlebar
+   for the (now hidden) window-buttongroup. Reclaim that space. */
+#browser.linux:not(.native).address-top .toolbar:has(.window-buttongroup.on-mainbar),
+#browser.linux:not(.native) #titlebar:has(.window-buttongroup),
+#browser.win:not(.native).address-top .toolbar:has(.window-buttongroup.on-mainbar),
+#browser.win:not(.native) #titlebar:has(.window-buttongroup) {
+    padding-right: 0 !important;
+}
+
+/* Align toolbar contents with the floating webview's left border (6px in) */
+.toolbar-mainbar {
+    padding-left: 6px !important;
+    padding-right: 6px !important;
+}
