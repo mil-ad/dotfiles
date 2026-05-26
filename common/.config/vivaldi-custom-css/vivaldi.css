@@ -146,6 +146,17 @@
     --tab-min-height: 24px !important;
 }
 
+/* Hide the scrollbar that appears on the vertical tab strip when tabs overflow. */
+#tabs-container.left .tab-strip.overflow,
+#tabs-container.right .tab-strip.overflow {
+    scrollbar-width: none !important;
+    scrollbar-gutter: auto !important;
+}
+#tabs-container.left .tab-strip.overflow::-webkit-scrollbar,
+#tabs-container.right .tab-strip.overflow::-webkit-scrollbar {
+    display: none !important;
+}
+
 /* === Address bar === */
 .UrlBar-AddressField {
     background-color: #1E1E28 !important;
@@ -205,6 +216,21 @@
     background-color: #24242A !important;
 }
 
+/* Collapse the webview margin on the side where the tab bar sits — tabs
+ * carry their own 4px outer margin, so otherwise the gap doubles up. */
+#browser.tabs-left:not(.fullscreen):not(.is-settingspage) #webpage-stack .webpageview.active {
+    margin-left: 0 !important;
+}
+#browser.tabs-right:not(.fullscreen):not(.is-settingspage) #webpage-stack .webpageview.active {
+    margin-right: 0 !important;
+}
+#browser.tabs-top:not(.fullscreen):not(.is-settingspage) #webpage-stack .webpageview.active {
+    margin-top: 0 !important;
+}
+#browser.tabs-bottom:not(.fullscreen):not(.is-settingspage) #webpage-stack .webpageview.active {
+    margin-bottom: 0 !important;
+}
+
 #browser:not(.fullscreen):not(.is-settingspage) #webpage-stack .webpageview.active .webpage,
 #browser:not(.fullscreen):not(.is-settingspage) #webpage-stack .webpageview.active .internal-page {
     background-color: #24242A !important;
@@ -256,6 +282,11 @@
 
 /* === Hide window buttons (titlebar disabled) === */
 .window-buttongroup {
+    display: none !important;
+}
+
+/* === Hide left panel switcher and panel container === */
+#panels-container {
     display: none !important;
 }
 
@@ -361,4 +392,9 @@ button.vivaldi {
 .toolbar-mainbar {
     padding-left: 6px !important;
     padding-right: 6px !important;
+}
+
+/* Extra breathing room above the address bar / toolbar. */
+.mainbar {
+    padding-top: 2px !important;
 }
