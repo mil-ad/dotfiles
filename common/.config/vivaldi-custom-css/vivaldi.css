@@ -111,6 +111,11 @@
     display: none !important;
 }
 
+/* Kill Vivaldi's white drop-shadow halo around the active tab's favicon. */
+#browser .tab.active .tab-header .favicon:not(.svg) {
+    filter: none !important;
+}
+
 /* Move the first tab up to align with the floating webview's top border:
  * the workspace button + tab-bar-before sit above the first tab by default. */
 .tabs-left #tabs-tabbar-container .toolbar-tabbar-before,
