@@ -271,16 +271,41 @@ browser#sidebar {
         padding: 0 0.8rem !important;
     }
 
-    /* Pinned tabs — narrower cells, no inner padding */
+    /* Pinned tabs — 4-column grid of icon pills.
+     *
+     * `minmax(25%, 1fr)` forces exactly 4 cols regardless of sidebar width
+     * (`repeat(4, 1fr)` was getting ignored on this ::part — the default
+     * `auto-fit` rule kept winning).
+     *
+     * Gaps: `gap` / `column-gap` are silently dropped on this ::part, so the
+     * horizontal gap is created via tab `padding-inline` instead (3px each
+     * side = 6px between pills). Wrapper `padding-inline` is `0.4rem - 3px`
+     * so the first pill's left edge still lands at `0.4rem`, matching the
+     * normal-tab `.tab-background` inset.
+     *
+     * Default `#tabbrowser-tabs` has `grid-gap: --space-small` (~8px) which
+     * leaves a visible gap between the pinned and normal sections — clamp to
+     * 4px and zero scrollbox padding to tighten that boundary. */
     #pinned-tabs-container {
         height: unset !important;
     }
 
     #pinned-tabs-container[orient="vertical"]::part(items-wrapper) {
-        grid-template-columns: repeat(
-            auto-fit,
-            minmax(24px, max-content)
-        ) !important;
+        display: grid !important;
+        grid-template-columns: repeat(auto-fit, minmax(25%, 1fr)) !important;
+        grid-auto-rows: var(--tab-pinned-expanded-background-width) !important;
+        row-gap: 4px !important;
+        align-content: start !important;
+        padding-inline: calc(0.4rem - 3px) !important;
+    }
+
+    #pinned-tabs-container[orient="vertical"] .tabbrowser-tab {
+        height: var(--tab-pinned-expanded-background-width) !important;
+        width: auto !important;
+        min-width: 0 !important;
+        padding-inline: 3px !important;
+        padding-block: 0 !important;
+        flex: unset !important;
     }
 
     #pinned-tabs-container .tab-content {
@@ -289,15 +314,29 @@ browser#sidebar {
     }
 
     #pinned-tabs-container[orient="vertical"] .tab-background {
-        margin-inline: 2px !important;
+        margin: 0 !important;
+        min-height: 0 !important;
+        border-radius: 6px !important;
     }
 
-    /* Browser content frame */
+    #tabbrowser-tabs[orient="vertical"] {
+        gap: 4px !important;
+    }
+
+    #pinned-tabs-container[orient="vertical"]::part(scrollbox),
+    #tabbrowser-arrowscrollbox[orient="vertical"]::part(scrollbox) {
+        padding-block: 0 !important;
+    }
+
+    /* Browser content frame — match urlbar/tab border (1px dark1, 5px radius).
+     * `overflow: clip` makes the inner web content respect the rounded
+     * corners (otherwise it paints square over them). */
     #tabbrowser-tabbox {
-        border: 0.5px solid var(--dark0_hard) !important;
-        border-radius: 10px !important;
+        border: 1px solid var(--dark1) !important;
+        border-radius: 5px !important;
         margin: 2px 0 7px 7px !important;
         box-shadow: none !important;
+        overflow: clip !important;
     }
 
     /* No margin in fullscreen video */
