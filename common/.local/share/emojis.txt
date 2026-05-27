@@ -27,8 +27,8 @@
 🤪 zany face
 😝 squinting face with tongue
 🤑 money-mouth face
-🤗 smiling face with open hands - hugging face
-🤭 face with hand over mouth - chuckle
+🤗 smiling face with open hands; hugging face
+🤭 face with hand over mouth; chuckle
 🫢 face with open eyes and hand over mouth
 🫣 face with peeking eye
 🤫 shushing face
@@ -57,12 +57,12 @@
 😴 sleeping face
 🫩 face with bags under eyes
 😷 face with medical mask
-🤒 face with thermometer
-🤕 face with head-bandage
-🤢 nauseated face
-🤮 face vomiting
+🤒 face with thermometer; sick
+🤕 face with head-bandage; sick
+🤢 nauseated face; sick
+🤮 face vomiting; sick
 🤧 sneezing face
-🥵 hot face
+🥵 hot face; sweat
 🥶 cold face
 🥴 woozy face
 😵 face with crossed-out eyes
@@ -90,9 +90,9 @@
 😧 anguished face
 😨 fearful face
 😰 anxious face with sweat
-😥 sad but relieved face
-😢 crying face
-😭 loudly crying face
+😥 sad but relieved face; tear
+😢 crying face; tear
+😭 loudly crying face; tear
 😱 face screaming in fear
 😖 confounded face
 😣 persevering face
@@ -2853,7 +2853,7 @@
 🍯 honey pot
 🍼 baby bottle
 🥛 glass of milk
-☕ hot beverage
+☕ hot beverage; coffee
 🫖 teapot
 🍵 teacup without handle
 🍶 sake
@@ -2976,7 +2976,7 @@
 🚜 tractor
 🏎️ racing car
 🏍️ motorcycle
-🛵 motor scooter
+🛵 motor scooter; vespa
 🦽 manual wheelchair
 🦼 motorized wheelchair
 🛺 auto rickshaw
