@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+start="${1:-$HOME}"
+
+selected=$(fd --type f --follow \
+   --exclude '*.sdr' \
+   --exclude 'node_modules' \
+   . "$start" | "$HOME/.local/bin/fzfmenu") || exit 0
+
+[ -n "$selected" ] && exec xdg-open "$selected"

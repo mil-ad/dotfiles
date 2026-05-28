@@ -154,7 +154,7 @@ bindsym --no-repeat $mod+r exec  ~/.local/bin/open-github-repo
 bindsym --no-repeat $mod+t exec  ~/.local/bin/add-todoist-task
 bindsym --no-repeat $mod+Shift+r exec  ~/.local/bin/open-github-pr
 bindsym --no-repeat $mod+Shift+t exec  ~/.local/bin/review-todoist-tasks
-bindsym --no-repeat $mod+Ctrl+o exec ~/.local/bin/openfile
+bindsym --no-repeat $mod+Ctrl+o exec ~/.local/bin/open-file
 bindsym --no-repeat $mod+Ctrl+p exec ~/.local/bin/open_paper_no_annotations
 bindsym --no-repeat $mod+z exec slurp | grim -g - - | wl-copy -t image/png
 bindsym --no-repeat $mod+Shift+z exec exec slurp | grim -g - "$HOME/Pictures/screenshot-$(date +%F_%T).png" && notify-send "📸 Screenshot region saved to ${HOME}/Pictures"
