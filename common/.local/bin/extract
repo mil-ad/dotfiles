@@ -1,23 +1,60 @@
 #!/usr/bin/env bash
+#
+# Extract an archive without tarbombing the current directory: if the archive
+# holds a single top-level entry it's extracted as-is, otherwise its contents
+# are wrapped in a directory named after the archive. On success the original
+# archive is moved to the trash via trash-put (or, if that's not installed,
+# you're asked whether to delete it).
 
-assert_installed tar bunzip2 unrar gunzip unzip uncompress
+set -euo pipefail
 
-function extract {
-  if [ -f "$1" ] ; then
-    case $1 in
-      *.tar.bz2)  tar xjf "$1"        ;;
-      *.tar.gz)   tar xzf "$1"        ;;
-      *.bz2)      bunzip2 "$1"        ;;
-      *.rar)      unrar x "$1"        ;;
-      *.gz)       gunzip "$1"         ;;
-      *.tar)      tar xf "$1"         ;;
-      *.tbz2)     tar xjf "$1"        ;;
-      *.tgz)      tar xzf "$1"        ;;
-      *.zip)      unzip "$1"          ;;
-      *.Z)        uncompress "$1"     ;;
-      *)          echo "'$1' cannot be extracted via extract()" ;;
-    esac
-  else
-    echo "'$1' is not a valid file"
-  fi
-}
+file=${1:?usage: extract ARCHIVE}
+[ -f "$file" ] || { echo "extract: '$file' is not a file" >&2; exit 1; }
+
+# Stage into a temp dir so we can decide on the layout before touching cwd.
+tmp=$(mktemp -d ./.extract.XXXXXX)
+trap 'rm -rf "$tmp"' EXIT
+
+case "$file" in
+  *.tar.gz|*.tgz)   assert_installed tar;   tar xzf "$file" -C "$tmp" ;;
+  *.tar.bz2|*.tbz2) assert_installed tar;   tar xjf "$file" -C "$tmp" ;;
+  *.tar)            assert_installed tar;   tar xf  "$file" -C "$tmp" ;;
+  *.zip)            assert_installed unzip; unzip -q "$file" -d "$tmp" ;;
+  *.rar)            assert_installed unrar; unrar x "$file" "$tmp/" ;;
+  *) echo "extract: don't know how to extract '$file'" >&2; exit 1 ;;
+esac
+
+# Archive base name, used only when we need a wrapper directory.
+name=$(basename "$file"); name=${name%.*}; name=${name%.tar}
+
+shopt -s nullglob dotglob
+entries=("$tmp"/*)
+
+if [ "${#entries[@]}" -eq 1 ]; then
+  target=$(basename "${entries[0]}")
+else
+  target=$name
+fi
+
+[ -e "./$target" ] && { echo "extract: './$target' already exists" >&2; exit 1; }
+
+if [ "${#entries[@]}" -eq 1 ]; then
+  mv "${entries[0]}" "./$target"   # single entry: lift it out, trap cleans tmp
+else
+  mv "$tmp" "./$target"            # many entries: the staging dir becomes target
+  trap - EXIT
+fi
+
+echo "✅ extract: extracted '$file' into './$target'"
+
+# Extraction succeeded (set -e would have aborted otherwise) — dispose of the original.
+if command -v trash-put >/dev/null 2>&1; then
+  trash-put -- "$file" && echo "extract: moved '$file' to trash"
+else
+  printf "extract: delete original '%s'? [y/N] " "$file" >&2
+  read -r reply </dev/tty || reply=""
+  case "$reply" in
+    [yY]|[yY][eE][sS]) rm -f -- "$file"; echo "extract: deleted '$file'" ;;
+    *) echo "extract: kept '$file'" ;;
+  esac
+fi
