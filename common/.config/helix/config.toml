@@ -16,6 +16,7 @@ gutters = [
   "spacer",
   "diff"
 ]
+insecure = true
 
 # Minimum severity of diagnostics
 end-of-line-diagnostics = "disable"
@@ -77,6 +78,9 @@ C-y = [
 
 "S-h" = ":buffer-previous"
 "S-l" = ":buffer-next"
+
+[keys.select]
+y = ["yank-join", ":clipboard-yank-join"]
 
 [keys.normal.space.space]
 # Show blame info for current line
