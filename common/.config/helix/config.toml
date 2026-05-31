@@ -80,7 +80,7 @@ C-y = [
 "S-l" = ":buffer-next"
 
 [keys.select]
-y = ["yank-join", ":clipboard-yank-join"]
+y = [":yank-join", ":clipboard-yank-join"]
 
 [keys.normal.space.space]
 # Show blame info for current line
