@@ -5,10 +5,23 @@
 # are wrapped in a directory named after the archive. On success the original
 # archive is moved to the trash via trash-put (or, if that's not installed,
 # you're asked whether to delete it).
+#
+# With -t/--touch the extracted files' timestamps are reset to now, instead of
+# keeping the (often stale) mtimes recorded in the archive.
 
 set -euo pipefail
 
-file=${1:?usage: extract ARCHIVE}
+touch=false
+while [ "$#" -gt 0 ]; do
+  case "$1" in
+    -t|--touch) touch=true; shift ;;
+    --) shift; break ;;
+    -*) echo "extract: unknown option '$1'" >&2; exit 1 ;;
+    *) break ;;
+  esac
+done
+
+file=${1:?usage: extract [-t|--touch] ARCHIVE}
 [ -f "$file" ] || { echo "extract: '$file' is not a file" >&2; exit 1; }
 
 # Stage into a temp dir so we can decide on the layout before touching cwd.
@@ -43,6 +56,11 @@ if [ "${#entries[@]}" -eq 1 ]; then
 else
   mv "$tmp" "./$target"            # many entries: the staging dir becomes target
   trap - EXIT
+fi
+
+if [ "$touch" = true ]; then
+  find "./$target" -exec touch {} +
+  echo "extract: reset timestamps of './$target' to now"
 fi
 
 echo "✅ extract: extracted '$file' into './$target'"
