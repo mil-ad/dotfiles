@@ -52,6 +52,8 @@ user_pref("browser.tabs.groups.smart.enabled", false);
 user_pref("browser.tabs.groups.smart.userEnabled", false);
 user_pref("extensions.ml.enabled", false);
 user_pref("browser.sessionstore.restore_pinned_tabs_on_demand", true);
+user_pref("browser.urlbar.quickactions.enabled", true);
+
 /** Experimenting with some settings from BetterBox: ***/
 
 /** DISK AVOIDANCE ***/
