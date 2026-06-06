@@ -24,7 +24,7 @@ rhyper + lcmd - space: $HOME/.local/bin/enter-snippet $HOME/.scripts/snippets.ym
 rhyper + lshift - space : yabai -m window --toggle float
 rhyper + lcmd - e : skhd -k "cmd + ctrl - space"
 rhyper - r : $HOME/.dotfiles/linux/.local/bin/open-github-repo
-rhyper + lshift - r : $HOME/.local/bin/open-github-pr
+rhyper + lshift - r : $HOME/.local/bin/open-github-pr-or-issue
 
 rhyper + lshift - 1 : yabai -m window --space 1; yabai -m space --focus 1
 rhyper + lshift - 2 : yabai -m window --space 2; yabai -m space --focus 2

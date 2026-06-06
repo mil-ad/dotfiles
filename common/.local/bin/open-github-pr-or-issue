@@ -1,32 +1,61 @@
 #!/usr/bin/env bash
 
-# Expects to find GutHub authentication in ~/.netrc
+# Opens one of my open GitHub PRs or issues in the browser. The cache is
+# populated by refresh-github-caches (also kept warm by a systemd timer).
 
-assert_installed jq rofimenu
+assert_installed jq rofimenu refresh-github-caches
 
-cache_file="$HOME/.cache/github_prs"
+cache_file="$HOME/.cache/github_pr_or_issue"
 
-function generate_cache {
-    curl -s --netrc "https://api.github.com/search/issues?q=type:pr+involves:mil-ad+state:open+sort:updated" > "$cache_file"
+function maybe_regenerate_cache {
+    if test "$(find "$cache_file" -mmin +2)"
+    then
+        refresh-github-caches
+    fi
 }
 
-[ ! -e "$cache_file" ] && generate_cache
+[ ! -e "$cache_file" ] && refresh-github-caches
 
-prs=$(jq -r '.items[] | .title' < "$cache_file")
+# One Pango-markup row per item (rendered by rofi via -markup-rows): a Nerd Font
+# octicon coloured by state (GitHub's palette), the repo dimmed, then the title.
+# The cache holds open items plus anything closed/merged in the last fortnight:
+#   open     green  #238636   draft    grey   #656c76
+#   merged   purple #8957e5   closed   red    #da3633 (PR) / purple (issue)
+# Octicons (built from codepoints so the source stays plain ASCII):
+#   62471 git-pull-request   62685 git-pull-request-draft
+#   62684 git-pull-request-closed   62489 git-merge
+#   62491 issue-opened   62493 issue-closed
+# A single jq pass emits "html_url<TAB>markup-row" per item; mapfile slurps that
+# into an array so we never have to parse the cache a second time. We feed only
+# the markup column (cut -f2-) to rofi, and `-format i` hands back the row index
+# straight into the array. repo/title are @html-escaped so a stray <, > or & in
+# a title can't break the markup.
+mapfile -t rows < <(jq -r '
+    def esc: @html;
+    def icon($cp; $color): "<span color=\"" + $color + "\">" + ([$cp] | implode) + "</span>";
+    .items[]
+    | .html_url + "\t"
+      + (if .pull_request
+         then (if   .pull_request.merged_at then icon(62489; "#8957e5")   # merged
+               elif .state == "closed"      then icon(62684; "#da3633")   # closed, unmerged
+               elif .draft                  then icon(62685; "#656c76")   # draft
+               else                              icon(62471; "#238636")   # open
+               end)
+         else (if .state == "closed"
+               then (if .state_reason == "not_planned"
+                     then icon(62493; "#656c76")                          # closed: not planned
+                     else icon(62493; "#8957e5") end)                     # closed: completed
+               else icon(62491; "#238636")                                # open
+               end)
+         end)
+      + "  <span color=\"#7c6f64\">" + (.repository_url | sub(".*/repos/"; "") | esc) + "</span>"
+      + "  " + (.title | esc)
+' < "$cache_file")
 
-# We have the full repo URL in the response but not the repo name on its own.
-# Let's construct it for dmenu
-repos=$(jq -r ".items[] | .repository_url" < "$cache_file" | awk -F '/' '{print $(NF-1)"/"$NF}')
+selected_idx=$(printf '%s\n' "${rows[@]}" | cut -f2- | rofimenu -format i -markup-rows)
 
-prompts=$(paste -d " " <(printf "$repos") <(printf "$prs"))
-
-user_selected_idx=$(printf "$prompts" | rofimenu -format i)
-
-if [ "$user_selected_idx" -ge 0 ]; then
-  jq -r ".items[$user_selected_idx] | .html_url" < "$cache_file" | xargs xdg-open
+if [ -n "$selected_idx" ] && [ "$selected_idx" -ge 0 ]; then
+    xdg-open "${rows[$selected_idx]%%$'\t'*}"
 fi
 
-# If the cache file is 2min+ old, regenerate it
-if test "$(find "$cache_file" -mmin +2)"; then
-    generate_cache
-fi
+maybe_regenerate_cache

@@ -1,29 +1,83 @@
 #!/usr/bin/env bash
 
-# Expects to find GutHub authentication in ~/.netrc
+# Refreshes the GitHub caches consumed by open-github-pr-or-issue and
+# open-github-repo. Expects GitHub authentication in ~/.netrc.
+#
+# The PR/issue and repos fetches are independent, so they run concurrently;
+# within each, page 1 doubles as the page-count probe and any extra pages are
+# then fetched in parallel.
 
-set -x
+set -euo pipefail
 
-assert_installed jq curl
+assert_installed jq curl flock
+
+# Single-instance guard: opening the menus in quick succession (or overlapping
+# the systemd timer) would otherwise kick off several full refreshes at once.
+# Wait up to a minute for any in-flight refresh; if it's still holding the lock
+# after that it's probably wedged, so notify and bail rather than pile on.
+exec 9>"$HOME/.cache/github_refresh.lock"
+if ! flock -w 60 9; then
+    notify-send "refresh-github-caches" "Another refresh is still running after 60s; giving up." 2>/dev/null || true
+    exit 1
+fi
 
 ping -c 1 api.github.com > /dev/null || { echo "Cannot reach GitHub API. Exiting."; exit 1; }
 
+pr_or_issue_cache="$HOME/.cache/github_pr_or_issue"
+repos_cache="$HOME/.cache/github_repos"
 
-prs_cache_file="$HOME/.cache/github_prs"
-repos_cache_file="$HOME/.cache/github_repos_dmenu"
+accept_header="Accept: application/vnd.github.v3+json"
 
-curl -s --netrc "https://api.github.com/search/issues?q=type:pr+involves:mil-ad+state:open+sort:updated" > "$prs_cache_file"
-
-rest_request=https://api.github.com/user/repos?per_page=100\&affiliation=owner,collaborator,organization_member\&sort=push
-function get_repos_all_pages {
-    github_api_accept_header="Accept: application/vnd.github.v3+json"
-
-    # Use pagination if necessary
-    last_page=$(curl -s -I --netrc "${rest_request}" -H "${github_api_accept_header}" | grep -oP '(?<=page=)(\d+)(?=>; rel="last")')
-    for page in $(seq "$last_page"); do
-        curl -s --netrc "${rest_request}&page=$page" -H "${github_api_accept_header}"  | jq ".[] | {name: .full_name, url: .html_url}"
+# Fetches every page of $1 and prints the page bodies in page order (so the
+# API's sort order is preserved). Page 1 is fetched with its response headers
+# so the page count comes from the same request (no extra HEAD round-trip);
+# any remaining pages are then fetched in parallel.
+function fetch_all_pages {
+    local url=$1 last page tmpdir
+    tmpdir=$(mktemp -d)
+    curl -s -D "$tmpdir/headers" --netrc "$url&page=1" -H "$accept_header" > "$tmpdir/1"
+    last=$(grep -oiP '(?<=page=)(\d+)(?=>; rel="last")' "$tmpdir/headers" || true)
+    last=${last:-1}
+    for page in $(seq 2 "$last"); do
+        curl -s --netrc "$url&page=$page" -H "$accept_header" > "$tmpdir/$page" &
     done
+    wait
+    for page in $(seq "$last"); do cat "$tmpdir/$page"; done
+    rm -rf "$tmpdir"
 }
 
-repos=$(get_repos_all_pages)
-echo "$repos" > "$repos_cache_file"
+# PRs and issues that involve me: everything still open, plus anything closed
+# (or, for PRs, merged) within the last fortnight. These are two disjoint
+# searches run in parallel; consumers tell PRs from issues via .pull_request
+# and read .state / .pull_request.merged_at for colouring. Each page is a
+# {total_count, items} object, so flatten the items arrays into one
+# {items: [...]} object, newest-updated first.
+function refresh_pr_or_issue {
+    local since open_url closed_url t_open t_closed
+    since=$(date -d '14 days ago' +%F)
+    open_url="https://api.github.com/search/issues?per_page=100&q=involves:mil-ad+state:open"
+    closed_url="https://api.github.com/search/issues?per_page=100&q=involves:mil-ad+closed:>=$since"
+    t_open=$(mktemp) t_closed=$(mktemp)
+    fetch_all_pages "$open_url"   > "$t_open" &
+    fetch_all_pages "$closed_url" > "$t_closed" &
+    wait
+    cat "$t_open" "$t_closed" \
+        | jq -s '{items: [.[].items[]] | sort_by(.updated_at) | reverse}' > "$pr_or_issue_cache.tmp"
+    mv "$pr_or_issue_cache.tmp" "$pr_or_issue_cache"
+    rm -f "$t_open" "$t_closed"
+}
+
+# Repos I own / collaborate on / belong to, most-recently-pushed first.
+function refresh_repos {
+    local url="https://api.github.com/user/repos?per_page=100&affiliation=owner,collaborator,organization_member&sort=push"
+    fetch_all_pages "$url" | jq -c '.[] | {name: .full_name, url: .html_url}' > "$repos_cache.tmp"
+    mv "$repos_cache.tmp" "$repos_cache"
+}
+
+# Atomic writes (.tmp -> mv) mean a reader never sees a half-written cache,
+# even though both jobs run at once. Wait on each PID so a failure surfaces
+# (non-zero exit) rather than being swallowed by a bare `wait`.
+refresh_pr_or_issue & pr_pid=$!
+refresh_repos & repos_pid=$!
+wait "$pr_pid"
+wait "$repos_pid"
