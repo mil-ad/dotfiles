@@ -6,4 +6,6 @@ else
     prompt_arg=(-theme-str 'prompt { enabled: false; }')
 fi
 
-/usr/bin/rofi -dmenu -i -matching fuzzy -sort -sorting-method fzf "${prompt_arg[@]}" "$@" -
+# exec so the PID callers see (e.g. `$!` when backgrounded) is rofi itself, not
+# this wrapper — otherwise killing the wrapper would orphan rofi.
+exec /usr/bin/rofi -dmenu -i -matching fuzzy -sort -sorting-method fzf "${prompt_arg[@]}" "$@" -

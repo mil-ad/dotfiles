@@ -1,61 +1,75 @@
 #!/usr/bin/env bash
 
-# Opens one of my open GitHub PRs or issues in the browser. The cache is
-# populated by refresh-github-caches (also kept warm by a systemd timer).
+# Opens one of my open GitHub PRs or issues in the browser. The cache is built
+# on first use and then kept fresh by the refresh-gh-cache systemd timer (or
+# on demand with Ctrl-r, below).
 
 assert_installed jq rofimenu refresh-github-caches
 
 cache_file="$HOME/.cache/github_pr_or_issue"
 
-function maybe_regenerate_cache {
-    if test "$(find "$cache_file" -mmin +2)"
-    then
-        refresh-github-caches
-    fi
+# Show a throwaway "Refreshing…" entry while the (blocking) refresh runs, then
+# dismiss it — gives feedback for the few seconds gh takes.
+function refresh_with_feedback {
+    echo 'Refreshing…' | rofimenu -theme-str 'inputbar { enabled: false; } listview { padding: 0; }' &
+    local feedback=$!
+    refresh-github-caches
+    kill "$feedback" 2>/dev/null
+    wait "$feedback" 2>/dev/null
 }
 
-[ ! -e "$cache_file" ] && refresh-github-caches
-
-# One Pango-markup row per item (rendered by rofi via -markup-rows): a Nerd Font
-# octicon coloured by state (GitHub's palette), the repo dimmed, then the title.
-# The cache holds open items plus anything closed/merged in the last fortnight:
+# Build the `rows` array: one "html_url<TAB>markup-row" per item, in a single jq
+# pass (mapfile slurps it, so we never parse the cache twice). The markup is a
+# Nerd Font octicon coloured by state (GitHub's palette), the repo dimmed, then
+# the title. The cache holds open items plus anything closed/merged in the last
+# fortnight:
 #   open     green  #238636   draft    grey   #656c76
 #   merged   purple #8957e5   closed   red    #da3633 (PR) / purple (issue)
 # Octicons (built from codepoints so the source stays plain ASCII):
 #   62471 git-pull-request   62685 git-pull-request-draft
 #   62684 git-pull-request-closed   62489 git-merge
 #   62491 issue-opened   62493 issue-closed
-# A single jq pass emits "html_url<TAB>markup-row" per item; mapfile slurps that
-# into an array so we never have to parse the cache a second time. We feed only
-# the markup column (cut -f2-) to rofi, and `-format i` hands back the row index
-# straight into the array. repo/title are @html-escaped so a stray <, > or & in
-# a title can't break the markup.
-mapfile -t rows < <(jq -r '
-    def esc: @html;
-    def icon($cp; $color): "<span color=\"" + $color + "\">" + ([$cp] | implode) + "</span>";
-    .items[]
-    | .html_url + "\t"
-      + (if .pull_request
-         then (if   .pull_request.merged_at then icon(62489; "#8957e5")   # merged
-               elif .state == "closed"      then icon(62684; "#da3633")   # closed, unmerged
-               elif .draft                  then icon(62685; "#656c76")   # draft
-               else                              icon(62471; "#238636")   # open
-               end)
-         else (if .state == "closed"
-               then (if .state_reason == "not_planned"
-                     then icon(62493; "#656c76")                          # closed: not planned
-                     else icon(62493; "#8957e5") end)                     # closed: completed
-               else icon(62491; "#238636")                                # open
-               end)
-         end)
-      + "  <span color=\"#7c6f64\">" + (.repository_url | sub(".*/repos/"; "") | esc) + "</span>"
-      + "  " + (.title | esc)
-' < "$cache_file")
+# repo/title are @html-escaped so a stray <, > or & can't break the markup.
+function build_rows {
+    mapfile -t rows < <(jq -r '
+        def esc: @html;
+        def icon($cp; $color): "<span color=\"" + $color + "\">" + ([$cp] | implode) + "</span>";
+        .items[]
+        | .html_url + "\t"
+          + (if .pull_request
+             then (if   .pull_request.merged_at then icon(62489; "#8957e5")   # merged
+                   elif .state == "closed"      then icon(62684; "#da3633")   # closed, unmerged
+                   elif .draft                  then icon(62685; "#656c76")   # draft
+                   else                              icon(62471; "#238636")   # open
+                   end)
+             else (if .state == "closed"
+                   then (if .state_reason == "not_planned"
+                         then icon(62493; "#656c76")                          # closed: not planned
+                         else icon(62493; "#8957e5") end)                     # closed: completed
+                   else icon(62491; "#238636")                                # open
+                   end)
+             end)
+          + "  <span color=\"#7c6f64\">" + (.repository_url | sub(".*/repos/"; "") | esc) + "</span>"
+          + "  " + (.title | esc)
+    ' < "$cache_file")
+}
 
-selected_idx=$(printf '%s\n' "${rows[@]}" | cut -f2- | rofimenu -format i -markup-rows)
+[ ! -e "$cache_file" ] && refresh-github-caches
 
-if [ -n "$selected_idx" ] && [ "$selected_idx" -ge 0 ]; then
-    xdg-open "${rows[$selected_idx]%%$'\t'*}"
-fi
-
-maybe_regenerate_cache
+# Show the menu. Ctrl-r forces a refresh and reopens (rofi exits 10 for the
+# kb-custom-1 binding) — handy right after creating a PR/issue that isn't cached
+# yet. `-format i` returns the row index straight into the `rows` array; we read
+# only the markup column (cut -f2-) into rofi.
+while true; do
+    build_rows
+    selected_idx=$(printf '%s\n' "${rows[@]}" | cut -f2- \
+        | rofimenu -format i -markup-rows -kb-custom-1 'Control+r')
+    case $? in
+        0)  if [ -n "$selected_idx" ] && [ "$selected_idx" -ge 0 ]; then
+                xdg-open "${rows[$selected_idx]%%$'\t'*}"
+            fi
+            break ;;
+        10) refresh_with_feedback ;;   # rebuild from the fresh cache and reshow
+        *)  break ;;                   # Esc / cancelled
+    esac
+done

@@ -1,30 +1,44 @@
 #!/usr/bin/env bash
 
-# Opens one of my GitHub repos in the browser. The cache is populated by
-# refresh-github-caches (also kept warm by a systemd timer).
+# Opens one of my GitHub repos in the browser. The cache is built on first use
+# and then kept fresh by the refresh-gh-cache systemd timer (or on demand with
+# Ctrl-r, below).
 
 assert_installed jq rofimenu refresh-github-caches
 
 cache_file="$HOME/.cache/github_repos"
 
-function maybe_regenerate_cache {
-    if test "$(find "$cache_file" -mmin +2)"
-    then
-        refresh-github-caches
-    fi
+# Show a throwaway "Refreshing…" entry while the (blocking) refresh runs, then
+# dismiss it — gives feedback for the few seconds gh takes.
+function refresh_with_feedback {
+    echo 'Refreshing…' | rofimenu -theme-str 'inputbar { enabled: false; } listview { padding: 0; }' &
+    local feedback=$!
+    refresh-github-caches
+    kill "$feedback" 2>/dev/null
+    wait "$feedback" 2>/dev/null
+}
+
+# Build the `rows` array: one "url<TAB>name" per repo, in a single jq pass
+# (mapfile slurps it, so we don't parse the cache twice). rofimenu shows just the
+# name column and `-format i` hands back the row index straight into the array.
+function build_rows {
+    mapfile -t rows < <(jq -r '.url + "\t" + .name' "$cache_file")
 }
 
 [ ! -e "$cache_file" ] && refresh-github-caches
 
-# A single jq pass emits "url<TAB>name" per repo; mapfile slurps it into an array
-# so we don't parse the cache twice. rofimenu shows just the name column and
-# `-format i` hands back the row index straight into the array.
-mapfile -t rows < <(jq -r '.url + "\t" + .name' "$cache_file")
-
-selected_idx=$(printf '%s\n' "${rows[@]}" | cut -f2- | rofimenu -format i)
-
-if [ -n "$selected_idx" ] && [ "$selected_idx" -ge 0 ]; then
-    xdg-open "${rows[$selected_idx]%%$'\t'*}"
-fi
-
-maybe_regenerate_cache
+# Show the menu. Ctrl-r forces a refresh and reopens (rofi exits 10 for the
+# kb-custom-1 binding) — handy right after creating a repo that isn't cached yet.
+while true; do
+    build_rows
+    selected_idx=$(printf '%s\n' "${rows[@]}" | cut -f2- \
+        | rofimenu -format i -kb-custom-1 'Control+r')
+    case $? in
+        0)  if [ -n "$selected_idx" ] && [ "$selected_idx" -ge 0 ]; then
+                xdg-open "${rows[$selected_idx]%%$'\t'*}"
+            fi
+            break ;;
+        10) refresh_with_feedback ;;   # rebuild from the fresh cache and reshow
+        *)  break ;;                   # Esc / cancelled
+    esac
+done
