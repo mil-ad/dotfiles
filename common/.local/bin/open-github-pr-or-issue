@@ -8,14 +8,14 @@ assert_installed jq rofimenu refresh-github-caches
 
 cache_file="$HOME/.cache/github_pr_or_issue"
 
-# Show a throwaway "Refreshing…" entry while the (blocking) refresh runs, then
-# dismiss it — gives feedback for the few seconds gh takes.
+# Pop a sticky "Refreshing…" notification while the (blocking) refresh runs, then
+# close it by id. Best-effort: if notify-send/dunstctl aren't around the refresh
+# still happens, just without the toast.
 function refresh_with_feedback {
-    echo 'Refreshing…' | rofimenu -theme-str 'inputbar { enabled: false; } listview { padding: 0; }' &
-    local feedback=$!
+    local id
+    id=$(notify-send -p -t 0 'Fetching from GitHub...' 2>/dev/null)
     refresh-github-caches
-    kill "$feedback" 2>/dev/null
-    wait "$feedback" 2>/dev/null
+    [ -n "$id" ] && dunstctl close "$id" 2>/dev/null
 }
 
 # Build the `rows` array: one "html_url<TAB>markup-row" per item, in a single jq
