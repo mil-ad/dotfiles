@@ -5,7 +5,7 @@
 [color]
     ui = auto
 [core]
-    editor = vim
+    editor = hx "$@" || vim
     pager = delta
 	excludesFile = ~/.config/git/ignore
 [push]
