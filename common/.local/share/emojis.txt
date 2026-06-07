@@ -2730,7 +2730,7 @@
 🌼 blossom
 🌷 tulip
 🪻 hyacinth
-🌱 seedling
+🌱 seedling; evergreen
 🪴 potted plant
 🌲 evergreen tree
 🌳 deciduous tree
@@ -3020,7 +3020,7 @@
 🛎️ bellhop bell
 🧳 luggage
 ⌛ hourglass done
-⏳ hourglass not done
+⏳ hourglass not done; wip; in progress
 ⌚ watch
 ⏰ alarm clock
 ⏱️ stopwatch

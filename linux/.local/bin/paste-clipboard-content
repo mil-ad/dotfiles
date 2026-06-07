@@ -1,13 +1,16 @@
 #!/usr/bin/env bash
 
 # I have experimented with Shift+Insert and Ctrl+Shift+V with both ydotool and
-# wtype to varying levels success
+# wtype to varying levels success. I have had the best results with ydtotool and
+# Shift+Insert. I'd prefer wtype as it doesn't need a daemon but ¯\_(ツ)_/¯
 
-assert_installed ydotool
+assert_installed ydotool || exit 1
+
 # (Left)Shift: 42
 # Insert: 110
 ydotool key 42:1 110:1 42:0 110:0
 
+# Some failed attempts:
 # wtype -P Shift_L -k Insert -p Shift_L
 # wtype -M shift -k Insert -m shift
 # wtype -M ctrl -M shift -k v
