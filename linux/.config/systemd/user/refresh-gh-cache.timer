@@ -2,6 +2,7 @@
 Description=Timer for refreshing Github caches every 15 mins
 
 [Timer]
+OnActiveSec=1min
 OnUnitActiveSec=15min
 RandomizedDelaySec=30sec
 

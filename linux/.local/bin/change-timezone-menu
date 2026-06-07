@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-assert_installed timedatectl
+assert_installed timedatectl || exit 1
 
 set -o pipefail
 
