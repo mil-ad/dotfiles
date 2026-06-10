@@ -50,11 +50,11 @@ exec tuned-adm profile balanced
 
 exec seafile-applet
 exec gammastep -l 51.50:0.127 -t 6500:3500
-exec wl-paste --watch cliphist store
 
+exec wl-paste --watch cliphist store
+exec wl-clip-persist --clipboard regular
 exec kanshi
 exec_always kanshictl reload
-
 exec_always waypaper --restore
 exec_always budsctl daemon
 exec_always ~/.local/bin/kill-until-dead waybar && waybar
