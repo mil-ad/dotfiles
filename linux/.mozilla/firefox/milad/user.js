@@ -53,6 +53,8 @@ user_pref("browser.tabs.groups.smart.userEnabled", false);
 user_pref("extensions.ml.enabled", false);
 user_pref("browser.sessionstore.restore_pinned_tabs_on_demand", true);
 user_pref("browser.urlbar.quickactions.enabled", true);
+user_pref("browser.vpn_promo.enabled", false);
+user_pref("browser.contentblocking.report.hide_vpn_banner", true);
 
 /** Experimenting with some settings from BetterBox: ***/
 
