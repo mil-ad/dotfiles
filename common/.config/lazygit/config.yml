@@ -1,6 +1,43 @@
 gui:
-  nerdFontsVersion: 3
+  nerdFontsVersion: "3"
   showFileTree: true
+  showFileIcons: true
+  showBranchCommitHash: true
+  # matched to Zed "Popping and Locking" theme
+  theme:
+    activeBorderColor:
+      - "#fabd2f"
+      - bold
+    inactiveBorderColor:
+      - "#665c54"
+    searchingActiveBorderColor:
+      - "#99c6ca"
+      - bold
+    optionsTextColor:
+      - "#fabd2f"
+    selectedLineBgColor:
+      - "#313242"
+    inactiveViewSelectedLineBgColor:
+      - bold
+    cherryPickedCommitFgColor:
+      - "#f2e5bc"
+    cherryPickedCommitBgColor:
+      - "#3e588c"
+    markedBaseCommitFgColor:
+      - "#1C1D26"
+    markedBaseCommitBgColor:
+      - "#fabd2f"
+    unstagedChangesColor:
+      - "#f42c3e"
+    defaultFgColor:
+      - "#f2e5bc"
+  authorColors:
+    "*": "#d3869b"
+  branchColorPatterns:
+    "^feat(ure)?/": "#7ec16e"
+    "^fix/": "#f42c3e"
+    "^docs/": "#99c6ca"
+    "^chore/": "#fabd2f"
 git:
   pagers:
     - colorArg: always
@@ -24,4 +61,3 @@ customCommands:
           - value: 'push --force-with-lease'
           - value: 'push --force'
     command: "git {{index .PromptResponses 1}} {{index .PromptResponses 0}}"
-
