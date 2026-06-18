@@ -3,7 +3,7 @@
 # exec &> >(tee /tmp/kitty-app.log)
 
 # Default kitty options
-KITTY_OPTS=(--override background_opacity=1 --class kitty-app)
+KITTY_OPTS=(--override background_opacity=1 --override hide_window_decorations=no --class kitty-app)
 
 # Allow overriding kitty options via environment variable.
 # KITTY_EXTRA_OPTS is parsed with shell quoting, so values containing
