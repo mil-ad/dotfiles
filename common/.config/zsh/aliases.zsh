@@ -18,8 +18,9 @@ alias 9='cd -9'
 
 alias hx!='sudo hx'
 
-alias ssh0="ssh -O exit"
-alias ssh-="ssh-keygen -R"
+alias sshclose="ssh -O exit"
+alias sshforget="ssh-keygen -R"
+alias ssh!="ssh -o ControlMaster=no -o ControlPath=none"
 
 alias gscat="gsutil cat"
 alias gsls="gsutil ls"
