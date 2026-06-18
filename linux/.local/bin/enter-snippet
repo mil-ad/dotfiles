@@ -2,15 +2,24 @@
 
 file="$1"
 
+# Preview mode: render a single entry's value, highlighted per its `lang` field
+if [ "$2" = "--preview" ]; then
+    idx="$3"
+    lang=$(yq -r ".[$idx].lang // \"txt\"" "$file")
+    yq -r ".[$idx].value" "$file" | bat --color=always -pp -l "$lang"
+    exit
+fi
+
 # Inner mode: invoked inside the kitty popup to run fzf
 if [ "$2" = "--select" ]; then
     yq -o=json < "$file" \
       | jq -r 'to_entries[] | "\(.key)\t\(.value.name)"' \
       | fzf --delimiter=$'\t' --with-nth=2 \
             --no-separator --reverse --prompt='' --pointer='' --no-info \
+            --list-border=rounded --no-scrollbar \
             --color='gutter:#222222,bg+:#d79921,fg+:#282828,hl+:#8f3f71,fg:#d5c4a1,hl:#d79921' \
-            --preview "i={1}; yq -r \".[\$i].value\" \"$file\" | bat --color=always -pp -l yaml" \
-            --preview-window=right:60%:wrap
+            --preview "'$0' '$file' --preview {1}" \
+            --preview-window=bottom:60%:wrap:border-rounded
     exit
 fi
 
