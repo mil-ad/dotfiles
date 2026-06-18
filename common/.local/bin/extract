@@ -31,6 +31,7 @@ trap 'rm -rf "$tmp"' EXIT
 case "$file" in
   *.tar.gz|*.tgz)   assert_installed tar;   tar xzf "$file" -C "$tmp" ;;
   *.tar.bz2|*.tbz2) assert_installed tar;   tar xjf "$file" -C "$tmp" ;;
+  *.tar.zst|*.tzst) assert_installed tar; assert_installed zstd; tar --zstd -xf "$file" -C "$tmp" ;;
   *.tar)            assert_installed tar;   tar xf  "$file" -C "$tmp" ;;
   *.zip)            assert_installed unzip; unzip -q "$file" -d "$tmp" ;;
   *.rar)            assert_installed unrar; unrar x "$file" "$tmp/" ;;
