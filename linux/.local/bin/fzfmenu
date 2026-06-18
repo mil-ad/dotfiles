@@ -5,5 +5,6 @@ kitty \
   --override background=#222222 \
   --override window_padding_width="0.5 5" \
   --override cursor_shape=beam \
+  --override hide_window_decorations=no \
   --class fzfmenu \
   -- sh --noprofile --norc -c "fzf --no-separator --reverse --prompt="" --pointer='' --no-info --color=gutter:#222222,bg+:#d79921,fg+:#282828,hl+:#8f3f71,fg:#d5c4a1,hl:#d79921 $* < /proc/$$/fd/0 > /proc/$$/fd/1"
