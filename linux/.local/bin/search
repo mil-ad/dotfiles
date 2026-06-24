@@ -17,11 +17,14 @@ Wirecutter
 RoyalMail Tracking
 17TRACK
 CamelCamelCamel
-PyPi
+PyPI
+PyPI Stats
 AUR
-GitHub Repositories' | rofimenu -no-custom)
+GitHub Repositories'| rofimenu -no-custom)
 
 [[ $engine ]] && query=$(echo '' | rofimenu -l 0 -p "🔍 $engine:")
+
+set -x
 
 case $engine in
     "Kagi") URL="https://kagi.com/search?q=${query}" ;;
@@ -41,7 +44,8 @@ case $engine in
     "RoyalMail Tracking") URL="https://www.royalmail.com/track-your-item#/tracking-results/${query}" ;;
     "17TRACK") URL="https://t.17track.net/en#nums=${query}" ;;
     "CamelCamelCamel") URL="https://uk.camelcamelcamel.com/search?sq=${query}" ;;
-    "PyPi") URL="https://pypi.org/search/?q=${query}" ;;
+    "PyPI") URL="https://pypi.org/search/?q=${query}" ;;
+    "PyPI Stats") URL="https://pypistats.org/packages/${query}" ;;
     "AUR") URL="https://aur.archlinux.org/packages?K=${query}" ;;
     "GitHub Repositories") URL="https://github.com/search?q=${query}&type=repositories" ;;
 esac
