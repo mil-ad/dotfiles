@@ -93,7 +93,7 @@
 😥 sad but relieved face; tear
 😢 crying face; tear
 😭 loudly crying face; tear
-😱 face screaming in fear
+😱 face screaming in fear; omg
 😖 confounded face
 😣 persevering face
 😞 disappointed face
@@ -107,8 +107,8 @@
 🤬 face with symbols on mouth
 😈 smiling face with horns
 👿 angry face with horns
-💀 skull
-☠️ skull and crossbones
+💀 skull; dead
+☠️ skull and crossbones; dead
 💩 pile of poo
 🤡 clown face
 👹 ogre
@@ -155,7 +155,7 @@
 🩶 grey heart
 🤍 white heart
 💋 kiss mark
-💯 hundred points
+💯 hundred points; 100
 💢 anger symbol
 🫯 fight cloud
 💥 collision; boom
