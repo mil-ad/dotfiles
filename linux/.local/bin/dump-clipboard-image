@@ -1,0 +1,22 @@
+#!/usr/bin/env bash
+
+set -euo pipefail
+
+assert_installed wl-paste || exit 1
+
+# Find an image/* type currently offered by the clipboard.
+mime=$(wl-paste --list-types | grep -m1 '^image/') || {
+    echo "clipboard-image-to-file: no image on the clipboard" >&2
+    exit 1
+}
+
+if [[ $# -ge 1 ]]; then
+    out=$1
+else
+    ext=${mime#image/}
+    [[ $ext == "jpeg" ]] && ext="jpg"
+    out="clipboard-$(date +%Y%m%d-%H%M%S).$ext"
+fi
+
+wl-paste --type "$mime" >"$out"
+echo "$out"
