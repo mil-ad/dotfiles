@@ -1,0 +1,36 @@
+#!/usr/bin/env bash
+# Show PipeWire audio sink/source priorities (priority.session), grouped and
+# sorted high->low, with the current default device marked. WirePlumber picks
+# the highest-priority *available* device as the default; override the numbers
+# with conf.d rules under ~/.config/wireplumber/wireplumber.conf.d/.
+
+for cmd in pw-dump jq; do
+  command -v "$cmd" >/dev/null || { echo "pw-priorities: needs $cmd" >&2; exit 1; }
+done
+
+meta=$(pw-metadata -n default 2>/dev/null || true)
+ds=$(printf '%s\n' "$meta" | sed -n "s/.*key:'default\.audio\.sink'.*name\": *\"\([^\"]*\)\".*/\1/p"   | tail -1)
+dr=$(printf '%s\n' "$meta" | sed -n "s/.*key:'default\.audio\.source'.*name\": *\"\([^\"]*\)\".*/\1/p" | tail -1)
+
+printf '\033[2m● = current default · priority.session, higher wins\033[0m\n'
+
+pw-dump 2>/dev/null | jq -r --arg ds "$ds" --arg dr "$dr" '
+  .[] | select(.type == "PipeWire:Interface:Node")
+  | (.info.props // {}) as $p
+  | ($p["media.class"] // "") as $c
+  | select($c | test("Audio/(Sink|Source)"))
+  | ($p["node.name"] // "") as $n
+  | [ (if ($c | test("Sink")) then 1 else 2 end),
+      ($p["priority.session"] // 0),
+      (if ($n == $ds or $n == $dr) then "●" else " " end),
+      (if ($c | test("Sink")) then "OUT" else "IN" end),
+      ($p["node.description"] // $n // "?") ]
+  | @tsv
+' | sort -t$'\t' -k1,1n -k2,2rn | awk -F'\t' '
+    $4 != grp {
+      if (NR > 1) print "";
+      printf "\033[1;36m%s\033[0m\n", ($4 == "OUT" ? "OUTPUTS (sinks)" : "INPUTS (sources)");
+      grp = $4;
+    }
+    { printf "  %s %6s  %s\n", $3, $2, $5 }
+  '
