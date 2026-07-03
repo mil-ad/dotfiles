@@ -1,0 +1,122 @@
+#!/usr/bin/env bash
+
+# Screencast source chooser for xdg-desktop-portal-wlr (chooser_type=dmenu).
+# xdpw feeds the capturable sources on stdin and expects one of those lines
+# echoed back (empty = cancelled); we present them as a rofi thumbnail grid.
+#
+# For testing you can use:
+#   https://webrtc.github.io/samples/src/content/getusermedia/getdisplaymedia/
+
+# xdpw's systemd user service has a minimal PATH without ~/.local/bin.
+export PATH="$HOME/.local/bin:$PATH"
+
+assert_installed grim jq swaymsg rofimenu magick
+
+ICON_SIZE="${XDPW_ICON_SIZE:-220}"
+THUMB_PX="${XDPW_THUMB_PX:-$((ICON_SIZE * 2))}"  # grab at 2x for crisp hidpi icons
+LABEL_SIZE="${XDPW_LABEL_SIZE:-small}"           # pango size (xx-small…large)
+
+THUMBS="$(mktemp -d "${XDG_RUNTIME_DIR:-/tmp}/screencast-thumbs.XXXXXX")"
+trap 'rm -rf "$THUMBS"' EXIT
+
+mapfile -t LINES
+
+# Source lines are one of:
+#   Monitor: <name> <make> <model> <serial> (<name>)
+#   Window: <title> (<foreign-toplevel-id>)
+declare -A IS_OUTPUT
+while read -r name; do
+    IS_OUTPUT["$name"]=1
+done < <(swaymsg -t get_outputs | jq -r '.[].name')
+
+# grim's own -s downscale is single-threaded and slow on hidpi outputs, so grab
+# full-res and downscale with vips (fast) or magick (fallback).
+command -v vipsthumbnail >/dev/null && HAVE_VIPS=1 || HAVE_VIPS=
+
+shot() { # $1=thumbnail path, $2..=grim source (-o <output> | -T <toplevel-id>)
+    local out="$1"
+    shift
+    if [[ -n "$HAVE_VIPS" ]]; then
+        grim "$@" -l 0 - 2>/dev/null | vipsthumbnail stdin --size "$THUMB_PX" -o "$out" 2>/dev/null
+    else
+        grim "$@" -t ppm - 2>/dev/null | magick ppm:- -thumbnail "${THUMB_PX}x" "$out" 2>/dev/null
+    fi
+}
+
+# Capture every source concurrently (wall time = slowest source, not the sum).
+# `grim -T <id>` grabs a window's own buffer, so occluded/off-screen ones work.
+thumb=()
+for i in "${!LINES[@]}"; do
+    line="${LINES[$i]}"
+    if [[ "$line" == "Monitor: "* ]]; then
+        name="${line#Monitor: }"
+        name="${name%% *}"
+        if [[ -n "${IS_OUTPUT[$name]:-}" ]]; then
+            thumb[i]="$THUMBS/$i.png"
+            shot "${thumb[i]}" -o "$name" &
+        fi
+    elif [[ "$line" == "Window: "* ]]; then
+        id="${line##*\(}"
+        id="${id%\)}"
+        if [[ "$id" =~ ^[0-9a-f]+$ ]]; then
+            thumb[i]="$THUMBS/$i.png"
+            shot "${thumb[i]}" -T "$id" &
+        fi
+    fi
+done
+wait
+
+# Readable label for display, dropping the noise xdpw includes (monitor serials,
+# the window's toplevel id). rofi returns the row index, so the raw LINES entry
+# is still what we hand back.
+label() {
+    local line="$1"
+    if [[ "$line" == "Monitor: "* ]]; then
+        local rest="${line#Monitor: }"  # "<name> <make> <model> <serial> (<name>)"
+        local name="${rest%% *}"        # connector, e.g. DP-7
+        local desc="${rest% (*)}"       # drop the redundant trailing "(<name>)"
+        desc="${desc#"$name"}"          # drop the connector...
+        desc="${desc# }"                # ...and its separating space
+        desc="${desc% *}"               # drop the serial (last token)
+        [[ -n "$desc" ]] && printf '%s — %s' "$name" "$desc" || printf '%s' "$name"
+    elif [[ "$line" == "Window: "* ]]; then
+        local title="${line#Window: }"
+        printf '%s' "${title% (*)}"     # drop the trailing "(<toplevel-id>)"
+    else
+        printf '%s' "$line"
+    fi
+}
+
+# rofi row syntax: "<label>\0icon\x1f<path>"; a failed capture omits the icon.
+# Labels are pango markup (-markup-rows) so we can size them down; escape first.
+emit=""
+for i in "${!LINES[@]}"; do
+    row="$(label "${LINES[$i]}")"
+    row="${row//&/&amp;}"
+    row="${row//</&lt;}"
+    row="${row//>/&gt;}"
+    row="<span size=\"$LABEL_SIZE\">$row</span>"
+    if [[ -s "${thumb[i]:-}" ]]; then
+        emit+="${row}\x00icon\x1f${thumb[i]}\n"
+    else
+        emit+="${row}\n"
+    fi
+done
+
+# Grid sized to the source count, thumbnail above a centered label.
+cols=${#LINES[@]}
+((cols > 4)) && cols=4
+((cols < 1)) && cols=1
+rows=$(((${#LINES[@]} + cols - 1) / cols))
+theme="
+    window       { width: 70%; }
+    listview     { columns: $cols; lines: $rows; flow: horizontal; fixed-columns: true; spacing: 15px; }
+    element      { orientation: vertical; padding: 12px; spacing: 10px; }
+    element-icon { size: ${ICON_SIZE}px; horizontal-align: 0.5; }
+    element-text { horizontal-align: 0.5; vertical-align: 0.5; }
+"
+
+# rofimenu (local fuzzy rofi wrapper) returns the selected row index; echo the
+# matching raw xdpw line back verbatim (no selection = empty output = cancel).
+idx="$(printf '%b' "$emit" | rofimenu -show-icons -markup-rows -format i -theme-str "$theme")"
+[[ "$idx" =~ ^[0-9]+$ ]] && printf '%s\n' "${LINES[$idx]}"

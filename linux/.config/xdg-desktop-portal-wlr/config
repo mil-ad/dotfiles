@@ -1,0 +1,4 @@
+[screencast]
+chooser_type=dmenu
+chooser_cmd=$HOME/.local/bin/screencast-source-chooser
+max_fps=30
