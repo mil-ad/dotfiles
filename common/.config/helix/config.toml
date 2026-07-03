@@ -16,7 +16,6 @@ gutters = [
   "spacer",
   "diff"
 ]
-insecure = true
 
 # Minimum severity of diagnostics
 end-of-line-diagnostics = "disable"
@@ -24,6 +23,10 @@ end-of-line-diagnostics = "disable"
 [editor.inline-diagnostics]
 cursor-line = "disable" # show warnings and errors on the cursorline inline
 other-lines = "error"
+
+[editor.workspace-trust]
+level = "none"
+prompt = false
 
 [editor.lsp]
 # display-messages = false
