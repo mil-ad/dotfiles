@@ -43,8 +43,8 @@ shot() { # $1=thumbnail path, $2..=grim source (-o <output> | -T <toplevel-id>)
     fi
 }
 
-# Capture every source concurrently (wall time = slowest source, not the sum).
-# `grim -T <id>` grabs a window's own buffer, so occluded/off-screen ones work.
+# Capture every source _concurrently_.
+# `grim -T <id>` grabs a window's own buffer, so off-screen ones work.
 thumb=()
 for i in "${!LINES[@]}"; do
     line="${LINES[$i]}"
