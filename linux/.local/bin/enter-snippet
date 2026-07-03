@@ -10,11 +10,25 @@ if [ "$2" = "--preview" ]; then
     exit
 fi
 
+# Match mode: emit "idx<TAB>name<TAB>value" rows whose name OR value matches the
+# query. fzf's reload binding runs this on every keystroke. An empty query returns
+# every row. The value takes part in matching but is never shown by the picker.
+if [ "$2" = "--match" ]; then
+    yq -o=json < "$file" \
+      | jq -r 'to_entries[] | "\(.key)\t\(.value.name)\t\(.value.value | tostring | gsub("[\n\t]+"; " "))"' \
+      | fzf --filter="$3" --delimiter=$'\t' --nth=2,3
+    exit
+fi
+
 # Inner mode: invoked inside the kitty popup to run fzf
 if [ "$2" = "--select" ]; then
-    yq -o=json < "$file" \
-      | jq -r 'to_entries[] | "\(.key)\t\(.value.name)"' \
-      | fzf --delimiter=$'\t' --with-nth=2 \
+    # The picker shows only names, but typing also searches snippet VALUES. fzf can
+    # only search what it renders, so we turn off its own search (--disabled) and
+    # feed it name+value matches via reload (--match does the filtering); only the
+    # name field is ever displayed, so values — and their emoji — never leak.
+    "$0" "$file" --match '' \
+      | fzf --disabled --delimiter=$'\t' --with-nth=2 \
+            --bind "change:reload('$0' '$file' --match {q})" \
             --no-separator --reverse --prompt='' --pointer='' --no-info \
             --list-border=rounded --no-scrollbar \
             --color='gutter:#222222,bg+:#d79921,fg+:#282828,hl+:#8f3f71,fg:#d5c4a1,hl:#d79921' \
