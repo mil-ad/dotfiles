@@ -22,7 +22,7 @@ configuration {
 /*	disable-history: false;*/
 /*	ignored-prefixes: "";*/
 	sort: true;
-	sorting-method: "fzf";
+	sorting-method: "fzf-v2";
 	case-sensitive: false;
 /*	cycle: true;*/
 /*	sidebar-mode: false;*/
