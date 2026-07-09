@@ -19,27 +19,37 @@ function refresh_with_feedback {
 }
 
 # Build the `rows` array: one "html_url<TAB>markup-row" per item, in a single jq
-# pass (mapfile slurps it, so we never parse the cache twice). The markup is a
-# Nerd Font octicon coloured by state (GitHub's palette), the repo dimmed, then
-# the title. The cache holds open items plus anything closed/merged in the last
-# fortnight:
+# pass (mapfile slurps it, so we never parse the cache twice). $1 is the active
+# filter mode (see the loop below); items outside it are dropped by `select`:
+#   all    everything in the cache (the default)
+#   open   only still-open PRs and issues
+#   review only open PRs that have requested my review
+# The markup is a Nerd Font octicon coloured by state (GitHub's palette), the
+# repo dimmed, then the title. Open PRs awaiting my review (.review_requested)
+# get their icon recoloured yellow instead of the usual green. The cache holds
+# open items plus anything closed/merged in the last fortnight:
 #   open     green  #238636   draft    grey   #656c76
 #   merged   purple #8957e5   closed   red    #da3633 (PR) / purple (issue)
+#   open, awaiting my review  yellow  #c28c1e
 # Octicons (built from codepoints so the source stays plain ASCII):
 #   62471 git-pull-request   62685 git-pull-request-draft
 #   62684 git-pull-request-closed   62489 git-merge
 #   62491 issue-opened   62493 issue-closed
 # repo/title are @html-escaped so a stray <, > or & can't break the markup.
 function build_rows {
-    mapfile -t rows < <(jq -r '
+    mapfile -t rows < <(jq -r --arg mode "$1" '
         def esc: @html;
         def icon($cp; $color): "<span color=\"" + $color + "\">" + ([$cp] | implode) + "</span>";
         .items[]
+        | select($mode == "all"
+                 or ($mode == "open"   and .state == "open")
+                 or ($mode == "review" and .pull_request != null and .review_requested))
         | .html_url + "\t"
           + (if .pull_request
              then (if   .pull_request.merged_at then icon(62489; "#8957e5")   # merged
                    elif .state == "closed"      then icon(62684; "#da3633")   # closed, unmerged
                    elif .draft                  then icon(62685; "#656c76")   # draft
+                   elif .review_requested       then icon(62471; "#c28c1e")   # open, awaiting my review
                    else                              icon(62471; "#238636")   # open
                    end)
              else (if .state == "closed"
@@ -54,22 +64,43 @@ function build_rows {
     ' < "$cache_file")
 }
 
+# The rofi prompt label naming the active filter. Passing -p also flips the
+# rofimenu wrapper into showing the prompt (it's hidden by default).
+function mode_prompt {
+    case "$1" in
+        all)    printf 'All' ;;
+        open)   printf 'Open' ;;
+        review) printf 'Awaiting review' ;;
+    esac
+}
+
 [ ! -e "$cache_file" ] && refresh-github-caches
 
-# Show the menu. Ctrl-r forces a refresh and reopens (rofi exits 10 for the
-# kb-custom-1 binding) — handy right after creating a PR/issue that isn't cached
-# yet. `-format i` returns the row index straight into the `rows` array; we read
-# only the markup column (cut -f2-) into rofi.
+# Show the menu. Tab cycles the filter mode (all -> open -> review -> all; rofi
+# exits 11 for kb-custom-2) and Ctrl-r forces a refresh and reopens (exits 10 for
+# kb-custom-1) — handy right after creating a PR/issue that isn't cached yet. Both
+# reshow in the same mode. Tab is Rofi's default kb-element-next, so we clear that
+# binding first (per-invocation, so other menus keep it) to free the key.
+# `-format i` returns the row index straight into the `rows` array; we read only
+# the markup column (cut -f2-) into rofi.
+modes=(all open review)
+mode_idx=0
 while true; do
-    build_rows
-    selected_idx=$(printf '%s\n' "${rows[@]}" | cut -f2- \
-        | rofimenu -format i -markup-rows -kb-custom-1 'Control+r')
+    build_rows "${modes[$mode_idx]}"
+    selected_idx=$({ [ ${#rows[@]} -gt 0 ] && printf '%s\n' "${rows[@]}"; } | cut -f2- \
+        | rofimenu -format i -markup-rows \
+            -kb-custom-1 'Control+r' \
+            -kb-element-next '' -kb-custom-2 'Tab' \
+            -p "$(mode_prompt "${modes[$mode_idx]}")" \
+            -theme-str 'window { width: 75%; }')
     case $? in
         0)  if [ -n "$selected_idx" ] && [ "$selected_idx" -ge 0 ]; then
-                xdg-open "${rows[$selected_idx]%%$'\t'*}"
+                url="${rows[$selected_idx]%%$'\t'*}"
+                [ -n "$url" ] && xdg-open "$url"
             fi
             break ;;
-        10) refresh_with_feedback ;;   # rebuild from the fresh cache and reshow
-        *)  break ;;                   # Esc / cancelled
+        10) refresh_with_feedback ;;                              # rebuild from the fresh cache and reshow
+        11) mode_idx=$(( (mode_idx + 1) % ${#modes[@]} )) ;;      # cycle filter, reshow
+        *)  break ;;                                              # Esc / cancelled
     esac
 done

@@ -4,7 +4,8 @@
 # open-github-repo. Auth and pagination are handled by the gh CLI.
 #
 # The PR/issue and repos fetches are independent, so they run concurrently; the
-# two PR/issue searches (open + recently-closed) likewise run in parallel.
+# three PR/issue searches (open + review-requested + recently-closed) likewise
+# run in parallel.
 
 set -euo pipefail
 
@@ -31,22 +32,33 @@ function fail {
 }
 
 # PRs and issues that involve me: everything still open, plus anything closed
-# (or, for PRs, merged) in the last fortnight. Two disjoint searches run in
-# parallel. gh returns the raw REST JSON shape, so consumers can read
-# .pull_request / .state / .state_reason / .draft for colouring. Newest-updated
-# first. Each gh exit is checked so a partial/failed fetch never overwrites the
-# cache (set -e aborts before the mv).
+# (or, for PRs, merged) in the last fortnight, plus open PRs awaiting my review.
+# The review-requested set is separate because `involves:` (author/assignee/
+# mentions/commenter) does NOT cover review requests, so those PRs would
+# otherwise never appear. Its items are tagged review_requested:true; the merge
+# de-dupes by URL (a review-requested PR can also match involves:) and ORs the
+# flag so consumers can highlight it. Three searches run in parallel. gh returns
+# the raw REST JSON shape, so consumers can read .pull_request / .state /
+# .state_reason / .draft / .review_requested for colouring. Newest-updated first.
+# Each gh exit is checked so a partial/failed fetch never overwrites the cache
+# (set -e aborts before the mv).
 function refresh_pr_or_issue {
-    local since t_open t_closed p_open p_closed
+    local since t_open t_review t_closed p_open p_review p_closed
     since=$(date -d '14 days ago' +%F)
-    t_open=$(mktemp) t_closed=$(mktemp)
-    gh api --paginate -X GET search/issues -f q="involves:mil-ad state:open"      --jq '.items[]' > "$t_open"   & p_open=$!
-    gh api --paginate -X GET search/issues -f q="involves:mil-ad closed:>=$since" --jq '.items[]' > "$t_closed" & p_closed=$!
+    t_open=$(mktemp) t_review=$(mktemp) t_closed=$(mktemp)
+    gh api --paginate -X GET search/issues -f q="involves:mil-ad state:open"                --jq '.items[]'                              > "$t_open"   & p_open=$!
+    gh api --paginate -X GET search/issues -f q="review-requested:mil-ad state:open type:pr" --jq '.items[] | . + {review_requested:true}' > "$t_review" & p_review=$!
+    gh api --paginate -X GET search/issues -f q="involves:mil-ad closed:>=$since"            --jq '.items[]'                              > "$t_closed" & p_closed=$!
     wait "$p_open"
+    wait "$p_review"
     wait "$p_closed"
-    jq -s '{items: sort_by(.updated_at) | reverse}' "$t_open" "$t_closed" > "$pr_or_issue_cache.tmp"
+    jq -s '
+        group_by(.html_url)
+        | map(.[0] + {review_requested: any(.[]; .review_requested == true)})
+        | {items: (sort_by(.updated_at) | reverse)}
+    ' "$t_open" "$t_review" "$t_closed" > "$pr_or_issue_cache.tmp"
     mv "$pr_or_issue_cache.tmp" "$pr_or_issue_cache"
-    rm -f "$t_open" "$t_closed"
+    rm -f "$t_open" "$t_review" "$t_closed"
 }
 
 # Repos I own / collaborate on / belong to, most-recently-pushed first.
