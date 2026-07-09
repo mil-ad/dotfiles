@@ -8,4 +8,4 @@ fi
 
 # exec so the PID callers see (e.g. `$!` when backgrounded) is rofi itself, not
 # this wrapper — otherwise killing the wrapper would orphan rofi.
-exec /usr/bin/rofi -dmenu -i -matching fuzzy -sort -sorting-method fzf "${prompt_arg[@]}" "$@" -
+exec rofi -dmenu -i -matching fuzzy -sort -sorting-method fzf-v2 "${prompt_arg[@]}" "$@" -
