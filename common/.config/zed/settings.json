@@ -96,7 +96,11 @@
   },
   "theme": "Popping and Locking",
   "buffer_font_family": "Berkeley Mono",
-  "buffer_font_fallbacks": ["Symbols Nerd Font", "Noto Emoji"], // doesn't seem to work :(
+    // I would have specified Noto Color Emoji here too but Zed doesn't support
+    // COLRv1 yet (see https://github.com/pop-os/cosmic-text/issues/446). Strangely
+    // even if I put the legacy bitmap version Zed still doesnt detect it here!
+    // Seems like not including it fixes it? Probably because of my fontconfig
+  "buffer_font_fallbacks": ["Symbols Nerd Font"],
   "buffer_font_size": 12,
   "buffer_font_weight": 600,
   "buffer_font_features": {
@@ -117,7 +121,7 @@
     "line_height": {
       "custom": 1.225,
     },
-    // "font_fallbacks": ["Symbols Nerd Font"], // doesn't work on Linux yet
+    "font_fallbacks": ["Symbols Nerd Font"],
     "detect_venv": {
       "on": {
         "directories": [".venv"],
