@@ -21,12 +21,12 @@
     "gopls-lsp@claude-plugins-official": true,
     "clangd-lsp@claude-plugins-official": true
   },
+  "tui": "fullscreen",
   "voice": {
     "enabled": true,
     "mode": "hold"
   },
   "preferredNotifChannel": "notifications_disabled",
   "skipAutoPermissionPrompt": true,
-  "voiceEnabled": true,
-  "tui": "fullscreen"
+  "voiceEnabled": true
 }
