@@ -84,12 +84,19 @@ toolbarspring#vertical-spacer.chromeclass-toolbar-additional.titlebar-spacer {
  * Tabs (horizontal-mode styling; overridden inside @media below)
  * ============================================================ */
 
-tab[selected="true"] > .tab-stack > .tab-background {
+/* `selected` is a *boolean* attribute (empty value), not `selected="true"`:
+ * tab.js does `toggleAttribute("selected", val)` and inheritedAttributes
+ * mirrors it onto `.tab-background` as `selected=visuallyselected`. Matching
+ * on `[selected="true"]` silently stops working — and worse, the
+ * `:not([selected="true"])` rule then also hits the active tab and paints over
+ * the accent. Match the attribute's presence instead, on `.tab-background`
+ * directly (that's where Firefox itself keys the selected styling). */
+.tab-background[selected] {
     background: var(--dark1) !important;
     border: 1px solid var(--faded_yellow) !important;
 }
 
-tab:not([selected="true"]) > .tab-stack > .tab-background {
+.tab-background:not([selected]) {
     background-color: var(--main-custom-color) !important;
     border: 1px solid var(--dark1) !important;
 }
