@@ -46,31 +46,34 @@ if [[ "$all_types" -eq 0 ]]; then
     for ext in "${extensions[@]}"; do fd_args+=(-e "$ext"); done
 fi
 
+# Keep the paths in a file, never in a bash array: bash reads pipes a byte at a
+# time, which costs ~2s on a $HOME-sized list. awk and sed do the work instead.
+candidates=$(mktemp -t open-file.XXXXXX)
+trap 'rm -f "$candidates"' EXIT
+
 if [[ -n "$days" ]]; then
     # Newest first. Only worth doing (and cheap enough) for a bounded window.
-    mapfile -t files < <(fd "${fd_args[@]}" . "$root" -X ls -t)
+    fd "${fd_args[@]}" . "$root" -X ls -t > "$candidates"
 else
-    mapfile -t files < <(fd "${fd_args[@]}" . "$root")
+    fd "${fd_args[@]}" . "$root" > "$candidates"
 fi
 
-if [[ "${#files[@]}" -eq 0 ]]; then
+if [[ ! -s "$candidates" ]]; then
     notify-send "open-file" "No matching files found"
     exit 0
 fi
 
-# Display names as last two dirs + filename
-mapfile -t display_names < <(printf '%s\n' "${files[@]}" | awk -F'/' '{
-    if (NF > 3) print "…/" $(NF-2) "/" $(NF-1) "/" $NF
-    else print $0
-}')
-
+# Show last two dirs + filename; rofi returns the index into $candidates.
 exit_code=0
-index=$(printf '%s\n' "${display_names[@]}" |
+index=$(awk -F'/' '{
+        if (NF > 3) print "…/" $(NF-2) "/" $(NF-1) "/" $NF
+        else print $0
+    }' "$candidates" |
     rofimenu -kb-accept-alt "" -kb-custom-1 "Shift+Return" -format i) || exit_code=$?
 
 [[ -n "$index" && "$index" =~ ^[0-9]+$ ]] || exit 0
 
-file="${files[$index]}"
+file=$(sed -n "$((index + 1))p" "$candidates")
 case "$exit_code" in
     0) open "$file" ;;
     10) thunar "$file" ;;
