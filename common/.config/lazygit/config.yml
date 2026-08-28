@@ -39,9 +39,9 @@ gui:
     "^docs/": "#99c6ca"
     "^chore/": "#fabd2f"
 git:
-  pagers:
+  diffRenderers:
     - colorArg: always
-      pager: delta --dark --paging=never
+      command: delta --dark --paging=never
 customCommands:
   - key: 'U'
     description: "Push to a specific remote repository"
