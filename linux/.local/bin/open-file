@@ -1,11 +1,77 @@
 #!/usr/bin/env bash
+# Pick a file with rofi and open it with its default app.
+# Shift+Return opens it in thunar instead.
 set -euo pipefail
 
-start="${1:-$HOME}"
+assert_installed fd rofi
 
-selected=$(fd --type f --follow \
-   --exclude '*.sdr' \
-   --exclude 'node_modules' \
-   . "$start" | "$HOME/.local/bin/fzfmenu") || exit 0
+usage() {
+    cat <<'EOF'
+Usage: open-file [OPTIONS] [DIR]
 
-[ -n "$selected" ] && exec xdg-open "$selected"
+Fuzzy-pick a file under DIR (default: $HOME) and open it.
+Shift+Return opens the selection in thunar instead.
+
+Options:
+  -d, --days N   only files modified within the last N days, newest first
+  -a, --all      don't limit results to the usual document/media types
+  -h, --help     show this help
+EOF
+}
+
+# The types worth opening from a launcher; anything else is noise here.
+extensions=(html pdf epub djvu flac mp3 mp4 avi mkv wav png jpg jpeg gif svg
+            docx xlsx pptx odt ods zip)
+
+days=
+all_types=0
+root=$HOME
+
+while [[ $# -gt 0 ]]; do
+    case "$1" in
+        -d|--days) days="${2:?--days needs a number}"; shift 2 ;;
+        -a|--all) all_types=1; shift ;;
+        -h|--help) usage; exit 0 ;;
+        -*) usage >&2; exit 1 ;;
+        *) root="$1"; shift ;;
+    esac
+done
+
+fd_args=(--type f --follow --no-ignore-vcs
+         --exclude .git --exclude node_modules --exclude '*.sdr')
+
+[[ -n "$days" ]] && fd_args+=(--changed-within "${days}d")
+
+if [[ "$all_types" -eq 0 ]]; then
+    for ext in "${extensions[@]}"; do fd_args+=(-e "$ext"); done
+fi
+
+if [[ -n "$days" ]]; then
+    # Newest first. Only worth doing (and cheap enough) for a bounded window.
+    mapfile -t files < <(fd "${fd_args[@]}" . "$root" -X ls -t)
+else
+    mapfile -t files < <(fd "${fd_args[@]}" . "$root")
+fi
+
+if [[ "${#files[@]}" -eq 0 ]]; then
+    notify-send "open-file" "No matching files found"
+    exit 0
+fi
+
+# Display names as last two dirs + filename
+mapfile -t display_names < <(printf '%s\n' "${files[@]}" | awk -F'/' '{
+    if (NF > 3) print "…/" $(NF-2) "/" $(NF-1) "/" $NF
+    else print $0
+}')
+
+exit_code=0
+index=$(printf '%s\n' "${display_names[@]}" |
+    rofimenu -kb-accept-alt "" -kb-custom-1 "Shift+Return" -format i) || exit_code=$?
+
+[[ -n "$index" && "$index" =~ ^[0-9]+$ ]] || exit 0
+
+file="${files[$index]}"
+case "$exit_code" in
+    0) open "$file" ;;
+    10) thunar "$file" ;;
+esac
