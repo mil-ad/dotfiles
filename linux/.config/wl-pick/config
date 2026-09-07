@@ -1,0 +1,36 @@
+# wl-pick — https://github.com/mil-ad/wl-pick
+#
+# Flat `key = value`; a command-line flag beats anything here. Sizes take sway's
+# units: `600px` is absolute, `18ppt` is a percentage of the display the grid
+# appears on, worked out afresh each run — so this file suits any monitor.
+#
+# Everything below is optional. `wl-pick --help` lists the lot.
+
+# Gruvbox dark. These are also the built-in defaults, spelled out here so they
+# are easy to reach for.
+background     = #282828
+foreground     = #ebdbb2
+selection      = #d79921
+selection-text = #282828
+border         = #d79921
+border-width   = 2px
+
+# All four sizing settings are caps: the first two bound the window, the last two
+# bound the grid inside it. A thumbnail is that box divided by those, so its size
+# never depends on how many windows are open — one window gets the same
+# thumbnail as thirty, in a smaller window. Rows past max-rows scroll.
+max-width      = 80ppt
+max-height     = 60ppt
+max-columns    = 4
+max-rows       = 3
+
+# font           = Berkeley Mono Medium SemiCondensed
+# font-size    = 13.3
+
+# Behaviour, all the same as the flags of the same name.
+# live         = all       # all | current | none
+# fps          = 12
+outputs      = no       # include whole displays as tiles
+# labels       = yes
+# format       = tsv       # tsv | json | portal
+# timeout      = 0         # seconds; 0 means none
