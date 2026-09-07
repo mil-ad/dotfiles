@@ -3,7 +3,7 @@
 # Shift+Return opens it in thunar instead.
 set -euo pipefail
 
-assert_installed fd rofi
+assert_installed fd rofimenu
 
 usage() {
     cat <<'EOF'
