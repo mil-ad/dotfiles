@@ -24,7 +24,7 @@ max-height     = 60ppt
 max-columns    = 4
 max-rows       = 3
 
-# font           = Berkeley Mono Medium SemiCondensed
+font           = Berkeley Mono Medium SemiCondensed
 # font-size    = 13.3
 
 # Behaviour, all the same as the flags of the same name.
