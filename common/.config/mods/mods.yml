@@ -1,4 +1,4 @@
-default-model: claude-sonnet-5
+default-model: claude-sonnet-5-5
 # Text to append when using the -f flag.
 format-text:
   markdown: 'Format the response as markdown without enclosing backticks.'
@@ -57,66 +57,18 @@ apis:
         aliases: ["5"]
         max-input-chars: 1600000
         fallback: "4"
-      gpt-4o-mini:
-        aliases: ["4o-mini"]
-        max-input-chars: 392000
-        fallback: gpt-4o
-      gpt-4o:
-        aliases: ["4o"]
-        max-input-chars: 392000
-        fallback: gpt-4
-      gpt-4:
-        aliases: ["4"]
-        max-input-chars: 24500
-        fallback: gpt-3.5-turbo
-      gpt-4-1106-preview:
-        aliases: ["128k"]
-        max-input-chars: 392000
-        fallback: gpt-4
-      gpt-4-32k:
-        aliases: ["32k"]
-        max-input-chars: 98000
-        fallback: gpt-4
-      gpt-3.5-turbo:
-        aliases: ["35t"]
-        max-input-chars: 12250
-        fallback: gpt-3.5
-      gpt-3.5-turbo-1106:
-        aliases: ["35t-1106"]
-        max-input-chars: 12250
-        fallback: gpt-3.5-turbo
-      gpt-3.5-turbo-16k:
-        aliases: ["35t16k"]
-        max-input-chars: 44500
-        fallback: gpt-3.5
-      gpt-3.5:
-        aliases: ["35"]
-        max-input-chars: 12250
-        fallback:
   anthropic:
     base-url: https://api.anthropic.com/v1
     api-key:
     api-key-env: ANTHROPIC_API_KEY
     models: # https://docs.anthropic.com/en/docs/about-claude/models
+      claude-sonnet-5-5:
+        max-input-chars: 680000
       claude-sonnet-5:
-        max-input-chars: 680000
-      claude-sonnet-4-6:
-        max-input-chars: 680000
-      claude-sonnet-4-5:
-        max-input-chars: 680000
-      claude-sonnet-4-0:
-        max-input-chars: 680000
-      claude-3-7-sonnet-20250219:
-        max-input-chars: 680000
-      claude-3-5-sonnet-20240620:
-        aliases: ["claude3.5-sonnet", "claude-3-5-sonnet", "sonnet-3.5"]
         max-input-chars: 680000
       claude-opus-4-1-20250805:
         max-input-chars: 680000
         aliases: ["opus-4.1"]
-      claude-3-opus-20240229:
-        aliases: ["claude3-opus", "opus"]
-        max-input-chars: 680000
       claude-3-5-sonnet-latest:
         max-input-chars: 680000
       claude-3-5-haiku-latest:
@@ -176,34 +128,6 @@ apis:
       gemma-7b-it:
         aliases: ["gemma"]
         max-input-chars: 24500
-      gemma2-9b-it:
-        aliases: ["gemma2"]
-        max-input-chars: 24500
-      llama3-groq-70b-8192-tool-use-preview:
-        aliases: ["llama3-tool"]
-        max-input-chars: 24500
-      llama3-groq-8b-8192-tool-use-preview:
-        aliases: ["llama3-8b-tool"]
-        max-input-chars: 24500
-      llama-3.1-70b-versatile:
-        aliases: ["llama3.1", "llama3.1-70b", "llama3.1-versatile"]
-        max-input-chars: 392000
-      llama-3.1-8b-instant:
-        aliases: ["llama3.1-8b", "llama3.1-instant"]
-        max-input-chars: 392000
-      llama-guard-3-8b:
-        aliases: ["llama-guard"]
-        max-input-chars: 24500
-      llama3-70b-8192:
-        aliases: ["llama3", "llama3-70b"]
-        max-input-chars: 24500
-        fallback: llama3-8b-8192
-      llama3-8b-8192:
-        aliases: ["llama3-8b"]
-        max-input-chars: 24500
-      mixtral-8x7b-32768:
-        aliases: ["mixtral"]
-        max-input-chars: 98000
   cerebras:
     base-url: https://api.cerebras.ai/v1
     api-key:
@@ -234,14 +158,6 @@ apis:
         aliases: ["az4"]
         max-input-chars: 24500
         fallback: gpt-35-turbo
-      gpt-35-turbo:
-        aliases: ["az35t"]
-        max-input-chars: 12250
-        fallback: gpt-35
-      gpt-35:
-        aliases: ["az35"]
-        max-input-chars: 12250
-        fallback:
   runpod:
     # https://docs.runpod.io/serverless/workers/vllm/openai-compatibility
     base-url: https://api.runpod.ai/v2/${YOUR_ENDPOINT}/openai/v1
