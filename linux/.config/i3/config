@@ -102,7 +102,7 @@ bindsym $mod+Shift+bracketleft move container to workspace back_and_forth; works
 bindsym $mod+minus split vertical;
 bindsym $mod+backslash split horizontal;
 
-bindsym $mod+s layout toggle splitv splith tabbed stacking
+bindsym $mod+w layout toggle splitv splith tabbed stacking
 
 bindsym $mod+a focus parent
 bindsym $mod+m move scratchpad
@@ -135,7 +135,7 @@ mode "resize" {
 bindsym --no-repeat $mod+Return exec kitty --single-instance
 bindsym --no-repeat $mod+Shift+Return exec thunar
 bindsym --no-repeat $mod+space exec ~/.local/bin/winmenu
-bindsym --no-repeat $mod+Ctrl+space exec ~/.local/bin/enter-snippet $HOME/.scripts/snippets.yml
+bindsym --no-repeat $mod+s exec ~/.local/bin/enter-snippet $HOME/.scripts/snippets.yml
 bindsym --no-repeat $mod+comma exec ~/.local/bin/rename-sway-container
 bindsym --no-repeat $mod+0 exec ~/.local/bin/sysmenu
 bindsym --no-repeat $mod+b exec ~/.local/bin/open_bookmark
