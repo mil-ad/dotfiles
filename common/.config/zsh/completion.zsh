@@ -22,7 +22,7 @@ autoload -Uz compinit
 # Keep the dump out of $HOME — XDG-clean. Versioned per zsh release so
 # upgrades don't try to load an incompatible dump.
 _zcompdump="${XDG_CACHE_HOME:-$HOME/.cache}/zsh/zcompdump-${ZSH_VERSION}"
-mkdir -p "${_zcompdump:h}"
+[[ -d ${_zcompdump:h} ]] || mkdir -p "${_zcompdump:h}"
 
 # Two paths:
 #   - fast: dump is < 24h old -> trust it, skip the security audit (-C).
@@ -74,20 +74,19 @@ zstyle ':completion:*' cache-path "${XDG_CACHE_HOME:-$HOME/.cache}/zsh/completio
 # completion for GNU make (see https://github.com/zsh-users/zsh-completions/issues/813#issuecomment-902592371)
 zstyle ':completion:*:*:make:*' tag-order 'targets'
 
-_ssh_configfile="$HOME/.ssh/config"
-if [[ -f "$_ssh_configfile" ]]; then
-  _ssh_hosts=($(
-    grep -E '^Host.*' "$_ssh_configfile" |\
-    awk '{for (i=2; i<=NF; i++) print $i}' |\
-    sort |\
-    uniq |\
-    grep -v '^*' |\
-    sed -e 's/\.*\*$//'
-  ))
-  zstyle ':completion:*:hosts' hosts $_ssh_hosts
-  unset _ssh_hosts
+# Pure-zsh parse of `Host` lines (no grep/awk/sort/sed forks): skip wildcard
+# entries, strip a trailing `.*`, dedupe with (u).
+if [[ -r ~/.ssh/config ]]; then
+  _ssh_hosts=()
+  for _line in ${(M)${(f)"$(<~/.ssh/config)"}:#Host[[:space:]]*}; do
+    for _h in ${=${_line#Host}}; do
+      [[ $_h == \** ]] && continue
+      _ssh_hosts+=(${_h%%.#\*})
+    done
+  done
+  zstyle ':completion:*:hosts' hosts ${(u)_ssh_hosts}
+  unset _line _h _ssh_hosts
 fi
-unset _ssh_configfile
 
 zstyle '*' single-ignored show
 

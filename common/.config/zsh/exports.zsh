@@ -2,7 +2,7 @@ export KEYTIMEOUT=5
 
 # Without this the SSH remote environment in VS Code has a hard time prompting
 # for passphrase when signing git commits
-export GPG_TTY=$(tty)
+export GPG_TTY=$TTY
 
 if [[ $OSTYPE == darwin* ]]; then
     export PATH="$HOME/.local/bin:$PATH"

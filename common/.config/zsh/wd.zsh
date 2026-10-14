@@ -12,15 +12,15 @@
 # Merged into one file: helper/core functions live at top level,
 # the per-invocation dispatch logic is wrapped in `wd()` below.
 
-# version
-readonly WD_VERSION=0.10.0
-
-# colors
-readonly WD_BLUE="\033[96m"
-readonly WD_GREEN="\033[92m"
-readonly WD_YELLOW="\033[93m"
-readonly WD_RED="\033[91m"
-readonly WD_NOC="\033[m"
+# version / colors (guarded so re-sourcing .zshrc doesn't trip "read-only variable")
+if [[ -z ${WD_VERSION+x} ]]; then
+    readonly WD_VERSION=0.10.0
+    readonly WD_BLUE="\033[96m"
+    readonly WD_GREEN="\033[92m"
+    readonly WD_YELLOW="\033[93m"
+    readonly WD_RED="\033[91m"
+    readonly WD_NOC="\033[m"
+fi
 
 ## functions
 
