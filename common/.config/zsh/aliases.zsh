@@ -22,6 +22,8 @@ alias sshclose="ssh -O exit"
 alias sshforget="ssh-keygen -R"
 alias ssh!="ssh -o ControlMaster=no -o ControlPath=none"
 
+alias go-install!="GOPROXY=direct go install"
+
 alias gscat="gsutil cat"
 alias gsls="gsutil ls"
 alias gsrm="gsutil -m rm"
