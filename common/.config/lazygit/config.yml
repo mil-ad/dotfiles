@@ -31,13 +31,13 @@ gui:
       - "#f42c3e"
     defaultFgColor:
       - "#f2e5bc"
-  authorColors:
-    "*": "#d3869b"
-  branchColorPatterns:
-    "^feat(ure)?/": "#7ec16e"
-    "^fix/": "#f42c3e"
-    "^docs/": "#99c6ca"
-    "^chore/": "#fabd2f"
+    authorColors:
+      "*": "#d3869b"
+    branchColorPatterns:
+      "^feat(ure)?/": "#7ec16e"
+      "^fix/": "#f42c3e"
+      "^docs/": "#99c6ca"
+      "^chore/": "#fabd2f"
 git:
   diffRenderers:
     - colorArg: always
