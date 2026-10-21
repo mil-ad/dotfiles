@@ -38,6 +38,7 @@ audio/x-opus+ogg=mpv.desktop;
 application/vnd.openxmlformats-officedocument.wordprocessingml.document=libreoffice-writer.desktop
 x-scheme-handler/slack=slack.desktop
 x-scheme-handler/claude=claude.desktop
+x-scheme-handler/codex=chatgpt.desktop
 
 [Added Associations]
 application/epub+zip=zathura.desktop;
