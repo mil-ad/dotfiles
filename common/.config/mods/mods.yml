@@ -30,6 +30,10 @@ topk: 50
 no-limit: false
 # Wrap formatted output at specific width (default is 80)
 word-wrap: 80
+# mermaid.ink server used to render mermaid diagrams, e.g. a self-hosted one
+mermaid-ink-server: http://mermaid-ink.h.mil.ad
+# Maximum concurrent requests to the mermaid.ink server; match a self-hosted server's QUEUE_CONCURRENCY
+mermaid-ink-concurrency: 5
 # Include the prompt from the arguments in the response.
 include-prompt-args: false
 # Include the prompt from the arguments and stdin, truncate stdin to specified number of lines.
