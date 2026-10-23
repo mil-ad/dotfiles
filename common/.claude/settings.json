@@ -17,10 +17,17 @@
       "Bash(* --help *)"
     ]
   },
-  "model": "opus[1m]",
   "enabledPlugins": {
     "gopls-lsp@claude-plugins-official": true,
     "clangd-lsp@claude-plugins-official": true
+  },
+  "modelSettings": {
+    "claude-opus-5": {
+      "effortLevel": "medium"
+    },
+    "claude-fable-5-1": {
+      "effortLevel": "high"
+    }
   },
   "tui": "fullscreen",
   "voice": {
