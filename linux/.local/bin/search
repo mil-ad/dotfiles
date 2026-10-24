@@ -20,7 +20,8 @@ CamelCamelCamel
 PyPI
 PyPI Stats
 AUR
-GitHub Repositories'| rofimenu -no-custom)
+coolors
+GitHub Repositories' | rofimenu -no-custom)
 
 [[ $engine ]] && query=$(echo '' | rofimenu -l 0 -p "🔍 $engine:")
 
@@ -47,6 +48,7 @@ case $engine in
     "PyPI") URL="https://pypi.org/search/?q=${query}" ;;
     "PyPI Stats") URL="https://pypistats.org/packages/${query}" ;;
     "AUR") URL="https://aur.archlinux.org/packages?K=${query}" ;;
+    "coolors") URL="https://coolors.co/${query}" ;;
     "GitHub Repositories") URL="https://github.com/search?q=${query}&type=repositories" ;;
 esac
 
