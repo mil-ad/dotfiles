@@ -28,7 +28,7 @@
 )
 
 (defalias
-  cap (tap-hold $tap-time $hold-time esc (layer-while-held extend))
+  cap (tap-hold-press $tap-time $hold-time esc (layer-while-held extend))
   s (tap-hold $tap-time $hold-time s lctl)
   d (tap-hold $tap-time $hold-time d lalt)
   f (tap-hold $tap-time $hold-time f lmet)
