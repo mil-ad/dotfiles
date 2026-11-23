@@ -1,9 +1,0 @@
-// These settings override both User and Default settings for the Python syntax
-{
-    "rulers":
-    [
-        81,
-        121
-    ],
-    // "wrap_width": 121,
-}
