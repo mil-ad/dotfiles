@@ -1,0 +1,33 @@
+onboarding = false
+
+[theme]
+name = "gruvbox"
+auto_switch = false
+
+# Popping and Locking
+[theme.custom]
+panel_bg = "reset"
+sidebar_bg = "reset"
+surface_dim = "#272836"
+active_row_bg = "#272836"
+selection_bg = "#313242"
+surface0 = "#272836"
+surface1 = "#313242"
+overlay0 = "#665c54"
+overlay1 = "#928374"
+subtext0 = "#a89984"
+text = "#f2e5bc"
+accent = "#fabd2f"
+yellow = "#fabd2f"
+red = "#f42c3e"
+green = "#b8bb26"
+teal = "#7ec16e"
+blue = "#99c6ca"
+mauve = "#d3869b"
+peach = "#fe8019"
+
+[ui.sound]
+enabled = false
+
+[ui]
+agent_panel_sort = "priority"
