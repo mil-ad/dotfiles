@@ -3,6 +3,6 @@
 assert_defined PAPERS_DIR || exit
 assert_installed open || exit
 
-SELECTED_FILE=$(ls -t "$PAPERS_DIR" | grep "\.pdf$" | ~/.local/bin/fzfmenu)
+SELECTED_FILE=$(ls -t "$PAPERS_DIR" | grep "\.pdf$" | ~/.local/bin/rofimenu -theme-str 'element-text selected.normal { highlight: bold #6f0043; }')
 
 [[ "$SELECTED_FILE" != "" ]] && open "$PAPERS_DIR/$SELECTED_FILE" & exit 0
