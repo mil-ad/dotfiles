@@ -24,6 +24,10 @@
     --main-custom-color: var(--pnl-background);
     --ui-font: "Berkeley Mono SemiCondensed", "Iosevka Milad";
 
+    /* Shared left gutter for the urlbar and the content frame. Both are
+     * measured from the window's left edge (sidebar is on the right). */
+    --edge-gutter: 7px;
+
     /* Firefox UI variable overrides */
     --toolbarbutton-icon-fill: var(--light1) !important;
     --toolbar-bgcolor: var(--dark0_hard) !important;
@@ -32,13 +36,26 @@
     --tab-min-height: 24px !important;
 
     /* Panel / menupopup colors — covers the hamburger menu, extensions
-     * popup, bookmarks dropdowns, context menus, etc. Firefox migrated
-     * from `--arrowpanel-background` to `--panel-background`; keeping
-     * both for cross-version safety. */
-    --panel-background: var(--pnl-background) !important;
-    --panel-color: var(--light1) !important;
+     * popup, bookmarks dropdowns, context menus, etc. Firefox reads
+     * `--panel-background-color` / `--panel-text-color` (toolkit
+     * popup.css); the older `--panel-background` / `--panel-color` /
+     * `--arrowpanel-background` names are no longer used. Context menus
+     * also re-set these on the element — see the `menupopup, panel` rule. */
+    --panel-background-color: var(--pnl-background) !important;
+    --panel-text-color: var(--light1) !important;
     --panel-border-color: var(--dark1) !important;
-    --arrowpanel-background: var(--pnl-background) !important;
+
+    /* Panel / menu corner radius. The "Nova" redesign
+     * (`browser.nova.enabled`, on by default in recent versions) bumped
+     * `--popup-border-radius` to `--border-radius-xlarge` (24px) and menu
+     * item hover highlights to `--border-radius-large` (16px), via
+     * toolkit's design-system/tokens-shared.css. `--panel-border-radius`
+     * defaults to `--popup-border-radius`, so set both. Menu items get a
+     * slightly smaller radius so their highlight nests inside the panel. */
+    --menu-radius: 5px;
+    --popup-border-radius: var(--menu-radius) !important;
+    --panel-border-radius: var(--menu-radius) !important;
+    --panel-menuitem-border-radius: calc(var(--menu-radius) - 2px) !important;
 }
 
 /* ============================================================
@@ -120,25 +137,44 @@ toolbarspring#vertical-spacer.chromeclass-toolbar-additional.titlebar-spacer {
     margin-bottom: 5px !important;
 }
 
-/* Drop left margin/padding when urlbar is first in toolbar */
-#nav-bar-customization-target > #urlbar-container:first-child {
-    margin-left: 7px !important;
-    margin-right: 10px !important;
+/* Left edge of the urlbar = --edge-gutter from the window edge, matching the
+ * content frame below. Not keyed on `:first-child`: the (hidden)
+ * #vertical-spacer comes before #urlbar-container in the toolbar, so
+ * `:first-child` never matched and Firefox's own
+ * `.urlbar-container { margin-inline: var(--urlbar-margin-inline) }` (5px)
+ * was what actually applied. #nav-bar has no inline padding of its own. */
+#nav-bar-customization-target > #urlbar-container {
+    margin-left: var(--edge-gutter) !important;
     padding-left: 0px !important;
 }
 
-/* The element uses the `.urlbar-background` class (not `#urlbar-background`),
- * and the same element is reused for both the closed urlbar and the expanded
- * autocomplete dropdown — so this rule colors both. Border is transparent
- * by default to preserve layout, and becomes yellow only on focus. */
-.urlbar-background {
-    background-color: var(--urlbar-bg) !important;
-    border: 1px solid var(--dark1) !important;
-    border-radius: 5px !important;
-}
-
-.urlbar[focused] > .urlbar-background {
-    border-color: var(--faded_yellow) !important;
+/* Style the urlbar through Firefox's own variables, not by overriding
+ * `.urlbar-background` directly. When the results dropdown is open it is two
+ * surfaces: `.urlbar-background` (the input half, clipped at the seam) and
+ * `.urlbarView-background` (the results half). Both read these vars, so
+ * direct overrides only hit the top half — that's what produced a yellow
+ * border around just the input part and a default-gray results list.
+ *
+ *   --urlbar-background-border          closed, unfocused
+ *   --urlbar-background-border-focused  focused, dropdown closed
+ *   --urlbar-background-border-open     dropdown open (Firefox: transparent;
+ *                                       the input gets its own focus ring)
+ *
+ * When focused/open the bar uses the panel background, so the dropdown
+ * matches the other menus. `--urlbar-background-overhang-open` is how far
+ * the open dropdown reaches past the input on every side (Firefox: 8px,
+ * which with our 7px gutter hit the window edge). */
+:root,
+.urlbar,
+#searchbar {
+    --urlbar-background-color: var(--urlbar-bg) !important;
+    --urlbar-background-color-focus: var(--pnl-background) !important;
+    --urlbar-background-border: 1px solid var(--dark1) !important;
+    --urlbar-background-border-focused: 1px solid var(--faded_yellow) !important;
+    --urlbar-background-border-open: 1px solid var(--dark1) !important;
+    --urlbar-background-overhang-open: 3px !important;
+    --urlbar-border-radius: 5px !important;
+    --urlbarview-border-radius: 5px !important;
 }
 
 [focused]:not([suppress-focus-border]) > .urlbar-background,
@@ -189,6 +225,17 @@ toolbarbutton,
 
 #bookmarksPanel {
     background: var(--main-custom-color) !important;
+}
+
+/* Context menus / dropdowns redefine their colors (`Menu` / `MenuText`) and
+ * `--panel-border-radius` on the element itself (toolkit popup.css), so the
+ * :root overrides don't reach them. */
+menupopup,
+panel {
+    --panel-background-color: var(--pnl-background) !important;
+    --panel-text-color: var(--light1) !important;
+    --panel-border-color: var(--dark1) !important;
+    --panel-border-radius: var(--menu-radius) !important;
 }
 
 /* Override hover color on menu/panel toolbarbuttons */
@@ -341,7 +388,7 @@ browser#sidebar {
     #tabbrowser-tabbox {
         border: 1px solid var(--dark1) !important;
         border-radius: 5px !important;
-        margin: 2px 0 7px 7px !important;
+        margin: 2px 0 7px var(--edge-gutter) !important;
         box-shadow: none !important;
         overflow: clip !important;
     }
